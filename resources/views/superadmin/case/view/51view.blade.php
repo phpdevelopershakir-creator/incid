@@ -1,0 +1,81 @@
+<?php
+if (($questiontitles[50]->status ?? null) == 1) {
+
+?>
+  <div class="card">
+    <div class="card-header" role="tab" id="heading-4">
+      <h6 class="mb-0">
+        <a data-toggle="collapse" href="#Question-51" aria-expanded="false"
+          aria-controls="collapse-4">
+          51.{{ $questiontitles[50]->title }}
+        </a>
+      </h6>
+    </div>
+
+    <div id="Question-51" class="collapse" role="tabpane51" aria-labelledby="heading-4"
+      data-parent="#accordion-2">
+      <div class="card-body">
+        <div id="six_question_view">
+          @if(isset($case->yes_no_other) && $case->yes_no_other->is_commercial_sex_demands_q51 == 1)
+          <table class="table table-white table-bordered">
+            <thead class="text-center align-middle">
+              <tr style="background:#E5E5E5;">
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Action </th>
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Status</th>
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Attach/Upload Pdf</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($case->fiftyone as $fiftyone)
+              <tr>
+                <td>
+                  @if($fiftyone->commercial_title_q51 == 1)
+                  Awareness raising on forced prostitution and trafficking among citizens
+                  @elseif ($fiftyone->commercial_title_q51 == 2)
+                  Awareness raising on legal measures against sexual exploitation of trafficked individuals
+                  @elseif ($fiftyone->commercial_title_q51 == 3)
+                  Legal actions against foreign podophiles/sex-tourists (clients on underaged girls/VoTs)
+                  @else
+                  {{$fiftyone->commercial_title_q51}}
+                  @endif
+                </td>
+                <td>
+                  @if($fiftyone->commercial_status_q51 == 1)
+                  Enforced
+                  @elseif ($fiftyone->commercial_status_q51 == 2)
+                  Updated and enforced
+                  @elseif ($fiftyone->commercial_status_q51 == 3)
+                  Stricter enforcement
+                  @elseif ($fiftyone->commercial_status_q51 == 4)
+                  Increases efforts
+                  @endif
+
+                </td>
+                <td>
+                  @if(!empty($fiftyone->document_upload_q51))
+                  <a href="{{ asset($fiftyone->document_upload_q51) }}" target="_blank">View</a>
+                  @else
+                  not Found
+                  @endif
+
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->other_commercial_sex_demands_q51))
+          <div class="alert alert-info">
+            <strong>Other Description:</strong> {{ $case->yes_no_other->other_commercial_sex_demands_q51 }}
+          </div>
+
+          @else
+          <div class="text-center py-3">
+            <p class="text-muted">No data available for this section.</p>
+          </div>
+          @endif
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php } ?>

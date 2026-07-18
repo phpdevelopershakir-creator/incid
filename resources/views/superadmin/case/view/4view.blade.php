@@ -1,0 +1,134 @@
+<?php
+if (($questiontitles[3]->status ?? null) == 1) {
+
+?>
+
+  <div class="card">
+    <div class="card-header" role="tab" id="heading-4">
+      <h6 class="mb-0">
+        <a data-toggle="collapse" href="#Question-4" aria-expanded="false"
+          aria-controls="collapse-4">
+          4.{{ $questiontitles[3]->title }}
+
+        </a>
+      </h6>
+    </div>
+
+    <div id="Question-4" class="collapse" role="tabpanel4" aria-labelledby="heading-4"
+      data-parent="#accordion-2">
+      <div class="card-body">
+        <div id="six_question_view">
+          @if(isset($case->yes_no_other) && $case->yes_no_other->is_supreme_court_q4 == 1)
+          <table class="table table-white table-bordered">
+            <thead>
+              <tr style="background:#f1f1f1;">
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Title of The New Low </th>
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Contents of Change/Status </th>
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Attach/Upload Pdf</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($case->foura as $foura)
+              <tr>
+                <td>
+                  @if($foura->supreme_court_title_q4 == 1)
+                  PSHT 2012
+                  @elseif ($foura->supreme_court_title_q4 == 2)
+                  Rule of PSHTA (2017)
+                  @elseif ($foura->supreme_court_title_q4 == 3)
+                  OEMA 2013
+                  @elseif ($foura->supreme_court_title_q4 == 4)
+                  Children Act
+                  @elseif ($foura->supreme_court_title_q4 == 5)
+                  Labour Act
+                  @elseif ($foura->supreme_court_title_q4 == 6)
+                  MLA in Criminal Matter 2012
+                  @elseif ($foura->supreme_court_title_q4 == 7)
+                  Human Organ Transfer Rule 1999
+                  @else
+                  {{$foura->supreme_court_title_q4}}
+                  @endif
+                </td>
+                <td>
+                  @if($foura->supreme_court_status_q4 == 1)
+                  Revised
+                  @elseif ($foura->supreme_court_status_q4 == 2)
+                  Abolished
+                  @endif
+
+                </td>
+                <td>
+                  @if(!empty($foura->supreme_court_image_q4))
+                  <a href="{{ asset($foura->supreme_court_image_q4) }}" target="_blank">View</a>
+                  @else
+                  not Found
+                  @endif
+
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          <br>
+          <h6>New Low</h6>
+          <table class="table table-white table-bordered">
+            <thead>
+              <tr style="background:#f1f1f1;">
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Title of The New Low </th>
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Contents of Change/Status </th>
+                <th scope="col" class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Attach/Upload Pdf</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($case->fourb as $fourb)
+              <tr>
+                <td>
+                  {{$fourb->supreme_court_title_two_q4}}
+                </td>
+                <td>
+                  @if($fourb->supreme_court_status_two_q4 == 1)
+                  Planned
+                  @elseif ($fourb->supreme_court_status_two_q4 == 2)
+                  On Process of Need Assessment
+                  @elseif ($fourb->supreme_court_status_two_q4 == 3)
+                  Drafted
+                  @elseif ($fourb->supreme_court_status_two_q4 == 4)
+                  Under Review of MoLJPA
+                  @elseif ($fourb->supreme_court_status_two_q4 == 5)
+                  Waiting to be enacted
+                  @elseif ($fourb->supreme_court_status_two_q4 == 6)
+                  Enforced
+
+                  @endif
+
+                </td>
+                <td>
+                  @if(!empty($fourb->supreme_court_image_two_q4))
+                  <a href="{{ asset($fourb->supreme_court_image_two_q4) }}" target="_blank">View</a>
+                  @else
+                  not Found
+                  @endif
+
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->others_supreme_court_q4))
+          <div class="alert alert-info">
+            <strong>Other Description:</strong> {{ $case->yes_no_other->others_supreme_court_q4 }}
+          </div>
+
+
+          @else
+          <div class="text-center py-3">
+            <p class="text-muted">No data available for this section.</p>
+          </div>
+          @endif
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<?php } ?>

@@ -1,0 +1,11 @@
+<option value="Facebook">Facebook</option>
+<option value="Tictok">Tictok</option>
+<option value="WhatsApp">WhatsApp</option>
+<option value="Instagram">Instagram</option>
+<option value="Youtube">Youtube</option>
+<option value="Telegram">Telegram</option>
+<option value="Other Social Media Platform">Other Social Media Platform</option>
+<option value="Phone Apps">Phone Apps</option>
+<option value="Online Job Portal">Online Job Portal</option>
+<option value="Websites">Websites</option>
+<option value="Tele- Marketing">Tele- Marketing</option>
