@@ -84,7 +84,7 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
-
+                                        @if(isset($case->yes_no_other) && $case->yes_no_other->is_supreme_court_q1 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
                                             <thead>
@@ -205,6 +205,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_supreme_court_q1))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_supreme_court_q1 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
 
                                     </div>
                                 </div>
@@ -227,6 +240,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_transparent_q2 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -304,6 +319,19 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_transparent_q2))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_transparent_q2 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -326,7 +354,7 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
-
+                                        @if(isset($case->yes_no_other) && $case->yes_no_other->is_supreme_court_q4 == 1)
                                         <!-- First Table -->
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
@@ -444,6 +472,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_supreme_court_q4))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_supreme_court_q4 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
 
                                     </div>
                                 </div>
@@ -466,6 +507,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) && $case->yes_no_other->is_complicit_official_q5
+                                        == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -487,6 +530,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_complicit_official_q5))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_complicit_official_q5 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -511,6 +567,7 @@
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
                                         <!-- Table: Added width 100% -->
+                                        @if(isset($case->yes_no_other) && $case->yes_no_other->is_unit_court_q6 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
 
@@ -604,6 +661,19 @@
                                             </tbody>
 
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_unit_court_q6))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_unit_court_q6 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -626,6 +696,8 @@
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
                                         <!-- Table: Added width 100% -->
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_exclusively_dedicated_trafficking_q7 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
 
@@ -708,6 +780,19 @@
                                             </tbody>
 
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_exclusively_dedicated_trafficking_q7))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_exclusively_dedicated_trafficking_q7 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -730,6 +815,8 @@
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
                                         <!-- Table: Width 100% and balanced columns -->
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_involved_directly_trafficking_8q == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
 
@@ -834,6 +921,19 @@
                                             </tbody>
 
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_involved_directly_trafficking_8q))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_involved_directly_trafficking_8q }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -853,6 +953,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_exclusively_trafficking_q9 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -893,6 +995,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_exclusively_trafficking_q9))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_exclusively_trafficking_q9 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -915,6 +1030,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_exclusively_trafficking_q10 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -955,6 +1072,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_exclusively_trafficking_q10))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_exclusively_trafficking_q10 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -975,6 +1105,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_agreements_transparent_q11 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -1077,6 +1209,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_agreements_transparent_q11))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_agreements_transparent_q11 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -1097,18 +1242,13 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
-                                        @php
-                                        $index = 65; // Generates A, B, C...
-                                        @endphp
-
-                                        @foreach($twelveGrouped as $country => $rows)
-                                        <div class="group-title"
-                                            style="font-size: 15px; font-weight: bold; color: #000; margin: 20px 0 10px 0; font-family: sans-serif; padding-left: 2px;">
-                                            {{ chr($index++) }}. {{ $labels[$country] ?? $country }}
-                                        </div>
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_cooperate_foreign_counterparts_q12 ==
+                                        1)
 
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>A.new investigations</h4>
                                             <thead>
                                                 <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
                                                     <th scope="col"
@@ -1129,7 +1269,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($rows as $twelve)
+                                                @foreach($case->twelve as $twelve)
                                                 <tr style="color: #000; font-size: 14px;">
                                                     <td
                                                         style="border: 1.5px solid #000; padding: 8px; text-align: left;">
@@ -1159,7 +1299,427 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                        @endforeach
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>B.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->twelveb as $twelveb)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $twelveb->government_country_q12b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelveb->government_sex_trafficking_q12b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelveb->government_labour_trafficking_q12b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelveb->government_other_trafficking_q12b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $twelveb->government_total_trafficking_q12b }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>C.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->twelvec as $twelvec)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $twelvec->government_country_q12c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelvec->government_sex_trafficking_q12c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelvec->government_labour_trafficking_q12c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelvec->government_other_trafficking_q12c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $twelvec->government_total_trafficking_q12c }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>D.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->twelved as $twelved)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $twelved->government_country_q12d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelved->government_sex_trafficking_q12d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelved->government_labour_trafficking_q12d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $twelved->government_other_trafficking_q12d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $twelved->government_total_trafficking_q12d }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_cooperate_foreign_counterparts_q12))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_cooperate_foreign_counterparts_q12 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('13.question'))
+                                <?php
+                                if (($questiontitles[12]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            13. {{ $questiontitles[12]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_cooperate_foreign_counterparts_q13 ==
+                                        1)
+
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>A.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->thirteena as $thirteena)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $thirteena->government_country_q13a }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteena->government_sex_q13a }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteena->government_labour_q13a}}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteena->government_other_q13a }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $thirteena->government_total_q13a }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>B.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->thirteenb as $thirteenb)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $thirteenb->government_country_q13b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteenb->government_sex_q13b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteenb->government_labour_q13b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteenb->government_other_q13b }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $thirteenb->government_total_q13b }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>C.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->thirteenc as $thirteenc)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $thirteenc->government_country_q13c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteenc->government_sex_q13c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteenc->government_labour_q13c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteenc->government_other_q13c }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $thirteenc->government_total_q13c }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 25px;">
+                                            <h4>D.new investigations</h4>
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country/Region/International Law Enforcement Organization</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Sex Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Labour Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Other/Unspecific Trafficking</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->thirteend as $thirteend)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $thirteend->government_country_q12d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteend->government_sex_q13d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteend->government_labour_q13d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{ $thirteend->government_other_q13d }}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold;">
+                                                        {{ $thirteend->government_total_q13d }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_cooperate_foreign_counterparts_q13))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_cooperate_foreign_counterparts_q13 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -1180,6 +1740,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_devote_implement_q14 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -1243,6 +1805,19 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_devote_implement_q14))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_devote_implement_q14 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -1265,6 +1840,8 @@
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
                                         <!-- Table -->
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_report_country_narrative_protection_q17 == 1)
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
                                             <thead>
@@ -1383,6 +1960,19 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_report_country_narrative_protection_q17))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_report_country_narrative_protection_q17 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <?php } ?>
@@ -1403,7 +1993,8 @@
                                     </div>
 
                                     <div class="card-body" style="padding: 0; margin-top: 15px;">
-
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_describe_government_operated_q20 == 1)
                                         <!-- ==================== FIRST TABLE: INTERNAL TRAFFICKING ==================== -->
                                         <table class="custom-table"
                                             style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px;">
@@ -1696,12 +2287,27 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_describe_government_operated_q20))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_describe_government_operated_q20 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
 
                                     </div>
                                 </div>
 
                                 <?php } ?>
                                 @endif
+
+
 
 
 

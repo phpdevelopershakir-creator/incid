@@ -240,6 +240,8 @@ class CaseController extends Controller
         $yes_no->other_foreign_victims_q30 = $request->other_foreign_victims_q30;
         $yes_no->is_government_transparent_q2 = $request->is_government_transparent_q2;
         $yes_no->other_government_transparent_q2 = $request->other_government_transparent_q2;
+         $yes_no->is_government_devote_implement_q14 = $request->is_government_devote_implement_q14;
+          $yes_no->other_government_devote_implement_q14 = $request->other_government_devote_implement_q14;
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
 
@@ -2164,9 +2166,17 @@ class CaseController extends Controller
             'foura',
             'fourb',
             'twelve',
+            'twelveb',
+            'twelvec',
+            'twelved',
             'twentya',
             'twentyb',
             'fortysix',
+            'yes_no_other',
+            'thirteena',
+            'thirteenb',
+            'thirteenc',
+            'thirteend',
         ];
 
         if ($userType == "Super Admin" || $userType == 2) {
