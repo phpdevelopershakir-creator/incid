@@ -147,7 +147,7 @@ $training_responses_two = [
                         </tr>
                         <tr class="qe1NoOfRow">
                             <td><input type="text" name="supreme_court_title[]" class="form-control row-title"
-                                    placeholder="Others Specific"></td>
+                                    placeholder="Others (Specify)___"></td>
                             <td>
                                 <select name="supreme_court_status[]" class="form-control q10Input row-status">
                                     <option value="" disabled selected>---Choose an item--</option>

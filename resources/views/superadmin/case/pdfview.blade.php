@@ -1283,7 +1283,7 @@
 
                                                     <td
                                                         style="border: 1.5px solid #000; padding: 8px; text-align: center;">
-                                                        {{ $twelve->government_cooperate_foreign_counterparts_labour_trafficking_q12 ?? $twelve->government_cooperate_foreign_counterparts_labour_trafficking_q1 }}
+                                                        {{ $twelve->government_cooperate_foreign_counterparts_labour_trafficking_q12 }}
                                                     </td>
 
                                                     <td
@@ -2304,9 +2304,800 @@
                                     </div>
                                 </div>
 
+
                                 <?php } ?>
                                 @endif
 
+                                @if(Auth::user()->can('21.question'))
+                                <?php
+                                if (($questiontitles[20]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            21. {{ $questiontitles[20]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_crime_justice_q21 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px; page-break-inside: avoid;">
+                                            <thead>
+                                                <!-- Row 1: Main Header -->
+                                                <tr
+                                                    style="background-color: #f8cbad; color: #000; font-weight: bold; height: 40px;">
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 25%; vertical-align: middle;">
+                                                        Name of the Shelters</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 20%; vertical-align: middle;">
+                                                        Operators</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Men</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Women</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Total</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 12%; vertical-align: middle;">
+                                                        Specialized for Trafficking?</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 10%; vertical-align: middle;">
+                                                        Eligible Victims</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Note</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->twentyone as $twentyone)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{ $twentyone->name_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{ $twentyone->operator_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentyone->capacity_men_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentyone->capacity_women_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold; vertical-align: middle;">
+                                                        {{ $twentyone->capacity_total_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentyone->is_specialized_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentyone->eligible_victims_q21 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{ $twentyone->note_q21 }}
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += (int)$twentyone->capacity_men_q21;
+                                                $womenTotal += (int)$twentyone->capacity_women_q21;
+                                                $Total += (int)$twentyone->capacity_total_q21;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- Summary Row: Total -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="border: 1.5px solid #000; background-color: #f2f2f2;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_crime_justice_q21))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_crime_justice_q21 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('22.question'))
+                                <?php
+                                if (($questiontitles[21]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            22. {{ $questiontitles[20]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_crime_justice_q22 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px; page-break-inside: avoid;">
+                                            <thead>
+                                                <!-- Row 1: Main Header -->
+                                                <tr
+                                                    style="background-color: #f8cbad; color: #000; font-weight: bold; height: 40px;">
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 25%; vertical-align: middle;">
+                                                        Name of the Shelters</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 20%; vertical-align: middle;">
+                                                        Operators</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Men</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Women</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Total</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 12%; vertical-align: middle;">
+                                                        Specialized for Trafficking?</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 10%; vertical-align: middle;">
+                                                        Eligible Victims</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Note</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->twentytwo as $twentytwo)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{ $twentytwo->name_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{ $twentytwo->operator_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentytwo->capacity_men_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentytwo->capacity_women_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold; vertical-align: middle;">
+                                                        {{ $twentytwo->capacity_total_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentytwo->is_specialized_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{ $twentytwo->eligible_victims_q22 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{ $twentytwo->note_q22 }}
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += (int)$twentytwo->capacity_men_q22;
+                                                $womenTotal += (int)$twentytwo->capacity_women_q22;
+                                                $Total += (int)$twentytwo->capacity_total_q22;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- Summary Row: Total -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="border: 1.5px solid #000; background-color: #f2f2f2;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_crime_justice_q22))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_crime_justice_q22 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('23.question'))
+                                <?php
+                                if (($questiontitles[22]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            23. {{ $questiontitles[22]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) && $case->yes_no_other->is_complicit_official_q23
+                                        == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px;">
+                                                        Title Description
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->twentythree as $twentythree)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $twentythree->involved_directly_trafficking_title_q23 }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_complicit_official_q23))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_complicit_official_q23 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('24.question'))
+                                <?php
+                                if (($questiontitles[23]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            24. {{ $questiontitles[23]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_specialized_trafficking_victims_q24 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px; page-break-inside: avoid;">
+                                            <thead>
+                                                <!-- Row 1: Main Header -->
+                                                <tr
+                                                    style="background-color: #f8cbad; color: #000; font-weight: bold; height: 40px;">
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 25%; vertical-align: middle;">
+                                                        Protection Services</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 20%; vertical-align: middle;">
+                                                        Quality</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Men</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Women</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        TG</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 12%; vertical-align: middle;">
+                                                        Boy</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 10%; vertical-align: middle;">
+                                                        Girl</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Total</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Location</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $thirdTotal = 0;
+                                                $boyTotal = 0;
+                                                $girlTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->twentyfour as $twentyfour)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @if($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 1)
+                                                        Economic Support/Asset Transfer
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 2)
+                                                        Micro Credit
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 3)
+                                                        Livelihood Training
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 4)
+                                                        Job Placement
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 5)
+                                                        Health Care
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 6)
+                                                        Psychosocial Care
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 7)
+                                                        Shelter
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 8)
+                                                        Social Safetynet
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 9)
+                                                        Information Support
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 10)
+                                                        Mainstream Education
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 11)
+                                                        Non Formal Education
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 12)
+                                                        Technical Education
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 13)
+                                                        Life Skill
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 14)
+                                                        Family Reunion
+                                                        @elseif($twentyfour->specialized_trafficking_victims_protection_q24
+                                                        == 15)
+                                                        Referral
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @if($twentyfour->specialized_trafficking_victims_quality_q24 ==
+                                                        1)
+                                                        Excellent
+                                                        @elseif($twentyfour->specialized_trafficking_victims_quality_q24
+                                                        == 2)
+                                                        As per Standard
+                                                        @elseif($twentyfour->specialized_trafficking_victims_quality_q24
+                                                        == 3)
+                                                        Below Standard
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$twentyfour->specialized_trafficking_victims_men_q24}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$twentyfour->specialized_trafficking_victims_women_q24}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold; vertical-align: middle;">
+                                                        {{$twentyfour->specialized_trafficking_victims_tg_q24}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$twentyfour->specialized_trafficking_victims_boy_q24}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$twentyfour->specialized_trafficking_victims_girl_q24}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{$twentyfour->specialized_trafficking_victims_total_q24}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @php
+                                                        $locations =
+                                                        $twentyfour->specialized_trafficking_victims_location_q24;
+
+                                                        if (is_string($locations)) {
+                                                        $decoded = json_decode($locations, true);
+                                                        $locations = $decoded ?? $locations;
+                                                        }
+                                                        @endphp
+
+                                                        @if(is_array($locations))
+                                                        {{ implode(', ', $locations) }}
+                                                        @else
+                                                        {{ $locations ?? 'N/A' }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += $twentyfour->specialized_trafficking_victims_men_q24;
+                                                $womenTotal += $twentyfour->specialized_trafficking_victims_women_q24;
+                                                $thirdTotal += $twentyfour->specialized_trafficking_victims_tg_q24;
+                                                $boyTotal += $twentyfour->specialized_trafficking_victims_boy_q24;
+                                                $girlTotal += $twentyfour->specialized_trafficking_victims_girl_q24;
+                                                $Total += $twentyfour->specialized_trafficking_victims_total_q24;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- Summary Row: Total -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirdTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $boyTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $girlTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_crime_justice_q22))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_crime_justice_q22 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('30.question'))
+                                <?php
+                                if (($questiontitles[29]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            30. {{ $questiontitles[29]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_foreign_victims_q30 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px; page-break-inside: avoid;">
+                                            <thead>
+                                                <!-- Row 1: Main Header -->
+                                                <tr
+                                                    style="background-color: #f8cbad; color: #000; font-weight: bold; height: 40px;">
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 25%; vertical-align: middle;">
+                                                        Protection Services</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 20%; vertical-align: middle;">
+                                                        Quality</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Men</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Women</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        TG</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 12%; vertical-align: middle;">
+                                                        Boy</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 10%; vertical-align: middle;">
+                                                        Girl</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Total</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Location</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $thirdTotal = 0;
+                                                $boyTotal = 0;
+                                                $girlTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->thirty as $thirty)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @if(is_numeric($thirty->citizen_victims_services_q30) &&
+                                                        $thirty->citizen_victims_services_q30 >= 1 &&
+                                                        $thirty->citizen_victims_services_q30 <= 15) @if($thirty->
+                                                            citizen_victims_services_q30 == 1) Economic Support/Asset
+                                                            Transfer
+                                                            @elseif($thirty->citizen_victims_services_q30 == 2) Micro
+                                                            Credit
+                                                            @elseif($thirty->citizen_victims_services_q30 == 3)
+                                                            Livelihood Training
+                                                            @elseif($thirty->citizen_victims_services_q30 == 4) Job
+                                                            Placement
+                                                            @elseif($thirty->citizen_victims_services_q30 == 5) Health
+                                                            Care
+                                                            @elseif($thirty->citizen_victims_services_q30 == 6)
+                                                            Psychosocial Care
+                                                            @elseif($thirty->citizen_victims_services_q30 == 7) Shelter
+                                                            @elseif($thirty->citizen_victims_services_q30 == 8) Social
+                                                            Safetynet
+                                                            @elseif($thirty->citizen_victims_services_q30 == 9)
+                                                            Information Support
+                                                            @elseif($thirty->citizen_victims_services_q30 == 10)
+                                                            Mainstream Education
+                                                            @elseif($thirty->citizen_victims_services_q30 == 11) Non
+                                                            Formal Education
+                                                            @elseif($thirty->citizen_victims_services_q30 == 12)
+                                                            Technical Education
+                                                            @elseif($thirty->citizen_victims_services_q30 == 13) Life
+                                                            Skill
+                                                            @elseif($thirty->citizen_victims_services_q30 == 14) Family
+                                                            Reunion
+                                                            @elseif($thirty->citizen_victims_services_q30 == 15)
+                                                            Referral
+                                                            @endif
+                                                            @else
+                                                            {{ $thirty->citizen_victims_services_q30 }}
+                                                            @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @if($thirty->citizen_victims_quality_q30 == 1) Excess
+                                                        @elseif($thirty->citizen_victims_quality_q30 == 2) Adequate
+                                                        @elseif($thirty->citizen_victims_quality_q30 == 3) Inadequate
+                                                        @elseif($thirty->citizen_victims_quality_q30 == 4) None
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirty->citizen_victims_men_q30}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirty->citizen_victims_women_q30}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold; vertical-align: middle;">
+                                                        {{$thirty->citizen_victims_tg_q30}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirty->citizen_victims_boy_q30}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirty->citizen_victims_girl_q30}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{$thirty->citizen_victims_total_q30}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @php
+                                                        $locations = $thirty->citizen_victims_country_q30;
+
+                                                        // যদি JSON string হয়
+                                                        if (is_string($locations)) {
+                                                        $decoded = json_decode($locations, true);
+
+                                                        // json decode fail হলে plain string রেখে দাও
+                                                        $locations = $decoded ?? $locations;
+                                                        }
+                                                        @endphp
+
+                                                        @if(is_array($locations))
+                                                        {{ implode(', ', $locations) }}
+                                                        @else
+                                                        {{ $locations ?? 'N/A' }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += $thirty->citizen_victims_men_q30;
+                                                $womenTotal += $thirty->citizen_victims_women_q30;
+                                                $thirdTotal += $thirty->citizen_victims_tg_q30;
+                                                $boyTotal += $thirty->citizen_victims_boy_q30;
+                                                $girlTotal += $thirty->citizen_victims_girl_q30;
+                                                $Total += $thirty->citizen_victims_total_q30;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- Summary Row: Total -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirdTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $boyTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $girlTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_foreign_victims_q30))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_foreign_victims_q30 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
 
 
 

@@ -154,8 +154,7 @@ class CaseController extends Controller
         $yes_no->others_ministry_agency_organization_54q = $request->others_ministry_agency_organization_54q;
         $yes_no->is_ministry_agency_organization_ctc_55q = $request->is_ministry_agency_organization_ctc_55q;
         $yes_no->others_ministry_agency_organization_ctc_55q = $request->others_ministry_agency_organization_ctc_55q;
-        $yes_no->is_devote_implementation_q57 = $request->is_devote_implementation_q57;
-        $yes_no->is_governments_on_trafficking_q60 = $request->is_governments_on_trafficking_q60;
+      
        
         $yes_no->is_official_allocation_review_q8 = $request->is_official_allocation_review_q8;
         $yes_no->other_official_allocation_review_q8 = $request->other_official_allocation_review_q8;
@@ -165,7 +164,7 @@ class CaseController extends Controller
         $yes_no->other_government_conduct_awareness_activities_q46 = $request->other_government_conduct_awareness_activities_q46;
         $yes_no->is_describe_government_operated_q20 = $request->is_describe_government_operated_q20;
         $yes_no->other_describe_government_operated_q20 = $request->other_describe_government_operated_q20;
-
+       
 
         //new question solved
 
@@ -240,8 +239,13 @@ class CaseController extends Controller
         $yes_no->other_foreign_victims_q30 = $request->other_foreign_victims_q30;
         $yes_no->is_government_transparent_q2 = $request->is_government_transparent_q2;
         $yes_no->other_government_transparent_q2 = $request->other_government_transparent_q2;
-         $yes_no->is_government_devote_implement_q14 = $request->is_government_devote_implement_q14;
-          $yes_no->other_government_devote_implement_q14 = $request->other_government_devote_implement_q14;
+        $yes_no->is_government_devote_implement_q14 = $request->is_government_devote_implement_q14;
+        $yes_no->other_government_devote_implement_q14 = $request->other_government_devote_implement_q14;
+        $yes_no->is_crime_justice_q21 = $request->is_crime_justice_q21;
+        $yes_no->other_crime_justice_q21 = $request->other_crime_justice_q21;
+        
+         $yes_no->is_crime_justice_q22 = $request->is_crime_justice_q22;
+        $yes_no->others_crime_justice_q22 = $request->others_crime_justice_q22;
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
 
@@ -2061,7 +2065,7 @@ class CaseController extends Controller
             'nineteen',
             'twentythree',
             'twentyeight',
-            'twentyone',
+            
             'twentytwo',
             'fifty',
             'fiftyone',
@@ -2093,7 +2097,8 @@ class CaseController extends Controller
             'yes_no_other',
             'thirtythree',
             'thirtyone',
-            'thirty'
+            'thirty',
+            'twentyone',
 
 
         ];
