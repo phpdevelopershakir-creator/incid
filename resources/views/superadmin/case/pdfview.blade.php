@@ -3099,9 +3099,1041 @@
                                 <?php } ?>
                                 @endif
 
+                                @if(Auth::user()->can('31.question'))
+                                <?php
+                                if (($questiontitles[30]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            31. {{ $questiontitles[30]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_citizen_victims_abroad_q31 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px; page-break-inside: avoid;">
+                                            <thead>
+                                                <!-- Row 1: Main Header -->
+                                                <tr
+                                                    style="background-color: #f8cbad; color: #000; font-weight: bold; height: 40px;">
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 25%; vertical-align: middle;">
+                                                        Protection Services</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 20%; vertical-align: middle;">
+                                                        Quality</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Men</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Women</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        TG</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 12%; vertical-align: middle;">
+                                                        Boy</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 10%; vertical-align: middle;">
+                                                        Girl</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Total</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $thirdTotal = 0;
+                                                $boyTotal = 0;
+                                                $girlTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->thirtyone as $thirtyone)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @if($thirtyone->citizen_victims_abroad_name_q31 == 1)
+                                                        India
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 2)
+                                                        Nepal
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 3)
+                                                        Sri lanka
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 4)
+                                                        EU
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 5)
+                                                        USA
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 6)
+                                                        Saudi Arabia
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 7)
+                                                        Qatar
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 8)
+                                                        Lebanon
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 9)
+                                                        Irag
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 10)
+                                                        UAE
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 11)
+                                                        Thailand
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 12)
+                                                        Vietnam
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 13)
+                                                        Cambodia
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 14)
+                                                        South Africa
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 15)
+                                                        Brazil
+                                                        @elseif ($thirtyone->citizen_victims_abroad_name_q31 == 16)
+                                                        UK
+
+                                                        @else
+                                                        {{$thirtyone->citizen_victims_abroad_name_q31}}
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_status_q31 }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_men_q31}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_women_q31}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-weight: bold; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_tg_q31}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_boy_q31}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_girl_q31}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        {{$thirtyone->citizen_victims_abroad_total_q31}}
+                                                    </td>
+
+                                                </tr>
+                                                @php
+                                                $menTotal += $thirtyone->citizen_victims_abroad_men_q31;
+                                                $womenTotal += $thirtyone->citizen_victims_abroad_women_q31;
+                                                $thirdTotal += $thirtyone->citizen_victims_abroad_tg_q31;
+                                                $boyTotal += $thirtyone->citizen_victims_abroad_boy_q31;
+                                                $girlTotal +=$thirtyone->citizen_victims_abroad_girl_q31;
+                                                $Total += $thirtyone->citizen_victims_abroad_total_q31;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- Summary Row: Total -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirdTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $boyTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $girlTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_citizen_victims_abroad_q31))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_citizen_victims_abroad_q31 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+
+                                @if(Auth::user()->can('33.question'))
+                                <?php
+                                if (($questiontitles[32]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            33. {{ $questiontitles[32]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) && $case->yes_no_other->is_complicit_official_q33
+                                        == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px;">
+                                                        Title Description
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->thirtythree as $thirtythree)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{ $thirtythree->involved_directly_trafficking_title_q33 }}
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->others_complicit_official_q33))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->others_complicit_official_q33 }}
+                                        </div>
+
+
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->no_details_q33))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->no_details_q33 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+
+                                @if(Auth::user()->can('44.question'))
+                                <?php
+                                if (($questiontitles[43]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            44. {{ $questiontitles[43]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_awareness_campaigns_research_projects_q44 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Type of preventive Action</th>
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Allocation (in BDT) / Assessment</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fortyfour as $fortyfour)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fortyfour->awareness_campaigns_research_projects_title_q44
+                                                        == 1)
+                                                        Total Allocation under NPA for prevention
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_title_q44
+                                                        == 2)
+                                                        Total Allocation utilized under NPA for prevention
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_title_q44
+                                                        == 3)
+                                                        Total allocation spent for Awareness activities
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_title_q44
+                                                        == 4)
+                                                        Total allocation spent for safety-net
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_title_q44
+                                                        == 5)
+                                                        Total allocation spent for training to promote prevention
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_title_q44
+                                                        == 6)
+                                                        Assessment of Allocation
+                                                        @endif
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if($fortyfour->awareness_campaigns_research_projects_status_q44
+                                                        == 1)
+                                                        Excess
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_status_q44
+                                                        == 2)
+                                                        Adequate
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_status_q44
+                                                        == 3)
+                                                        Inadequate
+                                                        @elseif($fortyfour->awareness_campaigns_research_projects_status_q44
+                                                        == 4)
+                                                        None
+                                                        @else
+                                                        {{ $fortyfour->awareness_campaigns_research_projects_status_q44 }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_awareness_campaigns_research_projects_q44))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_awareness_campaigns_research_projects_q44 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('45.question'))
+                                <?php
+                                if (($questiontitles[44]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            45. {{ $questiontitles[44]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_national_plan_trafficking_q45 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Type of preventive Action</th>
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Allocation (in BDT) / Assessment</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fortyfive as $fortyfive)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+
+                                                        {{$fortyfive->national_plan_trafficking_q45_title_q45}}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if(!empty($fortyfive->document_upload_q45))
+                                                        <a href="{{ asset('uploads/'.$fortyfive->document_upload_q45) }}"
+                                                            target="_blank">
+                                                            View
+                                                        </a>
+                                                        @else
+                                                        Not Found
+                                                        @endif
+                                                    </td>
+                                                </tr>
+
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortyfive->national_plan_trafficking_q45_description_q45}}
+                                                    </td>
+                                                </tr>
+
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_national_plan_trafficking_q45))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_national_plan_trafficking_q45 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
 
 
 
+
+
+
+                                @if(Auth::user()->can('46.question'))
+                                <?php
+                                if (($questiontitles[45]->status ?? null) == 1) {
+                                ?>
+
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            46. {{ $questiontitles[45]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_conduct_awareness_activities_q46 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif; margin-bottom: 30px; page-break-inside: avoid;">
+                                            <thead>
+                                                <!-- Row 1: Main Header -->
+                                                <tr
+                                                    style="background-color: #f8cbad; color: #000; font-weight: bold; height: 40px;">
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 25%; vertical-align: middle;">
+                                                        Protection Services</th>
+
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Men</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        Women</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 4px; text-align: center; font-size: 13px; width: 8%;">
+                                                        TG</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 12%; vertical-align: middle;">
+                                                        Boy</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center; font-size: 14px; width: 10%; vertical-align: middle;">
+                                                        Girl</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Total</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        GO</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        NGO</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        INGO</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        UN</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        CTC</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Others</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        M</th>
+
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        F</th>
+                                                    <th
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; font-size: 14px; width: 9%; vertical-align: middle;">
+                                                        Total</th>
+
+
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @php
+                                                $oneTotal = 0;
+                                                $twoTotal = 0;
+                                                $threeTotal = 0;
+                                                $fourTotal = 0;
+                                                $fiveTotal = 0;
+                                                $sixTotal = 0;
+                                                $sevenTotal = 0;
+                                                $eightTotal = 0;
+                                                $nineTotal = 0;
+                                                $tenTotal = 0;
+                                                $elevenTotal = 0;
+                                                $twelveTotal = 0;
+                                                $thirteenTotal = 0; // ৩০ এর জায়গায় ১৩ করা হয়েছে নামকরণের সুবিধার্থে
+                                                $fourteenTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->fortysix as $fortysix)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <!-- ১. Activity Type -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left; vertical-align: middle;">
+                                                        @if($fortysix->q46_type_activity == 1) Courtyard meeting
+                                                        @elseif ($fortysix->q46_type_activity == 2) Bazar/hatt meeting
+                                                        @elseif ($fortysix->q46_type_activity == 3) CTC meeting
+                                                        @elseif ($fortysix->q46_type_activity == 4) Consultation
+                                                        @elseif ($fortysix->q46_type_activity == 5) Poster
+                                                        @elseif ($fortysix->q46_type_activity == 6) leaflet
+                                                        @elseif ($fortysix->q46_type_activity == 7) Booklet
+                                                        @elseif ($fortysix->q46_type_activity == 8) SMS
+                                                        @elseif ($fortysix->q46_type_activity == 9) Newsletter
+                                                        @elseif ($fortysix->q46_type_activity == 10) Billboard
+                                                        @elseif ($fortysix->q46_type_activity == 11) Folk show
+                                                        @elseif ($fortysix->q46_type_activity == 12) Film show
+                                                        @elseif ($fortysix->q46_type_activity == 13) Miking
+                                                        @elseif ($fortysix->q46_type_activity == 14) Web campaign
+                                                        @else {{$fortysix->q46_type_activity}}
+                                                        @endif
+                                                    </td>
+
+                                                    <!-- ২. Men -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortysix->q46_comm_m}}</td>
+                                                    <!-- ৩. Women -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortysix->q46_comm_w}}</td>
+                                                    <!-- ৪. TG -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortysix->q46_comm_tg}}</td>
+                                                    <!-- ৫. Boy -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortysix->q46_comm_b}}</td>
+                                                    <!-- ৬. Girl -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortysix->q46_comm_g}}</td>
+                                                    <!-- ৭. Total (Community) -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fortysix->q46_comm_t}}</td>
+
+                                                    <!-- ৮. GO -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_org_go}}</td>
+                                                    <!-- ৯. NGO -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_org_ngo}}</td>
+                                                    <!-- ১০. INGO -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_org_ingo}}</td>
+                                                    <!-- ১১. UN -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_org_un}}</td>
+                                                    <!-- ১২. CTC -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_org_ctc}}</td>
+                                                    <!-- ১৩. Others -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_org_others}}</td>
+
+                                                    <!-- ১৪. M -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_total_m}}</td>
+                                                    <!-- ১৫. F -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_total_f}}</td>
+                                                    <!-- ১৬. Total -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        {{$fortysix->q46_total_t}}</td>
+                                                </tr>
+                                                @php
+                                                $oneTotal += $fortysix->q46_comm_m;
+                                                $twoTotal += $fortysix->q46_comm_w;
+                                                $threeTotal += $fortysix->q46_comm_tg;
+                                                $fourTotal += $fortysix->q46_comm_b;
+                                                $fiveTotal += $fortysix->q46_comm_g;
+                                                $sixTotal += $fortysix->q46_comm_t;
+                                                $sevenTotal += $fortysix->q46_org_go;
+                                                $eightTotal += $fortysix->q46_org_ngo;
+                                                $nineTotal += $fortysix->q46_org_ingo;
+                                                $tenTotal += $fortysix->q46_org_un;
+                                                $elevenTotal += $fortysix->q46_org_ctc;
+                                                $twelveTotal += $fortysix->q46_org_others;
+                                                $thirteenTotal += $fortysix->q46_total_m;
+                                                $fourteenTotal += $fortysix->q46_total_f;
+                                                $Total += $fortysix->q46_total_t;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- Summary Row: Total -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $oneTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $twoTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $threeTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $fourTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $fiveTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $sixTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $sevenTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $eightTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $nineTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $tenTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $elevenTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $twelveTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirteenTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $fourteenTotal }}</td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_conduct_awareness_activities_q46))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_conduct_awareness_activities_q46 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                @endif
+
+
+                                @if(Auth::user()->can('47.question'))
+                                <?php
+                                if (($questiontitles[46]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            47. {{ $questiontitles[46]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_change_regulated_q47 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Original Document/Approach</th>
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Description of Change</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fortyseven as $fortyseven)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if ($fortyseven->government_change_regulated_title_q47 == 1)
+                                                        OEMA 2013
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        2)
+                                                        Employee-paid-model
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        3)
+                                                        Employer-paid-model
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        4)
+                                                        Fair recruitment cost notification
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        5)
+                                                        Ranking of Recruiting Agents
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        6)
+                                                        Licensing of Recruiting Agents
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        7)
+                                                        Registration of Informal Recruiting Agents
+                                                        @elseif ($fortyseven->government_change_regulated_title_q47 ==
+                                                        8)
+                                                        Zero Migration Cost Approach
+                                                        @else
+                                                        {{$fortyseven->government_change_regulated_title_q47}}
+                                                        @endif
+
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if ($fortyseven->government_change_regulated_status_q47 == 1)
+                                                        Firmly implemented enforced
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        2)
+                                                        Reformed
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        3)
+                                                        Planned
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        4)
+                                                        Drafted
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        5)
+                                                        Updated
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        6)
+                                                        Partially enforced
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        7)
+                                                        Expanded us
+                                                        @elseif ($fortyseven->government_change_regulated_status_q47 ==
+                                                        8)
+
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_change_regulated_q47))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_change_regulated_q47 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('49.question'))
+                                <?php
+                                if (($questiontitles[48]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            49. {{ $questiontitles[48]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_change_regulated_q47 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Country</th>
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Instruments</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Attach/Upload Pdf</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fortynine as $fortynine)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fortynine->government_agreements_transparent_country_q49 ==
+                                                        1) India
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 2) Nepal
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 3) Sri lanka
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 4) EU
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 5) USA
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 6) Saudi Arabia
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 7) Qatar
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 8) Lebanon
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 9) Iraq
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 10) UAE
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 11) Thailand
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 12) Vietnam
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 13) Cambodia
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 14) South Africa
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 15) Brazil
+                                                        @elseif($fortynine->government_agreements_transparent_country_q49
+                                                        == 16) UK
+                                                        @else
+                                                        {{$fortynine->government_agreements_transparent_country_q49}}
+                                                        @endif
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if($fortynine->government_agreements_transparent_status_q49 ==
+                                                        1) Bil-lateral Agreement
+                                                        @elseif($fortynine->government_agreements_transparent_status_q49
+                                                        == 2) SOP
+                                                        @elseif($fortynine->government_agreements_transparent_status_q49
+                                                        == 3) Mutual Legal Arrangement
+                                                        @elseif($fortynine->government_agreements_transparent_status_q49
+                                                        == 4) MoU
+                                                        @elseif($fortynine->government_agreements_transparent_status_q49
+                                                        == 5) Trade Treaty
+                                                        @elseif($fortynine->government_agreements_transparent_status_q49
+                                                        == 6) G to G Agreement
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if(!empty($fortynine->document_upload_q49))
+                                                        <a href="{{ asset($fortynine->document_upload_q49) }}"
+                                                            target="_blank">View</a>
+                                                        @else
+                                                        not Found
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_agreements_transparent_q49))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_agreements_transparent_q49 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('50.question'))
+                                <?php
+                                if (($questiontitles[49]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            50. {{ $questiontitles[49]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_exploitative_treatment_q50 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Action</th>
+
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Attach/Upload Pdf</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fifty as $fifty)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fifty->exploitative_treatment_title_q50 == 1)
+                                                        Strict Monitoring of impacts of policies
+                                                        @elseif ($fifty->exploitative_treatment_title_q50 == 2)
+                                                        Promotion of safe migration
+                                                        @elseif ($fifty->exploitative_treatment_title_q50 == 3)
+                                                        Awareness raising of vulnerable groups
+                                                        @elseif ($fifty->exploitative_treatment_title_q50 == 4)
+                                                        Expansion of safety-net for vulnerable groups
+                                                        @elseif ($fifty->exploitative_treatment_title_q50 == 5)
+                                                        Promotion of skilling among vulnerable groups
+                                                        @else
+                                                        {{$fifty->exploitative_treatment_title_q50}}
+                                                        @endif
+
+
+
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if(!empty($fifty->document_upload_q50))
+                                                        <a href="{{ asset($fifty->document_upload_q50) }}"
+                                                            target="_blank">View</a>
+                                                        @else
+                                                        not Found
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_exploitative_treatment_q50))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_exploitative_treatment_q50 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
                             </div>
                         </div>
                     </div>

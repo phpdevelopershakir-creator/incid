@@ -2177,11 +2177,15 @@ class CaseController extends Controller
             'twentya',
             'twentyb',
             'fortysix',
+            
             'yes_no_other',
             'thirteena',
             'thirteenb',
             'thirteenc',
             'thirteend',
+            'thirtyone',
+            'thirtythree',
+            
         ];
 
         if ($userType == "Super Admin" || $userType == 2) {
