@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Case Pdf View</title>
+    <title>“Annual TIP Report, Bangladesh ”</title>
     <script src="{{asset('backend/js/data-table.js')}}"></script>
 
 
@@ -62,7 +62,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" style="text-align:center;">View Pdf Data</h4>
+                        <h4 class="card-title" style="text-align:center;">“Annual TIP Report, Bangladesh ”</h4>
                         <div class="mt-4">
                             <div class="pdf-container">
                                 @php
@@ -4134,6 +4134,659 @@
 
                                 <?php } ?>
                                 @endif
+
+                                @if(Auth::user()->can('51.question'))
+                                <?php
+                                if (($questiontitles[50]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            51. {{ $questiontitles[50]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_commercial_sex_demands_q51 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Action</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Status</th>
+
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Attach/Upload Pdf</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fiftyone as $fiftyone)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftyone->commercial_title_q51 == 1)
+                                                        Awareness raising on forced prostitution and trafficking among
+                                                        citizens
+                                                        @elseif ($fiftyone->commercial_title_q51 == 2)
+                                                        Awareness raising on legal measures against sexual exploitation
+                                                        of trafficked individuals
+                                                        @elseif ($fiftyone->commercial_title_q51 == 3)
+                                                        Legal actions against foreign podophiles/sex-tourists (clients
+                                                        on underaged girls/VoTs)
+                                                        @else
+                                                        {{$fiftyone->commercial_title_q51}}
+                                                        @endif
+
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftyone->commercial_status_q51 == 1)
+                                                        Enforced
+                                                        @elseif ($fiftyone->commercial_status_q51 == 2)
+                                                        Updated and enforced
+                                                        @elseif ($fiftyone->commercial_status_q51 == 3)
+                                                        Stricter enforcement
+                                                        @elseif ($fiftyone->commercial_status_q51 == 4)
+                                                        Increases efforts
+                                                        @endif
+
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if(!empty($fiftyone->document_upload_q51))
+                                                        <a href="{{ asset($fiftyone->document_upload_q51) }}"
+                                                            target="_blank">View</a>
+                                                        @else
+                                                        not Found
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_commercial_sex_demands_q51))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_commercial_sex_demands_q51 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('52.question'))
+                                <?php
+                                if (($questiontitles[51]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            52. {{ $questiontitles[51]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_prosecute_deport_q52 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Action</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 45%;">
+                                                        Status</th>
+
+
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 20%;">
+                                                        Attach/Upload Pdf</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($case->fiftytwo as $fiftytwo)
+                                                <tr style="color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftytwo->prosecute_title_q52 == 1)
+                                                        Awareness raising on forced prostitution and trafficking among
+                                                        citizens
+                                                        @elseif ($fiftytwo->prosecute_title_q52 == 2)
+                                                        Awareness raising on legal measures against sexual exploitation
+                                                        of trafficked individuals
+                                                        @elseif ($fiftytwo->prosecute_title_q52 == 3)
+                                                        Legal actions against foreign podophiles/sex-tourists (clients
+                                                        on underaged girls/VoTs)
+                                                        @else
+                                                        {{$fiftytwo->prosecute_title_q52}}
+                                                        @endif
+
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftytwo->prosecute_status_q52 == 1)
+                                                        Enforced
+                                                        @elseif ($fiftytwo->prosecute_status_q52 == 2)
+                                                        Updated and enforced
+                                                        @elseif ($fiftytwo->prosecute_status_q52 == 3)
+                                                        Stricter enforcement
+                                                        @elseif ($fiftytwo->prosecute_status_q52 == 4)
+                                                        Increases efforts
+                                                        @endif
+
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        @if(!empty($fiftytwo->document_upload_q52))
+                                                        <a href="{{ asset($fiftytwo->document_upload_q52) }}"
+                                                            target="_blank">View</a>
+                                                        @else
+                                                        not Found
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_prosecute_deport_q52))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_prosecute_deport_q52 }}
+                                        </div>
+
+
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('53.question'))
+                                <?php
+                                if (($questiontitles[52]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            53. {{ $questiontitles[52]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_train_diplomat_q53 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <!-- উইডথ ফিক্স করা হয়েছে যেন সব মিলে ১০০% হয় -->
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Category of Trainee</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Men</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Women</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        TG</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $thirdTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->fiftythree as $fiftythree)
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftythree->government_title_q53 == 1)
+                                                        Diplomats in foreign missions
+                                                        @elseif ($fiftythree->government_title_q53 == 2)
+                                                        Labour Attaches
+                                                        @elseif ($fiftythree->government_title_q53 == 3)
+                                                        MoFA officials within the country
+                                                        @else
+                                                        {{$fiftythree->government_title_q53}}
+                                                        @endif
+                                                    </td>
+                                                    <!-- Men কলামের ডেটা সেন্টারে আনা হয়েছে -->
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftythree->government_men_q53}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftythree->government_women_q53}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftythree->government_tg_q53}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftythree->government_total_q53}}
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += $fiftythree->government_men_q53;
+                                                $womenTotal += $fiftythree->government_women_q53;
+                                                $thirdTotal += $fiftythree->government_tg_q53;
+                                                $Total += $fiftythree->government_total_q53;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- নিচের Total রো ফিক্স করা হয়েছে -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirdTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_government_train_diplomat_q53))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_government_train_diplomat_q53 }}
+                                        </div>
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('54.question'))
+                                <?php
+                                if (($questiontitles[53]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            54. {{ $questiontitles[53]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_country_diplomats_allegedly_q54 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <!-- উইডথ ফিক্স করা হয়েছে যেন সব মিলে ১০০% হয় -->
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country where posted</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Description</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Men</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Women</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        TG</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $thirdTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->fiftyfour as $fiftyfour)
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftyfour->country_diplomat_name_q54 == 1)
+                                                        India
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 2)
+                                                        Nepal
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 3)
+                                                        Sri lanka
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 4)
+                                                        EU
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 5)
+                                                        USA
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 6)
+                                                        Saudi Arabia
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 7)
+                                                        Qatar
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 8)
+                                                        Lebanon
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 9)
+                                                        Irag
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 10)
+                                                        UAE
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 11)
+                                                        Thailand
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 12)
+                                                        Vietnam
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 13)
+                                                        Cambodia
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 14)
+                                                        South Africa
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 15)
+                                                        Brazil
+                                                        @elseif ($fiftyfour->country_diplomat_name_q54 == 16)
+                                                        UK
+
+                                                        @else
+                                                        {{$fiftyfour->country_diplomat_name_q54}}
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfour->country_diplomat_description_q54}}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfour->country_diplomat_men_q54}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfour->country_diplomat_women_q54}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfour->country_diplomat_tg_q54}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfour->country_diplomat_total_q54}}
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += $fiftyfour->country_diplomat_men_q54;
+                                                $womenTotal += $fiftyfour->country_diplomat_women_q54;
+                                                $thirdTotal += $fiftyfour->country_diplomat_tg_q54;
+                                                $Total += $fiftyfour->country_diplomat_total_q54;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- নিচের Total রো ফিক্স করা হয়েছে -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td | colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirdTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_country_diplomats_allegedly_q54))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_country_diplomats_allegedly_q54 }}
+                                        </div>
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
+                                @if(Auth::user()->can('55.question'))
+                                <?php
+                                if (($questiontitles[54]->status ?? null) == 1) {
+                                ?>
+                                <div class="card" style="width: 100%; border: none; margin-bottom: 25px;">
+                                    <div class="card-header text-dark font-weight-bold"
+                                        style="background-color: #9bc2e6; border: 1.5px solid #000; padding: 12px;">
+                                        <h5
+                                            style="margin: 0; font-size: 16px; font-weight: bold; line-height: 1.5; font-family: sans-serif;">
+                                            55. {{ $questiontitles[54]->title }}
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body" style="padding: 0; margin-top: 15px;">
+                                        @if(isset($case->yes_no_other) &&
+                                        $case->yes_no_other->is_government_provide_trafficking_q55 == 1)
+                                        <table class="custom-table"
+                                            style="width: 100%; border-collapse: collapse; border: 1.5px solid #000; font-family: sans-serif;">
+                                            <thead>
+                                                <tr style="background-color: #f8cbad; color: #000; font-weight: bold;">
+                                                    <!-- উইডথ ফিক্স করা হয়েছে যেন সব মিলে ১০০% হয় -->
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Country where posted</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left; font-size: 14px; width: 40%;">
+                                                        Description</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Men</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Women</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        TG</th>
+                                                    <th scope="col"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center; font-size: 14px; width: 15%;">
+                                                        Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php
+                                                $menTotal = 0;
+                                                $womenTotal = 0;
+                                                $thirdTotal = 0;
+                                                $Total = 0;
+                                                @endphp
+
+                                                @foreach($case->fiftyfive as $fiftyfive)
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: left;">
+                                                        @if($fiftyfive->government_provide_name_q55 == 1)
+                                                        India
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 2)
+                                                        Nepal
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 3)
+                                                        Sri lanka
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 4)
+                                                        EU
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 5)
+                                                        USA
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 6)
+                                                        Saudi Arabia
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 7)
+                                                        Qatar
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 8)
+                                                        Lebanon
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 9)
+                                                        Irag
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 10)
+                                                        UAE
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 11)
+                                                        Thailand
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 12)
+                                                        Vietnam
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 13)
+                                                        Cambodia
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 14)
+                                                        South Africa
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 15)
+                                                        Brazil
+                                                        @elseif ($fiftyfive->government_provide_name_q55 == 16)
+                                                        UK
+
+                                                        @else
+                                                        {{$fiftyfive->government_provide_name_q55}}
+                                                        @endif
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfive->government_provide_description_q55}}
+                                                    </td>
+
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfive->government_provide_men_q55}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfive->government_provide_women_q55}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfive->government_provide_tg_q55}}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 8px; text-align: center;">
+                                                        {{$fiftyfive->government_provide_total_q55}}
+                                                    </td>
+                                                </tr>
+                                                @php
+                                                $menTotal += $fiftyfive->government_provide_men_q55;
+                                                $womenTotal += $fiftyfive->government_provide_women_q55;
+                                                $thirdTotal += $fiftyfive->government_provide_tg_q55;
+                                                $Total += $fiftyfive->government_provide_total_q55;
+                                                @endphp
+                                                @endforeach
+
+                                                <!-- নিচের Total রো ফিক্স করা হয়েছে -->
+                                                <tr
+                                                    style="font-weight: bold; background-color: #f2f2f2; color: #000; font-size: 14px;">
+                                                    <td | colspan="2"
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: left;">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $menTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $womenTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $thirdTotal }}
+                                                    </td>
+                                                    <td
+                                                        style="border: 1.5px solid #000; padding: 10px; text-align: center;">
+                                                        {{ $Total }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        @elseif(isset($case->yes_no_other) &&
+                                        !empty($case->yes_no_other->other_country_diplomats_allegedly_q54))
+                                        <div class="alert alert-info">
+                                            <strong>Other Description:</strong>
+                                            {{ $case->yes_no_other->other_country_diplomats_allegedly_q54 }}
+                                        </div>
+                                        @else
+                                        <div class="text-center py-3">
+                                            <p class="text-muted">No data available for this section.</p>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <?php } ?>
+                                @endif
+
                             </div>
                         </div>
                     </div>

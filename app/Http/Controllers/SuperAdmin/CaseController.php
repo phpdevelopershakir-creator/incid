@@ -197,6 +197,8 @@ class CaseController extends Controller
         $yes_no->is_government_provide_trafficking_q55 = $request->is_government_provide_trafficking_q55;
         $yes_no->other_government_provide_trafficking_q55 = $request->other_government_provide_trafficking_q55;
 
+        $yes_no->is_government_train_diplomat_q53 = $request->is_government_train_diplomat_q53;
+        $yes_no->other_government_train_diplomat_q53 = $request->other_government_train_diplomat_q53;
 
 
         $yes_no->is_exploitative_treatment_q50 = $request->is_exploitative_treatment_q50;
@@ -253,43 +255,56 @@ class CaseController extends Controller
         // question1
         if ($request->is_supreme_court_q1 != 0) {
 
-            $supreme_court_title = $request->input('supreme_court_title', []);
-            $supreme_court_status = $request->input('supreme_court_status', []);
+          $supreme_court_title = $request->input('supreme_court_title', []);
+$supreme_court_status = $request->input('supreme_court_status', []);
+$uploaded_files = $request->file('supreme_court_image', []);
 
-            $images = [];
-            if ($request->hasFile('supreme_court_image')) {
-                foreach ($request->file('supreme_court_image') as $index => $image) {
-                    $ext = $image->extension();
-                    $final_name = 'supreme_court_image_' . time() . '_' . $index . '.' . $ext;
-                    $image->move(public_path('uploads/supreme_court_image'), $final_name);
-                    $images[] = 'uploads/supreme_court_image/' . $final_name;
-                }
-            }
+$case_id = $question->id;
+$bulkInsertData = [];
 
-            $case_id = $question->id;
+// সর্বোচ্চ কতোটি Row এসেছে তা বের করা
+$maxCount = max(
+    count($supreme_court_title),
+    count($supreme_court_status)
+);
 
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($supreme_court_title),
-                count($supreme_court_status),
-                count($images)
-            );
+for ($i = 0; $i < $maxCount; $i++) {
+    $title = isset($supreme_court_title[$i]) ? trim($supreme_court_title[$i]) : null;
+    $status = isset($supreme_court_status[$i]) ? trim($supreme_court_status[$i]) : null;
 
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'supreme_court_title' => $supreme_court_title[$i] ?? null,
-                    'supreme_court_status' => $supreme_court_status[$i] ?? null,
-                    'supreme_court_image' => $images[$i] ?? null,
-                ];
-            }
+    // 🔥 প্রধান লজিক: Title এবং Status ২টি-ই যদি খালি থাকে, তবে এই Row বাদ যাবে (Extra row আসবে না)
+    if (empty($title) && empty($status)) {
+        continue;
+    }
 
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                One::insert($bulkInsertData);   // first insert
+    // ইমেজ আপলোড হ্যান্ডলিং (নির্দিষ্ট Index এর ইমেজ ফাইল আপলোড করা)
+    $imagePath = null;
+    if (isset($uploaded_files[$i]) && $uploaded_files[$i]->isValid()) {
+        $image = $uploaded_files[$i];
+        $ext = $image->extension();
+        $final_name = 'supreme_court_image_' . time() . '_' . $i . '.' . $ext;
+        $image->move(public_path('uploads/supreme_court_image'), $final_name);
+        $imagePath = 'uploads/supreme_court_image/' . $final_name;
+    }
 
-            }
-        }
+    $bulkInsertData[] = [
+        'case_id'              => $case_id,
+        'supreme_court_title'  => $title,
+        'supreme_court_status' => $status,
+        'supreme_court_image'  => $imagePath,
+        'created_at'           => now(), // Bulk Insert-এ created_at ম্যানুয়ালি দেওয়া ভালো
+        'updated_at'           => now(),
+    ];
+}
+
+if (!empty($bulkInsertData)) {
+    One::insert($bulkInsertData);
+}
+
+          
+            
+            
+            
         $supreme_court_title_two = $request->input('supreme_court_title_two', []);
         $supreme_court_status_two = $request->input('supreme_court_status_two', []);
 
@@ -326,6 +341,9 @@ class CaseController extends Controller
             OneB::insert($bulkInsertData);   // first insert
 
         }
+            
+        }
+        
 
         //question2
 
@@ -637,31 +655,42 @@ class CaseController extends Controller
         }
 
         //question10
-        if ($request->is_exclusively_trafficking_q10 != 0) {
-            $court_title_q10 = $request->input('court_title_q10', []);
-            $court_type_q10 = $request->input('court_type_q10', []);
-            $court_description_q10 = $request->input('court_description_q10', []);
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($court_title_q10),
-                count($court_type_q10),
-                count($court_description_q10),
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'court_title_q10' => $court_title_q10[$i] ?? null,
-                    'court_type_q10' => $court_type_q10[$i] ?? null,
-                    'court_description_q10' => $court_description_q10[$i] ?? null,
+       if ($request->is_exclusively_trafficking_q10 == 1) { // ১. শুধু 'Yes' হলেই ডাটা ইনসার্ট করবে
+    $court_title_q10       = $request->input('court_title_q10', []);
+    $court_type_q10        = $request->input('court_type_q10', []);
+    $court_description_q10 = $request->input('court_description_q10', []);
+    
+    $case_id = $question->id;
+    $bulkInsertData = [];
+    
+    $maxCount = max(
+        count($court_title_q10),
+        count($court_type_q10),
+        count($court_description_q10)
+    );
 
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                Ten::insert($bulkInsertData);
-            }
+    for ($i = 0; $i < $maxCount; $i++) {
+        $title       = trim($court_title_q10[$i] ?? '');
+        $type        = $court_type_q10[$i] ?? null;
+        $description = trim($court_description_q10[$i] ?? '');
+
+        // ২. ফিল্টার: টাইটেল অবশ্যই থাকতে হবে এবং টাইপ '1' (Yes) অথবা বিবরণ দেওয়া থাকতে হবে
+        if (!empty($title) && ($type === '1' || !empty($description))) {
+            $bulkInsertData[] = [
+                'case_id'               => $case_id,
+                'court_title_q10'       => $title,
+                'court_type_q10'        => $type,
+                'court_description_q10' => $description,
+                'created_at'            => now(), // যদি মডেল বা টেবিলে timestamp থাকে
+                'updated_at'            => now(),
+            ];
         }
+    }
+
+    if (!empty($bulkInsertData)) {
+        Ten::insert($bulkInsertData);
+    }
+}
 
         //question11
         $request->validate([
@@ -1791,7 +1820,7 @@ class CaseController extends Controller
         }
 
 
-        //question 55
+        //question55
         $request->validate([
             'government_provide_men_q55.*' => 'nullable|numeric',
             'government_provide_women_q55.*' => 'nullable|numeric',
@@ -1807,36 +1836,46 @@ class CaseController extends Controller
         ]);
         if ($request->is_government_provide_trafficking_q55 != 0) {
             $government_provide_name_q55 = $request->input('government_provide_name_q55', []);
-            $government_provide_description_q55 = $request->input('government_provide_description_q55', []);
-            $government_provide_men_q55 = $request->input('government_provide_men_q55', []);
-            $government_provide_women_q55 = $request->input('government_provide_women_q55', []);
-            $government_provide_tg_q55 = $request->input('government_provide_tg_q55', []);
-            $government_provide_total_q55 = $request->input('government_provide_total_q55', []);
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($government_provide_name_q55),
-                count($government_provide_description_q55),
-                count($government_provide_men_q55),
-                count($government_provide_women_q55),
-                count($government_provide_tg_q55),
-                count($government_provide_total_q55),
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'government_provide_name_q55' => $government_provide_name_q55[$i] ?? null,
-                    'government_provide_description_q55' => $government_provide_description_q55[$i] ?? null,
-                    'government_provide_men_q55' => $government_provide_men_q55[$i] ?? null,
-                    'government_provide_women_q55' => $government_provide_women_q55[$i] ?? null,
-                    'government_provide_tg_q55' => $government_provide_tg_q55[$i] ?? null,
-                    'government_provide_total_q55' => $government_provide_total_q55[$i] ?? null,
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                FiftyFive::insert($bulkInsertData);
-            }
+$government_provide_description_q55 = $request->input('government_provide_description_q55', []);
+$government_provide_men_q55 = $request->input('government_provide_men_q55', []);
+$government_provide_women_q55 = $request->input('government_provide_women_q55', []);
+$government_provide_tg_q55 = $request->input('government_provide_tg_q55', []);
+$government_provide_total_q55 = $request->input('government_provide_total_q55', []);
+
+$case_id = $question->id;
+$bulkInsertData = [];
+
+$maxCount = max(
+    count($government_provide_name_q55),
+    count($government_provide_description_q55),
+    count($government_provide_men_q55),
+    count($government_provide_women_q55),
+    count($government_provide_tg_q55),
+    count($government_provide_total_q55)
+);
+
+for ($i = 0; $i < $maxCount; $i++) {
+    // যেকোনো একটি ফিল্ডে ডেটা থাকলে তবেই ইনসার্ট অ্যারেতে যোগ হবে
+    if (
+        !empty($government_provide_name_q55[$i]) || 
+        !empty($government_provide_description_q55[$i])
+    ) {
+        $bulkInsertData[] = [
+            'case_id' => $case_id,
+            'government_provide_name_q55' => $government_provide_name_q55[$i] ?? null,
+            'government_provide_description_q55' => $government_provide_description_q55[$i] ?? null,
+            'government_provide_men_q55' => $government_provide_men_q55[$i] ?? null,
+            'government_provide_women_q55' => $government_provide_women_q55[$i] ?? null,
+            'government_provide_tg_q55' => $government_provide_tg_q55[$i] ?? null,
+            'government_provide_total_q55' => $government_provide_total_q55[$i] ?? null,
+        ];
+    }
+}
+
+if (!empty($bulkInsertData)) {
+//return response()->json($bulkInsertData);
+    FiftyFive::insert($bulkInsertData);
+}
         }
 
 //question31

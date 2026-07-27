@@ -1,64 +1,98 @@
 <nav id="sidebar" class="sidebar bg-white text-dark border-end">
 
-    <!-- ==========================================
-         ১. সাইডবার ফিক্স করার জন্য কাস্টম CSS 
-         ========================================== -->
     <style>
-    /* ডিফল্ট মেনু লিংক স্টাইল এবং সুন্দর হোভার */
+    /* ==========================================
+   ১. সাইডবার ডিফল্ট স্টাইল (Expanded State)
+   ========================================== */
+    #sidebar {
+        transition: all 0.25s ease-in-out !important;
+    }
+
     #sidebar .nav-link {
         transition: all 0.2s ease !important;
         padding: 10px 15px !important;
         border-radius: 4px !important;
         margin: 2px 8px !important;
-        white-space: nowrap !important;
     }
 
     #sidebar .nav-link:hover {
         background-color: #eaf2ff !important;
-        /* হালকা নীল ব্যাকগ্রাউন্ড */
         color: #0d6efd !important;
-        /* স্পষ্ট ব্লু টেক্সট */
     }
 
-    /* সাইডবার ছোট বা মিনিমাইজড থাকা অবস্থায় পপআপ সাবমেনু বক্স ফিক্স */
-    #sidebar .collapse,
-    #sidebar [class*="collapse"] {
+    /* ACTIVE LINK STYLE */
+    #sidebar .nav-link.active {
+        background-color: #0d6efd !important;
+        color: #ffffff !important;
+    }
+
+    #sidebar .nav-link.active i,
+    #sidebar .nav-link.active span {
+        color: #ffffff !important;
+    }
+
+    /* ==========================================
+   ২. সাইডবার মিনিমাইজড/টগলড অবস্থা (Collapsed State Fix)
+   ========================================== */
+    /* যখন সাইডবার ছোট বা আইকন-অনলি মোডে যাবে */
+    .sidebar-icon-only #sidebar,
+    body.sidebar-icon-only #sidebar {
+        width: 70px !important;
+        /* অ্যাডজাস্টেবল সাইডবার উইডথ */
+    }
+
+    /* টগল হলে সাইডবারের লেখা এবং অ্যারো আইকন লুকিয়ে ফেলা */
+    .sidebar-icon-only #sidebar .menu-text,
+    .sidebar-icon-only #sidebar .arrow-icon,
+    .sidebar-icon-only #sidebar .profile-section {
+        display: none !important;
+    }
+
+    /* টগল থাকা অবস্থায় শুধুমাত্র আইকন দেখাবে এবং মাঝখানে থাকবে */
+    .sidebar-icon-only #sidebar .nav-item {
+        position: relative !important;
+        text-align: center !important;
+    }
+
+    .sidebar-icon-only #sidebar .nav-link {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 12px 0 !important;
+        margin: 4px 5px !important;
+        white-space: normal !important;
+    }
+
+    .sidebar-icon-only #sidebar .nav-link i {
+        margin-right: 0 !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* সাবমেনু/ড্রপডাউন ছোট অবস্থায় কীভাবে দেখাবে */
+    .sidebar-icon-only #sidebar .collapse {
+        display: none !important;
+        /* ছোট অবস্থায় ড্রপডাউন এক্সপ্যান্ড হওয়া বন্ধ রাখবে */
+    }
+
+    /* সাবমেনু পপআপ বক্স (Hover-able collapse) */
+    #sidebar .collapse {
         background-color: #ffffff !important;
-        /* ড্রপডাউন বক্সের ব্যাকগ্রাউন্ড সবসময় সাদা হবে */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
-        /* সুন্দর একটি শ্যাডো */
         border-radius: 6px !important;
         border: 1px solid #e2e8f0 !important;
     }
 
-    /* ছোট সাইডবারের ভেতরের সাবমেনুর লিংকগুলোর টেক্সট কালার */
-    #sidebar .collapse .nav-link,
-    #sidebar [class*="collapse"] .nav-link {
+    #sidebar .collapse .nav-link:not(.active) {
         color: #334155 !important;
-        /* লেখাগুলো ডার্ক ছাই/কালো হবে যাতে সাদা ব্যাকগ্রাউন্ডে স্পষ্ট দেখা যায় */
         background-color: transparent !important;
         padding: 8px 15px !important;
-        display: block !important;
-        width: 100% !important;
-        text-align: left !important;
     }
 
-    /* সাবমেনুর আইটেমে মাউস নিলে (Hover) স্টাইল */
-    #sidebar .collapse .nav-link:hover,
-    #sidebar [class*="collapse"] .nav-link:hover {
+    #sidebar .collapse .nav-link:not(.active):hover {
         background-color: #f1f5f9 !important;
-        /* হালকা ছাই কালার হোভার ব্যাকগ্রাউন্ড */
         color: #0d6efd !important;
-        /* হোভার করলে লেখা নীল হবে */
-    }
-
-    /* যদি আপনার থিম ছোট অবস্থায় সাব-মেনুর ওপর বেগুনি বা নীল কোনো ওভারলে কালার জোর করে বসায়, তা রিমুভ করার জন্য */
-    #sidebar ul.nav.flex-column div.collapse ul {
-        background: #ffffff !important;
-        padding: 5px 0 !important;
     }
     </style>
-
     <!-- ==========================================
          ২. সাইডবার মেনু HTML কন্টেন্ট 
          ========================================== -->
@@ -71,7 +105,7 @@
 
         <!-- DASHBOARD -->
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active bg-primary text-white' : 'text-dark' }}"
+            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : 'text-dark' }}"
                 href="{{ route('dashboard') }}">
                 <i class="fa fa-home me-2"></i> <span class="menu-text">Dashboard</span>
             </a>
@@ -93,19 +127,19 @@
             <div class="collapse {{ $isLocationActive ? 'show' : '' }}" id="locationMenu">
                 <ul class="nav flex-column ms-3 border-start ps-2">
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.division') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.division') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.division') }}"><span class="menu-text">All
                                 Division</span></a></li>
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.district') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.district') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.district') }}"><span class="menu-text">All
                                 Districts</span></a></li>
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.upazila') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.upazila') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.upazila') }}"><span class="menu-text">All Upazila</span></a>
                     </li>
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.union') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.union') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.union') }}"><span class="menu-text">All Union</span></a></li>
                 </ul>
             </div>
@@ -127,11 +161,11 @@
             <div class="collapse {{ $isUserActive ? 'show' : '' }}" id="userMenu">
                 <ul class="nav flex-column ms-3 border-start ps-2">
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.user.create') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.user.create') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.user.create') }}"><span class="menu-text">User Create</span></a>
                     </li>
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.user.list','superadmin.user.edit') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.user.list','superadmin.user.edit') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.user.list') }}"><span class="menu-text">User List</span></a></li>
                 </ul>
             </div>
@@ -154,11 +188,11 @@
             <div class="collapse {{ $isDataActive ? 'show' : '' }}" id="dataMenu">
                 <ul class="nav flex-column ms-3 border-start ps-2">
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.case.create') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.case.create') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.case.create') }}"><span class="menu-text">Create Data</span></a>
                     </li>
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.case.list','superadmin.view.case') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.case.list','superadmin.view.case') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.case.list') }}"><span class="menu-text">View Data</span></a></li>
                 </ul>
             </div>
@@ -182,22 +216,22 @@
                 <ul class="nav flex-column ms-3 border-start ps-2">
                     @if(Auth::user()->can('all.permission'))
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.permission') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.permission') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.permission') }}"><span class="menu-text">All
                                 Permissions</span></a></li>
                     @endif
                     @if(Auth::user()->can('all.role'))
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.role') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.role') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.role') }}"><span class="menu-text">All Roles</span></a></li>
                     @endif
                     @if(Auth::user()->can('allrole.permission'))
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.role.permission') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.role.permission') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.role.permission') }}"><span class="menu-text">Role &
                                 Permission</span></a></li>
                     <li class="nav-item"><a
-                            class="nav-link {{ request()->routeIs('superadmin.all.question') ? 'active bg-primary text-white' : 'text-dark' }}"
+                            class="nav-link {{ request()->routeIs('superadmin.all.question') ? 'active' : 'text-dark' }}"
                             href="{{ route('superadmin.all.question') }}"><span class="menu-text">58 Question</span></a>
                     </li>
                     @endif
@@ -209,19 +243,19 @@
         <!-- BANNER & OTHERS -->
         @if(auth()->user()->user_type == "Super Admin" || auth()->user()->user_type == "MoHa")
         <li class="nav-item">
-            <a class="nav-link text-dark {{ request()->routeIs('superadmin.banners') ? 'active bg-primary text-white' : '' }}"
+            <a class="nav-link {{ request()->routeIs('superadmin.banners') ? 'active' : 'text-dark' }}"
                 href="{{ route('superadmin.banners') }}">
                 <i class="fas fa-image me-2"></i> <span class="menu-text">Banner</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark {{ request()->routeIs('listed.ministry.agency') ? 'active bg-primary text-white' : '' }}"
+            <a class="nav-link {{ request()->routeIs('listed.ministry.agency') ? 'active' : 'text-dark' }}"
                 href="{{ route('listed.ministry.agency') }}">
                 <i class="fas fa-building me-2"></i> <span class="menu-text">List Ministry & Agency</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark {{ request()->routeIs('superadmin.all.faq') ? 'active bg-primary text-white' : '' }}"
+            <a class="nav-link {{ request()->routeIs('superadmin.all.faq') ? 'active' : 'text-dark' }}"
                 href="{{ route('superadmin.all.faq') }}">
                 <i class="fas fa-question-circle me-2"></i> <span class="menu-text">Question & Answers</span>
             </a>

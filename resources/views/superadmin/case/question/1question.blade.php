@@ -46,7 +46,7 @@ $training_responses_two = [
     <div class="card-header" role="tab" id="heading-1">
         <h6 class="card-title" style="color: {{ !empty($question_1_data) ? 'blue' : 'green' }};">
             <a data-toggle="collapse" href="#Question-1" aria-expanded="false" aria-controls="collapse-1">
-                1. {{ $questiontitles[0]->title }}
+                1. {{ $questiontitles[0]->title ?? 'Question Title' }}
             </a>
         </h6>
     </div>
@@ -54,6 +54,7 @@ $training_responses_two = [
     <div id="Question-1" class="collapse" role="tabpanel" aria-labelledby="heading-1" data-parent="#accordion-2">
         <div class="card-body">
 
+            <!-- Radio Options -->
             <div class="icheck-primary">
                 <input type="radio" id="radioOne1" class="onestatus" name="is_supreme_court_q1" value="1"
                     {{ $q1_checked == "1" ? "checked" : "" }}>
@@ -74,6 +75,7 @@ $training_responses_two = [
                 </span>
             </div>
 
+            <!-- Content Area -->
             <div id="1_question_view" class="{{ $q1_checked == '1' ? '' : 'visibility' }}">
 
                 <h5>Existing Law Changes</h5>
@@ -96,7 +98,8 @@ $training_responses_two = [
                                     <option value="" disabled selected>---Choose an item--</option>
                                     @foreach ($training_responses as $key => $training)
                                     <option value="{{ $key }}" {{ ($row['title'] ?? '') == $key ? 'selected' : '' }}>
-                                        {{ $training }}</option>
+                                        {{ $training }}
+                                    </option>
                                     @endforeach
                                 </select>
                                 @else
@@ -109,13 +112,15 @@ $training_responses_two = [
                                     <option value="" disabled selected>---Choose an item--</option>
                                     @foreach ($training_status as $key => $status)
                                     <option value="{{ $key }}" {{ ($row['status'] ?? '') == $key ? 'selected' : '' }}>
-                                        {{ $status }}</option>
+                                        {{ $status }}
+                                    </option>
                                     @endforeach
                                 </select>
                             </td>
                             <td><input type="file" name="supreme_court_image[]" class="form-control"></td>
                             <td>
                                 @if($index == 0)
+                                <!-- First Row specific button disabled/empty -->
                                 @elseif($index == 1)
                                 <button id="addRowDatasQ1" type="button" class="btn btn-sm btn-primary">+</button>
                                 @else
@@ -125,6 +130,7 @@ $training_responses_two = [
                         </tr>
                         @endforeach
                         @else
+                        <!-- Default 2 Initial Rows -->
                         <tr class="qe1NoOfRow">
                             <td>
                                 <select name="supreme_court_title[]" class="form-control q10Input row-title">
@@ -146,8 +152,10 @@ $training_responses_two = [
                             <td></td>
                         </tr>
                         <tr class="qe1NoOfRow">
-                            <td><input type="text" name="supreme_court_title[]" class="form-control row-title"
-                                    placeholder="Others (Specify)___"></td>
+                            <td>
+                                <input type="text" name="supreme_court_title[]" class="form-control row-title"
+                                    placeholder="Others (Specify)___">
+                            </td>
                             <td>
                                 <select name="supreme_court_status[]" class="form-control q10Input row-status">
                                     <option value="" disabled selected>---Choose an item--</option>
@@ -179,14 +187,17 @@ $training_responses_two = [
                         @if(!empty($q1_table_two) && count($q1_table_two) > 0)
                         @foreach($q1_table_two as $index => $row)
                         <tr class="qe1NoOfRow2" id="t2_row_{{ $index }}">
-                            <td><input type="text" name="supreme_court_title_two[]" class="form-control row-title-two"
-                                    value="{{ $row['title_two'] ?? '' }}"></td>
+                            <td>
+                                <input type="text" name="supreme_court_title_two[]" class="form-control row-title-two"
+                                    placeholder="Enter Title" value="{{ $row['title_two'] ?? '' }}">
+                            </td>
                             <td>
                                 <select name="supreme_court_status_two[]" class="form-control q10Input row-status-two">
                                     <option value="" disabled selected>---Choose an item--</option>
                                     @foreach ($training_responses_two as $key => $training)
                                     <option value="{{ $key }}"
-                                        {{ ($row['status_two'] ?? '') == $key ? 'selected' : '' }}>{{ $training }}
+                                        {{ ($row['status_two'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $training }}
                                     </option>
                                     @endforeach
                                 </select>
@@ -203,8 +214,10 @@ $training_responses_two = [
                         @endforeach
                         @else
                         <tr class="qe1NoOfRow2">
-                            <td><input type="text" name="supreme_court_title_two[]" class="form-control row-title-two"
-                                    placeholder="Enter Title"></td>
+                            <td>
+                                <input type="text" name="supreme_court_title_two[]" class="form-control row-title-two"
+                                    placeholder="Enter Title">
+                            </td>
                             <td>
                                 <select name="supreme_court_status_two[]" class="form-control q10Input row-status-two">
                                     <option value="" disabled selected>---Choose an item--</option>
@@ -235,8 +248,8 @@ $training_responses_two = [
 <script>
 $(document).ready(function() {
 
-    // Radio button changes logic
-    $(".onestatus").on("change", function() {
+    // 1. Radio button toggle logic
+    $(document).on("change", ".onestatus", function() {
         var statusvalue = $("input[name='is_supreme_court_q1']:checked").val();
         if (statusvalue == '1') {
             $('#1_question_view').removeClass('visibility').show();
@@ -252,7 +265,7 @@ $(document).ready(function() {
         }
     });
 
-    // Table 1: Add Row (Existing Law Changes)
+    // 2. Table 1: Add Row
     let t1_counter = $('.qe1NoOfRow').length;
     $(document).on('click', '#addRowDatasQ1', function() {
         t1_counter++;
@@ -271,12 +284,12 @@ $(document).ready(function() {
         $("#addRowQ10 tbody").append(htmlRow);
     });
 
-    // Table 1: Remove Row
+    // Remove Row Table 1
     $(document).on('click', '.btn_remove_t1', function() {
         $(this).closest('tr').remove();
     });
 
-    // Table 2: Add Row (New Law)
+    // 3. Table 2: Add Row
     let t2_counter = $('.qe1NoOfRow2').length;
     $(document).on('click', '#addRowDatas2Q10', function() {
         t2_counter++;
@@ -299,21 +312,24 @@ $(document).ready(function() {
         $("#addRow2Q10 tbody").append(htmlRow2);
     });
 
-    // Table 2: Remove Row
+    // Remove Row Table 2
     $(document).on('click', '.btn_remove_t2', function() {
         $(this).closest('tr').remove();
     });
 
-    // Temporary Save Data Logic
+    // 4. Temporary Save AJAX Logic
     $(document).on("click", '#temp-save-question1', function() {
         let table_one_data = [];
         let table_two_data = [];
-        let yes_no_value = $("input[name='is_supreme_court_q1']:checked").val();
+        let yes_no_value = $("input[name='is_supreme_court_q1']:checked").val() || "1";
 
-        // Table 1 Data Loop
+        // Collect Table 1 Data
         $('.qe1NoOfRow').each(function() {
             let title = $(this).find('.row-title').val();
             let status = $(this).find('.row-status').val();
+
+            title = (title !== null && title !== undefined) ? title.trim() : null;
+            status = (status !== null && status !== undefined) ? status.trim() : null;
 
             if (title || status) {
                 table_one_data.push({
@@ -323,10 +339,15 @@ $(document).ready(function() {
             }
         });
 
-        // Table 2 Data Loop
+        // Collect Table 2 Data
         $('.qe1NoOfRow2').each(function() {
             let title_two = $(this).find('.row-title-two').val();
             let status_two = $(this).find('.row-status-two').val();
+
+            title_two = (title_two !== null && title_two !== undefined) ? title_two.trim() :
+                null;
+            status_two = (status_two !== null && status_two !== undefined) ? status_two.trim() :
+                null;
 
             if (title_two || status_two) {
                 table_two_data.push({
@@ -340,7 +361,7 @@ $(document).ready(function() {
             q1_checked_value: yes_no_value,
             q1_table_one: table_one_data,
             q1_table_two: table_two_data,
-            others: $("#q7others").val()
+            others: $("#q7others").val() ? $("#q7others").val().trim() : ''
         };
 
         $.ajax({
@@ -353,7 +374,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question1 .card-title').css('color', 'blue');
-                alert("Question 1 Saved Temporary");
+                alert("Question 1 Saved Temporarily");
             },
             error: function(err) {
                 alert("Error saving data");
