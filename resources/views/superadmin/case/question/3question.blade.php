@@ -79,7 +79,8 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         @foreach($q3_rows_data as $index => $row)
                         <tr class="qe2NoOfRow" id="row_q2_{{ $index }}">
                             <td>
-                                <input type="text" class="form-control" placeholder="Fraudulent Recruitment">
+                                <input type="hidden" class="form-control" value="1" readonly>
+                                <p>Fraudulent Recruitment</p>
 
                             </td>
                             <td>
@@ -107,7 +108,8 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         {{-- রো ১ (ফিক্সড) --}}
                         <tr class="qe2NoOfRow" id="row_q2_fixed_1">
                             <td>
-                                <input type="text" class="form-control" placeholder="Means">
+                                <input type="hidden" class="form-control" value="1" readonly>
+                                <p>Fraudulent Recruitment</p>
 
                             </td>
                             <td>
@@ -132,7 +134,8 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         {{-- রো ২ (ফিক্সড) --}}
                         <tr class="qe2NoOfRow" id="row_q2_fixed_2">
                             <td>
-                                <input type="text" class="form-control" placeholder="Forms of Exploitation">
+                                <input type="hidden" class="form-control" value="2" readonly>
+                                <p>Means</p>
 
                             </td>
 
@@ -157,7 +160,8 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         {{-- রো ৩ (প্লাস বাটন যুক্ত) --}}
                         <tr class="qe2NoOfRow" id="row_q2_fixed_3">
                             <td>
-                                <input type="text" class="form-control" placeholder="Forms of Exploitation">
+                                <input type="hidden" class="form-control" placeholder="3" readonly>
+                                <p>Forms of Exploitation</p>
 
                             </td>
                             <td>
@@ -177,7 +181,8 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         </tr>
                         <tr class="qe2NoOfRow" id="row_q2_fixed_3">
                             <td>
-                                <input type="text" class="form-control" placeholder="Emerging Trends">
+                                <input type="hidden" class="form-control" value="4">
+                                <p>Emerging Trends</p>
 
                             </td>
                             <td>
@@ -223,8 +228,8 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         @foreach($q3_rows_data as $index => $row)
                         <tr class="qe2NoOfRow" id="row_q2_{{ $index }}">
                             <td>
-                                <input type="text" class="form-control"
-                                    placeholder="How are governments countering tech-enabled trafficking? ">
+                                <input type="hidden" class="form-control" value="1">
+                                <p>How are governments countering tech-enabled trafficking?</p>
 
                             </td>
                             <td>
@@ -247,8 +252,10 @@ $q3_others_val = $question_3_data['others'] ?? '';
                         {{-- রো ১ (ফিক্সড) --}}
                         <tr class="qe2NoOfRow" id="row_q2_fixed_1">
                             <td>
-                                <input type="text" class="form-control"
-                                    placeholder="How are governments countering tech-enabled trafficking? ">
+                                <input type="hidden" class="form-control" value="2">
+                                <p>What efforts are governments making to
+                                    address the needs of victims of
+                                    technology-facilitated human trafficking?</p>
 
                             </td>
                             <td>

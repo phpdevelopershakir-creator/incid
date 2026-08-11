@@ -1,168 +1,127 @@
-<?php
-if (($questiontitles[18]->status ?? null) == 1) {
+@if (($questiontitles[18]->status ?? null) == 1)
+@php
+// সেশন থেকে সরাসরি ১৯ নম্বর প্রশ্নের ডাটা তুলে নেওয়া হচ্ছে
+$question_19_data = session()->get('question19');
 
-?>
-<style>
-  .othersText { display: none; }
-  .type3Input { display: none; }
-</style>
+// ডাটা ইন্টিজার বা স্ট্রিন্গ যাই হোক, টাইপ কাস্টিং এর ঝামেলা এড়াতে বাউন্ডারি ঠিক করা হলো
+$q19_checked = isset($question_19_data['q19_checked_value']) ? (string)$question_19_data['q19_checked_value'] : null;
+$q19_data = $question_19_data['q19_data'] ?? null;
+@endphp
 
 <div class="card question19">
-  <?php
-    $type_vot = [1 => "Sex Trafficing", 2 => "Forced labour", 3 => "Other Specify"];
-    $protection_measures_taken = [1 => "Detained", 2 => "Referred to care", 3 => "Investigation"];
-    $preventive_measures_taken = [1 => "Awareness Taising", 2 => "Stricter Border Control"];
-  ?>
-  <div class="card-header" role="tab" id="heading-19">
-    <h6 class="card-title" style="color: {{ isset($question_19_data) ? 'blue' : 'green' }};">
-      <a data-toggle="collapse" href="#Question-19" aria-expanded="false" aria-controls="collapse-19">
-        19.{{ $questiontitles[18]->title }}
-      </a>
-    </h6>
-  </div>
-
-  <div id="Question-19" class="collapse" role="tabpanel" aria-labelledby="heading-19" data-parent="#accordion-2">
-    <div class="card-body">
-
-      <!-- YES / NO / OTHERS -->
-      <div class="icheck-primary">
-        <input type="radio" class="nineteen_status" id="q19_yes" name="is_sex_trafficking_forced_labor_country_19q" value="1" {{ ($question_19_data->q19radioNineteen3_checked_value ?? "1") == "1" ? 'checked' : '' }}>
-        <label for="q19_yes">Yes</label>
-      </div>
-      <div class="icheck-primary">
-        <input type="radio" class="nineteen_status" id="q19_no" name="is_sex_trafficking_forced_labor_country_19q" value="0" {{ ($question_19_data->q19radioNineteen3_checked_value ?? "") == "0" ? 'checked' : '' }}>
-        <label for="q19_no">No</label>
-      </div>
-      <div class="icheck-primary input-group mb-3">
-        <input type="radio" class="nineteen_status" id="q19_others" name="is_sex_trafficking_forced_labor_country_19q" value="2" {{ ($question_19_data->q19radioNineteen3_checked_value ?? "") == "2" ? 'checked' : '' }}>
-        <label for="q19_others">Others</label>
-        <span class="col-md-6 mt--4 {{ ($question_19_data->q19radioNineteen3_checked_value ?? "") == "2" ? '' : 'othersText' }}">
-          <input type="text" id="q19radioThree3others" class="form-control" placeholder="Others" name="others_sex_trafficking_forced_labor_country_19q" value="{{ $question_19_data->others ?? '' }}">
-        </span>
-      </div>
-
-      
+    <div class="card-header">
+        <h6 style="color: {{ !empty($question_19_data) ? 'blue' : 'green' }};">
+            <a data-toggle="collapse" href="#Question-19" aria-expanded="false" aria-controls="collapse-19">
+                19. {{ $questiontitles[18]->title }}
+            </a>
+        </h6>
     </div>
-  </div>
+
+    <div id="Question-19" class="collapse" role="tabpanel" aria-labelledby="heading-19" data-parent="#accordion-2">
+        <div class="card-body">
+
+            <!-- ডিফল্ট হিসেবে ১ (Yes) সিলেক্টেড থাকবে যদি কোনো ডাটা না থাকে -->
+            <input type="radio" id="radioYes19" class="nineteenstatus" name="is_complicit_official_q19" value="1"
+                {{ (is_null($q19_checked) || $q19_checked === '1') ? 'checked' : '' }}>
+            <label for="radioYes19" class="mr-3">Yes</label>
+
+            <input type="radio" id="radioNo19" class="nineteenstatus" name="is_complicit_official_q19" value="0"
+                {{ ($q19_checked === '0') ? 'checked' : '' }}>
+            <label for="radioNo19" class="mr-3">No</label>
+
+            <input type="radio" id="radioOthers19" class="nineteenstatus" name="is_complicit_official_q19" value="2"
+                {{ ($q19_checked === '2') ? 'checked' : '' }}>
+            <label for="radioOthers19">Others</label>
+
+            <!-- ইনলাইন স্টাইল দিয়ে ইনিশিয়াল হাইড/শো হ্যান্ডেল করা হয়েছে -->
+            <div id="others_q19" style="display: {{ ($q19_checked === '2') ? 'block' : 'none' }};">
+                <input type="text" name="others_complicit_official_q19" class="form-control mt-2 q19-others-input"
+                    placeholder="Others details" value="{{ $q19_data['others'] ?? '' }}">
+            </div>
+
+            <div id="yes_extra_q19"
+                style="display: {{ (is_null($q19_checked) || $q19_checked === '1') ? 'block' : 'none' }};">
+                <input type="text" name="involved_directly_trafficking_title_q19"
+                    class="form-control mt-2 q19-yes-input" placeholder="Provide Yes details"
+                    value="{{ $q19_data['involved_directly_trafficking_title'] ?? '' }}">
+            </div>
+
+        </div>
+
+        <p class="text-right mr-3">
+            <button type="button" class="btn btn-success" id="temp-save-question19">Save</button>
+        </p>
+    </div>
 </div>
+@endif
 
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
+    // Yes/No/Others রেডিও বাটনের টগল লজিক
+    function toggleq19() {
+        let val = $("input[name='is_complicit_official_q19']:checked").val();
 
-  // Toggle Yes/No/Others
-  function toggleq19Sections() {
-    let val = $("input[name='is_sex_trafficking_forced_labor_country_19q']:checked").val();
-    if(val === "1"){ 
-      $("#nineteen_question_view").show();
-      $(".othersText").hide();
-    } else if(val === "2"){ 
-      $(".othersText").show();
-      $("#nineteen_question_view").hide();
-    } else { 
-      $("#nineteen_question_view").hide();
-      $(".othersText").hide();
+        if (!val) {
+            val = '1';
+            $('#radioYes19').prop('checked', true);
+        }
+
+        // শুরুতে সব হাইড করা
+        $('#yes_extra_q19').hide();
+        $('#others_q19').hide();
+
+        // কন্ডিশন অনুযায়ী শো করা
+        if (val === '1') {
+            $('#yes_extra_q19').show();
+        } else if (val === '2') {
+            $('#others_q19').show();
+        }
     }
-  }
-  toggleq19Sections();
-  $(".nineteen_status").on("change", toggleq19Sections);
 
-  // Show/hide type3Input
-  function checkTypeVOT(row){
-    if(row.find(".type_vot_two").val() == "3"){
-      row.find(".type3Input").show();
-    } else {
-      row.find(".type3Input").hide().val("");
+    // ইভেন্ট লিসেনার এবং ইনিশিয়াল রান
+    $(document).on('change', '.nineteenstatus', toggleq19);
+    toggleq19();
+});
+</script>
+
+<script>
+// সাময়িকভাবে ডাটা সেভ করার AJAX রিকোয়েস্ট
+$(document).on("click", "#temp-save-question19", function() {
+    let checkedValue = $("input[name='is_complicit_official_q19']:checked").val();
+    let q19_data = {};
+
+    if (checkedValue == '1') {
+        q19_data.involved_directly_trafficking_title = $('.q19-yes-input').val();
     }
-  }
-  $(".q19radioNineteen3QRow").each(function(){ checkTypeVOT($(this)); });
-  $(document).on("change",".type_vot_two", function(){ checkTypeVOT($(this).closest("tr")); });
 
-  // Add row
-  $(document).on("click","#addRowDatasq19radioNineteen3",function(e){
-    e.preventDefault();
-    let newRow = $("#addRowq19radioNineteen3 tbody tr:first").clone(true, true);
-
-    newRow.find("input, select").each(function(){
-      if($(this).hasClass("type3Input")){
-        $(this).val("").hide();
-      } else if($(this).attr("type")=="number"){
-        $(this).val(0);
-      } else {
-        $(this).val("");
-      }
-    });
-
-    let rowCount = $(".q19radioNineteen3QRow").length + 1;
-    newRow.attr("id","q19row"+rowCount);
-
-    newRow.find("button")
-      .removeClass("btn-primary")
-      .addClass("btn-danger q19radioNineteen3btn_remove")
-      .text("-");
-
-    $("#addRowq19radioNineteen3 tbody").append(newRow);
-  });
-
-  // Remove row
-  $(document).on("click",".q19radioNineteen3btn_remove", function(){
-    if($(".q19radioNineteen3QRow").length > 1){
-      $(this).closest("tr").remove();
-      calculateTotals();
-    } else {
-      alert("At least one row is required.");
+    if (checkedValue == '2') {
+        q19_data.others = $('.q19-others-input').val();
     }
-  });
 
-  // Auto total calculation
-  $(document).on("input", ".men_19, .women_19, .third_gender_19", function(){ calculateTotals(); });
-  function calculateTotals(){
-    $(".q19radioNineteen3QRow").each(function(){
-      let men = parseInt($(this).find(".men_19").val())||0;
-      let women = parseInt($(this).find(".women_19").val())||0;
-      let third = parseInt($(this).find(".third_gender_19").val())||0;
-      $(this).find(".total_19").val(men+women+third);
-    });
-  }
-
-  // Temp save
-  $("#temp-save-question19").click(function(){
-    calculateTotals();
-    let yes_no_value = $("input[name='is_sex_trafficking_forced_labor_country_19q']:checked").val();
-    let tableData = [];
-    $(".q19radioNineteen3QRow").each(function(){
-      tableData.push({
-        type_vot: $(this).find(".type_vot_two").val(),
-        type_vot_other: $(this).find(".type3Input").val(),
-        men: $(this).find(".men_19").val(),
-        women: $(this).find(".women_19").val(),
-        third_gender: $(this).find(".third_gender_19").val(),
-        total: $(this).find(".total_19").val(),
-        protection_measures_taken: $(this).find("select[name='protection_measures_taken[]']").val(),
-        preventive_measures_taken: $(this).find("select[name='preventive_measures_taken[]']").val(),
-      });
-    });
-
-    let saveData = {
-      q19radioNineteen3_data: tableData,
-      q19radioNineteen3_checked_value: yes_no_value,
-      others: $("#q19radioThree3others").val()
+    let new_data = {
+        q19_checked_value: checkedValue,
+        q19_data: q19_data
     };
 
     $.ajax({
-      url:"/superadmin/case/temp-save-question",
-      type:"POST",
-      data:{
-        _token:"{{ csrf_token() }}",
-        question19: saveData,
-        question_no:19
-      },
-      success:function(){
-        $('.question19.card-title').css('color','green');
-        alert("Question 19 Temp Saved!");
-      }
+        type: "POST",
+        url: "/superadmin/case/temp-save-question",
+        data: {
+            _token: "{{ csrf_token() }}",
+            question_no: 19,
+            question19: new_data
+        },
+        success: function(response) {
+            if (response.success || response) {
+                $('.question19 .card-header h6').css('color', 'blue');
+                alert("Question 19 has been saved temporarily ✅");
+            } else {
+                alert("Not Saved");
+            }
+        },
+        error: function() {
+            alert("Something went wrong!");
+        }
     });
-  });
-
 });
 </script>
-<?php } ?>
