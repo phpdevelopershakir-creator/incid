@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TwentySeven extends Model
+class SixteenB extends Model
 {
     use HasFactory;
 
-    protected $table ='government_direct_victim_q27';
+    protected $table ='authorities_systematically_q16b';
+
+    
 }

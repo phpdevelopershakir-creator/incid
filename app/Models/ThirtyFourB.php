@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TwentySeven extends Model
+class ThirtyFourB extends Model
 {
     use HasFactory;
-
-    protected $table ='government_direct_victim_q27';
+    
+    protected $table ='newly_identified_victims_q34b';
 }

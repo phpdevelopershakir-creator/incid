@@ -9,7 +9,7 @@ class Sixteen extends Model
 {
     use HasFactory;
 
-    protected $table ='victim_identification_protocol_16q';
+    protected $table ='authorities_systematically_q16';
     public static function get_question16_string_data_by_date($startDate,$endDate,$is_date =true)
 {
    

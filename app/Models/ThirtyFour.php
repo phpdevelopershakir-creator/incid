@@ -10,7 +10,7 @@ class ThirtyFour extends Model
 {
     use HasFactory;
 
-    protected $table ='avoid_retraumatization_victims_q34';
+    protected $table ='newly_identified_victims_q34';
 
     public static function awarness_activities_q34_query_data (){
         //  DB::connection()->enableQueryLog(); 

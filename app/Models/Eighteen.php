@@ -9,7 +9,7 @@ class Eighteen extends Model
 {
     use HasFactory;
 
-    protected $table ='trafficking_among_risk_population_18q';
+    protected $table ='government_officials_q18';
 
     public static function government_train_diplomats_q18_query_data (){
         //  DB::connection()->enableQueryLog(); 

@@ -9,7 +9,7 @@ class Fifteen extends Model
 {
     use HasFactory;
 
-    protected $table ='formal_written_procedures_15q';
+    protected $table ='victim_identification_protocol_q15';
 
 
 

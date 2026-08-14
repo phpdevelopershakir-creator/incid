@@ -10,7 +10,7 @@ class Three extends Model
 {
     use HasFactory;
 
-    protected $table = 'state_sponsored_forced_labor_q3';
+    protected $table = 'technology_trafficking_applicable_q3';
 
     public static function get_question3_string_data_by_date($startDate, $endDate, $is_date = true)
     {

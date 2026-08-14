@@ -364,7 +364,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question18 .card-header h6').css('color', 'blue');
-                alert("Question 18 Has Been Saved Temporarily ");
+                alert("Question 18 Temp Saved ");
             },
             error: function() {
                 alert("Something went wrong!");

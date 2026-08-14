@@ -500,7 +500,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question26 .card-header h6').css('color', 'blue');
-                alert("Question 26 Has Been Saved Temporarily ✅");
+                alert("Question 26 Temp Saved ");
             },
             error: function() {
                 alert("Something went wrong!");

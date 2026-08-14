@@ -302,7 +302,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question27 .card-header h6').css('color', 'blue');
-                alert("Question 27 Has Been Saved Temporarily ✅");
+                alert("Question 27 Temp Saved ");
             },
             error: function() {
                 alert("Something went wrong!");

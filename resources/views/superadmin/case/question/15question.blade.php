@@ -328,7 +328,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question15 .card-header h6').css('color', 'blue');
-                    alert("Question 15 Has Been Saved Temporarily ✅");
+                    alert("Question 15 Temp Saved");
                 }
             },
             error: function(err) {

@@ -9,7 +9,7 @@ class Nineteen extends Model
 {
     use HasFactory;
 
-    protected $table ='sex_trafficking_forced_labor_country_19q';
+    protected $table ='victims_social_service_q19';
 
     public static function get_question19_string_data_by_date($startDate,$endDate,$is_date=true)
 {

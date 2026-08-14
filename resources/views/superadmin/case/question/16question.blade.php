@@ -384,7 +384,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question16 .card-header h6').css('color', 'blue');
-                alert("Question 16 Has Been Saved Temporarily ");
+                alert("Question 16 Temp Saved ");
             },
             error: function() {
                 alert("Something went wrong!");
