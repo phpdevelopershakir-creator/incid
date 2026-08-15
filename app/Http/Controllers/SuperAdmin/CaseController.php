@@ -18,6 +18,7 @@ use App\Models\One;
 use App\Models\Two;
 use App\Models\OneB;
 use App\Models\Three;
+use App\Models\ThreeB;
 use App\Models\Four;
 use App\Models\Five;
 use App\Models\Six;
@@ -123,8 +124,6 @@ class CaseController extends Controller
 
         $yes_no->is_involved_directly_trafficking_2q = $request->is_involved_directly_trafficking_2q;
         $yes_no->others_involved_directly_trafficking_2q = $request->others_involved_directly_trafficking_2q;
-        $yes_no->is_forced_labor_q3 = $request->is_forced_labor_q3;
-        $yes_no->others_forced_labor_q3 = $request->others_forced_labor_q3;
         $yes_no->is_crime_justice_q4 = $request->is_crime_justice_q4;
         $yes_no->others_crime_justice_q4 = $request->others_crime_justice_q4;
 
@@ -246,8 +245,15 @@ class CaseController extends Controller
         $yes_no->is_crime_justice_q21 = $request->is_crime_justice_q21;
         $yes_no->other_crime_justice_q21 = $request->other_crime_justice_q21;
         
-         $yes_no->is_crime_justice_q22 = $request->is_crime_justice_q22;
+        $yes_no->is_crime_justice_q22 = $request->is_crime_justice_q22;
         $yes_no->others_crime_justice_q22 = $request->others_crime_justice_q22;
+
+        $yes_no->is_technology_trafficking_applicable_q3 = $request->is_technology_trafficking_applicable_q3;
+        $yes_no->other_technology_trafficking_applicable_q3 = $request->other_technology_trafficking_applicable_q3;
+
+        $yes_no->is_victim_identification_protocol_q15 = $request->is_victim_identification_protocol_q15;
+        $yes_no->other_victim_identification_protocol_q15 = $request->other_victim_identification_protocol_q15;
+        
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
 
@@ -382,6 +388,70 @@ if (!empty($bulkInsertData)) {
         Two::insert($bulkInsertData);
     }
 }
+
+
+//question3
+        if ($request->is_technology_trafficking_applicable_q3 != 0) {
+            //3
+           $category_q3 = $request->input('category_q3', []);
+            $purpose_q3 = $request->input('purpose_q3', []);
+            $technology_q3 = $request->input('technology_q3', []);
+            $description_q3 = $request->input('description_q3', []);
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($category_q3),
+                count($purpose_q3),
+                count($technology_q3),
+                count($description_q3),
+        
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'category_q3' => $category_q3[$i] ?? null,
+                    'purpose_q3' => $purpose_q3[$i] ?? null,
+                    'technology_q3' => $technology_q3[$i] ?? null,
+                    'description_q3' => $description_q3[$i] ?? null,
+
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                Three::insert($bulkInsertData);
+            }
+
+            //3b
+            $question_q3b = $request->input('question_q3b', []);
+            $response_q3b = $request->input('response_q3b', []);
+            $description_q3b = $request->input('description_q3b', []);
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($question_q3b),
+                count($response_q3b),
+                count($description_q3b),
+        
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'question_q3b' => $question_q3b[$i] ?? null,
+                    'response_q3b' => $response_q3b[$i] ?? null,
+                    'description_q3b' => $description_q3b[$i] ?? null,
+                    
+
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThreeB::insert($bulkInsertData);
+            }
+        }
+
+
+
+        
 
         // question4
         if ($request->is_supreme_court_q4 != 0) {
@@ -1025,6 +1095,24 @@ if (!empty($bulkInsertData)) {
                 //return response()->json($bulkInsertData);
                 Fourteen::insert($bulkInsertData);
             }
+        }
+
+
+        //question15
+        if ($request->is_victim_identification_protocol_q15 != 0) {
+            $case_id = $question->id;
+            $question15 = new Fifteen();
+            $question15->case_id = $case_id;
+            $question15->description_one_q15 = $request->description_one_q15;
+            $question15->description_two_q15 = $request->description_two_q15;
+            $question15->description_three_q15 = $request->description_three_q15;
+            if ($request->hasFile('document_upload_q15')) {
+                $ext = $request->file('document_upload_q15')->extension();
+                $final_name = 'document_upload_q15_' . time() . '.' . $ext;
+                $request->file('document_upload_q15')->move(public_path('uploads/'), $final_name);
+                $question15->document_upload_q15 = $final_name;
+            }
+            $question15->save();
         }
 
 

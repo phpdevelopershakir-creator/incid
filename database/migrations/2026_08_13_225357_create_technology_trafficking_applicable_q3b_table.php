@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('case_id')->nullable();
             $table->string('question_q3b')->nullable();
-            $table->string('response_q3')->nullable();
-            $table->text('description_q3')->nullable();
+            $table->string('response_q3b')->nullable();
+            $table->text('description_q3b')->nullable();
             $table->timestamps();
         });
     }
