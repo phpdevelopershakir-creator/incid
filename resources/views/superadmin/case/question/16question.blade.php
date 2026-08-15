@@ -32,21 +32,6 @@ $q16_others_val = $question_16_data['others'] ?? '';
 $q16_description = $question_16_data['description'] ?? '';
 @endphp
 
-<style>
-.othersText {
-    display: none;
-}
-
-.visibility {
-    display: none;
-}
-
-.ngo_rating_container {
-    display: none;
-    margin-top: 5px;
-}
-</style>
-
 <div class="card question16">
     <div class="card-header" role="tab" id="heading-4">
         <h6 class="card-title" style="color: {{ !empty($question_16_data) ? 'blue' : 'green' }};">
@@ -56,39 +41,40 @@ $q16_description = $question_16_data['description'] ?? '';
         </h6>
     </div>
 
-    <div id="Question-16" class="collapse" role="tabpanel16" aria-labelledby="heading-4" data-parent="#accordion-2">
+    <div id="Question-16" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
 
             <!-- Radio Options -->
             <div class="icheck-primary">
-                <input type="radio" class="sixteen_status" id="q16_yes" name="is_unit_court_q16" value="1"
-                    {{ $q16_checked == "1" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_yes" name="is_authorities_systematically_q16"
+                    value="1" {{ $q16_checked == "1" ? 'checked' : '' }}>
                 <label for="q16_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="sixteen_status" id="q16_no" name="is_unit_court_q16" value="0"
-                    {{ $q16_checked == "0" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_no" name="is_authorities_systematically_q16"
+                    value="0" {{ $q16_checked == "0" ? 'checked' : '' }}>
                 <label for="q16_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="sixteen_status" id="q16_others" name="is_unit_court_q16" value="2"
-                    {{ $q16_checked == "2" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_others" name="is_authorities_systematically_q16"
+                    value="2" {{ $q16_checked == "2" ? 'checked' : '' }}>
                 <label for="q16_others">Others</label>
 
-                <span class="col-md-6 mt--4 others_input_container {{ $q16_checked == "2" ? '' : 'othersText' }}">
+                <span class="col-md-6 mt--4 others_input_container"
+                    style="display: {{ $q16_checked == '2' ? 'block' : 'none' }};">
                     <input type="text" id="q16radioThree3others" class="form-control" placeholder="Others"
-                        name="others_forced_labor_q16" value="{{ $q16_others_val }}">
+                        name="other_authorities_systematically_q16" value="{{ $q16_others_val }}">
                 </span>
             </div>
 
             <!-- Main Question View -->
-            <div id="sixteen_question_view" class="{{ $q16_checked == '1' ? '' : 'visibility' }}">
+            <div id="sixteen_question_view" style="display: {{ $q16_checked == '1' ? 'block' : 'none' }};">
 
                 <p><strong>If yes</strong></p>
 
-                <!-- 🖼️ স্ক্রিনশট অনুযায়ী সুন্দর বর্ণনা ক্ষেত্র (Description Table) -->
+                <!-- Description Table -->
                 <table class="table table-bordered mb-4">
                     <tbody>
                         <tr>
@@ -96,6 +82,7 @@ $q16_description = $question_16_data['description'] ?? '';
                                 Describe efforts taken by authorities to consistently and systematically use such
                                 protocols or formal written procedures to proactively screen for indicators of human
                                 trafficking.
+                                <input type="hidden" name="title_q16" value="1">
                             </td>
                             <td>
                                 <textarea name="description_q16" id="q16_description" class="form-control" rows="4"
@@ -129,13 +116,12 @@ $q16_description = $question_16_data['description'] ?? '';
                         @endphp
                         <tr class="q16radioSix6QRow" id="q16row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="labor_title_q16[]" class="form-control labor_title_q16"
+                                <input type="text" name="location_q16[]" class="form-control labor_title_q16"
                                     value="{{ $q16['title'] ?? '' }}">
                             </td>
                             <td>
                                 <!-- মূল ক্যাটাগরি ড্রপডাউন -->
-                                <select name="internal_traffick_type_of_hotlines_q16[]"
-                                    class="form-control labor_category_q16">
+                                <select name="category_q16[]" class="form-control labor_category_q16">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}" {{ ($q16['category'] ?? '') == $key ? 'selected' : '' }}>
@@ -145,8 +131,9 @@ $q16_description = $question_16_data['description'] ?? '';
                                 </select>
 
                                 <!-- NGO এর জন্য ডাইনামিক ড্রপডাউন -->
-                                <div class="ngo_rating_container" style="display: {{ $is_ngo ? 'block' : 'none' }};">
-                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
+                                <div class="ngo_rating_container mt-1"
+                                    style="display: {{ $is_ngo ? 'block' : 'none' }};">
+                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}"
@@ -158,43 +145,41 @@ $q16_description = $question_16_data['description'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q16[]" id="labor_men_q16_{{ $i+1 }}"
-                                    class="form-control labor_men_q16" value="{{ $q16['men'] ?? 0 }}" min="0">
+                                <input type="number" name="men_q16[]" class="form-control labor_men_q16"
+                                    value="{{ $q16['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q16[]" id="labor_women_q16_{{ $i+1 }}"
-                                    class="form-control labor_women_q16" value="{{ $q16['women'] ?? 0 }}" min="0">
+                                <input type="number" name="women_q16[]" class="form-control labor_women_q16"
+                                    value="{{ $q16['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q16[]" readonly id="labor_total_q16_{{ $i+1 }}"
-                                    class="form-control labor_total_q16" value="{{ $q16['total'] ?? 0 }}">
+                                <input type="number" name="total_q16[]" readonly class="form-control labor_total_q16"
+                                    value="{{ $q16['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
                                 <button type="button" class="btn btn-sm btn-primary"
                                     id="addRowDatasq16radioThree3">+</button>
                                 @else
-                                <button type="button" id="{{ $i+1 }}"
-                                    class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button>
+                                <button type="button" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
-                        {{-- প্রথমবার লোড হলে ডিফল্ট ১ম রো দেখাবে --}}
-                        <tr class="q16radioSix6QRow" id="q16row1">
-                            <td><input type="text" name="labor_title_q16[]" class="form-control labor_title_q16"></td>
+                        <!-- ডিফল্ট প্রথম রো -->
+                        <tr class="q16radioSix6QRow">
+                            <td><input type="text" name="location_q16[]" class="form-control labor_title_q16"></td>
                             <td>
-                                <select name="internal_traffick_type_of_hotlines_q16[]"
-                                    class="form-control labor_category_q16">
+                                <select name="category_q16[]" class="form-control labor_category_q16">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}">{{ $item }}</option>
                                     @endforeach
                                 </select>
 
-                                <div class="ngo_rating_container">
-                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
+                                <div class="ngo_rating_container mt-1" style="display: none;">
+                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}">{{ $rItem }}</option>
@@ -203,16 +188,16 @@ $q16_description = $question_16_data['description'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q16[]" id="labor_men_q16_1" value="0"
-                                    class="form-control labor_men_q16" min="0">
+                                <input type="number" name="men_q16[]" value="0" class="form-control labor_men_q16"
+                                    min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q16[]" id="labor_women_q16_1" value="0"
-                                    class="form-control labor_women_q16" min="0">
+                                <input type="number" name="women_q16[]" value="0" class="form-control labor_women_q16"
+                                    min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q16[]" id="labor_total_q16_1" value="0"
-                                    class="form-control labor_total_q16" readonly>
+                                <input type="number" name="total_q16[]" value="0" class="form-control labor_total_q16"
+                                    readonly>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-primary"
@@ -241,7 +226,7 @@ $(document).ready(function() {
         let val = $(this).val();
         let ngoContainer = $(this).closest("td").find(".ngo_rating_container");
 
-        if (val == "8") { // 8 হলো NGO এর ID
+        if (val == "8") {
             ngoContainer.show();
         } else {
             ngoContainer.hide();
@@ -249,10 +234,8 @@ $(document).ready(function() {
         }
     });
 
-    // ⬅️ টেবিল এ নতুন রো যুক্ত করা
-    $("#addRowDatasq16radioThree3").click(function() {
-        let rowCount = new Date().getTime();
-
+    // নতুন রো যুক্ত করা
+    $(document).on("click", "#addRowDatasq16radioThree3", function() {
         let jsCategoryLists = {
             1: 'Social Worker',
             2: 'Police',
@@ -284,66 +267,64 @@ $(document).ready(function() {
             ngoRatingOptions += `<option value="${key}">${value}</option>`;
         });
 
-        $("#addRowq16radioThree3 tbody").append(`
-            <tr class="q16radioSix6QRow" id="q16row${rowCount}">
-                <td><input type="text" name="labor_title_q16[]" class="form-control labor_title_q16"></td>
+        let newRow = `
+            <tr class="q16radioSix6QRow">
+                <td><input type="text" name="location_q16[]" class="form-control labor_title_q16"></td>
                 <td>
-                    <select name="internal_traffick_type_of_hotlines_q16[]" class="form-control labor_category_q16">
+                    <select name="category_q16[]" class="form-control labor_category_q16">
                         ${categoryOptions}
                     </select>
-
-                    <div class="ngo_rating_container">
-                        <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
+                    <div class="ngo_rating_container mt-1" style="display: none;">
+                        <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16">
                             ${ngoRatingOptions}
                         </select>
                     </div>
                 </td>
-                <td><input type="number" name="labor_men_q16[]" id="labor_men_q16_${rowCount}" value="0" class="form-control labor_men_q16" min="0"></td>
-                <td><input type="number" name="labor_women_q16[]" id="labor_women_q16_${rowCount}" value="0" class="form-control labor_women_q16" min="0"></td>
-                <td><input type="number" name="labor_total_q16[]" readonly id="labor_total_q16_${rowCount}" class="form-control labor_total_q16" value="0"></td>
-                <td><button type="button" id="${rowCount}" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button></td>
+                <td><input type="number" name="men_q16[]" value="0" class="form-control labor_men_q16" min="0"></td>
+                <td><input type="number" name="women_q16[]" value="0" class="form-control labor_women_q16" min="0"></td>
+                <td><input type="number" name="total_q16[]" readonly class="form-control labor_total_q16" value="0"></td>
+                <td><button type="button" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button></td>
             </tr>
-        `);
+        `;
+        $("#addRowq16radioThree3 tbody").append(newRow);
     });
 
-    // ⬅️ রো রিমুভ করা
+    // রো রিমুভ করা
     $(document).on("click", ".q16radioThree3btn_remove", function() {
-        let id = $(this).attr("id");
-        $("#q16row" + id).remove();
+        $(this).closest("tr").remove();
     });
 
-    // ⬅️ পুরুষ ও মহিলা ইনপুটের ওপর ভিত্তি করে অটো টোটাল
+    // পুরুষ ও মহিলা ইনপুটের ওপর ভিত্তি করে অটো টোটাল
     $(document).on("input change keyup", ".labor_men_q16, .labor_women_q16", function() {
-        let targetId = $(this).attr("id");
-        let row = targetId.substring(targetId.lastIndexOf('_') + 1);
-
-        let men = parseInt($("#labor_men_q16_" + row).val()) || 0;
-        let women = parseInt($("#labor_women_q16_" + row).val()) || 0;
-
-        $("#labor_total_q16_" + row).val(men + women);
+        let row = $(this).closest("tr");
+        let men = parseInt(row.find(".labor_men_q16").val()) || 0;
+        let women = parseInt(row.find(".labor_women_q16").val()) || 0;
+        row.find(".labor_total_q16").val(men + women);
     });
 
-    // ⬅️ রেডিও বাটন অনুযায়ী টগল লজিক
-    $(".sixteen_status").on("change", function() {
-        let value = $("input[name='is_unit_court_q16']:checked").val();
+    // রেডিও বাটন টগল
+    $(document).on("change", ".sixteen_status", function() {
+        let value = $("input[name='is_authorities_systematically_q16']:checked").val();
 
         if (value === "1") {
-            $("#sixteen_question_view").removeClass('visibility').show();
-            $(".others_input_container").addClass('othersText').hide();
+            $("#sixteen_question_view").show();
+            $(".others_input_container").hide();
             $("#q16radioThree3others").val("");
         } else if (value === "2") {
             $("#sixteen_question_view").hide();
-            $(".others_input_container").removeClass('othersText').show();
+            $(".others_input_container").show();
         } else {
             $("#sixteen_question_view").hide();
-            $(".others_input_container").addClass('othersText').hide();
+            $(".others_input_container").hide();
             $("#q16radioThree3others").val("");
         }
     });
 
-    // ⬅️ টেম্পোরারি সেভ AJAX লজিক
-    $("#temp-save-question16").click(function() {
-        let yes_no_value = $("input[name='is_unit_court_q16']:checked").val();
+    // Temp Save AJAX লজিক
+    $(document).on("click", "#temp-save-question16", function(e) {
+        e.preventDefault();
+
+        let yes_no_value = $("input[name='is_authorities_systematically_q16']:checked").val();
         let description_text = $("#q16_description").val();
         let tableData = [];
 
@@ -386,8 +367,9 @@ $(document).ready(function() {
                 $('.question16 .card-header h6').css('color', 'blue');
                 alert("Question 16 Temp Saved ");
             },
-            error: function() {
+            error: function(err) {
                 alert("Something went wrong!");
+                console.log(err);
             }
         });
     });

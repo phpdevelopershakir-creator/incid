@@ -30,6 +30,7 @@ use App\Models\Ten;
 use App\Models\Eleven;
 use App\Models\Fifteen;
 use App\Models\Sixteen;
+use App\Models\SixteenB;
 use App\Models\Eighteen;
 use App\Models\Nineteen;
 use App\Models\Twenty;
@@ -253,6 +254,9 @@ class CaseController extends Controller
 
         $yes_no->is_victim_identification_protocol_q15 = $request->is_victim_identification_protocol_q15;
         $yes_no->other_victim_identification_protocol_q15 = $request->other_victim_identification_protocol_q15;
+
+        $yes_no->is_authorities_systematically_q16 = $request->is_authorities_systematically_q16;
+        $yes_no->other_authorities_systematically_q16 = $request->other_authorities_systematically_q16;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -1115,48 +1119,63 @@ if (!empty($bulkInsertData)) {
             $question15->save();
         }
 
-
-
-
-
         //question16
-        if ($request->is_victim_identification_protocol_16q != 0) {
-            $main_document = $request->input('main_document', []);
-            $description_change = $request->input('description_change', []);
+        if ($request->is_authorities_systematically_q16 != 0) {
 
+        //a
+             $case_id = $question->id;
+            $question16 = new Sixteen();
+            $question16->case_id = $case_id;
+            $question16->title_q16 = $request->title_q16;
+            $question16->description_q16 = $request->description_q16;
+            $question16->save();
 
-            $images = [];
-            if ($request->hasFile('document_image_q16')) {
-                foreach ($request->file('document_image_q16') as $index => $image) {
-                    $ext = $image->extension();
-                    $final_name = 'document_image_q16_' . time() . '_' . $index . '.' . $ext;
-                    $image->move(public_path('uploads/document_image_q16'), $final_name);
-                    $images[] = 'uploads/document_image_q16/' . $final_name;
-                }
-            }
+            //b
 
+            $location_q16 = $request->input('location_q16', []);
+            $category_q16 = $request->input('category_q16', []);
+            $ngo_rating_q16 = $request->input('ngo_rating_q16', []);
+            $men_q16 = $request->input('men_q16', []);
+            $women_q16 = $request->input('women_q16', []);
+            $total_q16 = $request->input('total_q16', []);
+            
+           
             $case_id = $question->id;
-
             $bulkInsertData = [];
-            $maxCount = max(count($main_document), count($description_change), count($images));
-
+            $maxCount = max(
+                count($location_q16),
+                count($category_q16),
+                count($ngo_rating_q16),
+                count($men_q16),
+                count($women_q16),
+                count($total_q16),
+              
+            );
             for ($i = 0; $i < $maxCount; $i++) {
                 $bulkInsertData[] = [
                     'case_id' => $case_id,
-                    'main_document' => $main_document[$i] ?? null,
-                    'description_change' => $description_change[$i] ?? null,
-                    'document_image_q16' => $images[$i] ?? null,
+                    'location_q16' => $location_q16[$i] ?? null,
+                    'category_q16' => $category_q16[$i] ?? null,
+                    'ngo_rating_q16' => $ngo_rating_q16[$i] ?? null,
+                    'men_q16' => $men_q16[$i] ?? null,
+                    'women_q16' => $women_q16[$i] ?? null,
+                    'total_q16' => $total_q16[$i] ?? null,
+              
                 ];
             }
-
-
-
             if (!empty($bulkInsertData)) {
                 //return response()->json($bulkInsertData);
-                Sixteen::insert($bulkInsertData);
+                SixteenB::insert($bulkInsertData);
             }
+
         }
 
+
+
+
+
+        
+        
 
         //question17
         $request->validate([
