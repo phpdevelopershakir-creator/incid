@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('case_id')->nullable();
             $table->string('location_q18')->nullable();
             $table->string('category_q18')->nullable();
+            $table->string('ngo_rating_q18')->nullable();
             $table->string('men_q18')->nullable();
             $table->string('women_q18')->nullable();
             $table->string('total_q18')->nullable();

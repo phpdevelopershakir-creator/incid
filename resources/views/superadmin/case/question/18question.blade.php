@@ -1,9 +1,9 @@
 @if (($questiontitles[17]->status ?? null) == 1)
 @php
-// ১. সেশন থেকে ১৮ নম্বর প্রশ্নের ডাটা ক্যাচ করা
+// ১. সেশন থেকে ১৮ নম্বর প্রশ্নের ডাটা পাওয়া
 $question_18_data = session()->get('question18');
 
-// ২. ক্যাটাগরি এবং এনজিও রেটিং অ্যারে ডিফাইন করা
+// ২. ক্যাটাগরি এবং এনজিও রেটিং অ্যারে ডিফাইন
 $category_lists = [
 1 => 'Social Worker',
 2 => 'Police',
@@ -31,21 +31,6 @@ $q18_table_rows = $question_18_data['q18radioSix18_data'] ?? null;
 $q18_others_val = $question_18_data['others'] ?? '';
 @endphp
 
-<style>
-.othersText {
-    display: none;
-}
-
-.visibility {
-    display: none;
-}
-
-.ngo_rating_container {
-    display: none;
-    margin-top: 5px;
-}
-</style>
-
 <div class="card question18">
     <div class="card-header" role="tab" id="heading-4">
         <h6 class="card-title" style="color: {{ !empty($question_18_data) ? 'blue' : 'green' }};">
@@ -58,36 +43,39 @@ $q18_others_val = $question_18_data['others'] ?? '';
     <div id="Question-18" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
 
+            <!-- Radio Options -->
             <div class="icheck-primary">
-                <input type="radio" class="eighteen_status" id="q18_yes" name="is_unit_court_q18" value="1"
+                <input type="radio" class="eighteen_status" id="q18_yes" name="is_government_officials_q18" value="1"
                     {{ $q18_checked == "1" ? 'checked' : '' }}>
                 <label for="q18_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="eighteen_status" id="q18_no" name="is_unit_court_q18" value="0"
+                <input type="radio" class="eighteen_status" id="q18_no" name="is_government_officials_q18" value="0"
                     {{ $q18_checked == "0" ? 'checked' : '' }}>
                 <label for="q18_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="eighteen_status" id="q18_others" name="is_unit_court_q18" value="2"
+                <input type="radio" class="eighteen_status" id="q18_others" name="is_government_officials_q18" value="2"
                     {{ $q18_checked == "2" ? 'checked' : '' }}>
                 <label for="q18_others">Others</label>
 
-                <span class="col-md-6 mt--4 others_input_container {{ $q18_checked == "2" ? '' : 'othersText' }}">
+                <span class="col-md-6 mt--4 others_input_container"
+                    style="display: {{ $q18_checked == '2' ? 'block' : 'none' }};">
                     <input type="text" id="q18radioThree3others" class="form-control" placeholder="Others"
-                        name="others_forced_labor_q18" value="{{ $q18_others_val }}">
+                        name="other_government_officials_q18" value="{{ $q18_others_val }}">
                 </span>
             </div>
 
-            <div id="eighteen_question_view" class="card-body row {{ $q18_checked == '1' ? '' : 'visibility' }}">
+            <!-- Table Container -->
+            <div id="eighteen_question_view" class="card-body row"
+                style="display: {{ $q18_checked == '1' ? 'flex' : 'none' }};">
                 <table id="addRowq18radioThree3" class="table table-bordered text-center">
                     <thead>
                         <tr>
                             <th rowspan="2" style="vertical-align: middle;">Location</th>
                             <th colspan="4">Number of personnel Trained</th>
-
                             <th rowspan="2" style="vertical-align: middle;">Action</th>
                         </tr>
                         <tr>
@@ -106,13 +94,12 @@ $q18_others_val = $question_18_data['others'] ?? '';
                         @endphp
                         <tr class="q18radioSix6QRow" id="q18row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="labor_title_q18[]" class="form-control labor_title_q18"
+                                <input type="text" name="location_q18[]" class="form-control labor_title_q18"
                                     value="{{ $q18['title'] ?? '' }}">
                             </td>
                             <td>
-                                <!-- মূল ক্যাটাগরি ড্রপডাউন -->
-                                <select name="internal_traffick_type_of_hotlines_q18[]"
-                                    class="form-control labor_category_q18">
+                                <!-- Category Dropdown -->
+                                <select name="category_q18[]" class="form-control labor_category_q18">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}" {{ ($q18['category'] ?? '') == $key ? 'selected' : '' }}>
@@ -121,9 +108,10 @@ $q18_others_val = $question_18_data['others'] ?? '';
                                     @endforeach
                                 </select>
 
-                                <!-- NGO এর জন্য ডাইনামিক ড্রপডাউন -->
-                                <div class="ngo_rating_container" style="display: {{ $is_ngo ? 'block' : 'none' }};">
-                                    <select name="ngo_rating_q18[]" class="form-control labor_ngo_rating_q18 mt-1">
+                                <!-- NGO Dynamic Dropdown -->
+                                <div class="ngo_rating_container mt-1"
+                                    style="display: {{ $is_ngo ? 'block' : 'none' }};">
+                                    <select name="ngo_rating_q18[]" class="form-control labor_ngo_rating_q18">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}"
@@ -135,44 +123,41 @@ $q18_others_val = $question_18_data['others'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q18[]" id="labor_men_q18_{{ $i+1 }}"
-                                    class="form-control labor_men_q18" value="{{ $q18['men'] ?? 0 }}" min="0">
+                                <input type="number" name="men_q18[]" class="form-control labor_men_q18"
+                                    value="{{ $q18['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q18[]" id="labor_women_q18_{{ $i+1 }}"
-                                    class="form-control labor_women_q18" value="{{ $q18['women'] ?? 0 }}" min="0">
+                                <input type="number" name="women_q18[]" class="form-control labor_women_q18"
+                                    value="{{ $q18['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q18[]" readonly id="labor_total_q18_{{ $i+1 }}"
-                                    class="form-control labor_total_q18" value="{{ $q18['total'] ?? 0 }}">
+                                <input type="number" name="total_q18[]" readonly class="form-control labor_total_q18"
+                                    value="{{ $q18['total'] ?? 0 }}">
                             </td>
-
                             <td>
                                 @if($i == 0)
                                 <button type="button" class="btn btn-sm btn-primary"
                                     id="addRowDatasq18radioThree3">+</button>
                                 @else
-                                <button type="button" id="{{ $i+1 }}"
-                                    class="btn btn-danger btn-sm q18radioThree3btn_remove">-</button>
+                                <button type="button" class="btn btn-danger btn-sm q18radioThree3btn_remove">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
-                        {{-- প্রথমবার লোড হলে ডিফল্ট ১ম রো দেখাবে --}}
-                        <tr class="q18radioSix6QRow" id="q18row1">
-                            <td><input type="text" name="labor_title_q18[]" class="form-control labor_title_q18"></td>
+                        <!-- Default 1st Row -->
+                        <tr class="q18radioSix6QRow">
+                            <td><input type="text" name="location_q18[]" class="form-control labor_title_q18"></td>
                             <td>
-                                <select name="internal_traffick_type_of_hotlines_q18[]"
-                                    class="form-control labor_category_q18">
+                                <select name="category_q18[]" class="form-control labor_category_q18">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}">{{ $item }}</option>
                                     @endforeach
                                 </select>
 
-                                <div class="ngo_rating_container">
-                                    <select name="ngo_rating_q18[]" class="form-control labor_ngo_rating_q18 mt-1">
+                                <div class="ngo_rating_container mt-1" style="display: none;">
+                                    <select name="ngo_rating_q18[]" class="form-control labor_ngo_rating_q18">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}">{{ $rItem }}</option>
@@ -181,18 +166,17 @@ $q18_others_val = $question_18_data['others'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q18[]" id="labor_men_q18_1" value="0"
-                                    class="form-control labor_men_q18" min="0">
+                                <input type="number" name="men_q18[]" value="0" class="form-control labor_men_q18"
+                                    min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q18[]" id="labor_women_q18_1" value="0"
-                                    class="form-control labor_women_q18" min="0">
+                                <input type="number" name="women_q18[]" value="0" class="form-control labor_women_q18"
+                                    min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q18[]" id="labor_total_q18_1" value="0"
-                                    class="form-control labor_total_q18" readonly>
+                                <input type="number" name="total_q18[]" value="0" class="form-control labor_total_q18"
+                                    readonly>
                             </td>
-
                             <td>
                                 <button type="button" class="btn btn-sm btn-primary"
                                     id="addRowDatasq18radioThree3">+</button>
@@ -203,7 +187,7 @@ $q18_others_val = $question_18_data['others'] ?? '';
                 </table>
             </div>
 
-            <p class="text-right">
+            <p class="text-right mt-3">
                 <button type="button" class="btn btn-success" id="temp-save-question18">Save</button>
             </p>
 
@@ -215,23 +199,21 @@ $q18_others_val = $question_18_data['others'] ?? '';
 <script>
 $(document).ready(function() {
 
-    // NGO সিলেক্ট করলে ড্রপডাউন শো/হাইড করার চেঞ্জ ইভেন্ট
+    // NGO সিলেক্ট করলে ড্রপডাউন শো/হাইড
     $(document).on("change", ".labor_category_q18", function() {
         let val = $(this).val();
         let ngoContainer = $(this).closest("td").find(".ngo_rating_container");
 
-        if (val == "8") { // 8 হলো NGO এর ID
+        if (val == "8") {
             ngoContainer.show();
         } else {
             ngoContainer.hide();
-            ngoContainer.find(".labor_ngo_rating_q18").val(""); // হাইড হলে ভ্যালু রিসেট করা
+            ngoContainer.find(".labor_ngo_rating_q18").val("");
         }
     });
 
-    // ⬅️ টেবিল এ নতুন রো (Row) যুক্ত করা
-    $("#addRowDatasq18radioThree3").click(function() {
-        let rowCount = new Date().getTime();
-
+    // নতুন রো (Row) যোগ করা
+    $(document).on("click", "#addRowDatasq18radioThree3", function() {
         let jsCategoryLists = {
             1: 'Social Worker',
             2: 'Police',
@@ -263,87 +245,82 @@ $(document).ready(function() {
             ngoRatingOptions += `<option value="${key}">${value}</option>`;
         });
 
-        $("#addRowq18radioThree3 tbody").append(`
-            <tr class="q18radioSix6QRow" id="q18row${rowCount}">
-                <td><input type="text" name="labor_title_q18[]" class="form-control labor_title_q18"></td>
+        let newRow = `
+            <tr class="q18radioSix6QRow">
+                <td><input type="text" name="location_q18[]" class="form-control labor_title_q18"></td>
                 <td>
-                    <select name="internal_traffick_type_of_hotlines_q18[]" class="form-control labor_category_q18">
+                    <select name="category_q18[]" class="form-control labor_category_q18">
                         ${categoryOptions}
                     </select>
-
-                    <div class="ngo_rating_container">
-                        <select name="ngo_rating_q18[]" class="form-control labor_ngo_rating_q18 mt-1">
+                    <div class="ngo_rating_container mt-1" style="display: none;">
+                        <select name="ngo_rating_q18[]" class="form-control labor_ngo_rating_q18">
                             ${ngoRatingOptions}
                         </select>
                     </div>
                 </td>
-                <td><input type="number" name="labor_men_q18[]" id="labor_men_q18_${rowCount}" value="0" class="form-control labor_men_q18" min="0"></td>
-                <td><input type="number" name="labor_women_q18[]" id="labor_women_q18_${rowCount}" value="0" class="form-control labor_women_q18" min="0"></td>
-                <td><input type="number" name="labor_total_q18[]" readonly id="labor_total_q18_${rowCount}" class="form-control labor_total_q18" value="0"></td>
-                
-                <td><button type="button" id="${rowCount}" class="btn btn-danger btn-sm q18radioThree3btn_remove">-</button></td>
+                <td><input type="number" name="men_q18[]" value="0" class="form-control labor_men_q18" min="0"></td>
+                <td><input type="number" name="women_q18[]" value="0" class="form-control labor_women_q18" min="0"></td>
+                <td><input type="number" name="total_q18[]" readonly class="form-control labor_total_q18" value="0"></td>
+                <td><button type="button" class="btn btn-danger btn-sm q18radioThree3btn_remove">-</button></td>
             </tr>
-        `);
+        `;
+        $("#addRowq18radioThree3 tbody").append(newRow);
     });
 
-    // ⬅️ রো রিমুভ করা
+    // রো রিমুভ করা
     $(document).on("click", ".q18radioThree3btn_remove", function() {
-        let id = $(this).attr("id");
-        $("#q18row" + id).remove();
+        $(this).closest("tr").remove();
     });
 
-    // ⬅️ পুরুষ ও মহিলা ইনপুটের ওপর ভিত্তি করে টোটাল অটো ক্যালকুলেট
+    // অটো টোটাল ক্যালকুলেশন
     $(document).on("input change keyup", ".labor_men_q18, .labor_women_q18", function() {
-        let targetId = $(this).attr("id");
-        let row = targetId.substring(targetId.lastIndexOf('_') + 1);
-
-        let men = parseInt($("#labor_men_q18_" + row).val()) || 0;
-        let women = parseInt($("#labor_women_q18_" + row).val()) || 0;
-
-        $("#labor_total_q18_" + row).val(men + women);
+        let row = $(this).closest("tr");
+        let men = parseInt(row.find(".labor_men_q18").val()) || 0;
+        let women = parseInt(row.find(".labor_women_q18").val()) || 0;
+        row.find(".labor_total_q18").val(men + women);
     });
 
-    // ⬅️ রেডিও বাটন অনুযায়ী টগল লজিক
-    $(".eighteen_status").on("change", function() {
-        let value = $("input[name='is_unit_court_q18']:checked").val();
+    // রেডিও বাটন চেঞ্জ ইভেন্ট
+    $(document).on("change", ".eighteen_status", function() {
+        let value = $("input[name='is_government_officials_q18']:checked").val();
 
         if (value === "1") {
-            $("#eighteen_question_view").removeClass('visibility').show();
-            $(".others_input_container").addClass('othersText').hide();
+            $("#eighteen_question_view").css("display", "flex");
+            $(".others_input_container").hide();
             $("#q18radioThree3others").val("");
         } else if (value === "2") {
             $("#eighteen_question_view").hide();
-            $(".others_input_container").removeClass('othersText').show();
+            $(".others_input_container").show();
         } else {
             $("#eighteen_question_view").hide();
-            $(".others_input_container").addClass('othersText').hide();
+            $(".others_input_container").hide();
             $("#q18radioThree3others").val("");
         }
     });
 
-    // ⬅️ টেম্পোরারি সেভ AJAX লজিক
-    $("#temp-save-question18").click(function() {
-        let yes_no_value = $("input[name='is_unit_court_q18']:checked").val();
+    // Temp Save AJAX লজিক
+    $(document).on("click", "#temp-save-question18", function(e) {
+        e.preventDefault();
+
+        let yes_no_value = $("input[name='is_government_officials_q18']:checked").val();
         let tableData = [];
 
         $(".q18radioSix6QRow").each(function() {
             let title = $(this).find(".labor_title_q18").val();
             let category = $(this).find(".labor_category_q18").val();
-            let ngo_rating = $(this).find(".labor_ngo_rating_q18").val(); // NGO রেটিং ক্যাচ করা
+            let ngo_rating = $(this).find(".labor_ngo_rating_q18").val();
             let men = $(this).find(".labor_men_q18").val() || 0;
             let women = $(this).find(".labor_women_q18").val() || 0;
             let total = $(this).find(".labor_total_q18").val() || 0;
-
 
             if (title || category || men > 0 || women > 0) {
                 tableData.push({
                     title: title,
                     category: category,
-                    ngo_rating: ngo_rating, // সেভ ডাটাতে পাঠানো হচ্ছে
+                    ngo_rating: ngo_rating,
                     men: men,
                     women: women,
-                    total: total,
-                    response: response
+                    total: total
                 });
             }
         });
@@ -366,8 +343,9 @@ $(document).ready(function() {
                 $('.question18 .card-header h6').css('color', 'blue');
                 alert("Question 18 Temp Saved ");
             },
-            error: function() {
+            error: function(err) {
                 alert("Something went wrong!");
+                console.log(err);
             }
         });
     });

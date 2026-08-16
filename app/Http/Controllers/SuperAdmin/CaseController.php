@@ -134,8 +134,7 @@ class CaseController extends Controller
         $yes_no->others_formal_written_procedures_15q = $request->others_formal_written_procedures_15q;
         $yes_no->is_victim_identification_protocol_16q = $request->is_victim_identification_protocol_16q;
         $yes_no->others_victim_identification_protocol_16q = $request->others_victim_identification_protocol_16q;
-        $yes_no->is_trafficking_among_risk_population_18q = $request->is_trafficking_among_risk_population_18q;
-        $yes_no->others_trafficking_among_risk_population_18q = $request->others_trafficking_among_risk_population_18q;
+      
         $yes_no->is_sex_trafficking_forced_labor_country_19q = $request->is_sex_trafficking_forced_labor_country_19q;
         $yes_no->others_sex_trafficking_forced_labor_country_19q = $request->others_sex_trafficking_forced_labor_country_19q;
         $yes_no->is_trafficking_victims_services_20q = $request->is_trafficking_victims_services_20q;
@@ -257,6 +256,9 @@ class CaseController extends Controller
 
         $yes_no->is_authorities_systematically_q16 = $request->is_authorities_systematically_q16;
         $yes_no->other_authorities_systematically_q16 = $request->other_authorities_systematically_q16;
+
+        $yes_no->is_government_officials_q18 = $request->is_government_officials_q18;
+        $yes_no->other_government_officials_q18 = $request->other_government_officials_q18;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -1225,40 +1227,38 @@ if (!empty($bulkInsertData)) {
         }
 
 
-        // question 18
+        // question18
 
-        if ($request->is_trafficking_among_risk_population_18q != 0) {
-            $type_vot = $request->input('type_vot', []);
-            $type_vot_other = $request->input('type_vot_other', []);
-            $men_18 = $request->input('men_18', []);
-            $women_18 = $request->input('women_18', []);
-            $third_gender_18 = $request->input('third_gender_18', []);
-            $total_18 = $request->input('total_18', []);
-            $protection_measures_taken = $request->input('protection_measures_taken', []);
-            $preventive_measures_taken = $request->input('preventive_measures_taken', []);
+        if ($request->is_government_officials_q18 != 0) {
+            $location_q18 = $request->input('location_q18', []);
+            $category_q18 = $request->input('category_q18', []);
+            $ngo_rating_q18 = $request->input('ngo_rating_q18', []);
+            $men_q18 = $request->input('men_q18', []);
+            $women_q18 = $request->input('women_q18', []);
+            $total_q18 = $request->input('total_q18', []);
+            
             $case_id = $question->id;
             $bulkInsertData = [];
             $maxCount = max(
-                count($type_vot),
-                count($type_vot_other),
-                count($men_18),
-                count($women_18),
-                count($third_gender_18),
-                count($total_18),
-                count($protection_measures_taken),
-                count($preventive_measures_taken),
+                count($location_q18),
+                count($category_q18),
+                count($ngo_rating_q18),
+                count($men_q18),
+                count($women_q18),
+                count($total_q18),
+  
             );
             for ($i = 0; $i < $maxCount; $i++) {
                 $bulkInsertData[] = [
                     'case_id' => $case_id,
-                    'type_vot' => $type_vot[$i] ?? null,
-                    'type_vot_other' => $type_vot_other[$i] ?? null,
-                    'men_18' => $men_18[$i] ?? null,
-                    'women_18' => $women_18[$i] ?? null,
-                    'third_gender_18' => $third_gender_18[$i] ?? null,
-                    'total_18' => $total_18[$i] ?? null,
-                    'protection_measures_taken' => $protection_measures_taken[$i] ?? null,
-                    'preventive_measures_taken' => $preventive_measures_taken[$i] ?? null,
+                    'location_q18' => $location_q18[$i] ?? null,
+                    'category_q18' => $category_q18[$i] ?? null,
+                    'ngo_rating_q18' => $ngo_rating_q18[$i] ?? null,
+                    'men_q18' => $men_q18[$i] ?? null,
+                    'women_q18' => $women_q18[$i] ?? null,
+                    'total_q18' => $total_q18[$i] ?? null,
+                    
+                    
                 ];
             }
             if (!empty($bulkInsertData)) {
