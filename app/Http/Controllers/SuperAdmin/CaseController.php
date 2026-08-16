@@ -259,6 +259,9 @@ class CaseController extends Controller
 
         $yes_no->is_government_officials_q18 = $request->is_government_officials_q18;
         $yes_no->other_government_officials_q18 = $request->other_government_officials_q18;
+
+        $yes_no->is_victims_social_service_q19 = $request->is_victims_social_service_q19;
+        $yes_no->other_victims_social_service_q19 = $request->other_victims_social_service_q19;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -1269,45 +1272,17 @@ if (!empty($bulkInsertData)) {
 
 
         //  question 19 
-        if ($request->is_sex_trafficking_forced_labor_country_19q != 0) {
-            $type_vot = $request->input('type_vot', []);
-            $type_vot_other = $request->input('type_vot_other', []);
-            $men_19 = $request->input('men_19', []);
-            $women_19 = $request->input('women_19', []);
-            $third_gender_19 = $request->input('third_gender_19', []);
-            $total_19 = $request->input('total_19', []);
-            $protection_measures_taken = $request->input('protection_measures_taken', []);
-            $preventive_measures_taken = $request->input('preventive_measures_taken', []);
+
+         //question19
+        if ($request->is_victims_social_service_q19 != 0) {
             $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($type_vot),
-                count($type_vot_other),
-                count($men_19),
-                count($women_19),
-                count($third_gender_19),
-                count($total_19),
-                count($protection_measures_taken),
-                count($preventive_measures_taken),
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'type_vot' => $type_vot[$i] ?? null,
-                    'type_vot_other' => $type_vot_other[$i] ?? null,
-                    'men_19' => $men_19[$i] ?? null,
-                    'women_19' => $women_19[$i] ?? null,
-                    'third_gender_19' => $third_gender_19[$i] ?? null,
-                    'total_19' => $total_19[$i] ?? null,
-                    'protection_measures_taken' => $protection_measures_taken[$i] ?? null,
-                    'preventive_measures_taken' => $preventive_measures_taken[$i] ?? null,
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                // return response()->json($bulkInsertData);
-                Nineteen::insert($bulkInsertData);
-            }
+            $question19 = new Nineteen();
+            $question19->case_id = $case_id;
+            $question19->victims_social_service_title_q19 = $request->victims_social_service_title_q19;
+            $question19->save();
         }
+        
+      
         
         
         //  question20 
