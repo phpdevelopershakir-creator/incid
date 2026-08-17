@@ -1,6 +1,6 @@
 @if (($questiontitles[25]->status ?? null) == 1)
 @php
-// ১. সেশন থেকে ২৬ নম্বর প্রশ্নের ডাটা ক্যাচ করা
+// ১. সেশন থেকে ২৬ নম্বর প্রশ্নের ডাটা পাওয়া
 $question_26_data = session()->get('question26');
 
 // ২. ক্যাটাগরি এবং এনজিও রেটিং অ্যারে ডিফাইন করা
@@ -26,7 +26,7 @@ $ngo_rating_lists = [
 ];
 
 // ৩. ডাটা ম্যাপ করা
-$q26_checked = $question_26_data['q26_checked_value'] ?? "1";
+$q26_checked = isset($question_26_data['q26_checked_value']) ? (string)$question_26_data['q26_checked_value'] : "1";
 $q26_table_rows_1 = $question_26_data['q26_data'] ?? null;
 $q26_table_rows_2 = $question_26_data['q26_data_2'] ?? null;
 $q26_others_val = $question_26_data['others'] ?? '';
@@ -60,25 +60,25 @@ $q26_others_val = $question_26_data['others'] ?? '';
         <div class="card-body">
 
             <div class="icheck-primary">
-                <input type="radio" class="twenty6_status" id="q26_yes" name="is_unit_court_q26" value="1"
-                    {{ $q26_checked == "1" ? 'checked' : '' }}>
+                <input type="radio" class="twenty6_status" id="q26_yes" name="is_consistent_victim_approach_q26"
+                    value="1" {{ $q26_checked == "1" ? 'checked' : '' }}>
                 <label for="q26_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="twenty6_status" id="q26_no" name="is_unit_court_q26" value="0"
-                    {{ $q26_checked == "0" ? 'checked' : '' }}>
+                <input type="radio" class="twenty6_status" id="q26_no" name="is_consistent_victim_approach_q26"
+                    value="0" {{ $q26_checked == "0" ? 'checked' : '' }}>
                 <label for="q26_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="twenty6_status" id="q26_others" name="is_unit_court_q26" value="2"
-                    {{ $q26_checked == "2" ? 'checked' : '' }}>
+                <input type="radio" class="twenty6_status" id="q26_others" name="is_consistent_victim_approach_q26"
+                    value="2" {{ $q26_checked == "2" ? 'checked' : '' }}>
                 <label for="q26_others">Others</label>
 
                 <span class="col-md-6 mt--4 others_input_container {{ $q26_checked == "2" ? '' : 'othersText' }}">
                     <input type="text" id="q26_others_input" class="form-control" placeholder="Others"
-                        name="others_forced_labor_q26" value="{{ $q26_others_val }}">
+                        name="other_consistent_victim_approach_q26" value="{{ $q26_others_val }}">
                 </span>
             </div>
 
@@ -109,11 +109,11 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         @endphp
                         <tr class="q26_row_data_1" id="q26_t1_row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="labor_title_q26_1[]" class="form-control labor_title_q26"
+                                <input type="text" name="location_q26[]" class="form-control labor_title_q26"
                                     value="{{ $q26['title'] ?? '' }}">
                             </td>
                             <td>
-                                <select name="labor_category_q26_1[]" class="form-control labor_category_q26">
+                                <select name="category_q26[]" class="form-control labor_category_q26">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}" {{ ($q26['category'] ?? '') == $key ? 'selected' : '' }}>
@@ -123,7 +123,7 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                 </select>
 
                                 <div class="ngo_rating_container" style="display: {{ $is_ngo ? 'block' : 'none' }};">
-                                    <select name="ngo_rating_q26_1[]" class="form-control labor_ngo_rating_q26 mt-1">
+                                    <select name="ngo_rating_q26[]" class="form-control labor_ngo_rating_q26 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}"
@@ -135,17 +135,16 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q26_1[]" id="labor_men_q26_t1_{{ $i+1 }}"
+                                <input type="number" name="men_q26[]" id="labor_men_q26_t1_{{ $i+1 }}"
                                     class="form-control labor_men_q26" value="{{ $q26['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q26_1[]" id="labor_women_q26_t1_{{ $i+1 }}"
+                                <input type="number" name="women_q26[]" id="labor_women_q26_t1_{{ $i+1 }}"
                                     class="form-control labor_women_q26" value="{{ $q26['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q26_1[]" readonly
-                                    id="labor_total_q26_t1_{{ $i+1 }}" class="form-control labor_total_q26"
-                                    value="{{ $q26['total'] ?? 0 }}">
+                                <input type="number" name="total_q26[]" readonly id="labor_total_q26_t1_{{ $i+1 }}"
+                                    class="form-control labor_total_q26" value="{{ $q26['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
@@ -160,16 +159,16 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         @endforeach
                         @else
                         <tr class="q26_row_data_1" id="q26_t1_row1">
-                            <td><input type="text" name="labor_title_q26_1[]" class="form-control labor_title_q26"></td>
+                            <td><input type="text" name="location_q26[]" class="form-control labor_title_q26"></td>
                             <td>
-                                <select name="labor_category_q26_1[]" class="form-control labor_category_q26">
+                                <select name="category_q26[]" class="form-control labor_category_q26">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}">{{ $item }}</option>
                                     @endforeach
                                 </select>
                                 <div class="ngo_rating_container">
-                                    <select name="ngo_rating_q26_1[]" class="form-control labor_ngo_rating_q26 mt-1">
+                                    <select name="ngo_rating_q26[]" class="form-control labor_ngo_rating_q26 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}">{{ $rItem }}</option>
@@ -177,11 +176,11 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                     </select>
                                 </div>
                             </td>
-                            <td><input type="number" name="labor_men_q26_1[]" id="labor_men_q26_t1_1" value="0"
+                            <td><input type="number" name="men_q26[]" id="labor_men_q26_t1_1" value="0"
                                     class="form-control labor_men_q26" min="0"></td>
-                            <td><input type="number" name="labor_women_q26_1[]" id="labor_women_q26_t1_1" value="0"
+                            <td><input type="number" name="women_q26[]" id="labor_women_q26_t1_1" value="0"
                                     class="form-control labor_women_q26" min="0"></td>
-                            <td><input type="number" name="labor_total_q26_1[]" id="labor_total_q26_t1_1" value="0"
+                            <td><input type="number" name="total_q26[]" id="labor_total_q26_t1_1" value="0"
                                     class="form-control labor_total_q26" readonly></td>
                             <td><button type="button" class="btn btn-sm btn-primary"
                                     id="addRowDataq26_Table1">+</button></td>
@@ -216,11 +215,11 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         @endphp
                         <tr class="q26_row_data_2" id="q26_t2_row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="labor_title_q26_2[]" class="form-control labor_title_q26"
+                                <input type="text" name="location_q26b[]" class="form-control labor_title_q26"
                                     value="{{ $q26['title'] ?? '' }}">
                             </td>
                             <td>
-                                <select name="labor_category_q26_2[]" class="form-control labor_category_q26">
+                                <select name="category_q26b[]" class="form-control labor_category_q26">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}" {{ ($q26['category'] ?? '') == $key ? 'selected' : '' }}>
@@ -230,7 +229,7 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                 </select>
 
                                 <div class="ngo_rating_container" style="display: {{ $is_ngo ? 'block' : 'none' }};">
-                                    <select name="ngo_rating_q26_2[]" class="form-control labor_ngo_rating_q26 mt-1">
+                                    <select name="ngo_rating_q26b[]" class="form-control labor_ngo_rating_q26 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}"
@@ -242,17 +241,16 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q26_2[]" id="labor_men_q26_t2_{{ $i+1 }}"
+                                <input type="number" name="men_q26b[]" id="labor_men_q26_t2_{{ $i+1 }}"
                                     class="form-control labor_men_q26" value="{{ $q26['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q26_2[]" id="labor_women_q26_t2_{{ $i+1 }}"
+                                <input type="number" name="women_q26b[]" id="labor_women_q26_t2_{{ $i+1 }}"
                                     class="form-control labor_women_q26" value="{{ $q26['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q26_2[]" readonly
-                                    id="labor_total_q26_t2_{{ $i+1 }}" class="form-control labor_total_q26"
-                                    value="{{ $q26['total'] ?? 0 }}">
+                                <input type="number" name="total_q26b[]" readonly id="labor_total_q26_t2_{{ $i+1 }}"
+                                    class="form-control labor_total_q26" value="{{ $q26['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
@@ -267,16 +265,16 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         @endforeach
                         @else
                         <tr class="q26_row_data_2" id="q26_t2_row1">
-                            <td><input type="text" name="labor_title_q26_2[]" class="form-control labor_title_q26"></td>
+                            <td><input type="text" name="location_q26b[]" class="form-control labor_title_q26"></td>
                             <td>
-                                <select name="labor_category_q26_2[]" class="form-control labor_category_q26">
+                                <select name="category_q26b[]" class="form-control labor_category_q26">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
                                     <option value="{{ $key }}">{{ $item }}</option>
                                     @endforeach
                                 </select>
                                 <div class="ngo_rating_container">
-                                    <select name="ngo_rating_q26_2[]" class="form-control labor_ngo_rating_q26 mt-1">
+                                    <select name="ngo_rating_q26b[]" class="form-control labor_ngo_rating_q26 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}">{{ $rItem }}</option>
@@ -284,11 +282,11 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                     </select>
                                 </div>
                             </td>
-                            <td><input type="number" name="labor_men_q26_2[]" id="labor_men_q26_t2_1" value="0"
+                            <td><input type="number" name="men_q26b[]" id="labor_men_q26_t2_1" value="0"
                                     class="form-control labor_men_q26" min="0"></td>
-                            <td><input type="number" name="labor_women_q26_2[]" id="labor_women_q26_t2_1" value="0"
+                            <td><input type="number" name="women_q26b[]" id="labor_women_q26_t2_1" value="0"
                                     class="form-control labor_women_q26" min="0"></td>
-                            <td><input type="number" name="labor_total_q26_2[]" id="labor_total_q26_t2_1" value="0"
+                            <td><input type="number" name="total_q26b[]" id="labor_total_q26_t2_1" value="0"
                                     class="form-control labor_total_q26" readonly></td>
                             <td><button type="button" class="btn btn-sm btn-primary"
                                     id="addRowDataq26_Table2">+</button></td>
@@ -340,12 +338,12 @@ $(document).ready(function() {
         return html;
     }
 
-    // NGO সিলেক্ট করলে ড্রপডাউন শো/হাইড করার চেঞ্জ ইভেন্ট
+    // NGO ক্যাটাগরি চেঞ্জ লজিক
     $(document).on("change", ".labor_category_q26", function() {
         let val = $(this).val();
         let ngoContainer = $(this).closest("td").find(".ngo_rating_container");
 
-        if (val == "8") { // 8 হলো NGO এর ID
+        if (val == "8") {
             ngoContainer.show();
         } else {
             ngoContainer.hide();
@@ -353,7 +351,7 @@ $(document).ready(function() {
         }
     });
 
-    // ⬅️ টেবিল ১-এ নতুন রো যুক্ত করা
+    // টেবিল ১-এ নতুন রো যুক্ত
     $("#addRowDataq26_Table1").click(function() {
         let rowCount = new Date().getTime();
         let catOpts = getOptionsHTML(jsCategoryLists, '--Select Category--');
@@ -361,22 +359,22 @@ $(document).ready(function() {
 
         $("#addRowq26Table1 tbody").append(`
             <tr class="q26_row_data_1" id="q26_t1_row${rowCount}">
-                <td><input type="text" name="labor_title_q26_1[]" class="form-control labor_title_q26"></td>
+                <td><input type="text" name="location_q26[]" class="form-control labor_title_q26"></td>
                 <td>
-                    <select name="labor_category_q26_1[]" class="form-control labor_category_q26">${catOpts}</select>
+                    <select name="category_q26[]" class="form-control labor_category_q26">${catOpts}</select>
                     <div class="ngo_rating_container">
-                        <select name="ngo_rating_q26_1[]" class="form-control labor_ngo_rating_q26 mt-1">${ngoOpts}</select>
+                        <select name="ngo_rating_q26[]" class="form-control labor_ngo_rating_q26 mt-1">${ngoOpts}</select>
                     </div>
                 </td>
-                <td><input type="number" name="labor_men_q26_1[]" id="labor_men_q26_t1_${rowCount}" value="0" class="form-control labor_men_q26" min="0"></td>
-                <td><input type="number" name="labor_women_q26_1[]" id="labor_women_q26_t1_${rowCount}" value="0" class="form-control labor_women_q26" min="0"></td>
-                <td><input type="number" name="labor_total_q26_1[]" readonly id="labor_total_q26_t1_${rowCount}" class="form-control labor_total_q26" value="0"></td>
+                <td><input type="number" name="men_q26[]" id="labor_men_q26_t1_${rowCount}" value="0" class="form-control labor_men_q26" min="0"></td>
+                <td><input type="number" name="women_q26[]" id="labor_women_q26_t1_${rowCount}" value="0" class="form-control labor_women_q26" min="0"></td>
+                <td><input type="number" name="total_q26[]" readonly id="labor_total_q26_t1_${rowCount}" class="form-control labor_total_q26" value="0"></td>
                 <td><button type="button" id="t1_${rowCount}" class="btn btn-danger btn-sm q26btn_remove_t1">-</button></td>
             </tr>
         `);
     });
 
-    // ⬅️ টেবিল ২-এ নতুন রো যুক্ত করা
+    // টেবিল ২-এ নতুন রো যুক্ত
     $("#addRowDataq26_Table2").click(function() {
         let rowCount = new Date().getTime();
         let catOpts = getOptionsHTML(jsCategoryLists, '--Select Category--');
@@ -384,34 +382,34 @@ $(document).ready(function() {
 
         $("#addRowq26Table2 tbody").append(`
             <tr class="q26_row_data_2" id="q26_t2_row${rowCount}">
-                <td><input type="text" name="labor_title_q26_2[]" class="form-control labor_title_q26"></td>
+                <td><input type="text" name="location_q26b[]" class="form-control labor_title_q26"></td>
                 <td>
-                    <select name="labor_category_q26_2[]" class="form-control labor_category_q26">${catOpts}</select>
+                    <select name="category_q26b[]" class="form-control labor_category_q26">${catOpts}</select>
                     <div class="ngo_rating_container">
-                        <select name="ngo_rating_q26_2[]" class="form-control labor_ngo_rating_q26 mt-1">${ngoOpts}</select>
+                        <select name="ngo_rating_q26b[]" class="form-control labor_ngo_rating_q26 mt-1">${ngoOpts}</select>
                     </div>
                 </td>
-                <td><input type="number" name="labor_men_q26_2[]" id="labor_men_q26_t2_${rowCount}" value="0" class="form-control labor_men_q26" min="0"></td>
-                <td><input type="number" name="labor_women_q26_2[]" id="labor_women_q26_t2_${rowCount}" value="0" class="form-control labor_women_q26" min="0"></td>
-                <td><input type="number" name="labor_total_q26_2[]" readonly id="labor_total_q26_t2_${rowCount}" class="form-control labor_total_q26" value="0"></td>
+                <td><input type="number" name="men_q26b[]" id="labor_men_q26_t2_${rowCount}" value="0" class="form-control labor_men_q26" min="0"></td>
+                <td><input type="number" name="women_q26b[]" id="labor_women_q26_t2_${rowCount}" value="0" class="form-control labor_women_q26" min="0"></td>
+                <td><input type="number" name="total_q26b[]" readonly id="labor_total_q26_t2_${rowCount}" class="form-control labor_total_q26" value="0"></td>
                 <td><button type="button" id="t2_${rowCount}" class="btn btn-danger btn-sm q26btn_remove_t2">-</button></td>
             </tr>
         `);
     });
 
-    // ⬅️ টেবিল ১ থেকে রো রিমুভ
+    // রো রিমুভ (টেবিল ১)
     $(document).on("click", ".q26btn_remove_t1", function() {
         let id = $(this).attr("id").replace('t1_', '');
         $("#q26_t1_row" + id).remove();
     });
 
-    // ⬅️ টেবিল ২ থেকে রো রিমুভ
+    // রো রিমুভ (টেবিল ২)
     $(document).on("click", ".q26btn_remove_t2", function() {
         let id = $(this).attr("id").replace('t2_', '');
         $("#q26_t2_row" + id).remove();
     });
 
-    // ⬅️ পুরুষ ও মহিলা ইনপুটের ওপর ভিত্তি করে টোটাল ক্যালকুলেট (দুটি টেবিলের জন্যই)
+    // টোটাল হিসাব (Men + Women)
     $(document).on("input change keyup", ".labor_men_q26, .labor_women_q26", function() {
         let row = $(this).closest("tr");
         let men = parseInt(row.find(".labor_men_q26").val()) || 0;
@@ -419,9 +417,23 @@ $(document).ready(function() {
         row.find(".labor_total_q26").val(men + women);
     });
 
-    // ⬅️ রেডিও বাটন অনুযায়ী টগল লজিক
+    // টেবিল এবং ইনপুট ফিল্ড ক্লিয়ার/রিসেট করার হেলপার ফংশন
+    function clearQ26Inputs() {
+        $("#q26_others_input").val("");
+
+        // টেবিল ফিল্ড রিসেট
+        $(".q26_row_data_1, .q26_row_data_2").find(".labor_title_q26").val("");
+        $(".q26_row_data_1, .q26_row_data_2").find(".labor_category_q26").val("");
+        $(".q26_row_data_1, .q26_row_data_2").find(".labor_ngo_rating_q26").val("");
+        $(".q26_row_data_1, .q26_row_data_2").find(".labor_men_q26").val(0);
+        $(".q26_row_data_1, .q26_row_data_2").find(".labor_women_q26").val(0);
+        $(".q26_row_data_1, .q26_row_data_2").find(".labor_total_q26").val(0);
+        $(".ngo_rating_container").hide();
+    }
+
+    // রেডিও বাটন টগল এবং অটো রিসেট লজিক
     $(".twenty6_status").on("change", function() {
-        let value = $("input[name='is_unit_court_q26']:checked").val();
+        let value = $("input[name='is_consistent_victim_approach_q26']:checked").val();
 
         if (value === "1") {
             $("#twenty6_question_view").removeClass('visibility').show();
@@ -430,16 +442,19 @@ $(document).ready(function() {
         } else if (value === "2") {
             $("#twenty6_question_view").hide();
             $(".others_input_container").removeClass('othersText').show();
+            clearQ26Inputs();
         } else {
             $("#twenty6_question_view").hide();
             $(".others_input_container").addClass('othersText').hide();
-            $("#q26_others_input").val("");
+            clearQ26Inputs();
         }
     });
 
-    // ⬅️ টেম্পোরারি সেভ AJAX লজিক
-    $("#temp-save-question26").click(function() {
-        let yes_no_value = $("input[name='is_unit_court_q26']:checked").val();
+    // টেম্পোরারি সেভ AJAX রিকোয়েস্ট
+    $(document).on("click", "#temp-save-question26", function(e) {
+        e.preventDefault();
+
+        let yes_no_value = $("input[name='is_consistent_victim_approach_q26']:checked").val();
 
         let tableData1 = [];
         $(".q26_row_data_1").each(function() {
@@ -487,7 +502,7 @@ $(document).ready(function() {
             q26_data: tableData1,
             q26_data_2: tableData2,
             q26_checked_value: yes_no_value,
-            others: $("#q26_others_input").val(),
+            others: $("#q26_others_input").val()
         };
 
         $.ajax({
@@ -502,8 +517,9 @@ $(document).ready(function() {
                 $('.question26 .card-header h6').css('color', 'blue');
                 alert("Question 26 Temp Saved ");
             },
-            error: function() {
+            error: function(xhr, status, error) {
                 alert("Something went wrong!");
+                console.error(error);
             }
         });
     });

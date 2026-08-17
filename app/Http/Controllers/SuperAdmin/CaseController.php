@@ -27,6 +27,7 @@ use App\Models\ThirteenB;
 use App\Models\ThirteenC;
 use App\Models\ThirteenD;
 use App\Models\Ten;
+use App\Models\TwentyFive;
 use App\Models\Eleven;
 use App\Models\Fifteen;
 use App\Models\Sixteen;
@@ -68,6 +69,9 @@ use App\Models\Twentya;
 use App\Models\Twentyb;
 use App\Models\FortySix;
 use App\Models\ThirtyThree;
+
+use App\Models\TwentySix;
+use App\Models\TwentySixB;
 
 //new database design
 use DB;
@@ -262,6 +266,12 @@ class CaseController extends Controller
 
         $yes_no->is_victims_social_service_q19 = $request->is_victims_social_service_q19;
         $yes_no->other_victims_social_service_q19 = $request->other_victims_social_service_q19;
+
+        $yes_no->is_government_person_formally_q25 = $request->is_government_person_formally_q25;
+        $yes_no->other_government_person_formally_q25 = $request->other_government_person_formally_q25;
+
+        $yes_no->is_consistent_victim_approach_q26 = $request->is_consistent_victim_approach_q26;
+        $yes_no->other_consistent_victim_approach_q26 = $request->other_consistent_victim_approach_q26;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -1549,6 +1559,100 @@ if (!empty($bulkInsertData)) {
                 TwentyFour::insert($bulkInsertData);
             }
         }
+
+
+    //question25
+        if ($request->is_government_person_formally_q25 != 0) {
+
+           $case_id = $question->id;
+            $question25 = new TwentyFive();
+            $question25->case_id = $case_id;
+            $question25->government_person_formally_title_q25 = $request->government_person_formally_title_q25;
+            $question25->save();
+         
+          
+        }
+          
+
+          //question26
+        if ($request->is_consistent_victim_approach_q26 != 0) {
+
+           //a
+            $location_q26 = $request->input('location_q26', []);
+            $category_q26 = $request->input('category_q26', []);
+            $ngo_rating_q26 = $request->input('ngo_rating_q26', []);
+            $men_q26 = $request->input('men_q26', []);
+            $women_q26 = $request->input('women_q26', []);
+            $total_q26 = $request->input('total_q26', []);
+            
+           
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($location_q26),
+                count($category_q26),
+                count($ngo_rating_q26),
+                count($men_q26),
+                count($women_q26),
+                count($total_q26),
+              
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'location_q26' => $location_q26[$i] ?? null,
+                    'category_q26' => $category_q26[$i] ?? null,
+                    'ngo_rating_q26' => $ngo_rating_q26[$i] ?? null,
+                    'men_q26' => $men_q26[$i] ?? null,
+                    'women_q26' => $women_q26[$i] ?? null,
+                    'total_q26' => $total_q26[$i] ?? null,
+              
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                TwentySix::insert($bulkInsertData);
+            }
+            //b
+            $location_q26b = $request->input('location_q26b', []);
+            $category_q26b = $request->input('category_q26b', []);
+            $ngo_rating_q26b = $request->input('ngo_rating_q26b', []);
+            $men_q26b = $request->input('men_q26b', []);
+            $women_q26b = $request->input('women_q26b', []);
+            $total_q26b = $request->input('total_q26b', []);
+            
+           
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($location_q26b),
+                count($category_q26b),
+                count($ngo_rating_q26b),
+                count($men_q26b),
+                count($women_q26b),
+                count($total_q26b),
+              
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'location_q26b' => $location_q26b[$i] ?? null,
+                    'category_q26b' => $category_q26b[$i] ?? null,
+                    'ngo_rating_q26b' => $ngo_rating_q26b[$i] ?? null,
+                    'men_q26b' => $men_q26b[$i] ?? null,
+                    'women_q26b' => $women_q26b[$i] ?? null,
+                    'total_q26b' => $total_q26b[$i] ?? null,
+              
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                TwentySixB::insert($bulkInsertData);
+            }
+
+        }
+
+
 
         //question30
         $request->validate([

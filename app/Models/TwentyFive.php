@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class TwentyFive extends Model
 {
     use HasFactory;
-    protected $table ='services_available_victim_organization_q25';
+    protected $table ='government_person_formally_q25';
 
     public static function awarness_activities_q25_query_data (){
         //  DB::connection()->enableQueryLog(); 
