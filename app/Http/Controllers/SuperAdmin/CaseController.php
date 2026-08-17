@@ -72,6 +72,8 @@ use App\Models\ThirtyThree;
 
 use App\Models\TwentySix;
 use App\Models\TwentySixB;
+use App\Models\TwentySeven;
+use App\Models\TwentySevenB;
 
 //new database design
 use DB;
@@ -272,6 +274,9 @@ class CaseController extends Controller
 
         $yes_no->is_consistent_victim_approach_q26 = $request->is_consistent_victim_approach_q26;
         $yes_no->other_consistent_victim_approach_q26 = $request->other_consistent_victim_approach_q26;
+
+        $yes_no->is_government_direct_victim_q27 = $request->is_government_direct_victim_q27;
+        $yes_no->other_government_direct_victim_q27 = $request->other_government_direct_victim_q27;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -1653,6 +1658,90 @@ if (!empty($bulkInsertData)) {
         }
 
 
+
+    //question27
+        if ($request->is_government_direct_victim_q27 != 0) {
+
+           //a
+            $victim_care_q27 = $request->input('victim_care_q27', []);
+            $central_government_q27 = $request->input('central_government_q27', []);
+            $central_government_title_q27 = $request->input('central_government_title_q27', []);
+            $local_government_q27 = $request->input('local_government_q27', []);
+            $local_government_title_q27 = $request->input('local_government_title_q27', []);
+            $ngo_ingo_q27 = $request->input('ngo_ingo_q27', []);
+            $ngo_ingo_title_q27 = $request->input('ngo_ingo_title_q27', []);
+            
+           
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($victim_care_q27),
+                count($central_government_q27),
+                count($central_government_title_q27),
+                count($local_government_q27),
+                count($local_government_title_q27),
+                count($ngo_ingo_q27),
+                count($ngo_ingo_title_q27),
+              
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'victim_care_q27' => $victim_care_q27[$i] ?? null,
+                    'central_government_q27' => $central_government_q27[$i] ?? null,
+                    'central_government_title_q27' => $central_government_title_q27[$i] ?? null,
+                    'local_government_q27' => $local_government_q27[$i] ?? null,
+                    'local_government_title_q27' => $local_government_title_q27[$i] ?? null,
+                    'ngo_ingo_q27' => $ngo_ingo_q27[$i] ?? null,
+                    'ngo_ingo_title_q27' => $ngo_ingo_title_q27[$i] ?? null,
+              
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                TwentySeven::insert($bulkInsertData);
+            }
+            //b
+            $victim_care_q27b = $request->input('victim_care_q27b', []);
+            $central_government_q27b = $request->input('central_government_q27b', []);
+            $central_government_title_q27b = $request->input('central_government_title_q27b', []);
+            $local_government_q27b = $request->input('local_government_q27b', []);
+            $local_government_title_q27b = $request->input('local_government_title_q27b', []);
+            $ngo_ingo_q27b = $request->input('ngo_ingo_q27b', []);
+            $ngo_ingo_title_q27b = $request->input('ngo_ingo_title_q27b', []);
+            
+           
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($victim_care_q27b),
+                count($central_government_q27b),
+                count($central_government_title_q27b),
+                count($local_government_q27b),
+                count($local_government_title_q27b),
+                count($ngo_ingo_q27b),
+                count($ngo_ingo_title_q27b),
+              
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'victim_care_q27b' => $victim_care_q27b[$i] ?? null,
+                    'central_government_q27b' => $central_government_q27b[$i] ?? null,
+                    'central_government_title_q27b' => $central_government_title_q27b[$i] ?? null,
+                    'local_government_q27b' => $local_government_q27b[$i] ?? null,
+                    'local_government_title_q27b' => $local_government_title_q27b[$i] ?? null,
+                    'ngo_ingo_q27b' => $ngo_ingo_q27b[$i] ?? null,
+                    'ngo_ingo_title_q27b' => $ngo_ingo_title_q27b[$i] ?? null,
+              
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                TwentySevenB::insert($bulkInsertData);
+            }
+
+        }
 
         //question30
         $request->validate([

@@ -18,8 +18,11 @@ return new class extends Migration
             $table->integer('case_id')->nullable();
             $table->string('victim_care_q27')->nullable();
             $table->string('central_government_q27')->nullable();
+            $table->string('central_government_title_q27')->nullable();
             $table->string('local_government_q27')->nullable();
+            $table->string('local_government_title_q27')->nullable();
             $table->string('ngo_ingo_q27')->nullable();
+            $table->string('ngo_ingo_title_q27')->nullable();
             $table->timestamps();
         });
     }
