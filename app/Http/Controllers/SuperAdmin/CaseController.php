@@ -37,6 +37,7 @@ use App\Models\Nineteen;
 use App\Models\Twenty;
 use App\Models\TwentyThree;
 use App\Models\TwentyEight;
+use App\Models\TwentyNine;
 use App\Models\FiftyThree;
 use App\Models\FiftyFour;
 use App\Models\FiftyFive;
@@ -74,6 +75,9 @@ use App\Models\TwentySix;
 use App\Models\TwentySixB;
 use App\Models\TwentySeven;
 use App\Models\TwentySevenB;
+
+use App\Models\ThirtyFour;
+use App\Models\ThirtyFourB;
 
 //new database design
 use DB;
@@ -277,6 +281,16 @@ class CaseController extends Controller
 
         $yes_no->is_government_direct_victim_q27 = $request->is_government_direct_victim_q27;
         $yes_no->other_government_direct_victim_q27 = $request->other_government_direct_victim_q27;
+
+        $yes_no->is_child_victims_juvenile_q28 = $request->is_child_victims_juvenile_q28;
+        $yes_no->other_child_victims_juvenile_q28 = $request->other_child_victims_juvenile_q28;
+
+        $yes_no->is_adult_victims_juvenile_q29 = $request->is_adult_victims_juvenile_q29;
+        $yes_no->other_adult_victims_juvenile_q29 = $request->other_adult_victims_juvenile_q29;
+
+
+        $yes_no->is_newly_identified_victims_q34 = $request->is_newly_identified_victims_q34;
+        $yes_no->other_newly_identified_victims_q34 = $request->other_newly_identified_victims_q34;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -1743,6 +1757,24 @@ if (!empty($bulkInsertData)) {
 
         }
 
+       //question28
+        if ($request->is_child_victims_juvenile_q28 != 0) {
+            $case_id = $question->id;
+            $question28 = new TwentyEight();
+            $question28->case_id = $case_id;
+            $question28->child_victims_juvenile_title_q28 = $request->child_victims_juvenile_title_q28;
+            $question28->save();
+        }
+
+         //question29
+        if ($request->is_adult_victims_juvenile_q29 != 0) {
+            $case_id = $question->id;
+            $question29 = new TwentyNine();
+            $question29->case_id = $case_id;
+            $question29->adult_victims_juvenile_title_q29 = $request->adult_victims_juvenile_title_q29;
+            $question29->save();
+        }
+
         //question30
         $request->validate([
             'citizen_victims_men_q30.*' => 'nullable|numeric',
@@ -1817,6 +1849,63 @@ if (!empty($bulkInsertData)) {
                 Thirty::insert($bulkInsertData);
             }
         }
+
+        //question34 
+        if ($request->is_newly_identified_victims_q34 != 0) {
+           //a
+           $case_id = $question->id;
+            $question34 = new ThirtyFour();
+            $question34->case_id = $case_id;
+            $question34->number_victims_q34 = $request->number_victims_q34;
+            $question34->men_victims_q34 = $request->men_victims_q34;
+            $question34->women_victims_q34 = $request->women_victims_q34;
+            $question34->tg_victims_q34 = $request->tg_victims_q34;
+            $question34->total_victims_q34 = $request->total_victims_q34;
+            $question34->save();
+
+            //b
+
+            $number_victims_q34b = $request->input('number_victims_q34b', []);
+            $men_victims_q34b = $request->input('men_victims_q34b', []);
+            $women_victims_q34b = $request->input('women_victims_q34b', []);
+            $tg_victims_q34b = $request->input('tg_victims_q34b', []);
+            $total_victims_q34b = $request->input('total_victims_q34b', []);
+         
+            
+           
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($number_victims_q34b),
+                count($men_victims_q34b),
+                count($women_victims_q34b),
+                count($tg_victims_q34b),
+                count($total_victims_q34b),
+            
+              
+            );
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'number_victims_q34b' => $number_victims_q34b[$i] ?? null,
+                    'men_victims_q34b' => $men_victims_q34b[$i] ?? null,
+                    'women_victims_q34b' => $women_victims_q34b[$i] ?? null,
+                    'tg_victims_q34b' => $tg_victims_q34b[$i] ?? null,
+                    'total_victims_q34b' => $total_victims_q34b[$i] ?? null,
+                    
+              
+                ];
+            }
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThirtyFourB::insert($bulkInsertData);
+            }
+
+
+         
+          
+        }
+          
 
 
         

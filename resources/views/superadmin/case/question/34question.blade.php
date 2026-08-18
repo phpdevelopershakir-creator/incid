@@ -13,7 +13,7 @@ $p1_women = $part1['women'] ?? 0;
 $p1_tg = $part1['tg'] ?? 0;
 $p1_total = $part1['total'] ?? 0;
 
-// দ্বিতীয় টেবিলের ডাটা (Type of Support Table)
+// দ্বিতীয় টেবিলের ডাটা (Type of Support Table)
 $part2_rows = $question_34_data['part2_data'] ?? null;
 
 // ড্রপডাউন অপশন লিস্ট
@@ -50,31 +50,31 @@ $support_types = [
 
             <!-- মূল রেডিও বাটন -->
             <div class="icheck-primary">
-                <input type="radio" class="thirtyfour_status" id="q34_yes" name="is_unit_court_q34" value="1"
-                    {{ $q34_checked == "1" ? 'checked' : '' }}>
+                <input type="radio" class="thirtyfour_status" id="q34_yes" name="is_newly_identified_victims_q34"
+                    value="1" {{ $q34_checked == "1" ? 'checked' : '' }}>
                 <label for="q34_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="thirtyfour_status" id="q34_no" name="is_unit_court_q34" value="0"
-                    {{ $q34_checked == "0" ? 'checked' : '' }}>
+                <input type="radio" class="thirtyfour_status" id="q34_no" name="is_newly_identified_victims_q34"
+                    value="0" {{ $q34_checked == "0" ? 'checked' : '' }}>
                 <label for="q34_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="thirtyfour_status" id="q34_others" name="is_unit_court_q34" value="2"
-                    {{ $q34_checked == "2" ? 'checked' : '' }}>
+                <input type="radio" class="thirtyfour_status" id="q34_others" name="is_newly_identified_victims_q34"
+                    value="2" {{ $q34_checked == "2" ? 'checked' : '' }}>
                 <label for="q34_others">Others</label>
 
                 <span class="col-md-6 mt--4 others_input_container {{ $q34_checked == "2" ? '' : 'othersText' }}">
                     <input type="text" id="q34_others_input" class="form-control" placeholder="If OTHER please describe"
-                        name="others_forced_labor_q34" value="{{ $q34_others_val }}">
+                        name="other_newly_identified_victims_q34" value="{{ $q34_others_val }}">
                 </span>
             </div>
 
             <div id="thirtyfour_question_view" class="{{ $q34_checked == '1' ? '' : 'visibility' }}">
 
-                <!-- 🔴 SECTION 1: Investigation Table -->
+                <!-- 🔴 SECTION 1: Single Table -->
                 <p class="font-weight-bold mb-2">
                     How many newly identified victims participated in the investigation and prosecution of traffickers?
                 </p>
@@ -93,20 +93,20 @@ $support_types = [
                         <tr>
                             <td class="font-weight-bold text-left" style="vertical-align: middle;">Victims Count</td>
                             <td>
-                                <input type="number" id="p1_men" class="form-control p1_calc" value="{{ $p1_men }}"
-                                    min="0">
+                                <input type="number" name="men_victims_q34" id="p1_men" class="form-control p1_calc"
+                                    value="{{ $p1_men }}" min="0">
                             </td>
                             <td>
-                                <input type="number" id="p1_women" class="form-control p1_calc" value="{{ $p1_women }}"
-                                    min="0">
+                                <input type="number" name="women_victims_q34" id="p1_women" class="form-control p1_calc"
+                                    value="{{ $p1_women }}" min="0">
                             </td>
                             <td>
-                                <input type="number" id="p1_tg" class="form-control p1_calc" value="{{ $p1_tg }}"
-                                    min="0">
+                                <input type="number" name="tg_victims_q34" id="p1_tg" class="form-control p1_calc"
+                                    value="{{ $p1_tg }}" min="0">
                             </td>
                             <td>
-                                <input type="number" id="p1_total" class="form-control" value="{{ $p1_total }}"
-                                    readonly>
+                                <input type="number" name="total_victims_q34" id="p1_total" class="form-control"
+                                    value="{{ $p1_total }}" readonly>
                             </td>
                         </tr>
                     </tbody>
@@ -114,7 +114,7 @@ $support_types = [
 
                 <hr>
 
-                <!-- 🔴 SECTION 2: Type of Support Table -->
+                <!-- 🔴 SECTION 2: Add Row Table -->
                 <p class="font-weight-bold mb-2">
                     What, if any, support did the government provide to victims who assisted in the investigation and
                     prosecution of trafficking cases, such as visa categories that facilitate cooperation with law
@@ -141,7 +141,7 @@ $support_types = [
                         @foreach($part2_rows as $i => $row)
                         <tr class="q34_p2_row" id="q34_p2_row_{{ $i+1 }}">
                             <td>
-                                <select class="form-control p2_support_type">
+                                <select class="form-control p2_support_type" name="number_victims_q34b[]">
                                     <option value="" disabled selected>Choose an item.</option>
                                     @foreach($support_types as $sKey => $sVal)
                                     <option value="{{ $sKey }}" {{ ($row['type'] ?? '') == $sKey ? 'selected' : '' }}>
@@ -150,14 +150,14 @@ $support_types = [
                                     @endforeach
                                 </select>
                             </td>
-                            <td><input type="number" class="form-control p2_men p2_calc" value="{{ $row['men'] ?? 0 }}"
-                                    min="0"></td>
-                            <td><input type="number" class="form-control p2_women p2_calc"
+                            <td><input type="number" name="men_victims_q34b[]" class="form-control p2_men p2_calc"
+                                    value="{{ $row['men'] ?? 0 }}" min="0"></td>
+                            <td><input type="number" name="women_victims_q34b[]" class="form-control p2_women p2_calc"
                                     value="{{ $row['women'] ?? 0 }}" min="0"></td>
-                            <td><input type="number" class="form-control p2_tg p2_calc" value="{{ $row['tg'] ?? 0 }}"
-                                    min="0"></td>
-                            <td><input type="number" class="form-control p2_total" value="{{ $row['total'] ?? 0 }}"
-                                    readonly></td>
+                            <td><input type="number" name="tg_victims_q34b[]" class="form-control p2_tg p2_calc"
+                                    value="{{ $row['tg'] ?? 0 }}" min="0"></td>
+                            <td><input type="number" name="total_victims_q34b[]" class="form-control p2_total"
+                                    value="{{ $row['total'] ?? 0 }}" readonly></td>
                             <td>
                                 @if($i == 0)
                                 <button type="button" class="btn btn-sm btn-primary" id="add_q34_p2_row">+</button>
@@ -171,17 +171,21 @@ $support_types = [
                         @else
                         <tr class="q34_p2_row" id="q34_p2_row_1">
                             <td>
-                                <select class="form-control p2_support_type">
+                                <select class="form-control p2_support_type" name="number_victims_q34b[]">
                                     <option value="" disabled selected>Choose an item.</option>
                                     @foreach($support_types as $sKey => $sVal)
                                     <option value="{{ $sKey }}">{{ $sVal }}</option>
                                     @endforeach
                                 </select>
                             </td>
-                            <td><input type="number" class="form-control p2_men p2_calc" value="0" min="0"></td>
-                            <td><input type="number" class="form-control p2_women p2_calc" value="0" min="0"></td>
-                            <td><input type="number" class="form-control p2_tg p2_calc" value="0" min="0"></td>
-                            <td><input type="number" class="form-control p2_total" value="0" readonly></td>
+                            <td><input type="number" name="men_victims_q34b[]" class="form-control p2_men p2_calc"
+                                    value="0" min="0"></td>
+                            <td><input type="number" name="women_victims_q34b[]" class="form-control p2_women p2_calc"
+                                    value="0" min="0"></td>
+                            <td><input type="number" name="tg_victims_q34b[]" class="form-control p2_tg p2_calc"
+                                    value="0" min="0"></td>
+                            <td><input type="number" name="total_victims_q34b[]" class="form-control p2_total" value="0"
+                                    readonly></td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-primary" id="add_q34_p2_row">+</button>
                             </td>
@@ -232,31 +236,35 @@ $(document).ready(function() {
         row.find(".p2_total").val(men + women + tg);
     });
 
-    // ⬅ Buk-Section 2 Row Add
-    $("#add_q34_p2_row").click(function() {
+    // ⬅️ Section 2 Row Add
+    $(document).on("click", "#add_q34_p2_row", function() {
         let rowId = new Date().getTime();
 
         $("#q34_support_table tbody").append(`
             <tr class="q34_p2_row" id="q34_p2_row_${rowId}">
-                <td><select class="form-control p2_support_type">${supportOptions}</select></td>
-                <td><input type="number" class="form-control p2_men p2_calc" value="0" min="0"></td>
-                <td><input type="number" class="form-control p2_women p2_calc" value="0" min="0"></td>
-                <td><input type="number" class="form-control p2_tg p2_calc" value="0" min="0"></td>
-                <td><input type="number" class="form-control p2_total" value="0" readonly></td>
+                <td>
+                    <select class="form-control p2_support_type" name="number_victims_q34b[]">
+                        ${supportOptions}
+                    </select>
+                </td>
+                <td><input type="number" name="men_victims_q34b[]" class="form-control p2_men p2_calc" value="0" min="0"></td>
+                <td><input type="number" name="women_victims_q34b[]" class="form-control p2_women p2_calc" value="0" min="0"></td>
+                <td><input type="number" name="tg_victims_q34b[]" class="form-control p2_tg p2_calc" value="0" min="0"></td>
+                <td><input type="number" name="total_victims_q34b[]" class="form-control p2_total" value="0" readonly></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove_q34_p2_row" data-id="${rowId}">-</button></td>
             </tr>
         `);
     });
 
-    // ⬅ Section 2 Row Remove
+    // ⬅️ Section 2 Row Remove
     $(document).on("click", ".remove_q34_p2_row", function() {
         let id = $(this).data("id");
         $("#q34_p2_row_" + id).remove();
     });
 
-    // ⬅️ রেডিও বাটন অনুযায়ী টগল লজিক (Yes/No/Others)
-    $(".thirtyfour_status").on("change", function() {
-        let value = $("input[name='is_unit_court_q34']:checked").val();
+    // ⬅️ রেডিও বাটন অনুযায়ী টগল লজিক (Yes/No/Others)
+    $(document).on("change", ".thirtyfour_status", function() {
+        let value = $("input[name='is_newly_identified_victims_q34']:checked").val();
 
         if (value === "1") {
             $("#thirtyfour_question_view").removeClass('visibility').show();
@@ -273,8 +281,8 @@ $(document).ready(function() {
     });
 
     // ⬅️ Temp Save AJAX
-    $("#temp-save-question34").click(function() {
-        let yes_no_value = $("input[name='is_unit_court_q34']:checked").val();
+    $(document).on("click", "#temp-save-question34", function() {
+        let yes_no_value = $("input[name='is_newly_identified_victims_q34']:checked").val();
 
         // Part 1 Data
         let part1Data = {
@@ -320,8 +328,12 @@ $(document).ready(function() {
                 question_no: 34
             },
             success: function(response) {
-                $('.question34 .card-header h6').css('color', 'blue');
-                alert("Question 34 Saved Temp ");
+                if (response.success || response) {
+                    $('.question34 .card-header h6').css('color', 'blue');
+                    alert("Question 34 Temp Saved Successfully");
+                } else {
+                    alert("Not Saved");
+                }
             },
             error: function() {
                 alert("Something went wrong!");
