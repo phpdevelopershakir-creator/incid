@@ -1,27 +1,124 @@
-<?php
-if (($questiontitles[36]->status ?? null) == 1) {
+@if (($questiontitles[36]->status ?? null) == 1)
+@php
+// সেশন থেকে সরাসরি ৩৭ নম্বর প্রশ্নের ডাটা তুলে নেওয়া হচ্ছে
+$question_37_data = session()->get('question37');
 
-?>
-<div class="card">
-  <div class="card-header" role="tab" id="heading-4">
-    <h6 class="mb-0">
-      <a data-toggle="collapse" href="#Question-37" aria-expanded="false"
-        aria-controls="collapse-4">
-        37.{{ $questiontitles[36]->title }}
-      </a>
-    </h6>
-  </div>
+// ডাটা টাইপ কাস্টিং এর ঝামেলা এড়াতে বাউন্ডারি ঠিক করা হলো
+$q37_checked = isset($question_37_data['q37_checked_value']) ? (string)$question_37_data['q37_checked_value'] : null;
+$q37_data = $question_37_data['q37_data'] ?? null;
+@endphp
 
-  <div id="Question-37" class="collapse" role="tabpane37" aria-labelledby="heading-4"
-    data-parent="#accordion-2">
-    <div class="card-body">
-
-      <input type="radio" name="gender" value="male"> Yes <br>
-      <input type="radio" name="gender" value="male"> No <br>
-
-      <input type="radio" name="gender" value="female"> Others <br>
+<div class="card question37">
+    <div class="card-header" id="heading-37">
+        <h6 style="color: {{ !empty($question_37_data) ? 'blue' : 'green' }};">
+            <a data-toggle="collapse" href="#Question-37" aria-expanded="false" aria-controls="collapse-37">
+                37. {{ $questiontitles[36]->title }}
+            </a>
+        </h6>
     </div>
-  </div>
-</div>
 
-<?php } ?>
+    <div id="Question-37" class="collapse" role="tabpanel" aria-labelledby="heading-37" data-parent="#accordion-2">
+        <div class="card-body">
+
+            <!-- ডিফল্ট হিসেবে ১ (Yes) সিলেক্টেড থাকবে যদি কোনো ডাটা না থাকে -->
+            <div class="form-group mb-2">
+                <input type="radio" id="radioYes37" class="thirtysevenstatus" name="is_complicit_official_q37" value="1"
+                    {{ (is_null($q37_checked) || $q37_checked === '1') ? 'checked' : '' }}>
+                <label for="radioYes37" class="mr-3">Yes</label>
+
+                <input type="radio" id="radioNo37" class="thirtysevenstatus" name="is_complicit_official_q37" value="0"
+                    {{ ($q37_checked === '0') ? 'checked' : '' }}>
+                <label for="radioNo37" class="mr-3">No</label>
+
+                <input type="radio" id="radioOthers37" class="thirtysevenstatus" name="is_complicit_official_q37"
+                    value="2" {{ ($q37_checked === '2') ? 'checked' : '' }}>
+                <label for="radioOthers37">Others</label>
+            </div>
+
+            <!-- Yes সিলেক্ট থাকলে দেখাবে -->
+            <div id="yes_extra_q37"
+                style="display: {{ (is_null($q37_checked) || $q37_checked === '1') ? 'block' : 'none' }};">
+                <input type="text" name="involved_directly_trafficking_title_q37"
+                    class="form-control mt-2 q37-yes-input" placeholder="Provide Yes details"
+                    value="{{ $q37_data['involved_directly_trafficking_title'] ?? '' }}">
+            </div>
+
+            <!-- Others সিলেক্ট থাকলে দেখাবে -->
+            <div id="others_q37" style="display: {{ ($q37_checked === '2') ? 'block' : 'none' }};">
+                <input type="text" name="others_complicit_official_q37" class="form-control mt-2 q37-others-input"
+                    placeholder="Others details" value="{{ $q37_data['others'] ?? '' }}">
+            </div>
+
+        </div>
+
+        <p class="text-right mr-3">
+            <button type="button" class="btn btn-success" id="temp-save-question37">Save</button>
+        </p>
+    </div>
+</div>
+@endif
+
+<script>
+$(document).ready(function() {
+    // Yes/No/Others রেডিও বাটনের টগল লজিক
+    function toggleq37() {
+        let val = $("input[name='is_complicit_official_q37']:checked").val();
+
+        if (!val) {
+            val = '1';
+            $('#radioYes37').prop('checked', true);
+        }
+
+        // কন্ডিশন অনুযায়ী শো/হাইড করা
+        if (val === '1') {
+            $('#yes_extra_q37').show();
+            $('#others_q37').hide();
+        } else if (val === '2') {
+            $('#yes_extra_q37').hide();
+            $('#others_q37').show();
+        } else {
+            $('#yes_extra_q37').hide();
+            $('#others_q37').hide();
+        }
+    }
+
+    // ইভেন্ট লিসেনার
+    $(document).on('change', '.thirtysevenstatus', toggleq37);
+
+    // সাময়িকভাবে ডাটা সেভ করার AJAX রিকোয়েস্ট
+    $(document).on("click", "#temp-save-question37", function() {
+        let checkedValue = $("input[name='is_complicit_official_q37']:checked").val();
+
+        let q37_data = {
+            involved_directly_trafficking_title: $('.q37-yes-input').val(),
+            others: $('.q37-others-input').val()
+        };
+
+        let new_data = {
+            q37_checked_value: checkedValue,
+            q37_data: q37_data
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/superadmin/case/temp-save-question",
+            data: {
+                _token: "{{ csrf_token() }}",
+                question_no: 37,
+                question37: new_data
+            },
+            success: function(response) {
+                if (response.success || response) {
+                    $('.question37 .card-header h6').css('color', 'blue');
+                    alert("Question 37 Temp Saved Successfully");
+                } else {
+                    alert("Not Saved");
+                }
+            },
+            error: function() {
+                alert("Something went wrong!");
+            }
+        });
+    });
+});
+</script>

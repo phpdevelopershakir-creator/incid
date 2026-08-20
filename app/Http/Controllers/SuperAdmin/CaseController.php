@@ -78,6 +78,7 @@ use App\Models\TwentySevenB;
 
 use App\Models\ThirtyFour;
 use App\Models\ThirtyFourB;
+use App\Models\FiftyEight;
 
 //new database design
 use DB;
@@ -291,6 +292,9 @@ class CaseController extends Controller
 
         $yes_no->is_newly_identified_victims_q34 = $request->is_newly_identified_victims_q34;
         $yes_no->other_newly_identified_victims_q34 = $request->other_newly_identified_victims_q34;
+
+        $yes_no->is_trafficking_investigations_q58 = $request->is_trafficking_investigations_q58;
+        $yes_no->other_trafficking_investigations_q58 = $request->other_trafficking_investigations_q58;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -2405,8 +2409,14 @@ if (!empty($bulkInsertData)) {
 
 
 
-
-
+    //question58
+     if ($request->is_trafficking_investigations_q58 != 0) {
+            $case_id = $question->id;
+            $question58 = new FiftyEight();
+            $question58->case_id = $case_id;
+            $question58->trafficking_investigations_title_q58 = $request->trafficking_investigations_title_q58;
+            $question58->save();
+        }
 
 
 
