@@ -25,7 +25,7 @@ $q41_data = $question_41_data['q41_data'] ?? null;
                     they ordered to pay? How many victims received the amount they were awarded? If applicable, what
                     factors hindered victims' receipt of these funds?
                 </label>
-                <textarea name="restitution_hindered_factors_q41" class="form-control q41-desc-input" rows="3"
+                <textarea name="convicted_traffickers_title_one_q41" class="form-control q41-desc-input" rows="3"
                     placeholder="Input Field">{{ $q41_data['restitution_hindered_factors'] ?? '' }}</textarea>
             </div>
 
@@ -79,30 +79,50 @@ $q41_data = $question_41_data['q41_data'] ?? null;
 
                             @for($i = 0; $i < $totalRows; $i++) @php $row=$rows[$i] ?? null; @endphp <tr>
                                 <td>
-                                    <select name="location_q41[]" class="form-control q41-location">
+                                    <select name="convicted_traffickers_location_q41b[]"
+                                        class="form-control q41-location">
                                         <option value="">Dropdown</option>
                                         <option value="Dhaka"
                                             {{ ($row['location'] ?? '') == 'Dhaka' ? 'selected' : '' }}>Dhaka</option>
                                         <option value="Chittagong"
                                             {{ ($row['location'] ?? '') == 'Chittagong' ? 'selected' : '' }}>Chittagong
                                         </option>
+                                        <option value="Barishal"
+                                            {{ ($row['location'] ?? '') == 'Barishal' ? 'selected' : '' }}>Barishal
+                                        </option>
+                                        <option value="Sylhet"
+                                            {{ ($row['location'] ?? '') == 'Sylhet' ? 'selected' : '' }}>Sylhet
+                                        </option>
+                                        <option value="Rangpur"
+                                            {{ ($row['location'] ?? '') == 'Rangpur' ? 'selected' : '' }}>Rangpur
+                                        </option>
+                                        <option value="Mymensingh"
+                                            {{ ($row['location'] ?? '') == 'Mymensingh' ? 'selected' : '' }}>Mymensingh
+                                        </option>
+                                        <option value="National"
+                                            {{ ($row['location'] ?? '') == 'National' ? 'selected' : '' }}>National
+                                        </option>
                                     </select>
                                 </td>
-                                <td><input type="text" name="case_no_q41[]" class="form-control q41-case-no"
-                                        value="{{ $row['case_no'] ?? '' }}" placeholder="Case no"></td>
-                                <td><input type="number" name="men_q41[]" class="form-control q41-men"
-                                        value="{{ $row['men'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="amount_men_q41[]" class="form-control q41-amount-men"
-                                        value="{{ $row['amount_men'] ?? '' }}" step="0.01" min="0"></td>
-                                <td><input type="number" name="women_q41[]" class="form-control q41-women"
-                                        value="{{ $row['women'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="amount_women_q41[]" class="form-control q41-amount-women"
-                                        value="{{ $row['amount_women'] ?? '' }}" step="0.01" min="0"></td>
-                                <td><input type="number" name="total_traffickers_q41[]"
+                                <td><input type="text" name="convicted_traffickers_case_q41b[]"
+                                        class="form-control q41-case-no" value="{{ $row['case_no'] ?? '' }}"
+                                        placeholder="Case no"></td>
+                                <td><input type="number" name="convicted_traffickers_men_q41b[]"
+                                        class="form-control q41-men" value="{{ $row['men'] ?? '' }}" min="0"></td>
+                                <td><input type="number" name="convicted_traffickers_men_amount_q41b[]"
+                                        class="form-control q41-amount-men" value="{{ $row['amount_men'] ?? '' }}"
+                                        step="0.01" min="0"></td>
+                                <td><input type="number" name="convicted_traffickers_women_q41b[]"
+                                        class="form-control q41-women" value="{{ $row['women'] ?? '' }}" min="0"></td>
+                                <td><input type="number" name="convicted_traffickers_women_amount_q41b[]"
+                                        class="form-control q41-amount-women" value="{{ $row['amount_women'] ?? '' }}"
+                                        step="0.01" min="0"></td>
+                                <td><input type="number" name="convicted_traffickers_total_trafic_q41b[]"
                                         class="form-control q41-total-traffickers"
                                         value="{{ $row['total_traffickers'] ?? '' }}" readonly></td>
-                                <td><input type="number" name="total_amount_q41[]" class="form-control q41-total-amount"
-                                        value="{{ $row['total_amount'] ?? '' }}" readonly></td>
+                                <td><input type="number" name="convicted_traffickers_total_amount_q41b[]"
+                                        class="form-control q41-total-amount" value="{{ $row['total_amount'] ?? '' }}"
+                                        readonly></td>
                                 <td>
                                     @if($i == 0)
                                     <span class="badge badge-secondary">Fixed</span>
@@ -134,7 +154,8 @@ $q41_data = $question_41_data['q41_data'] ?? null;
                 <div class="form-group mt-3">
                     <label class="text-danger font-weight-bold">Dropdown in Location, country and district not declared
                         :</label>
-                    <textarea name="location_not_specified_q41" class="form-control q41-location-not-specified" rows="2"
+                    <textarea name="convicted_traffickers_title_two_q41" class="form-control q41-location-not-specified"
+                        rows="2"
                         placeholder="[Input text box with description]">{{ $q41_data['location_not_specified'] ?? '' }}</textarea>
                 </div>
             </div>
@@ -218,19 +239,26 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="location_q41[]" class="form-control q41-location">
+                    <select name="convicted_traffickers_location_q41b[]" class="form-control q41-location">
                         <option value="">Dropdown</option>
                         <option value="Dhaka">Dhaka</option>
                         <option value="Chittagong">Chittagong</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Barishal">Barishal</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Rangpur">Rangpur</option>
+                        <option value="Mymensingh">Mymensingh</option>
+                        <option value="Sylhet">National</option>
                     </select>
                 </td>
-                <td><input type="text" name="case_no_q41[]" class="form-control q41-case-no" placeholder="Case no"></td>
-                <td><input type="number" name="men_q41[]" class="form-control q41-men" min="0"></td>
-                <td><input type="number" name="amount_men_q41[]" class="form-control q41-amount-men" step="0.01" min="0"></td>
-                <td><input type="number" name="women_q41[]" class="form-control q41-women" min="0"></td>
-                <td><input type="number" name="amount_women_q41[]" class="form-control q41-amount-women" step="0.01" min="0"></td>
-                <td><input type="number" name="total_traffickers_q41[]" class="form-control q41-total-traffickers" readonly></td>
-                <td><input type="number" name="total_amount_q41[]" class="form-control q41-total-amount" readonly></td>
+                <td><input type="text" name="convicted_traffickers_case_q41b[]" class="form-control q41-case-no" placeholder="Case no"></td>
+                <td><input type="number" name="convicted_traffickers_men_q41b[]" class="form-control q41-men" min="0"></td>
+                <td><input type="number" name="convicted_traffickers_men_amount_q41b[]" class="form-control q41-amount-men" step="0.01" min="0"></td>
+                <td><input type="number" name="convicted_traffickers_women_q41b[]" class="form-control q41-women" min="0"></td>
+                <td><input type="number" name="convicted_traffickers_women_amount_q41b[]" class="form-control q41-amount-women" step="0.01" min="0"></td>
+                <td><input type="number" name="convicted_traffickers_total_trafic_q41b[]" class="form-control q41-total-traffickers" readonly></td>
+                <td><input type="number" name="convicted_traffickers_total_amount_q41b[]" class="form-control q41-total-amount" readonly></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove-row-q41">-</button></td>
             </tr>`;
         $('#restitution-table-q41 tbody').append(newRow);
@@ -279,7 +307,7 @@ $(document).ready(function() {
             others_restitution: $('.q41-others-input').val(),
             traffickers_data: traffickersData,
             location_not_specified: $('.q41-location-not-specified')
-            .val() // <--- নতুন ফিল্ড যুক্ত হলো
+                .val() // <--- নতুন ফিল্ড যুক্ত হলো
         };
 
         let new_data = {

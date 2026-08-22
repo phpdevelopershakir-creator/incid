@@ -22,15 +22,15 @@ $q37_data = $question_37_data['q37_data'] ?? null;
 
             <!-- ডিফল্ট হিসেবে ১ (Yes) সিলেক্টেড থাকবে যদি কোনো ডাটা না থাকে -->
             <div class="form-group mb-2">
-                <input type="radio" id="radioYes37" class="thirtysevenstatus" name="is_complicit_official_q37" value="1"
-                    {{ (is_null($q37_checked) || $q37_checked === '1') ? 'checked' : '' }}>
+                <input type="radio" id="radioYes37" class="thirtysevenstatus" name="is_assistance_government_q37"
+                    value="1" {{ (is_null($q37_checked) || $q37_checked === '1') ? 'checked' : '' }}>
                 <label for="radioYes37" class="mr-3">Yes</label>
 
-                <input type="radio" id="radioNo37" class="thirtysevenstatus" name="is_complicit_official_q37" value="0"
-                    {{ ($q37_checked === '0') ? 'checked' : '' }}>
+                <input type="radio" id="radioNo37" class="thirtysevenstatus" name="is_assistance_government_q37"
+                    value="0" {{ ($q37_checked === '0') ? 'checked' : '' }}>
                 <label for="radioNo37" class="mr-3">No</label>
 
-                <input type="radio" id="radioOthers37" class="thirtysevenstatus" name="is_complicit_official_q37"
+                <input type="radio" id="radioOthers37" class="thirtysevenstatus" name="is_assistance_government_q37"
                     value="2" {{ ($q37_checked === '2') ? 'checked' : '' }}>
                 <label for="radioOthers37">Others</label>
             </div>
@@ -38,14 +38,13 @@ $q37_data = $question_37_data['q37_data'] ?? null;
             <!-- Yes সিলেক্ট থাকলে দেখাবে -->
             <div id="yes_extra_q37"
                 style="display: {{ (is_null($q37_checked) || $q37_checked === '1') ? 'block' : 'none' }};">
-                <input type="text" name="involved_directly_trafficking_title_q37"
-                    class="form-control mt-2 q37-yes-input" placeholder="Provide Yes details"
-                    value="{{ $q37_data['involved_directly_trafficking_title'] ?? '' }}">
+                <input type="text" name="assistance_government_title_q37" class="form-control mt-2 q37-yes-input"
+                    placeholder="Provide Yes details" value="{{ $q37_data['assistance_government_title_q37'] ?? '' }}">
             </div>
 
             <!-- Others সিলেক্ট থাকলে দেখাবে -->
             <div id="others_q37" style="display: {{ ($q37_checked === '2') ? 'block' : 'none' }};">
-                <input type="text" name="others_complicit_official_q37" class="form-control mt-2 q37-others-input"
+                <input type="text" name="other_assistance_government_q37" class="form-control mt-2 q37-others-input"
                     placeholder="Others details" value="{{ $q37_data['others'] ?? '' }}">
             </div>
 
@@ -62,7 +61,7 @@ $q37_data = $question_37_data['q37_data'] ?? null;
 $(document).ready(function() {
     // Yes/No/Others রেডিও বাটনের টগল লজিক
     function toggleq37() {
-        let val = $("input[name='is_complicit_official_q37']:checked").val();
+        let val = $("input[name='is_assistance_government_q37']:checked").val();
 
         if (!val) {
             val = '1';
@@ -87,10 +86,10 @@ $(document).ready(function() {
 
     // সাময়িকভাবে ডাটা সেভ করার AJAX রিকোয়েস্ট
     $(document).on("click", "#temp-save-question37", function() {
-        let checkedValue = $("input[name='is_complicit_official_q37']:checked").val();
+        let checkedValue = $("input[name='is_assistance_government_q37']:checked").val();
 
         let q37_data = {
-            involved_directly_trafficking_title: $('.q37-yes-input').val(),
+            assistance_government_title_q37: $('.q37-yes-input').val(),
             others: $('.q37-others-input').val()
         };
 

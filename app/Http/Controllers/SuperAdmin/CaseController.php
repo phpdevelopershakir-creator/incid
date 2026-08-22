@@ -79,7 +79,13 @@ use App\Models\TwentySevenB;
 use App\Models\ThirtyFour;
 use App\Models\ThirtyFourB;
 use App\Models\FiftyEight;
-
+use App\Models\ThirtySeven;
+use App\Models\ThirtyNine;
+use App\Models\ThirtyNineB;
+use App\Models\Fourty;
+use App\Models\FourtyB;
+use App\Models\FortyOne;
+use App\Models\FortyOneB;
 //new database design
 use DB;
 use Illuminate\Support\Facades\Session as FacadesSession;
@@ -295,6 +301,12 @@ class CaseController extends Controller
 
         $yes_no->is_trafficking_investigations_q58 = $request->is_trafficking_investigations_q58;
         $yes_no->other_trafficking_investigations_q58 = $request->other_trafficking_investigations_q58;
+
+        $yes_no->is_assistance_government_q37 = $request->is_assistance_government_q37;
+        $yes_no->other_assistance_government_q37 = $request->other_assistance_government_q37;
+
+        $yes_no->is_victims_civil_traffickers_q40 = $request->is_victims_civil_traffickers_q40;
+        $yes_no->other_victims_civil_traffickers_q40 = $request->other_victims_civil_traffickers_q40;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -2406,6 +2418,162 @@ if (!empty($bulkInsertData)) {
         }
 
 
+    //question37
+          if ($request->is_assistance_government_q37 != 0) {
+            $case_id = $question->id;
+            $question37 = new ThirtySeven();
+            $question37->case_id = $case_id;
+            $question37->assistance_government_title_q37 = $request->assistance_government_title_q37;
+            //return response()->json($question37);
+            $question37->save();
+        }
+
+
+    //question39
+            //a
+            $case_id = $question->id;
+            $question39 = new ThirtyNine();
+            $question39->case_id = $case_id;
+            $question39->victims_restitution_title_one_q39 = $request->victims_restitution_title_one_q39;
+            $question39->victims_restitution_title_two_q39 = $request->victims_restitution_title_two_q39;
+            $question39->victims_restitution_title_three_q39 = $request->victims_restitution_title_three_q39;
+            $question39->victims_restitution_title_four_q39 = $request->victims_restitution_title_four_q39;
+            //return response()->json($question39);
+            $question39->save();
+            
+            //b
+            $victims_restitution_location_q39b = $request->input('victims_restitution_location_q39b', []);
+            $victims_restitution_category_q39b = $request->input('victims_restitution_category_q39b', []);
+            $victims_restitution_men_q39b = $request->input('victims_restitution_men_q39b', []);
+            $victims_restitution_women_q39b = $request->input('victims_restitution_women_q39b', []);
+            $victims_restitution_total_q39b = $request->input('victims_restitution_total_q39b', []);
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(count($victims_restitution_location_q39b),
+             count($victims_restitution_category_q39b),
+             count($victims_restitution_men_q39b),
+             count($victims_restitution_women_q39b),
+             count($victims_restitution_total_q39b)
+             );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'victims_restitution_location_q39b' => $victims_restitution_location_q39b[$i] ?? null,
+                    'victims_restitution_category_q39b' => $victims_restitution_category_q39b[$i] ?? null,
+                    'victims_restitution_men_q39b' => $victims_restitution_men_q39b[$i] ?? null,
+                    'victims_restitution_women_q39b' => $victims_restitution_women_q39b[$i] ?? null,
+                    'victims_restitution_total_q39b' => $victims_restitution_total_q39b[$i] ?? null,
+
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThirtyNineB::insert($bulkInsertData);
+            }
+
+              //question40
+              //a
+              $case_id = $question->id;
+              $question40 = new Fourty();
+              $question40->case_id = $case_id;
+              $question40->victims_traffickers_title_one_q40 = $request->victims_traffickers_title_one_q40;
+              $question40->victims_traffickers_title_two_q40 = $request->victims_traffickers_title_two_q40;
+               //return response()->json($question40);
+              $question40->save();
+              
+        if ($request->is_victims_civil_traffickers_q40 != 0) {
+            $victims_traffickers_location_q40b = $request->input('victims_traffickers_location_q40b', []);
+            $victims_traffickers_men_q40b = $request->input('victims_traffickers_men_q40b', []);
+            $victims_traffickers_women_q40b = $request->input('victims_traffickers_women_q40b', []);
+            $victims_traffickers_total_q40b = $request->input('victims_traffickers_total_q40b', []);
+            
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(count($victims_traffickers_location_q40b),
+             count($victims_traffickers_men_q40b),
+             count($victims_traffickers_women_q40b),
+             count($victims_traffickers_total_q40b)
+             );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'victims_traffickers_location_q40b' => $victims_traffickers_location_q40b[$i] ?? null,
+                    'victims_traffickers_men_q40b' => $victims_traffickers_men_q40b[$i] ?? null,
+                    'victims_traffickers_women_q40b' => $victims_traffickers_women_q40b[$i] ?? null,
+                    'victims_traffickers_total_q40b' => $victims_traffickers_total_q40b[$i] ?? null,
+
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                FourtyB::insert($bulkInsertData);
+            }
+        }
+
+        //question41
+        //               //a
+              $case_id = $question->id;
+              $question41 = new FortyOne();
+              $question41->case_id = $case_id;
+              $question41->convicted_traffickers_title_one_q41 = $request->convicted_traffickers_title_one_q41;
+              $question41->convicted_traffickers_title_two_q41 = $request->convicted_traffickers_title_two_q41;
+              //return response()->json($question41);
+              $question41->save();
+              
+        if ($request->is_victims_civil_traffickers_q40 != 0) {
+            $convicted_traffickers_location_q41b = $request->input('convicted_traffickers_location_q41b', []);
+            $convicted_traffickers_case_q41b = $request->input('convicted_traffickers_case_q41b', []);
+            $convicted_traffickers_men_q41b = $request->input('convicted_traffickers_men_q41b', []);
+            $convicted_traffickers_men_amount_q41b = $request->input('convicted_traffickers_men_amount_q41b', []);
+            $convicted_traffickers_women_q41b = $request->input('convicted_traffickers_women_q41b', []);
+            $convicted_traffickers_women_amount_q41b = $request->input('convicted_traffickers_women_amount_q41b', []);
+            $convicted_traffickers_total_trafic_q41b = $request->input('convicted_traffickers_total_trafic_q41b', []);
+            $convicted_traffickers_total_amount_q41b = $request->input('convicted_traffickers_total_amount_q41b', []);
+            
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(count($convicted_traffickers_location_q41b),
+             count($convicted_traffickers_case_q41b),
+             count($convicted_traffickers_men_q41b),
+             count($convicted_traffickers_men_amount_q41b),
+             count($convicted_traffickers_women_q41b),
+             count($convicted_traffickers_women_amount_q41b),
+             count($convicted_traffickers_total_trafic_q41b),
+             count($convicted_traffickers_total_amount_q41b)
+             );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'convicted_traffickers_location_q41b' => $convicted_traffickers_location_q41b[$i] ?? null,
+                    'convicted_traffickers_case_q41b' => $convicted_traffickers_case_q41b[$i] ?? null,
+                    'convicted_traffickers_men_q41b' => $convicted_traffickers_men_q41b[$i] ?? null,
+                    'convicted_traffickers_men_amount_q41b' => $convicted_traffickers_men_amount_q41b[$i] ?? null,
+                    'convicted_traffickers_women_q41b' => $convicted_traffickers_women_q41b[$i] ?? null,
+                    'convicted_traffickers_women_amount_q41b' => $convicted_traffickers_women_amount_q41b[$i] ?? null,
+                    'convicted_traffickers_total_trafic_q41b' => $convicted_traffickers_total_trafic_q41b[$i] ?? null,
+                    'convicted_traffickers_total_amount_q41b' => $convicted_traffickers_total_amount_q41b[$i] ?? null,
+                       
+
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                return response()->json($bulkInsertData);
+                FortyOneB::insert($bulkInsertData);
+            }
+        }
+
+
+        
+        
 
 
 

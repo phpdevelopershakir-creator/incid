@@ -10,7 +10,7 @@ class Fourty extends Model
 {
     use HasFactory;
 
-    protected $table = 'conviction_status_q40';
+    protected $table = 'victims_traffickers_q40';
 
     public static function awarness_activities_q40_query_data (){
         //  DB::connection()->enableQueryLog(); 

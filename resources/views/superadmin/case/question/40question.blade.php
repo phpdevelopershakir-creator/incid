@@ -22,7 +22,7 @@ $q40_data = $question_40_data['q40_data'] ?? null;
             <div class="form-group">
                 <label class="font-weight-bold">Could victims file civil suits against traffickers for
                     damages?</label>
-                <textarea name="civil_suits_description_q40" class="form-control q40-desc-input" rows="3"
+                <textarea name="victims_traffickers_title_one_q40" class="form-control q40-desc-input" rows="3"
                     placeholder="Please describe-">{{ $q40_data['civil_suits_description'] ?? '' }}</textarea>
             </div>
 
@@ -31,22 +31,22 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                 <label class="font-weight-bold d-block">Does the government provide information or legal support for
                     victims to pursue a civil suit?</label>
 
-                <input type="radio" id="radioYes40" class="fortystatus" name="is_legal_support_q40" value="1"
-                    {{ (is_null($q40_checked) || $q40_checked === '1') ? 'checked' : '' }}>
+                <input type="radio" id="radioYes40" class="fortystatus" name="is_victims_civil_traffickers_q40"
+                    value="1" {{ (is_null($q40_checked) || $q40_checked === '1') ? 'checked' : '' }}>
                 <label for="radioYes40" class="mr-3 text-danger font-weight-bold">Yes</label>
 
-                <input type="radio" id="radioNo40" class="fortystatus" name="is_legal_support_q40" value="0"
+                <input type="radio" id="radioNo40" class="fortystatus" name="is_victims_civil_traffickers_q40" value="0"
                     {{ ($q40_checked === '0') ? 'checked' : '' }}>
                 <label for="radioNo40" class="mr-3 text-danger font-weight-bold">No</label>
 
-                <input type="radio" id="radioOthers40" class="fortystatus" name="is_legal_support_q40" value="2"
-                    {{ ($q40_checked === '2') ? 'checked' : '' }}>
+                <input type="radio" id="radioOthers40" class="fortystatus" name="is_victims_civil_traffickers_q40"
+                    value="2" {{ ($q40_checked === '2') ? 'checked' : '' }}>
                 <label for="radioOthers40" class="text-danger font-weight-bold">Others</label>
             </div>
 
             <!-- Others Input -->
             <div id="others_q40" style="display: {{ ($q40_checked === '2') ? 'block' : 'none' }};">
-                <textarea name="others_legal_support_q40" class="form-control mt-2 q40-others-input" rows="2"
+                <textarea name="other_victims_civil_traffickers_q40" class="form-control mt-2 q40-others-input" rows="2"
                     placeholder="Others [input text box with description]">{{ $q40_data['others_legal_support'] ?? '' }}</textarea>
             </div>
 
@@ -77,21 +77,43 @@ $q40_data = $question_40_data['q40_data'] ?? null;
 
                             @for($i = 0; $i < $totalRows; $i++) @php $row=$rows[$i] ?? null; @endphp <tr>
                                 <td>
-                                    <select name="location_q40[]" class="form-control q40-location">
+                                    <select name="victims_traffickers_location_q40b[]"
+                                        class="form-control q40-location">
                                         <option value="">Choose Location</option>
                                         <option value="Dhaka"
                                             {{ ($row['location'] ?? '') == 'Dhaka' ? 'selected' : '' }}>Dhaka</option>
                                         <option value="Chittagong"
                                             {{ ($row['location'] ?? '') == 'Chittagong' ? 'selected' : '' }}>Chittagong
                                         </option>
+                                        <option value="Khulna"
+                                            {{ ($row['location'] ?? '') == 'Khulna' ? 'selected' : '' }}>Khulna
+                                        </option>
+                                        <option value="Rajshahi"
+                                            {{ ($row['location'] ?? '') == 'Rajshahi' ? 'selected' : '' }}>Rajshahi
+                                        </option>
+                                        <option value="Barishal"
+                                            {{ ($row['location'] ?? '') == 'Barishal' ? 'selected' : '' }}>Barishal
+                                        </option>
+                                        <option value="Sylhet"
+                                            {{ ($row['location'] ?? '') == 'Sylhet' ? 'selected' : '' }}>Sylhet
+                                        </option>
+                                        <option value="Rangpur"
+                                            {{ ($row['location'] ?? '') == 'Rangpur' ? 'selected' : '' }}>Rangpur
+                                        </option>
+                                        <option value="Mymensingh"
+                                            {{ ($row['location'] ?? '') == 'Mymensingh' ? 'selected' : '' }}>Mymensingh
+                                        </option>
+                                        <option value="National"
+                                            {{ ($row['location'] ?? '') == 'National' ? 'selected' : '' }}>National
+                                        </option>
                                     </select>
                                 </td>
-                                <td><input type="number" name="men_q40[]" class="form-control q40-men"
-                                        value="{{ $row['men'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="women_q40[]" class="form-control q40-women"
-                                        value="{{ $row['women'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="total_q40[]" class="form-control q40-total"
-                                        value="{{ $row['total'] ?? '' }}" readonly></td>
+                                <td><input type="number" name="victims_traffickers_men_q40b[]"
+                                        class="form-control q40-men" value="{{ $row['men'] ?? '' }}" min="0"></td>
+                                <td><input type="number" name="victims_traffickers_women_q40b[]"
+                                        class="form-control q40-women" value="{{ $row['women'] ?? '' }}" min="0"></td>
+                                <td><input type="number" name="victims_traffickers_total_q40b[]"
+                                        class="form-control q40-total" value="{{ $row['total'] ?? '' }}" readonly></td>
                                 <td>
                                     @if($i == 0)
                                     <!-- ১ম রো ফিক্সড -->
@@ -122,8 +144,9 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                 <!-- Location Not Specify Input -->
                 <div class="form-group mt-2">
                     <label class="text-danger font-weight-bold">Location Not specify :</label>
-                    <textarea name="location_not_specified_q40" class="form-control q40-location-not-specified" rows="2"
-                        placeholder="[input text box with description]">{{ $q40_data['location_not_specified'] ?? '' }}</textarea>
+                    <textarea name="victims_traffickers_title_two_q40" class="form-control q40-location-not-specified"
+                        rows="2"
+                        placeholder="please description]">{{ $q40_data['location_not_specified'] ?? '' }}</textarea>
                 </div>
             </div>
 
@@ -141,7 +164,7 @@ $(document).ready(function() {
 
     // Radio Toggle Logic
     function toggleq40() {
-        let val = $("input[name='is_legal_support_q40']:checked").val();
+        let val = $("input[name='is_victims_civil_traffickers_q40']:checked").val();
 
         if (!val) {
             val = '1';
@@ -192,15 +215,22 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="location_q40[]" class="form-control q40-location">
+                    <select name="victims_traffickers_location_q40b[]" class="form-control q40-location">
                         <option value="">Choose Location</option>
                         <option value="Dhaka">Dhaka</option>
                         <option value="Chittagong">Chittagong</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Barishal">Barishal</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Rangpur">Rangpur</option>
+                        <option value="Mymensingh">Mymensingh</option>
+                        <option value="Sylhet">National</option>
                     </select>
                 </td>
-                <td><input type="number" name="men_q40[]" class="form-control q40-men" min="0"></td>
-                <td><input type="number" name="women_q40[]" class="form-control q40-women" min="0"></td>
-                <td><input type="number" name="total_q40[]" class="form-control q40-total" readonly></td>
+                <td><input type="number" name="victims_traffickers_men_q40b[]" class="form-control q40-men" min="0"></td>
+                <td><input type="number" name="victims_traffickers_women_q40b[]" class="form-control q40-women" min="0"></td>
+                <td><input type="number" name="victims_traffickers_total_q40b[]" class="form-control q40-total" readonly></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove-row-q40">-</button></td>
             </tr>`;
         $('#civil-suit-table-q40 tbody').append(newRow);
@@ -217,7 +247,7 @@ $(document).ready(function() {
 
     // Temp Save AJAX Request
     $(document).on("click", "#temp-save-question40", function() {
-        let checkedValue = $("input[name='is_legal_support_q40']:checked").val();
+        let checkedValue = $("input[name='is_victims_civil_traffickers_q40']:checked").val();
         let victimsData = [];
 
         $('#civil-suit-table-q40 tbody tr').each(function() {

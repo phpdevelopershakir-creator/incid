@@ -1,6 +1,6 @@
 @if (($questiontitles[38]->status ?? null) == 1)
 @php
-// সেশন থেকে ৩৯ নম্বর প্রশ্নের ডাটা নেওয়া হচ্ছে
+// সেশন থেকে ৩৯ নম্বর প্রশ্নের ডাটা নেওয়া হচ্ছে
 $question_39_data = session()->get('question39');
 $q39_data = $question_39_data['q39_data'] ?? null;
 @endphp
@@ -21,7 +21,7 @@ $q39_data = $question_39_data['q39_data'] ?? null;
             <div class="form-group">
                 <label class="font-weight-bold">Did service providers receive adequate training on providing care to
                     trauma survivors?</label>
-                <textarea name="trauma_survivors_training_q39" class="form-control q39-trauma-input" rows="3"
+                <textarea name="victims_restitution_title_one_q39" class="form-control q39-trauma-input" rows="3"
                     placeholder="Pls Describe">{{ $q39_data['trauma_survivors_training'] ?? '' }}</textarea>
             </div>
 
@@ -29,7 +29,7 @@ $q39_data = $question_39_data['q39_data'] ?? null;
             <div class="form-group">
                 <label class="font-weight-bold">Were criminal justice officials adequately trained to seek and order
                     restitution for victims during criminal cases?</label>
-                <textarea name="restitution_training_q39" class="form-control q39-restitution-input" rows="3"
+                <textarea name="victims_restitution_title_two_q39" class="form-control q39-restitution-input" rows="3"
                     placeholder="Pls Describe">{{ $q39_data['restitution_training'] ?? '' }}</textarea>
             </div>
 
@@ -53,19 +53,41 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                             @foreach($q39_data['trainings'] as $index => $training)
                             <tr>
                                 <td>
-                                    <select name="location[]" class="form-control q39-location">
+                                    <select name="victims_restitution_location_q39b[]"
+                                        class="form-control q39-location">
                                         <option value="">Choose an item.</option>
                                         <option value="Dhaka"
                                             {{ ($training['location'] ?? '') == 'Dhaka' ? 'selected' : '' }}>Dhaka
                                         </option>
-                                        <option value="Chittagong"
-                                            {{ ($training['location'] ?? '') == 'Chittagong' ? 'selected' : '' }}>
-                                            Chittagong</option>
-                                        <!-- প্রয়োজন অনুযায়ী অপশন যোগ করে নিন -->
+                                        <option value="Chattogram"
+                                            {{ ($training['location'] ?? '') == 'Chattogram' ? 'selected' : '' }}>
+                                            Chattogram</option>
+                                        <option value="Khulna"
+                                            {{ ($training['location'] ?? '') == 'Khulna' ? 'selected' : '' }}>Khulna
+                                        </option>
+                                        <option value="Rajshahi"
+                                            {{ ($training['location'] ?? '') == 'Rajshahi' ? 'selected' : '' }}>Rajshahi
+                                        </option>
+                                        <option value="Barishal"
+                                            {{ ($training['location'] ?? '') == 'Barishal' ? 'selected' : '' }}>Barishal
+                                        </option>
+                                        <option value="Sylhet"
+                                            {{ ($training['location'] ?? '') == 'Sylhet' ? 'selected' : '' }}>Sylhet
+                                        </option>
+                                        <option value="Rangpur"
+                                            {{ ($training['location'] ?? '') == 'Rangpur' ? 'selected' : '' }}>Rangpur
+                                        </option>
+                                        <option value="Mymensingh"
+                                            {{ ($training['location'] ?? '') == 'Mymensingh' ? 'selected' : '' }}>
+                                            Mymensingh</option>
+                                        <option value="National"
+                                            {{ ($training['location'] ?? '') == 'National' ? 'selected' : '' }}>National
+                                        </option>
                                     </select>
                                 </td>
                                 <td>
-                                    <select name="category_official[]" class="form-control q39-category">
+                                    <select name="victims_restitution_category_q39b[]"
+                                        class="form-control q39-category">
                                         <option value="">Choose an item.</option>
                                         <option value="Police"
                                             {{ ($training['category'] ?? '') == 'Police' ? 'selected' : '' }}>Police
@@ -73,15 +95,15 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                                         <option value="Judge"
                                             {{ ($training['category'] ?? '') == 'Judge' ? 'selected' : '' }}>Judge
                                         </option>
-                                        <!-- প্রয়োজন অনুযায়ী অপশন যোগ করে নিন -->
                                     </select>
                                 </td>
-                                <td><input type="number" name="men[]" class="form-control q39-men"
-                                        value="{{ $training['men'] ?? '' }}"></td>
-                                <td><input type="number" name="women[]" class="form-control q39-women"
-                                        value="{{ $training['women'] ?? '' }}"></td>
-                                <td><input type="number" name="total[]" class="form-control q39-total"
-                                        value="{{ $training['total'] ?? '' }}" readonly></td>
+                                <td><input type="number" name="victims_restitution_men_q39b[]"
+                                        class="form-control q39-men" value="{{ $training['men'] ?? '' }}"></td>
+                                <td><input type="number" name="victims_restitution_women_q39b[]"
+                                        class="form-control q39-women" value="{{ $training['women'] ?? '' }}"></td>
+                                <td><input type="number" name="victims_restitution_total_q39b[]"
+                                        class="form-control q39-total" value="{{ $training['total'] ?? '' }}" readonly>
+                                </td>
                                 <td>
                                     @if($loop->first)
                                     <button type="button" class="btn btn-sm btn-primary add-row-q39">+</button>
@@ -94,23 +116,34 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                             @else
                             <tr>
                                 <td>
-                                    <select name="location[]" class="form-control q39-location">
+                                    <select name="victims_restitution_location_q39b[]"
+                                        class="form-control q39-location">
                                         <option value="">Choose an item.</option>
                                         <option value="Dhaka">Dhaka</option>
-                                        <option value="Chittagong">Chittagong</option>
+                                        <option value="Chattogram">Chattogram</option>
+                                        <option value="Khulna">Khulna</option>
+                                        <option value="Rajshahi">Rajshahi</option>
+                                        <option value="Barishal">Barishal</option>
+                                        <option value="Sylhet">Sylhet</option>
+                                        <option value="Rangpur">Rangpur</option>
+                                        <option value="Mymensingh">Mymensingh</option>
+                                        <option value="National">National</option>
                                     </select>
                                 </td>
                                 <td>
-                                    <select name="category_official[]" class="form-control q39-category">
+                                    <select name="victims_restitution_category_q39b[]"
+                                        class="form-control q39-category">
                                         <option value="">Choose an item.</option>
                                         <option value="Police">Police</option>
                                         <option value="Judge">Judge</option>
                                     </select>
                                 </td>
-                                <td><input type="number" name="men[]" class="form-control q39-men" value=""></td>
-                                <td><input type="number" name="women[]" class="form-control q39-women" value=""></td>
-                                <td><input type="number" name="total[]" class="form-control q39-total" value=""
-                                        readonly></td>
+                                <td><input type="number" name="victims_restitution_men_q39b[]"
+                                        class="form-control q39-men" value=""></td>
+                                <td><input type="number" name="victims_restitution_women_q39b[]"
+                                        class="form-control q39-women" value=""></td>
+                                <td><input type="number" name="victims_restitution_total_q39b[]"
+                                        class="form-control q39-total" value="" readonly></td>
                                 <td><button type="button" class="btn btn-sm btn-primary add-row-q39">+</button></td>
                             </tr>
                             @endif
@@ -123,13 +156,14 @@ $q39_data = $question_39_data['q39_data'] ?? null;
             <div class="form-group mt-3">
                 <label class="font-weight-bold text-danger">Location not specified</label>
                 <p class="mb-1">Please describe-</p>
-                <textarea name="location_not_specified_q39" class="form-control q39-location-not-specified" rows="3"
-                    placeholder="[ Text Area for description ]">{{ $q39_data['location_not_specified'] ?? '' }}</textarea>
+                <textarea name="victims_restitution_title_three_q39" class="form-control q39-location-not-specified"
+                    rows="3"
+                    placeholder="Text Area for description ">{{ $q39_data['location_not_specified'] ?? '' }}</textarea>
             </div>
 
             <!-- Additional Input Field -->
             <div class="form-group">
-                <input type="text" name="additional_input_q39" class="form-control q39-additional-input"
+                <input type="text" name="victims_restitution_title_four_q39" class="form-control q39-additional-input"
                     placeholder="Input Field" value="{{ $q39_data['additional_input'] ?? '' }}">
             </div>
 
@@ -150,22 +184,29 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="location[]" class="form-control q39-location">
+                    <select name="victims_restitution_location_q39b[]" class="form-control q39-location">
                         <option value="">Choose an item.</option>
                         <option value="Dhaka">Dhaka</option>
-                        <option value="Chittagong">Chittagong</option>
+                        <option value="Chattogram">Chattogram</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Barishal">Barishal</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Rangpur">Rangpur</option>
+                        <option value="Mymensingh">Mymensingh</option>
+                        <option value="National">National</option>
                     </select>
                 </td>
                 <td>
-                    <select name="category_official[]" class="form-control q39-category">
+                    <select name="victims_restitution_category_q39b[]" class="form-control q39-category">
                         <option value="">Choose an item.</option>
                         <option value="Police">Police</option>
                         <option value="Judge">Judge</option>
                     </select>
                 </td>
-                <td><input type="number" name="men[]" class="form-control q39-men" value=""></td>
-                <td><input type="number" name="women[]" class="form-control q39-women" value=""></td>
-                <td><input type="number" name="total[]" class="form-control q39-total" value="" readonly></td>
+                <td><input type="number" name="victims_restitution_men_q39b[]" class="form-control q39-men" value=""></td>
+                <td><input type="number" name="victims_restitution_women_q39b[]" class="form-control q39-women" value=""></td>
+                <td><input type="number" name="victims_restitution_total_q39b[]" class="form-control q39-total" value="" readonly></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove-row-q39">-</button></td>
             </tr>`;
         $('#training-table-q39 tbody').append(newRow);
@@ -185,7 +226,9 @@ $(document).ready(function() {
     });
 
     // Temp Save AJAX Request
-    $(document).on("click", "#temp-save-question39", function() {
+    $(document).on("click", "#temp-save-question39", function(e) {
+        e.preventDefault(); // ফর্ম অটো-সাবমিট বন্ধ করতে
+
         let trainings = [];
 
         $('#training-table-q39 tbody tr').each(function() {
@@ -234,8 +277,9 @@ $(document).ready(function() {
                     alert("Not Saved");
                 }
             },
-            error: function() {
+            error: function(xhr, status, error) {
                 alert("Something went wrong!");
+                console.log(xhr.responseText);
             }
         });
     });
