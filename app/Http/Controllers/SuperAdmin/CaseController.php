@@ -86,6 +86,10 @@ use App\Models\Fourty;
 use App\Models\FourtyB;
 use App\Models\FortyOne;
 use App\Models\FortyOneB;
+use App\Models\FiftySix;
+use App\Models\FiftySixB;
+
+
 //new database design
 use DB;
 use Illuminate\Support\Facades\Session as FacadesSession;
@@ -307,6 +311,14 @@ class CaseController extends Controller
 
         $yes_no->is_victims_civil_traffickers_q40 = $request->is_victims_civil_traffickers_q40;
         $yes_no->other_victims_civil_traffickers_q40 = $request->other_victims_civil_traffickers_q40;
+
+
+        $yes_no->is_convicted_traffickers_q41 = $request->is_convicted_traffickers_q41;
+        $yes_no->other_convicted_traffickers_q41 = $request->other_convicted_traffickers_q41;
+
+        $yes_no->is_instances_trafficking_q56 = $request->is_instances_trafficking_q56;
+        $yes_no->other_instances_trafficking_q56 = $request->other_instances_trafficking_q56;
+        $yes_no->desctiption_instances_trafficking_q56 = $request->desctiption_instances_trafficking_q56;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -2526,7 +2538,7 @@ if (!empty($bulkInsertData)) {
               //return response()->json($question41);
               $question41->save();
               
-        if ($request->is_victims_civil_traffickers_q40 != 0) {
+        if ($request->is_convicted_traffickers_q41 != 0) {
             $convicted_traffickers_location_q41b = $request->input('convicted_traffickers_location_q41b', []);
             $convicted_traffickers_case_q41b = $request->input('convicted_traffickers_case_q41b', []);
             $convicted_traffickers_men_q41b = $request->input('convicted_traffickers_men_q41b', []);
@@ -2566,8 +2578,87 @@ if (!empty($bulkInsertData)) {
             }
 
             if (!empty($bulkInsertData)) {
-                return response()->json($bulkInsertData);
+                //return response()->json($bulkInsertData);
                 FortyOneB::insert($bulkInsertData);
+            }
+        }
+
+        
+         //question56
+        if ($request->is_instances_trafficking_q56 != 0) {
+            //a
+            $instances_trafficking_country_q56 = $request->input('instances_trafficking_country_q56', []);
+            $instances_trafficking_desc_q56 = $request->input('instances_trafficking_desc_q56', []);
+            $instances_trafficking_men_q56 = $request->input('instances_trafficking_men_q56', []);
+            $instances_trafficking_women_q56 = $request->input('instances_trafficking_women_q56', []);
+            $instances_trafficking_tg_q56 = $request->input('instances_trafficking_tg_q56', []);
+            $instances_trafficking_total_q56 = $request->input('instances_trafficking_total_q56', []);
+            
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(count($instances_trafficking_country_q56),
+             count($instances_trafficking_desc_q56),
+             count($instances_trafficking_men_q56),
+             count($instances_trafficking_women_q56),
+             count($instances_trafficking_tg_q56),
+             count($instances_trafficking_total_q56)
+          
+             );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'instances_trafficking_country_q56' => $instances_trafficking_country_q56[$i] ?? null,
+                    'instances_trafficking_desc_q56' => $instances_trafficking_desc_q56[$i] ?? null,
+                    'instances_trafficking_men_q56' => $instances_trafficking_men_q56[$i] ?? null,
+                    'instances_trafficking_women_q56' => $instances_trafficking_women_q56[$i] ?? null,
+                    'instances_trafficking_tg_q56' => $instances_trafficking_tg_q56[$i] ?? null,
+                    'instances_trafficking_total_q56' => $instances_trafficking_total_q56[$i] ?? null,
+
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                return response()->json($bulkInsertData);
+                FiftySix::insert($bulkInsertData);
+            }
+
+            //b
+            $instances_trafficking_ministry_q56b = $request->input('instances_trafficking_ministry_q56b', []);
+            $instances_trafficking_men_q56b = $request->input('instances_trafficking_men_q56b', []);
+            $instances_trafficking_women_q56b = $request->input('instances_trafficking_women_q56b', []);
+            $instances_trafficking_total_q56b= $request->input('instances_trafficking_total_q56b', []);
+            $instances_trafficking_measures_q56b = $request->input('instances_trafficking_measures_q56b', []);
+            
+            
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(count($instances_trafficking_ministry_q56b),
+             count($instances_trafficking_men_q56b),
+             count($instances_trafficking_women_q56b),
+             count($instances_trafficking_total_q56b),
+             count($instances_trafficking_measures_q56b)
+          
+             );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'instances_trafficking_ministry_q56b' => $instances_trafficking_ministry_q56b[$i] ?? null,
+                    'instances_trafficking_men_q56b' => $instances_trafficking_men_q56b[$i] ?? null,
+                    'instances_trafficking_women_q56b' => $instances_trafficking_women_q56b[$i] ?? null,
+                    'instances_trafficking_total_q56b' => $instances_trafficking_total_q56b[$i] ?? null,
+                    'instances_trafficking_measures_q56b' => $instances_trafficking_measures_q56b[$i] ?? null,
+                    
+
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                FiftySixB::insert($bulkInsertData);
             }
         }
 

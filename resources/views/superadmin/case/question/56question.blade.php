@@ -24,29 +24,29 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                     In instances of trafficking allegations filed against peacekeepers, what steps did the
                     government take to hold perpetrators accountable and prevent future incidents?
                 </label>
-                <textarea name="peacekeeper_steps_q56" class="form-control q56-desc-input" rows="3"
+                <textarea name="desctiption_instances_trafficking_q56" class="form-control q56-desc-input" rows="3"
                     placeholder="Input Field">{{ $q56_data['peacekeeper_steps'] ?? '' }}</textarea>
             </div>
 
             <!-- Radio Options -->
             <div class="form-group mb-2">
-                <input type="radio" id="radioYes56" class="fiftysixstatus" name="is_peacekeeper_steps_q56" value="1"
+                <input type="radio" id="radioYes56" class="fiftysixstatus" name="is_instances_trafficking_q56" value="1"
                     {{ (is_null($q56_checked) || $q56_checked === '1') ? 'checked' : '' }}>
                 <label for="radioYes56" class="mr-3 text-danger font-weight-bold">Yes</label>
 
-                <input type="radio" id="radioNo56" class="fiftysixstatus" name="is_peacekeeper_steps_q56" value="0"
+                <input type="radio" id="radioNo56" class="fiftysixstatus" name="is_instances_trafficking_q56" value="0"
                     {{ ($q56_checked === '0') ? 'checked' : '' }}>
                 <label for="radioNo56" class="mr-3 text-danger font-weight-bold">No</label>
 
-                <input type="radio" id="radioOthers56" class="fiftysixstatus" name="is_peacekeeper_steps_q56" value="2"
-                    {{ ($q56_checked === '2') ? 'checked' : '' }}>
+                <input type="radio" id="radioOthers56" class="fiftysixstatus" name="is_instances_trafficking_q56"
+                    value="2" {{ ($q56_checked === '2') ? 'checked' : '' }}>
                 <label for="radioOthers56" class="text-danger font-weight-bold">Others [input text box with
                     description]</label>
             </div>
 
             <!-- Others Input -->
             <div id="others_q56" style="display: {{ ($q56_checked === '2') ? 'block' : 'none' }};">
-                <textarea name="others_peacekeeper_q56" class="form-control mt-2 q56-others-input" rows="2"
+                <textarea name="other_instances_trafficking_q56" class="form-control mt-2 q56-others-input" rows="2"
                     placeholder="Others [input text box with description]">{{ $q56_data['others_peacekeeper'] ?? '' }}</textarea>
             </div>
 
@@ -82,27 +82,72 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                             @for($i = 0; $i < $totalTraineeRows; $i++) @php $row=$trainees_rows[$i] ?? null; @endphp
                                 <tr>
                                 <td>
-                                    <select name="country_posted_q56[]" class="form-control q56-country">
-                                        <option value="">Dropdown</option>
-                                        <option value="Bangladesh"
-                                            {{ ($row['country'] ?? '') == 'Bangladesh' ? 'selected' : '' }}>Bangladesh
+                                    <select name="instances_trafficking_country_q56[]" class="form-control q56-country">
+                                        <option value="">Country Selecte</option>
+                                        <option value="India"
+                                            {{ ($row['country'] ?? '') == 'India' ? 'selected' : '' }}>India
                                         </option>
-                                        <option value="Argentina"
-                                            {{ ($row['country'] ?? '') == 'Argentina' ? 'selected' : '' }}>Argentina
+                                        <option value="Nepal"
+                                            {{ ($row['country'] ?? '') == 'Nepal' ? 'selected' : '' }}>
+                                            Nepal
+                                        </option>
+                                        <option value="Sri lanka"
+                                            {{ ($row['country'] ?? '') == 'Sri lanka' ? 'selected' : '' }}>Sri lanka
+                                        </option>
+                                        <option value="EU" {{ ($row['country'] ?? '') == 'EU' ? 'selected' : '' }}>EU
+                                        </option>
+                                        <option value="USA" {{ ($row['country'] ?? '') == 'USA' ? 'selected' : '' }}>USA
+                                        </option>
+                                        <option value="Saudi Arabia"
+                                            {{ ($row['country'] ?? '') == 'Saudi Arabia' ? 'selected' : '' }}>Saudi
+                                            Arabia
+                                        </option>
+                                        <option value="Qatar"
+                                            {{ ($row['country'] ?? '') == 'Qatar' ? 'selected' : '' }}>Qatar
+                                        </option>
+                                        <option value="Lebanon"
+                                            {{ ($row['country'] ?? '') == 'Lebanon' ? 'selected' : '' }}>
+                                            Lebanon
+                                        </option>
+                                        <option value="Irag" {{ ($row['country'] ?? '') == 'Irag' ? 'selected' : '' }}>
+                                            Irag
+                                        </option>
+                                        <option value="UAE" {{ ($row['country'] ?? '') == 'UAE' ? 'selected' : '' }}>UAE
+                                        </option>
+                                        <option value="Thailand"
+                                            {{ ($row['country'] ?? '') == 'Thailand' ? 'selected' : '' }}>Thailand
+                                        </option>
+                                        <option value="Vietnam"
+                                            {{ ($row['country'] ?? '') == 'Vietnam' ? 'selected' : '' }}>
+                                            Vietnam
+                                        </option>
+                                        <option value="Cambodia"
+                                            {{ ($row['country'] ?? '') == 'Cambodia' ? 'selected' : '' }}>Cambodia
+                                        </option>
+                                        <option value="South Africa"
+                                            {{ ($row['country'] ?? '') == 'South Africa' ? 'selected' : '' }}>South
+                                            Africa
+                                        </option>
+                                        <option value="Brazil"
+                                            {{ ($row['country'] ?? '') == 'Brazil' ? 'selected' : '' }}>Brazil
+                                        </option>
+                                        <option value="UK" {{ ($row['country'] ?? '') == 'UK' ? 'selected' : '' }}>
+                                            UK
                                         </option>
                                     </select>
                                 </td>
-                                <td><input type="text" name="trainee_description_q56[]"
+                                <td><input type="text" name="instances_trafficking_desc_q56[]"
                                         class="form-control q56-trainee-desc" value="{{ $row['description'] ?? '' }}"
                                         placeholder="[Input Text Field]"></td>
-                                <td><input type="number" name="trainee_men_q56[]" class="form-control q56-trainee-men"
-                                        value="{{ $row['men'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="trainee_women_q56[]"
+                                <td><input type="number" name="instances_trafficking_men_q56[]"
+                                        class="form-control q56-trainee-men" value="{{ $row['men'] ?? '' }}" min="0">
+                                </td>
+                                <td><input type="number" name="instances_trafficking_women_q56[]"
                                         class="form-control q56-trainee-women" value="{{ $row['women'] ?? '' }}"
                                         min="0"></td>
-                                <td><input type="number" name="trainee_tg_q56[]" class="form-control q56-trainee-tg"
-                                        value="{{ $row['tg'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="trainee_total_q56[]"
+                                <td><input type="number" name="instances_trafficking_tg_q56[]"
+                                        class="form-control q56-trainee-tg" value="{{ $row['tg'] ?? '' }}" min="0"></td>
+                                <td><input type="number" name="instances_trafficking_total_q56[]"
                                         class="form-control q56-trainee-total" value="{{ $row['total'] ?? '' }}"
                                         readonly></td>
                                 <td>
@@ -165,18 +210,21 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                             @endphp
 
                             @for($i = 0; $i < $totalAccusedRows; $i++) @php $row=$accused_rows[$i] ?? null; @endphp <tr>
-                                <td><input type="text" name="ministry_dept_q56[]" class="form-control q56-ministry"
-                                        value="{{ $row['ministry'] ?? '' }}" placeholder="[Input Text Field]"></td>
-                                <td><input type="number" name="accused_men_q56[]" class="form-control q56-accused-men"
-                                        value="{{ $row['men'] ?? '' }}" min="0"></td>
-                                <td><input type="number" name="accused_women_q56[]"
+                                <td><input type="text" name="instances_trafficking_ministry_q56b[]"
+                                        class="form-control q56-ministry" value="{{ $row['ministry'] ?? '' }}"
+                                        placeholder="please description"></td>
+                                <td><input type="number" name="instances_trafficking_men_q56b[]"
+                                        class="form-control q56-accused-men" value="{{ $row['men'] ?? '' }}" min="0">
+                                </td>
+                                <td><input type="number" name="instances_trafficking_women_q56b[]"
                                         class="form-control q56-accused-women" value="{{ $row['women'] ?? '' }}"
                                         min="0"></td>
-                                <td><input type="number" name="accused_total_q56[]"
+                                <td><input type="number" name="instances_trafficking_total_q56b[]"
                                         class="form-control q56-accused-total" value="{{ $row['total'] ?? '' }}"
                                         readonly></td>
-                                <td><input type="text" name="measures_taken_q56[]" class="form-control q56-measures"
-                                        value="{{ $row['measures'] ?? '' }}" placeholder="[Input Text Field]"></td>
+                                <td><input type="text" name="instances_trafficking_measures_q56b[]"
+                                        class="form-control q56-measures" value="{{ $row['measures'] ?? '' }}"
+                                        placeholder="please description"></td>
                                 <td>
                                     @if($i < 2) <span class="badge badge-secondary">Fixed</span>
                                         @elseif($i == 2)
@@ -219,7 +267,7 @@ $(document).ready(function() {
 
     // Radio Toggle Logic
     function toggleq56() {
-        let val = $("input[name='is_peacekeeper_steps_q56']:checked").val();
+        let val = $("input[name='is_instances_trafficking_q56']:checked").val();
 
         if (!val) {
             val = '1';
@@ -274,17 +322,32 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="country_posted_q56[]" class="form-control q56-country">
-                        <option value="">Dropdown</option>
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="Argentina">Argentina</option>
+                    <select name="instances_trafficking_country_q56[]" class="form-control q56-country">
+                        <option value="">Country Selecte</option>
+                        <option value="India">India </option>
+                        <option value="Nepal">Nepal </option>
+                        <option value="Sri lanka">Sri lanka </option>
+                        <option value="EU">EU </option>
+                        <option value="USA">USA </option>
+                        <option value="Saudi Arabia">Saudi Arabia </option>
+                        <option value="Qatar">Qatar </option>
+                        <option value="Lebanon">Lebanon </option>
+                        <option value="Irag">Irag </option>
+                        <option value="UAE">UAE </option>
+                        <option value="Thailand">Thailand </option>
+                        <option value="Vietnam">Vietnam </option>
+                        <option value="Cambodia">Cambodia </option>
+                        <option value="South Africa">South Africa </option>
+                        <option value="Brazil">Brazil </option>
+                        <option value="UK">UK </option>
+
                     </select>
                 </td>
-                <td><input type="text" name="trainee_description_q56[]" class="form-control q56-trainee-desc" placeholder="[Input Text Field]"></td>
-                <td><input type="number" name="trainee_men_q56[]" class="form-control q56-trainee-men" min="0"></td>
-                <td><input type="number" name="trainee_women_q56[]" class="form-control q56-trainee-women" min="0"></td>
-                <td><input type="number" name="trainee_tg_q56[]" class="form-control q56-trainee-tg" min="0"></td>
-                <td><input type="number" name="trainee_total_q56[]" class="form-control q56-trainee-total" readonly></td>
+                <td><input type="text" name="instances_trafficking_desc_q56[]" class="form-control q56-trainee-desc" placeholder="please description"></td>
+                <td><input type="number" name="instances_trafficking_men_q56[]" class="form-control q56-trainee-men" min="0"></td>
+                <td><input type="number" name="instances_trafficking_women_q56[]" class="form-control q56-trainee-women" min="0"></td>
+                <td><input type="number" name="instances_trafficking_tg_q56[]" class="form-control q56-trainee-tg" min="0"></td>
+                <td><input type="number" name="instances_trafficking_total_q56[]" class="form-control q56-trainee-total" readonly></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove-trainee-row-q56">-</button></td>
             </tr>`;
         $('#trainees-table-q56 tbody').append(newRow);
@@ -323,11 +386,11 @@ $(document).ready(function() {
     $(document).on('click', '.add-accused-row-q56', function() {
         let newRow = `
             <tr>
-                <td><input type="text" name="ministry_dept_q56[]" class="form-control q56-ministry" placeholder="[Input Text Field]"></td>
-                <td><input type="number" name="accused_men_q56[]" class="form-control q56-accused-men" min="0"></td>
-                <td><input type="number" name="accused_women_q56[]" class="form-control q56-accused-women" min="0"></td>
-                <td><input type="number" name="accused_total_q56[]" class="form-control q56-accused-total" readonly></td>
-                <td><input type="text" name="measures_taken_q56[]" class="form-control q56-measures" placeholder="[Input Text Field]"></td>
+                <td><input type="text" name="instances_trafficking_ministry_q56b[]" class="form-control q56-ministry" placeholder="please description"></td>
+                <td><input type="number" name="instances_trafficking_men_q56b[]" class="form-control q56-accused-men" min="0"></td>
+                <td><input type="number" name="instances_trafficking_women_q56b[]" class="form-control q56-accused-women" min="0"></td>
+                <td><input type="number" name="instances_trafficking_total_q56b[]" class="form-control q56-accused-total" readonly></td>
+                <td><input type="text" name="instances_trafficking_measures_q56b[]" class="form-control q56-measures" placeholder="please description"></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove-accused-row-q56">-</button></td>
             </tr>`;
         $('#accused-table-q56 tbody').append(newRow);
@@ -344,7 +407,7 @@ $(document).ready(function() {
 
     // ==================== TEMP SAVE AJAX REQUEST ====================
     $(document).on("click", "#temp-save-question56", function() {
-        let checkedValue = $("input[name='is_peacekeeper_steps_q56']:checked").val();
+        let checkedValue = $("input[name='is_instances_trafficking_q56']:checked").val();
 
         // Table 1 Data
         let traineesData = [];
