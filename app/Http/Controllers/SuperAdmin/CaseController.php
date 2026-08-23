@@ -319,6 +319,10 @@ class CaseController extends Controller
         $yes_no->is_instances_trafficking_q56 = $request->is_instances_trafficking_q56;
         $yes_no->other_instances_trafficking_q56 = $request->other_instances_trafficking_q56;
         $yes_no->desctiption_instances_trafficking_q56 = $request->desctiption_instances_trafficking_q56;
+
+        $yes_no->is_considering_reported_q57 = $request->is_considering_reported_q57;
+        $yes_no->other_considering_reported_q57 = $request->other_considering_reported_q57;
+        $yes_no->desc_considering_reported_q57  = $request->desc_considering_reported_q57 ;
         
         $yes_no->created_by = Auth()->user()->id;
         $yes_no->save();
@@ -2620,7 +2624,7 @@ if (!empty($bulkInsertData)) {
             }
 
             if (!empty($bulkInsertData)) {
-                return response()->json($bulkInsertData);
+                
                 FiftySix::insert($bulkInsertData);
             }
 
@@ -2657,8 +2661,43 @@ if (!empty($bulkInsertData)) {
             }
 
             if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
+                
                 FiftySixB::insert($bulkInsertData);
+            }
+        }
+
+
+        //question57
+
+         if ($request->is_considering_reported_q57 != 0) {
+            $mejor_q57 = $request->input('mejor_q57', []);
+            $suggested_q57 = $request->input('suggested_q57', []);
+            $images = [];
+            if ($request->hasFile('document_upload_q57')) {
+                foreach ($request->file('document_upload_q57') as $index => $image) {
+                    $ext = $image->extension();
+                    $final_name = 'document_upload_q57_' . time() . '_' . $index . '.' . $ext;
+                    $image->move(public_path('uploads/document_upload_q57'), $final_name);
+                    $images[] = 'uploads/document_upload_q57/' . $final_name;
+                }
+            }
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(count($mejor_q57), count($suggested_q57), count($images));
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'mejor_q57' => $mejor_q57[$i] ?? null, // Use null coalescing operator to handle missing indices
+                    'suggested_q57' => $suggested_q57[$i] ?? null,
+                    'document_upload_q57' => $images[$i] ?? null,
+
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                return response()->json($bulkInsertData);
+                FiftySeven::insert($bulkInsertData);
             }
         }
 

@@ -9,5 +9,5 @@ class FiftySeven extends Model
 {
     use HasFactory;
 
-    protected $table = 'organization_devote_q57';
+    protected $table = 'considering_reported_q57';
 }

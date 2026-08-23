@@ -25,21 +25,21 @@ $q57_data = $question_57_data['q57_data'] ?? null;
                     about trafficking trends, government anti-trafficking efforts in territories or semi-autonomous
                     regions, and lead agencies.
                 </label>
-                <textarea name="tip_report_updates_q57" class="form-control q57-desc-input" rows="3"
+                <textarea name="desc_considering_reported_q57" class="form-control q57-desc-input" rows="3"
                     placeholder="Input Field">{{ $q57_data['tip_report_updates'] ?? '' }}</textarea>
             </div>
 
             <!-- Radio Options -->
             <div class="form-group mb-2">
-                <input type="radio" id="radioYes57" class="fiftysevenstatus" name="is_tip_report_updated_q57" value="1"
-                    {{ (is_null($q57_checked) || $q57_checked === '1') ? 'checked' : '' }}>
+                <input type="radio" id="radioYes57" class="fiftysevenstatus" name="is_considering_reported_q57"
+                    value="1" {{ (is_null($q57_checked) || $q57_checked === '1') ? 'checked' : '' }}>
                 <label for="radioYes57" class="mr-3 text-danger font-weight-bold">Yes</label>
 
-                <input type="radio" id="radioNo57" class="fiftysevenstatus" name="is_tip_report_updated_q57" value="0"
+                <input type="radio" id="radioNo57" class="fiftysevenstatus" name="is_considering_reported_q57" value="0"
                     {{ ($q57_checked === '0') ? 'checked' : '' }}>
                 <label for="radioNo57" class="mr-3 text-danger font-weight-bold">No</label>
 
-                <input type="radio" id="radioOthers57" class="fiftysevenstatus" name="is_tip_report_updated_q57"
+                <input type="radio" id="radioOthers57" class="fiftysevenstatus" name="is_considering_reported_q57"
                     value="2" {{ ($q57_checked === '2') ? 'checked' : '' }}>
                 <label for="radioOthers57" class="text-danger font-weight-bold">Others [input text box with
                     description]</label>
@@ -47,7 +47,7 @@ $q57_data = $question_57_data['q57_data'] ?? null;
 
             <!-- Others Input Textbox -->
             <div id="others_q57" style="display: {{ ($q57_checked === '2') ? 'block' : 'none' }};">
-                <textarea name="others_tip_report_q57" class="form-control mt-2 q57-others-input" rows="2"
+                <textarea name="other_considering_reported_q57" class="form-control mt-2 q57-others-input" rows="2"
                     placeholder="Others [input text box with description]">{{ $q57_data['others_tip_report'] ?? '' }}</textarea>
             </div>
 
@@ -82,7 +82,7 @@ $q57_data = $question_57_data['q57_data'] ?? null;
                             @for($i = 0; $i < $totalRows; $i++) @php $row=$table_rows[$i] ?? null;
                                 $selectedComponent=$row['component'] ?? ($defaultValues[$i] ?? '' ); @endphp <tr>
                                 <td>
-                                    <select name="major_component_q57[]" class="form-control q57-component">
+                                    <select name="mejor_q57[]" class="form-control q57-component">
                                         <option value="">Dropdown</option>
                                         <option value="Trafficking Trends"
                                             {{ $selectedComponent == 'Trafficking Trends' ? 'selected' : '' }}>
@@ -99,11 +99,11 @@ $q57_data = $question_57_data['q57_data'] ?? null;
                                     </select>
                                 </td>
                                 <td>
-                                    <textarea name="suggested_inputs_q57[]" class="form-control q57-inputs" rows="2"
+                                    <textarea name="suggested_q57[]" class="form-control q57-inputs" rows="2"
                                         placeholder="[Input Text Field]">{{ $row['inputs'] ?? '' }}</textarea>
                                 </td>
                                 <td style="vertical-align: middle;">
-                                    <input type="file" name="attachments_q57[]" class="form-control-file q57-files">
+                                    <input type="file" name="document_upload_q57[]" class="form-control-file q57-files">
                                     @if(!empty($row['attachment']))
                                     <small class="text-success font-weight-bold d-block mt-1">Uploaded:
                                         {{ $row['attachment'] }}</small>
@@ -138,7 +138,7 @@ $(document).ready(function() {
 
     // Radio Toggle Logic
     function toggleq57() {
-        let val = $("input[name='is_tip_report_updated_q57']:checked").val();
+        let val = $("input[name='is_considering_reported_q57']:checked").val();
 
         if (!val) {
             val = '1';
@@ -164,7 +164,7 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="major_component_q57[]" class="form-control q57-component">
+                    <select name="mejor_q57[]" class="form-control q57-component">
                         <option value="">Dropdown</option>
                         <option value="Trafficking Trends">Trafficking Trends</option>
                         <option value="Territories / Special Areas">Territories / Special Areas</option>
@@ -173,10 +173,10 @@ $(document).ready(function() {
                     </select>
                 </td>
                 <td>
-                    <textarea name="suggested_inputs_q57[]" class="form-control q57-inputs" rows="2" placeholder="[Input Text Field]"></textarea>
+                    <textarea name="suggested_q57[]" class="form-control q57-inputs" rows="2" placeholder="Input Text Field"></textarea>
                 </td>
                 <td style="vertical-align: middle;">
-                    <input type="file" name="attachments_q57[]" class="form-control-file q57-files">
+                    <input type="file" name="document_upload_q57[]" class="form-control-file q57-files">
                 </td>
                 <td style="vertical-align: middle;">
                     <button type="button" class="btn btn-sm btn-danger remove-row-q57">-</button>
@@ -193,7 +193,7 @@ $(document).ready(function() {
     // ==================== TEMP SAVE AJAX REQUEST ====================
     $(document).on("click", "#temp-save-question57", function() {
         let formData = new FormData();
-        let checkedValue = $("input[name='is_tip_report_updated_q57']:checked").val();
+        let checkedValue = $("input[name='is_considering_reported_q57']:checked").val();
 
         formData.append('_token', '{{ csrf_token() }}');
         formData.append('question_no', 57);
