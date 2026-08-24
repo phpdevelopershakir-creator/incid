@@ -74,6 +74,11 @@ class CaseModel extends Model
         return $this->hasMany(Three::class, 'case_id');
     }
 
+    public function threeb()
+    {
+        return $this->hasMany(ThreeB::class, 'case_id');
+    }
+
     public function four()
     {
         return $this->hasMany(Four::class, 'case_id');
@@ -156,6 +161,13 @@ class CaseModel extends Model
     {
         return $this->hasMany(Sixteen::class, 'case_id');
     }
+
+    public function sixteenb()
+    {
+        return $this->hasMany(SixteenB::class, 'case_id');
+    }
+
+    
     public function seventeen()
     {
         return $this->hasMany(Seventeen::class, 'case_id');
@@ -205,9 +217,19 @@ class CaseModel extends Model
         return $this->hasMany(TwentySix::class, 'case_id');
     }
 
+       public function twentysixb()
+    {
+        return $this->hasMany(TwentySixB::class, 'case_id');
+    }
+
     public function twentyseven()
     {
         return $this->hasMany(TwentySeven::class, 'case_id');
+    }
+
+    public function twentysevenb()
+    {
+        return $this->hasMany(TwentySevenB::class, 'case_id');
     }
     public function twentyeight()
     {
@@ -238,6 +260,12 @@ class CaseModel extends Model
     {
         return $this->hasMany(ThirtyFour::class, 'case_id');
     }
+
+    public function thirtyfourb()
+    {
+        return $this->hasMany(ThirtyFourB::class, 'case_id');
+    }
+    
     public function thirtyfive()
     {
         return $this->hasMany(ThirtyFive::class, 'case_id');
@@ -259,14 +287,30 @@ class CaseModel extends Model
     {
         return $this->hasMany(ThirtyNine::class, 'case_id');
     }
+    public function thirtynineb()
+    {
+        return $this->hasMany(ThirtyNineB::class, 'case_id');
+    }
     public function forty()
     {
         return $this->hasMany(Fourty::class, 'case_id');
     }
+
+     public function fortyb()
+    {
+        return $this->hasMany(FourtyB::class, 'case_id');
+    }
+    
     public function fortyone()
     {
         return $this->hasMany(FortyOne::class, 'case_id');
     }
+
+    public function fortyoneb()
+    {
+        return $this->hasMany(FortyOneB::class, 'case_id');
+    }
+    
     public function fortytwo()
     {
         return $this->hasMany(FortyTwo::class, 'case_id');
@@ -336,6 +380,12 @@ class CaseModel extends Model
     public function fiftysix()
     {
         return $this->hasMany(FiftySix::class, 'case_id');
+    }
+
+    
+    public function fiftysixb()
+    {
+        return $this->hasMany(FiftySixB::class, 'case_id');
     }
     public function fiftyseven()
     {

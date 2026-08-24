@@ -2,74 +2,101 @@
 if (($questiontitles[2]->status ?? null) == 1) {
 
 ?>
-  <div class="card">
+<div class="card">
     <div class="card-header" role="tab" id="heading-4">
-      <h6 class="mb-0">
-        <a data-toggle="collapse" href="#Question-3" aria-expanded="false"
-          aria-controls="collapse-4">
-          3.{{ $questiontitles[2]->title }}
-        </a>
-      </h6>
+        <h6 class="mb-0">
+            <a data-toggle="collapse" href="#Question-3" aria-expanded="false" aria-controls="collapse-4">
+                3.{{ $questiontitles[2]->title }}
+            </a>
+        </h6>
     </div>
 
-    <div id="Question-3" class="collapse" role="tabpanel3" aria-labelledby="heading-4"
-      data-parent="#accordion-2">
-      <div class="card-body">
-        <div id="six_question_view">
-          <table class="table table-bordered text-center">
-            <thead>
-              <tr>
-                <th rowspan="3" style="text-align: center; margin: bottom 45%;">Ministry/Department</th>
-
-              <tr>
-                <th colspan="3">Number of Official Accused</th>
-                <th colspan="1">Result of which Policy/Law/ response </th>
-              </tr>
-              <tr>
-                <th>Men</th>
-                <th>Women</th>
-                <th>Total</th>
-                <td>Response</td>
-
-              </tr>
-            </thead>
-            <tbody>
-              @php
-              $menTotal = 0;
-              $womenTotal = 0;
-              $Total = 0;
-
-              @endphp
-              @foreach($case->three as $three)
-              <tr>
-
-                <td>{{$three->labor_title}}</td>
-                <td>{{$three->labor_men}}</td>
-                <td>{{$three->labor_women}}</td>
-                <td>{{$three->labor_total}}</td>
-                <td>{{$three->labor_response}}</td>
-              </tr>
-              @php
-              $menTotal += $three->labor_men;
-              $womenTotal += $three->labor_women;
-              $Total += $three->labor_total;
+    <div id="Question-3" class="collapse" role="tabpanel3" aria-labelledby="heading-4" data-parent="#accordion-2">
+        <div class="card-body">
+            <div id="six_question_view">
+                @if(isset($case->yes_no_other) && $case->yes_no_other->is_technology_trafficking_applicable_q3 == 1)
+                <table class="table table-bordered text-center">
+                    <thead class="text-center align-middle">
+                        <tr style="background:#E5E5E5;">
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Category</th>
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Purpose
+                                (Multiple Selection)</th>
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Type of
+                                Technology Used by Traffickers
+                                (Multiple Selection)</th>
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Description
+                                (victims/process and nature
+                                of victimization/government actions)</th>
 
 
-              @endphp
-              @endforeach
-              <tr style="font-weight:bold; background:#f1f1f1;">
-                <td>Total</td>
-                <td>{{ $menTotal }}</td>
-                <td>{{ $womenTotal }}</td>
-                <td>{{ $Total }}</td>
+                        </tr>
 
-              </tr>
+                    </thead>
+                    <tbody>
 
-            </tbody>
-          </table>
+                        @foreach($case->three as $three)
+                        <tr>
+
+                            <td>{{$three->category_q3}}</td>
+                            <td>{{$three->purpose_q3}}</td>
+                            <td>{{$three->technology_q3}}</td>
+                            <td>{{$three->description_q3}}</td>
+
+                        </tr>
+
+                        @endforeach
+
+
+                    </tbody>
+                </table>
+                <br>
+                <p class="font-weight-bold">Government Response</p>
+                <table class="table table-bordered text-center">
+                    <thead class="text-center align-middle">
+                        <tr style="background:#E5E5E5;">
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Question</th>
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Responses
+                                (Multiple Selection)</th>
+                            <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Description
+                                (who is doing it? What are
+                                the results)</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @foreach($case->threeb as $threeb)
+                        <tr>
+
+                            <td>{{$threeb->question_q3b}}</td>
+                            <td>{{$threeb->response_q3b}}</td>
+                            <td>{{$threeb->description_q3b}}</td>
+
+                        </tr>
+
+                        @endforeach
+
+
+                    </tbody>
+                </table>
+
+                @elseif(isset($case->yes_no_other) &&
+                !empty($case->yes_no_other->other_technology_trafficking_applicable_q3))
+                <div class="alert alert-info">
+                    <strong>Other Description:</strong>
+                    {{ $case->yes_no_other->other_technology_trafficking_applicable_q3 }}
+                </div>
+
+
+                @else
+                <div class="text-center py-3">
+                    <p class="text-muted">No data available for this section.</p>
+                </div>
+                @endif
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 <?php } ?>

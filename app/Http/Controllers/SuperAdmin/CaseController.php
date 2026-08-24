@@ -1291,7 +1291,7 @@ if (!empty($bulkInsertData)) {
         }
 
 
-        // question18
+        //question18
 
         if ($request->is_government_officials_q18 != 0) {
             $location_q18 = $request->input('location_q18', []);
@@ -2759,10 +2759,12 @@ if (!empty($bulkInsertData)) {
         $userId = Auth::id();
         $userType = Auth::user()->user_type;
         $relationships = [
+        
             'one',
             'oneb',
             'two',
             'three',
+            'threeb',
             'four',
             'five',
             'six',
@@ -2771,7 +2773,8 @@ if (!empty($bulkInsertData)) {
             'nine',
             'ten',
             'fifteen',
-            'sixteen',
+            'sixteen', 
+            'sixteenb',
             'eighteen',
             'nineteen',
             'twentythree',
