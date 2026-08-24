@@ -1,105 +1,124 @@
-<style>
-  .othersText { display: none; }
-  .visibility { display: none; }
-  .type3Input { display: none; }
-</style>
-
-<div class="card question18">
-  <?php
-    $type_vot=[ 1 => "Sex Trafficing", 2 => "Forced labour", 3 => "Other Specify" ];
-    $protection_measures_taken=[ 1 => "Detained", 2 => "Referred to care", 3 => "Investigation" ];
-    $preventive_measures_taken=[ 1 => "Awareness Taising", 2 => "Stricter Border Control" ];
-  ?>
-
-  <div class="card-header" role="tab" id="heading-18">
-    <h6 class="card-title">
-      <a data-toggle="collapse" href="#Question-18" aria-expanded="false" aria-controls="collapse-18">
-      18.UKRAINIAN REFUGEES: Since Russia’s further invasion of Ukraine in 2022, have authorities identified any refugees from Ukraine as victims of forced labor or sex trafficking in the country? If so, specify when they were identified and referred to care. Are there ongoing investigations into trafficking of Ukrainian refugees? Please describe government efforts to prevent trafficking among this at-risk population.
-      </a>
-    </h6>
-  </div>
-
-  <div id="Question-18" class="collapse" role="tabpanel" aria-labelledby="heading-18" data-parent="#accordion-2">
-    <div class="card-body">
-
-
-
-      <!-- TABLE SECTION -->
-      <div id="eighteen_question_view" class="{{ isset($question_18_data->q18radioEighteen3_checked_value) && in_array($question_18_data->q18radioEighteen3_checked_value, ['0','2']) ? 'visibility':'' }}">
-        <table id="addRowq18radioThree3" class="table table-bordered text-center">
-          <thead>
-            <tr>
-              <th>Type of VOT</th>
-              <th>Men</th>
-              <th>Women</th>
-              <th>Third Gender</th>
-              <th>Total</th>
-              <th>Protection Measures</th>
-              <th>Preventive Measures</th>
-       
-            </tr>
-          </thead>
-          <tbody>
-             @foreach($case->eighteen as $eighteen)
-              <tr>
-                <td>
-                  @if($eighteen->type_vot == 1)
-                    Sex Trafficing
-                  @elseif ($eighteen->type_vot	 == 2)
-                    Forced labour
-                  @else
-
-                    {{$eighteen->type_vot}}
-               
-                  @endif
-                 
-                </td>
-                 <td>
-                {{$eighteen->men_18}}
-                </td>
-                 <td>
-                {{$eighteen->women_18}}
-                </td>
-                 <td>
-                {{$eighteen->third_gender_18}}
-                </td>
-                 <td>
-                {{$eighteen->total_18}}
-                </td>
-
-                <td>
-                  @if($eighteen->protection_measures_taken == 1)
-                    Detained
-                  @elseif ($eighteen->protection_measures_taken	 == 2)
-                    Referred to care
-                  @elseif ($eighteen->protection_measures_taken	 == 3)
-
-                    Investigation
-               
-                  @endif
-                 
-                </td>
-
-                <td>
-                  @if($eighteen->preventive_measures_taken == 1)
-                    Awareness Taising
-                  @elseif ($eighteen->preventive_measures_taken	 == 2)
-                    Stricter Border Control
-             
-               
-                  @endif
-                 
-                </td>
-              </tr>
-
-              @endforeach
-          </tbody>
-        </table>
-      </div>
-
-     
-
+<div class="card">
+    <div class="card-header" role="tab" id="heading-4">
+        <h6 class="mb-0">
+            <a data-toggle="collapse" href="#Question-18" aria-expanded="false" aria-controls="collapse-4">
+                18.{{ $questiontitles[17]->title }}
+            </a>
+        </h6>
     </div>
-  </div>
-</div>
 
+    <div id="Question-18" class="collapse" role="tabpane18" aria-labelledby="heading-4" data-parent="#accordion-2">
+        <div class="card-body">
+            <div id="six_question_view">
+                @if(isset($case->yes_no_other) && $case->yes_no_other->is_government_officials_q18 == 1)
+
+
+                <table class="table table-bordered text-center">
+                    <thead class="text-center align-middle">
+
+                        <tr style="background:#E5E5E5;">
+                            <th rowspan="2" style="vertical-align: middle;">Location</th>
+                            <th colspan="5">Number of personnel Trained</th>
+
+                        </tr>
+                        <tr style="background:#E5E5E5;">
+                            <th>Category</th>
+                            <th>NGO/INGO </th>
+                            <th>Men</th>
+                            <th>Women</th>
+                            <th>Total</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @php
+                        $menTotal = 0;
+                        $womenTotal = 0;
+                        $Total = 0;
+
+                        @endphp
+                        @foreach($case->eighteen as $eighteen)
+                        <tr>
+                            <th>{{$eighteen->location_q18}}</th>
+
+                            <th>
+                                @php
+                                $categories = [
+                                1 => 'Social Worker',
+                                2 => 'Police',
+                                3 => 'BGB',
+                                4 => 'Coastguard',
+                                5 => 'VDP',
+                                6 => 'Rail Police',
+                                7 => 'Judiciary',
+                                8 => 'NGO',
+                                9 => 'Others'
+                                ];
+                                @endphp
+
+                                {{ $categories[$eighteen->category_q18] ?? 'N/A' }}
+                            </th>
+                            <th>
+                                @php
+                                $ratings = [
+                                1 => 'Excellent',
+                                2 => 'Good',
+                                3 => 'Fair',
+                                4 => 'Poor',
+                                5 => 'Extremely Poor',
+                                6 => 'Non-Functional'
+                                ];
+                                @endphp
+
+                                {{ $ratings[$eighteen->ngo_rating_q18] ?? 'N/A' }}
+                            </th>
+                            <th>
+                                {{$eighteen->men_q18}}
+                            </th>
+                            <th>
+                                {{$eighteen->women_q18}}
+                            </th>
+                            <th>
+                                {{$eighteen->total_q18}}
+                            </th>
+
+
+
+
+                        </tr>
+                        @php
+                        $menTotal += $eighteen->men_q18;
+                        $womenTotal += $eighteen->women_q18;
+                        $Total += $eighteen->total_q18;
+
+
+                        @endphp
+                        @endforeach
+                        <tr style="font-weight:bold; background:#f1f1f1;">
+                            <td colspan="3">Total</td>
+                            <td class="text-center align-middle">{{ $menTotal }}</td>
+                            <td class="text-center align-middle">{{ $womenTotal }}</td>
+                            <td class="text-center align-middle">{{ $Total }}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                @elseif(isset($case->yes_no_other) &&
+                !empty($case->yes_no_other->other_government_officials_q18))
+                <div class="alert alert-info">
+                    <strong>Other Description:</strong>
+                    {{ $case->yes_no_other->other_government_officials_q18 }}
+                </div>
+
+
+                @else
+                <div class="text-center py-3">
+                    <p class="text-muted">No data available for this section.</p>
+                </div>
+                @endif
+
+            </div>
+        </div>
+    </div>
+</div>
