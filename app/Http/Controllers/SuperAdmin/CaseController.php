@@ -2778,6 +2778,11 @@ if (!empty($bulkInsertData)) {
             'eighteen',
             'nineteen',
             'twentythree',
+            'twentyfive',
+            'twentysix',
+            'twentysixb',
+            'twentyseven',
+            'twentysevenb',
             'twentyeight',
             
             'twentytwo',

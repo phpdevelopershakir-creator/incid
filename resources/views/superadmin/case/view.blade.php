@@ -120,6 +120,12 @@
                             @include('superadmin.case.view.18view')
                             @endif
 
+
+
+                            @if(Auth::user()->can('19.question'))
+                            @include('superadmin.case.view.19view')
+                            @endif
+
                             @if(Auth::user()->can('20.question'))
                             @include('superadmin.case.view.20view')
                             @endif
@@ -138,6 +144,22 @@
 
                             @if(Auth::user()->can('24.question'))
                             @include('superadmin.case.view.24view')
+                            @endif
+
+                            @if(Auth::user()->can('25.question'))
+                            @include('superadmin.case.view.25view')
+                            @endif
+
+                            @if(Auth::user()->can('26.question'))
+                            @include('superadmin.case.view.26view')
+                            @endif
+
+                            @if(Auth::user()->can('27.question'))
+                            @include('superadmin.case.view.27view')
+                            @endif
+
+                            @if(Auth::user()->can('28.question'))
+                            @include('superadmin.case.view.28view')
                             @endif
 
                             @if(Auth::user()->can('30.question'))

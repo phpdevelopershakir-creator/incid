@@ -1,61 +1,40 @@
+<?php
+if (($questiontitles[27]->status ?? null) == 1) {
+
+?>
+
 <div class="card">
-  <div class="card-header" role="tab" id="heading-4">
-      <h6 class="mb-0">
-        <a data-toggle="collapse" href="#Question-28" aria-expanded="false"
-          aria-controls="collapse-4">
-          28.Describe the overall quality of care? Did service providers receive adequate training on providing care to trauma survivors? Did service providers have the knowledge and skills to support victims through a consistent victim-centered approach?
-        </a>
-      </h6>
+    <div class="card-header" role="tab" id="heading-5">
+        <h6 class="mb-0">
+            <a data-toggle="collapse" href="#Question-28" aria-expanded="false" aria-controls="collapse-4">
+                28.{{ $questiontitles[27]->title }}
+            </a>
+        </h6>
     </div>
 
-    <div id="Question-28" class="collapse" role="tabpane28" aria-labelledby="heading-4"
-      data-parent="#accordion-2">
-      <div class="card-body">
-      <div id="six_question_view">
-        <table class="table table-bordered text-center">
-          <thead>
-            <tr>
-                <th scope="col">Overall Quality of Care	</th>
-                <th scope="col">Why	</th>
-  
-              </tr>
-            </thead>
-            <tbody>
-            @foreach($case->twentyeight as $twentyeight)
-              <tr>
-                <th>
-                  @if($twentyeight->overall_quality_car == 1)
-                   Screening carried out by Police as per PSHTA
-                  @elseif ($twentyeight->main_document	 == 2)
-                   Screening via checklist of MoSW
-                  @else
+    <div id="Question-28" class="collapse" role="tabpane28" aria-labelledby="heading-5" data-parent="#accordion-2">
+        <div class="card-body">
+            <div id="six_question_view">
+                @if(isset($case->yes_no_other) && $case->yes_no_other->is_child_victims_juvenile_q28 == 1)
+                @foreach($case->twentyeight as $twentyeight)
+                {{$twentyeight->child_victims_juvenile_title_q28}}
+                @endforeach
 
-                  {{$twentyeight->overall_quality_car}}
-                  @endif
-                </th>
-                <td>
-                  @if($twentyeight->why_q28 == 1)
-                    Staff are well trained on trauma informed service
-                  @elseif ($twentyeight->why_q28	 == 2)
-                  Staff are properly trained on victim centric care
-                     @elseif ($twentyeight->why_q28	 == 3)
-                  Staff are inadequately trained on trauma informed service
-                  @elseif ($twentyeight->why_q28	 == 4)
-                Staff are not trained on trauma informed service
-                  @elseif ($twentyeight->why_q28	 == 5)
-                Staff are inadequately trained on victim centric care
-                @elseif ($twentyeight->why_q28	 == 6)
-               Staff are not trained on victim centric care
-                    @endif
-            
-                </td>
-                
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-        
+                @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->other_child_victims_juvenile_q28))
+                <div class="alert alert-info">
+                    <strong>Other Description:</strong> {{ $case->yes_no_other->other_child_victims_juvenile_q28 }}
+                </div>
+
+
+                @else
+                <div class="text-center py-3">
+                    <p class="text-muted">No data available for this section.</p>
+                </div>
+                @endif
+
+            </div>
         </div>
-        </div>
-      </div>
     </div>
+</div>
+
+<?php } ?>
