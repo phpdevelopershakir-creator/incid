@@ -2696,7 +2696,7 @@ if (!empty($bulkInsertData)) {
             }
 
             if (!empty($bulkInsertData)) {
-                return response()->json($bulkInsertData);
+                //return response()->json($bulkInsertData);
                 FiftySeven::insert($bulkInsertData);
             }
         }
@@ -2827,6 +2827,9 @@ if (!empty($bulkInsertData)) {
             'fortyb',
             'fortyone',
             'fortyoneb',
+            'fiftysix',
+            'fiftysixb',
+            'fiftyseven',
             'fiftyeight'
 
 

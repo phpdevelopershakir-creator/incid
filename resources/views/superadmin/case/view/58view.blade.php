@@ -7,7 +7,7 @@ if (($questiontitles[4]->status ?? null) == 1) {
     <div class="card-header" role="tab" id="heading-5">
         <h6 class="mb-0">
             <a data-toggle="collapse" href="#Question-5" aria-expanded="false" aria-controls="collapse-4">
-                5.{{ $questiontitles[4]->title }}
+                58.{{ $questiontitles[4]->title }}
             </a>
         </h6>
     </div>
