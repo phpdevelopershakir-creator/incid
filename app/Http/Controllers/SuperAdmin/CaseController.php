@@ -2822,7 +2822,12 @@ if (!empty($bulkInsertData)) {
             'thirtyfourb',
             'thirtyseven',
             'thirtynine',
-            'thirtynineb'
+            'thirtynineb',
+            'forty',
+            'fortyb',
+            'fortyone',
+            'fortyoneb',
+            'fiftyeight'
 
 
         ];

@@ -1,72 +1,128 @@
-@if(Auth::user()->can('41.question'))
-    <div class="col-md-12">
-      <div class="card card-outline collapsed-card">
-        <div class="card-header">
-          <h3 class="card-title">41.Please provide details on Court Proceedings by District:</h3>
+<style>
+.othersText {
+    display: none
+}
 
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
-        <div id="fourty_one_question_view" class="card-body row">
-          <h3>Please provide details on Court Proceedings by District:</h3>
-    <table cellpadding=0 celspecing=0 width="100%" id="addRowQ41" class="table table-bordered text-center">
-        <thead> 
-          <tr>
-              
-              <th>District</th>
-              <!-- <th>Previous Cases</th> -->
-              <th>Previous Cases</th>
-              <th>Received Cases</th>
-              <th>Total Cases</th>
-              <th>Disposed Cases</th>
-              <th>Transferred Cases</th>
-              <th>Pending Cases</th>
-              <th>Cases more than five year - old</th>
-            </tr>
-        </thead>
-      <tbody>
-      @foreach($case->fortyone as $fortyone)
+.visibility {
+    display: none
+}
 
-            <tr>
-              
-            <td>
-            {{$fortyone->distric->name ?? ''}}
+.q15-item-card {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+</style>
 
-            </td>
+<div class="card question15">
 
-            <td>
-            {{$fortyone->previous_cases}}
-            </td> 
-            <td>
-            {{$fortyone->received_cases}}
-            </td>
-            <td>
-            {{$fortyone->total_cases}}
-            </td> 
-            <td>
-            {{$fortyone->disposed_cases}}
-            </td>  
-            <td>
-            {{$fortyone->transferred_cases}}
-            </td>  
-            <td>
-            {{$fortyone->pending_cases}}
-            </td>  
-            <td>
-            {{$fortyone->cases_more_than_five_year_old}}
-            </td>  
-            </tr>
-          
-
-
-@endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <div class="card-header" role="tab" id="heading-4">
+        <h6 class="mb-0 card-title">
+            <a data-toggle="collapse" href="#Question-41" aria-expanded="false" aria-controls="collapse-4">
+                41.{{ $questiontitles[40]->title }}
+            </a>
+        </h6>
     </div>
-    @endif
 
-      
+    <div id="Question-41" class="collapse" role="tabpane41" aria-labelledby="heading-4" data-parent="#accordion-2">
+        <div class="card-body">
+
+
+            <div class="q15-wrapper">
+                @foreach($case->fortyone as $fortyone)
+                <div class="q15-item-card p-3 mb-3">
+                    <!-- 1. Description One -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $fortyone->convicted_traffickers_title_one_q41 }}</span>
+                    </div>
+
+                    <!-- 2. Description Two -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $fortyone->convicted_traffickers_title_two_q41 }}</span>
+                    </div>
+
+
+
+
+                </div>
+                @endforeach
+            </div>
+            <br>
+            @if(isset($case->yes_no_other) && $case->yes_no_other->is_convicted_traffickers_q41 == 1)
+            <table class="table table-bordered text-center">
+                <thead class="text-center align-middle">
+
+                    <tr style="background:#E5E5E5;">
+                        <th>Location</th>
+                        <th>Case No</th>
+                        <th>No of Men</th>
+                        <th>Amount</th>
+                        <th>No of Women</th>
+                        <th>Amount</th>
+                        <th>Total No of Traffickers</th>
+                        <th>Total amount</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @foreach($case->fortyoneb as $fortyoneb)
+                    <tr>
+                        <th>{{$fortyoneb->convicted_traffickers_location_q41b}}</th>
+
+
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_case_q41b}}
+
+                        </th>
+
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_men_q41b}}
+                        </th>
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_men_amount_q41b}}
+                        </th>
+
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_women_q41b}}
+                        </th>
+
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_women_amount_q41b}}
+                        </th>
+
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_total_trafic_q41b}}
+                        </th>
+
+                        <th>
+                            {{$fortyoneb->convicted_traffickers_total_amount_q41b}}
+                        </th>
+
+
+                    </tr>
+
+                    @endforeach
+
+                </tbody>
+            </table>
+            @elseif(isset($case->yes_no_other) &&
+            !empty($case->yes_no_other->other_convicted_traffickers_q41))
+            <div class="alert alert-info">
+                <strong>Other Description:</strong>
+                {{ $case->yes_no_other->other_victims_civil_traffickers_q40 }}
+            </div>
+
+
+            @else
+            <div class="text-center py-3">
+                <p class="text-muted">No data available for this section.</p>
+            </div>
+            @endif
+
+
+        </div>
+    </div>
+</div>

@@ -1,102 +1,129 @@
-@if(Auth::user()->can('40.question'))
-   <div class="col-md-12">
-      <div class="card card-outline collapsed-card">
-        <div class="card-header">
-          <h3 class="card-title">40. Conviction Status</h3>
+<style>
+.othersText {
+    display: none
+}
 
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
+.visibility {
+    display: none
+}
+
+.q15-item-card {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+</style>
+
+<div class="card question15">
+
+    <div class="card-header" role="tab" id="heading-4">
+        <h6 class="mb-0 card-title">
+            <a data-toggle="collapse" href="#Question-40" aria-expanded="false" aria-controls="collapse-4">
+                40.{{ $questiontitles[39]->title }}
+            </a>
+        </h6>
+    </div>
+
+    <div id="Question-40" class="collapse" role="tabpane40" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
-          <h3>Conviction Status</h3>
-          <table cellpadding=0 celspecing=0 width="100%">
-            <thead>
-              <tr>
-                <td colspan="2"> Conviction Status
-                </td>
-                <td>M</td>
-                <td>W</td>
-                <td>3rd Gender </td>
-                <td>B</td>
-                <td>G</td>
-                <!-- <td>T</td> -->
-                <td>Total</td>
-              </tr>
-            </thead>
-            <tbody>
-               @php
-                $menTotal = 0;
-                $womenTotal = 0;
-                $thirdGenderTotal = 0;
-                $boysTotal = 0;
-                $girlsTotal = 0;
-                $grandTotal = 0;
-             @endphp
 
-        @foreach($case->forty as $forty)
-        <tr>
-        <!-- <td rowspan=3>Total individuals convicted</td> -->
-        <td>
-        @if ($forty->q40_type_cases_investigated == 1)
-        Total individuals convicted
-        @elseif ($forty->q40_type_cases_investigated == 2)
-        Individuals convicted under PSHT Act 2012
-        @elseif ($forty->q40_type_cases_investigated == 3)
-        individuals convicted under non-trafficking laws (OEMA/PC)
-        @elseif ($forty->q40_type_cases_investigated == 4)
-        Convictions newly upheld on appeal
-        @elseif ($forty->q40_type_cases_investigated == 5)
-        Convictions newly overturned on appeal
-        @elseif ($forty->q40_type_cases_investigated == 6)
-        Individuals acquitted             
-        @endif
-        </td>
-        <td>
-        @if ($forty->q40_category_coverage == 1)
-        Number of Victims of Sex Trafficking Cases
-        @elseif ($forty->q40_category_coverage == 2)
-        Number of Victims of Labour Trafficking Cases
-        @elseif ($forty->q40_category_coverage == 3)
-        Number of Victims of Other/unspecified Trafficking Cases
-                          
-        @endif
-        </td>
-          <!-- <td>{{$forty->q40_category_coverage}}</td> -->
-          <td>{{$forty->q40_new_report_sex_trafficking_cases_men}}</td>
-          <td>{{$forty->q40_new_report_sex_trafficking_cases_women}}</td>
-          <td>{{$forty->q40_new_report_sex_trafficking_cases_third_gender}}</td>
-          <td>{{$forty->q40_new_report_sex_trafficking_cases_boy}}</td>
-          <td>{{$forty->q40_new_report_sex_trafficking_cases_girl}}</td>
-          <td>{{$forty->q40_new_report_sex_trafficking_cases_total}}</td>
-          
-        </tr>
-         @php
-                $menTotal += $forty->q40_new_report_sex_trafficking_cases_men;
-                $womenTotal += $forty->q40_new_report_sex_trafficking_cases_women;
-                $thirdGenderTotal += $forty->q40_new_report_sex_trafficking_cases_third_gender;
-                $boysTotal += $forty->q40_new_report_sex_trafficking_cases_boy;
-                $girlsTotal += $forty->q40_new_report_sex_trafficking_cases_girl;
-                $grandTotal += $forty->q40_new_report_sex_trafficking_cases_total;
-            @endphp
 
-        @endforeach
-        <tr style="font-weight:bold; background:#f1f1f1;">
-                <td colspan="2">Total</td>
-                <td>{{ $menTotal }}</td>
-                <td>{{ $womenTotal }}</td>
-                <td>{{ $thirdGenderTotal }}</td>
-                <td>{{ $boysTotal }}</td>
-                <td>{{ $girlsTotal }}</td>
-                <td>{{ $grandTotal }}</td>
-            </tr>
-            
-            </tbody>
-            
+            <div class="q15-wrapper">
+                @foreach($case->forty as $forty)
+                <div class="q15-item-card p-3 mb-3">
+                    <!-- 1. Description One -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $forty->victims_traffickers_title_one_q40 }}</span>
+                    </div>
 
-          </table>
+                    <!-- 2. Description Two -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $forty->victims_traffickers_title_two_q40 }}</span>
+                    </div>
+
+
+
+
+                </div>
+                @endforeach
+            </div>
+            <br>
+            @if(isset($case->yes_no_other) && $case->yes_no_other->is_victims_civil_traffickers_q40 == 1)
+            <table class="table table-bordered text-center">
+                <thead class="text-center align-middle">
+                    <tr style="background:#E5E5E5;">
+                        <th rowspan="2" style="vertical-align: middle;">Location</th>
+                        <th colspan="3">Number of personnel Trained</th>
+                    </tr>
+                    <tr style="background:#E5E5E5;">
+
+
+                        <th>Men</th>
+                        <th>Women</th>
+                        <th>Total</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @php
+                    $menTotal = 0;
+                    $womenTotal = 0;
+                    $Total = 0;
+
+                    @endphp
+                    @foreach($case->fortyb as $fortyb)
+                    <tr>
+                        <th>{{$fortyb->victims_traffickers_location_q40b}}</th>
+
+
+                        <th>
+                            {{$fortyb->victims_traffickers_men_q40b}}
+
+                        </th>
+
+                        <th>
+                            {{$fortyb->victims_traffickers_women_q40b}}
+                        </th>
+                        <th>
+                            {{$fortyb->victims_traffickers_total_q40b}}
+                        </th>
+
+
+                    </tr>
+                    @php
+                    $menTotal += $fortyb->victims_traffickers_men_q40b;
+                    $womenTotal += $fortyb->victims_traffickers_women_q40b;
+                    $Total += $fortyb->victims_traffickers_total_q40b;
+
+
+                    @endphp
+                    @endforeach
+                    <tr style="font-weight:bold; background:#f1f1f1;">
+                        <td>Total</td>
+                        <td class="text-center align-middle">{{ $menTotal }}</td>
+                        <td class="text-center align-middle">{{ $womenTotal }}</td>
+                        <td class="text-center align-middle">{{ $Total }}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            @elseif(isset($case->yes_no_other) &&
+            !empty($case->yes_no_other->other_victims_civil_traffickers_q40))
+            <div class="alert alert-info">
+                <strong>Other Description:</strong>
+                {{ $case->yes_no_other->other_victims_civil_traffickers_q40 }}
+            </div>
+
+
+            @else
+            <div class="text-center py-3">
+                <p class="text-muted">No data available for this section.</p>
+            </div>
+            @endif
+
+
         </div>
-      </div>
-    </div> 
-    @endif
+    </div>
+</div>

@@ -1,46 +1,40 @@
-@if(Auth::user()->can('58.question'))
-     
-<div class="col-md-12">
-  <div class="card card-outline collapsed-card">
-    <div class="card-header">
-      <h3 class="card-title">58.How much did the ministry/agency/organization spent on research/evaluation?</h3>
+<?php
+if (($questiontitles[4]->status ?? null) == 1) {
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-        </button>
-      </div>
+?>
+
+<div class="card">
+    <div class="card-header" role="tab" id="heading-5">
+        <h6 class="mb-0">
+            <a data-toggle="collapse" href="#Question-5" aria-expanded="false" aria-controls="collapse-4">
+                5.{{ $questiontitles[4]->title }}
+            </a>
+        </h6>
     </div>
-    <div class="card-body">
-      <table class="table table-bordered text-center">
-        <thead>
-          <tr>
-                <th scope="col">BDT</th>
-                <th scope="col">Source</th>
-                <th scope="col">Assessment of Allocation</th>
-                <th scope="col">Others</th>
 
-              </tr>
-        </thead>
-<tbody>
-        @foreach($case->fiftyeight as $fiftyeight)
-          <tr>
-          
-            
-            <td>{{$fiftyeight->q58_bdt}}</td>
-            <td>{{$fiftyeight->q58_source}}</td>
-            <td>{{$fiftyeight->q58_assessment_allocation}}</td>
-            <td>{{$fiftyeight->others_total}}</td>
+    <div id="Question-5" class="collapse" role="tabpane2" aria-labelledby="heading-5" data-parent="#accordion-2">
+        <div class="card-body">
+            <div id="six_question_view">
+                @if(isset($case->yes_no_other) && $case->yes_no_other->is_trafficking_investigations_q58 == 1)
+                @foreach($case->fiftyeight as $fiftyeight)
+                {{$fiftyeight->trafficking_investigations_title_q58}}
+                @endforeach
 
-           
+                @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->other_trafficking_investigations_q58))
+                <div class="alert alert-info">
+                    <strong>Other Description:</strong> {{ $case->yes_no_other->other_trafficking_investigations_q58 }}
+                </div>
 
-            
 
-          </tr>
-          @endforeach
-</tbody>
-       
-      </table>
+                @else
+                <div class="text-center py-3">
+                    <p class="text-muted">No data available for this section.</p>
+                </div>
+                @endif
+
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-    @endif  
+
+<?php } ?>

@@ -190,6 +190,14 @@
                             @include('superadmin.case.view.39view')
                             @endif
 
+                            @if(Auth::user()->can('40.question'))
+                            @include('superadmin.case.view.40view')
+                            @endif
+
+                            @if(Auth::user()->can('41.question'))
+                            @include('superadmin.case.view.41view')
+                            @endif
+
                             @if(Auth::user()->can('44.question'))
                             @include('superadmin.case.view.44view')
                             @endif
@@ -232,6 +240,10 @@
 
                             @if(Auth::user()->can('55.question'))
                             @include('superadmin.case.view.55view')
+                            @endif
+
+                            @if(Auth::user()->can('58.question'))
+                            @include('superadmin.case.view.58view')
                             @endif
 
                         </div>
