@@ -162,6 +162,10 @@
                             @include('superadmin.case.view.28view')
                             @endif
 
+                            @if(Auth::user()->can('29.question'))
+                            @include('superadmin.case.view.29view')
+                            @endif
+
                             @if(Auth::user()->can('30.question'))
                             @include('superadmin.case.view.30view')
                             @endif
@@ -172,6 +176,10 @@
 
                             @if(Auth::user()->can('33.question'))
                             @include('superadmin.case.view.33view')
+                            @endif
+
+                            @if(Auth::user()->can('34.question'))
+                            @include('superadmin.case.view.34view')
                             @endif
 
                             @if(Auth::user()->can('44.question'))

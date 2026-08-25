@@ -2784,7 +2784,7 @@ if (!empty($bulkInsertData)) {
             'twentyseven',
             'twentysevenb',
             'twentyeight',
-            
+            'twentynine',
             'twentytwo',
             'fifty',
             'fiftyone',
@@ -2818,6 +2818,8 @@ if (!empty($bulkInsertData)) {
             'thirtyone',
             'thirty',
             'twentyone',
+            'thirtyfour',
+            'thirtyfourb'
 
 
         ];

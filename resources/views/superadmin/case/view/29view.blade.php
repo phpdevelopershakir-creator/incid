@@ -1,59 +1,40 @@
-@if(Auth::user()->can('29.question'))
-    <div class="col-md-12">
-      <div class="card card-outline collapsed-card">
-        <div class="card-header">
-          <h3 class="card-title">29.How much funding (in the local currency) did the ministry/agency/organization
-            spend on protection
-            efforts?</h3>
+<?php
+if (($questiontitles[28]->status ?? null) == 1) {
 
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <table class="table table-white">
-            <thead>
-              <tr>
-                <th scope="col">Type of protection Action</th>
-                <th scope="col">Allocation (in BDT)</th>
-              </tr>
-            </thead>
-            <tbody>
-            @foreach($case->twentynine as $twentynine)
-              <tr>
-                <th>
-                @if ($twentynine->type_protection_action	 == 1)
-                Total Allocation under NPA for protection
-                @elseif ($twentynine->type_protection_action	 == 2)
-                Total allocation spent for different protection services
-                @elseif ($twentynine->type_protection_action	 == 3)
-                Assessment of Allocation
-                @endif
-                
-                </th>
-            
-                <td>
-                @if ($twentynine->total_allocation_under_npa_protection	 == 1)
-                Excess
-                @elseif ($twentynine->total_allocation_under_npa_protection	 == 2)
-                Adequate
-                @elseif ($twentynine->total_allocation_under_npa_protection	 == 3)
-                Inadequate
-                @elseif ($twentynine->total_allocation_under_npa_protection	 == 4)
-                None
-                @else
-                 {{$twentynine->total_allocation_under_npa_protection}}
-                  @endif
-              
-                  
+?>
 
-                </td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
+<div class="card">
+    <div class="card-header" role="tab" id="heading-5">
+        <h6 class="mb-0">
+            <a data-toggle="collapse" href="#Question-29" aria-expanded="false" aria-controls="collapse-4">
+                29.{{ $questiontitles[28]->title }}
+            </a>
+        </h6>
     </div>
-    @endif
+
+    <div id="Question-29" class="collapse" role="tabpane29" aria-labelledby="heading-5" data-parent="#accordion-2">
+        <div class="card-body">
+            <div id="six_question_view">
+                @if(isset($case->yes_no_other) && $case->yes_no_other->is_adult_victims_juvenile_q29 == 1)
+                @foreach($case->twentynine as $twentynine)
+                {{$twentynine->adult_victims_juvenile_title_q29}}
+                @endforeach
+
+                @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->other_adult_victims_juvenile_q29))
+                <div class="alert alert-info">
+                    <strong>Other Description:</strong> {{ $case->yes_no_other->other_adult_victims_juvenile_q29 }}
+                </div>
+
+
+                @else
+                <div class="text-center py-3">
+                    <p class="text-muted">No data available for this section.</p>
+                </div>
+                @endif
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php } ?>

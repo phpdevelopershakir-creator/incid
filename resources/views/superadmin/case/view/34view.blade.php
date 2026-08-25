@@ -1,134 +1,121 @@
-@if(Auth::user()->can('34.question'))
-<style>
-  .otherSpecify{
-    display:none
-  }
-</style>
-<div class="col-md-12 question34">
-  <div class="card card-outline collapsed-card">
-    <div class="card-header">
-      <h3 class="card-title">34.Did your ministry/agency/organization take any steps to avoid
-        re-traumatization
-        of victims in
-        investigation and prosecution? Please describe.</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-        </button>
-      </div>
+<div class="card">
+    <div class="card-header" role="tab" id="heading-4">
+        <h6 class="mb-0">
+            <a data-toggle="collapse" href="#Question-34" aria-expanded="false" aria-controls="Question-34">
+                34. {{ $questiontitles[33]->title ?? '' }}
+            </a>
+        </h6>
     </div>
-    <div class="card-body">
-        <div id="34_question_view" class="card-body row">
-      <table id="addRowQ34" class="table table-bordered text-center">
-        <thead class="">
-          <tr>
-            <th rowspan="2" style="text-align: center; vertical-align: middle;">Location
-              </th>
-            <th rowspan="2" style="vertical-align: middle;">Types of Assistance</th>
-            <th colspan="6">Coverage</th>
-          </tr>
-          <tr>
-            <th>Men</th>
-            <th>Women</th>
-            <th>3rd Gender </th>
-            <th>Boys</th>
-            <th>Girls</th>
-            <th>Total</th>
-          </tr>
-</thead>
-<tbody>
-              @php
-                $menTotal = 0;
-                $womenTotal = 0;
-                $thirdGenderTotal = 0;
-                $boysTotal = 0;
-                $girlsTotal = 0;
-                $grandTotal = 0;
-             @endphp
 
-@foreach($case->thirtyfour as $thirtyfour)
+    <div id="Question-34" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion-2">
+        <div class="card-body">
+            <div id="six_question_view">
+                @if(isset($case->yes_no_other) && $case->yes_no_other->is_newly_identified_victims_q34 == 1)
 
-          <tr>
-            <td> 
-            @if ($thirtyfour->	location_id_q34 == 1)
-            Barisal
-            @elseif ($thirtyfour->	location_id_q34 == 2)
-            Chattogram
-            @elseif ($thirtyfour->	location_id_q34 == 3)
-            Dhaka
-            @elseif ($thirtyfour->	location_id_q34 == 4)
-            Khulna
-            @elseif ($thirtyfour->	location_id_q34 == 5)
-            Mymensingh
-            @elseif ($thirtyfour->	location_id_q34 == 6)
-            Rajshahi
-            @elseif ($thirtyfour->	location_id_q34 == 7)
-            Rangpur
-            @elseif ($thirtyfour->	location_id_q34 == 8)
-            Sylhet
-            @elseif ($thirtyfour->	location_id_q34 == 9)
-            National
-            @endif
-            </td>
-            <td>
-            @if ($thirtyfour->types_assistance_q34 == 1)
-            Psychosocial Counselling
-            @elseif ($thirtyfour->types_assistance_q34 == 2)
-            Shelter
-            @elseif ($thirtyfour->types_assistance_q34 == 3)
-            Assistance to persons with disability
-            @elseif ($thirtyfour->types_assistance_q34 == 4)
-            Testimony via video or written statements
-            @elseif ($thirtyfour->types_assistance_q34 == 5)
-            {{$thirtyfour->q34_other_specify}}            
-            @endif
-            
-            </td>
+                <p>How many newly identified victims participated in the investigation and prosecution of traffickers?
+                </p>
 
-             
-            <td>
-            {{$thirtyfour->q34_coverage_men}}
-            </td> 
-            <td>
-            {{$thirtyfour->q34_coverage_women}}
-            </td>
-            <td>
-            {{$thirtyfour->q34_coverage_third_gender}}
-            </td> 
-            <td>
-            {{$thirtyfour->q34_coverage_boy}}
-            <td>
-            {{$thirtyfour->q34_coverage_girl}}
-            </td> 
-            <td>
-            {{$thirtyfour->q34_coverage_total}}
-            </td>
-          
-          </tr>
-             @php
-                $menTotal += $thirtyfour->q34_coverage_men;
-                $womenTotal += $thirtyfour->q34_coverage_women;
-                $boysTotal += $thirtyfour->q34_coverage_third_gender;
-                $girlsTotal += $thirtyfour->q34_coverage_boy;
-                $thirdGenderTotal += $thirtyfour->q34_coverage_girl;
-                $grandTotal += $thirtyfour->q34_coverage_total;
-            @endphp
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr style="background:#E5E5E5;">
+                            <th>Number of victims participated in Investigation</th>
+                            <th>Men</th>
+                            <th>Women</th>
+                            <th>TG</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($case->thirtyfour as $thirtyfour)
+                        <tr>
+                            <td>{{ $thirtyfour->number_victims_q34 }}</td>
+                            <td>{{ $thirtyfour->men_victims_q34 }}</td>
+                            <td>{{ $thirtyfour->women_victims_q34 }}</td>
+                            <td>{{ $thirtyfour->tg_victims_q34 }}</td>
+                            <td>{{ $thirtyfour->total_victims_q34 }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
-         @endforeach
-         <tr style="font-weight:bold; background:#f1f1f1;">
-               <td colspan="2">Total</td>
-                <td>{{ $menTotal }}</td>
-                <td>{{ $womenTotal }}</td>
-                <td>{{ $thirdGenderTotal }}</td>
-                <td>{{ $boysTotal }}</td>
-                <td>{{ $girlsTotal }}</td>
-                <td>{{ $grandTotal }}</td>
-            </tr>
-            
-        </tbody>
-      </table>
+                <br>
+                <p>What, if any, support did the government provide to victims who assisted in the investigation and
+                    prosecution of trafficking cases, such as visa categories that facilitate cooperation with law
+                    enforcement, legal support and advice, witness protection, and victim-witness advocates?</p>
+
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr style="background:#E5E5E5;">
+                            <th rowspan="2" style="vertical-align: middle;">Type of Support</th>
+                            <th colspan="4">Number of VoTs receiving support</th>
+                        </tr>
+                        <tr style="background:#E5E5E5;">
+                            <th>Men</th>
+                            <th>Women</th>
+                            <th>TG</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                        $menTotal = 0;
+                        $womenTotal = 0;
+                        $tgTotal = 0;
+                        $Total = 0;
+                        @endphp
+
+                        @foreach($case->thirtyfourb as $thirtyfourb)
+                        <tr>
+                            <td>
+                                @php
+                                $supportTypes = [
+                                1 => 'Visa Categories',
+                                2 => 'Legal Support & Advice',
+                                3 => 'Witness Protection',
+                                4 => 'Victim-Witness Advocates',
+                                5 => 'Others'
+                                ];
+                                @endphp
+
+                                {{ $supportTypes[$thirtyfourb->number_victims_q34b] ?? 'Other Support' }}
+
+
+                            </td>
+                            <td>{{ $thirtyfourb->men_victims_q34b }}</td>
+                            <td>{{ $thirtyfourb->women_victims_q34b }}</td>
+                            <td>{{ $thirtyfourb->tg_victims_q34b }}</td>
+                            <td>{{ $thirtyfourb->total_victims_q34b }}</td>
+                        </tr>
+
+                        @php
+                        $menTotal += $thirtyfourb->men_victims_q34b;
+                        $womenTotal += $thirtyfourb->women_victims_q34b;
+                        $tgTotal += $thirtyfourb->tg_victims_q34b;
+                        $Total += $thirtyfourb->total_victims_q34b;
+                        @endphp
+                        @endforeach
+
+                        <tr style="font-weight:bold; background:#f1f1f1;">
+                            <td>Total</td>
+                            <td>{{ $menTotal }}</td>
+                            <td>{{ $womenTotal }}</td>
+                            <td>{{ $tgTotal }}</td>
+                            <td>{{ $Total }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->other_newly_identified_victims_q34))
+                <div class="alert alert-info">
+                    <strong>Other Description:</strong>
+                    {{ $case->yes_no_other->other_newly_identified_victims_q34 }}
+                </div>
+                @else
+                <div class="text-center py-3">
+                    <p class="text-muted">No data available for this section.</p>
+                </div>
+                @endif
+            </div>
         </div>
     </div>
-  </div>
 </div>
-@endif
