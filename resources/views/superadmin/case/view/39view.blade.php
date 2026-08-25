@@ -1,55 +1,142 @@
-@if(Auth::user()->can('39.question'))
-    <div class="col-md-12">
-      <div class="card card-outline collapsed-card">
-        <div class="card-header">
-          <h3 class="card-title">39.Conviction of Trafficking Cases</h3>
+<style>
+.othersText {
+    display: none
+}
 
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
+.visibility {
+    display: none
+}
+
+.q15-item-card {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+</style>
+
+<div class="card question15">
+
+    <div class="card-header" role="tab" id="heading-4">
+        <h6 class="mb-0 card-title">
+            <a data-toggle="collapse" href="#Question-39" aria-expanded="false" aria-controls="collapse-4">
+                39.{{ $questiontitles[38]->title }}
+            </a>
+        </h6>
+    </div>
+
+    <div id="Question-39" class="collapse" role="tabpane39" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
-          <table class="table table-white table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Type of Cases reaching verdict </th>
-                <th scope="col">Number of Cases</th>
-              </tr>
-            </thead>
-            <tbody>
-          @foreach($case->thirtynine as $thirtynine)
-          <tr>
 
-          
-          <td>
-          @if($thirtynine->	type_cases_reaching_verdict==1)
-          Total number of cases of Internal Trafficking having conviction
-          @elseif($thirtynine->	type_cases_reaching_verdict==2)
-          Total number of cases of International Trafficking having conviction
-          @elseif($thirtynine->	type_cases_reaching_verdict==3)
-          Total number of cases of Internal Trafficking having acquittal
-          @elseif($thirtynine->	type_cases_reaching_verdict==4)
-          Total number of cases of International Trafficking having acquittal
-          @elseif($thirtynine->	type_cases_reaching_verdict==5)
-          Among the total number of person convicted- the number of foreign citizen
-          @endif  
-          </td>
-          <td>{{$thirtynine->number_of_cases}}</td>
-          </tr>
-          @endforeach
-              
-            </tbody>
-          </table>
 
-          <table class="table table-white">
-            <thead>
+            <div class="q15-wrapper">
+                @foreach($case->thirtynine as $thirtynine)
+                <div class="q15-item-card p-3 mb-3">
+                    <!-- 1. Description One -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $thirtynine->victims_restitution_title_one_q39 }}</span>
+                    </div>
 
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+                    <!-- 2. Description Two -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $thirtynine->victims_restitution_title_two_q39 }}</span>
+                    </div>
+
+                    <!-- 3. Description Three -->
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $thirtynine->victims_restitution_title_three_q39 }}</span>
+                    </div>
+
+                    <div class="mb-2">
+                        <strong class="text-secondary d-block">Description :</strong>
+                        <span>{{ $thirtynine->victims_restitution_title_four_q39 }}</span>
+                    </div>
+
+                </div>
+                @endforeach
+            </div>
+            <br>
+            <table class="table table-bordered text-center">
+                <thead class="text-center align-middle">
+                    <tr style="background:#E5E5E5;">
+                        <th rowspan="2" style="vertical-align: middle;">Location</th>
+                        <th colspan="5">Number of personnel Trained</th>
+                    </tr>
+                    <tr style="background:#E5E5E5;">
+                        <th>Category</th>
+                        <th>NGO/INGO </th>
+                        <th>Men</th>
+                        <th>Women</th>
+                        <th>Total</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @php
+                    $menTotal = 0;
+                    $womenTotal = 0;
+                    $Total = 0;
+
+                    @endphp
+                    @foreach($case->thirtynineb as $thirtynineb)
+                    <tr>
+                        <th>{{$thirtynineb->victims_restitution_location_q39b}}</th>
+
+                        <th>
+                            @php
+                            $categories = [
+                            1 => 'Social Worker',
+                            2 => 'Police',
+                            3 => 'BGB',
+                            4 => 'Coastguard',
+                            5 => 'VDP',
+                            6 => 'Rail Police',
+                            7 => 'Judiciary',
+                            8 => 'NGO',
+                            9 => 'Others'
+                            ];
+                            @endphp
+
+                            {{ $categories[$thirtynineb->victims_restitution_location_q39b] ?? 'N/A' }}
+                        </th>
+                        <th>
+                            {{$thirtynineb->victims_restitution_category_q39b}}
+
+                        </th>
+                        <th>
+                            {{$thirtynineb->victims_restitution_men_q39b}}
+                        </th>
+                        <th>
+                            {{$thirtynineb->victims_restitution_women_q39b}}
+                        </th>
+                        <th>
+                            {{$thirtynineb->victims_restitution_total_q39b}}
+                        </th>
+
+
+                    </tr>
+                    @php
+                    $menTotal += $thirtynineb->victims_restitution_men_q39b;
+                    $womenTotal += $thirtynineb->victims_restitution_women_q39b;
+                    $Total += $thirtynineb->victims_restitution_total_q39b;
+
+
+                    @endphp
+                    @endforeach
+                    <tr style="font-weight:bold; background:#f1f1f1;">
+                        <td colspan="3">Total</td>
+                        <td class="text-center align-middle">{{ $menTotal }}</td>
+                        <td class="text-center align-middle">{{ $womenTotal }}</td>
+                        <td class="text-center align-middle">{{ $Total }}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+
         </div>
-      </div>
-    </div> 
-    @endif
+    </div>
+</div>

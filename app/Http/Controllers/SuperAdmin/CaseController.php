@@ -2819,7 +2819,10 @@ if (!empty($bulkInsertData)) {
             'thirty',
             'twentyone',
             'thirtyfour',
-            'thirtyfourb'
+            'thirtyfourb',
+            'thirtyseven',
+            'thirtynine',
+            'thirtynineb'
 
 
         ];
