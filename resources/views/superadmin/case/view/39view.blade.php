@@ -87,15 +87,8 @@
                         <th>
                             @php
                             $categories = [
-                            1 => 'Social Worker',
-                            2 => 'Police',
-                            3 => 'BGB',
-                            4 => 'Coastguard',
-                            5 => 'VDP',
-                            6 => 'Rail Police',
-                            7 => 'Judiciary',
-                            8 => 'NGO',
-                            9 => 'Others'
+                            1 => 'Police',
+                            2 => 'Judge'
                             ];
                             @endphp
 
