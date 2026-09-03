@@ -287,6 +287,14 @@ class CaseModel extends Model
     {
         return $this->hasMany(ThirtyEight::class, 'case_id');
     }
+     public function thirtyeightb()
+    {
+        return $this->hasMany(ThirtyEightB::class, 'case_id');
+    }
+     public function thirtyeightc()
+    {
+        return $this->hasMany(ThirtyEightC::class, 'case_id');
+    }
 
     public function thirtynine()
     {

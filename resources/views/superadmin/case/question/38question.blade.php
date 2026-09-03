@@ -57,17 +57,17 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                 <label class="font-weight-bold">Status:</label>
                 <div class="mt-1">
                     <div class="icheck-primary d-inline mr-3">
-                        <input type="radio" class="q38_status" id="q38_yes" name="q38_radio" value="1"
+                        <input type="radio" class="q38_status" id="q38_yes" name="is_victim_protection_q38" value="1"
                             {{ $q38_status === '1' ? 'checked' : '' }}>
                         <label for="q38_yes">Yes</label>
                     </div>
                     <div class="icheck-primary d-inline mr-3">
-                        <input type="radio" class="q38_status" id="q38_no" name="q38_radio" value="0"
+                        <input type="radio" class="q38_status" id="q38_no" name="is_victim_protection_q38" value="0"
                             {{ $q38_status === '0' ? 'checked' : '' }}>
                         <label for="q38_no">No</label>
                     </div>
                     <div class="icheck-primary d-inline">
-                        <input type="radio" class="q38_status" id="q38_others" name="q38_radio" value="2"
+                        <input type="radio" class="q38_status" id="q38_others" name="is_victim_protection_q38" value="2"
                             {{ $q38_status === '2' ? 'checked' : '' }}>
                         <label for="q38_others">Others</label>
                     </div>
@@ -75,13 +75,14 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
 
                 <div class="mt-2 q38_yes_box sub_field_box_q38"
                     style="display: {{ $q38_status === '1' ? 'block' : 'none' }};">
-                    <input type="text" id="q38_yes_text" class="form-control col-md-8 mb-3"
-                        placeholder="Provide Description" value="{{ $q38_yes_desc }}">
+                    <input type="text" name="title_victim_protection_q38" id="q38_yes_text"
+                        class="form-control col-md-8 mb-3" placeholder="Provide Description"
+                        value="{{ $q38_yes_desc }}">
                 </div>
                 <div class="mt-2 q38_others_box sub_field_box_q38"
                     style="display: {{ $q38_status === '2' ? 'block' : 'none' }};">
-                    <input type="text" id="q38_others_text" class="form-control col-md-8" placeholder="Others details"
-                        value="{{ $q38_others_desc }}">
+                    <input type="text" name="other_victim_protection_q38" id="q38_others_text"
+                        class="form-control col-md-8" placeholder="Others details" value="{{ $q38_others_desc }}">
                 </div>
             </div>
 
@@ -111,17 +112,23 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                                 <td colspan="6">Internal Trafficking</td>
                             </tr>
                             <tr>
-                                <td><input type="number" class="form-control q38_t1_int_calc q38_t1_int_men" min="0"
+                                <td><input type="number" name="internal_men_q38[]"
+                                        class="form-control q38_t1_int_calc q38_t1_int_men" min="0"
                                         value="{{ $q38_t1_internal['men'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_int_calc q38_t1_int_women" min="0"
+                                <td><input type="number" name="internal_women_q38[]"
+                                        class="form-control q38_t1_int_calc q38_t1_int_women" min="0"
                                         value="{{ $q38_t1_internal['women'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_int_calc q38_t1_int_tg" min="0"
+                                <td><input type="number" name="internal_tg_q38[]"
+                                        class="form-control q38_t1_int_calc q38_t1_int_tg" min="0"
                                         value="{{ $q38_t1_internal['tg'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_int_calc q38_t1_int_boy" min="0"
+                                <td><input type="number" name="internal_boy_q38[]"
+                                        class="form-control q38_t1_int_calc q38_t1_int_boy" min="0"
                                         value="{{ $q38_t1_internal['boy'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_int_calc q38_t1_int_girl" min="0"
+                                <td><input type="number" name="internal_girl_q38[]"
+                                        class="form-control q38_t1_int_calc q38_t1_int_girl" min="0"
                                         value="{{ $q38_t1_internal['girl'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_int_total"
+                                <td><input type="number" name="internal_total_q38[]"
+                                        class="form-control q38_t1_int_total"
                                         value="{{ $q38_t1_internal['total'] ?? 0 }}" readonly></td>
                             </tr>
 
@@ -130,17 +137,23 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                                 <td colspan="6">International Trafficking</td>
                             </tr>
                             <tr>
-                                <td><input type="number" class="form-control q38_t1_ext_calc q38_t1_ext_men" min="0"
+                                <td><input type="number" name="international_men_q38[]"
+                                        class="form-control q38_t1_ext_calc q38_t1_ext_men" min="0"
                                         value="{{ $q38_t1_international['men'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_ext_calc q38_t1_ext_women" min="0"
+                                <td><input type="number" name="international_women_q38[]"
+                                        class="form-control q38_t1_ext_calc q38_t1_ext_women" min="0"
                                         value="{{ $q38_t1_international['women'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_ext_calc q38_t1_ext_tg" min="0"
+                                <td><input type="number" name="international_tg_q38[]"
+                                        class="form-control q38_t1_ext_calc q38_t1_ext_tg" min="0"
                                         value="{{ $q38_t1_international['tg'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_ext_calc q38_t1_ext_boy" min="0"
+                                <td><input type="number" name="international_boy_q38[]"
+                                        class="form-control q38_t1_ext_calc q38_t1_ext_boy" min="0"
                                         value="{{ $q38_t1_international['boy'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_ext_calc q38_t1_ext_girl" min="0"
+                                <td><input type="number" name="international_girl_q38[]"
+                                        class="form-control q38_t1_ext_calc q38_t1_ext_girl" min="0"
                                         value="{{ $q38_t1_international['girl'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t1_ext_total"
+                                <td><input type="number" name="international_total_q38[]"
+                                        class="form-control q38_t1_ext_total"
                                         value="{{ $q38_t1_international['total'] ?? 0 }}" readonly></td>
                             </tr>
 
@@ -185,7 +198,7 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                             @foreach($q38_t2_rows as $index => $row)
                             <tr>
                                 <td>
-                                    <select class="form-control q38_location">
+                                    <select class="form-control q38_location" name="location_q38c[]">
                                         <option value="">Choose an item...</option>
                                         <option value="National"
                                             {{ ($row['location'] ?? '') == 'National' ? 'selected' : '' }}>National
@@ -217,20 +230,21 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control q38_assistance"
+                                    <input type="text" name="type_q38c[]" class="form-control q38_assistance"
                                         placeholder="Types of Assistance" value="{{ $row['assistance'] ?? '' }}">
                                 </td>
-                                <td><input type="number" class="form-control q38_t2_men q38_t2_calc" min="0"
-                                        value="{{ $row['men'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t2_women q38_t2_calc" min="0"
+                                <td><input type="number" name="men_q38c[]" class="form-control q38_t2_men q38_t2_calc"
+                                        min="0" value="{{ $row['men'] ?? 0 }}"></td>
+                                <td><input type="number" name="women_q38c[]"
+                                        class="form-control q38_t2_women q38_t2_calc" min="0"
                                         value="{{ $row['women'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t2_tg q38_t2_calc" min="0"
-                                        value="{{ $row['tg'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t2_boy q38_t2_calc" min="0"
-                                        value="{{ $row['boy'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t2_girl q38_t2_calc" min="0"
-                                        value="{{ $row['girl'] ?? 0 }}"></td>
-                                <td><input type="number" class="form-control q38_t2_row_total"
+                                <td><input type="number" name="tg_q38c[]" class="form-control q38_t2_tg q38_t2_calc"
+                                        min="0" value="{{ $row['tg'] ?? 0 }}"></td>
+                                <td><input type="number" name="boy_q38c[]" class="form-control q38_t2_boy q38_t2_calc"
+                                        min="0" value="{{ $row['boy'] ?? 0 }}"></td>
+                                <td><input type="number" name="girl_q38c[]" class="form-control q38_t2_girl q38_t2_calc"
+                                        min="0" value="{{ $row['girl'] ?? 0 }}"></td>
+                                <td><input type="number" name="total_q38c[]" class="form-control q38_t2_row_total"
                                         value="{{ $row['total'] ?? 0 }}" readonly></td>
                                 <td>
                                     @if($index == 0)
@@ -249,7 +263,7 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                             <!-- Default Fixed Row 1 ONLY -->
                             <tr>
                                 <td>
-                                    <select class="form-control q38_location">
+                                    <select class="form-control q38_location" name="location_q38c[]">
                                         <option value="">Choose an item...</option>
                                         <option value="National">National</option>
                                         <option value="Dhaka">Dhaka Division</option>
@@ -263,20 +277,25 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control q38_assistance"
+                                    <input type="text" name="type_q38c[]" class="form-control q38_assistance"
                                         placeholder="Types of Assistance">
                                 </td>
-                                <td><input type="number" class="form-control q38_t2_men q38_t2_calc" min="0" value="0">
+                                <td><input type="number" name="men_q38c[]" class="form-control q38_t2_men q38_t2_calc"
+                                        min="0" value="0">
                                 </td>
-                                <td><input type="number" class="form-control q38_t2_women q38_t2_calc" min="0"
-                                        value="0"></td>
-                                <td><input type="number" class="form-control q38_t2_tg q38_t2_calc" min="0" value="0">
+                                <td><input type="number" name="women_q38c[]"
+                                        class="form-control q38_t2_women q38_t2_calc" min="0" value="0"></td>
+                                <td><input type="number" name="tg_q38c[]" class="form-control q38_t2_tg q38_t2_calc"
+                                        min="0" value="0">
                                 </td>
-                                <td><input type="number" class="form-control q38_t2_boy q38_t2_calc" min="0" value="0">
+                                <td><input type="number" name="boy_q38c[]" class="form-control q38_t2_boy q38_t2_calc"
+                                        min="0" value="0">
                                 </td>
-                                <td><input type="number" class="form-control q38_t2_girl q38_t2_calc" min="0" value="0">
+                                <td><input type="number" name="girl_q38c[]" class="form-control q38_t2_girl q38_t2_calc"
+                                        min="0" value="0">
                                 </td>
-                                <td><input type="number" class="form-control q38_t2_row_total" value="0" readonly></td>
+                                <td><input type="number" name="total_q38c[]" class="form-control q38_t2_row_total"
+                                        value="0" readonly></td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-sm" id="add_q38_t2_row"><i
                                             class="fa fa-plus"></i></button>
@@ -399,7 +418,7 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select class="form-control q38_location">
+                    <select class="form-control q38_location" name="location_q38c[]">
                         <option value="">Choose an item...</option>
                         <option value="National">National</option>
                         <option value="Dhaka">Dhaka Division</option>
@@ -413,14 +432,14 @@ $(document).ready(function() {
                     </select>
                 </td>
                 <td>
-                    <input type="text" class="form-control q38_assistance" placeholder="Types of Assistance">
+                    <input type="text" name="type_q38c[]"  class="form-control q38_assistance" placeholder="Types of Assistance">
                 </td>
-                <td><input type="number" class="form-control q38_t2_men q38_t2_calc" min="0" value="0"></td>
-                <td><input type="number" class="form-control q38_t2_women q38_t2_calc" min="0" value="0"></td>
-                <td><input type="number" class="form-control q38_t2_tg q38_t2_calc" min="0" value="0"></td>
-                <td><input type="number" class="form-control q38_t2_boy q38_t2_calc" min="0" value="0"></td>
-                <td><input type="number" class="form-control q38_t2_girl q38_t2_calc" min="0" value="0"></td>
-                <td><input type="number" class="form-control q38_t2_row_total" value="0" readonly></td>
+                <td><input type="number" name="men_q38c[]"  class="form-control q38_t2_men q38_t2_calc" min="0" value="0"></td>
+                <td><input type="number" name="women_q38c[]"  class="form-control q38_t2_women q38_t2_calc" min="0" value="0"></td>
+                <td><input type="number" name="tg_q38c[]"  class="form-control q38_t2_tg q38_t2_calc" min="0" value="0"></td>
+                <td><input type="number" name="boy_q38c[]"  class="form-control q38_t2_boy q38_t2_calc" min="0" value="0"></td>
+                <td><input type="number" name="girl_q38c[]" class="form-control q38_t2_girl q38_t2_calc" min="0" value="0"></td>
+                <td><input type="number" name="total_q38c[]"  class="form-control q38_t2_row_total" value="0" readonly></td>
                 <td>
                     <button type="button" class="btn btn-danger btn-sm remove_q38_t2_row"><i class="fa fa-trash"></i></button>
                 </td>
@@ -437,7 +456,7 @@ $(document).ready(function() {
 
     // Radio Toggle Handler
     $(document).on('change', '.q38_status', function() {
-        let val = $("input[name='q38_radio']:checked").val();
+        let val = $("input[name='is_victim_protection_q38']:checked").val();
         $('.q38_yes_box, .q38_others_box, .q38_content_wrapper').hide();
 
         if (val === '1') {
@@ -451,7 +470,7 @@ $(document).ready(function() {
     $(document).on('click', '#temp-save-question38', function(e) {
         e.preventDefault();
 
-        let q38_status = $("input[name='q38_radio']:checked").val();
+        let q38_status = $("input[name='is_victim_protection_q38']:checked").val();
 
         // Collect Table 1 Data
         let t1_internal = {

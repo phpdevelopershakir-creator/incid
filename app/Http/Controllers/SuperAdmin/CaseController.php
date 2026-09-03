@@ -94,6 +94,10 @@ use App\Models\FiftySixB;
 use App\Models\ThirtyFive;
 use App\Models\ThirtySix;
 use App\Models\ThirtySixB;
+
+use App\Models\ThirtyEight;
+use App\Models\ThirtyEightB;
+use App\Models\ThirtyEightC;
 //new database design
 use DB;
 use Illuminate\Support\Facades\Session as FacadesSession;
@@ -333,6 +337,10 @@ class CaseController extends Controller
 
          $yes_no->is_government_prohibit_q48 = $request->is_government_prohibit_q48;
         $yes_no->other_government_prohibit_q48  = $request->other_government_prohibit_q48;
+
+        $yes_no->is_victim_protection_q38 = $request->is_victim_protection_q38;
+        $yes_no->other_victim_protection_q38  = $request->other_victim_protection_q38;
+        $yes_no->title_victim_protection_q38  = $request->title_victim_protection_q38;
         
         $yes_no->created_by = Auth()->user()->id;
        //return response()->json($yes_no);
@@ -2034,119 +2042,123 @@ if (!empty($bulkInsertData)) {
           
         //question38
         if ($request->is_victim_protection_q38 != 0) {
-                //a
-            $internal_men_q38 = $request->input('internal_men_q38', []);
-            $internal_women_q38 = $request->input('internal_women_q38', []);
-            $internal_tg_q38 = $request->input('internal_tg_q38', []);
-            $internal_boy_q38 = $request->input('internal_boy_q38', []);
-            $internal_girl_q38 = $request->input('internal_girl_q38', []);
-            $internal_total_q38 = $request->input('internal_total_q38', []);
+    $case_id = $question->id;
+    $now = now(); // টাইমস্ট্যাম্পের জন্য (ঐচ্ছিক)
 
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($internal_men_q38),
-                count($internal_women_q38),
-                count($internal_tg_q38),
-                count($internal_boy_q38),
-                count($internal_girl_q38),
-                count($internal_total_q38)
-            );
+    // --- Section A ---
+    $internal_men_q38 = $request->input('internal_men_q38', []);
+    $internal_women_q38 = $request->input('internal_women_q38', []);
+    $internal_tg_q38 = $request->input('internal_tg_q38', []);
+    $internal_boy_q38 = $request->input('internal_boy_q38', []);
+    $internal_girl_q38 = $request->input('internal_girl_q38', []);
+    $internal_total_q38 = $request->input('internal_total_q38', []);
 
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'internal_men_q38' => $internal_men_q38[$i] ?? null,
-                    'internal_women_q38' => $internal_women_q38[$i] ?? null,
-                    'internal_tg_q38' => $internal_tg_q38[$i] ?? null,
-                    'internal_boy_q38' => $internal_boy_q38[$i] ?? null,
-                    'internal_girl_q38' => $internal_girl_q38[$i] ?? null,
-                    'internal_total_q38' => $internal_total_q38[$i] ?? null,
-                ];
-            }
+    $bulkInsertDataA = [];
+    $maxCountA = max(
+        count($internal_men_q38),
+        count($internal_women_q38),
+        count($internal_tg_q38),
+        count($internal_boy_q38),
+        count($internal_girl_q38),
+        count($internal_total_q38)
+    );
 
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                ThirtyEight:insert($bulkInsertData);
-            }
+    for ($i = 0; $i < $maxCountA; $i++) {
+        $bulkInsertDataA[] = [
+            'case_id' => $case_id,
+            'internal_men_q38' => $internal_men_q38[$i] ?? null,
+            'internal_women_q38' => $internal_women_q38[$i] ?? null,
+            'internal_tg_q38' => $internal_tg_q38[$i] ?? null,
+            'internal_boy_q38' => $internal_boy_q38[$i] ?? null,
+            'internal_girl_q38' => $internal_girl_q38[$i] ?? null,
+            'internal_total_q38' => $internal_total_q38[$i] ?? null,
+            'created_at' => $now,
+            'updated_at' => $now,
+        ];
+    }
 
-            //b
-            $international_men_q38 = $request->input('international_men_q38', []);
-            $international_women_q38 = $request->input('international_women_q38', []);
-            $international_tg_q38 = $request->input('international_tg_q38', []);
-            $international_boy_q38 = $request->input('international_boy_q38', []);
-            $international_girl_q38 = $request->input('international_girl_q38', []);
-            $international_total_q38 = $request->input('international_total_q38', []);
+    if (!empty($bulkInsertDataA)) {
+        ThirtyEight::insert($bulkInsertDataA); // :: ব্যবহার করা হয়েছে
+    }
 
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($international_men_q38),
-                count($international_women_q38),
-                count($international_tg_q38),
-                count($international_boy_q38),
-                count($international_girl_q38),
-                count($international_total_q38)
-            );
+    // --- Section B ---
+    $international_men_q38 = $request->input('international_men_q38', []);
+    $international_women_q38 = $request->input('international_women_q38', []);
+    $international_tg_q38 = $request->input('international_tg_q38', []);
+    $international_boy_q38 = $request->input('international_boy_q38', []);
+    $international_girl_q38 = $request->input('international_girl_q38', []);
+    $international_total_q38 = $request->input('international_total_q38', []);
 
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'international_men_q38' => $international_men_q38[$i] ?? null,
-                    'international_women_q38' => $international_women_q38[$i] ?? null,
-                    'international_tg_q38' => $international_tg_q38[$i] ?? null,
-                    'international_boy_q38' => $international_boy_q38[$i] ?? null,
-                    'international_girl_q38' => $international_girl_q38[$i] ?? null,
-                    'international_total_q38' => $international_total_q38[$i] ?? null,
-                ];
-            }
+    $bulkInsertDataB = [];
+    $maxCountB = max(
+        count($international_men_q38),
+        count($international_women_q38),
+        count($international_tg_q38),
+        count($international_boy_q38),
+        count($international_girl_q38),
+        count($international_total_q38)
+    );
 
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                ThirtyEightB:insert($bulkInsertData);
-            }
+    for ($i = 0; $i < $maxCountB; $i++) {
+        $bulkInsertDataB[] = [
+            'case_id' => $case_id,
+            'international_men_q38' => $international_men_q38[$i] ?? null,
+            'international_women_q38' => $international_women_q38[$i] ?? null,
+            'international_tg_q38' => $international_tg_q38[$i] ?? null,
+            'international_boy_q38' => $international_boy_q38[$i] ?? null,
+            'international_girl_q38' => $international_girl_q38[$i] ?? null,
+            'international_total_q38' => $international_total_q38[$i] ?? null,
+            'created_at' => $now,
+            'updated_at' => $now,
+        ];
+    }
 
-            //c
-             $location_q38c = $request->input('location_q38c', []);
-            $type_q38c = $request->input('type_q38c', []);
-            $men_q38c = $request->input('men_q38c', []);
-            $women_q38c = $request->input('women_q38c', []);
-            $tg_q38c = $request->input('tg_q38c', []);
-            $boy_q38c = $request->input('boy_q38c', []);
-            $girl_q38c = $request->input('girl_q38c', []);
-            $total_q38c = $request->input('total_q38c', []);
+    if (!empty($bulkInsertDataB)) {
+        ThirtyEightB::insert($bulkInsertDataB); // :: ব্যবহার করা হয়েছে
+    }
 
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($location_q38c),
-                count($type_q38c),
-                count($men_q38c),
-                count($women_q38c),
-                count($tg_q38c),
-                count($girl_q38c),
-                count($total_q38c)
-            );
+    // --- Section C ---
+    $location_q38c = $request->input('location_q38c', []);
+    $type_q38c = $request->input('type_q38c', []);
+    $men_q38c = $request->input('men_q38c', []);
+    $women_q38c = $request->input('women_q38c', []);
+    $tg_q38c = $request->input('tg_q38c', []);
+    $boy_q38c = $request->input('boy_q38c', []);
+    $girl_q38c = $request->input('girl_q38c', []);
+    $total_q38c = $request->input('total_q38c', []);
 
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'location_q38c' => $location_q38c[$i] ?? null,
-                    'type_q38c' => $type_q38c[$i] ?? null,
-                    'men_q38c' => $men_q38c[$i] ?? null,
-                    'women_q38c' => $women_q38c[$i] ?? null,
-                    'tg_q38c' => $tg_q38c[$i] ?? null,
-                    'boy_q38c' => $boy_q38c[$i] ?? null,
-                    'girl_q38c' => $girl_q38c[$i] ?? null,
-                    'total_q38c' => $total_q38c[$i] ?? null,
-                ];
-            }
+    $bulkInsertDataC = [];
+    $maxCountC = max(
+        count($location_q38c),
+        count($type_q38c),
+        count($men_q38c),
+        count($women_q38c),
+        count($tg_q38c),
+        count($boy_q38c), // আগে বাদ পড়েছিল
+        count($girl_q38c),
+        count($total_q38c)
+    );
 
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                ThirtyEightC:insert($bulkInsertData);
-            }
-        }
+    for ($i = 0; $i < $maxCountC; $i++) {
+        $bulkInsertDataC[] = [
+            'case_id' => $case_id,
+            'location_q38c' => $location_q38c[$i] ?? null,
+            'type_q38c' => $type_q38c[$i] ?? null,
+            'men_q38c' => $men_q38c[$i] ?? null,
+            'women_q38c' => $women_q38c[$i] ?? null,
+            'tg_q38c' => $tg_q38c[$i] ?? null,
+            'boy_q38c' => $boy_q38c[$i] ?? null,
+            'girl_q38c' => $girl_q38c[$i] ?? null,
+            'total_q38c' => $total_q38c[$i] ?? null,
+            'created_at' => $now,
+            'updated_at' => $now,
+        ];
+    }
+
+    if (!empty($bulkInsertDataC)) {
+        ThirtyEightC::insert($bulkInsertDataC); // :: ব্যবহার করা হয়েছে
+    }
+}
 
 
 
@@ -3074,7 +3086,10 @@ $question42->save();
             'fortyeight',
             'thirtyfive',
             'thirtysix',
-            'thirtysixb'
+            'thirtysixb',
+            'thirtyeight',
+            'thirtyeightb',
+            'thirtyeightc'
 
 
         ];
