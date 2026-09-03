@@ -27,7 +27,7 @@
     <div id="Question-15" class="collapse" role="tabpane15" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
 
-            @if(isset($case->yes_no_other) && $case->yes_no_other->is_victim_identification_protocol_q15 == 1)
+           
             <div class="q15-wrapper">
                 @foreach($case->fifteen as $fifteen)
                 <div class="q15-item-card p-3 mb-3">
@@ -65,17 +65,7 @@
                 @endforeach
             </div>
 
-            @elseif(isset($case->yes_no_other) && !empty($case->yes_no_other->other_victim_identification_protocol_q15))
-            <div class="alert alert-info">
-                <strong>Other Description:</strong>
-                {{ $case->yes_no_other->other_victim_identification_protocol_q15 }}
-            </div>
-
-            @else
-            <div class="text-center py-3">
-                <p class="text-muted">No data available for this section.</p>
-            </div>
-            @endif
+            
 
         </div>
     </div>

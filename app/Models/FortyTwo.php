@@ -9,5 +9,5 @@ class FortyTwo extends Model
 {
     use HasFactory;
 
-    protected $table = 'internal_trafficking_division_q42';
+    protected $table = 'official_agency_q42';
 }

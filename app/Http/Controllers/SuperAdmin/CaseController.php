@@ -86,10 +86,14 @@ use App\Models\Fourty;
 use App\Models\FourtyB;
 use App\Models\FortyOne;
 use App\Models\FortyOneB;
+use App\Models\FortyTwo;
+use App\Models\FortyThree;
+use App\Models\FortyEight;
 use App\Models\FiftySix;
 use App\Models\FiftySixB;
-
-
+use App\Models\ThirtyFive;
+use App\Models\ThirtySix;
+use App\Models\ThirtySixB;
 //new database design
 use DB;
 use Illuminate\Support\Facades\Session as FacadesSession;
@@ -323,8 +327,15 @@ class CaseController extends Controller
         $yes_no->is_considering_reported_q57 = $request->is_considering_reported_q57;
         $yes_no->other_considering_reported_q57 = $request->other_considering_reported_q57;
         $yes_no->desc_considering_reported_q57  = $request->desc_considering_reported_q57 ;
+
+        $yes_no->is_government_seek_civil_q43 = $request->is_government_seek_civil_q43;
+        $yes_no->other_government_seek_civil_q43  = $request->other_government_seek_civil_q43;
+
+         $yes_no->is_government_prohibit_q48 = $request->is_government_prohibit_q48;
+        $yes_no->other_government_prohibit_q48  = $request->other_government_prohibit_q48;
         
         $yes_no->created_by = Auth()->user()->id;
+       //return response()->json($yes_no);
         $yes_no->save();
 
 
@@ -1186,56 +1197,57 @@ if (!empty($bulkInsertData)) {
         }
 
         //question16
+        
         if ($request->is_authorities_systematically_q16 != 0) {
 
-        //a
-             $case_id = $question->id;
-            $question16 = new Sixteen();
-            $question16->case_id = $case_id;
-            $question16->title_q16 = $request->title_q16;
-            $question16->description_q16 = $request->description_q16;
-            $question16->save();
+    $case_id = $question->id;
+    
+    // a. Sixteen Table
+    $question16 = new Sixteen();
+    $question16->case_id = $case_id;
+    $question16->title_q16 = $request->is_authorities_systematically_q16;
+    $question16->description_q16 = $request->description_q16;
+    $question16->save();
 
-            //b
+    // b. SixteenB Table
+    $location_q16   = $request->input('location_q16', []);
+    $category_q16   = $request->input('category_q16', []);
+    $ngo_rating_q16 = $request->input('ngo_rating_q16', []);
+    $men_q16        = $request->input('men_q16', []);
+    $women_q16      = $request->input('women_q16', []);
+    $total_q16      = $request->input('total_q16', []);
 
-            $location_q16 = $request->input('location_q16', []);
-            $category_q16 = $request->input('category_q16', []);
-            $ngo_rating_q16 = $request->input('ngo_rating_q16', []);
-            $men_q16 = $request->input('men_q16', []);
-            $women_q16 = $request->input('women_q16', []);
-            $total_q16 = $request->input('total_q16', []);
-            
-           
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($location_q16),
-                count($category_q16),
-                count($ngo_rating_q16),
-                count($men_q16),
-                count($women_q16),
-                count($total_q16),
-              
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'location_q16' => $location_q16[$i] ?? null,
-                    'category_q16' => $category_q16[$i] ?? null,
-                    'ngo_rating_q16' => $ngo_rating_q16[$i] ?? null,
-                    'men_q16' => $men_q16[$i] ?? null,
-                    'women_q16' => $women_q16[$i] ?? null,
-                    'total_q16' => $total_q16[$i] ?? null,
-              
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                SixteenB::insert($bulkInsertData);
-            }
+    $bulkInsertData = [];
+    $maxCount = count($location_q16); // অ্যারের সঠিক সাইজ নেওয়া
+    $now = now();
 
+    for ($i = 0; $i < $maxCount; $i++) {
+        $loc  = $location_q16[$i] ?? null;
+        $cat  = $category_q16[$i] ?? null;
+        $men  = $men_q16[$i] ?? 0;
+        $wom  = $women_q16[$i] ?? 0;
+
+        // Validation: লোকেশন বা ক্যাটাগরি না থাকলে এবং পুরুষ/মহিলা ০ হলে এই ফাঁকা রো বাদ যাবে
+        if (!empty($loc) || !empty($cat) || $men > 0 || $wom > 0) {
+            $bulkInsertData[] = [
+                'case_id'        => $case_id,
+                'location_q16'   => $loc,
+                'category_q16'   => $cat,
+                'ngo_rating_q16' => $ngo_rating_q16[$i] ?? null,
+                'men_q16'        => $men,
+                'women_q16'      => $wom,
+                'total_q16'      => $total_q16[$i] ?? ($men + $wom),
+                'created_at'     => $now,
+                'updated_at'     => $now,
+            ];
         }
+    }
 
+    if (!empty($bulkInsertData)) {
+        SixteenB::insert($bulkInsertData);
+    }
+}
+        
 
 
 
@@ -1334,15 +1346,21 @@ if (!empty($bulkInsertData)) {
 
         //  question 19 
 
-         //question19
         if ($request->is_victims_social_service_q19 != 0) {
             $case_id = $question->id;
             $question19 = new Nineteen();
             $question19->case_id = $case_id;
-            $question19->victims_social_service_title_q19 = $request->victims_social_service_title_q19;
+        
+            // রেডিও ভ্যালু অনুযায়ী সঠিক টেক্সট ফিল্ড বেছে নেওয়া
+            if ($request->is_victims_social_service_q19 == 1) {
+                $question19->victims_social_service_title_q19 = $request->victims_social_service_title_q19;
+            } else if ($request->is_victims_social_service_q19 == 2) {
+                $question19->victims_social_service_title_q19 = $request->other_victims_social_service_q19;
+            }
+        
             $question19->save();
         }
-        
+                
       
         
         
@@ -1613,95 +1631,105 @@ if (!empty($bulkInsertData)) {
 
 
     //question25
+    
         if ($request->is_government_person_formally_q25 != 0) {
-
-           $case_id = $question->id;
+            $case_id = $question->id;
             $question25 = new TwentyFive();
             $question25->case_id = $case_id;
-            $question25->government_person_formally_title_q25 = $request->government_person_formally_title_q25;
+        
+            // Yes (1) সিলেক্ট করলে Yes input, আর Others (2) সিলেক্ট করলে Others input
+            if ($request->is_government_person_formally_q25 == 1) {
+                $question25->government_person_formally_title_q25 = $request->government_person_formally_title_q25;
+            } else if ($request->is_government_person_formally_q25 == 2) {
+                $question25->government_person_formally_title_q25 = $request->others_government_person_formally_q25;
+            }
+        
             $question25->save();
-         
-          
         }
-          
+
+
 
           //question26
-        if ($request->is_consistent_victim_approach_q26 != 0) {
+          if ($request->is_consistent_victim_approach_q26 != 0) {
 
-           //a
-            $location_q26 = $request->input('location_q26', []);
-            $category_q26 = $request->input('category_q26', []);
-            $ngo_rating_q26 = $request->input('ngo_rating_q26', []);
-            $men_q26 = $request->input('men_q26', []);
-            $women_q26 = $request->input('women_q26', []);
-            $total_q26 = $request->input('total_q26', []);
-            
-           
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($location_q26),
-                count($category_q26),
-                count($ngo_rating_q26),
-                count($men_q26),
-                count($women_q26),
-                count($total_q26),
-              
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'location_q26' => $location_q26[$i] ?? null,
-                    'category_q26' => $category_q26[$i] ?? null,
-                    'ngo_rating_q26' => $ngo_rating_q26[$i] ?? null,
-                    'men_q26' => $men_q26[$i] ?? null,
-                    'women_q26' => $women_q26[$i] ?? null,
-                    'total_q26' => $total_q26[$i] ?? null,
-              
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                TwentySix::insert($bulkInsertData);
-            }
-            //b
-            $location_q26b = $request->input('location_q26b', []);
-            $category_q26b = $request->input('category_q26b', []);
-            $ngo_rating_q26b = $request->input('ngo_rating_q26b', []);
-            $men_q26b = $request->input('men_q26b', []);
-            $women_q26b = $request->input('women_q26b', []);
-            $total_q26b = $request->input('total_q26b', []);
-            
-           
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($location_q26b),
-                count($category_q26b),
-                count($ngo_rating_q26b),
-                count($men_q26b),
-                count($women_q26b),
-                count($total_q26b),
-              
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'location_q26b' => $location_q26b[$i] ?? null,
-                    'category_q26b' => $category_q26b[$i] ?? null,
-                    'ngo_rating_q26b' => $ngo_rating_q26b[$i] ?? null,
-                    'men_q26b' => $men_q26b[$i] ?? null,
-                    'women_q26b' => $women_q26b[$i] ?? null,
-                    'total_q26b' => $total_q26b[$i] ?? null,
-              
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                TwentySixB::insert($bulkInsertData);
-            }
+    // ==================== TABLE 1 (a) ====================
+    $location_q26   = $request->input('labor_title_q26_1', []);
+    $category_q26   = $request->input('labor_category_q26_1', []);
+    $ngo_rating_q26 = $request->input('ngo_rating_q26_1', []);
+    $men_q26        = $request->input('labor_men_q26_1', []);
+    $women_q26      = $request->input('labor_women_q26_1', []);
+    $total_q26      = $request->input('labor_total_q26_1', []);
 
+    $case_id = $question->id;
+    $bulkInsertData1 = [];
+    $maxCount1 = max(
+        count($location_q26),
+        count($category_q26),
+        count($ngo_rating_q26),
+        count($men_q26),
+        count($women_q26),
+        count($total_q26)
+    );
+
+    for ($i = 0; $i < $maxCount1; $i++) {
+        // ফাঁকা রো স্কিপ করার চেক
+        if (!empty($location_q26[$i]) || !empty($category_q26[$i])) {
+            $bulkInsertData1[] = [
+                'case_id'        => $case_id,
+                'location_q26'   => $location_q26[$i] ?? null,
+                'category_q26'   => $category_q26[$i] ?? null,
+                'ngo_rating_q26' => $ngo_rating_q26[$i] ?? null,
+                'men_q26'        => $men_q26[$i] ?? 0,
+                'women_q26'      => $women_q26[$i] ?? 0,
+                'total_q26'      => $total_q26[$i] ?? 0,
+                'created_at'     => now(),
+                'updated_at'     => now(),
+            ];
         }
+    }
+
+    if (!empty($bulkInsertData1)) {
+        TwentySix::insert($bulkInsertData1);
+    }
+
+    // ==================== TABLE 2 (b) ====================
+    $location_q26b   = $request->input('labor_title_q26_2', []);
+    $category_q26b   = $request->input('labor_category_q26_2', []);
+    $ngo_rating_q26b = $request->input('ngo_rating_q26_2', []);
+    $men_q26b        = $request->input('labor_men_q26_2', []);
+    $women_q26b      = $request->input('labor_women_q26_2', []);
+    $total_q26b      = $request->input('labor_total_q26_2', []);
+
+    $bulkInsertData2 = [];
+    $maxCount2 = max(
+        count($location_q26b),
+        count($category_q26b),
+        count($ngo_rating_q26b),
+        count($men_q26b),
+        count($women_q26b),
+        count($total_q26b)
+    );
+
+    for ($i = 0; $i < $maxCount2; $i++) {
+        if (!empty($location_q26b[$i]) || !empty($category_q26b[$i])) {
+            $bulkInsertData2[] = [
+                'case_id'         => $case_id,
+                'location_q26b'   => $location_q26b[$i] ?? null,
+                'category_q26b'   => $category_q26b[$i] ?? null,
+                'ngo_rating_q26b' => $ngo_rating_q26b[$i] ?? null,
+                'men_q26b'        => $men_q26b[$i] ?? 0,
+                'women_q26b'      => $women_q26b[$i] ?? 0,
+                'total_q26b'      => $total_q26b[$i] ?? 0,
+                'created_at'      => now(),
+                'updated_at'      => now(),
+            ];
+        }
+    }
+
+    if (!empty($bulkInsertData2)) {
+        TwentySixB::insert($bulkInsertData2);
+    }
+}
 
 
 
@@ -1933,11 +1961,193 @@ if (!empty($bulkInsertData)) {
                 ThirtyFourB::insert($bulkInsertData);
             }
 
-
-         
-          
         }
+
+        
+//question35
+        $case_id = $question->id;
+        $question35 = new ThirtyFive();
+        $question35->case_id = $case_id;
+        $question35->q35_p1_radio = $request->q35_p1_radio;
+        $question35->q35_p1_yes_text = $request->q35_p1_yes_text;
+        $question35->q35_p1_others_text = $request->q35_p1_others_text;
+        $question35->q35_p2_radio = $request->q35_p2_radio;
+        $question35->q35_p2_yes_text = $request->q35_p2_yes_text;
+        $question35->q35_p2_others_text = $request->q35_p2_others_text;
+        $question35->q35_p3_radio = $request->q35_p3_radio;
+        $question35->q35_p3_yes_text = $request->q35_p3_yes_text;
+        $question35->q35_p3_others_text = $request->q35_p3_others_text;
+        //return response()->json($question35 );
+        $question35->save();
+
+
+        //question36
+        $case_id = $question->id;
+        $question36 = new ThirtySix();
+        $question36->case_id = $case_id;
+        $question36->q36_p1_status = $request->q36_p1_status;
+        $question36->q36_p1_yes_desc = $request->q36_p1_yes_desc;
+        $question36->q36_p1_others_desc = $request->q36_p1_others_desc;
+        $question36->q36_p2_status = $request->q36_p2_status;
+        $question36->q36_p2_yes_desc = $request->q36_p2_yes_desc;
+        $question36->q36_p2_others_desc = $request->q36_p2_others_desc;
+        $question36->q36_p3_status = $request->q36_p3_status;
+        $question36->q36_p3_yes_desc = $request->q36_p3_yes_desc;
+        $question36->q36_p3_others_desc = $request->q36_p3_others_desc;
+        //return response()->json($question36 );
+        $question36->save();
+
+        //b
+            $q36_support_type = $request->input('q36_support_type', []);
+            $q36_men = $request->input('q36_men', []);
+            $q36_women = $request->input('q36_women', []);
+            $q36_tg = $request->input('q36_tg', []);
+            $q36_total = $request->input('q36_total', []);
+           
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($q36_support_type),
+                count($q36_men),
+                count($q36_women),
+                count($q36_tg),
+                count($q36_total)
+            );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'q36_support_type' => $q36_support_type[$i] ?? null,
+                    'q36_men' => $q36_men[$i] ?? null,
+                    'q36_women' => $q36_women[$i] ?? null,
+                    'q36_tg' => $q36_tg[$i] ?? null,
+                    'q36_total' => $q36_total[$i] ?? null,
+        
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThirtySixB::insert($bulkInsertData);
+            }
+
           
+        //question38
+        if ($request->is_victim_protection_q38 != 0) {
+                //a
+            $internal_men_q38 = $request->input('internal_men_q38', []);
+            $internal_women_q38 = $request->input('internal_women_q38', []);
+            $internal_tg_q38 = $request->input('internal_tg_q38', []);
+            $internal_boy_q38 = $request->input('internal_boy_q38', []);
+            $internal_girl_q38 = $request->input('internal_girl_q38', []);
+            $internal_total_q38 = $request->input('internal_total_q38', []);
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($internal_men_q38),
+                count($internal_women_q38),
+                count($internal_tg_q38),
+                count($internal_boy_q38),
+                count($internal_girl_q38),
+                count($internal_total_q38)
+            );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'internal_men_q38' => $internal_men_q38[$i] ?? null,
+                    'internal_women_q38' => $internal_women_q38[$i] ?? null,
+                    'internal_tg_q38' => $internal_tg_q38[$i] ?? null,
+                    'internal_boy_q38' => $internal_boy_q38[$i] ?? null,
+                    'internal_girl_q38' => $internal_girl_q38[$i] ?? null,
+                    'internal_total_q38' => $internal_total_q38[$i] ?? null,
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThirtyEight:insert($bulkInsertData);
+            }
+
+            //b
+            $international_men_q38 = $request->input('international_men_q38', []);
+            $international_women_q38 = $request->input('international_women_q38', []);
+            $international_tg_q38 = $request->input('international_tg_q38', []);
+            $international_boy_q38 = $request->input('international_boy_q38', []);
+            $international_girl_q38 = $request->input('international_girl_q38', []);
+            $international_total_q38 = $request->input('international_total_q38', []);
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($international_men_q38),
+                count($international_women_q38),
+                count($international_tg_q38),
+                count($international_boy_q38),
+                count($international_girl_q38),
+                count($international_total_q38)
+            );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'international_men_q38' => $international_men_q38[$i] ?? null,
+                    'international_women_q38' => $international_women_q38[$i] ?? null,
+                    'international_tg_q38' => $international_tg_q38[$i] ?? null,
+                    'international_boy_q38' => $international_boy_q38[$i] ?? null,
+                    'international_girl_q38' => $international_girl_q38[$i] ?? null,
+                    'international_total_q38' => $international_total_q38[$i] ?? null,
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThirtyEightB:insert($bulkInsertData);
+            }
+
+            //c
+             $location_q38c = $request->input('location_q38c', []);
+            $type_q38c = $request->input('type_q38c', []);
+            $men_q38c = $request->input('men_q38c', []);
+            $women_q38c = $request->input('women_q38c', []);
+            $tg_q38c = $request->input('tg_q38c', []);
+            $boy_q38c = $request->input('boy_q38c', []);
+            $girl_q38c = $request->input('girl_q38c', []);
+            $total_q38c = $request->input('total_q38c', []);
+
+            $case_id = $question->id;
+            $bulkInsertData = [];
+            $maxCount = max(
+                count($location_q38c),
+                count($type_q38c),
+                count($men_q38c),
+                count($women_q38c),
+                count($tg_q38c),
+                count($girl_q38c),
+                count($total_q38c)
+            );
+
+            for ($i = 0; $i < $maxCount; $i++) {
+                $bulkInsertData[] = [
+                    'case_id' => $case_id,
+                    'location_q38c' => $location_q38c[$i] ?? null,
+                    'type_q38c' => $type_q38c[$i] ?? null,
+                    'men_q38c' => $men_q38c[$i] ?? null,
+                    'women_q38c' => $women_q38c[$i] ?? null,
+                    'tg_q38c' => $tg_q38c[$i] ?? null,
+                    'boy_q38c' => $boy_q38c[$i] ?? null,
+                    'girl_q38c' => $girl_q38c[$i] ?? null,
+                    'total_q38c' => $total_q38c[$i] ?? null,
+                ];
+            }
+
+            if (!empty($bulkInsertData)) {
+                //return response()->json($bulkInsertData);
+                ThirtyEightC:insert($bulkInsertData);
+            }
+        }
+
 
 
         
@@ -2532,60 +2742,88 @@ if (!empty($bulkInsertData)) {
             }
         }
 
+        
+
         //question41
-        //               //a
-              $case_id = $question->id;
-              $question41 = new FortyOne();
-              $question41->case_id = $case_id;
-              $question41->convicted_traffickers_title_one_q41 = $request->convicted_traffickers_title_one_q41;
-              $question41->convicted_traffickers_title_two_q41 = $request->convicted_traffickers_title_two_q41;
-              //return response()->json($question41);
-              $question41->save();
-              
-        if ($request->is_convicted_traffickers_q41 != 0) {
-            $convicted_traffickers_location_q41b = $request->input('convicted_traffickers_location_q41b', []);
-            $convicted_traffickers_case_q41b = $request->input('convicted_traffickers_case_q41b', []);
-            $convicted_traffickers_men_q41b = $request->input('convicted_traffickers_men_q41b', []);
-            $convicted_traffickers_men_amount_q41b = $request->input('convicted_traffickers_men_amount_q41b', []);
-            $convicted_traffickers_women_q41b = $request->input('convicted_traffickers_women_q41b', []);
-            $convicted_traffickers_women_amount_q41b = $request->input('convicted_traffickers_women_amount_q41b', []);
-            $convicted_traffickers_total_trafic_q41b = $request->input('convicted_traffickers_total_trafic_q41b', []);
-            $convicted_traffickers_total_amount_q41b = $request->input('convicted_traffickers_total_amount_q41b', []);
-            
+        // FortyOne Table data save
+$case_id = $question->id;
 
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(count($convicted_traffickers_location_q41b),
-             count($convicted_traffickers_case_q41b),
-             count($convicted_traffickers_men_q41b),
-             count($convicted_traffickers_men_amount_q41b),
-             count($convicted_traffickers_women_q41b),
-             count($convicted_traffickers_women_amount_q41b),
-             count($convicted_traffickers_total_trafic_q41b),
-             count($convicted_traffickers_total_amount_q41b)
-             );
+$question41 = new FortyOne();
+$question41->case_id = $case_id;
 
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'convicted_traffickers_location_q41b' => $convicted_traffickers_location_q41b[$i] ?? null,
-                    'convicted_traffickers_case_q41b' => $convicted_traffickers_case_q41b[$i] ?? null,
-                    'convicted_traffickers_men_q41b' => $convicted_traffickers_men_q41b[$i] ?? null,
-                    'convicted_traffickers_men_amount_q41b' => $convicted_traffickers_men_amount_q41b[$i] ?? null,
-                    'convicted_traffickers_women_q41b' => $convicted_traffickers_women_q41b[$i] ?? null,
-                    'convicted_traffickers_women_amount_q41b' => $convicted_traffickers_women_amount_q41b[$i] ?? null,
-                    'convicted_traffickers_total_trafic_q41b' => $convicted_traffickers_total_trafic_q41b[$i] ?? null,
-                    'convicted_traffickers_total_amount_q41b' => $convicted_traffickers_total_amount_q41b[$i] ?? null,
-                       
+$question41->convicted_traffickers_title_one_q41 = $request->convicted_traffickers_title_one_q41;
+$question41->convicted_traffickers_title_two_q41 = $request->convicted_traffickers_title_two_q41;
+$question41->save();
 
-                ];
-            }
+// FortyOneB Table (Multiple Rows) data save
+if ($request->is_convicted_traffickers_q41 == 1) { // is_convicted_traffickers_q41 == 1 হলে ডাটা সেভ হবে
+    $convicted_traffickers_location_q41b = $request->input('convicted_traffickers_location_q41b', []);
+    $convicted_traffickers_case_q41b = $request->input('convicted_traffickers_case_q41b', []);
+    $convicted_traffickers_men_q41b = $request->input('convicted_traffickers_men_q41b', []);
+    $convicted_traffickers_men_amount_q41b = $request->input('convicted_traffickers_men_amount_q41b', []);
+    $convicted_traffickers_women_q41b = $request->input('convicted_traffickers_women_q41b', []);
+    $convicted_traffickers_women_amount_q41b = $request->input('convicted_traffickers_women_amount_q41b', []);
+    $convicted_traffickers_total_trafic_q41b = $request->input('convicted_traffickers_total_trafic_q41b', []);
+    $convicted_traffickers_total_amount_q41b = $request->input('convicted_traffickers_total_amount_q41b', []);
 
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                FortyOneB::insert($bulkInsertData);
-            }
+    $bulkInsertData = [];
+    $maxCount = count($convicted_traffickers_location_q41b);
+
+    for ($i = 0; $i < $maxCount; $i++) {
+        if (!empty($convicted_traffickers_location_q41b[$i]) || !empty($convicted_traffickers_case_q41b[$i])) {
+            $bulkInsertData[] = [
+                'case_id' => $case_id,
+                'convicted_traffickers_location_q41b' => $convicted_traffickers_location_q41b[$i] ?? null,
+                'convicted_traffickers_case_q41b' => $convicted_traffickers_case_q41b[$i] ?? null,
+                'convicted_traffickers_men_q41b' => $convicted_traffickers_men_q41b[$i] ?? 0,
+                'convicted_traffickers_men_amount_q41b' => $convicted_traffickers_men_amount_q41b[$i] ?? 0,
+                'convicted_traffickers_women_q41b' => $convicted_traffickers_women_q41b[$i] ?? 0,
+                'convicted_traffickers_women_amount_q41b' => $convicted_traffickers_women_amount_q41b[$i] ?? 0,
+                'convicted_traffickers_total_trafic_q41b' => $convicted_traffickers_total_trafic_q41b[$i] ?? 0,
+                'convicted_traffickers_total_amount_q41b' => $convicted_traffickers_total_amount_q41b[$i] ?? 0,
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
         }
+    }
+
+    if (!empty($bulkInsertData)) {
+        FortyOneB::insert($bulkInsertData);
+    }
+}
+
+//question42
+$case_id = $question->id;
+$question42 = new FortyTwo();
+$question42->case_id = $case_id;
+$question42->official_title_q42 = $request->official_title_q42;
+$question42->official_type_q42 = $request->official_type_q42;
+$question42->official_desc_q42 = $request->official_desc_q42;
+
+//return response()->json($question42 );
+$question42->save();
+
+//question43
+        if ($request->is_government_seek_civil_q43 != 0) {
+            $case_id = $question->id;
+            $question43 = new FortyThree();
+            $question43->case_id = $case_id;
+            $question43->goverment_seek_title_q43 = $request->goverment_seek_title_q43;
+            //return response()->json($question43);
+            $question43->save();
+        }
+//question48
+        if ($request->is_government_prohibit_q48 != 0) {
+            $case_id = $question->id;
+            $question43 = new FortyEight();
+            $question43->case_id = $case_id;
+            $question43->goverment_prohibit_title_q48 = $request->goverment_prohibit_title_q48;
+            //return response()->json($question43);
+            $question43->save();
+        }
+
+
+             
 
         
          //question56
@@ -2830,7 +3068,13 @@ if (!empty($bulkInsertData)) {
             'fiftysix',
             'fiftysixb',
             'fiftyseven',
-            'fiftyeight'
+            'fiftyeight',
+            'fortytwo',
+            'fortythree',
+            'fortyeight',
+            'thirtyfive',
+            'thirtysix',
+            'thirtysixb'
 
 
         ];

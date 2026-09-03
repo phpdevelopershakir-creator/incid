@@ -1,36 +1,29 @@
 @if (($questiontitles[15]->status ?? null) == 1)
 @php
-// ১. সেশন থেকে ১৬ নম্বর প্রশ্নের ডাটা ক্যাচ করা
-$question_16_data = session()->get('question16');
+    $question_16_data = session()->get('question16');
 
-// ২. ক্যাটাগরি এবং এনজিও রেটিং অ্যারে ডিফাইন করা
-$category_lists = [
-1 => 'Social Worker',
-2 => 'Police',
-3 => 'BGB',
-4 => 'Coastguard',
-5 => 'VDP',
-6 => 'Rail Police',
-7 => 'Judiciary',
-8 => 'NGO',
-9 => 'Others'
-];
+    $category_lists = [
+        1 => 'Social Worker', 2 => 'Police', 3 => 'BGB',
+        4 => 'Coastguard', 5 => 'VDP', 6 => 'Rail Police',
+        7 => 'Judiciary', 8 => 'NGO', 9 => 'Others'
+    ];
 
-$ngo_rating_lists = [
-1 => 'Excellent',
-2 => 'Good',
-3 => 'Fair',
-4 => 'Poor',
-5 => 'Extremely Poor',
-6 => 'Non-Functional'
-];
+    $ngo_rating_lists = [
+        1 => 'Excellent', 2 => 'Good', 3 => 'Fair',
+        4 => 'Poor', 5 => 'Extremely Poor', 6 => 'Non-Functional'
+    ];
 
-// ৩. ডাটা ম্যাপ করা
-$q16_checked = $question_16_data['q16radioSix16_checked_value'] ?? "1";
-$q16_table_rows = $question_16_data['q16radioSix16_data'] ?? null;
-$q16_others_val = $question_16_data['others'] ?? '';
-$q16_description = $question_16_data['description'] ?? '';
+    $q16_checked = $question_16_data['q16radioSix16_checked_value'] ?? "1";
+    $q16_table_rows = $question_16_data['q16radioSix16_data'] ?? null;
+    $q16_others_val = $question_16_data['others'] ?? '';
+    $q16_description = $question_16_data['description'] ?? '';
 @endphp
+
+<style>
+.othersText { display: none; }
+.visibility { display: none; }
+.ngo_rating_container { display: none; margin-top: 5px; }
+</style>
 
 <div class="card question16">
     <div class="card-header" role="tab" id="heading-4">
@@ -41,40 +34,38 @@ $q16_description = $question_16_data['description'] ?? '';
         </h6>
     </div>
 
-    <div id="Question-16" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion-2">
+    <div id="Question-16" class="collapse" role="tabpanel16" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
 
             <!-- Radio Options -->
             <div class="icheck-primary">
-                <input type="radio" class="sixteen_status" id="q16_yes" name="is_authorities_systematically_q16"
-                    value="1" {{ $q16_checked == "1" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_yes" name="is_authorities_systematically_q16" value="1"
+                    {{ $q16_checked == "1" ? 'checked' : '' }}>
                 <label for="q16_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="sixteen_status" id="q16_no" name="is_authorities_systematically_q16"
-                    value="0" {{ $q16_checked == "0" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_no" name="is_authorities_systematically_q16" value="0"
+                    {{ $q16_checked == "0" ? 'checked' : '' }}>
                 <label for="q16_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="sixteen_status" id="q16_others" name="is_authorities_systematically_q16"
-                    value="2" {{ $q16_checked == "2" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_others" name="is_authorities_systematically_q16" value="2"
+                    {{ $q16_checked == "2" ? 'checked' : '' }}>
                 <label for="q16_others">Others</label>
 
-                <span class="col-md-6 mt--4 others_input_container"
-                    style="display: {{ $q16_checked == '2' ? 'block' : 'none' }};">
+                <span class="col-md-6 mt--4 others_input_container {{ $q16_checked == "2" ? '' : 'othersText' }}">
                     <input type="text" id="q16radioThree3others" class="form-control" placeholder="Others"
                         name="other_authorities_systematically_q16" value="{{ $q16_others_val }}">
                 </span>
             </div>
 
             <!-- Main Question View -->
-            <div id="sixteen_question_view" style="display: {{ $q16_checked == '1' ? 'block' : 'none' }};">
+            <div id="sixteen_question_view" class="{{ $q16_checked == '1' ? '' : 'visibility' }}">
 
                 <p><strong>If yes</strong></p>
 
-                <!-- Description Table -->
                 <table class="table table-bordered mb-4">
                     <tbody>
                         <tr>
@@ -82,7 +73,6 @@ $q16_description = $question_16_data['description'] ?? '';
                                 Describe efforts taken by authorities to consistently and systematically use such
                                 protocols or formal written procedures to proactively screen for indicators of human
                                 trafficking.
-                                <input type="hidden" name="title_q16" value="1">
                             </td>
                             <td>
                                 <textarea name="description_q16" id="q16_description" class="form-control" rows="4"
@@ -111,16 +101,12 @@ $q16_description = $question_16_data['description'] ?? '';
                     <tbody>
                         @if(!empty($q16_table_rows) && count($q16_table_rows) > 0)
                         @foreach($q16_table_rows as $i => $q16)
-                        @php
-                        $is_ngo = ($q16['category'] ?? '') == 8;
-                        @endphp
+                        @php $is_ngo = ($q16['category'] ?? '') == 8; @endphp
                         <tr class="q16radioSix6QRow" id="q16row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="location_q16[]" class="form-control labor_title_q16"
-                                    value="{{ $q16['title'] ?? '' }}">
+                                <input type="text" name="location_q16[]" class="form-control location_q16" value="{{ $q16['title'] ?? '' }}">
                             </td>
                             <td>
-                                <!-- মূল ক্যাটাগরি ড্রপডাউন -->
                                 <select name="category_q16[]" class="form-control labor_category_q16">
                                     <option value="" disabled selected>--Select Category--</option>
                                     @foreach ($category_lists as $key => $item)
@@ -130,14 +116,11 @@ $q16_description = $question_16_data['description'] ?? '';
                                     @endforeach
                                 </select>
 
-                                <!-- NGO এর জন্য ডাইনামিক ড্রপডাউন -->
-                                <div class="ngo_rating_container mt-1"
-                                    style="display: {{ $is_ngo ? 'block' : 'none' }};">
-                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16">
+                                <div class="ngo_rating_container" style="display: {{ $is_ngo ? 'block' : 'none' }};">
+                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
-                                        <option value="{{ $rKey }}"
-                                            {{ ($q16['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
+                                        <option value="{{ $rKey }}" {{ ($q16['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
                                             {{ $rItem }}
                                         </option>
                                         @endforeach
@@ -145,31 +128,26 @@ $q16_description = $question_16_data['description'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="men_q16[]" class="form-control labor_men_q16"
-                                    value="{{ $q16['men'] ?? 0 }}" min="0">
+                                <input type="number" name="men_q16[]" id="men_q16_{{ $i+1 }}" class="form-control men_q16" value="{{ $q16['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="women_q16[]" class="form-control labor_women_q16"
-                                    value="{{ $q16['women'] ?? 0 }}" min="0">
+                                <input type="number" name="women_q16[]" id="women_q16_{{ $i+1 }}" class="form-control women_q16" value="{{ $q16['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="total_q16[]" readonly class="form-control labor_total_q16"
-                                    value="{{ $q16['total'] ?? 0 }}">
+                                <input type="number" name="total_q16[]" readonly id="total_q16_{{ $i+1 }}" class="form-control total_q16" value="{{ $q16['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
-                                <button type="button" class="btn btn-sm btn-primary"
-                                    id="addRowDatasq16radioThree3">+</button>
+                                <button type="button" class="btn btn-sm btn-primary addRowDatasq16Btn">+</button>
                                 @else
-                                <button type="button" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button>
+                                <button type="button" id="{{ $i+1 }}" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
-                        <!-- ডিফল্ট প্রথম রো -->
-                        <tr class="q16radioSix6QRow">
-                            <td><input type="text" name="location_q16[]" class="form-control labor_title_q16"></td>
+                        <tr class="q16radioSix6QRow" id="q16row1">
+                            <td><input type="text" name="location_q16[]" class="form-control location_q16"></td>
                             <td>
                                 <select name="category_q16[]" class="form-control labor_category_q16">
                                     <option value="" disabled selected>--Select Category--</option>
@@ -178,8 +156,8 @@ $q16_description = $question_16_data['description'] ?? '';
                                     @endforeach
                                 </select>
 
-                                <div class="ngo_rating_container mt-1" style="display: none;">
-                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16">
+                                <div class="ngo_rating_container">
+                                    <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
                                         <option value="{{ $rKey }}">{{ $rItem }}</option>
@@ -187,21 +165,11 @@ $q16_description = $question_16_data['description'] ?? '';
                                     </select>
                                 </div>
                             </td>
+                            <td><input type="number" name="men_q16[]" id="men_q16_1" value="0" class="form-control men_q16" min="0"></td>
+                            <td><input type="number" name="women_q16[]" id="women_q16_1" value="0" class="form-control women_q16" min="0"></td>
+                            <td><input type="number" name="total_q16[]" id="total_q16_1" value="0" class="form-control total_q16" readonly></td>
                             <td>
-                                <input type="number" name="men_q16[]" value="0" class="form-control labor_men_q16"
-                                    min="0">
-                            </td>
-                            <td>
-                                <input type="number" name="women_q16[]" value="0" class="form-control labor_women_q16"
-                                    min="0">
-                            </td>
-                            <td>
-                                <input type="number" name="total_q16[]" value="0" class="form-control labor_total_q16"
-                                    readonly>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-sm btn-primary"
-                                    id="addRowDatasq16radioThree3">+</button>
+                                <button type="button" class="btn btn-sm btn-primary addRowDatasq16Btn">+</button>
                             </td>
                         </tr>
                         @endif
@@ -221,7 +189,6 @@ $q16_description = $question_16_data['description'] ?? '';
 <script>
 $(document).ready(function() {
 
-    // NGO সিলেক্ট করলে ড্রপডাউন শো/হাইড
     $(document).on("change", ".labor_category_q16", function() {
         let val = $(this).val();
         let ngoContainer = $(this).closest("td").find(".ngo_rating_container");
@@ -234,27 +201,19 @@ $(document).ready(function() {
         }
     });
 
-    // নতুন রো যুক্ত করা
-    $(document).on("click", "#addRowDatasq16radioThree3", function() {
+    // ⬅️ নতুন রো যোগ করার জন্য Class Event Delegation
+    $(document).on("click", ".addRowDatasq16Btn", function() {
+        let rowCount = new Date().getTime();
+
         let jsCategoryLists = {
-            1: 'Social Worker',
-            2: 'Police',
-            3: 'BGB',
-            4: 'Coastguard',
-            5: 'VDP',
-            6: 'Rail Police',
-            7: 'Judiciary',
-            8: 'NGO',
-            9: 'Others'
+            1: 'Social Worker', 2: 'Police', 3: 'BGB',
+            4: 'Coastguard', 5: 'VDP', 6: 'Rail Police',
+            7: 'Judiciary', 8: 'NGO', 9: 'Others'
         };
 
         let jsNgoRatings = {
-            1: 'Excellent',
-            2: 'Good',
-            3: 'Fair',
-            4: 'Poor',
-            5: 'Extremely Poor',
-            6: 'Non-Functional'
+            1: 'Excellent', 2: 'Good', 3: 'Fair',
+            4: 'Poor', 5: 'Extremely Poor', 6: 'Non-Functional'
         };
 
         let categoryOptions = `<option value="" disabled selected>--Select Category--</option>`;
@@ -267,74 +226,73 @@ $(document).ready(function() {
             ngoRatingOptions += `<option value="${key}">${value}</option>`;
         });
 
-        let newRow = `
-            <tr class="q16radioSix6QRow">
-                <td><input type="text" name="location_q16[]" class="form-control labor_title_q16"></td>
+        $("#addRowq16radioThree3 tbody").append(`
+            <tr class="q16radioSix6QRow" id="q16row${rowCount}">
+                <td><input type="text" name="location_q16[]" class="form-control location_q16"></td>
                 <td>
                     <select name="category_q16[]" class="form-control labor_category_q16">
                         ${categoryOptions}
                     </select>
-                    <div class="ngo_rating_container mt-1" style="display: none;">
-                        <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16">
+
+                    <div class="ngo_rating_container">
+                        <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
                             ${ngoRatingOptions}
                         </select>
                     </div>
                 </td>
-                <td><input type="number" name="men_q16[]" value="0" class="form-control labor_men_q16" min="0"></td>
-                <td><input type="number" name="women_q16[]" value="0" class="form-control labor_women_q16" min="0"></td>
-                <td><input type="number" name="total_q16[]" readonly class="form-control labor_total_q16" value="0"></td>
-                <td><button type="button" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button></td>
+                <td><input type="number" name="men_q16[]" id="men_q16_${rowCount}" value="0" class="form-control men_q16" min="0"></td>
+                <td><input type="number" name="women_q16[]" id="women_q16_${rowCount}" value="0" class="form-control women_q16" min="0"></td>
+                <td><input type="number" name="total_q16[]" readonly id="total_q16_${rowCount}" class="form-control total_q16" value="0"></td>
+                <td><button type="button" id="${rowCount}" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button></td>
             </tr>
-        `;
-        $("#addRowq16radioThree3 tbody").append(newRow);
+        `);
     });
 
-    // রো রিমুভ করা
     $(document).on("click", ".q16radioThree3btn_remove", function() {
-        $(this).closest("tr").remove();
+        let id = $(this).attr("id");
+        $("#q16row" + id).remove();
     });
 
-    // পুরুষ ও মহিলা ইনপুটের ওপর ভিত্তি করে অটো টোটাল
-    $(document).on("input change keyup", ".labor_men_q16, .labor_women_q16", function() {
-        let row = $(this).closest("tr");
-        let men = parseInt(row.find(".labor_men_q16").val()) || 0;
-        let women = parseInt(row.find(".labor_women_q16").val()) || 0;
-        row.find(".labor_total_q16").val(men + women);
+    // ⬅️ ফিক্সড: Auto Total Calculation Bug
+    $(document).on("input change keyup", ".men_q16, .women_q16", function() {
+        let targetId = $(this).attr("id");
+        let row = targetId.substring(targetId.lastIndexOf('_') + 1);
+
+        let men = parseInt($("#men_q16_" + row).val()) || 0;
+        let women = parseInt($("#women_q16_" + row).val()) || 0;
+
+        $("#total_q16_" + row).val(men + women);
     });
 
-    // রেডিও বাটন টগল
-    $(document).on("change", ".sixteen_status", function() {
+    $(".sixteen_status").on("change", function() {
         let value = $("input[name='is_authorities_systematically_q16']:checked").val();
 
         if (value === "1") {
-            $("#sixteen_question_view").show();
-            $(".others_input_container").hide();
+            $("#sixteen_question_view").removeClass('visibility').show();
+            $(".others_input_container").addClass('othersText').hide();
             $("#q16radioThree3others").val("");
         } else if (value === "2") {
             $("#sixteen_question_view").hide();
-            $(".others_input_container").show();
+            $(".others_input_container").removeClass('othersText').show();
         } else {
             $("#sixteen_question_view").hide();
-            $(".others_input_container").hide();
+            $(".others_input_container").addClass('othersText').hide();
             $("#q16radioThree3others").val("");
         }
     });
 
-    // Temp Save AJAX লজিক
-    $(document).on("click", "#temp-save-question16", function(e) {
-        e.preventDefault();
-
+    $("#temp-save-question16").click(function() {
         let yes_no_value = $("input[name='is_authorities_systematically_q16']:checked").val();
         let description_text = $("#q16_description").val();
         let tableData = [];
 
         $(".q16radioSix6QRow").each(function() {
-            let title = $(this).find(".labor_title_q16").val();
+            let title = $(this).find(".location_q16").val();
             let category = $(this).find(".labor_category_q16").val();
             let ngo_rating = $(this).find(".labor_ngo_rating_q16").val();
-            let men = $(this).find(".labor_men_q16").val() || 0;
-            let women = $(this).find(".labor_women_q16").val() || 0;
-            let total = $(this).find(".labor_total_q16").val() || 0;
+            let men = $(this).find(".men_q16").val() || 0;
+            let women = $(this).find(".women_q16").val() || 0;
+            let total = $(this).find(".total_q16").val() || 0;
 
             if (title || category || men > 0 || women > 0) {
                 tableData.push({
@@ -367,9 +325,8 @@ $(document).ready(function() {
                 $('.question16 .card-header h6').css('color', 'blue');
                 alert("Question 16 Temp Saved ");
             },
-            error: function(err) {
+            error: function() {
                 alert("Something went wrong!");
-                console.log(err);
             }
         });
     });

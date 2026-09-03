@@ -1,3 +1,26 @@
+@php
+$Nationality_Lists = [
+    1 => "Chinese National",
+    2 => "Cuban national",
+    3 => "North Korean National"
+];
+
+$Sector_Lists = [
+    1 => "Belt and Road Initiative",
+    2 => "Medical workers",
+    3 => "Athletes",
+    4 => "Coaches",
+    5 => "Artist",
+    6 => "Teachers",
+    7 => "Engineers",
+    8 => "Sea Merchants",
+    9 => "Government to Government Work",
+    10 => "Private Sector",
+    11 => "Others",
+    12 => "N/A"
+];
+@endphp
+
 @if (($questiontitles[1]->status ?? null) == 1)
 @php
 $question_2_data = session()->get('question2');
@@ -5,27 +28,6 @@ $question_2_data = session()->get('question2');
 $q2_checked = $question_2_data['q2_checked_value'] ?? "1";
 $q2_rows_data = $question_2_data['q2_data'] ?? null;
 $q2_others_val = $question_2_data['others'] ?? '';
-
-$Nationality_Lists = [
-1 => "Chinese National",
-2 => "Cuban national",
-3 => "North Korean National"
-];
-
-$Sector_Lists = [
-1 => "Belt and Road Initiative",
-2 => "Medical workers",
-3 => "Athletes",
-4 => "Coaches",
-5 => "Artist",
-6 => "Teachers",
-7 => "Engineers",
-8 => "Sea Merchants",
-9 => "Government to Government Work",
-10 => "Private Sector",
-11 => "Others",
-12 => "N/A"
-];
 @endphp
 
 <style>
@@ -87,9 +89,7 @@ $Sector_Lists = [
                     <tbody>
                         @if(!empty($q2_rows_data) && count($q2_rows_data) > 0)
                         @foreach($q2_rows_data as $index => $row)
-                        {{-- এখানে শুধুমাত্র ভ্যালিড নিউমেরিক ডেটা ফিল্টার করা হচ্ছে যাতে অন্য কোনো কোশ্চেনের আবর্জনা ডেটা লোড না হতে পারে --}}
-                        @if(isset($row['nationality']) && (is_numeric($row['nationality']) || $row['nationality'] ==
-                        ""))
+                        @if(isset($row['nationality']) && (is_numeric($row['nationality']) || $row['nationality'] == ""))
                         <tr class="qe2NoOfRow" id="row_q2_{{ $index }}">
                             <td>
                                 <select name="government_nationality_q2[]" class="form-control q2-select">
@@ -125,8 +125,8 @@ $Sector_Lists = [
                         @endif
                         @endforeach
                         @else
-                        {{-- প্রথমবার খালি থাকলে ডিফল্ট ৩টি রো --}}
-                        @for ($i = 1; $i <= 3; $i++) <tr class="qe2NoOfRow" id="row_q2_fixed_{{ $i }}">
+                        @for ($i = 1; $i <= 3; $i++)
+                        <tr class="qe2NoOfRow" id="row_q2_fixed_{{ $i }}">
                             <td>
                                 <select name="government_nationality_q2[]" class="form-control q2-select">
                                     <option value="" disabled selected>---Choose an item--</option>
@@ -148,13 +148,12 @@ $Sector_Lists = [
                                     class="form-control q2-total" min="0">
                             </td>
                             <td></td>
-                            </tr>
-                            @endfor
-                            @endif
+                        </tr>
+                        @endfor
+                        @endif
                     </tbody>
                 </table>
 
-                {{-- প্লাস বাটনটি টেবিলের নিচে রাখা হয়েছে সহজ ম্যানেজমেন্টের জন্য --}}
                 <div class="text-left mb-3">
                     <button id="addRowDatasq2" type="button" class="btn btn-primary btn-sm">
                         <i class="fa fa-plus"></i> Add More Row
@@ -220,18 +219,15 @@ $(document).ready(function() {
         $(this).closest('tr').remove();
     });
 
-    // AJAX Temp Save লজিক (রিলোড ছাড়া)
+    // AJAX Temp Save লজিক
     $(document).on("click", "#temp-save-question2", function() {
         let q2_rows_data = [];
 
-        // কোড যেন অন্য কোনো সেকশনের ইনপুট ভুল করে না ধরে ফেলে, সে জন্য সুনির্দিষ্ট ক্লাস (.q2-select এবং .q2-total) দিয়ে ডাটা ফিল্টার করা হয়েছে
         $('#addRowQ2 tbody tr.qe2NoOfRow').each(function() {
-            let nationality = $(this).find('.q2-select[name="government_nationality_q2[]"]')
-                .val();
+            let nationality = $(this).find('.q2-select[name="government_nationality_q2[]"]').val();
             let sector = $(this).find('.q2-select[name="government_sector_q2[]"]').val();
             let total = $(this).find('.q2-total[name="government_total_q2[]"]').val();
 
-            // ভ্যালিডেশন: শুধুমাত্র সঠিক নিউমেরিক আইডি সিলেক্ট করা থাকলেই ডেটা যাবে
             if (nationality && sector && !isNaN(nationality) && !isNaN(sector)) {
                 q2_rows_data.push({
                     nationality: nationality,
@@ -241,7 +237,6 @@ $(document).ready(function() {
             }
         });
 
-        // যদি কোনো ডেটা এন্ট্রি না করা থাকে, ৩টি রো ফাঁকা ফরম্যাট দিয়ে স্টোর হবে
         if (q2_rows_data.length === 0) {
             $('#addRowQ2 tbody tr.qe2NoOfRow').slice(0, 3).each(function() {
                 q2_rows_data.push({
@@ -269,7 +264,6 @@ $(document).ready(function() {
             success: function(response) {
                 $('.question2 .card-header h6').css('color', 'blue');
                 alert("Question 2 Saved Successfully!");
-                // রিলোড হবে না (location.reload বাদ দেওয়া হয়েছে)
             },
             error: function() {
                 alert("Something went wrong!");

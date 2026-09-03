@@ -3,9 +3,9 @@
 // সেশন থেকে ৪২ নম্বর প্রশ্নের ডাটা ক্যাচ করা
 $question_42_data = session()->get('question42');
 
-$q42_agency_led = $question_42_data['agency_led'] ?? '';
-$q42_effectiveness = $question_42_data['effectiveness'] ?? '';
-$q42_results_desc = $question_42_data['results_desc'] ?? '';
+$official_title_q42 = $question_42_data['official_title_q42'] ?? '';
+$official_type_q42 = $question_42_data['official_type_q42'] ?? '';
+$official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
 @endphp
 
 <div class="card question42">
@@ -25,10 +25,12 @@ $q42_results_desc = $question_42_data['results_desc'] ?? '';
                     <!-- Row 1: Agency / Official Led -->
                     <tr>
                         <td style="width: 45%; background-color: #ffff00;" class="font-weight-bold align-middle">
-                            Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?
+                            Which official, agency, and/or national coordinating body, if any, led government
+                            anti-trafficking efforts?
                         </td>
                         <td style="background-color: #ffff00;">
-                            <input type="text" id="q42_agency_led" class="form-control" placeholder="Enter official, agency or body name" value="{{ $q42_agency_led }}">
+                            <input type="text" name="official_title_q42" id="official_title_q42" class="form-control"
+                                placeholder="Enter official, agency or body name" value="{{ $official_title_q42 }}">
                         </td>
                     </tr>
 
@@ -39,17 +41,22 @@ $q42_results_desc = $question_42_data['results_desc'] ?? '';
                         </td>
                         <td style="background-color: #ffff00;">
                             <div class="form-group mb-2">
-                                <select id="q42_effectiveness" class="form-control">
+                                <select id="official_type_q42" name="official_type_q42" class="form-control">
                                     <option value="">Choose an item...</option>
-                                    <option value="Effective" {{ $q42_effectiveness == 'Effective' ? 'selected' : '' }}>Effective</option>
-                                    <option value="Ineffective" {{ $q42_effectiveness == 'Ineffective' ? 'selected' : '' }}>Ineffective</option>
-                                    <option value="Moderately Effective" {{ $q42_effectiveness == 'Moderately Effective' ? 'selected' : '' }}>Moderately Effective</option>
+                                    <option value="Effective" {{ $official_type_q42 == 'Effective' ? 'selected' : '' }}>
+                                        Effective</option>
+                                    <option value="Ineffective"
+                                        {{ $official_type_q42 == 'Ineffective' ? 'selected' : '' }}>Ineffective</option>
+                                    <option value="Moderately Effective"
+                                        {{ $official_type_q42 == 'Moderately Effective' ? 'selected' : '' }}>Moderately
+                                        Effective</option>
                                 </select>
                             </div>
 
                             <div class="form-group mb-0">
                                 <label class="font-weight-bold text-muted">Please describe the results-</label>
-                                <textarea id="q42_results_desc" class="form-control" rows="3" placeholder="Describe the results...">{{ $q42_results_desc }}</textarea>
+                                <textarea name="official_desc_q42" id="official_desc_q42" class="form-control" rows="3"
+                                    placeholder="Describe the results...">{{ $official_desc_q42 }}</textarea>
                             </div>
                         </td>
                     </tr>
@@ -76,9 +83,10 @@ $(document).ready(function() {
         formData.append('_token', '{{ csrf_token() }}');
         formData.append('question_no', 42);
 
-        formData.append('question42[agency_led]', $('#q42_agency_led').val() || '');
-        formData.append('question42[effectiveness]', $('#q42_effectiveness').val() || '');
-        formData.append('question42[results_desc]', $('#q42_results_desc').val() || '');
+        // Controller Database Names Matching
+        formData.append('question42[official_title_q42]', $('#official_title_q42').val() || '');
+        formData.append('question42[official_type_q42]', $('#official_type_q42').val() || '');
+        formData.append('question42[official_desc_q42]', $('#official_desc_q42').val() || '');
 
         $.ajax({
             url: "/superadmin/case/temp-save-question",

@@ -66,7 +66,7 @@
                     </tr>
                     <tr style="background:#E5E5E5;">
                         <th>Category</th>
-                        <th>NGO/INGO </th>
+                    
                         <th>Men</th>
                         <th>Women</th>
                         <th>Total</th>
@@ -85,19 +85,9 @@
                         <th>{{$thirtynineb->victims_restitution_location_q39b}}</th>
 
                         <th>
-                            @php
-                            $categories = [
-                            1 => 'Police',
-                            2 => 'Judge'
-                            ];
-                            @endphp
-
-                            {{ $categories[$thirtynineb->victims_restitution_location_q39b] ?? 'N/A' }}
+                           {{$thirtynineb->victims_restitution_category_q39b}}
                         </th>
-                        <th>
-                            {{$thirtynineb->victims_restitution_category_q39b}}
-
-                        </th>
+                       
                         <th>
                             {{$thirtynineb->victims_restitution_men_q39b}}
                         </th>
@@ -119,7 +109,7 @@
                     @endphp
                     @endforeach
                     <tr style="font-weight:bold; background:#f1f1f1;">
-                        <td colspan="3">Total</td>
+                        <td colspan="2">Total</td>
                         <td class="text-center align-middle">{{ $menTotal }}</td>
                         <td class="text-center align-middle">{{ $womenTotal }}</td>
                         <td class="text-center align-middle">{{ $Total }}</td>

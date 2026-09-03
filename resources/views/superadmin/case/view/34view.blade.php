@@ -28,7 +28,7 @@
                     <tbody>
                         @foreach($case->thirtyfour as $thirtyfour)
                         <tr>
-                            <td>{{ $thirtyfour->number_victims_q34 }}</td>
+                            <td>Victims Count</td>
                             <td>{{ $thirtyfour->men_victims_q34 }}</td>
                             <td>{{ $thirtyfour->women_victims_q34 }}</td>
                             <td>{{ $thirtyfour->tg_victims_q34 }}</td>

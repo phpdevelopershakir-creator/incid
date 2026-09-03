@@ -9,5 +9,5 @@ class ThirtyFive extends Model
 {
     use HasFactory;
     
-    protected $table ='supreme_court_precedents_q35';
+    protected $table ='law_enforcement_q35';
 }

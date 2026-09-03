@@ -43,29 +43,40 @@ $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
                     <tr>
                         <td>
                             <label class="font-weight-bold">
-                                Were victims required to speak with law enforcement officials, or cooperate with authorities in the investigation or prosecution of traffickers to access certain protection services (such as residence in a government shelter)?
+                                Were victims required to speak with law enforcement officials, or cooperate with
+                                authorities in the investigation or prosecution of traffickers to access certain
+                                protection services (such as residence in a government shelter)?
                             </label>
 
                             <div class="mt-2">
                                 <div class="icheck-primary d-inline mr-3">
-                                    <input type="radio" class="q35_p1_status" id="q35_p1_yes" name="q35_p1_radio" value="1" {{ $q35_p1_status === '1' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p1_status" id="q35_p1_yes" name="q35_p1_radio"
+                                        value="1" {{ $q35_p1_status === '1' ? 'checked' : '' }}>
                                     <label for="q35_p1_yes">Yes</label>
                                 </div>
                                 <div class="icheck-primary d-inline mr-3">
-                                    <input type="radio" class="q35_p1_status" id="q35_p1_no" name="q35_p1_radio" value="0" {{ $q35_p1_status === '0' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p1_status" id="q35_p1_no" name="q35_p1_radio"
+                                        value="0" {{ $q35_p1_status === '0' ? 'checked' : '' }}>
                                     <label for="q35_p1_no">No</label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="radio" class="q35_p1_status" id="q35_p1_others" name="q35_p1_radio" value="2" {{ $q35_p1_status === '2' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p1_status" id="q35_p1_others" name="q35_p1_radio"
+                                        value="2" {{ $q35_p1_status === '2' ? 'checked' : '' }}>
                                     <label for="q35_p1_others">Others</label>
                                 </div>
                             </div>
 
-                            <div class="mt-2 q35_p1_yes_box sub_field_box_q35" style="display: {{ $q35_p1_status === '1' ? 'block' : 'none' }};">
-                                <input type="text" id="q35_p1_yes_text" class="form-control col-md-8" placeholder="Provide Description" value="{{ $q35_p1_yes_desc }}">
+                            <div class="mt-2 q35_p1_yes_box sub_field_box_q35"
+                                style="display: {{ $q35_p1_status === '1' ? 'block' : 'none' }};">
+                                <input type="text" name="q35_p1_yes_text" id="q35_p1_yes_text"
+                                    class="form-control col-md-8" placeholder="Provide Description"
+                                    value="{{ $q35_p1_yes_desc }}">
                             </div>
-                            <div class="mt-2 q35_p1_others_box sub_field_box_q35" style="display: {{ $q35_p1_status === '2' ? 'block' : 'none' }};">
-                                <input type="text" id="q35_p1_others_text" class="form-control col-md-8" placeholder="Others details" value="{{ $q35_p1_others_desc }}">
+                            <div class="mt-2 q35_p1_others_box sub_field_box_q35"
+                                style="display: {{ $q35_p1_status === '2' ? 'block' : 'none' }};">
+                                <input type="text" name="q35_p1_others_text" id="q35_p1_others_text"
+                                    class="form-control col-md-8" placeholder="Others details"
+                                    value="{{ $q35_p1_others_desc }}">
                             </div>
                         </td>
                     </tr>
@@ -79,24 +90,33 @@ $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
 
                             <div class="mt-2">
                                 <div class="icheck-primary d-inline mr-3">
-                                    <input type="radio" class="q35_p2_status" id="q35_p2_yes" name="q35_p2_radio" value="1" {{ $q35_p2_status === '1' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p2_status" id="q35_p2_yes" name="q35_p2_radio"
+                                        value="1" {{ $q35_p2_status === '1' ? 'checked' : '' }}>
                                     <label for="q35_p2_yes">Yes</label>
                                 </div>
                                 <div class="icheck-primary d-inline mr-3">
-                                    <input type="radio" class="q35_p2_status" id="q35_p2_no" name="q35_p2_radio" value="0" {{ $q35_p2_status === '0' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p2_status" id="q35_p2_no" name="q35_p2_radio"
+                                        value="0" {{ $q35_p2_status === '0' ? 'checked' : '' }}>
                                     <label for="q35_p2_no">No</label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="radio" class="q35_p2_status" id="q35_p2_others" name="q35_p2_radio" value="2" {{ $q35_p2_status === '2' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p2_status" id="q35_p2_others" name="q35_p2_radio"
+                                        value="2" {{ $q35_p2_status === '2' ? 'checked' : '' }}>
                                     <label for="q35_p2_others">Others</label>
                                 </div>
                             </div>
 
-                            <div class="mt-2 q35_p2_yes_box sub_field_box_q35" style="display: {{ $q35_p2_status === '1' ? 'block' : 'none' }};">
-                                <input type="text" id="q35_p2_yes_text" class="form-control col-md-8" placeholder="Provide Description" value="{{ $q35_p2_yes_desc }}">
+                            <div class="mt-2 q35_p2_yes_box sub_field_box_q35"
+                                style="display: {{ $q35_p2_status === '1' ? 'block' : 'none' }};">
+                                <input type="text" name="q35_p2_yes_text" id="q35_p2_yes_text"
+                                    class="form-control col-md-8" placeholder="Provide Description"
+                                    value="{{ $q35_p2_yes_desc }}">
                             </div>
-                            <div class="mt-2 q35_p2_others_box sub_field_box_q35" style="display: {{ $q35_p2_status === '2' ? 'block' : 'none' }};">
-                                <input type="text" id="q35_p2_others_text" class="form-control col-md-8" placeholder="Others details" value="{{ $q35_p2_others_desc }}">
+                            <div class="mt-2 q35_p2_others_box sub_field_box_q35"
+                                style="display: {{ $q35_p2_status === '2' ? 'block' : 'none' }};">
+                                <input type="text" name="q35_p2_others_text" id="q35_p2_others_text"
+                                    class="form-control col-md-8" placeholder="Others details"
+                                    value="{{ $q35_p2_others_desc }}">
                             </div>
                         </td>
                     </tr>
@@ -105,29 +125,39 @@ $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
                     <tr>
                         <td>
                             <label class="font-weight-bold">
-                                What, if any, alternatives were victims presented with to speaking with law enforcement while participating in investigations?
+                                What, if any, alternatives were victims presented with to speaking with law enforcement
+                                while participating in investigations?
                             </label>
 
                             <div class="mt-2">
                                 <div class="icheck-primary d-inline mr-3">
-                                    <input type="radio" class="q35_p3_status" id="q35_p3_yes" name="q35_p3_radio" value="1" {{ $q35_p3_status === '1' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p3_status" id="q35_p3_yes" name="q35_p3_radio"
+                                        value="1" {{ $q35_p3_status === '1' ? 'checked' : '' }}>
                                     <label for="q35_p3_yes">Yes</label>
                                 </div>
                                 <div class="icheck-primary d-inline mr-3">
-                                    <input type="radio" class="q35_p3_status" id="q35_p3_no" name="q35_p3_radio" value="0" {{ $q35_p3_status === '0' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p3_status" id="q35_p3_no" name="q35_p3_radio"
+                                        value="0" {{ $q35_p3_status === '0' ? 'checked' : '' }}>
                                     <label for="q35_p3_no">No</label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="radio" class="q35_p3_status" id="q35_p3_others" name="q35_p3_radio" value="2" {{ $q35_p3_status === '2' ? 'checked' : '' }}>
+                                    <input type="radio" class="q35_p3_status" id="q35_p3_others" name="q35_p3_radio"
+                                        value="2" {{ $q35_p3_status === '2' ? 'checked' : '' }}>
                                     <label for="q35_p3_others">Others</label>
                                 </div>
                             </div>
 
-                            <div class="mt-2 q35_p3_yes_box sub_field_box_q35" style="display: {{ $q35_p3_status === '1' ? 'block' : 'none' }};">
-                                <input type="text" id="q35_p3_yes_text" class="form-control col-md-8" placeholder="Provide Description" value="{{ $q35_p3_yes_desc }}">
+                            <div class="mt-2 q35_p3_yes_box sub_field_box_q35"
+                                style="display: {{ $q35_p3_status === '1' ? 'block' : 'none' }};">
+                                <input type="text" name="q35_p3_yes_text" id="q35_p3_yes_text"
+                                    class="form-control col-md-8" placeholder="Provide Description"
+                                    value="{{ $q35_p3_yes_desc }}">
                             </div>
-                            <div class="mt-2 q35_p3_others_box sub_field_box_q35" style="display: {{ $q35_p3_status === '2' ? 'block' : 'none' }};">
-                                <input type="text" id="q35_p3_others_text" class="form-control col-md-8" placeholder="Others details" value="{{ $q35_p3_others_desc }}">
+                            <div class="mt-2 q35_p3_others_box sub_field_box_q35"
+                                style="display: {{ $q35_p3_status === '2' ? 'block' : 'none' }};">
+                                <input type="text" name="q35_p3_others_text" id="q35_p3_others_text"
+                                    class="form-control col-md-8" placeholder="Others details"
+                                    value="{{ $q35_p3_others_desc }}">
                             </div>
                         </td>
                     </tr>

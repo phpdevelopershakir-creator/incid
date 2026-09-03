@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ThirtyEight extends Model
 {
     use HasFactory;
-    protected $table ='law_enforcement_activities_q38';
+    protected $table ='internal_trafficking_q38';
+    
 
     public function country()
     {

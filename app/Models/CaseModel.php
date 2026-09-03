@@ -274,6 +274,11 @@ class CaseModel extends Model
     {
         return $this->hasMany(ThirtySix::class, 'case_id');
     }
+
+    public function thirtysixb()
+    {
+        return $this->hasMany(ThirtySixB::class, 'case_id');
+    }
     public function thirtyseven()
     {
         return $this->hasMany(ThirtySeven::class, 'case_id');

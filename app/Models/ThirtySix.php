@@ -10,7 +10,7 @@ use DB;
 class ThirtySix extends Model
 {
     use HasFactory;
-    protected $table ='organ_trafficking_q36';
+    protected $table ='enforcement_consistently_q36';
 
     public static function awarness_activities_q36_query_data (){
         //  DB::connection()->enableQueryLog(); 

@@ -1,17 +1,29 @@
 @if (($questiontitles[27]->status ?? null) == 1)
 @php
-// সেশন থেকে সরাসরি ২৮ নম্বর প্রশ্নের ডাটা তুলে নেওয়া হচ্ছে
-$question_28_data = session()->get('question28');
+// Controller 'question28' কি (Key) দিয়ে সেশনে ডাটা রাখছে
+$question_28_data = session()->get('question28') ?? [];
 
-// ডাটা টাইপ কাস্টিং এর ঝামেলা এড়াতে বাউন্ডারি ঠিক করা হলো
-$q28_checked = isset($question_28_data['q28_checked_value']) ? (string)$question_28_data['q28_checked_value'] : null;
-$q28_data = $question_28_data['q28_data'] ?? null;
+// Checked Radio Value বের করা
+$q28_checked = isset($question_28_data['q28_checked_value']) 
+    ? (string)$question_28_data['q28_checked_value'] 
+    : ($question_28_data['is_child_victims_juvenile_q28'] ?? null);
+
+// Inner data extraction
+$q28_data = $question_28_data['q28_data'] ?? [];
+
+// Inputs Values Extract
+$yes_title_val = $q28_data['child_victims_juvenile_title_q28'] 
+    ?? ($q28_data['involved_directly_trafficking_title'] 
+    ?? ($question_28_data['child_victims_juvenile_title_q28'] ?? ''));
+
+$others_val = $q28_data['others'] 
+    ?? ($question_28_data['others_child_victims_juvenile_q28'] ?? '');
 @endphp
 
 <div class="card question28">
     <div class="card-header" id="heading-28">
         <h6 style="color: {{ !empty($question_28_data) ? 'blue' : 'green' }};">
-            <a data-toggle="collapse" href="#Question-28" aria-expanded="false" aria-controls="collapse-28">
+            <a data-toggle="collapse" href="#Question-28" aria-expanded="false" aria-controls="Question-28">
                 28. {{ $questiontitles[27]->title }}
             </a>
         </h6>
@@ -20,29 +32,31 @@ $q28_data = $question_28_data['q28_data'] ?? null;
     <div id="Question-28" class="collapse" role="tabpanel" aria-labelledby="heading-28" data-parent="#accordion-2">
         <div class="card-body">
 
+            <!-- Radio Options (Name Controller অনুযায়ী মিল রাখা হয়েছে) -->
             <div class="form-group mb-2">
                 <input type="radio" id="radioYes28" class="twentyeightstatus" name="is_child_victims_juvenile_q28" value="1"
                     {{ (is_null($q28_checked) || $q28_checked === '1') ? 'checked' : '' }}>
-                <label for="radioYes28" class="mr-3">Yes</label>
+                <label for="radioYes28" class="mr-3 font-weight-bold">Yes</label>
 
                 <input type="radio" id="radioNo28" class="twentyeightstatus" name="is_child_victims_juvenile_q28" value="0"
                     {{ ($q28_checked === '0') ? 'checked' : '' }}>
-                <label for="radioNo28" class="mr-3">No</label>
+                <label for="radioNo28" class="mr-3 font-weight-bold">No</label>
 
                 <input type="radio" id="radioOthers28" class="twentyeightstatus" name="is_child_victims_juvenile_q28" value="2"
                     {{ ($q28_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers28">Others</label>
+                <label for="radioOthers28" class="font-weight-bold">Others</label>
             </div>
 
-            <div id="yes_extra_q28" style="display: {{ (is_null($q28_checked) || $q28_checked === '1') ? 'block' : 'none' }};">
-                <input type="text" name="child_victims_juvenile_title_q28"
-                    class="form-control mt-2 q28-yes-input" placeholder="Provide Yes details"
-                    value="{{ $q28_data['involved_directly_trafficking_title'] ?? '' }}">
-            </div>
-
+            <!-- Others Description Field -->
             <div id="others_q28" style="display: {{ ($q28_checked === '2') ? 'block' : 'none' }};">
-                <input type="text" name="other_child_victims_juvenile_q28" class="form-control mt-2 q28-others-input"
-                    placeholder="Others details" value="{{ $q28_data['others'] ?? '' }}">
+                <input type="text" name="others_child_victims_juvenile_q28" class="form-control mt-2 q28-others-input"
+                    placeholder="Others details" value="{{ $others_val }}">
+            </div>
+
+            <!-- Yes Input Field (Name Controller অনুযায়ী মিল রাখা হয়েছে) -->
+            <div id="yes_extra_q28" style="display: {{ (is_null($q28_checked) || $q28_checked === '1') ? 'block' : 'none' }};">
+                <input type="text" name="child_victims_juvenile_title_q28" class="form-control mt-2 q28-yes-input"
+                    placeholder="Provide details" value="{{ $yes_title_val }}">
             </div>
 
         </div>
@@ -56,7 +70,8 @@ $q28_data = $question_28_data['q28_data'] ?? null;
 
 <script>
 $(document).ready(function() {
-    // Yes/No/Others রেডিও বাটনের টগল লজিক
+
+    // Radio Toggle Logic
     function toggleq28() {
         let val = $("input[name='is_child_victims_juvenile_q28']:checked").val();
 
@@ -65,35 +80,33 @@ $(document).ready(function() {
             $('#radioYes28').prop('checked', true);
         }
 
-        // কন্ডিশন অনুযায়ী শো/হাইড করা
+        $('#yes_extra_q28').hide();
+        $('#others_q28').hide();
+
         if (val === '1') {
             $('#yes_extra_q28').show();
-            $('#others_q28').hide();
         } else if (val === '2') {
-            $('#yes_extra_q28').hide();
             $('#others_q28').show();
-        } else {
-            $('#yes_extra_q28').hide();
-            $('#others_q28').hide();
         }
     }
 
-    // ইভেন্ট লিসেনার
     $(document).on('change', '.twentyeightstatus', toggleq28);
 
-    // সাময়িকভাবে ডাটা সেভ করার AJAX রিকোয়েস্ট
+    // ================= Temp Save Action =================
     $(document).on("click", "#temp-save-question28", function() {
         let checkedValue = $("input[name='is_child_victims_juvenile_q28']:checked").val();
-        
-        // উভয় ইনপুট ফিল্ডের ডাটা একসাথে নেওয়া
-        let q28_data = {
-            involved_directly_trafficking_title: $('.q28-yes-input').val(),
-            others: $('.q28-others-input').val()
-        };
+        let yesInputVal = $('.q28-yes-input').val();
+        let othersInputVal = $('.q28-others-input').val();
 
         let new_data = {
             q28_checked_value: checkedValue,
-            q28_data: q28_data
+            is_child_victims_juvenile_q28: checkedValue,
+            child_victims_juvenile_title_q28: yesInputVal,
+            others_child_victims_juvenile_q28: othersInputVal,
+            q28_data: {
+                child_victims_juvenile_title_q28: yesInputVal,
+                others: othersInputVal
+            }
         };
 
         $.ajax({
@@ -117,5 +130,6 @@ $(document).ready(function() {
             }
         });
     });
+
 });
 </script>

@@ -9,7 +9,7 @@ class FortyThree extends Model
 {
     use HasFactory;
 
-    protected $table = 'regional_enforcement_coordination_q43';
+    protected $table = 'government_seek_civil_q43';
 
     public function country()
     {

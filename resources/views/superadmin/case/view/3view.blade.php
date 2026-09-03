@@ -36,10 +36,31 @@ if (($questiontitles[2]->status ?? null) == 1) {
 
                         @foreach($case->three as $three)
                         <tr>
+                            @php
+    // Option Text Mappings
+            $purpose_list = [
+                '1' => 'Recruitment & Communication',
+                '2' => 'Advertising & Marketing',
+                '3' => 'Financial Transactions',
+                '4' => 'Control & Surveillance',
+                '5' => 'Document Forgery / Logistics',
+                '6' => 'Others'
+            ];
+        
+            $technology_list = [
+                '1' => 'Social Media Platforms (Facebook, Instagram, etc.)',
+                '2' => 'Messaging Apps (WhatsApp, Telegram, Signal)',
+                '3' => 'Dark Web / Online Marketplaces',
+                '4' => 'Mobile Banking / Cryptocurrency',
+                '5' => 'GPS / Location Tracking / Surveillance',
+                '6' => 'Job Portals / Fake Websites',
+                '7' => 'Others'
+            ];
+        @endphp
 
                             <td>{{$three->category_q3}}</td>
-                            <td>{{$three->purpose_q3}}</td>
-                            <td>{{$three->technology_q3}}</td>
+                            <td>{{ $three->purpose_q3 ?? 'N/A' }}</td>
+                            <td>{{ $three->technology_q3 ?? 'N/A' }}</td>
                             <td>{{$three->description_q3}}</td>
 
                         </tr>
@@ -68,9 +89,26 @@ if (($questiontitles[2]->status ?? null) == 1) {
 
                         @foreach($case->threeb as $threeb)
                         <tr>
+                            @php
+    // Question B List Mapping
+    $questions_b_list = [
+        '1' => 'How are governments countering tech-enabled trafficking?',
+        '2' => 'What efforts are governments making to address the needs of victims of technology-facilitated human trafficking?'
+    ];
 
-                            <td>{{$threeb->question_q3b}}</td>
-                            <td>{{$threeb->response_q3b}}</td>
+    // Response List Mapping
+    $response_list = [
+        '1' => 'Cyber Crime Unit Investigation',
+        '2' => 'Public Awareness Campaigns',
+        '3' => 'Legal Framework & Policy Action',
+        '4' => 'Victim Support Hotline & Services',
+        '5' => 'International Cooperation',
+        '6' => 'Others'
+    ];
+@endphp
+
+                            <td>{{ $threeb->question_q3b ?? 'N/A' }}</td>
+                            <td>{{  $threeb->response_q3b ?? 'N/A' }}</td>
                             <td>{{$threeb->description_q3b}}</td>
 
                         </tr>

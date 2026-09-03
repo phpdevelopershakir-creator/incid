@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>“Annual TIP Report, Bangladesh ”</title>
+    <title>Annual TIP Report, Bangladesh </title>
     <script src="{{asset('backend/js/data-table.js')}}"></script>
 
 
@@ -62,7 +62,10 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" style="text-align:center;">“Annual TIP Report, Bangladesh ”</h4>
+                      <h4 class="card-title"
+    style="text-align:center; background-color:#80C090; padding:10px; color:#fff; border-radius:5px;">
+    Annual TIP Report, Bangladesh
+</h4>
                         <div class="mt-4">
                             <div class="pdf-container">
                                 @php
