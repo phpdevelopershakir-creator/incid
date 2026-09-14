@@ -48,6 +48,7 @@ use App\Http\Controllers\TwoFactorController;
 use App\Http\Controllers\SuperAdmin\TempController;
 use App\Http\Controllers\SmsController;
 use App\Http\Controllers\Report\SixteenController;
+use App\Http\Controllers\Report\ReportsController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 /*
@@ -322,7 +323,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/superadmin/banner/store', [BannerController::class, 'banner_store'])->name('superadmin.banner.store');
     Route::get('listed/ministry/agency', [DashboardController::class, 'ListMinistryAgency'])->name('listed.ministry.agency');
 
-      Route::get('superadmin/summary_q16', [SixteenController::class, 'showQuestionSixteenReport'])->name('superadmin.summary_q16');
+      Route::get('superadmin/report/summary', [ReportsController::class, 'ReportSummary'])->name('superadmin.report.summary');
 
 
 

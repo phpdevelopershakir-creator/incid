@@ -1,23 +1,23 @@
 @php
 $Nationality_Lists = [
-    1 => "Chinese National",
-    2 => "Cuban national",
-    3 => "North Korean National"
+1 => "Chinese National",
+2 => "Cuban national",
+3 => "North Korean National"
 ];
 
 $Sector_Lists = [
-    1 => "Belt and Road Initiative",
-    2 => "Medical workers",
-    3 => "Athletes",
-    4 => "Coaches",
-    5 => "Artist",
-    6 => "Teachers",
-    7 => "Engineers",
-    8 => "Sea Merchants",
-    9 => "Government to Government Work",
-    10 => "Private Sector",
-    11 => "Others",
-    12 => "N/A"
+1 => "Belt and Road Initiative",
+2 => "Medical workers",
+3 => "Athletes",
+4 => "Coaches",
+5 => "Artist",
+6 => "Teachers",
+7 => "Engineers",
+8 => "Sea Merchants",
+9 => "Government to Government Work",
+10 => "Private Sector",
+11 => "Others",
+12 => "N/A"
 ];
 @endphp
 
@@ -71,7 +71,7 @@ $q2_others_val = $question_2_data['others'] ?? '';
 
                 <span class="col-md-6 mt--4 q2_others_container {{ $q2_checked == '2' ? '' : 'othersText_q2' }}"
                     style="margin-top:-8px;">
-                    <input type="text" id="q2others" placeholder="Others" class="form-control"
+                    <input type="text" id="q2others" placeholder="Please describe" class="form-control"
                         value="{{ $q2_others_val }}" name="other_government_transparent_q2">
                 </span>
             </div>
@@ -83,13 +83,14 @@ $q2_others_val = $question_2_data['others'] ?? '';
                             <th>Nationality</th>
                             <th>Sector</th>
                             <th>Number of Citizen present in Bangladesh</th>
-                            <th>Action</th>
+                            <th>Are they at high risk of forced labour</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if(!empty($q2_rows_data) && count($q2_rows_data) > 0)
                         @foreach($q2_rows_data as $index => $row)
-                        @if(isset($row['nationality']) && (is_numeric($row['nationality']) || $row['nationality'] == ""))
+                        @if(isset($row['nationality']) && (is_numeric($row['nationality']) || $row['nationality'] ==
+                        ""))
                         <tr class="qe2NoOfRow" id="row_q2_{{ $index }}">
                             <td>
                                 <select name="government_nationality_q2[]" class="form-control q2-select">
@@ -125,8 +126,7 @@ $q2_others_val = $question_2_data['others'] ?? '';
                         @endif
                         @endforeach
                         @else
-                        @for ($i = 1; $i <= 3; $i++)
-                        <tr class="qe2NoOfRow" id="row_q2_fixed_{{ $i }}">
+                        @for ($i = 1; $i <= 3; $i++) <tr class="qe2NoOfRow" id="row_q2_fixed_{{ $i }}">
                             <td>
                                 <select name="government_nationality_q2[]" class="form-control q2-select">
                                     <option value="" disabled selected>---Choose an item--</option>
@@ -148,9 +148,9 @@ $q2_others_val = $question_2_data['others'] ?? '';
                                     class="form-control q2-total" min="0">
                             </td>
                             <td></td>
-                        </tr>
-                        @endfor
-                        @endif
+                            </tr>
+                            @endfor
+                            @endif
                     </tbody>
                 </table>
 
@@ -224,7 +224,8 @@ $(document).ready(function() {
         let q2_rows_data = [];
 
         $('#addRowQ2 tbody tr.qe2NoOfRow').each(function() {
-            let nationality = $(this).find('.q2-select[name="government_nationality_q2[]"]').val();
+            let nationality = $(this).find('.q2-select[name="government_nationality_q2[]"]')
+                .val();
             let sector = $(this).find('.q2-select[name="government_sector_q2[]"]').val();
             let total = $(this).find('.q2-total[name="government_total_q2[]"]').val();
 

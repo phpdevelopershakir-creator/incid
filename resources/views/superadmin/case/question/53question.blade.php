@@ -1,13 +1,9 @@
 <?php
 if (($questiontitles[52]->status ?? null) == 1) {
-    
     $question_53_data = session()->get('question53');
-
     $q53_checked = $question_53_data['q53_checked_value'] ?? "1";
     $q53_saved_rows = $question_53_data['q53_table_data'] ?? [];
     $q53_others_val = $question_53_data['others'] ?? '';
-
-  
     $fixed_titles = [
         1 => "Diplomats in foreign missions",
         2 => "Labour Attaches",
@@ -54,7 +50,7 @@ if (($questiontitles[52]->status ?? null) == 1) {
                 <label for="radioFiftyThree3">Others</label>
 
                 <span class="col-md-6 mt--4 q53_others_container {{ $q53_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q53others" placeholder="Others" class="form-control"
+                    <input type="text" id="q53others" placeholder="Please describe" class="form-control"
                         value="{{ $q53_others_val }}" name="other_government_train_diplomat_q53">
                 </span>
             </div>
@@ -65,7 +61,7 @@ if (($questiontitles[52]->status ?? null) == 1) {
                         <tr>
                             <th rowspan="2" style="vertical-align: middle;">Category of Trainee</th>
                             <th colspan="4">Coverage of Training</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>
@@ -173,11 +169,8 @@ if (($questiontitles[52]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fiftythreestatus").on("change", function() {
         var statusvalue = $("input[name='is_government_train_diplomat_q53']:checked").val();
-
         if (statusvalue == '1') {
             $('#53_question_view').removeClass('visibility').show();
             $('.q53_others_container').addClass('othersText').hide();
@@ -216,7 +209,6 @@ $(document).ready(function() {
         $('#row_q53_' + button_id).remove();
     });
 
-
     $(document).on('input', '.government_men_q53, .government_women_q53, .government_tg_q53', function() {
         let row = $(this).closest('tr');
         let men = parseFloat(row.find('.government_men_q53').val()) || 0;
@@ -225,7 +217,6 @@ $(document).ready(function() {
 
         row.find('.government_total_q53').val(men + women + tg);
     });
-
 
     $(document).on("click", '#temp-save-question53', function() {
         let yes_no_value = $("input[name='is_government_train_diplomat_q53']:checked").val();
@@ -261,7 +252,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question53 .card-title').css('color', 'blue');
-                alert("Question 53  Saved Temporarily");
+                alert("Question 53 Temp Saved ");
             },
             error: function(err) {
                 alert("Error saving question 53 data ");

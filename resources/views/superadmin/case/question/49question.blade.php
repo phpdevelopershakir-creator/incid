@@ -1,12 +1,9 @@
 <?php
 if (($questiontitles[48]->status ?? null) == 1) {
-   
     $question_49_data = session()->get('question49');
-
     $q49_checked = $question_49_data['q49_checked_value'] ?? "1";
     $q49_saved_rows = $question_49_data['q49_table_data'] ?? [];
     $q49_others_val = $question_49_data['others'] ?? '';
-
     $Instruments_Lists = [
         1 => "Bil-lateral Agreement",
         2 => "SOP",
@@ -66,7 +63,7 @@ if (($questiontitles[48]->status ?? null) == 1) {
                 <label for="radioFourtyNine3">Others</label>
 
                 <span class="col-md-6 mt--4 q49_others_container {{ $q49_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q49others" placeholder="Others" class="form-control"
+                    <input type="text" id="q49others" placeholder="Please describe" class="form-control"
                         value="{{ $q49_others_val }}" name="other_government_agreements_transparent_q49">
                 </span>
             </div>
@@ -78,7 +75,7 @@ if (($questiontitles[48]->status ?? null) == 1) {
                             <th>Country</th>
                             <th>Instruments</th>
                             <th>Attach/Upload Summary</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -197,8 +194,6 @@ if (($questiontitles[48]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fourtyninestatus").on("change", function() {
         var statusvalue = $("input[name='is_government_agreements_transparent_q49']:checked").val();
 
@@ -280,7 +275,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question49 .card-title').css('color', 'blue');
-                alert("Question 49  Saved Temporarily ");
+                alert("Question 49 Temp Saved");
             },
             error: function(err) {
                 alert("Error saving question 49 data ");

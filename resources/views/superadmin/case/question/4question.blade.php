@@ -70,7 +70,7 @@ $training_responses_two = [
                     {{ $q4_checked == "2" ? "checked" : "" }}>
                 <label for="radioFour3">Others</label>
                 <span class="col-md-6 mt--4 q4_others_container {{ $q4_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q4others" placeholder="Others" class="form-control"
+                    <input type="text" id="q4others" placeholder="Please describe" class="form-control"
                         value="{{ $q4_others_val }}" name="others_supreme_court_q4">
                 </span>
             </div>
@@ -84,7 +84,7 @@ $training_responses_two = [
                             <th scope="col">Title of The New Law</th>
                             <th scope="col">Contents of Change/Status</th>
                             <th scope="col">Attach/Upload Pdf</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -175,7 +175,7 @@ $training_responses_two = [
                             <th scope="col">Title of The New Law</th>
                             <th scope="col">Status</th>
                             <th scope="col">Attach/Upload Pdf</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>

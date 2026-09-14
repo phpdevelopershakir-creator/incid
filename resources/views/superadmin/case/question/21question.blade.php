@@ -49,7 +49,7 @@ $q21_others_val = $question_21_data['others'] ?? '';
 
                 <span class="col-md-6 mt--4 q21_others_container {{ $q21_checked == '2' ? '' : 'othersText' }}"
                     style="margin-top:-8px;">
-                    <input type="text" id="q21others" placeholder="Others" class="form-control"
+                    <input type="text" id="q21others" placeholder="Please describe" class="form-control"
                         value="{{ $q21_others_val }}" name="others_crime_justice_q21">
                 </span>
             </div>

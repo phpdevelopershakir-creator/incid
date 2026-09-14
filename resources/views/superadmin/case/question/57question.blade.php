@@ -1,18 +1,15 @@
 @if (($questiontitles[56]->status ?? null) == 1)
 @php
-// Controller 'question57' কি-তে সেশন ডাটা সেভ করছে
 $question_57_data = session()->get('question57') ?? [];
-
 $q57_checked = isset($question_57_data['q57_checked_value']) ? (string)$question_57_data['q57_checked_value'] : null;
-$desc_val    = $question_57_data['tip_report_updates'] ?? '';
-$others_val  = $question_57_data['others_tip_report'] ?? '';
-$table_rows  = $question_57_data['table_data'] ?? [];
-
+$desc_val = $question_57_data['tip_report_updates'] ?? '';
+$others_val = $question_57_data['others_tip_report'] ?? '';
+$table_rows = $question_57_data['table_data'] ?? [];
 $totalRows = max(3, count($table_rows));
 $defaultValues = [
-    'Trafficking Trends',
-    'Territories / Special Areas',
-    'Government Anti-Trafficking Efforts'
+'Trafficking Trends',
+'Territories / Special Areas',
+'Government Anti-Trafficking Efforts'
 ];
 @endphp
 
@@ -27,8 +24,6 @@ $defaultValues = [
 
     <div id="Question-57" class="collapse" role="tabpanel" aria-labelledby="heading-57" data-parent="#accordion-2">
         <div class="card-body">
-
-            <!-- Question Title & Main Input -->
             <div class="form-group">
                 <label class="font-weight-bold">
                     Considering what was reported in the 2025 TIP Report country narrative, provide any updates
@@ -39,7 +34,7 @@ $defaultValues = [
                     placeholder="Input Field">{{ $desc_val }}</textarea>
             </div>
 
-            <!-- Radio Options -->
+
             <div class="form-group mb-2">
                 <input type="radio" id="radioYes57" class="fiftysevenstatus" name="is_considering_reported_q57"
                     value="1" {{ (is_null($q57_checked) || $q57_checked === '1') ? 'checked' : '' }}>
@@ -51,16 +46,14 @@ $defaultValues = [
 
                 <input type="radio" id="radioOthers57" class="fiftysevenstatus" name="is_considering_reported_q57"
                     value="2" {{ ($q57_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers57" class="text-danger font-weight-bold">Others [input text box with description]</label>
+                <label for="radioOthers57" class="text-danger font-weight-bold">Others </label>
             </div>
 
-            <!-- Others Input Textbox -->
             <div id="others_q57" style="display: {{ ($q57_checked === '2') ? 'block' : 'none' }};">
                 <textarea name="other_considering_reported_q57" class="form-control mt-2 q57-others-input" rows="2"
-                    placeholder="Others [input text box with description]">{{ $others_val }}</textarea>
+                    placeholder="Please describe">{{ $others_val }}</textarea>
             </div>
 
-            <!-- If Yes Section Table -->
             <div id="yes_extra_q57"
                 style="display: {{ (is_null($q57_checked) || $q57_checked === '1') ? 'block' : 'none' }};">
                 <p class="font-weight-bold mt-3">If Yes</p>
@@ -72,58 +65,52 @@ $defaultValues = [
                                 <th>Major Component</th>
                                 <th>Suggested Inputs/Update</th>
                                 <th>Please Update Attachment (If any)</th>
-                                <th style="width: 80px;">Action</th>
+                                <th style="width: 80px;">Add row</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @for($i = 0; $i < $totalRows; $i++) 
-                                @php 
-                                    $row = $table_rows[$i] ?? null;
-                                    $selectedComponent = $row['component'] ?? ($defaultValues[$i] ?? ''); 
-                                    $inputValue = $row['inputs'] ?? '';
-                                    $fileValue = $row['attachment'] ?? null;
-                                @endphp 
-                                <tr>
-                                    <td>
-                                        <select name="mejor_q57[]" class="form-control q57-component">
-                                            <option value="">Dropdown</option>
-                                            <option value="Trafficking Trends"
-                                                {{ $selectedComponent == 'Trafficking Trends' ? 'selected' : '' }}>
-                                                Trafficking Trends</option>
-                                            <option value="Territories / Special Areas"
-                                                {{ $selectedComponent == 'Territories / Special Areas' ? 'selected' : '' }}>
-                                                Territories / Special Areas</option>
-                                            <option value="Government Anti-Trafficking Efforts"
-                                                {{ $selectedComponent == 'Government Anti-Trafficking Efforts' ? 'selected' : '' }}>
-                                                Government Anti-Trafficking Efforts</option>
-                                            <option value="Key Update for Reporting Period"
-                                                {{ $selectedComponent == 'Key Update for Reporting Period' ? 'selected' : '' }}>
-                                                Key Update for Reporting Period</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <textarea name="suggested_q57[]" class="form-control q57-inputs" rows="2"
-                                            placeholder="[Input Text Field]">{{ $inputValue }}</textarea>
-                                    </td>
-                                    <td style="vertical-align: middle;">
-                                        <input type="file" name="document_upload_q57[]" class="form-control-file q57-files">
-                                        @if(!empty($fileValue))
-                                            <small class="text-success font-weight-bold d-block mt-1">
-                                                Saved: {{ is_string($fileValue) ? basename($fileValue) : 'File Uploaded' }}
-                                            </small>
-                                        @endif
-                                    </td>
-                                    <td style="vertical-align: middle;">
-                                        @if($i < 2) 
-                                            <span class="badge badge-secondary">Fixed</span>
+                            @for($i = 0; $i < $totalRows; $i++) @php $row=$table_rows[$i] ?? null;
+                                $selectedComponent=$row['component'] ?? ($defaultValues[$i] ?? '' );
+                                $inputValue=$row['inputs'] ?? '' ; $fileValue=$row['attachment'] ?? null; @endphp <tr>
+                                <td>
+                                    <select name="mejor_q57[]" class="form-control q57-component">
+                                        <option value="">Dropdown</option>
+                                        <option value="Trafficking Trends"
+                                            {{ $selectedComponent == 'Trafficking Trends' ? 'selected' : '' }}>
+                                            Trafficking Trends</option>
+                                        <option value="Territories / Special Areas"
+                                            {{ $selectedComponent == 'Territories / Special Areas' ? 'selected' : '' }}>
+                                            Territories / Special Areas</option>
+                                        <option value="Government Anti-Trafficking Efforts"
+                                            {{ $selectedComponent == 'Government Anti-Trafficking Efforts' ? 'selected' : '' }}>
+                                            Government Anti-Trafficking Efforts</option>
+                                        <option value="Key Update for Reporting Period"
+                                            {{ $selectedComponent == 'Key Update for Reporting Period' ? 'selected' : '' }}>
+                                            Key Update for Reporting Period</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea name="suggested_q57[]" class="form-control q57-inputs" rows="2"
+                                        placeholder="[Input Text Field]">{{ $inputValue }}</textarea>
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    <input type="file" name="document_upload_q57[]" class="form-control-file q57-files">
+                                    @if(!empty($fileValue))
+                                    <small class="text-success font-weight-bold d-block mt-1">
+                                        Saved: {{ is_string($fileValue) ? basename($fileValue) : 'File Uploaded' }}
+                                    </small>
+                                    @endif
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    @if($i < 2) <span class="badge badge-secondary">Fixed</span>
                                         @elseif($i == 2)
-                                            <button type="button" class="btn btn-sm btn-primary add-row-q57">+</button>
+                                        <button type="button" class="btn btn-sm btn-primary add-row-q57">+</button>
                                         @else
-                                            <button type="button" class="btn btn-sm btn-danger remove-row-q57">-</button>
+                                        <button type="button" class="btn btn-sm btn-danger remove-row-q57">-</button>
                                         @endif
-                                    </td>
+                                </td>
                                 </tr>
-                            @endfor
+                                @endfor
                         </tbody>
                     </table>
                 </div>
@@ -140,8 +127,6 @@ $defaultValues = [
 
 <script>
 $(document).ready(function() {
-
-    // Radio Toggle Logic
     function toggleq57() {
         let val = $("input[name='is_considering_reported_q57']:checked").val();
 
@@ -164,7 +149,6 @@ $(document).ready(function() {
 
     $(document).on('change', '.fiftysevenstatus', toggleq57);
 
-    // Dynamic Add Row
     $(document).on('click', '.add-row-q57', function() {
         let newRow = `
             <tr>
@@ -190,12 +174,12 @@ $(document).ready(function() {
         $('#tip-report-table-q57 tbody').append(newRow);
     });
 
-    // Dynamic Remove Row
+
     $(document).on('click', '.remove-row-q57', function() {
         $(this).closest('tr').remove();
     });
 
-    // ==================== TEMP SAVE AJAX REQUEST ====================
+
     $(document).on("click", "#temp-save-question57", function() {
         let formData = new FormData();
         let checkedValue = $("input[name='is_considering_reported_q57']:checked").val();
@@ -203,7 +187,6 @@ $(document).ready(function() {
         formData.append('_token', '{{ csrf_token() }}');
         formData.append('question_no', 57);
 
-        // Controller $request->input('question57') এক্সপেক্ট করে, তাই ডাটা এভাবে সাজিয়ে পাঠানো হচ্ছে:
         formData.append('question57[q57_checked_value]', checkedValue ? checkedValue : '1');
         formData.append('question57[tip_report_updates]', $('.q57-desc-input').val());
         formData.append('question57[others_tip_report]', $('.q57-others-input').val());
@@ -213,7 +196,8 @@ $(document).ready(function() {
             let component = $(this).find('.q57-component').val();
             let inputs = $(this).find('.q57-inputs').val();
 
-            formData.append(`question57[table_data][${index}][component]`, component ? component : '');
+            formData.append(`question57[table_data][${index}][component]`, component ?
+                component : '');
             formData.append(`question57[table_data][${index}][inputs]`, inputs ? inputs : '');
         });
 
@@ -226,7 +210,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     $('.question57 .card-header h6').css('color', 'blue');
-                    alert("Question 57 Temp Saved Successfully");
+                    alert("Question 57 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

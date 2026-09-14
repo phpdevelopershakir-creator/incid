@@ -1,6 +1,5 @@
 @if (($questiontitles[39]->status ?? null) == 1)
 @php
-// সেশন থেকে ৪০ নম্বর প্রশ্নের ডাটা নেওয়া হচ্ছে
 $question_40_data = session()->get('question40');
 $q40_checked = isset($question_40_data['q40_checked_value']) ? (string)$question_40_data['q40_checked_value'] : null;
 $q40_data = $question_40_data['q40_data'] ?? null;
@@ -18,7 +17,7 @@ $q40_data = $question_40_data['q40_data'] ?? null;
     <div id="Question-40" class="collapse" role="tabpanel" aria-labelledby="heading-40" data-parent="#accordion-2">
         <div class="card-body">
 
-            <!-- Question 40 Main Field -->
+
             <div class="form-group">
                 <label class="font-weight-bold">Could victims file civil suits against traffickers for
                     damages?</label>
@@ -26,7 +25,7 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                     placeholder="Please describe-">{{ $q40_data['civil_suits_description'] ?? '' }}</textarea>
             </div>
 
-            <!-- Radio Options -->
+
             <div class="form-group mb-2">
                 <label class="font-weight-bold d-block">Does the government provide information or legal support for
                     victims to pursue a civil suit?</label>
@@ -44,13 +43,13 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                 <label for="radioOthers40" class="text-danger font-weight-bold">Others</label>
             </div>
 
-            <!-- Others Input -->
+
             <div id="others_q40" style="display: {{ ($q40_checked === '2') ? 'block' : 'none' }};">
                 <textarea name="other_victims_civil_traffickers_q40" class="form-control mt-2 q40-others-input" rows="2"
-                    placeholder="Others [input text box with description]">{{ $q40_data['others_legal_support'] ?? '' }}</textarea>
+                    placeholder="Please describe">{{ $q40_data['others_legal_support'] ?? '' }}</textarea>
             </div>
 
-            <!-- If Yes Section -->
+
             <div id="yes_extra_q40"
                 style="display: {{ (is_null($q40_checked) || $q40_checked === '1') ? 'block' : 'none' }};">
                 <p class="font-weight-bold mt-3">If Yes</p>
@@ -61,7 +60,7 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                             <tr class="bg-light">
                                 <th rowspan="2" style="vertical-align: middle;">Location</th>
                                 <th colspan="3">Number of Victims pursuing civil suit</th>
-                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Action</th>
+                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Add row</th>
                             </tr>
                             <tr class="bg-light">
                                 <th>Men</th>
@@ -116,13 +115,13 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                                         class="form-control q40-total" value="{{ $row['total'] ?? '' }}" readonly></td>
                                 <td>
                                     @if($i == 0)
-                                    <!-- ১ম রো ফিক্সড -->
+
                                     <span class="badge badge-secondary">Fixed</span>
                                     @elseif($i == 1)
-                                    <!-- ২য় রো ফিক্সড ও নতুন রো যোগ করার বাটন -->
+
                                     <button type="button" class="btn btn-sm btn-primary add-row-q40">+</button>
                                     @else
-                                    <!-- ৩ নম্বর রো থেকে ডায়নামিক রিমুভ বাটন -->
+
                                     <button type="button" class="btn btn-sm btn-danger remove-row-q40">-</button>
                                     @endif
                                 </td>
@@ -141,12 +140,12 @@ $q40_data = $question_40_data['q40_data'] ?? null;
                     </table>
                 </div>
 
-                <!-- Location Not Specify Input -->
+
                 <div class="form-group mt-2">
                     <label class="text-danger font-weight-bold">Location Not specify :</label>
                     <textarea name="victims_traffickers_title_two_q40" class="form-control q40-location-not-specified"
                         rows="2"
-                        placeholder="please description]">{{ $q40_data['location_not_specified'] ?? '' }}</textarea>
+                        placeholder="Please describe">{{ $q40_data['location_not_specified'] ?? '' }}</textarea>
                 </div>
             </div>
 
@@ -161,8 +160,6 @@ $q40_data = $question_40_data['q40_data'] ?? null;
 
 <script>
 $(document).ready(function() {
-
-    // Radio Toggle Logic
     function toggleq40() {
         let val = $("input[name='is_victims_civil_traffickers_q40']:checked").val();
 
@@ -185,7 +182,6 @@ $(document).ready(function() {
 
     $(document).on('change', '.fortystatus', toggleq40);
 
-    // Calculate Row and Grand Total
     function calculateQ40Totals() {
         let grandMen = 0;
         let grandWomen = 0;
@@ -210,7 +206,7 @@ $(document).ready(function() {
 
     $(document).on('input', '.q40-men, .q40-women', calculateQ40Totals);
 
-    // Add Row Logic (প্রথম ২টি রো রেখে নিচে ৩য় রো বা তার পরে রিমুভ বাটনসহ নতুন রো যুক্ত করবে)
+
     $(document).on('click', '.add-row-q40', function() {
         let newRow = `
             <tr>
@@ -236,16 +232,16 @@ $(document).ready(function() {
         $('#civil-suit-table-q40 tbody').append(newRow);
     });
 
-    // Remove Row (শুধু ৩ নম্বর বা তার পরের রো গুলা ডিলিট হতে পারবে)
+
     $(document).on('click', '.remove-row-q40', function() {
         $(this).closest('tr').remove();
         calculateQ40Totals();
     });
 
-    // Initial Calculation Run
+
     calculateQ40Totals();
 
-    // Temp Save AJAX Request
+
     $(document).on("click", "#temp-save-question40", function() {
         let checkedValue = $("input[name='is_victims_civil_traffickers_q40']:checked").val();
         let victimsData = [];
@@ -289,7 +285,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question40 .card-header h6').css('color', 'blue');
-                    alert("Question 40 Temp Saved Successfully");
+                    alert("Question 40 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

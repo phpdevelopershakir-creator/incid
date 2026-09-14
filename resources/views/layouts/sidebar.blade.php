@@ -243,6 +243,13 @@
         <!-- BANNER & OTHERS -->
         @if(auth()->user()->user_type == "Super Admin" || auth()->user()->user_type == "MoHa")
         <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('superadmin.report.summary') ? 'active' : 'text-dark' }}"
+                href="{{ route('superadmin.report.summary') }}">
+                <i class="fas fa-image me-2"></i> <span class="menu-text">Report Summary</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('superadmin.banners') ? 'active' : 'text-dark' }}"
                 href="{{ route('superadmin.banners') }}">
                 <i class="fas fa-image me-2"></i> <span class="menu-text">Banner</span>

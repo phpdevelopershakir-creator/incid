@@ -1,9 +1,6 @@
 @if (($questiontitles[47]->status ?? null) == 1)
 @php
-// সেশন থেকে ৪৮ নম্বর প্রশ্নের ডাটা তুলে নেওয়া
 $question_48_data = session()->get('question48');
-
-// ডাটা চেক (ডিফল্ট হিসেবে ১ / Yes সেট করা থাকবে যদি ডাটা না থাকে)
 $q48_checked = isset($question_48_data['q48_checked_value']) ? (string)$question_48_data['q48_checked_value'] : null;
 $q48_data = $question_48_data['q48_data'] ?? null;
 @endphp
@@ -20,7 +17,6 @@ $q48_data = $question_48_data['q48_data'] ?? null;
     <div id="Question-48" class="collapse" role="tabpanel" aria-labelledby="heading-48" data-parent="#accordion-2">
         <div class="card-body">
 
-            <!-- Radio Buttons (Yes=1, No=0, Others=2) -->
             <input type="radio" id="radioYes48" class="fortyeightstatus" name="is_government_prohibit_q48" value="1"
                 {{ (is_null($q48_checked) || $q48_checked === '1') ? 'checked' : '' }}>
             <label for="radioYes48" class="mr-3">Yes</label>
@@ -33,26 +29,26 @@ $q48_data = $question_48_data['q48_data'] ?? null;
                 {{ ($q48_checked === '2') ? 'checked' : '' }}>
             <label for="radioOthers48">Others</label>
 
-            <!-- Input Field for YES -->
+
             <div id="yes_extra_q48"
                 style="display: {{ (is_null($q48_checked) || $q48_checked === '1') ? 'block' : 'none' }};">
                 <label class="mt-2 text-muted font-weight-bold">If "YES" details:</label>
                 <input type="text" name="goverment_prohibit_title_q48" class="form-control q48-yes-input"
-                    placeholder="Provide Yes details" value="{{ $q48_data['yes_details'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q48_data['yes_details'] ?? '' }}">
             </div>
 
-            <!-- Input Field for NO -->
+
             <div id="no_extra_q48" style="display: {{ ($q48_checked === '0') ? 'block' : 'none' }};">
                 <label class="mt-2 text-muted font-weight-bold">If "NO" details:</label>
                 <input type="text" name="other_government_prohibit_q48" class="form-control q48-no-input"
-                    placeholder="Provide No details" value="{{ $q48_data['no_details'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q48_data['no_details'] ?? '' }}">
             </div>
 
-            <!-- Input Field for OTHERS -->
+
             <div id="others_q48" style="display: {{ ($q48_checked === '2') ? 'block' : 'none' }};">
                 <label class="mt-2 text-muted font-weight-bold">If "Others" details:</label>
                 <input type="text" name="others_details_q48" class="form-control q48-others-input"
-                    placeholder="Others details" value="{{ $q48_data['others_details'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q48_data['others_details'] ?? '' }}">
             </div>
 
         </div>
@@ -66,7 +62,6 @@ $q48_data = $question_48_data['q48_data'] ?? null;
 
 <script>
 $(document).ready(function() {
-    // Yes / No / Others রেডিও বাটনের টগল লজিক
     function toggleq48() {
         let val = $("input[name='is_government_prohibit_q48']:checked").val();
 
@@ -75,12 +70,12 @@ $(document).ready(function() {
             $('#radioYes48').prop('checked', true);
         }
 
-        // শুরুতে সব ইনপুট বক্স হাইড করা
+
         $('#yes_extra_q48').hide();
         $('#no_extra_q48').hide();
         $('#others_q48').hide();
 
-        // কন্ডিশন অনুযায়ী নির্দিষ্ট ইনপুট বক্স শো করা
+
         if (val === '1') {
             $('#yes_extra_q48').show();
         } else if (val === '0') {
@@ -90,14 +85,13 @@ $(document).ready(function() {
         }
     }
 
-    // ইভেন্ট লিসেনার এবং ইনিশিয়াল রান
+
     $(document).on('change', '.fortyeightstatus', toggleq48);
     toggleq48();
 });
 </script>
 
 <script>
-// সাময়িকভাবে ডাটা সেভ করার AJAX রিকোয়েস্ট
 $(document).on("click", "#temp-save-question48", function() {
     let checkedValue = $("input[name='is_government_prohibit_q48']:checked").val();
     let q48_data = {};
@@ -126,7 +120,7 @@ $(document).on("click", "#temp-save-question48", function() {
         success: function(response) {
             if (response.success) {
                 $('.question48 .card-header h6').css('color', 'blue');
-                alert("Question 48 has been saved temporarily");
+                alert("Question 48  Temp saved ");
             } else {
                 alert("Not Saved");
             }

@@ -5,24 +5,24 @@ $question_18_data = session()->get('question18');
 
 // ২. ক্যাটাগরি এবং এনজিও রেটিং অ্যারে ডিফাইন করা
 $category_lists = [
-    1 => 'Social Worker',
-    2 => 'Police',
-    3 => 'BGB',
-    4 => 'Coastguard',
-    5 => 'VDP',
-    6 => 'Rail Police',
-    7 => 'Judiciary',
-    8 => 'NGO',
-    9 => 'Others'
+1 => 'Social Worker',
+2 => 'Police',
+3 => 'BGB',
+4 => 'Coastguard',
+5 => 'VDP',
+6 => 'Rail Police',
+7 => 'Judiciary',
+8 => 'NGO',
+9 => 'Others'
 ];
 
 $ngo_rating_lists = [
-    1 => 'Excellent',
-    2 => 'Good',
-    3 => 'Fair',
-    4 => 'Poor',
-    5 => 'Extremely Poor',
-    6 => 'Non-Functional'
+1 => 'Excellent',
+2 => 'Good',
+3 => 'Fair',
+4 => 'Poor',
+5 => 'Extremely Poor',
+6 => 'Non-Functional'
 ];
 
 // ৩. ডাটা ম্যাপ করা
@@ -77,7 +77,7 @@ $q18_others_val = $question_18_data['others'] ?? '';
                 <label for="q18_others">Others</label>
 
                 <span class="col-md-6 mt--4 others_input_container {{ $q18_checked == "2" ? '' : 'othersText' }}">
-                    <input type="text" id="q18radioThree3others" class="form-control" placeholder="Others"
+                    <input type="text" id="q18radioThree3others" class="form-control" placeholder="Please describe"
                         name="others_forced_labor_q18" value="{{ $q18_others_val }}">
                 </span>
             </div>
@@ -88,7 +88,7 @@ $q18_others_val = $question_18_data['others'] ?? '';
                         <tr>
                             <th rowspan="2" style="vertical-align: middle;">Location</th>
                             <th colspan="4">Number of personnel Trained</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Category</th>
@@ -222,7 +222,7 @@ $(document).ready(function() {
         let val = $(this).val();
         let ngoContainer = $(this).closest("td").find(".ngo_rating_container");
 
-        if (val == "8") { 
+        if (val == "8") {
             ngoContainer.show();
         } else {
             ngoContainer.hide();
@@ -363,7 +363,7 @@ $(document).ready(function() {
                 question_no: 18
             },
             success: function(response) {
-                if(response.success || response) {
+                if (response.success || response) {
                     $('.question18 .card-header h6').css('color', 'blue');
                     alert("Question 18 Temp Saved Successfully!");
                 } else {

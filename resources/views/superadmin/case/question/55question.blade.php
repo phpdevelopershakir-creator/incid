@@ -1,12 +1,9 @@
 <?php
 if (($questiontitles[54]->status ?? null) == 1) {
-  
     $question_55_data = session()->get('question55');
-
     $q55_checked = $question_55_data['q55_checked_value'] ?? "1";
     $q55_saved_rows = $question_55_data['q55_table_data'] ?? [];
     $q55_others_val = $question_55_data['others'] ?? '';
-
     $country_Lists = [
         1 => "India", 2 => "Nepal", 3 => "Sri lanka", 4 => "EU",
         5 => "USA", 6 => "Saudi Arabia", 7 => "Qatar", 8 => "Lebanon",
@@ -54,7 +51,7 @@ if (($questiontitles[54]->status ?? null) == 1) {
                 <label for="radioFiftyFive3">Others</label>
 
                 <span class="col-md-6 mt--4 q55_others_container {{ $q55_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q55others" placeholder="Others" class="form-control"
+                    <input type="text" id="q55others" placeholder="Please describe" class="form-control"
                         value="{{ $q55_others_val }}" name="other_government_provide_trafficking_q55">
                 </span>
             </div>
@@ -66,7 +63,7 @@ if (($questiontitles[54]->status ?? null) == 1) {
                             <th rowspan="2" style="vertical-align: middle;">Country where posted</th>
                             <th rowspan="2" style="vertical-align: middle;">Description</th>
                             <th colspan="4">Number of Cases</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>
@@ -193,8 +190,6 @@ if (($questiontitles[54]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fiftyfivestatus").on("change", function() {
         var statusvalue = $("input[name='is_government_provide_trafficking_q55']:checked").val();
 

@@ -1,8 +1,6 @@
 @if (($questiontitles[41]->status ?? null) == 1)
 @php
-// সেশন থেকে ৪২ নম্বর প্রশ্নের ডাটা ক্যাচ করা
 $question_42_data = session()->get('question42');
-
 $official_title_q42 = $question_42_data['official_title_q42'] ?? '';
 $official_type_q42 = $question_42_data['official_type_q42'] ?? '';
 $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
@@ -22,7 +20,7 @@ $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
 
             <table class="table table-bordered mb-0">
                 <tbody>
-                    <!-- Row 1: Agency / Official Led -->
+
                     <tr>
                         <td style="width: 45%; background-color: #ffff00;" class="font-weight-bold align-middle">
                             Which official, agency, and/or national coordinating body, if any, led government
@@ -34,7 +32,7 @@ $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
                         </td>
                     </tr>
 
-                    <!-- Row 2: Effectiveness & Results Description -->
+
                     <tr>
                         <td style="background-color: #ffff00;" class="font-weight-bold align-middle">
                             How was this body effective or ineffective, and what results did it produce?
@@ -56,7 +54,7 @@ $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
                             <div class="form-group mb-0">
                                 <label class="font-weight-bold text-muted">Please describe the results-</label>
                                 <textarea name="official_desc_q42" id="official_desc_q42" class="form-control" rows="3"
-                                    placeholder="Describe the results...">{{ $official_desc_q42 }}</textarea>
+                                    placeholder="Please describe">{{ $official_desc_q42 }}</textarea>
                             </div>
                         </td>
                     </tr>
@@ -74,8 +72,6 @@ $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
 
 <script>
 $(document).ready(function() {
-
-    // Temp Save Action
     $(document).on('click', '#temp-save-question42', function(e) {
         e.preventDefault();
 
@@ -83,7 +79,6 @@ $(document).ready(function() {
         formData.append('_token', '{{ csrf_token() }}');
         formData.append('question_no', 42);
 
-        // Controller Database Names Matching
         formData.append('question42[official_title_q42]', $('#official_title_q42').val() || '');
         formData.append('question42[official_type_q42]', $('#official_type_q42').val() || '');
         formData.append('question42[official_desc_q42]', $('#official_desc_q42').val() || '');
@@ -97,7 +92,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question42 .card-header h6').css('color', 'blue');
-                    alert("Question 42 Temp Saved Successfully!");
+                    alert("Question 42 Temp Saved ");
                 }
             },
             error: function(err) {

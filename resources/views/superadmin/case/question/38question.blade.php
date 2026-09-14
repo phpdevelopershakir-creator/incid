@@ -1,9 +1,7 @@
 @if (($questiontitles[37]->status ?? null) == 1)
 @php
-// সেশন থেকে ৩৮ নম্বর প্রশ্নের ডাটা ক্যাচ করা
-$question_38_data = session()->get('question38');
 
-// Main Question Radio Status (ডিফল্ট Yes = 1)
+$question_38_data = session()->get('question38');
 $q38_status = isset($question_38_data['q38_status']) ? (string)$question_38_data['q38_status'] : '1';
 $q38_yes_desc = $question_38_data['q38_yes_desc'] ?? '';
 $q38_others_desc = $question_38_data['q38_others_desc'] ?? '';
@@ -14,7 +12,7 @@ $q38_t1_internal = $question_38_data['t1_internal'] ?? ['men' => 0, 'women' => 0
 $q38_t1_international = $question_38_data['t1_international'] ?? ['men' => 0, 'women' => 0, 'tg' => 0, 'boy' => 0,
 'girl' => 0, 'total' => 0];
 
-// JSON/String ডাটা হলে সেটিকে array তে কনভার্ট করার সেফগার্ড
+
 if (is_string($q38_t1_internal)) {
 $q38_t1_internal = json_decode($q38_t1_internal, true) ?? [];
 }
@@ -27,7 +25,28 @@ $q38_t2_rows = $question_38_data['t2_rows'] ?? [];
 if (is_string($q38_t2_rows)) {
 $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
 }
+
+$district_Lists = [
+1 => "Bagerhat", 2 => "Bandarban", 3 => "Barguna", 4 => "Barishal",
+5 => "Bhola", 6 => "Bogura", 7 => "Brahmanbaria", 8 => "Chandpur",
+9 => "Chapainawabganj", 10 => "Chattogram", 11 => "Chuadanga", 12 => "Cumilla",
+13 => "Cox's Bazar", 14 => "Dhaka", 15 => "Dinajpur", 16 => "Faridpur",
+17 => "Feni", 18 => "Gaibandha", 19 => "Gazipur", 20 => "Gopalganj",
+21 => "Habiganj", 22 => "Jamalpur", 23 => "Jashore", 24 => "Jhalakathi",
+25 => "Jhenaidah", 26 => "Joypurhat", 27 => "Khagrachari", 28 => "Khulna",
+29 => "Kishoreganj", 30 => "Kurigram", 31 => "Kushtia", 32 => "Lakshmipur",
+33 => "Lalmonirhat", 34 => "Madaripur", 35 => "Magura", 36 => "Manikganj",
+37 => "Meherpur", 38 => "Moulvibazar", 39 => "Munshiganj", 40 => "Mymensingh",
+41 => "Naogaon", 42 => "Narail", 43 => "Narayanganj", 44 => "Narsingdi",
+45 => "Natore", 46 => "Netrokona", 47 => "Nilphamari", 48 => "Noakhali",
+49 => "Pabna", 50 => "Panchagarh", 51 => "Patuakhali", 52 => "Pirojpur",
+53 => "Rajbari", 54 => "Rajshahi", 55 => "Rangamati", 56 => "Rangpur",
+57 => "Satkhira", 58 => "Shariatpur", 59 => "Sherpur", 60 => "Sirajganj",
+61 => "Sunamganj", 62 => "Sylhet", 63 => "Tangail", 64 => "Thakurgaon"
+];
 @endphp
+
+
 
 <style>
 .sub_field_box_q38 {
@@ -52,7 +71,7 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
     <div id="Question-38" class="collapse" role="tabpanel" aria-labelledby="heading-38" data-parent="#accordion-2">
         <div class="card-body">
 
-            <!-- Main Status Radio Buttons -->
+
             <div class="mb-3">
                 <label class="font-weight-bold">Status:</label>
                 <div class="mt-1">
@@ -76,17 +95,16 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                 <div class="mt-2 q38_yes_box sub_field_box_q38"
                     style="display: {{ $q38_status === '1' ? 'block' : 'none' }};">
                     <input type="text" name="title_victim_protection_q38" id="q38_yes_text"
-                        class="form-control col-md-8 mb-3" placeholder="Provide Description"
-                        value="{{ $q38_yes_desc }}">
+                        class="form-control col-md-8 mb-3" placeholder="Please describe" value="{{ $q38_yes_desc }}">
                 </div>
                 <div class="mt-2 q38_others_box sub_field_box_q38"
                     style="display: {{ $q38_status === '2' ? 'block' : 'none' }};">
                     <input type="text" name="other_victim_protection_q38" id="q38_others_text"
-                        class="form-control col-md-8" placeholder="Others details" value="{{ $q38_others_desc }}">
+                        class="form-control col-md-8" placeholder="Please describe" value="{{ $q38_others_desc }}">
                 </div>
             </div>
 
-            <!-- Content Area (Show if Yes) -->
+
             <div class="q38_content_wrapper" style="display: {{ $q38_status === '1' ? 'block' : 'none' }};">
                 <label class="font-weight-bold text-primary">If Yes</label>
 
@@ -178,11 +196,11 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                     <table class="table table-bordered text-center mb-1" id="q38_table_2">
                         <thead class="bg-light">
                             <tr>
-                                <th rowspan="2" class="align-middle" style="width: 20%;">Location (multiple-response)
+                                <th rowspan="2" class="align-middle" style="width: 20%;">District
                                 </th>
                                 <th rowspan="2" class="align-middle" style="width: 25%;">Types of Assistance</th>
                                 <th colspan="6">Coverage</th>
-                                <th rowspan="2" class="align-middle" style="width: 70px;">Action</th>
+                                <th rowspan="2" class="align-middle" style="width: 70px;">Add row</th>
                             </tr>
                             <tr>
                                 <th>Men</th>
@@ -198,36 +216,16 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                             @foreach($q38_t2_rows as $index => $row)
                             <tr>
                                 <td>
-                                    <select class="form-control q38_location" name="location_q38c[]">
-                                        <option value="">Choose an item...</option>
-                                        <option value="National"
-                                            {{ ($row['location'] ?? '') == 'National' ? 'selected' : '' }}>National
-                                        </option>
-                                        <option value="Dhaka"
-                                            {{ ($row['location'] ?? '') == 'Dhaka' ? 'selected' : '' }}>Dhaka Division
-                                        </option>
-                                        <option value="Chattogram"
-                                            {{ ($row['location'] ?? '') == 'Chattogram' ? 'selected' : '' }}>Chattogram
-                                            Division</option>
-                                        <option value="Rajshahi"
-                                            {{ ($row['location'] ?? '') == 'Rajshahi' ? 'selected' : '' }}>Rajshahi
-                                            Division</option>
-                                        <option value="Khulna"
-                                            {{ ($row['location'] ?? '') == 'Khulna' ? 'selected' : '' }}>Khulna Division
-                                        </option>
-                                        <option value="Barishal"
-                                            {{ ($row['location'] ?? '') == 'Barishal' ? 'selected' : '' }}>Barishal
-                                            Division</option>
-                                        <option value="Sylhet"
-                                            {{ ($row['location'] ?? '') == 'Sylhet' ? 'selected' : '' }}>Sylhet Division
-                                        </option>
-                                        <option value="Rangpur"
-                                            {{ ($row['location'] ?? '') == 'Rangpur' ? 'selected' : '' }}>Rangpur
-                                            Division</option>
-                                        <option value="Mymensingh"
-                                            {{ ($row['location'] ?? '') == 'Mymensingh' ? 'selected' : '' }}>Mymensingh
-                                            Division</option>
+
+                                    <select name="location_q38c[]" class="form-control">
+                                        <option value="" disabled>---Choose an item--</option>
+                                        @foreach ($district_Lists as $key => $district)
+                                        <option value="{{ $key }}"
+                                            {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                            {{ $district }}</option>
+                                        @endforeach
                                     </select>
+
                                 </td>
                                 <td>
                                     <input type="text" name="type_q38c[]" class="form-control q38_assistance"
@@ -316,7 +314,7 @@ $q38_t2_rows = json_decode($q38_t2_rows, true) ?? [];
                             </tr>
                         </tfoot>
                     </table>
-                    <small class="text-danger font-weight-bold">Location is division with national</small>
+
                 </div>
             </div>
 
@@ -418,18 +416,14 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select class="form-control q38_location" name="location_q38c[]">
-                        <option value="">Choose an item...</option>
-                        <option value="National">National</option>
-                        <option value="Dhaka">Dhaka Division</option>
-                        <option value="Chattogram">Chattogram Division</option>
-                        <option value="Rajshahi">Rajshahi Division</option>
-                        <option value="Khulna">Khulna Division</option>
-                        <option value="Barishal">Barishal Division</option>
-                        <option value="Sylhet">Sylhet Division</option>
-                        <option value="Rangpur">Rangpur Division</option>
-                        <option value="Mymensingh">Mymensingh Division</option>
-                    </select>
+                    <select name="location_q38c[]" class="form-control">
+                                        <option value="" disabled>---Choose an item--</option>
+                                        @foreach ($district_Lists as $key => $district)
+                                        <option value="{{ $key }}"
+                                            {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                            {{ $district }}</option>
+                                        @endforeach
+                                    </select>
                 </td>
                 <td>
                     <input type="text" name="type_q38c[]"  class="form-control q38_assistance" placeholder="Types of Assistance">
@@ -448,7 +442,7 @@ $(document).ready(function() {
         calculateQ38Table2();
     });
 
-    // Remove Row Action (২য় রো থেকে ডিলিট করা যাবে)
+
     $(document).on('click', '.remove_q38_t2_row', function() {
         $(this).closest('tr').remove();
         calculateQ38Table2();
@@ -527,7 +521,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question38 .card-header h6').css('color', 'blue');
-                    alert("Question 38 Temp Saved Successfully!");
+                    alert("Question 38 Temp Saved ");
                 }
             },
             error: function(err) {

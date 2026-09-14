@@ -60,7 +60,7 @@ if (($questiontitles[13]->status ?? null) == 1) {
                 <label for="radioFourteen3">Others</label>
 
                 <span class="col-md-6 mt--4 q14_others_container {{ $q14_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q14others" placeholder="Others" class="form-control"
+                    <input type="text" id="q14others" placeholder="Please describe" class="form-control"
                         value="{{ $q14_others_val }}" name="other_government_devote_implement_q14">
                 </span>
             </div>
@@ -72,7 +72,7 @@ if (($questiontitles[13]->status ?? null) == 1) {
                             <th>Main document/ Procedure</th>
                             <th>Description of change/ Status</th>
                             <th>Attach/Upload Summary</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>

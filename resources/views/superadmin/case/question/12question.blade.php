@@ -56,7 +56,7 @@ $extraditions_data = $question_12_data['extraditions'] ?? ($question_12_data['tw
                 <label for="radioTwelve3">Others</label>
                 <span class="col-md-6 mt--4 q12_others_container {{ $q12_checked == '2' ? '' : 'othersText' }}"
                     style="margin-top:-8px;">
-                    <input type="text" id="q12others" placeholder="Others" class="form-control"
+                    <input type="text" id="q12others" placeholder="Please describe" class="form-control"
                         value="{{ $q12_others_val }}" name="other_government_cooperate_foreign_counterparts_q12">
                 </span>
             </div>

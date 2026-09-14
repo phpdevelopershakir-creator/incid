@@ -1,19 +1,19 @@
 @if (($questiontitles[34]->status ?? null) == 1)
 @php
-// সেশন থেকে ৩৫ নম্বর প্রশ্নের ডাটা ক্যাচ করা
+
 $question_35_data = session()->get('question35');
 
-// Part 1 Data (ডিফল্ট '1' অর্থাৎ Yes)
+
 $q35_p1_status = isset($question_35_data['q35_p1_status']) ? (string)$question_35_data['q35_p1_status'] : '1';
 $q35_p1_yes_desc = $question_35_data['q35_p1_yes_desc'] ?? '';
 $q35_p1_others_desc = $question_35_data['q35_p1_others_desc'] ?? '';
 
-// Part 2 Data (ডিফল্ট '1' অর্থাৎ Yes)
+
 $q35_p2_status = isset($question_35_data['q35_p2_status']) ? (string)$question_35_data['q35_p2_status'] : '1';
 $q35_p2_yes_desc = $question_35_data['q35_p2_yes_desc'] ?? '';
 $q35_p2_others_desc = $question_35_data['q35_p2_others_desc'] ?? '';
 
-// Part 3 Data (ডিফল্ট '1' অর্থাৎ Yes)
+
 $q35_p3_status = isset($question_35_data['q35_p3_status']) ? (string)$question_35_data['q35_p3_status'] : '1';
 $q35_p3_yes_desc = $question_35_data['q35_p3_yes_desc'] ?? '';
 $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
@@ -69,13 +69,13 @@ $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
                             <div class="mt-2 q35_p1_yes_box sub_field_box_q35"
                                 style="display: {{ $q35_p1_status === '1' ? 'block' : 'none' }};">
                                 <input type="text" name="q35_p1_yes_text" id="q35_p1_yes_text"
-                                    class="form-control col-md-8" placeholder="Provide Description"
+                                    class="form-control col-md-8" placeholder="Please describe"
                                     value="{{ $q35_p1_yes_desc }}">
                             </div>
                             <div class="mt-2 q35_p1_others_box sub_field_box_q35"
                                 style="display: {{ $q35_p1_status === '2' ? 'block' : 'none' }};">
                                 <input type="text" name="q35_p1_others_text" id="q35_p1_others_text"
-                                    class="form-control col-md-8" placeholder="Others details"
+                                    class="form-control col-md-8" placeholder="Please describe"
                                     value="{{ $q35_p1_others_desc }}">
                             </div>
                         </td>
@@ -109,13 +109,13 @@ $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
                             <div class="mt-2 q35_p2_yes_box sub_field_box_q35"
                                 style="display: {{ $q35_p2_status === '1' ? 'block' : 'none' }};">
                                 <input type="text" name="q35_p2_yes_text" id="q35_p2_yes_text"
-                                    class="form-control col-md-8" placeholder="Provide Description"
+                                    class="form-control col-md-8" placeholder="Please describe"
                                     value="{{ $q35_p2_yes_desc }}">
                             </div>
                             <div class="mt-2 q35_p2_others_box sub_field_box_q35"
                                 style="display: {{ $q35_p2_status === '2' ? 'block' : 'none' }};">
                                 <input type="text" name="q35_p2_others_text" id="q35_p2_others_text"
-                                    class="form-control col-md-8" placeholder="Others details"
+                                    class="form-control col-md-8" placeholder="Please describe"
                                     value="{{ $q35_p2_others_desc }}">
                             </div>
                         </td>
@@ -150,13 +150,13 @@ $q35_p3_others_desc = $question_35_data['q35_p3_others_desc'] ?? '';
                             <div class="mt-2 q35_p3_yes_box sub_field_box_q35"
                                 style="display: {{ $q35_p3_status === '1' ? 'block' : 'none' }};">
                                 <input type="text" name="q35_p3_yes_text" id="q35_p3_yes_text"
-                                    class="form-control col-md-8" placeholder="Provide Description"
+                                    class="form-control col-md-8" placeholder="Please describe"
                                     value="{{ $q35_p3_yes_desc }}">
                             </div>
                             <div class="mt-2 q35_p3_others_box sub_field_box_q35"
                                 style="display: {{ $q35_p3_status === '2' ? 'block' : 'none' }};">
                                 <input type="text" name="q35_p3_others_text" id="q35_p3_others_text"
-                                    class="form-control col-md-8" placeholder="Others details"
+                                    class="form-control col-md-8" placeholder="Please describe"
                                     value="{{ $q35_p3_others_desc }}">
                             </div>
                         </td>
@@ -245,7 +245,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question35 .card-header h6').css('color', 'blue');
-                    alert("Question 35 Temp Saved Successfully!");
+                    alert("Question 35 Temp Saved ");
                 }
             },
             error: function(err) {

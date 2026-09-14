@@ -69,7 +69,7 @@ if (($questiontitles[19]->status ?? null) == 1) {
                 <label for="radioTwenty3">Others</label>
                 <span class="col-md-6 style-input <?= ($q20_checked == '2') ? '' : 'othersText'; ?>"
                     id="q20_others_spec_wrapper" style="margin-top:-8px; margin-left: 10px;">
-                    <input type="text" id="q20others" placeholder="Others" class="form-control"
+                    <input type="text" id="q20others" placeholder="Please describe" class="form-control"
                         value="<?= $q20_others_val; ?>" name="other_describe_government_operated_q20">
                 </span>
             </div>

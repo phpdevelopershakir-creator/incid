@@ -66,7 +66,7 @@ $q9_other_rows = $question_9_data['other_rows'] ?? [];
                 <label for="radioNine3">Others</label>
                 <span class="col-md-6 mt--4 q9_others_container {{ $q9_checked == '2' ? '' : 'othersText' }}"
                     style="margin-top:-8px;">
-                    <input type="text" id="q9others" placeholder="Others" class="form-control"
+                    <input type="text" id="q9others" placeholder="Please describe" class="form-control"
                         value="{{ $q9_others_val }}" name="other_exclusively_dedicated_trafficking_q9">
                 </span>
             </div>
@@ -81,7 +81,7 @@ $q9_other_rows = $question_9_data['other_rows'] ?? [];
                             <th scope="col" style="width: 35%;">Description</th>
                             <th scope="col" style="width: 20%;">Please Select Yes/No</th>
                             <th scope="col" style="width: 35%;">Opinion</th>
-                            <th scope="col" style="width: 10%;">Action</th>
+                            <th scope="col" style="width: 10%;">Add row</th>
                         </tr>
                     </thead>
                     <tbody>

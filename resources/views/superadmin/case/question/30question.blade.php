@@ -71,7 +71,7 @@ if (($questiontitles[29]->status ?? null) == 1) {
                     value="2" <?= ($q30_checked == "2") ? "checked" : ""; ?>>
                 <label for="radioTwentyFour3">Others</label>
                 <span class="col-md-6 mt--4 <?= ($q30_checked == "2") ? "" : "othersText"; ?>" style="margin-top:-8px;">
-                    <input type="text" id="q30others" placeholder="Others" class="form-control"
+                    <input type="text" id="q30others" placeholder="Please describe" class="form-control"
                         value="<?= $q30_others_val; ?>" name="other_foreign_victims_q30">
                 </span>
             </div>
@@ -84,7 +84,7 @@ if (($questiontitles[29]->status ?? null) == 1) {
                             <th rowspan="2">Status of coverage</th>
                             <th colspan="6">Current Coverage of Foreign VoTs </th>
                             <th rowspan="2">Origin of VoT (multiple Response)</th>
-                            <th rowspan="2">Action</th>
+                            <th rowspan="2">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>

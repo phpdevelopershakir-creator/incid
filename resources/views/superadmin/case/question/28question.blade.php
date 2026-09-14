@@ -4,20 +4,20 @@
 $question_28_data = session()->get('question28') ?? [];
 
 // Checked Radio Value বের করা
-$q28_checked = isset($question_28_data['q28_checked_value']) 
-    ? (string)$question_28_data['q28_checked_value'] 
-    : ($question_28_data['is_child_victims_juvenile_q28'] ?? null);
+$q28_checked = isset($question_28_data['q28_checked_value'])
+? (string)$question_28_data['q28_checked_value']
+: ($question_28_data['is_child_victims_juvenile_q28'] ?? null);
 
 // Inner data extraction
 $q28_data = $question_28_data['q28_data'] ?? [];
 
 // Inputs Values Extract
-$yes_title_val = $q28_data['child_victims_juvenile_title_q28'] 
-    ?? ($q28_data['involved_directly_trafficking_title'] 
-    ?? ($question_28_data['child_victims_juvenile_title_q28'] ?? ''));
+$yes_title_val = $q28_data['child_victims_juvenile_title_q28']
+?? ($q28_data['involved_directly_trafficking_title']
+?? ($question_28_data['child_victims_juvenile_title_q28'] ?? ''));
 
-$others_val = $q28_data['others'] 
-    ?? ($question_28_data['others_child_victims_juvenile_q28'] ?? '');
+$others_val = $q28_data['others']
+?? ($question_28_data['others_child_victims_juvenile_q28'] ?? '');
 @endphp
 
 <div class="card question28">
@@ -34,27 +34,28 @@ $others_val = $q28_data['others']
 
             <!-- Radio Options (Name Controller অনুযায়ী মিল রাখা হয়েছে) -->
             <div class="form-group mb-2">
-                <input type="radio" id="radioYes28" class="twentyeightstatus" name="is_child_victims_juvenile_q28" value="1"
-                    {{ (is_null($q28_checked) || $q28_checked === '1') ? 'checked' : '' }}>
+                <input type="radio" id="radioYes28" class="twentyeightstatus" name="is_child_victims_juvenile_q28"
+                    value="1" {{ (is_null($q28_checked) || $q28_checked === '1') ? 'checked' : '' }}>
                 <label for="radioYes28" class="mr-3 font-weight-bold">Yes</label>
 
-                <input type="radio" id="radioNo28" class="twentyeightstatus" name="is_child_victims_juvenile_q28" value="0"
-                    {{ ($q28_checked === '0') ? 'checked' : '' }}>
+                <input type="radio" id="radioNo28" class="twentyeightstatus" name="is_child_victims_juvenile_q28"
+                    value="0" {{ ($q28_checked === '0') ? 'checked' : '' }}>
                 <label for="radioNo28" class="mr-3 font-weight-bold">No</label>
 
-                <input type="radio" id="radioOthers28" class="twentyeightstatus" name="is_child_victims_juvenile_q28" value="2"
-                    {{ ($q28_checked === '2') ? 'checked' : '' }}>
+                <input type="radio" id="radioOthers28" class="twentyeightstatus" name="is_child_victims_juvenile_q28"
+                    value="2" {{ ($q28_checked === '2') ? 'checked' : '' }}>
                 <label for="radioOthers28" class="font-weight-bold">Others</label>
             </div>
 
             <!-- Others Description Field -->
             <div id="others_q28" style="display: {{ ($q28_checked === '2') ? 'block' : 'none' }};">
                 <input type="text" name="others_child_victims_juvenile_q28" class="form-control mt-2 q28-others-input"
-                    placeholder="Others details" value="{{ $others_val }}">
+                    placeholder="Please describe" value="{{ $others_val }}">
             </div>
 
             <!-- Yes Input Field (Name Controller অনুযায়ী মিল রাখা হয়েছে) -->
-            <div id="yes_extra_q28" style="display: {{ (is_null($q28_checked) || $q28_checked === '1') ? 'block' : 'none' }};">
+            <div id="yes_extra_q28"
+                style="display: {{ (is_null($q28_checked) || $q28_checked === '1') ? 'block' : 'none' }};">
                 <input type="text" name="child_victims_juvenile_title_q28" class="form-control mt-2 q28-yes-input"
                     placeholder="Provide details" value="{{ $yes_title_val }}">
             </div>

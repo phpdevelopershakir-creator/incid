@@ -35,20 +35,20 @@ $q33_data = $question_33_data['q33_data'] ?? null;
             <div id="yes_extra_q33"
                 style="display: {{ (is_null($q33_checked) || $q33_checked === '1') ? 'block' : 'none' }};">
                 <input type="text" name="involved_directly_trafficking_title_q33"
-                    class="form-control mt-2 q33-yes-input" placeholder="Provide Yes details"
+                    class="form-control mt-2 q33-yes-input" placeholder="Please describe"
                     value="{{ $q33_data['involved_directly_trafficking_title'] ?? '' }}">
             </div>
 
 
             <div id="no_extra_q33" style="display: {{ ($q33_checked === '0') ? 'block' : 'none' }};">
                 <input type="text" name="no_details_q33" class="form-control mt-2 q33-no-input"
-                    placeholder="Provide No details" value="{{ $q33_data['no_details'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q33_data['no_details'] ?? '' }}">
             </div>
 
 
             <div id="others_q33" style="display: {{ ($q33_checked === '2') ? 'block' : 'none' }};">
                 <input type="text" name="others_complicit_official_q33" class="form-control mt-2 q33-others-input"
-                    placeholder="Others details" value="{{ $q33_data['others'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q33_data['others'] ?? '' }}">
             </div>
 
         </div>

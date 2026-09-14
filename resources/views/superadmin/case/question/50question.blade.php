@@ -1,13 +1,9 @@
 <?php
 if (($questiontitles[49]->status ?? null) == 1) {
-    
     $question_50_data = session()->get('question50');
-
     $q50_checked = $question_50_data['q50_checked_value'] ?? "1";
     $q50_saved_rows = $question_50_data['q50_table_data'] ?? [];
     $q50_others_val = $question_50_data['others'] ?? '';
-
-    
     $fixed_titles = [
         1 => "Strict Monitoring of impacts of policies",
         2 => "Promotion of safe migration",
@@ -56,7 +52,7 @@ if (($questiontitles[49]->status ?? null) == 1) {
                 <label for="radioFifty3">Others</label>
 
                 <span class="col-md-6 mt--4 q50_others_container {{ $q50_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q50others" placeholder="Others" class="form-control"
+                    <input type="text" id="q50others" placeholder="Please describe" class="form-control"
                         value="{{ $q50_others_val }}" name="others_victim_centered_approach_q50">
                 </span>
             </div>
@@ -65,9 +61,9 @@ if (($questiontitles[49]->status ?? null) == 1) {
                 <table id="addRowQ50" class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Action</th>
+                            <th>Title</th>
                             <th>Attach/Upload Summary</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -147,8 +143,6 @@ if (($questiontitles[49]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fiftystatus").on("change", function() {
         var statusvalue = $("input[name='is_exploitative_treatment_q50']:checked").val();
 
@@ -220,7 +214,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question50 .card-title').css('color', 'blue');
-                alert("Question 50  Saved Temporarily ");
+                alert("Question 50 Temp Saved  ");
             },
             error: function(err) {
                 alert("Error saving question 50 data ");

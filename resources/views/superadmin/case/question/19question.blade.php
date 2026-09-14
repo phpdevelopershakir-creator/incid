@@ -1,10 +1,10 @@
 @if (($questiontitles[18]->status ?? null) == 1)
 @php
-    // সেশন থেকে সরাসরি ১৯ নম্বর প্রশ্নের ডাটা তুলে নেওয়া হচ্ছে
-    $question_19_data = session()->get('question19');
+// সেশন থেকে সরাসরি ১৯ নম্বর প্রশ্নের ডাটা তুলে নেওয়া হচ্ছে
+$question_19_data = session()->get('question19');
 
-    $q19_checked = isset($question_19_data['q19_checked_value']) ? (string)$question_19_data['q19_checked_value'] : null;
-    $q19_data = $question_19_data['q19_data'] ?? [];
+$q19_checked = isset($question_19_data['q19_checked_value']) ? (string)$question_19_data['q19_checked_value'] : null;
+$q19_data = $question_19_data['q19_data'] ?? [];
 @endphp
 
 <div class="card question19">
@@ -35,13 +35,14 @@
             <!-- Others Inpu Field -->
             <div id="others_q19" style="display: {{ ($q19_checked === '2') ? 'block' : 'none' }};">
                 <input type="text" name="other_victims_social_service_q19" class="form-control mt-2 q19-others-input"
-                    placeholder="Others details" value="{{ $q19_data['others'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q19_data['others'] ?? '' }}">
             </div>
 
             <!-- Yes Input Field -->
-            <div id="yes_extra_q19" style="display: {{ (is_null($q19_checked) || $q19_checked === '1') ? 'block' : 'none' }};">
-                <input type="text" name="victims_social_service_title_q19" class="form-control mt-2 q19-yes-input" 
-                    placeholder="Provide Yes details" value="{{ $q19_data['victims_social_service_title_q19'] ?? '' }}">
+            <div id="yes_extra_q19"
+                style="display: {{ (is_null($q19_checked) || $q19_checked === '1') ? 'block' : 'none' }};">
+                <input type="text" name="victims_social_service_title_q19" class="form-control mt-2 q19-yes-input"
+                    placeholder="Please describe" value="{{ $q19_data['victims_social_service_title_q19'] ?? '' }}">
             </div>
 
         </div>

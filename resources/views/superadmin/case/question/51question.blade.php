@@ -1,12 +1,9 @@
 <?php
 if (($questiontitles[50]->status ?? null) == 1) {
-    
     $question_51_data = session()->get('question51');
-
     $q51_checked = $question_51_data['q51_checked_value'] ?? "1";
     $q51_saved_rows = $question_51_data['q51_table_data'] ?? [];
     $q51_others_val = $question_51_data['others'] ?? '';
-
     $status_Lists = [
         1 => "Enforced",
         2 => "Updated and enforced",
@@ -14,7 +11,6 @@ if (($questiontitles[50]->status ?? null) == 1) {
         4 => "Increases efforts"
     ];
 
-    
     $fixed_titles = [
         1 => "Awareness raising on forced prostitution and trafficking among citizens",
         2 => "Awareness raising on legal measures against sexual exploitation of trafficked individuals",
@@ -61,7 +57,7 @@ if (($questiontitles[50]->status ?? null) == 1) {
                 <label for="radioFiftyOne3">Others</label>
 
                 <span class="col-md-6 mt--4 q51_others_container {{ $q51_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q51others" placeholder="Others" class="form-control"
+                    <input type="text" id="q51others" placeholder="Please describe" class="form-control"
                         value="{{ $q51_others_val }}" name="other_commercial_sex_demands_q51">
                 </span>
             </div>
@@ -70,10 +66,10 @@ if (($questiontitles[50]->status ?? null) == 1) {
                 <table id="addRowQ51" class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Action</th>
+                            <th>Title</th>
                             <th>Status</th>
                             <th>Attach/Upload Summary</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -125,7 +121,7 @@ if (($questiontitles[50]->status ?? null) == 1) {
                         </tr>
                         <?php } 
               } else { 
-                // ২. ফ্রেশ অবস্থায় ৩টি ডিফল্ট স্ট্যাটিক রো
+                
                 foreach($fixed_titles as $key => $title_text) { ?>
                         <tr class="qe51NoOfRow" id="row_q51_<?= $key-1 ?>">
                             <td>
@@ -179,8 +175,6 @@ if (($questiontitles[50]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fiftyonestatus").on("change", function() {
         var statusvalue = $("input[name='is_commercial_sex_demands_q51']:checked").val();
 
@@ -262,7 +256,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question51 .card-title').css('color', 'blue');
-                alert("Question 51  Saved Temporarily ");
+                alert("Question 51 Temp Saved  ");
             },
             error: function(err) {
                 alert("Error saving question 51 data ");

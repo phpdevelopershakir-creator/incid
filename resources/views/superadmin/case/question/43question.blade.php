@@ -1,9 +1,6 @@
 @if (($questiontitles[42]->status ?? null) == 1)
 @php
-// সেশন থেকে ৪৩ নম্বর প্রশ্নের ডাটা তুলে নেওয়া
 $question_43_data = session()->get('question43');
-
-// ডাটা স্ট্রিন্গ বা টাইপ কাস্টিং এর ঝামেলা এড়াতে বাউন্ডারি ঠিক করা হলো (ডিফল্ট ১/Yes)
 $q43_checked = isset($question_43_data['q43_checked_value']) ? (string)$question_43_data['q43_checked_value'] : null;
 $q43_data = $question_43_data['q43_data'] ?? null;
 @endphp
@@ -20,7 +17,7 @@ $q43_data = $question_43_data['q43_data'] ?? null;
     <div id="Question-43" class="collapse" role="tabpanel" aria-labelledby="heading-43" data-parent="#accordion-2">
         <div class="card-body">
 
-            <!-- ডিফল্ট হিসেবে ১ (Yes) সিলেক্টেড থাকবে যদি কোনো ডাটা না থাকে -->
+
             <input type="radio" id="radioYes43" class="fortythreestatus" name="is_government_seek_civil_q43" value="1"
                 {{ (is_null($q43_checked) || $q43_checked === '1') ? 'checked' : '' }}>
             <label for="radioYes43" class="mr-3">Yes</label>
@@ -33,18 +30,18 @@ $q43_data = $question_43_data['q43_data'] ?? null;
                 value="2" {{ ($q43_checked === '2') ? 'checked' : '' }}>
             <label for="radioOthers43">Others</label>
 
-            <!-- ইনলাইন স্টাইল দিয়ে ইনিশিয়াল হাইড/শো হ্যান্ডেল করা হয়েছে -->
+
             <div id="yes_extra_q43"
                 style="display: {{ (is_null($q43_checked) || $q43_checked === '1') ? 'block' : 'none' }};">
                 <label class="mt-2 text-muted font-weight-bold">If "YES" please describe:</label>
                 <input type="text" name="goverment_seek_title_q43" class="form-control q43-yes-input"
-                    placeholder="Provide Yes details" value="{{ $q43_data['yes_desc'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q43_data['yes_desc'] ?? '' }}">
             </div>
 
             <div id="others_q43" style="display: {{ ($q43_checked === '2') ? 'block' : 'none' }};">
                 <label class="mt-2 text-muted font-weight-bold">If "Other" please describe:</label>
                 <input type="text" name="other_government_seek_civil_q43" class="form-control q43-others-input"
-                    placeholder="Others details" value="{{ $q43_data['others'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q43_data['others'] ?? '' }}">
             </div>
 
         </div>
@@ -58,9 +55,8 @@ $q43_data = $question_43_data['q43_data'] ?? null;
 
 <script>
 $(document).ready(function() {
-    // Yes/No/Others রেডিও বাটনের টগল লজিক
+
     function toggleq43() {
-        // [FIXED]: সঠিক name (is_government_seek_civil_q43) ব্যবহার করা হয়েছে
         let val = $("input[name='is_government_seek_civil_q43']:checked").val();
 
         if (!val) {
@@ -68,11 +64,11 @@ $(document).ready(function() {
             $('#radioYes43').prop('checked', true);
         }
 
-        // শুরুতে সব হাইড করা
+
         $('#yes_extra_q43').hide();
         $('#others_q43').hide();
 
-        // কন্ডিশন অনুযায়ী শো করা
+
         if (val === '1') {
             $('#yes_extra_q43').show();
         } else if (val === '2') {
@@ -80,16 +76,15 @@ $(document).ready(function() {
         }
     }
 
-    // ইভেন্ট লিসেনার এবং ইনিশিয়াল রান
+
     $(document).on('change', '.fortythreestatus', toggleq43);
     toggleq43();
 });
 </script>
 
 <script>
-// সাময়িকভাবে ডাটা সেভ করার AJAX রিকোয়েস্ট
 $(document).on("click", "#temp-save-question43", function() {
-    // [FIXED]: সঠিক name ব্যবহার করা হয়েছে
+
     let checkedValue = $("input[name='is_government_seek_civil_q43']:checked").val();
     let q43_data = {};
 
@@ -117,7 +112,7 @@ $(document).on("click", "#temp-save-question43", function() {
         success: function(response) {
             if (response.success) {
                 $('.question43 .card-header h6').css('color', 'blue');
-                alert("Question 43 has been saved temporarily");
+                alert("Question 43 Temp saved ");
             } else {
                 alert("Not Saved");
             }

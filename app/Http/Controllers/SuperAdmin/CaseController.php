@@ -1927,6 +1927,8 @@ if (!empty($bulkInsertData)) {
             $question34->number_victims_q34 = $request->number_victims_q34;
             $question34->men_victims_q34 = $request->men_victims_q34;
             $question34->women_victims_q34 = $request->women_victims_q34;
+            $question34->boy_victims_q34 = $request->boy_victims_q34;
+            $question34->girl_victims_q34 = $request->girl_victims_q34;
             $question34->tg_victims_q34 = $request->tg_victims_q34;
             $question34->total_victims_q34 = $request->total_victims_q34;
             $question34->save();
@@ -1936,6 +1938,8 @@ if (!empty($bulkInsertData)) {
             $number_victims_q34b = $request->input('number_victims_q34b', []);
             $men_victims_q34b = $request->input('men_victims_q34b', []);
             $women_victims_q34b = $request->input('women_victims_q34b', []);
+            $boy_victims_q34b = $request->input('boy_victims_q34b', []);
+            $girl_victims_q34b = $request->input('girl_victims_q34b', []);
             $tg_victims_q34b = $request->input('tg_victims_q34b', []);
             $total_victims_q34b = $request->input('total_victims_q34b', []);
          
@@ -1947,6 +1951,8 @@ if (!empty($bulkInsertData)) {
                 count($number_victims_q34b),
                 count($men_victims_q34b),
                 count($women_victims_q34b),
+                count($boy_victims_q34b),
+                count($girl_victims_q34b),
                 count($tg_victims_q34b),
                 count($total_victims_q34b),
             
@@ -1958,6 +1964,8 @@ if (!empty($bulkInsertData)) {
                     'number_victims_q34b' => $number_victims_q34b[$i] ?? null,
                     'men_victims_q34b' => $men_victims_q34b[$i] ?? null,
                     'women_victims_q34b' => $women_victims_q34b[$i] ?? null,
+                    'boy_victims_q34b' => $boy_victims_q34b[$i] ?? null,
+                    'girl_victims_q34b' => $girl_victims_q34b[$i] ?? null,
                     'tg_victims_q34b' => $tg_victims_q34b[$i] ?? null,
                     'total_victims_q34b' => $total_victims_q34b[$i] ?? null,
                     

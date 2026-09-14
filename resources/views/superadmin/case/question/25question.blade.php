@@ -20,29 +20,30 @@ $q25_data = $question_25_data['q25_data'] ?? [];
         <div class="card-body">
 
             <!-- Radio Buttons with is_government_person_formally_q25 -->
-            <input type="radio" id="radioYes25" class="twentyfivestatus" name="is_government_person_formally_q25" value="1"
-                {{ (is_null($q25_checked) || $q25_checked === '1') ? 'checked' : '' }}>
+            <input type="radio" id="radioYes25" class="twentyfivestatus" name="is_government_person_formally_q25"
+                value="1" {{ (is_null($q25_checked) || $q25_checked === '1') ? 'checked' : '' }}>
             <label for="radioYes25" class="mr-3">Yes</label>
 
-            <input type="radio" id="radioNo25" class="twentyfivestatus" name="is_government_person_formally_q25" value="0"
-                {{ ($q25_checked === '0') ? 'checked' : '' }}>
+            <input type="radio" id="radioNo25" class="twentyfivestatus" name="is_government_person_formally_q25"
+                value="0" {{ ($q25_checked === '0') ? 'checked' : '' }}>
             <label for="radioNo25" class="mr-3">No</label>
 
-            <input type="radio" id="radioOthers25" class="twentyfivestatus" name="is_government_person_formally_q25" value="2"
-                {{ ($q25_checked === '2') ? 'checked' : '' }}>
+            <input type="radio" id="radioOthers25" class="twentyfivestatus" name="is_government_person_formally_q25"
+                value="2" {{ ($q25_checked === '2') ? 'checked' : '' }}>
             <label for="radioOthers25">Others</label>
 
             <!-- Others Input Field -->
             <div id="others_q25" style="display: {{ ($q25_checked === '2') ? 'block' : 'none' }};">
-                <input type="text" name="others_government_person_formally_q25" class="form-control mt-2 q25-others-input"
-                    placeholder="Others details" value="{{ $q25_data['others'] ?? '' }}">
+                <input type="text" name="others_government_person_formally_q25"
+                    class="form-control mt-2 q25-others-input" placeholder="Please describe"
+                    value="{{ $q25_data['others'] ?? '' }}">
             </div>
 
             <!-- Yes Input Field -->
-            <div id="yes_extra_q25" style="display: {{ (is_null($q25_checked) || $q25_checked === '1') ? 'block' : 'none' }};">
-                <input type="text" name="government_person_formally_title_q25"
-                    class="form-control mt-2 q25-yes-input" placeholder="Provide Yes details"
-                    value="{{ $q25_data['government_person_formally_title_q25'] ?? '' }}">
+            <div id="yes_extra_q25"
+                style="display: {{ (is_null($q25_checked) || $q25_checked === '1') ? 'block' : 'none' }};">
+                <input type="text" name="government_person_formally_title_q25" class="form-control mt-2 q25-yes-input"
+                    placeholder="Please describe" value="{{ $q25_data['government_person_formally_title_q25'] ?? '' }}">
             </div>
 
         </div>

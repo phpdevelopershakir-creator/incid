@@ -18,7 +18,6 @@ if (($questiontitles[45]->status ?? null) == 1) {
   ];
 
   $session_data = session('question46', []);
-
   $q46_checked = $session_data['q46_checked_value'] ?? "1";
   $q46_others_val = $session_data['others'] ?? "";
   $q46_main_rows = $session_data['q46_data'] ?? [];
@@ -87,7 +86,7 @@ if (($questiontitles[45]->status ?? null) == 1) {
                 <label for="radioFortySix3">Others</label>
                 <span class="col-md-6 style-input <?= ($q46_checked == '2') ? '' : 'othersText'; ?>"
                     id="q46_others_spec_wrapper" style="margin-top:-8px; margin-left: 10px;">
-                    <input type="text" id="q46others" placeholder="Others" class="form-control"
+                    <input type="text" id="q46others" placeholder="Please describe" class="form-control"
                         value="<?= $q46_others_val; ?>" name="other_government_conduct_awareness_activities_q46">
                 </span>
             </div>
@@ -103,7 +102,7 @@ if (($questiontitles[45]->status ?? null) == 1) {
                                 <th colspan="6">Organization (Number covered)</th>
                                 <th colspan="3">Total (number covered)</th>
                                 <th rowspan="2" style="text-align: center; vertical-align: middle; min-width: 50px;">
-                                    Action</th>
+                                    Add row</th>
                             </tr>
                             <tr>
                                 <th>M</th>
@@ -297,8 +296,6 @@ if (($questiontitles[45]->status ?? null) == 1) {
 
 <script>
 $(document).ready(function() {
-
-
     $('.fortysix_status').change(function() {
         var value = $(this).val();
         if (value == '1') {
@@ -421,7 +418,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     $('.question46 .card-title').css('color', 'blue');
-                    alert('Question 46  Saved Temporarily');
+                    alert('Question 46 Temp Saved ');
                 } else {
                     alert('Failed to save data.');
                 }

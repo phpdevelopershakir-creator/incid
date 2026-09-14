@@ -31,13 +31,13 @@ $q23_data = $question_23_data['q23_data'] ?? null;
 
             <div id="others_q23" style="display: {{ ($q23_checked === '2') ? 'block' : 'none' }};">
                 <input type="text" name="others_complicit_official_q23" class="form-control mt-2 q23-others-input"
-                    placeholder="Others details" value="{{ $q23_data['others'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q23_data['others'] ?? '' }}">
             </div>
 
             <div id="yes_extra_q23"
                 style="display: {{ (is_null($q23_checked) || $q23_checked === '1') ? 'block' : 'none' }};">
                 <input type="text" name="involved_directly_trafficking_title_q23"
-                    class="form-control mt-2 q23-yes-input" placeholder="Provide Yes details"
+                    class="form-control mt-2 q23-yes-input" placeholder="Please describe"
                     value="{{ $q23_data['involved_directly_trafficking_title'] ?? '' }}">
             </div>
 

@@ -1,8 +1,6 @@
 <?php
 if (($questiontitles[46]->status ?? null) == 1) {
-   
     $question_47_data = session()->get('question47');
-
     $q47_checked = $question_47_data['q47_checked_value'] ?? "1";
     $q47_saved_rows = $question_47_data['q47_table_data'] ?? [];
     $q47_others_val = $question_47_data['others'] ?? '';
@@ -70,7 +68,7 @@ if (($questiontitles[46]->status ?? null) == 1) {
                 <label for="radioFiftySeven3">Others</label>
 
                 <span class="col-md-6 mt--4 q47_others_container {{ $q47_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q52others" placeholder="Others" class="form-control"
+                    <input type="text" id="q52others" placeholder="Please describe" class="form-control"
                         value="{{ $q47_others_val }}" name="other_government_change_regulated_q47">
                 </span>
             </div>
@@ -81,7 +79,7 @@ if (($questiontitles[46]->status ?? null) == 1) {
                         <tr>
                             <th>Original Document/Approach</th>
                             <th>Description of Change</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -182,11 +180,8 @@ if (($questiontitles[46]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fiftysevenstatus").on("change", function() {
         var statusvalue = $("input[name='is_government_change_regulated_q47']:checked").val();
-
         if (statusvalue == '1') {
             $('#47_question_view').removeClass('visibility').show();
             $('.q47_others_container').addClass('othersText').hide();
@@ -266,7 +261,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question47 .card-title').css('color', 'blue');
-                alert("Question 47  Saved Temporarily ");
+                alert("Question 47 Temp Saved ");
             },
             error: function(err) {
                 alert("Error saving question 47 data ");

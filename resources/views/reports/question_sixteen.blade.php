@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question 16 Report</title>
+    <title>Question 1 Report</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
@@ -13,54 +13,94 @@
     <div class="container-fluid my-4">
         <div class="card shadow-sm">
             <div class="card-header bg-success text-white">
-                <h5 class="m-0 font-weight-bold">% distribution of participants (Question 16)</h5>
+                <h5 class="m-0 font-weight-bold">% distribution of participants (Question 1)</h5>
             </div>
             <div class="card-body">
 
-                <!-- Table Section -->
+                <!-- 1. Summary Table (Revised, Abolished & Grand Total in One Row) -->
+                <div class="mb-4">
+                    <h6 class="font-weight-bold">Summary Table</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Total Revised</th>
+                                    <th>Total Abolished</th>
+                                    <th>Grand Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="badge badge-primary p-2 fs-6">
+                                            {{ $status1_count }} ({{ $status1_percentage }}%)
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-warning p-2 fs-6">
+                                            {{ $status2_count }} ({{ $status2_percentage }}%)
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dark p-2 fs-6">
+                                            {{ $grand_total }}
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. Main Data List Table Section -->
                 <div class="table-responsive mb-5">
+                    <h6 class="font-weight-bold">Detailed Data List</h6>
                     <table class="table table-bordered text-center align-middle">
                         <thead class="thead-light">
                             <tr>
-                                <th>Location</th>
-                                <th>Category</th>
-                                <th>Men</th>
-                                <th>Women</th>
-                                <th>Total</th>
+                                <th>Case ID</th>
+                                <th>Supreme Court Title</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($data_sixteen as $row)
-                            @php
-                            $row_total = ($row->total_q16 > 0) ? $row->total_q16 : ($row->men_q16 + $row->women_q16);
-                            @endphp
+                            @forelse($data_sixteen as $row)
                             <tr>
-                                <td>{{ $row->location_q16 }}</td>
-
-                                <!-- Category Condition Logic -->
-                                <td>{{ $category_lists[$row->category_q16] ?? 'N/A' }}</td>
-
-                                <td>{{ $row->men_q16 }}</td>
-                                <td>{{ $row->women_q16 }}</td>
-                                <td>{{ $row_total }}</td>
+                                <td>{{ $row->case_id ?? 'N/A' }}</td>
+                                <td>
+                                    @if($row->supreme_court_title == 1)
+                                    <span class="badge badge-primary">PSHT 2012</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($row->supreme_court_status == 1)
+                                    <span class="badge badge-primary">Revised</span>
+                                    @elseif($row->supreme_court_status == 2)
+                                    <span class="badge badge-warning">Abolished</span>
+                                    @else
+                                    <span class="badge badge-secondary">N/A</span>
+                                    @endif
+                                </td>
                             </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="3">No Data Found</td>
+                            </tr>
+                            @endforelse
                         </tbody>
                         <tfoot class="font-weight-bold bg-light">
                             <tr>
-                                <td colspan="2" class="text-right">Total</td>
-                                <td>{{ $total_men }}</td>
-                                <td>{{ $total_women }}</td>
+                                <td colspan="2" class="text-right">Total Count (Revised + Abolished)</td>
                                 <td>{{ $grand_total }}</td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
 
-                <!-- Pie Chart Section -->
+                <!-- 3. Pie Chart Section -->
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center">
-                        <h6 class="font-weight-bold mb-3">Gender Wise Distribution</h6>
+                        <h6 class="font-weight-bold mb-3">Supreme Court Distribution</h6>
                         <div style="position: relative; height: 320px; width: 100%;">
                             <canvas id="q16PieChart"></canvas>
                         </div>
@@ -82,20 +122,25 @@
 
         var ctx = canvasElem.getContext('2d');
 
-        var menPct = parseFloat("{{ $men_percentage }}") || 0;
-        var womenPct = parseFloat("{{ $women_percentage }}") || 0;
+        var status1Pct = parseFloat("{{ $status1_percentage }}") || 0;
+        var status2Pct = parseFloat("{{ $status2_percentage }}") || 0;
+        var status1Count = parseInt("{{ $status1_count }}") || 0;
+        var status2Count = parseInt("{{ $status2_count }}") || 0;
 
         new Chart(ctx, {
             type: 'pie',
             data: {
                 labels: [
-                    'Total Men (' + menPct + '%)',
-                    'Total Women (' + womenPct + '%)'
+                    'Revised (' + status1Pct + '%)',
+                    'Abolished (' + status2Pct + '%)'
                 ],
                 datasets: [{
-                    data: [menPct, womenPct],
-                    backgroundColor: ['#36A2EB', '#FF6384'],
-                    hoverBackgroundColor: ['#2BC0E4', '#FF416C'],
+                    data: [status1Count, status2Count],
+                    backgroundColor: [
+                        '#007bff',
+                        '#ffc107'
+                    ], // Bootstrap Primary & Warning Colors
+                    hoverBackgroundColor: ['#0056b3', '#d39e00'],
                     borderWidth: 2
                 }]
             },

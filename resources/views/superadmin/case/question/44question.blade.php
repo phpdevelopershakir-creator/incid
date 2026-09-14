@@ -1,8 +1,6 @@
 <?php
 if (($questiontitles[43]->status ?? null) == 1) {
- 
   $question_44_data = session()->get('question44');
-
   $q44_checked = $question_44_data['q44_checked_value'] ?? "1";
   $q44_table_data = $question_44_data['q44_table_data'] ?? [];
   $q44_others_val = $question_44_data['others'] ?? '';
@@ -58,7 +56,7 @@ if (($questiontitles[43]->status ?? null) == 1) {
                 <label for="radioFourtyFour3">Others</label>
 
                 <span class="col-md-6 mt--4 q44_others_container {{ $q44_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q44others" placeholder="Others Specific" class="form-control"
+                    <input type="text" id="q44others" placeholder="Please describe" class="form-control"
                         value="{{ $q44_others_val }}" name="other_awareness_campaigns_research_projects_q44">
                 </span>
             </div>
@@ -149,8 +147,6 @@ if (($questiontitles[43]->status ?? null) == 1) {
 
 <script>
 $(document).ready(function() {
-
-
     $(".fourtyfour_status").on("change", function() {
         let statusvalue = $("input[name='is_awareness_campaigns_research_projects_q44']:checked").val();
 
@@ -197,7 +193,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question44 .card-title').css('color', 'blue');
-                alert("Question 44  Saved Temporarily ");
+                alert("Question 44 Temp Saved  ");
             },
             error: function(err) {
                 alert("Error saving question 44 data ");

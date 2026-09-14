@@ -1,9 +1,9 @@
 @if (($questiontitles[35]->status ?? null) == 1)
 @php
-// সেশন থেকে ৩৬ নম্বর প্রশ্নের ডাটা ক্যাচ করা
+
 $question_36_data = session()->get('question36', []);
 
-// Part 1 Data (ডিফল্ট '1' অর্থাৎ Yes)
+
 $q36_p1_status = isset($question_36_data['q36_p1_status']) ? (string)$question_36_data['q36_p1_status'] : '1';
 $q36_p1_yes_desc = $question_36_data['q36_p1_yes_desc'] ?? '';
 $q36_p1_others_desc = $question_36_data['q36_p1_others_desc'] ?? '';
@@ -75,14 +75,14 @@ $rowCount = max(count($q36_support_types), 1);
                 <div class="mt-3 {{ $q36_p1_status === '1' ? '' : 'd-none' }}" id="q36_p1_yes_box">
                     <label class="small font-weight-bold">If Yes, specify support details:</label>
                     <textarea class="form-control" name="question36[q36_p1_yes_desc]" rows="2"
-                        placeholder="Describe specialized support">{{ $q36_p1_yes_desc }}</textarea>
+                        placeholder="Please describe">{{ $q36_p1_yes_desc }}</textarea>
                 </div>
 
                 <div class="mt-3 {{ $q36_p1_status === '2' || $q36_p1_status === 'others' ? '' : 'd-none' }}"
                     id="q36_p1_others_box">
                     <label class="small font-weight-bold">If Others, specify:</label>
                     <input type="text" class="form-control" name="question36[q36_p1_others_desc]"
-                        value="{{ $q36_p1_others_desc }}" placeholder="Specify other status">
+                        value="{{ $q36_p1_others_desc }}" placeholder="Please describe">
                 </div>
             </div>
 
@@ -113,14 +113,14 @@ $rowCount = max(count($q36_support_types), 1);
                 <div class="mt-3 {{ $q36_p2_status === '1' ? '' : 'd-none' }}" id="q36_p2_yes_box">
                     <label class="small font-weight-bold">If Yes, specify available facilities:</label>
                     <textarea class="form-control" name="question36[q36_p2_yes_desc]" rows="2"
-                        placeholder="Describe available facilities">{{ $q36_p2_yes_desc }}</textarea>
+                        placeholder="Please describe">{{ $q36_p2_yes_desc }}</textarea>
                 </div>
 
                 <div class="mt-3 {{ $q36_p2_status === '2' || $q36_p2_status === 'others' ? '' : 'd-none' }}"
                     id="q36_p2_others_box">
                     <label class="small font-weight-bold">If Others, specify:</label>
                     <input type="text" class="form-control" name="question36[q36_p2_others_desc]"
-                        value="{{ $q36_p2_others_desc }}" placeholder="Specify other status">
+                        value="{{ $q36_p2_others_desc }}" placeholder="Please describe">
                 </div>
             </div>
 
@@ -139,7 +139,7 @@ $rowCount = max(count($q36_support_types), 1);
                                 <th>Women</th>
                                 <th>TG</th>
                                 <th>Total</th>
-                                <th style="width: 80px;">Action</th>
+                                <th style="width: 80px;">Add row</th>
                             </tr>
                         </thead>
                         <tbody id="q36_table_body">
@@ -233,7 +233,7 @@ $rowCount = max(count($q36_support_types), 1);
                     id="q36_p3_others_box">
                     <label class="small font-weight-bold">If Others, specify:</label>
                     <input type="text" class="form-control" name="question36[q36_p3_others_desc]"
-                        value="{{ $q36_p3_others_desc }}" placeholder="Specify other status">
+                        value="{{ $q36_p3_others_desc }}" placeholder="Please describe">
                 </div>
             </div>
 
@@ -369,7 +369,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question36 .card-header h6').css('color', 'blue');
-                    alert('Question 36 Temp Saved Successfully!');
+                    alert('Question 36 Temp Saved ');
                 }
             },
             error: function(xhr) {

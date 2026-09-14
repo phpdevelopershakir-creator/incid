@@ -1,8 +1,26 @@
 @if (($questiontitles[38]->status ?? null) == 1)
 @php
-// সেশন থেকে ৩৯ নম্বর প্রশ্নের ডাটা নেওয়া হচ্ছে
 $question_39_data = session()->get('question39');
 $q39_data = $question_39_data['q39_data'] ?? null;
+
+$district_Lists = [
+1 => "Bagerhat", 2 => "Bandarban", 3 => "Barguna", 4 => "Barishal",
+5 => "Bhola", 6 => "Bogura", 7 => "Brahmanbaria", 8 => "Chandpur",
+9 => "Chapainawabganj", 10 => "Chattogram", 11 => "Chuadanga", 12 => "Cumilla",
+13 => "Cox's Bazar", 14 => "Dhaka", 15 => "Dinajpur", 16 => "Faridpur",
+17 => "Feni", 18 => "Gaibandha", 19 => "Gazipur", 20 => "Gopalganj",
+21 => "Habiganj", 22 => "Jamalpur", 23 => "Jashore", 24 => "Jhalakathi",
+25 => "Jhenaidah", 26 => "Joypurhat", 27 => "Khagrachari", 28 => "Khulna",
+29 => "Kishoreganj", 30 => "Kurigram", 31 => "Kushtia", 32 => "Lakshmipur",
+33 => "Lalmonirhat", 34 => "Madaripur", 35 => "Magura", 36 => "Manikganj",
+37 => "Meherpur", 38 => "Moulvibazar", 39 => "Munshiganj", 40 => "Mymensingh",
+41 => "Naogaon", 42 => "Narail", 43 => "Narayanganj", 44 => "Narsingdi",
+45 => "Natore", 46 => "Netrokona", 47 => "Nilphamari", 48 => "Noakhali",
+49 => "Pabna", 50 => "Panchagarh", 51 => "Patuakhali", 52 => "Pirojpur",
+53 => "Rajbari", 54 => "Rajshahi", 55 => "Rangamati", 56 => "Rangpur",
+57 => "Satkhira", 58 => "Shariatpur", 59 => "Sherpur", 60 => "Sirajganj",
+61 => "Sunamganj", 62 => "Sylhet", 63 => "Tangail", 64 => "Thakurgaon"
+];
 @endphp
 
 <div class="card question39">
@@ -17,35 +35,35 @@ $q39_data = $question_39_data['q39_data'] ?? null;
     <div id="Question-39" class="collapse" role="tabpanel" aria-labelledby="heading-39" data-parent="#accordion-2">
         <div class="card-body">
 
-            <!-- Question 1 -->
+
             <div class="form-group">
                 <label class="font-weight-bold">Did service providers receive adequate training on providing care to
                     trauma survivors?</label>
                 <textarea name="victims_restitution_title_one_q39" class="form-control q39-trauma-input" rows="3"
-                    placeholder="Pls Describe">{{ $q39_data['trauma_survivors_training'] ?? '' }}</textarea>
+                    placeholder="Please describe">{{ $q39_data['trauma_survivors_training'] ?? '' }}</textarea>
             </div>
 
-            <!-- Question 2 -->
+
             <div class="form-group">
                 <label class="font-weight-bold">Were criminal justice officials adequately trained to seek and order
                     restitution for victims during criminal cases?</label>
                 <textarea name="victims_restitution_title_two_q39" class="form-control q39-restitution-input" rows="3"
-                    placeholder="Pls Describe">{{ $q39_data['restitution_training'] ?? '' }}</textarea>
+                    placeholder="Please describe">{{ $q39_data['restitution_training'] ?? '' }}</textarea>
             </div>
 
-            <!-- Dynamic Table Section -->
+
             <div class="form-group mt-4">
                 <label class="font-weight-bold">Please describe the training</label>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="training-table-q39">
                         <thead>
                             <tr>
-                                <th>Location</th>
+                                <th>District</th>
                                 <th>Category Of Officials trained</th>
                                 <th>Men</th>
                                 <th>Women</th>
                                 <th>Total</th>
-                                <th style="width: 50px;">Action</th>
+                                <th style="width: 50px;">Add row</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,37 +71,15 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                             @foreach($q39_data['trainings'] as $index => $training)
                             <tr>
                                 <td>
-                                    <select name="victims_restitution_location_q39b[]"
-                                        class="form-control q39-location">
-                                        <option value="">Choose an item.</option>
-                                        <option value="Dhaka"
-                                            {{ ($training['location'] ?? '') == 'Dhaka' ? 'selected' : '' }}>Dhaka
-                                        </option>
-                                        <option value="Chattogram"
-                                            {{ ($training['location'] ?? '') == 'Chattogram' ? 'selected' : '' }}>
-                                            Chattogram</option>
-                                        <option value="Khulna"
-                                            {{ ($training['location'] ?? '') == 'Khulna' ? 'selected' : '' }}>Khulna
-                                        </option>
-                                        <option value="Rajshahi"
-                                            {{ ($training['location'] ?? '') == 'Rajshahi' ? 'selected' : '' }}>Rajshahi
-                                        </option>
-                                        <option value="Barishal"
-                                            {{ ($training['location'] ?? '') == 'Barishal' ? 'selected' : '' }}>Barishal
-                                        </option>
-                                        <option value="Sylhet"
-                                            {{ ($training['location'] ?? '') == 'Sylhet' ? 'selected' : '' }}>Sylhet
-                                        </option>
-                                        <option value="Rangpur"
-                                            {{ ($training['location'] ?? '') == 'Rangpur' ? 'selected' : '' }}>Rangpur
-                                        </option>
-                                        <option value="Mymensingh"
-                                            {{ ($training['location'] ?? '') == 'Mymensingh' ? 'selected' : '' }}>
-                                            Mymensingh</option>
-                                        <option value="National"
-                                            {{ ($training['location'] ?? '') == 'National' ? 'selected' : '' }}>National
-                                        </option>
+                                    <select name="victims_restitution_location_q39b[]" class="form-control">
+                                        <option value="" disabled>---Choose an item--</option>
+                                        @foreach ($district_Lists as $key => $district)
+                                        <option value="{{ $key }}"
+                                            {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                            {{ $district }}</option>
+                                        @endforeach
                                     </select>
+
                                 </td>
                                 <td>
                                     <select name="victims_restitution_category_q39b[]"
@@ -116,19 +112,15 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                             @else
                             <tr>
                                 <td>
-                                    <select name="victims_restitution_location_q39b[]"
-                                        class="form-control q39-location">
-                                        <option value="">Choose an item.</option>
-                                        <option value="Dhaka">Dhaka</option>
-                                        <option value="Chattogram">Chattogram</option>
-                                        <option value="Khulna">Khulna</option>
-                                        <option value="Rajshahi">Rajshahi</option>
-                                        <option value="Barishal">Barishal</option>
-                                        <option value="Sylhet">Sylhet</option>
-                                        <option value="Rangpur">Rangpur</option>
-                                        <option value="Mymensingh">Mymensingh</option>
-                                        <option value="National">National</option>
+                                    <select name="victims_restitution_location_q39b[]" class="form-control">
+                                        <option value="" disabled>---Choose an item--</option>
+                                        @foreach ($district_Lists as $key => $district)
+                                        <option value="{{ $key }}"
+                                            {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                            {{ $district }}</option>
+                                        @endforeach
                                     </select>
+
                                 </td>
                                 <td>
                                     <select name="victims_restitution_category_q39b[]"
@@ -152,7 +144,7 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                 </div>
             </div>
 
-            <!-- Location Not Specified Section -->
+
             <div class="form-group mt-3">
                 <label class="font-weight-bold text-danger">Location not specified</label>
                 <p class="mb-1">Please describe-</p>
@@ -161,10 +153,10 @@ $q39_data = $question_39_data['q39_data'] ?? null;
                     placeholder="Text Area for description ">{{ $q39_data['location_not_specified'] ?? '' }}</textarea>
             </div>
 
-            <!-- Additional Input Field -->
+
             <div class="form-group">
                 <input type="text" name="victims_restitution_title_four_q39" class="form-control q39-additional-input"
-                    placeholder="Input Field" value="{{ $q39_data['additional_input'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q39_data['additional_input'] ?? '' }}">
             </div>
 
         </div>
@@ -178,24 +170,19 @@ $q39_data = $question_39_data['q39_data'] ?? null;
 
 <script>
 $(document).ready(function() {
-
-    // Dynamic Row Add
     $(document).on('click', '.add-row-q39', function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="victims_restitution_location_q39b[]" class="form-control q39-location">
-                        <option value="">Choose an item.</option>
-                        <option value="Dhaka">Dhaka</option>
-                        <option value="Chattogram">Chattogram</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Rajshahi">Rajshahi</option>
-                        <option value="Barishal">Barishal</option>
-                        <option value="Sylhet">Sylhet</option>
-                        <option value="Rangpur">Rangpur</option>
-                        <option value="Mymensingh">Mymensingh</option>
-                        <option value="National">National</option>
-                    </select>
+                    <select name="victims_restitution_location_q39b[]" class="form-control">
+                                        <option value="" disabled>---Choose an item--</option>
+                                        @foreach ($district_Lists as $key => $district)
+                                        <option value="{{ $key }}"
+                                            {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                            {{ $district }}</option>
+                                        @endforeach
+                                    </select>
+
                 </td>
                 <td>
                     <select name="victims_restitution_category_q39b[]" class="form-control q39-category">
@@ -272,7 +259,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question39 .card-header h6').css('color', 'blue');
-                    alert("Question 39 Temp Saved Successfully");
+                    alert("Question 39 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

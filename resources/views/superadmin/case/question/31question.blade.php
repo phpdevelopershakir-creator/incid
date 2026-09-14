@@ -58,7 +58,7 @@ if (($questiontitles[30]->status ?? null) == 1) {
                 <label for="radioThirtyOne3">Others</label>
 
                 <span class="col-md-6 mt--4 q31_others_container {{ $q31_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q31others" placeholder="Others" class="form-control"
+                    <input type="text" id="q31others" placeholder="Please describe" class="form-control"
                         value="{{ $q31_others_val }}" name="other_citizen_victims_abroad_q31">
                 </span>
             </div>
@@ -70,7 +70,7 @@ if (($questiontitles[30]->status ?? null) == 1) {
                             <th rowspan="2" style="vertical-align: middle;">Country where posted</th>
                             <th rowspan="2" style="vertical-align: middle;">Status of coverage</th>
                             <th colspan="6">Number of Nationals receiving the support</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>

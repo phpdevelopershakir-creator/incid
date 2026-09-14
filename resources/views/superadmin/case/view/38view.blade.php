@@ -172,13 +172,13 @@
                         </tbody>
                         <tfoot>
                             <tr class="bg-light font-weight-bold">
-                                <td colspan="2" class="text-right">Result</td>
-                                <td id="q38_t2_sum_men">0</td>
-                                <td id="q38_t2_sum_women">0</td>
-                                <td id="q38_t2_sum_tg">0</td>
-                                <td id="q38_t2_sum_boy">0</td>
-                                <td id="q38_t2_sum_girl">0</td>
-                                <td id="q38_t2_grand_total">0</td>
+                                <td colspan="2" class="text-right">Total</td>
+                                <td id="q38_t2_sum_men">{{ $menTotal }}</td>
+                                <td id="q38_t2_sum_women">{{ $womenTotal }}</td>
+                                <td id="q38_t2_sum_tg">{{ $tgTotal }}</td>
+                                <td id="q38_t2_sum_boy">{{ $boyTotal }}</td>
+                                <td id="q38_t2_sum_girl">{{ $girlTotal }}</td>
+                                <td id="q38_t2_grand_total">{{ $Total }}</td>
                                 <td></td>
                             </tr>
                         </tfoot>

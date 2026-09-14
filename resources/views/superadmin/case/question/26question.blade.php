@@ -5,24 +5,43 @@ $question_26_data = session()->get('question26');
 
 // ২. ক্যাটাগরি এবং এনজিও রেটিং ডিফাইন
 $category_lists = [
-    1 => 'Social Worker',
-    2 => 'Police',
-    3 => 'BGB',
-    4 => 'Coastguard',
-    5 => 'VDP',
-    6 => 'Rail Police',
-    7 => 'Judiciary',
-    8 => 'NGO',
-    9 => 'Others'
+1 => 'Social Worker',
+2 => 'Police',
+3 => 'BGB',
+4 => 'Coastguard',
+5 => 'VDP',
+6 => 'Rail Police',
+7 => 'Judiciary',
+8 => 'NGO',
+9 => 'Others'
 ];
 
 $ngo_rating_lists = [
-    1 => 'Excellent',
-    2 => 'Good',
-    3 => 'Fair',
-    4 => 'Poor',
-    5 => 'Extremely Poor',
-    6 => 'Non-Functional'
+1 => 'Excellent',
+2 => 'Good',
+3 => 'Fair',
+4 => 'Poor',
+5 => 'Extremely Poor',
+6 => 'Non-Functional'
+];
+
+$district_Lists = [
+1 => "Bagerhat", 2 => "Bandarban", 3 => "Barguna", 4 => "Barishal",
+5 => "Bhola", 6 => "Bogura", 7 => "Brahmanbaria", 8 => "Chandpur",
+9 => "Chapainawabganj", 10 => "Chattogram", 11 => "Chuadanga", 12 => "Cumilla",
+13 => "Cox's Bazar", 14 => "Dhaka", 15 => "Dinajpur", 16 => "Faridpur",
+17 => "Feni", 18 => "Gaibandha", 19 => "Gazipur", 20 => "Gopalganj",
+21 => "Habiganj", 22 => "Jamalpur", 23 => "Jashore", 24 => "Jhalakathi",
+25 => "Jhenaidah", 26 => "Joypurhat", 27 => "Khagrachari", 28 => "Khulna",
+29 => "Kishoreganj", 30 => "Kurigram", 31 => "Kushtia", 32 => "Lakshmipur",
+33 => "Lalmonirhat", 34 => "Madaripur", 35 => "Magura", 36 => "Manikganj",
+37 => "Meherpur", 38 => "Moulvibazar", 39 => "Munshiganj", 40 => "Mymensingh",
+41 => "Naogaon", 42 => "Narail", 43 => "Narayanganj", 44 => "Narsingdi",
+45 => "Natore", 46 => "Netrokona", 47 => "Nilphamari", 48 => "Noakhali",
+49 => "Pabna", 50 => "Panchagarh", 51 => "Patuakhali", 52 => "Pirojpur",
+53 => "Rajbari", 54 => "Rajshahi", 55 => "Rangamati", 56 => "Rangpur",
+57 => "Satkhira", 58 => "Shariatpur", 59 => "Sherpur", 60 => "Sirajganj",
+61 => "Sunamganj", 62 => "Sylhet", 63 => "Tangail", 64 => "Thakurgaon"
 ];
 
 // ৩. ডাটা ম্যাপ করা
@@ -32,10 +51,21 @@ $q26_table_rows_2 = $question_26_data['q26_data_2'] ?? null;
 $q26_others_val = $question_26_data['others'] ?? '';
 @endphp
 
+
+
 <style>
-.othersText { display: none; }
-.visibility { display: none; }
-.ngo_rating_container { display: none; margin-top: 5px; }
+.othersText {
+    display: none;
+}
+
+.visibility {
+    display: none;
+}
+
+.ngo_rating_container {
+    display: none;
+    margin-top: 5px;
+}
 </style>
 
 <div class="card question26">
@@ -51,24 +81,24 @@ $q26_others_val = $question_26_data['others'] ?? '';
         <div class="card-body">
 
             <div class="icheck-primary">
-                <input type="radio" class="twenty6_status" id="q26_yes" name="is_consistent_victim_approach_q26" value="1"
-                    {{ $q26_checked == "1" ? 'checked' : '' }}>
+                <input type="radio" class="twenty6_status" id="q26_yes" name="is_consistent_victim_approach_q26"
+                    value="1" {{ $q26_checked == "1" ? 'checked' : '' }}>
                 <label for="q26_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="twenty6_status" id="q26_no" name="is_consistent_victim_approach_q26" value="0"
-                    {{ $q26_checked == "0" ? 'checked' : '' }}>
+                <input type="radio" class="twenty6_status" id="q26_no" name="is_consistent_victim_approach_q26"
+                    value="0" {{ $q26_checked == "0" ? 'checked' : '' }}>
                 <label for="q26_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="twenty6_status" id="q26_others" name="is_consistent_victim_approach_q26" value="2"
-                    {{ $q26_checked == "2" ? 'checked' : '' }}>
+                <input type="radio" class="twenty6_status" id="q26_others" name="is_consistent_victim_approach_q26"
+                    value="2" {{ $q26_checked == "2" ? 'checked' : '' }}>
                 <label for="q26_others">Others</label>
 
                 <span class="col-md-6 mt--4 others_input_container {{ $q26_checked == "2" ? '' : 'othersText' }}">
-                    <input type="text" id="q26_others_input" class="form-control" placeholder="Others"
+                    <input type="text" id="q26_others_input" class="form-control" placeholder="Please describe"
                         name="others_forced_labor_q26" value="{{ $q26_others_val }}">
                 </span>
             </div>
@@ -80,9 +110,9 @@ $q26_others_val = $question_26_data['others'] ?? '';
                 <table id="addRowq26Table1" class="table table-bordered text-center mb-4">
                     <thead>
                         <tr>
-                            <th rowspan="2" style="vertical-align: middle;">Location</th>
+                            <th rowspan="2" style="vertical-align: middle;">District</th>
                             <th colspan="4">Number of personnel Trained</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Category</th>
@@ -98,8 +128,15 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         @php $is_ngo = ($q26['category'] ?? '') == 8; @endphp
                         <tr class="q26_row_data_1" id="q26_t1_row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="labor_title_q26_1[]" class="form-control labor_title_q26"
-                                    value="{{ $q26['title'] ?? '' }}">
+
+
+                                <select name="labor_title_q26_1[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
                             </td>
                             <td>
                                 <select name="labor_category_q26_1[]" class="form-control labor_category_q26">
@@ -115,7 +152,8 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                     <select name="ngo_rating_q26_1[]" class="form-control labor_ngo_rating_q26 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
-                                        <option value="{{ $rKey }}" {{ ($q26['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
+                                        <option value="{{ $rKey }}"
+                                            {{ ($q26['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
                                             {{ $rItem }}
                                         </option>
                                         @endforeach
@@ -123,26 +161,40 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q26_1[]" class="form-control labor_men_q26" value="{{ $q26['men'] ?? 0 }}" min="0">
+                                <input type="number" name="labor_men_q26_1[]" class="form-control labor_men_q26"
+                                    value="{{ $q26['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q26_1[]" class="form-control labor_women_q26" value="{{ $q26['women'] ?? 0 }}" min="0">
+                                <input type="number" name="labor_women_q26_1[]" class="form-control labor_women_q26"
+                                    value="{{ $q26['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q26_1[]" readonly class="form-control labor_total_q26" value="{{ $q26['total'] ?? 0 }}">
+                                <input type="number" name="labor_total_q26_1[]" readonly
+                                    class="form-control labor_total_q26" value="{{ $q26['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
-                                <button type="button" class="btn btn-sm btn-primary" id="addRowDataq26_Table1">+</button>
+                                <button type="button" class="btn btn-sm btn-primary"
+                                    id="addRowDataq26_Table1">+</button>
                                 @else
-                                <button type="button" id="t1_{{ $i+1 }}" class="btn btn-danger btn-sm q26btn_remove_t1">-</button>
+                                <button type="button" id="t1_{{ $i+1 }}"
+                                    class="btn btn-danger btn-sm q26btn_remove_t1">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
                         <tr class="q26_row_data_1" id="q26_t1_row1">
-                            <td><input type="text" name="labor_title_q26_1[]" class="form-control labor_title_q26"></td>
+                            <td>
+
+                                <select name="labor_title_q26_1[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
                             <td>
                                 <select name="labor_category_q26_1[]" class="form-control labor_category_q26">
                                     <option value="" disabled selected>--Select Category--</option>
@@ -159,17 +211,22 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                     </select>
                                 </div>
                             </td>
-                            <td><input type="number" name="labor_men_q26_1[]" value="0" class="form-control labor_men_q26" min="0"></td>
-                            <td><input type="number" name="labor_women_q26_1[]" value="0" class="form-control labor_women_q26" min="0"></td>
-                            <td><input type="number" name="labor_total_q26_1[]" value="0" class="form-control labor_total_q26" readonly></td>
-                            <td><button type="button" class="btn btn-sm btn-primary" id="addRowDataq26_Table1">+</button></td>
+                            <td><input type="number" name="labor_men_q26_1[]" value="0"
+                                    class="form-control labor_men_q26" min="0"></td>
+                            <td><input type="number" name="labor_women_q26_1[]" value="0"
+                                    class="form-control labor_women_q26" min="0"></td>
+                            <td><input type="number" name="labor_total_q26_1[]" value="0"
+                                    class="form-control labor_total_q26" readonly></td>
+                            <td><button type="button" class="btn btn-sm btn-primary"
+                                    id="addRowDataq26_Table1">+</button></td>
                         </tr>
                         @endif
                     </tbody>
                 </table>
 
                 <!-- ==================== TABLE 2 ==================== -->
-                <h6 class="w-100 font-weight-bold my-2">Did service providers have the knowledge and skills to support victims through a consistent victim-centered approach?</h6>
+                <h6 class="w-100 font-weight-bold my-2">Did service providers have the knowledge and skills to support
+                    victims through a consistent victim-centered approach?</h6>
                 <table id="addRowq26Table2" class="table table-bordered text-center">
                     <thead>
                         <tr>
@@ -191,7 +248,16 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         @php $is_ngo = ($q26['category'] ?? '') == 8; @endphp
                         <tr class="q26_row_data_2" id="q26_t2_row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="labor_title_q26_2[]" class="form-control labor_title_q26" value="{{ $q26['title'] ?? '' }}">
+
+
+
+                                <select name="labor_title_q26_2[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
                             </td>
                             <td>
                                 <select name="labor_category_q26_2[]" class="form-control labor_category_q26">
@@ -207,7 +273,8 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                     <select name="ngo_rating_q26_2[]" class="form-control labor_ngo_rating_q26 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
-                                        <option value="{{ $rKey }}" {{ ($q26['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
+                                        <option value="{{ $rKey }}"
+                                            {{ ($q26['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
                                             {{ $rItem }}
                                         </option>
                                         @endforeach
@@ -215,26 +282,39 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="labor_men_q26_2[]" class="form-control labor_men_q26" value="{{ $q26['men'] ?? 0 }}" min="0">
+                                <input type="number" name="labor_men_q26_2[]" class="form-control labor_men_q26"
+                                    value="{{ $q26['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_women_q26_2[]" class="form-control labor_women_q26" value="{{ $q26['women'] ?? 0 }}" min="0">
+                                <input type="number" name="labor_women_q26_2[]" class="form-control labor_women_q26"
+                                    value="{{ $q26['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="labor_total_q26_2[]" readonly class="form-control labor_total_q26" value="{{ $q26['total'] ?? 0 }}">
+                                <input type="number" name="labor_total_q26_2[]" readonly
+                                    class="form-control labor_total_q26" value="{{ $q26['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
-                                <button type="button" class="btn btn-sm btn-primary" id="addRowDataq26_Table2">+</button>
+                                <button type="button" class="btn btn-sm btn-primary"
+                                    id="addRowDataq26_Table2">+</button>
                                 @else
-                                <button type="button" id="t2_{{ $i+1 }}" class="btn btn-danger btn-sm q26btn_remove_t2">-</button>
+                                <button type="button" id="t2_{{ $i+1 }}"
+                                    class="btn btn-danger btn-sm q26btn_remove_t2">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
                         <tr class="q26_row_data_2" id="q26_t2_row1">
-                            <td><input type="text" name="labor_title_q26_2[]" class="form-control labor_title_q26"></td>
+                            <td>
+                                <select name="labor_title_q26_2[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
                             <td>
                                 <select name="labor_category_q26_2[]" class="form-control labor_category_q26">
                                     <option value="" disabled selected>--Select Category--</option>
@@ -251,10 +331,14 @@ $q26_others_val = $question_26_data['others'] ?? '';
                                     </select>
                                 </div>
                             </td>
-                            <td><input type="number" name="labor_men_q26_2[]" value="0" class="form-control labor_men_q26" min="0"></td>
-                            <td><input type="number" name="labor_women_q26_2[]" value="0" class="form-control labor_women_q26" min="0"></td>
-                            <td><input type="number" name="labor_total_q26_2[]" value="0" class="form-control labor_total_q26" readonly></td>
-                            <td><button type="button" class="btn btn-sm btn-primary" id="addRowDataq26_Table2">+</button></td>
+                            <td><input type="number" name="labor_men_q26_2[]" value="0"
+                                    class="form-control labor_men_q26" min="0"></td>
+                            <td><input type="number" name="labor_women_q26_2[]" value="0"
+                                    class="form-control labor_women_q26" min="0"></td>
+                            <td><input type="number" name="labor_total_q26_2[]" value="0"
+                                    class="form-control labor_total_q26" readonly></td>
+                            <td><button type="button" class="btn btn-sm btn-primary"
+                                    id="addRowDataq26_Table2">+</button></td>
                         </tr>
                         @endif
                     </tbody>
@@ -324,7 +408,16 @@ $(document).ready(function() {
 
         $("#addRowq26Table1 tbody").append(`
             <tr class="q26_row_data_1" id="q26_t1_row${rowCount}">
-                <td><input type="text" name="labor_title_q26_1[]" class="form-control labor_title_q26"></td>
+                <td>
+               
+                <select name="labor_title_q26_1[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+                </td>
                 <td>
                     <select name="labor_category_q26_1[]" class="form-control labor_category_q26">${catOpts}</select>
                     <div class="ngo_rating_container">
@@ -347,7 +440,15 @@ $(document).ready(function() {
 
         $("#addRowq26Table2 tbody").append(`
             <tr class="q26_row_data_2" id="q26_t2_row${rowCount}">
-                <td><input type="text" name="labor_title_q26_2[]" class="form-control labor_title_q26"></td>
+                <td>
+                <select name="labor_title_q26_2[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+                </td>
                 <td>
                     <select name="labor_category_q26_2[]" class="form-control labor_category_q26">${catOpts}</select>
                     <div class="ngo_rating_container">
@@ -412,7 +513,14 @@ $(document).ready(function() {
             let total = $(this).find(".labor_total_q26").val() || 0;
 
             if (title || category || men > 0 || women > 0) {
-                tableData1.push({ title, category, ngo_rating, men, women, total });
+                tableData1.push({
+                    title,
+                    category,
+                    ngo_rating,
+                    men,
+                    women,
+                    total
+                });
             }
         });
 
@@ -426,7 +534,14 @@ $(document).ready(function() {
             let total = $(this).find(".labor_total_q26").val() || 0;
 
             if (title || category || men > 0 || women > 0) {
-                tableData2.push({ title, category, ngo_rating, men, women, total });
+                tableData2.push({
+                    title,
+                    category,
+                    ngo_rating,
+                    men,
+                    women,
+                    total
+                });
             }
         });
 

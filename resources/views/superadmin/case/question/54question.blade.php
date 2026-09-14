@@ -6,7 +6,6 @@ if (($questiontitles[53]->status ?? null) == 1) {
     $q54_checked = $question_54_data['q54_checked_value'] ?? "1";
     $q54_saved_rows = $question_54_data['q54_table_data'] ?? [];
     $q54_others_val = $question_54_data['others'] ?? '';
-
     $country_Lists = [
         1 => "India", 2 => "Nepal", 3 => "Sri lanka", 4 => "EU",
         5 => "USA", 6 => "Saudi Arabia", 7 => "Qatar", 8 => "Lebanon",
@@ -54,7 +53,7 @@ if (($questiontitles[53]->status ?? null) == 1) {
                 <label for="radioFiftyFour3">Others</label>
 
                 <span class="col-md-6 mt--4 q54_others_container {{ $q54_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q54others" placeholder="Others" class="form-control"
+                    <input type="text" id="q54others" placeholder="Please describe" class="form-control"
                         value="{{ $q54_others_val }}" name="other_country_diplomats_allegedly_q54">
                 </span>
             </div>
@@ -66,7 +65,7 @@ if (($questiontitles[53]->status ?? null) == 1) {
                             <th rowspan="2" style="vertical-align: middle;">Country where posted</th>
                             <th rowspan="2" style="vertical-align: middle;">Description</th>
                             <th colspan="4">Number of Cases</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>
@@ -193,8 +192,6 @@ if (($questiontitles[53]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fittyfourstatus").on("change", function() {
         var statusvalue = $("input[name='is_country_diplomats_allegedly_q54']:checked").val();
 

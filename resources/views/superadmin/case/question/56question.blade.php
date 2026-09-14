@@ -1,6 +1,5 @@
 @if (($questiontitles[55]->status ?? null) == 1)
 @php
-// session data for Question 56
 $question_56_data = session()->get('question56');
 $q56_checked = isset($question_56_data['q56_checked_value']) ? (string)$question_56_data['q56_checked_value'] : null;
 $q56_data = $question_56_data['q56_data'] ?? null;
@@ -18,7 +17,6 @@ $q56_data = $question_56_data['q56_data'] ?? null;
     <div id="Question-56" class="collapse" role="tabpanel" aria-labelledby="heading-56" data-parent="#accordion-2">
         <div class="card-body">
 
-            <!-- Title & Input Field -->
             <div class="form-group">
                 <label class="font-weight-bold">
                     In instances of trafficking allegations filed against peacekeepers, what steps did the
@@ -28,7 +26,7 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                     placeholder="Input Field">{{ $q56_data['peacekeeper_steps'] ?? '' }}</textarea>
             </div>
 
-            <!-- Radio Options -->
+
             <div class="form-group mb-2">
                 <input type="radio" id="radioYes56" class="fiftysixstatus" name="is_instances_trafficking_q56" value="1"
                     {{ (is_null($q56_checked) || $q56_checked === '1') ? 'checked' : '' }}>
@@ -40,17 +38,14 @@ $q56_data = $question_56_data['q56_data'] ?? null;
 
                 <input type="radio" id="radioOthers56" class="fiftysixstatus" name="is_instances_trafficking_q56"
                     value="2" {{ ($q56_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers56" class="text-danger font-weight-bold">Others [input text box with
-                    description]</label>
+                <label for="radioOthers56" class="text-danger font-weight-bold">Others </label>
             </div>
 
-            <!-- Others Input -->
             <div id="others_q56" style="display: {{ ($q56_checked === '2') ? 'block' : 'none' }};">
                 <textarea name="other_instances_trafficking_q56" class="form-control mt-2 q56-others-input" rows="2"
-                    placeholder="Others [input text box with description]">{{ $q56_data['others_peacekeeper'] ?? '' }}</textarea>
+                    placeholder="Please describe">{{ $q56_data['others_peacekeeper'] ?? '' }}</textarea>
             </div>
 
-            <!-- If Yes Section -->
             <div id="yes_extra_q56"
                 style="display: {{ (is_null($q56_checked) || $q56_checked === '1') ? 'block' : 'none' }};">
                 <p class="font-weight-bold mt-3">If Yes</p>
@@ -64,7 +59,7 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                                 <th rowspan="2" style="vertical-align: middle;">Country where posted</th>
                                 <th rowspan="2" style="vertical-align: middle;">Description</th>
                                 <th colspan="4">Number of Trainees</th>
-                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Action</th>
+                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Add row</th>
                             </tr>
                             <tr class="bg-light">
                                 <th>Men</th>
@@ -264,8 +259,6 @@ $q56_data = $question_56_data['q56_data'] ?? null;
 
 <script>
 $(document).ready(function() {
-
-    // Radio Toggle Logic
     function toggleq56() {
         let val = $("input[name='is_instances_trafficking_q56']:checked").val();
 
@@ -405,7 +398,7 @@ $(document).ready(function() {
     calculateQ56TraineesTotals();
     calculateQ56AccusedTotals();
 
-    // ==================== TEMP SAVE AJAX REQUEST ====================
+
     $(document).on("click", "#temp-save-question56", function() {
         let checkedValue = $("input[name='is_instances_trafficking_q56']:checked").val();
 
@@ -474,7 +467,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question56 .card-header h6').css('color', 'blue');
-                    alert("Question 56 Temp Saved Successfully");
+                    alert("Question 56 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

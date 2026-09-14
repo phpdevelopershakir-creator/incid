@@ -68,6 +68,16 @@
                 </thead>
                 <tbody>
 
+
+                    @php
+                    $oneTotal = 0;
+                    $twoTotal = 0;
+                    $threeTotal = 0;
+                    $fourTotal = 0;
+                    $fiveTotal = 0;
+                    $Total = 0;
+
+                    @endphp
                     @foreach($case->fortyoneb as $fortyoneb)
                     <tr>
                         <th>{{$fortyoneb->convicted_traffickers_location_q41b}}</th>
@@ -104,7 +114,28 @@
 
                     </tr>
 
+                    @php
+                    $oneTotal += $fortyoneb->convicted_traffickers_men_q41b;
+                    $twoTotal += $fortyoneb->convicted_traffickers_men_amount_q41b;
+                    $threeTotal += $fortyoneb->convicted_traffickers_women_q41b;
+                    $fourTotal += $fortyoneb->convicted_traffickers_women_amount_q41b;
+                    $fiveTotal += $fortyoneb->convicted_traffickers_total_trafic_q41b;
+                    $Total += $fortyoneb->convicted_traffickers_total_amount_q41b;
+
+
+                    @endphp
+
                     @endforeach
+                    <tr style="font-weight:bold; background:#f1f1f1;">
+                        <td colspan="2">Total</td>
+                        <td class="text-center align-middle">{{ $oneTotal }}</td>
+                        <td class="text-center align-middle">{{ $twoTotal }}</td>
+                        <td class="text-center align-middle">{{ $threeTotal }}</td>
+                        <td class="text-center align-middle">{{ $fourTotal }}</td>
+                        <td class="text-center align-middle">{{ $fiveTotal }}</td>
+                        <td class="text-center align-middle">{{ $Total }}</td>
+
+                    </tr>
 
                 </tbody>
             </table>

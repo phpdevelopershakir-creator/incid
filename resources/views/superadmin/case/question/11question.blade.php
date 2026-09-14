@@ -16,11 +16,23 @@ $target_Lists = [
 6 => "Diplomat"
 ];
 
-$country_Lists = [
-1 => "India", 2 => "Nepal", 3 => "Sri lanka", 4 => "EU",
-5 => "USA", 6 => "Saudi Arabia", 7 => "Qatar", 8 => "Lebanon",
-9 => "Iraq", 10 => "UAE", 11 => "Thailand", 12 => "Vietnam",
-13 => "Cambodia", 14 => "South Africa", 15 => "Brazil", 16 => "UK"
+$district_Lists = [
+1 => "Bagerhat", 2 => "Bandarban", 3 => "Barguna", 4 => "Barishal",
+5 => "Bhola", 6 => "Bogura", 7 => "Brahmanbaria", 8 => "Chandpur",
+9 => "Chapainawabganj", 10 => "Chattogram", 11 => "Chuadanga", 12 => "Cumilla",
+13 => "Cox's Bazar", 14 => "Dhaka", 15 => "Dinajpur", 16 => "Faridpur",
+17 => "Feni", 18 => "Gaibandha", 19 => "Gazipur", 20 => "Gopalganj",
+21 => "Habiganj", 22 => "Jamalpur", 23 => "Jashore", 24 => "Jhalakathi",
+25 => "Jhenaidah", 26 => "Joypurhat", 27 => "Khagrachari", 28 => "Khulna",
+29 => "Kishoreganj", 30 => "Kurigram", 31 => "Kushtia", 32 => "Lakshmipur",
+33 => "Lalmonirhat", 34 => "Madaripur", 35 => "Magura", 36 => "Manikganj",
+37 => "Meherpur", 38 => "Moulvibazar", 39 => "Munshiganj", 40 => "Mymensingh",
+41 => "Naogaon", 42 => "Narail", 43 => "Narayanganj", 44 => "Narsingdi",
+45 => "Natore", 46 => "Netrokona", 47 => "Nilphamari", 48 => "Noakhali",
+49 => "Pabna", 50 => "Panchagarh", 51 => "Patuakhali", 52 => "Pirojpur",
+53 => "Rajbari", 54 => "Rajshahi", 55 => "Rangamati", 56 => "Rangpur",
+57 => "Satkhira", 58 => "Shariatpur", 59 => "Sherpur", 60 => "Sirajganj",
+61 => "Sunamganj", 62 => "Sylhet", 63 => "Tangail", 64 => "Thakurgaon"
 ];
 @endphp
 
@@ -68,7 +80,7 @@ $country_Lists = [
 
                 <span class="col-md-6 mt--4 q11_others_container {{ $q11_checked == '2' ? '' : 'othersText' }}"
                     style="margin-top:-8px;">
-                    <input type="text" id="q11others" placeholder="Others" class="form-control"
+                    <input type="text" id="q11others" placeholder="Please describe" class="form-control"
                         value="{{ $q11_others_val }}" name="other_government_agreements_transparent_q11">
                 </span>
             </div>
@@ -77,10 +89,10 @@ $country_Lists = [
                 <table id="addRowQ11" class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Country</th>
+                            <th>Districts</th>
                             <th>Target group of Training (multiple response)</th>
                             <th>Total coverage</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,18 +103,18 @@ $country_Lists = [
                             <td>
                                 @if($index == 0)
 
-                                <select name="government_agreements_transparent_country_q11[]" class="form-control">
+                                <select name="government_agreements_transparent_district_q11[]" class="form-control">
                                     <option value="" disabled>---Choose an item--</option>
-                                    @foreach ($country_Lists as $key => $country)
-                                    <option value="{{ $key }}" {{ ($row['country'] ?? '') == $key ? 'selected' : '' }}>
-                                        {{ $country }}</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
                                     @endforeach
                                 </select>
                                 @else
 
-                                <input type="text" name="government_agreements_transparent_country_q11[]"
+                                <input type="text" name="government_agreements_transparent_district_q11[]"
                                     class="form-control" placeholder="Others (Specify)___"
-                                    value="{{ $row['country'] ?? '' }}">
+                                    value="{{ $row['district'] ?? '' }}">
                                 @endif
                             </td>
                             <td>
@@ -136,10 +148,10 @@ $country_Lists = [
 
                         <tr class="qe11NoOfRow" id="row0">
                             <td>
-                                <select name="government_agreements_transparent_country_q11[]" class="form-control">
+                                <select name="government_agreements_transparent_district_q11[]" class="form-control">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($country_Lists as $key => $country)
-                                    <option value="{{ $key }}">{{ $country }}</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}">{{ $district }}</option>
                                     @endforeach
                                 </select>
                             </td>
@@ -160,7 +172,7 @@ $country_Lists = [
 
                         <tr class="qe11NoOfRow" id="row1">
                             <td>
-                                <input type="text" name="government_agreements_transparent_country_q11[]"
+                                <input type="text" name="government_agreements_transparent_district_q11[]"
                                     class="form-control" placeholder="Others (Specify)___">
                             </td>
                             <td>
@@ -221,7 +233,7 @@ $(document).ready(function() {
 
         $("#addRowQ11 tbody").append(
             '<tr class="qe11NoOfRow" id="row' + rowCount + '">' +
-            '<td><input type="text" name="government_agreements_transparent_country_q11[]" class="form-control" placeholder="Others (Specify)___"></td>' +
+            '<td><input type="text" name="government_agreements_transparent_district_q11[]" class="form-control" placeholder="Others (Specify)___"></td>' +
             '<td><select name="government_agreements_transparent_status_q11[]" class="form-control"><option value="" disabled selected>---Choose an item--</option>' +
             targetOptions + '</select></td>' +
             '<td><input type="number" name="government_agreements_transparent_total_q11[]" class="form-control" value="0" min="0"></td>' +
@@ -243,16 +255,16 @@ $(document).ready(function() {
 
         $('.qe11NoOfRow').each(function() {
 
-            let country = $(this).find(
-                '[name="government_agreements_transparent_country_q11[]"]').val();
+            let district = $(this).find(
+                '[name="government_agreements_transparent_district_q11[]"]').val();
             let target = $(this).find(
                 'select[name="government_agreements_transparent_status_q11[]"]').val();
             let total = $(this).find(
                 'input[name="government_agreements_transparent_total_q11[]"]').val();
 
-            if (country || target || total) {
+            if (district || target || total) {
                 q11_rows_data.push({
-                    country: country,
+                    district: district,
                     target: target,
                     total: total
                 });

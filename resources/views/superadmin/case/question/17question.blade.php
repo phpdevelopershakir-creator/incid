@@ -63,7 +63,7 @@ if (($questiontitles[16]->status ?? null) == 1) {
                 <label for="radioSeventeen3">Others</label>
 
                 <span class="col-md-6 mt--4 q17_others_container {{ $q17_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q17others" placeholder="Others" class="form-control"
+                    <input type="text" id="q17others" placeholder="Please describe" class="form-control"
                         value="{{ $q17_others_val }}" name="other_report_country_narrative_protection_q17">
                 </span>
             </div>
@@ -75,7 +75,7 @@ if (($questiontitles[16]->status ?? null) == 1) {
                             <th rowspan="2" style="vertical-align: middle;">Title of Original Guideline</th>
                             <th rowspan="2" style="vertical-align: middle;">Description of change/Status</th>
                             <th colspan="4">VoT referred</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>

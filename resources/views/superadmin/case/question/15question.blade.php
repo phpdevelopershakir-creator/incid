@@ -1,36 +1,36 @@
 @if (($questiontitles[14]->status ?? null) == 1)
 @php
-    // ১. সেশন এবং ডাটাবেজ থেকে ডাটা ক্যাচ করা
-    $question_15_data = session()->get('question15');
+// ১. সেশন এবং ডাটাবেজ থেকে ডাটা ক্যাচ করা
+$question_15_data = session()->get('question15');
 
-    // রেডিও ভ্যালু ডিফল্ট null বা সেশন / ডাটাবেজের মান (১ = Yes, 0 = No, 2 = Others)
-    $raw_checked = $question_15_data['is_victim_identification_protocol_q15'] 
-                    ?? ($question_15_data['q15_checked_value'] 
-                    ?? ($db_q15->is_victim_identification_protocol_q15 ?? null));
+// রেডিও ভ্যালু ডিফল্ট null বা সেশন / ডাটাবেজের মান (১ = Yes, 0 = No, 2 = Others)
+$raw_checked = $question_15_data['is_victim_identification_protocol_q15']
+?? ($question_15_data['q15_checked_value']
+?? ($db_q15->is_victim_identification_protocol_q15 ?? null));
 
-    $q15_checked = ($raw_checked !== null) ? (string)$raw_checked : '1';
+$q15_checked = ($raw_checked !== null) ? (string)$raw_checked : '1';
 
-    // Others details
-    $q15_others_val = $question_15_data['other_victim_identification_protocol_q15'] 
-                        ?? ($question_15_data['others'] 
-                        ?? ($db_q15->other_victim_identification_protocol_q15 ?? ''));
+// Others details
+$q15_others_val = $question_15_data['other_victim_identification_protocol_q15']
+?? ($question_15_data['others']
+?? ($db_q15->other_victim_identification_protocol_q15 ?? ''));
 
-    // Descriptions & File (Session -> DB Model -> Default empty)
-    $q15_r1_val = $question_15_data['description_one_q15'] 
-                    ?? ($question_15_data['q15_r1_yes_val'] 
-                    ?? ($db_q15->description_one_q15 ?? ''));
+// Descriptions & File (Session -> DB Model -> Default empty)
+$q15_r1_val = $question_15_data['description_one_q15']
+?? ($question_15_data['q15_r1_yes_val']
+?? ($db_q15->description_one_q15 ?? ''));
 
-    $q15_r2_val = $question_15_data['description_two_q15'] 
-                    ?? ($question_15_data['q15_r2_yes_val'] 
-                    ?? ($db_q15->description_two_q15 ?? ''));
+$q15_r2_val = $question_15_data['description_two_q15']
+?? ($question_15_data['q15_r2_yes_val']
+?? ($db_q15->description_two_q15 ?? ''));
 
-    $q15_r3_val = $question_15_data['description_three_q15'] 
-                    ?? ($question_15_data['q15_r3_yes_val'] 
-                    ?? ($db_q15->description_three_q15 ?? ''));
+$q15_r3_val = $question_15_data['description_three_q15']
+?? ($question_15_data['q15_r3_yes_val']
+?? ($db_q15->description_three_q15 ?? ''));
 
-    $q15_file_val = $question_15_data['document_upload_q15'] 
-                    ?? ($question_15_data['q15_c_file'] 
-                    ?? ($db_q15->document_upload_q15 ?? ''));
+$q15_file_val = $question_15_data['document_upload_q15']
+?? ($question_15_data['q15_c_file']
+?? ($db_q15->document_upload_q15 ?? ''));
 @endphp
 
 <div class="card question15">
@@ -70,7 +70,7 @@
             <!-- Others সিলেক্ট করলে এই ফিল্ড আসবে -->
             <div class="mb-3 q15_others_container" style="display: {{ $q15_checked === '2' ? 'block' : 'none' }};">
                 <input type="text" id="q15others" name="other_victim_identification_protocol_q15"
-                    class="form-control col-md-6" placeholder="Others details" value="{{ $q15_others_val }}">
+                    class="form-control col-md-6" placeholder="Please describe" value="{{ $q15_others_val }}">
             </div>
 
             <!-- Yes সিলেক্ট করলে টেবিল শো করবে -->
@@ -82,7 +82,8 @@
                         <tr>
                             <td>
                                 <label class="font-weight-bold">
-                                    Did front-line officials have a victim identification protocol or other formal written procedures to guide proactive victim identification?
+                                    Did front-line officials have a victim identification protocol or other formal
+                                    written procedures to guide proactive victim identification?
                                 </label>
                                 <div class="mt-2 q15_r1_yes_box">
                                     <input type="text" id="q15_r1_yes_text" name="description_one_q15"
@@ -96,7 +97,9 @@
                         <tr>
                             <td>
                                 <label class="font-weight-bold">
-                                    Does the protocol or other formal written procedure outline steps to screen populations at increased risk of trafficking per the previous year’s TIP Report or other reporting on emerging trends involving the country or its nationals?
+                                    Does the protocol or other formal written procedure outline steps to screen
+                                    populations at increased risk of trafficking per the previous year’s TIP Report or
+                                    other reporting on emerging trends involving the country or its nationals?
                                 </label>
                                 <div class="mt-2 q15_r2_yes_box">
                                     <input type="text" id="q15_r2_yes_text" name="description_two_q15"
@@ -110,7 +113,8 @@
                         <tr>
                             <td>
                                 <label class="font-weight-bold">
-                                    <u>Share copies of the victim identification protocol or any formal written procedures used for victim identification, if any.</u>
+                                    <u>Share copies of the victim identification protocol or any formal written
+                                        procedures used for victim identification, if any.</u>
                                 </label>
                                 <div class="mt-2 q15_r3_yes_box">
                                     <input type="text" id="q15_r3_yes_text" name="description_three_q15"
@@ -121,9 +125,10 @@
                                 <!-- File Upload -->
                                 <div class="mt-3">
                                     <label class="font-weight-bold">Please upload/attach the document:</label>
-                                    <input type="file" id="q15_c_file_input" name="document_upload_q15" class="form-control-file">
+                                    <input type="file" id="q15_c_file_input" name="document_upload_q15"
+                                        class="form-control-file">
                                     @if(!empty($q15_file_val))
-                                        <small class="text-success d-block mt-1">Uploaded File: {{ $q15_file_val }}</small>
+                                    <small class="text-success d-block mt-1">Uploaded File: {{ $q15_file_val }}</small>
                                     @endif
                                 </div>
                             </td>
@@ -166,7 +171,7 @@ $(document).ready(function() {
 
         // Radio Button Select Value Catch
         let checkedVal = $("input[name='is_victim_identification_protocol_q15']:checked").val();
-        
+
         if (typeof checkedVal === 'undefined') {
             alert('Please select Yes, No, or Others!');
             return false;
@@ -179,14 +184,15 @@ $(document).ready(function() {
         // রেডিও এবং আদার্স ফিল্ডের তথ্য
         formData.append('question15[is_victim_identification_protocol_q15]', checkedVal);
         formData.append('question15[q15_checked_value]', checkedVal);
-        formData.append('question15[other_victim_identification_protocol_q15]', $('#q15others').val() || '');
+        formData.append('question15[other_victim_identification_protocol_q15]', $('#q15others').val() ||
+            '');
         formData.append('question15[others]', $('#q15others').val() || '');
 
         // Controller এর সাথে নাম হুবহু মিলিয়ে Data Append করা হলো
         formData.append('question15[description_one_q15]', $('#q15_r1_yes_text').val() || '');
         formData.append('question15[description_two_q15]', $('#q15_r2_yes_text').val() || '');
         formData.append('question15[description_three_q15]', $('#q15_r3_yes_text').val() || '');
-        
+
         formData.append('question15[q15_r1_yes_val]', $('#q15_r1_yes_text').val() || '');
         formData.append('question15[q15_r2_yes_val]', $('#q15_r2_yes_text').val() || '');
         formData.append('question15[q15_r3_yes_val]', $('#q15_r3_yes_text').val() || '');

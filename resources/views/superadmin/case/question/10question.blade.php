@@ -70,7 +70,7 @@ if (($questiontitles[9]->status ?? null) == 1) {
                     <?= ($q10_checked == "2") ? "checked" : ""; ?>>
                 <label for="radioTen3">Others</label>
                 <span class="col-md-6 mt--4 <?= ($q10_checked == "2") ? "" : "othersText"; ?>">
-                    <input type="text" id="q10others" placeholder="Others" class="form-control"
+                    <input type="text" id="q10others" placeholder="Please describe" class="form-control"
                         value="<?= $q10_others_val; ?>" name="other_exclusively_trafficking_q10">
                 </span>
             </div>
@@ -87,7 +87,7 @@ if (($questiontitles[9]->status ?? null) == 1) {
                             <th scope="col">Description</th>
                             <th scope="col">Please Select Yes/No</th>
                             <th scope="col">Opinion</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Add row</th>
                         </tr>
                     </thead>
                     <tbody>

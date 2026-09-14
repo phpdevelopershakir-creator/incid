@@ -1,28 +1,56 @@
 @if (($questiontitles[15]->status ?? null) == 1)
 @php
-    $question_16_data = session()->get('question16');
+$question_16_data = session()->get('question16');
 
-    $category_lists = [
-        1 => 'Social Worker', 2 => 'Police', 3 => 'BGB',
-        4 => 'Coastguard', 5 => 'VDP', 6 => 'Rail Police',
-        7 => 'Judiciary', 8 => 'NGO', 9 => 'Others'
-    ];
+$category_lists = [
+1 => 'Social Worker', 2 => 'Police', 3 => 'BGB',
+4 => 'Coastguard', 5 => 'VDP', 6 => 'Rail Police',
+7 => 'Judiciary', 8 => 'NGO', 9 => 'Others'
+];
 
-    $ngo_rating_lists = [
-        1 => 'Excellent', 2 => 'Good', 3 => 'Fair',
-        4 => 'Poor', 5 => 'Extremely Poor', 6 => 'Non-Functional'
-    ];
+$ngo_rating_lists = [
+1 => 'Excellent', 2 => 'Good', 3 => 'Fair',
+4 => 'Poor', 5 => 'Extremely Poor', 6 => 'Non-Functional'
+];
 
-    $q16_checked = $question_16_data['q16radioSix16_checked_value'] ?? "1";
-    $q16_table_rows = $question_16_data['q16radioSix16_data'] ?? null;
-    $q16_others_val = $question_16_data['others'] ?? '';
-    $q16_description = $question_16_data['description'] ?? '';
+$q16_checked = $question_16_data['q16radioSix16_checked_value'] ?? "1";
+$q16_table_rows = $question_16_data['q16radioSix16_data'] ?? null;
+$q16_others_val = $question_16_data['others'] ?? '';
+$q16_description = $question_16_data['description'] ?? '';
+
+$district_Lists = [
+1 => "Bagerhat", 2 => "Bandarban", 3 => "Barguna", 4 => "Barishal",
+5 => "Bhola", 6 => "Bogura", 7 => "Brahmanbaria", 8 => "Chandpur",
+9 => "Chapainawabganj", 10 => "Chattogram", 11 => "Chuadanga", 12 => "Cumilla",
+13 => "Cox's Bazar", 14 => "Dhaka", 15 => "Dinajpur", 16 => "Faridpur",
+17 => "Feni", 18 => "Gaibandha", 19 => "Gazipur", 20 => "Gopalganj",
+21 => "Habiganj", 22 => "Jamalpur", 23 => "Jashore", 24 => "Jhalakathi",
+25 => "Jhenaidah", 26 => "Joypurhat", 27 => "Khagrachari", 28 => "Khulna",
+29 => "Kishoreganj", 30 => "Kurigram", 31 => "Kushtia", 32 => "Lakshmipur",
+33 => "Lalmonirhat", 34 => "Madaripur", 35 => "Magura", 36 => "Manikganj",
+37 => "Meherpur", 38 => "Moulvibazar", 39 => "Munshiganj", 40 => "Mymensingh",
+41 => "Naogaon", 42 => "Narail", 43 => "Narayanganj", 44 => "Narsingdi",
+45 => "Natore", 46 => "Netrokona", 47 => "Nilphamari", 48 => "Noakhali",
+49 => "Pabna", 50 => "Panchagarh", 51 => "Patuakhali", 52 => "Pirojpur",
+53 => "Rajbari", 54 => "Rajshahi", 55 => "Rangamati", 56 => "Rangpur",
+57 => "Satkhira", 58 => "Shariatpur", 59 => "Sherpur", 60 => "Sirajganj",
+61 => "Sunamganj", 62 => "Sylhet", 63 => "Tangail", 64 => "Thakurgaon"
+];
 @endphp
 
 <style>
-.othersText { display: none; }
-.visibility { display: none; }
-.ngo_rating_container { display: none; margin-top: 5px; }
+.othersText {
+    display: none;
+}
+
+.visibility {
+    display: none;
+}
+
+.ngo_rating_container {
+    display: none;
+    margin-top: 5px;
+}
 </style>
 
 <div class="card question16">
@@ -39,24 +67,24 @@
 
             <!-- Radio Options -->
             <div class="icheck-primary">
-                <input type="radio" class="sixteen_status" id="q16_yes" name="is_authorities_systematically_q16" value="1"
-                    {{ $q16_checked == "1" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_yes" name="is_authorities_systematically_q16"
+                    value="1" {{ $q16_checked == "1" ? 'checked' : '' }}>
                 <label for="q16_yes">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" class="sixteen_status" id="q16_no" name="is_authorities_systematically_q16" value="0"
-                    {{ $q16_checked == "0" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_no" name="is_authorities_systematically_q16"
+                    value="0" {{ $q16_checked == "0" ? 'checked' : '' }}>
                 <label for="q16_no">No</label>
             </div>
 
             <div class="icheck-primary input-group mb-3">
-                <input type="radio" class="sixteen_status" id="q16_others" name="is_authorities_systematically_q16" value="2"
-                    {{ $q16_checked == "2" ? 'checked' : '' }}>
+                <input type="radio" class="sixteen_status" id="q16_others" name="is_authorities_systematically_q16"
+                    value="2" {{ $q16_checked == "2" ? 'checked' : '' }}>
                 <label for="q16_others">Others</label>
 
                 <span class="col-md-6 mt--4 others_input_container {{ $q16_checked == "2" ? '' : 'othersText' }}">
-                    <input type="text" id="q16radioThree3others" class="form-control" placeholder="Others"
+                    <input type="text" id="q16radioThree3others" class="form-control" placeholder="Please describe"
                         name="other_authorities_systematically_q16" value="{{ $q16_others_val }}">
                 </span>
             </div>
@@ -76,7 +104,7 @@
                             </td>
                             <td>
                                 <textarea name="description_q16" id="q16_description" class="form-control" rows="4"
-                                    placeholder="Input Text Area description">{{ $q16_description }}</textarea>
+                                    placeholder="Please describe">{{ $q16_description }}</textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -86,9 +114,9 @@
                 <table id="addRowq16radioThree3" class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th rowspan="2" style="vertical-align: middle;">Location</th>
+                            <th rowspan="2" style="vertical-align: middle;">District</th>
                             <th colspan="4">Number of personnel Trained</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Category</th>
@@ -104,8 +132,19 @@
                         @php $is_ngo = ($q16['category'] ?? '') == 8; @endphp
                         <tr class="q16radioSix6QRow" id="q16row{{ $i+1 }}">
                             <td>
-                                <input type="text" name="location_q16[]" class="form-control location_q16" value="{{ $q16['title'] ?? '' }}">
+
+                                <select name="location_q16[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+
+
                             </td>
+
+
                             <td>
                                 <select name="category_q16[]" class="form-control labor_category_q16">
                                     <option value="" disabled selected>--Select Category--</option>
@@ -120,7 +159,8 @@
                                     <select name="ngo_rating_q16[]" class="form-control labor_ngo_rating_q16 mt-1">
                                         <option value="" disabled selected>--Select NGO Rating--</option>
                                         @foreach ($ngo_rating_lists as $rKey => $rItem)
-                                        <option value="{{ $rKey }}" {{ ($q16['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
+                                        <option value="{{ $rKey }}"
+                                            {{ ($q16['ngo_rating'] ?? '') == $rKey ? 'selected' : '' }}>
                                             {{ $rItem }}
                                         </option>
                                         @endforeach
@@ -128,26 +168,39 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="number" name="men_q16[]" id="men_q16_{{ $i+1 }}" class="form-control men_q16" value="{{ $q16['men'] ?? 0 }}" min="0">
+                                <input type="number" name="men_q16[]" id="men_q16_{{ $i+1 }}"
+                                    class="form-control men_q16" value="{{ $q16['men'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="women_q16[]" id="women_q16_{{ $i+1 }}" class="form-control women_q16" value="{{ $q16['women'] ?? 0 }}" min="0">
+                                <input type="number" name="women_q16[]" id="women_q16_{{ $i+1 }}"
+                                    class="form-control women_q16" value="{{ $q16['women'] ?? 0 }}" min="0">
                             </td>
                             <td>
-                                <input type="number" name="total_q16[]" readonly id="total_q16_{{ $i+1 }}" class="form-control total_q16" value="{{ $q16['total'] ?? 0 }}">
+                                <input type="number" name="total_q16[]" readonly id="total_q16_{{ $i+1 }}"
+                                    class="form-control total_q16" value="{{ $q16['total'] ?? 0 }}">
                             </td>
                             <td>
                                 @if($i == 0)
                                 <button type="button" class="btn btn-sm btn-primary addRowDatasq16Btn">+</button>
                                 @else
-                                <button type="button" id="{{ $i+1 }}" class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button>
+                                <button type="button" id="{{ $i+1 }}"
+                                    class="btn btn-danger btn-sm q16radioThree3btn_remove">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
                         <tr class="q16radioSix6QRow" id="q16row1">
-                            <td><input type="text" name="location_q16[]" class="form-control location_q16"></td>
+                            <td>
+
+                                <select name="location_q16[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
                             <td>
                                 <select name="category_q16[]" class="form-control labor_category_q16">
                                     <option value="" disabled selected>--Select Category--</option>
@@ -165,9 +218,12 @@
                                     </select>
                                 </div>
                             </td>
-                            <td><input type="number" name="men_q16[]" id="men_q16_1" value="0" class="form-control men_q16" min="0"></td>
-                            <td><input type="number" name="women_q16[]" id="women_q16_1" value="0" class="form-control women_q16" min="0"></td>
-                            <td><input type="number" name="total_q16[]" id="total_q16_1" value="0" class="form-control total_q16" readonly></td>
+                            <td><input type="number" name="men_q16[]" id="men_q16_1" value="0"
+                                    class="form-control men_q16" min="0"></td>
+                            <td><input type="number" name="women_q16[]" id="women_q16_1" value="0"
+                                    class="form-control women_q16" min="0"></td>
+                            <td><input type="number" name="total_q16[]" id="total_q16_1" value="0"
+                                    class="form-control total_q16" readonly></td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-primary addRowDatasq16Btn">+</button>
                             </td>
@@ -206,14 +262,24 @@ $(document).ready(function() {
         let rowCount = new Date().getTime();
 
         let jsCategoryLists = {
-            1: 'Social Worker', 2: 'Police', 3: 'BGB',
-            4: 'Coastguard', 5: 'VDP', 6: 'Rail Police',
-            7: 'Judiciary', 8: 'NGO', 9: 'Others'
+            1: 'Social Worker',
+            2: 'Police',
+            3: 'BGB',
+            4: 'Coastguard',
+            5: 'VDP',
+            6: 'Rail Police',
+            7: 'Judiciary',
+            8: 'NGO',
+            9: 'Others'
         };
 
         let jsNgoRatings = {
-            1: 'Excellent', 2: 'Good', 3: 'Fair',
-            4: 'Poor', 5: 'Extremely Poor', 6: 'Non-Functional'
+            1: 'Excellent',
+            2: 'Good',
+            3: 'Fair',
+            4: 'Poor',
+            5: 'Extremely Poor',
+            6: 'Non-Functional'
         };
 
         let categoryOptions = `<option value="" disabled selected>--Select Category--</option>`;
@@ -228,7 +294,15 @@ $(document).ready(function() {
 
         $("#addRowq16radioThree3 tbody").append(`
             <tr class="q16radioSix6QRow" id="q16row${rowCount}">
-                <td><input type="text" name="location_q16[]" class="form-control location_q16"></td>
+                <td>
+              <select name="location_q16[]" class="form-control">
+                                    <option value="" disabled>---Choose an item--</option>
+                                    @foreach ($district_Lists as $key => $district)
+                                    <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ $district }}</option>
+                                    @endforeach
+                                </select>
+                </td>
                 <td>
                     <select name="category_q16[]" class="form-control labor_category_q16">
                         ${categoryOptions}

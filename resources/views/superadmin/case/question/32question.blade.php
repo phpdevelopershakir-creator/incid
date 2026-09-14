@@ -32,13 +32,13 @@ $q32_data = $question_32_data['q32_data'] ?? null;
             <div id="yes_extra_q32"
                 style="display: {{ (is_null($q32_checked) || $q32_checked === '1') ? 'block' : 'none' }};">
                 <input type="text" name="involved_directly_trafficking_title_q32"
-                    class="form-control mt-2 q32-yes-input" placeholder="Provide Yes details"
+                    class="form-control mt-2 q32-yes-input" placeholder="Please describe"
                     value="{{ $q32_data['involved_directly_trafficking_title'] ?? '' }}">
             </div>
 
             <div id="no_extra_q32" style="display: {{ ($q32_checked === '0') ? 'block' : 'none' }};">
                 <input type="text" name="no_details_q32" class="form-control mt-2 q32-no-input"
-                    placeholder="Provide No details" value="{{ $q32_data['no_details'] ?? '' }}">
+                    placeholder="Please describe" value="{{ $q32_data['no_details'] ?? '' }}">
             </div>
 
             <div id="others_q32" style="display: {{ ($q32_checked === '2') ? 'block' : 'none' }};">

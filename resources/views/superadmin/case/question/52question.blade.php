@@ -1,8 +1,6 @@
 <?php
 if (($questiontitles[51]->status ?? null) == 1) {
-    
     $question_52_data = session()->get('question52');
-
     $q52_checked = $question_52_data['q52_checked_value'] ?? "1";
     $q52_saved_rows = $question_52_data['q52_table_data'] ?? [];
     $q52_others_val = $question_52_data['others'] ?? '';
@@ -61,7 +59,7 @@ if (($questiontitles[51]->status ?? null) == 1) {
                 <label for="radioFiftyTwo3">Others</label>
 
                 <span class="col-md-6 mt--4 q52_others_container {{ $q52_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q52others" placeholder="Others" class="form-control"
+                    <input type="text" id="q52others" placeholder="Please describe" class="form-control"
                         value="{{ $q52_others_val }}" name="other_government_prosecute_deport_q52">
                 </span>
             </div>
@@ -70,10 +68,10 @@ if (($questiontitles[51]->status ?? null) == 1) {
                 <table id="addRowQ52" class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Action</th>
+                            <th>Title</th>
                             <th>Status</th>
                             <th>Upload</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -179,11 +177,8 @@ if (($questiontitles[51]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-
     $(".fiftytwostatus").on("change", function() {
         var statusvalue = $("input[name='is_government_prosecute_deport_q52']:checked").val();
-
         if (statusvalue == '1') {
             $('#52_question_view').removeClass('visibility').show();
             $('.q52_others_container').addClass('othersText').hide();
@@ -262,7 +257,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question52 .card-title').css('color', 'blue');
-                alert("Question 52  Saved Temporarily ");
+                alert("Question 52 Temp  Saved  ");
             },
             error: function(err) {
                 alert("Error saving question 52 data ");

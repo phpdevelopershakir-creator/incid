@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2026 at 07:32 PM
+-- Generation Time: Sep 09, 2026 at 12:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -96,7 +96,28 @@ INSERT INTO `adult_victims_juvenile_q29` (`id`, `case_id`, `adult_victims_juveni
 (38, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (39, 191, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (40, 192, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(41, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(41, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(42, 194, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(43, 195, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(44, 196, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(45, 197, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(46, 198, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(47, 199, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(48, 200, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(49, 201, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(50, 202, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(51, 203, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(52, 204, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(53, 205, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(54, 206, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(55, 207, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(56, 208, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(57, 209, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(58, 210, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(59, 224, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(60, 225, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(61, 234, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(62, 235, NULL, '2026-09-08 06:49:58', '2026-09-08 06:49:58');
 
 -- --------------------------------------------------------
 
@@ -170,7 +191,28 @@ INSERT INTO `assistance_government_q37` (`id`, `case_id`, `assistance_government
 (33, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (34, 191, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (35, 192, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(36, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(36, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(37, 194, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(38, 195, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(39, 196, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(40, 197, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(41, 198, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(42, 199, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(43, 200, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(44, 201, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(45, 202, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(46, 203, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(47, 204, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(48, 205, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(49, 206, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(50, 207, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(51, 208, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(52, 209, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(53, 210, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(54, 224, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(55, 225, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(56, 234, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(57, 235, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -241,7 +283,28 @@ INSERT INTO `authorities_systematically_q16` (`id`, `case_id`, `title_q16`, `des
 (47, 190, '1', NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (48, 191, '1', NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (49, 192, '1', NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(50, 193, '1', NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(50, 193, '1', NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(51, 194, '1', NULL, '2026-09-02 07:25:28', '2026-09-02 07:25:28'),
+(52, 195, '1', NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(53, 196, '1', NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(54, 197, '1', NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(55, 198, '1', NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(56, 199, '1', NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(57, 200, '1', NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(58, 201, '1', NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(59, 202, '1', NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(60, 203, '1', NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(61, 204, '1', NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(62, 205, '1', NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(63, 206, '1', NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(64, 207, '1', NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(65, 208, '1', NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(66, 209, '1', NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(67, 210, '1', NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(68, 224, '1', NULL, '2026-09-03 05:49:50', '2026-09-03 05:49:50'),
+(69, 225, '1', NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(70, 234, '1', NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(71, 235, '1', NULL, '2026-09-08 06:49:58', '2026-09-08 06:49:58');
 
 -- --------------------------------------------------------
 
@@ -1135,7 +1198,31 @@ INSERT INTO `awareness_campaigns_research_projects_q44` (`id`, `case_id`, `aware
 (791, 190, '3', NULL, NULL, NULL),
 (792, 190, '4', NULL, NULL, NULL),
 (793, 190, '5', NULL, NULL, NULL),
-(794, 190, '6', NULL, NULL, NULL);
+(794, 190, '6', NULL, NULL, NULL),
+(795, 224, '1', NULL, NULL, NULL),
+(796, 224, '2', NULL, NULL, NULL),
+(797, 224, '3', NULL, NULL, NULL),
+(798, 224, '4', NULL, NULL, NULL),
+(799, 224, '5', NULL, NULL, NULL),
+(800, 224, '6', NULL, NULL, NULL),
+(801, 225, '1', NULL, NULL, NULL),
+(802, 225, '2', NULL, NULL, NULL),
+(803, 225, '3', NULL, NULL, NULL),
+(804, 225, '4', NULL, NULL, NULL),
+(805, 225, '5', NULL, NULL, NULL),
+(806, 225, '6', NULL, NULL, NULL),
+(807, 234, '1', NULL, NULL, NULL),
+(808, 234, '2', NULL, NULL, NULL),
+(809, 234, '3', NULL, NULL, NULL),
+(810, 234, '4', NULL, NULL, NULL),
+(811, 234, '5', NULL, NULL, NULL),
+(812, 234, '6', NULL, NULL, NULL),
+(813, 235, '1', NULL, NULL, NULL),
+(814, 235, '2', NULL, NULL, NULL),
+(815, 235, '3', NULL, NULL, NULL),
+(816, 235, '4', NULL, NULL, NULL),
+(817, 235, '5', NULL, NULL, NULL),
+(818, 235, '6', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1280,7 +1367,49 @@ INSERT INTO `case_models` (`id`, `user_id`, `caseid`, `situation`, `prevention`,
 (190, '1', '260825053449', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (191, '24', '260825102026', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (192, '24', '260825102026', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(193, '24', '260825103237', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-08-25 16:56:02', '2026-08-25 16:56:02');
+(193, '24', '260825103237', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-08-25 16:56:02', '2026-08-25 16:56:02'),
+(194, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:28', '2026-09-02 07:25:28'),
+(195, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(196, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(197, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(198, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(199, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(200, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(201, '24', '260902012440', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(202, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(203, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(204, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(205, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(206, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(207, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(208, '24', '260902012539', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(209, '24', '260902012559', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(210, '24', '260902013155', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(211, '24', '260902045352', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 10:54:05', '2026-09-02 10:54:05'),
+(212, '24', '260902045641', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 10:56:54', '2026-09-02 10:56:54'),
+(213, '24', '260902050024', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:00:45', '2026-09-02 11:00:45'),
+(214, '24', '260902050024', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:03:33', '2026-09-02 11:03:33'),
+(215, '24', '260902050437', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:04:46', '2026-09-02 11:04:46'),
+(216, '24', '260902050437', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:05:15', '2026-09-02 11:05:15'),
+(217, '24', '260902054531', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:45:39', '2026-09-02 11:45:39'),
+(218, '24', '260902054541', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:45:55', '2026-09-02 11:45:55'),
+(219, '24', '260902055801', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(220, '24', '260902084342', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-02 14:52:13', '2026-09-02 14:52:13'),
+(221, '24', '260903114329', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(222, '24', '260903114329', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(223, '24', '260903114335', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(224, '1', '260903114925', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 05:49:48', '2026-09-03 05:49:48'),
+(225, '1', '260903114925', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 05:49:52', '2026-09-03 05:49:52'),
+(226, '24', '260903120636', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 06:07:04', '2026-09-03 06:07:04'),
+(227, '24', '260903120712', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 06:07:33', '2026-09-03 06:07:33'),
+(228, '24', '260903120712', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 06:08:22', '2026-09-03 06:08:22'),
+(229, '24', '260903120712', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 06:09:10', '2026-09-03 06:09:10'),
+(230, '24', '260903120712', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(231, '24', '260903030654', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(232, '24', '260903082706', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 14:30:03', '2026-09-03 14:30:03'),
+(233, '24', '260903082706', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-03 14:38:48', '2026-09-03 14:38:48'),
+(234, '1', '260906122651', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-05 18:28:33', '2026-09-05 18:28:33'),
+(235, '1', '260908124907', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '2026-09-08 06:49:56', '2026-09-08 06:49:56');
 
 -- --------------------------------------------------------
 
@@ -1342,7 +1471,28 @@ INSERT INTO `child_victims_juvenile_q28` (`id`, `case_id`, `child_victims_juveni
 (39, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (40, 191, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (41, 192, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(42, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(42, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(43, 194, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(44, 195, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(45, 196, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(46, 197, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(47, 198, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(48, 199, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(49, 200, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(50, 201, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(51, 202, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(52, 203, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(53, 204, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(54, 205, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(55, 206, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(56, 207, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(57, 208, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(58, 209, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(59, 210, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(60, 224, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(61, 225, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(62, 234, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(63, 235, NULL, '2026-09-08 06:49:58', '2026-09-08 06:49:58');
 
 -- --------------------------------------------------------
 
@@ -1672,7 +1822,23 @@ INSERT INTO `citizen_victims_abroad_q31` (`id`, `case_id`, `citizen_victims_abro
 (300, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
 (301, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
 (302, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
-(303, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL);
+(303, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(304, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(305, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(306, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(307, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(308, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(309, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(310, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(311, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(312, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(313, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(314, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(315, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(316, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(317, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(318, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(319, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2198,7 +2364,58 @@ INSERT INTO `considering_reported_q57` (`id`, `case_id`, `mejor_q57`, `suggested
 (1, 193, 'Trafficking Trends', 'Suggested Inputs/Update 1', 'uploads/document_upload_q57/document_upload_q57_1787676963_0.png', NULL, NULL),
 (2, 193, 'Territories / Special Areas', 'Suggested Inputs/Update 2', 'uploads/document_upload_q57/document_upload_q57_1787676963_1.png', NULL, NULL),
 (3, 193, 'Government Anti-Trafficking Efforts', 'Suggested Inputs/Update 3', 'uploads/document_upload_q57/document_upload_q57_1787676963_2.png', NULL, NULL),
-(4, 193, 'Key Update for Reporting Period', 'Suggested Inputs/Update', 'uploads/document_upload_q57/document_upload_q57_1787676963_3.png', NULL, NULL);
+(4, 193, 'Key Update for Reporting Period', 'Suggested Inputs/Update', 'uploads/document_upload_q57/document_upload_q57_1787676963_3.png', NULL, NULL),
+(5, 194, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(6, 194, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(7, 194, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(8, 195, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(9, 195, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(10, 195, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(11, 196, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(12, 196, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(13, 196, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(14, 197, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(15, 197, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(16, 197, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(17, 198, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(18, 198, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(19, 198, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(20, 199, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(21, 199, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(22, 199, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(23, 200, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(24, 200, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(25, 200, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(26, 201, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(27, 201, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(28, 201, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(29, 202, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(30, 202, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(31, 202, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(32, 203, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(33, 203, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(34, 203, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(35, 204, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(36, 204, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(37, 204, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(38, 205, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(39, 205, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(40, 205, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(41, 206, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(42, 206, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(43, 206, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(44, 207, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(45, 207, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(46, 207, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(47, 208, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(48, 208, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(49, 208, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(50, 209, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(51, 209, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(52, 209, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL),
+(53, 210, 'Trafficking Trends', NULL, NULL, NULL, NULL),
+(54, 210, 'Territories / Special Areas', NULL, NULL, NULL, NULL),
+(55, 210, 'Government Anti-Trafficking Efforts', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2419,7 +2636,44 @@ INSERT INTO `convicted_traffickers_q41` (`id`, `case_id`, `convicted_traffickers
 (24, 190, NULL, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (25, 191, NULL, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (26, 192, NULL, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(27, 193, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(27, 193, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(28, 194, NULL, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(29, 195, NULL, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(30, 196, NULL, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(31, 197, NULL, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(32, 198, NULL, NULL, '2026-09-02 07:25:35', '2026-09-02 07:25:35'),
+(33, 199, NULL, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(34, 200, NULL, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(35, 201, NULL, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(36, 202, NULL, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(37, 203, NULL, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(38, 204, NULL, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(39, 205, NULL, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(40, 206, NULL, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(41, 207, NULL, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(42, 208, NULL, NULL, '2026-09-02 07:25:58', '2026-09-02 07:25:58'),
+(43, 209, NULL, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(44, 210, NULL, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(45, 211, NULL, NULL, '2026-09-02 10:54:06', '2026-09-02 10:54:06'),
+(46, 212, NULL, NULL, '2026-09-02 10:56:54', '2026-09-02 10:56:54'),
+(47, 213, NULL, NULL, '2026-09-02 11:00:45', '2026-09-02 11:00:45'),
+(48, 214, NULL, NULL, '2026-09-02 11:03:33', '2026-09-02 11:03:33'),
+(49, 215, NULL, NULL, '2026-09-02 11:04:46', '2026-09-02 11:04:46'),
+(50, 216, NULL, NULL, '2026-09-02 11:05:17', '2026-09-02 11:05:17'),
+(51, 217, NULL, NULL, '2026-09-02 11:45:39', '2026-09-02 11:45:39'),
+(52, 218, NULL, NULL, '2026-09-02 11:45:55', '2026-09-02 11:45:55'),
+(53, 219, NULL, NULL, '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(54, 220, NULL, NULL, '2026-09-02 14:52:15', '2026-09-02 14:52:15'),
+(55, 221, NULL, NULL, '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(56, 222, NULL, NULL, '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(57, 223, NULL, NULL, '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(58, 224, NULL, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(59, 225, NULL, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(60, 230, NULL, NULL, '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(61, 231, NULL, NULL, '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(62, 233, NULL, NULL, '2026-09-03 14:38:50', '2026-09-03 14:38:50'),
+(63, 234, NULL, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(64, 235, NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -3742,7 +3996,23 @@ INSERT INTO `crime_official_details_q7` (`id`, `case_id`, `justice_title_q7`, `j
 (617, 190, NULL, 0, 0, 0, NULL, NULL),
 (618, 190, NULL, 0, 0, 0, NULL, NULL),
 (619, 190, NULL, 0, 0, 0, NULL, NULL),
-(620, 190, NULL, 0, 0, 0, NULL, NULL);
+(620, 190, NULL, 0, 0, 0, NULL, NULL),
+(621, 224, NULL, 0, 0, 0, NULL, NULL),
+(622, 224, NULL, 0, 0, 0, NULL, NULL),
+(623, 224, NULL, 0, 0, 0, NULL, NULL),
+(624, 224, NULL, 0, 0, 0, NULL, NULL),
+(625, 225, NULL, 0, 0, 0, NULL, NULL),
+(626, 225, NULL, 0, 0, 0, NULL, NULL),
+(627, 225, NULL, 0, 0, 0, NULL, NULL),
+(628, 225, NULL, 0, 0, 0, NULL, NULL),
+(629, 234, NULL, 0, 0, 0, NULL, NULL),
+(630, 234, NULL, 0, 0, 0, NULL, NULL),
+(631, 234, NULL, 0, 0, 0, NULL, NULL),
+(632, 234, NULL, 0, 0, 0, NULL, NULL),
+(633, 235, NULL, 0, 0, 0, NULL, NULL),
+(634, 235, NULL, 0, 0, 0, NULL, NULL),
+(635, 235, NULL, 0, 0, 0, NULL, NULL),
+(636, 235, NULL, 0, 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4138,7 +4408,19 @@ INSERT INTO `describe_government_operated_q20a` (`id`, `case_id`, `internal_traf
 (366, 189, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
 (367, 190, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
 (368, 190, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
-(369, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL);
+(369, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(370, 224, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(371, 224, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(372, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(373, 225, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(374, 225, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(375, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(376, 234, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(377, 234, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(378, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(379, 235, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(380, 235, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(381, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4534,7 +4816,19 @@ INSERT INTO `describe_government_operated_q20b` (`id`, `case_id`, `international
 (366, 189, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
 (367, 190, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
 (368, 190, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
-(369, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL);
+(369, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(370, 224, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(371, 224, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(372, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(373, 225, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(374, 225, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(375, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(376, 234, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(377, 234, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(378, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(379, 235, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(380, 235, '1', NULL, '0', '0', '0', '0', '0', '0', NULL, NULL),
+(381, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4663,6 +4957,54 @@ INSERT INTO `divisions` (`id`, `name`, `bn_name`, `url`, `deleted_at`, `deleted_
 (7, 'Rangpur', 'রংপুর', NULL, NULL, NULL, NULL, NULL, NULL, '2026-05-10 00:27:45', '2026-05-10 00:27:45'),
 (8, 'Mymensingh', 'ময়মনসিংহ', NULL, NULL, NULL, NULL, NULL, NULL, '2026-05-10 00:27:45', '2026-05-10 00:27:45'),
 (9, 'National', 'জাতীয়', NULL, NULL, NULL, NULL, NULL, NULL, '2026-05-10 00:27:45', '2026-05-10 00:27:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enforcement_consistently_q36`
+--
+
+CREATE TABLE `enforcement_consistently_q36` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `q36_p1_status` varchar(255) DEFAULT NULL,
+  `q36_p1_yes_desc` varchar(255) DEFAULT NULL,
+  `q36_p1_others_desc` varchar(255) DEFAULT NULL,
+  `q36_p2_status` varchar(255) DEFAULT NULL,
+  `q36_p2_yes_desc` varchar(255) DEFAULT NULL,
+  `q36_p2_others_desc` varchar(255) DEFAULT NULL,
+  `q36_p3_status` varchar(255) DEFAULT NULL,
+  `q36_p3_yes_desc` varchar(255) DEFAULT NULL,
+  `q36_p3_others_desc` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `enforcement_consistently_q36`
+--
+
+INSERT INTO `enforcement_consistently_q36` (`id`, `case_id`, `q36_p1_status`, `q36_p1_yes_desc`, `q36_p1_others_desc`, `q36_p2_status`, `q36_p2_yes_desc`, `q36_p2_others_desc`, `q36_p3_status`, `q36_p3_yes_desc`, `q36_p3_others_desc`, `created_at`, `updated_at`) VALUES
+(1, 234, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(2, 235, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enforcement_consistently_q36b`
+--
+
+CREATE TABLE `enforcement_consistently_q36b` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `q36_support_type` varchar(255) DEFAULT NULL,
+  `q36_men` varchar(255) DEFAULT NULL,
+  `q36_women` varchar(255) DEFAULT NULL,
+  `q36_tg` varchar(255) DEFAULT NULL,
+  `q36_total` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5594,7 +5936,35 @@ INSERT INTO `exclusively_trafficking_q9` (`id`, `case_id`, `court_title_q9`, `co
 (891, 190, 'SB', NULL, NULL, NULL, NULL),
 (892, 190, 'Prosecution offices (SPP)', NULL, NULL, NULL, NULL),
 (893, 190, 'Special Tribunal', NULL, NULL, NULL, NULL),
-(894, 190, NULL, NULL, NULL, NULL, NULL);
+(894, 190, NULL, NULL, NULL, NULL, NULL),
+(895, 224, 'Police Station', NULL, NULL, NULL, NULL),
+(896, 224, 'CID', NULL, NULL, NULL, NULL),
+(897, 224, 'RAB', NULL, NULL, NULL, NULL),
+(898, 224, 'SB', NULL, NULL, NULL, NULL),
+(899, 224, 'Prosecution offices (SPP)', NULL, NULL, NULL, NULL),
+(900, 224, 'Special Tribunal', NULL, NULL, NULL, NULL),
+(901, 224, NULL, NULL, NULL, NULL, NULL),
+(902, 225, 'Police Station', NULL, NULL, NULL, NULL),
+(903, 225, 'CID', NULL, NULL, NULL, NULL),
+(904, 225, 'RAB', NULL, NULL, NULL, NULL),
+(905, 225, 'SB', NULL, NULL, NULL, NULL),
+(906, 225, 'Prosecution offices (SPP)', NULL, NULL, NULL, NULL),
+(907, 225, 'Special Tribunal', NULL, NULL, NULL, NULL),
+(908, 225, NULL, NULL, NULL, NULL, NULL),
+(909, 234, 'Police Station', NULL, NULL, NULL, NULL),
+(910, 234, 'CID', NULL, NULL, NULL, NULL),
+(911, 234, 'RAB', NULL, NULL, NULL, NULL),
+(912, 234, 'SB', NULL, NULL, NULL, NULL),
+(913, 234, 'Prosecution offices (SPP)', NULL, NULL, NULL, NULL),
+(914, 234, 'Special Tribunal', NULL, NULL, NULL, NULL),
+(915, 234, NULL, NULL, NULL, NULL, NULL),
+(916, 235, 'Police Station', NULL, NULL, NULL, NULL),
+(917, 235, 'CID', NULL, NULL, NULL, NULL),
+(918, 235, 'RAB', NULL, NULL, NULL, NULL),
+(919, 235, 'SB', NULL, NULL, NULL, NULL),
+(920, 235, 'Prosecution offices (SPP)', NULL, NULL, NULL, NULL),
+(921, 235, 'Special Tribunal', NULL, NULL, NULL, NULL),
+(922, 235, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -8456,7 +8826,79 @@ INSERT INTO `foreign_victims_q30` (`id`, `case_id`, `citizen_victims_services_q3
 (1321, 190, '15', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
 (1322, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
 (1323, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
-(1324, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL);
+(1324, 190, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1325, 224, '1', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1326, 224, '2', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1327, 224, '3', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1328, 224, '4', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1329, 224, '5', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1330, 224, '6', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1331, 224, '7', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1332, 224, '8', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1333, 224, '9', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1334, 224, '10', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1335, 224, '11', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1336, 224, '12', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1337, 224, '13', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1338, 224, '14', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1339, 224, '15', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1340, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1341, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1342, 224, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1343, 225, '1', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1344, 225, '2', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1345, 225, '3', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1346, 225, '4', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1347, 225, '5', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1348, 225, '6', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1349, 225, '7', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1350, 225, '8', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1351, 225, '9', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1352, 225, '10', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1353, 225, '11', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1354, 225, '12', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1355, 225, '13', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1356, 225, '14', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1357, 225, '15', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1358, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1359, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1360, 225, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1361, 234, '1', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1362, 234, '2', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1363, 234, '3', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1364, 234, '4', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1365, 234, '5', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1366, 234, '6', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1367, 234, '7', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1368, 234, '8', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1369, 234, '9', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1370, 234, '10', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1371, 234, '11', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1372, 234, '12', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1373, 234, '13', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1374, 234, '14', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1375, 234, '15', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1376, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1377, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1378, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1379, 235, '1', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1380, 235, '2', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1381, 235, '3', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1382, 235, '4', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1383, 235, '5', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1384, 235, '6', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1385, 235, '7', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1386, 235, '8', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1387, 235, '9', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1388, 235, '10', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1389, 235, '11', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1390, 235, '12', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1391, 235, '13', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1392, 235, '14', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1393, 235, '15', NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1394, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1395, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL),
+(1396, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', '[]', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -8888,7 +9330,15 @@ INSERT INTO `government_agreements_transparent_q11` (`id`, `case_id`, `governmen
 (387, 189, NULL, NULL, '0', NULL, NULL),
 (388, 189, NULL, NULL, '0', NULL, NULL),
 (389, 190, NULL, NULL, '0', NULL, NULL),
-(390, 190, NULL, NULL, '0', NULL, NULL);
+(390, 190, NULL, NULL, '0', NULL, NULL),
+(391, 224, NULL, NULL, '0', NULL, NULL),
+(392, 224, NULL, NULL, '0', NULL, NULL),
+(393, 225, NULL, NULL, '0', NULL, NULL),
+(394, 225, NULL, NULL, '0', NULL, NULL),
+(395, 234, NULL, NULL, '0', NULL, NULL),
+(396, 234, NULL, NULL, '0', NULL, NULL),
+(397, 235, NULL, NULL, '0', NULL, NULL),
+(398, 235, NULL, NULL, '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -11864,7 +12314,58 @@ INSERT INTO `government_conduct_awareness_activities_q46` (`id`, `case_id`, `q46
 (1762, 190, '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
 (1763, 190, '13', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
 (1764, 190, '14', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
-(1765, 190, NULL, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL);
+(1765, 190, NULL, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1766, 224, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1767, 224, '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1768, 224, '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1769, 224, '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1770, 224, '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1771, 224, '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1772, 224, '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1773, 224, '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1774, 224, '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1775, 224, '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1776, 224, '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1777, 224, '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1778, 224, '13', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1779, 224, '14', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL, NULL),
+(1780, 225, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1781, 225, '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1782, 225, '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1783, 225, '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1784, 225, '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1785, 225, '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1786, 225, '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1787, 225, '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1788, 225, '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1789, 225, '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1790, 225, '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1791, 225, '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1792, 225, '13', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1793, 225, '14', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL, NULL),
+(1794, 234, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1795, 234, '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1796, 234, '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1797, 234, '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1798, 234, '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1799, 234, '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1800, 234, '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1801, 234, '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1802, 234, '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1803, 234, '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1804, 234, '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL),
+(1805, 235, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1806, 235, '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1807, 235, '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1808, 235, '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1809, 235, '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1810, 235, '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1811, 235, '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1812, 235, '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1813, 235, '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1814, 235, '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1815, 235, '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', NULL, NULL),
+(1816, 235, '12', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -12383,7 +12884,19 @@ INSERT INTO `government_cooperate_foreign_counterparts_q12` (`id`, `case_id`, `g
 (492, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (493, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (494, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(495, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(495, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(496, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(497, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(498, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(499, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(500, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(501, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(502, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(503, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(504, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(505, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(506, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(507, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -12692,7 +13205,19 @@ INSERT INTO `government_cooperate_united_states_q13a` (`id`, `case_id`, `governm
 (282, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (283, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (284, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(285, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(285, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(286, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(287, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(288, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(289, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(290, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(291, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(292, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(293, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(294, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(295, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(296, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(297, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -13001,7 +13526,19 @@ INSERT INTO `government_cooperate_united_states_q13b` (`id`, `case_id`, `governm
 (282, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (283, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (284, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(285, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(285, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(286, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(287, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(288, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(289, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(290, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(291, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(292, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(293, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(294, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(295, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(296, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(297, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -13310,7 +13847,19 @@ INSERT INTO `government_cooperate_united_states_q13c` (`id`, `case_id`, `governm
 (282, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (283, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (284, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(285, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(285, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(286, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(287, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(288, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(289, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(290, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(291, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(292, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(293, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(294, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(295, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(296, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(297, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -13619,7 +14168,19 @@ INSERT INTO `government_cooperate_united_states_q13d` (`id`, `case_id`, `governm
 (282, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (283, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (284, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(285, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(285, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(286, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(287, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(288, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(289, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(290, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(291, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(292, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(293, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(294, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(295, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(296, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(297, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -13856,7 +14417,19 @@ INSERT INTO `government_counterparts_q12b` (`id`, `case_id`, `government_country
 (210, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (211, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (212, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(213, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(213, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(214, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(215, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(216, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(217, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(218, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(219, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(220, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(221, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(222, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(223, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(224, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(225, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -14090,7 +14663,19 @@ INSERT INTO `government_counterparts_q12c` (`id`, `case_id`, `government_country
 (207, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (208, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (209, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(210, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(210, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(211, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(212, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(213, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(214, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(215, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(216, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(217, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(218, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(219, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(220, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(221, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(222, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -14318,7 +14903,19 @@ INSERT INTO `government_counterparts_q12d` (`id`, `case_id`, `government_country
 (201, 189, NULL, '0', '0', '0', '0', NULL, NULL),
 (202, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (203, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(204, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(204, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(205, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(206, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(207, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(208, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(209, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(210, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(211, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(212, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(213, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(214, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(215, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(216, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15144,7 +15741,27 @@ INSERT INTO `government_devote_implement_q14` (`id`, `case_id`, `original_approa
 (801, 190, '2', NULL, NULL, NULL, NULL),
 (802, 190, '3', NULL, NULL, NULL, NULL),
 (803, 190, '4', NULL, NULL, NULL, NULL),
-(804, 190, NULL, NULL, NULL, NULL, NULL);
+(804, 190, NULL, NULL, NULL, NULL, NULL),
+(805, 224, '1', NULL, NULL, NULL, NULL),
+(806, 224, '2', NULL, NULL, NULL, NULL),
+(807, 224, '3', NULL, NULL, NULL, NULL),
+(808, 224, '4', NULL, NULL, NULL, NULL),
+(809, 224, NULL, NULL, NULL, NULL, NULL),
+(810, 225, '1', NULL, NULL, NULL, NULL),
+(811, 225, '2', NULL, NULL, NULL, NULL),
+(812, 225, '3', NULL, NULL, NULL, NULL),
+(813, 225, '4', NULL, NULL, NULL, NULL),
+(814, 225, NULL, NULL, NULL, NULL, NULL),
+(815, 234, '1', NULL, NULL, NULL, NULL),
+(816, 234, '2', NULL, NULL, NULL, NULL),
+(817, 234, '3', NULL, NULL, NULL, NULL),
+(818, 234, '4', NULL, NULL, NULL, NULL),
+(819, 234, NULL, NULL, NULL, NULL, NULL),
+(820, 235, '1', NULL, NULL, NULL, NULL),
+(821, 235, '2', NULL, NULL, NULL, NULL),
+(822, 235, '3', NULL, NULL, NULL, NULL),
+(823, 235, '4', NULL, NULL, NULL, NULL),
+(824, 235, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15458,7 +16075,133 @@ INSERT INTO `government_direct_victim_q27` (`id`, `case_id`, `victim_care_q27`, 
 (255, 193, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (256, 193, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (257, 193, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(258, 193, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(258, 193, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(259, 194, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(260, 194, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(261, 194, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(262, 194, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(263, 194, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(264, 194, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(265, 195, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(266, 195, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(267, 195, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(268, 195, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(269, 195, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(270, 195, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(271, 196, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(272, 196, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(273, 196, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(274, 196, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(275, 196, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(276, 196, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(277, 197, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(278, 197, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(279, 197, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(280, 197, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(281, 197, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(282, 197, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(283, 198, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(284, 198, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(285, 198, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(286, 198, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(287, 198, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(288, 198, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(289, 199, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(290, 199, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(291, 199, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(292, 199, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(293, 199, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(294, 199, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(295, 200, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(296, 200, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(297, 200, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(298, 200, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(299, 200, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(300, 200, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(301, 201, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(302, 201, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(303, 201, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(304, 201, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(305, 201, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(306, 201, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(307, 202, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(308, 202, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(309, 202, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(310, 202, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(311, 202, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(312, 202, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(313, 203, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(314, 203, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(315, 203, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(316, 203, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(317, 203, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(318, 203, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(319, 204, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(320, 204, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(321, 204, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(322, 204, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(323, 204, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(324, 204, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(325, 205, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(326, 205, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(327, 205, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(328, 205, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(329, 205, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(330, 205, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(331, 206, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(332, 206, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(333, 206, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(334, 206, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(335, 206, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(336, 206, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(337, 207, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(338, 207, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(339, 207, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(340, 207, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(341, 207, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(342, 207, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(343, 208, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(344, 208, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(345, 208, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(346, 208, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(347, 208, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(348, 208, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(349, 209, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(350, 209, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(351, 209, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(352, 209, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(353, 209, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(354, 209, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(355, 210, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(356, 210, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(357, 210, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(358, 210, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(359, 210, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(360, 210, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(361, 224, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(362, 224, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(363, 224, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(364, 224, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(365, 224, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(366, 224, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(367, 225, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(368, 225, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(369, 225, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(370, 225, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(371, 225, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(372, 225, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(373, 234, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(374, 234, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(375, 234, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(376, 234, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(377, 234, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(378, 234, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(379, 235, 'Financial Spending on Shelter and all re-integration care/services at shelters', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(380, 235, 'In-kind support for shelter and care (This may include clothings, Food, medication)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(381, 235, 'Other direct support to VoTs outside shelter (such as Training, health services)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(382, 235, 'Financial payment to VoTs (cash transfer, seed money, soft loans, legal and humanitarian compensations)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(383, 235, 'In-kind support to VoTs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(384, 235, 'Others', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15531,7 +16274,28 @@ INSERT INTO `government_direct_victim_q27b` (`id`, `case_id`, `victim_care_q27b`
 (44, 190, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (45, 191, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (46, 192, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(47, 193, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(47, 193, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 194, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 195, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 196, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 197, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 198, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 199, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 200, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 201, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 202, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 203, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 204, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 205, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, 206, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 207, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 208, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(63, 209, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 210, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(65, 224, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(66, 225, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(67, 234, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(68, 235, 'Total allocation spent on Protection related direct and indirect services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15643,7 +16407,11 @@ INSERT INTO `government_monitor_immigrations_q33` (`id`, `case_id`, `involved_di
 (89, 187, NULL, '2026-08-25 07:49:37', '2026-08-25 07:49:37'),
 (90, 188, NULL, '2026-08-25 11:02:24', '2026-08-25 11:02:24'),
 (91, 189, NULL, '2026-08-25 11:16:46', '2026-08-25 11:16:46'),
-(92, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49');
+(92, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
+(93, 224, NULL, '2026-09-03 05:49:49', '2026-09-03 05:49:49'),
+(94, 225, NULL, '2026-09-03 05:49:52', '2026-09-03 05:49:52'),
+(95, 234, NULL, '2026-09-05 18:28:33', '2026-09-05 18:28:33'),
+(96, 235, NULL, '2026-09-08 06:49:56', '2026-09-08 06:49:56');
 
 -- --------------------------------------------------------
 
@@ -15666,66 +16434,9 @@ CREATE TABLE `government_nationality_q2` (
 --
 
 INSERT INTO `government_nationality_q2` (`id`, `case_id`, `government_nationality_q2`, `government_sector_q2`, `government_total_q2`, `created_at`, `updated_at`) VALUES
-(1, 95, '1', '8', '10', NULL, NULL),
-(2, 95, '2', '6', '20', NULL, NULL),
-(3, 95, '3', '7', '30', NULL, NULL),
-(4, 96, NULL, NULL, '0', NULL, NULL),
-(5, 97, NULL, NULL, '0', NULL, NULL),
-(6, 98, 'Online Scam', 'Facebook', '0', NULL, NULL),
-(7, 98, 'Online Scam', 'Facebook', '0', NULL, NULL),
-(8, 98, 'Online Scam', 'Facebook', '0', NULL, NULL),
-(9, 98, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(10, 98, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(11, 98, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(12, 98, NULL, NULL, NULL, NULL, NULL),
-(13, 98, NULL, NULL, NULL, NULL, NULL),
-(14, 98, NULL, NULL, NULL, NULL, NULL),
-(15, 99, '1', '1', '10', NULL, NULL),
-(16, 99, '2', '3', '20', NULL, NULL),
-(17, 99, '3', '9', '30', NULL, NULL),
-(18, 99, '2', '9', '40', NULL, NULL),
-(19, 99, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(20, 99, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(21, 99, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(22, 99, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(23, 99, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(24, 99, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(25, 101, '1', '1', '10', NULL, NULL),
-(26, 101, '2', '2', '20', NULL, NULL),
-(27, 101, '3', '3', '30', NULL, NULL),
-(28, 101, '1', '1', '40', NULL, NULL),
-(29, 101, '3', '9', '50', NULL, NULL),
-(30, 101, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(31, 101, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(32, 101, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(33, 101, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(34, 101, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(35, 101, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(36, 103, '1', '1', '10', NULL, NULL),
-(37, 103, '2', '9', '20', NULL, NULL),
-(38, 103, '3', '8', '30', NULL, NULL),
-(39, 103, '1', '9', '40', NULL, NULL),
-(40, 103, '2', '3', '50', NULL, NULL),
-(41, 103, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(42, 103, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(43, 103, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(44, 103, 'Online Scam', 'Facebook', NULL, NULL, NULL),
-(45, 103, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(46, 103, 'Special Police Unit/Cell', NULL, NULL, NULL, NULL),
-(47, 108, '1', '1', '10', NULL, NULL),
-(48, 108, '2', '6', '20', NULL, NULL),
-(49, 108, '3', '8', '30', NULL, NULL),
-(50, 108, '3', '9', '40', NULL, NULL),
-(51, 108, '3', '10', '50', NULL, NULL),
-(52, 116, '1', '1', '10', NULL, NULL),
-(53, 116, '2', '9', '20', NULL, NULL),
-(54, 116, '3', '10', '30', NULL, NULL),
-(55, 129, '1', '1', '10', NULL, NULL),
-(56, 129, '2', '2', '20', NULL, NULL),
-(57, 129, '3', '8', '30', NULL, NULL),
-(58, 129, '1', '9', '40', NULL, NULL),
-(59, 129, '2', '11', '50', NULL, NULL),
-(60, 129, '3', '12', '60', NULL, NULL);
+(61, 234, '1', '2', '12', NULL, NULL),
+(62, 234, '2', '2', '10', NULL, NULL),
+(63, 234, '3', '10', '5', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15802,7 +16513,28 @@ INSERT INTO `government_officials_q18` (`id`, `case_id`, `location_q18`, `catego
 (49, 190, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
 (50, 191, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
 (51, 192, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
-(52, 193, NULL, NULL, NULL, '0', '0', '0', NULL, NULL);
+(52, 193, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(53, 194, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(54, 195, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(55, 196, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(56, 197, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(57, 198, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(58, 199, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(59, 200, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(60, 201, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(61, 202, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(62, 203, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(63, 204, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(64, 205, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(65, 206, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(66, 207, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(67, 208, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(68, 209, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(69, 210, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(70, 224, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(71, 225, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(72, 234, NULL, NULL, NULL, '0', '0', '0', NULL, NULL),
+(73, 235, NULL, NULL, NULL, '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15869,7 +16601,56 @@ INSERT INTO `government_person_formally_q25` (`id`, `case_id`, `government_perso
 (44, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (45, 191, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (46, 192, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(47, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(47, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(48, 194, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(49, 195, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(50, 196, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(51, 197, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(52, 198, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(53, 199, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(54, 200, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(55, 201, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(56, 202, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(57, 203, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(58, 204, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(59, 205, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(60, 206, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(61, 207, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(62, 208, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(63, 209, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(64, 210, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(65, 224, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(66, 225, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(67, 234, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(68, 235, NULL, '2026-09-08 06:49:58', '2026-09-08 06:49:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `government_prohibit_q48`
+--
+
+CREATE TABLE `government_prohibit_q48` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `goverment_prohibit_title_q48` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `government_prohibit_q48`
+--
+
+INSERT INTO `government_prohibit_q48` (`id`, `case_id`, `goverment_prohibit_title_q48`, `created_at`, `updated_at`) VALUES
+(1, 219, 'Did the government prohibit worker-paid recruitment fees? If yes, explain how it enforced bans on recruitment fees. If no, describe any rules surrounding worker-paid recruitment fees.', '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(2, 220, 'Did the government prohibit worker-paid recruitment fees? If yes, explain how it enforced bans on recruitment fees. If no, describe any rules surrounding worker-paid recruitment fees.', '2026-09-02 14:52:15', '2026-09-02 14:52:15'),
+(3, 221, NULL, '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(4, 222, NULL, '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(5, 223, NULL, '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(6, 230, NULL, '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(7, 231, NULL, '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(8, 233, NULL, '2026-09-03 14:38:50', '2026-09-03 14:38:50');
 
 -- --------------------------------------------------------
 
@@ -16717,6 +17498,41 @@ INSERT INTO `government_provide_trafficking_q55` (`id`, `case_id`, `government_p
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `government_seek_civil_q43`
+--
+
+CREATE TABLE `government_seek_civil_q43` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `goverment_seek_title_q43` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `government_seek_civil_q43`
+--
+
+INSERT INTO `government_seek_civil_q43` (`id`, `case_id`, `goverment_seek_title_q43`, `created_at`, `updated_at`) VALUES
+(1, 216, 'Did the government seek civil society and/or survivors’ input in crafting or implementing any new anti-trafficking laws, regulations, policies, programs?', '2026-09-02 11:05:17', '2026-09-02 11:05:17'),
+(2, 217, 'Did the government seek civil society and/or survivors’ input in crafting or implementing any new anti-trafficking laws, regulations, policies, programs?', '2026-09-02 11:45:39', '2026-09-02 11:45:39'),
+(3, 218, 'Did the government seek civil society and/or survivors’ input in crafting or implementing any new anti-trafficking laws, regulations, policies, programs?', '2026-09-02 11:45:55', '2026-09-02 11:45:55'),
+(4, 219, 'Did the government seek civil society and/or survivors’ input in crafting or implementing any new anti-trafficking laws, regulations, policies, programs?', '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(5, 220, 'Did the government seek civil society and/or survivors’ input in crafting or implementing any new anti-trafficking laws, regulations, policies, programs?', '2026-09-02 14:52:15', '2026-09-02 14:52:15'),
+(6, 221, NULL, '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(7, 222, NULL, '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(8, 223, NULL, '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(9, 224, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(10, 225, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(11, 230, NULL, '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(12, 231, NULL, '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(13, 233, NULL, '2026-09-03 14:38:50', '2026-09-03 14:38:50'),
+(14, 234, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(15, 235, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `government_train_diplomat_q53`
 --
 
@@ -17164,7 +17980,58 @@ INSERT INTO `instances_trafficking_q56` (`id`, `case_id`, `instances_trafficking
 (10, 192, 'Lebanon', 'qqq', '5', '5', '5', '15', NULL, NULL),
 (11, 193, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
 (12, 193, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
-(13, 193, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL);
+(13, 193, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(14, 194, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(15, 194, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(16, 194, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(17, 195, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(18, 195, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(19, 195, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(20, 196, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(21, 196, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(22, 196, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(23, 197, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(24, 197, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(25, 197, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(26, 198, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(27, 198, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(28, 198, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(29, 199, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(30, 199, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(31, 199, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(32, 200, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(33, 200, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(34, 200, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(35, 201, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(36, 201, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(37, 201, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(38, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 209, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(60, 209, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(61, 209, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(62, 210, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(63, 210, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL),
+(64, 210, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -17196,7 +18063,141 @@ INSERT INTO `instances_trafficking_q56b` (`id`, `case_id`, `instances_traffickin
 (5, 192, 'Ministry/Department 4', '1', '2', '3', 'Measures Taken', NULL, NULL),
 (6, 193, NULL, NULL, NULL, '0', NULL, NULL, NULL),
 (7, 193, NULL, NULL, NULL, '0', NULL, NULL, NULL),
-(8, 193, NULL, NULL, NULL, '0', NULL, NULL, NULL);
+(8, 193, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(9, 194, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(10, 194, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(11, 194, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(12, 195, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(13, 195, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(14, 195, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(15, 196, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(16, 196, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(17, 196, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(18, 197, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(19, 197, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(20, 197, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(21, 198, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(22, 198, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(23, 198, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(24, 199, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(25, 199, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(26, 199, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(27, 200, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(28, 200, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(29, 200, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(30, 201, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(31, 201, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(32, 201, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(33, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 209, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(55, 209, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(56, 209, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(57, 210, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(58, 210, NULL, NULL, NULL, '0', NULL, NULL, NULL),
+(59, 210, NULL, NULL, NULL, '0', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `internal_trafficking_q38`
+--
+
+CREATE TABLE `internal_trafficking_q38` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `internal_men_q38` varchar(255) DEFAULT NULL,
+  `internal_women_q38` varchar(255) DEFAULT NULL,
+  `internal_tg_q38` varchar(255) DEFAULT NULL,
+  `internal_boy_q38` varchar(255) DEFAULT NULL,
+  `internal_girl_q38` varchar(255) DEFAULT NULL,
+  `internal_total_q38` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `internal_trafficking_q38`
+--
+
+INSERT INTO `internal_trafficking_q38` (`id`, `case_id`, `internal_men_q38`, `internal_women_q38`, `internal_tg_q38`, `internal_boy_q38`, `internal_girl_q38`, `internal_total_q38`, `created_at`, `updated_at`) VALUES
+(1, 234, '0', '0', '0', '0', '0', '0', '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(2, 235, '0', '0', '0', '0', '0', '0', '2026-09-08 06:49:59', '2026-09-08 06:49:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `international_trafficking_q38b`
+--
+
+CREATE TABLE `international_trafficking_q38b` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `international_men_q38` varchar(255) DEFAULT NULL,
+  `international_women_q38` varchar(255) DEFAULT NULL,
+  `international_tg_q38` varchar(255) DEFAULT NULL,
+  `international_boy_q38` varchar(255) DEFAULT NULL,
+  `international_girl_q38` varchar(255) DEFAULT NULL,
+  `international_total_q38` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `international_trafficking_q38b`
+--
+
+INSERT INTO `international_trafficking_q38b` (`id`, `case_id`, `international_men_q38`, `international_women_q38`, `international_tg_q38`, `international_boy_q38`, `international_girl_q38`, `international_total_q38`, `created_at`, `updated_at`) VALUES
+(1, 234, '0', '0', '0', '0', '0', '0', '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(2, 235, '0', '0', '0', '0', '0', '0', '2026-09-08 06:49:59', '2026-09-08 06:49:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inter_nation_q38c`
+--
+
+CREATE TABLE `inter_nation_q38c` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `location_q38c` varchar(255) DEFAULT NULL,
+  `type_q38c` varchar(255) DEFAULT NULL,
+  `men_q38c` varchar(255) DEFAULT NULL,
+  `women_q38c` varchar(255) DEFAULT NULL,
+  `tg_q38c` varchar(255) DEFAULT NULL,
+  `boy_q38c` varchar(255) DEFAULT NULL,
+  `girl_q38c` varchar(255) DEFAULT NULL,
+  `total_q38c` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `inter_nation_q38c`
+--
+
+INSERT INTO `inter_nation_q38c` (`id`, `case_id`, `location_q38c`, `type_q38c`, `men_q38c`, `women_q38c`, `tg_q38c`, `boy_q38c`, `girl_q38c`, `total_q38c`, `created_at`, `updated_at`) VALUES
+(1, 234, NULL, NULL, '0', '0', '0', '0', '0', '0', '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(2, 235, NULL, NULL, '0', '0', '0', '0', '0', '0', '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -17382,7 +18383,11 @@ INSERT INTO `involved_directly_trafficking_q5` (`id`, `case_id`, `involved_direc
 (149, 187, NULL, '2026-08-25 07:49:37', '2026-08-25 07:49:37'),
 (150, 188, NULL, '2026-08-25 11:02:24', '2026-08-25 11:02:24'),
 (151, 189, NULL, '2026-08-25 11:16:46', '2026-08-25 11:16:46'),
-(152, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49');
+(152, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
+(153, 224, NULL, '2026-09-03 05:49:48', '2026-09-03 05:49:48'),
+(154, 225, NULL, '2026-09-03 05:49:52', '2026-09-03 05:49:52'),
+(155, 234, NULL, '2026-09-05 18:28:33', '2026-09-05 18:28:33'),
+(156, 235, NULL, '2026-09-08 06:49:56', '2026-09-08 06:49:56');
 
 -- --------------------------------------------------------
 
@@ -17499,7 +18504,11 @@ INSERT INTO `involved_directly_trafficking_q23` (`id`, `case_id`, `involved_dire
 (0, 187, NULL, '2026-08-25 07:49:37', '2026-08-25 07:49:37'),
 (0, 188, NULL, '2026-08-25 11:02:24', '2026-08-25 11:02:24'),
 (0, 189, NULL, '2026-08-25 11:16:46', '2026-08-25 11:16:46'),
-(0, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49');
+(0, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
+(0, 224, NULL, '2026-09-03 05:49:49', '2026-09-03 05:49:49'),
+(0, 225, NULL, '2026-09-03 05:49:52', '2026-09-03 05:49:52'),
+(0, 234, NULL, '2026-09-05 18:28:33', '2026-09-05 18:28:33'),
+(0, 235, NULL, '2026-09-08 06:49:57', '2026-09-08 06:49:57');
 
 -- --------------------------------------------------------
 
@@ -17515,6 +18524,36 @@ CREATE TABLE `labor_inspectorate_unit_courts_q6` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `law_enforcement_q35`
+--
+
+CREATE TABLE `law_enforcement_q35` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `q35_p1_radio` varchar(255) DEFAULT NULL,
+  `q35_p1_yes_text` varchar(255) DEFAULT NULL,
+  `q35_p1_others_text` varchar(255) DEFAULT NULL,
+  `q35_p2_radio` varchar(255) DEFAULT NULL,
+  `q35_p2_yes_text` varchar(255) DEFAULT NULL,
+  `q35_p2_others_text` varchar(255) DEFAULT NULL,
+  `q35_p3_radio` varchar(255) DEFAULT NULL,
+  `q35_p3_yes_text` varchar(255) DEFAULT NULL,
+  `q35_p3_others_text` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `law_enforcement_q35`
+--
+
+INSERT INTO `law_enforcement_q35` (`id`, `case_id`, `q35_p1_radio`, `q35_p1_yes_text`, `q35_p1_others_text`, `q35_p2_radio`, `q35_p2_yes_text`, `q35_p2_others_text`, `q35_p3_radio`, `q35_p3_yes_text`, `q35_p3_others_text`, `created_at`, `updated_at`) VALUES
+(1, 234, '1', NULL, NULL, '1', NULL, NULL, '1', NULL, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(2, 235, '1', NULL, NULL, '1', NULL, NULL, '1', NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -17648,7 +18687,16 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (101, '2026_08_22_162455_create_convicted_traffickers_q41b_table', 20),
 (102, '2026_08_22_222716_create_instances_trafficking_q56_table', 21),
 (103, '2026_08_22_222735_create_instances_trafficking_q56b_table', 21),
-(104, '2026_08_23_105016_create_considering_reported_q57_table', 22);
+(104, '2026_08_23_105016_create_considering_reported_q57_table', 22),
+(105, '2026_09_02_125203_create_official_agency_q42_table', 23),
+(106, '2026_09_02_163822_create_government_seek_civil_q43_table', 24),
+(107, '2026_09_02_174711_create_government_prohibit_q48_table', 25),
+(108, '2026_09_03_115319_create_law_enforcement_q35_table', 26),
+(109, '2026_09_03_135724_create_enforcement_consistently_q36_table', 27),
+(110, '2026_09_03_135746_create_enforcement_consistently_q36b_table', 27),
+(111, '2026_09_03_171430_create_internal_trafficking_q38_table', 28),
+(112, '2026_09_03_171525_create_international_trafficking_q38b_table', 28),
+(113, '2026_09_03_171721_create_inter_nation_q38c_table', 28);
 
 -- --------------------------------------------------------
 
@@ -17891,7 +18939,11 @@ INSERT INTO `national_plan_trafficking_q45` (`id`, `case_id`, `national_plan_tra
 (118, 187, NULL, NULL, NULL, '2026-08-25 07:49:38', '2026-08-25 07:49:38'),
 (119, 188, NULL, NULL, NULL, '2026-08-25 11:02:29', '2026-08-25 11:02:29'),
 (120, 189, NULL, NULL, NULL, '2026-08-25 11:16:46', '2026-08-25 11:16:46'),
-(121, 190, NULL, NULL, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49');
+(121, 190, NULL, NULL, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
+(122, 224, NULL, NULL, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(123, 225, NULL, NULL, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(124, 234, NULL, NULL, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(125, 235, NULL, NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -17955,7 +19007,28 @@ INSERT INTO `newly_identified_victims_q34` (`id`, `case_id`, `number_victims_q34
 (37, 190, NULL, '0', '0', '0', '0', '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (38, 191, NULL, '0', '0', '0', '0', '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (39, 192, NULL, '0', '0', '0', '0', '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(40, 193, NULL, '0', '0', '0', '0', '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(40, 193, NULL, '0', '0', '0', '0', '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(41, 194, NULL, '0', '0', '0', '0', '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(42, 195, NULL, '0', '0', '0', '0', '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(43, 196, NULL, '0', '0', '0', '0', '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(44, 197, NULL, '0', '0', '0', '0', '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(45, 198, NULL, '0', '0', '0', '0', '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(46, 199, NULL, '0', '0', '0', '0', '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(47, 200, NULL, '0', '0', '0', '0', '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(48, 201, NULL, '0', '0', '0', '0', '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(49, 202, NULL, '0', '0', '0', '0', '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(50, 203, NULL, '0', '0', '0', '0', '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(51, 204, NULL, '0', '0', '0', '0', '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(52, 205, NULL, '0', '0', '0', '0', '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(53, 206, NULL, '0', '0', '0', '0', '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(54, 207, NULL, '0', '0', '0', '0', '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(55, 208, NULL, '0', '0', '0', '0', '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(56, 209, NULL, '0', '0', '0', '0', '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(57, 210, NULL, '0', '0', '0', '0', '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(58, 224, NULL, '0', '0', '0', '0', '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(59, 225, NULL, '0', '0', '0', '0', '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(60, 234, NULL, '0', '0', '0', '0', '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(61, 235, NULL, '0', '0', '0', '0', '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -18025,7 +19098,85 @@ INSERT INTO `newly_identified_victims_q34b` (`id`, `case_id`, `number_victims_q3
 (43, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (44, 191, NULL, '0', '0', '0', '0', NULL, NULL),
 (45, 192, NULL, '0', '0', '0', '0', NULL, NULL),
-(46, 193, NULL, '0', '0', '0', '0', NULL, NULL);
+(46, 193, NULL, '0', '0', '0', '0', NULL, NULL),
+(47, 194, NULL, '0', '0', '0', '0', NULL, NULL),
+(48, 195, NULL, '0', '0', '0', '0', NULL, NULL),
+(49, 196, NULL, '0', '0', '0', '0', NULL, NULL),
+(50, 197, NULL, '0', '0', '0', '0', NULL, NULL),
+(51, 198, NULL, '0', '0', '0', '0', NULL, NULL),
+(52, 199, NULL, '0', '0', '0', '0', NULL, NULL),
+(53, 200, NULL, '0', '0', '0', '0', NULL, NULL),
+(54, 201, NULL, '0', '0', '0', '0', NULL, NULL),
+(55, 202, NULL, '0', '0', '0', '0', NULL, NULL),
+(56, 203, NULL, '0', '0', '0', '0', NULL, NULL),
+(57, 204, NULL, '0', '0', '0', '0', NULL, NULL),
+(58, 205, NULL, '0', '0', '0', '0', NULL, NULL),
+(59, 206, NULL, '0', '0', '0', '0', NULL, NULL),
+(60, 207, NULL, '0', '0', '0', '0', NULL, NULL),
+(61, 208, NULL, '0', '0', '0', '0', NULL, NULL),
+(62, 209, NULL, '0', '0', '0', '0', NULL, NULL),
+(63, 210, NULL, '0', '0', '0', '0', NULL, NULL),
+(64, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(65, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(66, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(67, 235, NULL, '0', '0', '0', '0', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `official_agency_q42`
+--
+
+CREATE TABLE `official_agency_q42` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `case_id` int(11) DEFAULT NULL,
+  `official_title_q42` varchar(255) DEFAULT NULL,
+  `official_type_q42` varchar(255) DEFAULT NULL,
+  `official_desc_q42` longtext DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `official_agency_q42`
+--
+
+INSERT INTO `official_agency_q42` (`id`, `case_id`, `official_title_q42`, `official_type_q42`, `official_desc_q42`, `created_at`, `updated_at`) VALUES
+(1, 194, NULL, NULL, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(2, 195, NULL, NULL, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(3, 196, NULL, NULL, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(4, 197, NULL, NULL, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(5, 198, NULL, NULL, NULL, '2026-09-02 07:25:35', '2026-09-02 07:25:35'),
+(6, 199, NULL, NULL, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(7, 200, NULL, NULL, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(8, 201, NULL, NULL, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(9, 202, NULL, NULL, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(10, 203, NULL, NULL, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(11, 204, NULL, NULL, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(12, 205, NULL, NULL, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(13, 206, NULL, NULL, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(14, 207, NULL, NULL, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(15, 208, NULL, NULL, NULL, '2026-09-02 07:25:58', '2026-09-02 07:25:58'),
+(16, 209, NULL, NULL, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(17, 210, NULL, NULL, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(18, 211, NULL, NULL, NULL, '2026-09-02 10:54:06', '2026-09-02 10:54:06'),
+(19, 214, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 11:03:33', '2026-09-02 11:03:33'),
+(20, 215, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 11:04:46', '2026-09-02 11:04:46'),
+(21, 216, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 11:05:17', '2026-09-02 11:05:17'),
+(22, 217, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 11:45:39', '2026-09-02 11:45:39'),
+(23, 218, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 11:45:55', '2026-09-02 11:45:55'),
+(24, 219, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(25, 220, 'Which official, agency, and/or national coordinating body, if any, led government anti-trafficking efforts?', 'Ineffective', 'How was this body effective or ineffective, and what results did it produce?', '2026-09-02 14:52:15', '2026-09-02 14:52:15'),
+(26, 221, NULL, NULL, NULL, '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(27, 222, NULL, NULL, NULL, '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(28, 223, NULL, NULL, NULL, '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(29, 224, NULL, NULL, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(30, 225, NULL, NULL, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(31, 230, NULL, NULL, NULL, '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(32, 231, NULL, NULL, NULL, '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(33, 233, NULL, NULL, NULL, '2026-09-03 14:38:50', '2026-09-03 14:38:50'),
+(34, 234, NULL, NULL, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(35, 235, NULL, NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -19135,7 +20286,27 @@ INSERT INTO `report_country_narrative_protection_q17` (`id`, `case_id`, `report_
 (800, 190, '2', NULL, '0', '0', '0', '0', NULL, NULL),
 (801, 190, '3', NULL, '0', '0', '0', '0', NULL, NULL),
 (802, 190, '4', NULL, '0', '0', '0', '0', NULL, NULL),
-(803, 190, NULL, NULL, '0', '0', '0', '0', NULL, NULL);
+(803, 190, NULL, NULL, '0', '0', '0', '0', NULL, NULL),
+(804, 224, '1', NULL, '0', '0', '0', '0', NULL, NULL),
+(805, 224, '2', NULL, '0', '0', '0', '0', NULL, NULL),
+(806, 224, '3', NULL, '0', '0', '0', '0', NULL, NULL),
+(807, 224, '4', NULL, '0', '0', '0', '0', NULL, NULL),
+(808, 224, NULL, NULL, '0', '0', '0', '0', NULL, NULL),
+(809, 225, '1', NULL, '0', '0', '0', '0', NULL, NULL),
+(810, 225, '2', NULL, '0', '0', '0', '0', NULL, NULL),
+(811, 225, '3', NULL, '0', '0', '0', '0', NULL, NULL),
+(812, 225, '4', NULL, '0', '0', '0', '0', NULL, NULL),
+(813, 225, NULL, NULL, '0', '0', '0', '0', NULL, NULL),
+(814, 234, '1', NULL, '0', '0', '0', '0', NULL, NULL),
+(815, 234, '2', NULL, '0', '0', '0', '0', NULL, NULL),
+(816, 234, '3', NULL, '0', '0', '0', '0', NULL, NULL),
+(817, 234, '4', NULL, '0', '0', '0', '0', NULL, NULL),
+(818, 234, NULL, NULL, '0', '0', '0', '0', NULL, NULL),
+(819, 235, '1', NULL, '0', '0', '0', '0', NULL, NULL),
+(820, 235, '2', NULL, '0', '0', '0', '0', NULL, NULL),
+(821, 235, '3', NULL, '0', '0', '0', '0', NULL, NULL),
+(822, 235, '4', NULL, '0', '0', '0', '0', NULL, NULL),
+(823, 235, NULL, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -19355,7 +20526,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (11, 17),
 (11, 20),
 (11, 30),
-(11, 31),
 (12, 1),
 (12, 2),
 (12, 7),
@@ -19438,11 +20608,9 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (34, 1),
 (34, 20),
 (34, 30),
-(34, 31),
 (35, 1),
 (35, 20),
 (35, 30),
-(35, 31),
 (36, 1),
 (36, 17),
 (36, 18),
@@ -19451,7 +20619,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (38, 1),
 (38, 20),
 (38, 30),
-(38, 31),
 (39, 1),
 (39, 3),
 (39, 4),
@@ -19462,7 +20629,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (39, 20),
 (39, 21),
 (39, 30),
-(39, 31),
 (40, 1),
 (40, 3),
 (40, 4),
@@ -19511,7 +20677,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (46, 18),
 (46, 20),
 (46, 30),
-(46, 31),
 (48, 1),
 (48, 3),
 (48, 4),
@@ -19521,7 +20686,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (48, 18),
 (48, 20),
 (48, 30),
-(48, 31),
 (49, 1),
 (49, 3),
 (49, 4),
@@ -19529,17 +20693,14 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (49, 14),
 (49, 20),
 (49, 30),
-(49, 31),
 (50, 1),
 (50, 3),
 (50, 4),
 (50, 20),
 (50, 30),
-(50, 31),
 (51, 1),
 (51, 20),
 (51, 30),
-(51, 31),
 (52, 1),
 (52, 2),
 (52, 20),
@@ -19559,41 +20720,40 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (56, 1),
 (56, 20),
 (56, 30),
-(56, 31),
 (57, 1),
 (57, 7),
 (57, 20),
 (57, 30),
+(57, 31),
 (58, 1),
 (58, 14),
 (58, 20),
 (58, 30),
+(58, 31),
 (59, 1),
 (59, 7),
 (59, 20),
 (59, 30),
-(59, 31),
 (60, 1),
 (60, 14),
 (60, 20),
 (60, 30),
+(60, 31),
 (61, 1),
 (61, 14),
 (61, 20),
 (61, 30),
-(61, 31),
 (62, 1),
 (62, 14),
 (62, 20),
 (62, 30),
-(62, 31),
 (63, 1),
 (63, 20),
 (63, 30),
-(63, 31),
 (64, 1),
 (64, 20),
 (64, 30),
+(64, 31),
 (65, 1),
 (65, 3),
 (65, 4),
@@ -19603,6 +20763,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (65, 18),
 (65, 20),
 (65, 30),
+(65, 31),
 (66, 1),
 (66, 20),
 (66, 30),
@@ -19630,6 +20791,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (73, 17),
 (73, 20),
 (73, 30),
+(73, 31),
 (74, 1),
 (74, 2),
 (74, 10),
@@ -19696,16 +20858,13 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (91, 7),
 (91, 20),
 (91, 30),
-(91, 31),
 (92, 1),
 (92, 2),
 (92, 20),
 (92, 30),
-(92, 31),
 (93, 1),
 (93, 20),
 (93, 30),
-(93, 31),
 (95, 1),
 (95, 20),
 (95, 30),
@@ -19889,186 +21048,236 @@ CREATE TABLE `situation_prevention_yes_no_others` (
   `desctiption_instances_trafficking_q56` text DEFAULT NULL,
   `is_considering_reported_q57` varchar(256) DEFAULT NULL,
   `other_considering_reported_q57` text DEFAULT NULL,
-  `desc_considering_reported_q57` text DEFAULT NULL
+  `desc_considering_reported_q57` text DEFAULT NULL,
+  `is_government_seek_civil_q43` varchar(256) DEFAULT NULL,
+  `other_government_seek_civil_q43` text DEFAULT NULL,
+  `is_government_prohibit_q48` varchar(256) DEFAULT NULL,
+  `other_government_prohibit_q48` text DEFAULT NULL,
+  `is_victim_protection_q38` varchar(256) DEFAULT NULL,
+  `other_victim_protection_q38` text DEFAULT NULL,
+  `title_victim_protection_q38` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `situation_prevention_yes_no_others`
 --
 
-INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`) VALUES
-(1, 19, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 11:42:50', '2026-05-11 11:42:50', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 20, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 12:17:37', '2026-05-11 12:17:37', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 21, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 17:13:33', '2026-05-11 17:13:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 22, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 17:40:50', '2026-05-11 17:40:50', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 23, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-14 06:22:08', '2026-05-14 06:22:08', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 24, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 09:39:31', '2026-05-18 09:39:31', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 25, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 09:49:12', '2026-05-18 09:49:12', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 26, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 10:04:36', '2026-05-18 10:04:36', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 27, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 10:15:23', '2026-05-18 10:15:23', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 28, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 10:46:03', '2026-05-18 10:46:03', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 29, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 11:48:25', '2026-05-18 11:48:25', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 30, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 11:53:51', '2026-05-18 11:53:51', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 31, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 12:00:28', '2026-05-18 12:00:28', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 32, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 12:08:13', '2026-05-18 12:08:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 33, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 12:45:50', '2026-05-18 12:45:50', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, 34, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 16:24:07', '2026-05-18 16:24:07', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 35, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2026-05-20 08:36:38', '2026-05-20 08:36:38', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 36, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-20 22:14:53', '2026-05-20 22:14:53', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 37, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-11 10:33:20', '2026-06-11 10:33:20', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 38, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-14 06:51:43', '2026-06-14 06:51:43', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 39, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-14 10:05:52', '2026-06-14 10:05:52', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 40, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 24, '2026-06-14 12:06:40', '2026-06-14 12:06:40', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 41, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 24, '2026-06-14 12:40:15', '2026-06-14 12:40:15', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 42, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-14 17:04:58', '2026-06-14 17:04:58', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 43, '1', NULL, NULL, NULL, NULL, NULL, '0', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-18 08:38:40', '2026-06-18 08:38:40', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 44, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-18 09:14:09', '2026-06-18 09:14:09', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 45, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-21 17:41:55', '2026-06-21 17:41:55', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(28, 46, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-24 07:08:03', '2026-06-24 07:08:03', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(29, 47, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 04:28:05', '2026-06-25 04:28:05', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(30, 48, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 05:17:08', '2026-06-25 05:17:08', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(31, 49, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 05:19:13', '2026-06-25 05:19:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(32, 50, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 05:21:33', '2026-06-25 05:21:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(33, 51, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:24:36', '2026-06-25 06:24:36', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(34, 52, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:28:14', '2026-06-25 06:28:14', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(35, 53, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:45:29', '2026-06-25 06:45:29', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(36, 54, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:54:41', '2026-06-25 06:54:41', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(37, 55, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:10:33', '2026-06-25 07:10:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, 56, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:14:32', '2026-06-25 07:14:32', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(39, 57, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:25:46', '2026-06-25 07:25:46', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(40, 58, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:29:33', '2026-06-25 07:29:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(41, 59, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:35:26', '2026-06-25 07:35:26', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(42, 60, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:46:27', '2026-06-25 07:46:27', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(43, 61, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:47:46', '2026-06-25 07:47:46', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(44, 62, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:52:45', '2026-06-25 07:52:45', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(45, 63, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:55:13', '2026-06-25 07:55:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(46, 64, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:56:52', '2026-06-25 07:56:52', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(47, 65, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:59:07', '2026-06-25 07:59:07', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(48, 66, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:42:09', '2026-06-25 08:42:09', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(49, 67, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:44:33', '2026-06-25 08:44:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(50, 68, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:46:34', '2026-06-25 08:46:34', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(51, 69, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:49:07', '2026-06-25 08:49:07', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(52, 70, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:50:27', '2026-06-25 08:50:27', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(53, 71, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 10:58:48', '2026-06-25 10:58:48', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`) VALUES
-(54, 72, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-27 09:31:10', '2026-06-27 09:31:10', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(55, 73, '2', 'Others information', NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-27 13:54:17', '2026-06-27 13:54:17', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(56, 74, '1', NULL, NULL, NULL, NULL, NULL, '0', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-28 11:10:24', '2026-06-28 11:10:24', NULL, NULL, '2', 'No Thanks Just test', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(57, 75, '0', NULL, NULL, NULL, NULL, NULL, '0', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, '0', NULL, 1, '2026-06-28 11:17:46', '2026-06-28 11:17:46', NULL, NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(58, 76, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-30 09:19:31', '2026-06-30 09:19:31', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(59, 77, '1', NULL, NULL, NULL, NULL, NULL, '2', 'I am laravel developer', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-01 11:17:49', '2026-07-01 11:17:49', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '2', 'i am react js developer', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(60, 78, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-01 11:19:30', '2026-07-01 11:19:30', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(61, 79, '1', NULL, NULL, NULL, NULL, NULL, '0', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-01 11:20:30', '2026-07-01 11:20:30', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(62, 80, '2', 'others', NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-06 08:09:21', '2026-07-06 08:09:21', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(63, 81, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-06 08:29:06', '2026-07-06 08:29:06', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(64, 82, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-06 08:32:42', '2026-07-06 08:32:42', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(65, 83, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 01:30:55', '2026-07-09 01:30:55', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(66, 84, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 01:31:47', '2026-07-09 01:31:47', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(67, 85, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-08 23:36:52', '2026-07-08 23:36:52', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(68, 86, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-08 23:38:11', '2026-07-08 23:38:11', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(69, 87, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-08 23:39:18', '2026-07-08 23:39:18', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(70, 88, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 00:53:56', '2026-07-09 00:53:56', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(71, 89, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 02:02:34', '2026-07-09 02:02:34', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(72, 90, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:50:08', '2026-07-11 05:50:08', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(73, 91, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:51:21', '2026-07-11 05:51:21', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(74, 92, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:53:42', '2026-07-11 05:53:42', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(75, 93, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:56:49', '2026-07-11 05:56:49', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(76, 94, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 12:34:28', '2026-07-11 12:34:28', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(77, 95, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 12:45:13', '2026-07-11 12:45:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(78, 96, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-12 05:27:59', '2026-07-12 05:27:59', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(79, 97, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-12 05:48:48', '2026-07-12 05:48:48', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(80, 98, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-14 07:34:05', '2026-07-14 07:34:05', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(81, 99, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:18:58', '2026-07-16 12:18:58', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(82, 100, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:39:51', '2026-07-16 12:39:51', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(83, 101, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:46:29', '2026-07-16 12:46:29', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(84, 102, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:48:22', '2026-07-16 12:48:22', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(85, 103, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:49:22', '2026-07-16 17:49:22', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(86, 104, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:53:58', '2026-07-16 17:53:58', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(87, 105, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:56:14', '2026-07-16 17:56:14', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(88, 106, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:57:46', '2026-07-16 17:57:46', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(89, 107, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 18:01:59', '2026-07-16 18:01:59', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(90, 108, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 18:02:16', '2026-07-16 18:02:16', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(91, 109, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:46:28', '2026-07-18 05:46:28', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(92, 110, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:47:43', '2026-07-18 05:47:43', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(93, 111, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:48:48', '2026-07-18 05:48:48', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(94, 112, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:49:24', '2026-07-18 05:49:24', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(95, 113, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:50:41', '2026-07-18 05:50:41', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(96, 114, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:50:42', '2026-07-18 05:50:42', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(97, 115, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:53:01', '2026-07-18 05:53:01', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(98, 116, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 05:23:35', '2026-07-19 05:23:35', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(99, 117, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 05:40:37', '2026-07-19 05:40:37', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(100, 118, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 06:00:29', '2026-07-19 06:00:29', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(101, 120, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 07:05:06', '2026-07-19 07:05:06', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(102, 121, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 11:33:07', '2026-07-19 11:33:07', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(103, 122, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 11:45:51', '2026-07-19 11:45:51', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(104, 123, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 12:33:37', '2026-07-19 12:33:37', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(105, 124, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 07:20:42', '2026-07-20 07:20:42', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(106, 125, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 08:20:52', '2026-07-20 08:20:52', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(107, 126, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 16:45:13', '2026-07-20 16:45:13', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`) VALUES
-(108, 127, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 17:09:59', '2026-07-20 17:09:59', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(109, 128, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-21 05:50:13', '2026-07-21 05:50:13', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(110, 129, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 04:42:35', '2026-07-26 04:42:35', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(111, 130, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:26:48', '2026-07-26 15:26:48', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(112, 131, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:37:25', '2026-07-26 15:37:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(113, 132, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:39:09', '2026-07-26 15:39:09', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(114, 133, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:48:25', '2026-07-26 15:48:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(115, 134, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 19:43:56', '2026-07-26 19:43:56', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(116, 135, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-27 04:05:25', '2026-07-27 04:05:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(117, 138, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 05:40:36', '2026-08-15 05:40:36', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(118, 139, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 12:27:23', '2026-08-15 12:27:23', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(119, 140, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 12:33:04', '2026-08-15 12:33:04', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(120, 141, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 18:34:46', '2026-08-15 18:34:46', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(121, 142, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-16 04:28:53', '2026-08-16 04:28:53', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(122, 143, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-16 17:18:43', '2026-08-16 17:18:43', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(123, 144, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 03:23:32', '2026-08-17 03:23:32', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(124, 145, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 06:38:07', '2026-08-17 06:38:07', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(125, 146, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 06:40:57', '2026-08-17 06:40:57', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(126, 147, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 06:42:11', '2026-08-17 06:42:11', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(127, 148, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 17:23:06', '2026-08-17 17:23:06', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(128, 149, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-18 06:23:47', '2026-08-18 06:23:47', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(129, 150, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-18 06:36:06', '2026-08-18 06:36:06', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(130, 151, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-18 11:20:49', '2026-08-18 11:20:49', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(131, 153, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-19 04:44:36', '2026-08-19 04:44:36', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(132, 155, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 02:26:16', '2026-08-22 02:26:16', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(133, 156, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 02:50:25', '2026-08-22 02:50:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(134, 157, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 04:34:08', '2026-08-22 04:34:08', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(135, 158, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 04:34:42', '2026-08-22 04:34:42', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(136, 159, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 04:35:30', '2026-08-22 04:35:30', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(137, 160, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 06:38:09', '2026-08-22 06:38:09', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(138, 161, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 06:39:19', '2026-08-22 06:39:19', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(139, 162, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 11:40:35', '2026-08-22 11:40:35', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(140, 163, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 11:41:59', '2026-08-22 11:41:59', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(141, 164, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 12:17:50', '2026-08-22 12:17:50', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(142, 165, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 12:20:38', '2026-08-22 12:20:38', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(143, 166, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 12:21:16', '2026-08-22 12:21:16', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(144, 167, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 17:51:09', '2026-08-22 17:51:09', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(145, 168, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 17:52:15', '2026-08-22 17:52:15', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(146, 169, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 17:52:20', '2026-08-22 17:52:20', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(147, 170, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-23 04:22:44', '2026-08-23 04:22:44', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(148, 171, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-23 04:26:24', '2026-08-23 04:26:24', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(149, 173, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-23 06:17:02', '2026-08-23 06:17:02', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(150, 174, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 18:46:25', '2026-08-24 18:46:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(151, 175, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 18:54:22', '2026-08-24 18:54:22', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(152, 176, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 19:21:21', '2026-08-24 19:21:21', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(153, 177, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 19:56:22', '2026-08-24 19:56:22', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(154, 178, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 03:40:41', '2026-08-25 03:40:41', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(155, 179, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 03:48:36', '2026-08-25 03:48:36', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(156, 180, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 04:03:45', '2026-08-25 04:03:45', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(157, 181, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 04:05:40', '2026-08-25 04:05:40', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(158, 182, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 04:28:19', '2026-08-25 04:28:19', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(159, 183, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 05:05:20', '2026-08-25 05:05:20', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(160, 184, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 05:12:57', '2026-08-25 05:12:57', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(161, 185, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 05:23:29', '2026-08-25 05:23:29', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`) VALUES
-(162, 186, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 07:36:48', '2026-08-25 07:36:48', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(163, 187, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 07:49:37', '2026-08-25 07:49:37', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(164, 188, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 11:02:24', '2026-08-25 11:02:24', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(165, 189, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 11:16:46', '2026-08-25 11:16:46', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(166, 190, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 11:35:49', '2026-08-25 11:35:49', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(167, 191, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-08-25 16:23:56', '2026-08-25 16:23:56', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, 'In instances of trafficking allegations filed against peacekeepers, what steps did the government take to hold perpetrators accountable and prevent future incidents?', '1', NULL, NULL),
-(168, 192, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-08-25 16:27:27', '2026-08-25 16:27:27', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, 'In instances of trafficking allegations filed against peacekeepers, what steps did the government take to hold perpetrators accountable and prevent future incidents?', '1', NULL, NULL),
-(169, 193, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-08-25 16:56:02', '2026-08-25 16:56:02', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, '1', NULL, 'Considering what was reported in the 2025 TIP Report country narrative, provide any updates about trafficking trends, government anti-trafficking efforts in territories or semi-autonomous regions, and lead agencies.');
+INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`, `is_government_seek_civil_q43`, `other_government_seek_civil_q43`, `is_government_prohibit_q48`, `other_government_prohibit_q48`, `is_victim_protection_q38`, `other_victim_protection_q38`, `title_victim_protection_q38`) VALUES
+(1, 19, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 11:42:50', '2026-05-11 11:42:50', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 20, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 12:17:37', '2026-05-11 12:17:37', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 21, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 17:13:33', '2026-05-11 17:13:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 22, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-11 17:40:50', '2026-05-11 17:40:50', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 23, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-14 06:22:08', '2026-05-14 06:22:08', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 24, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 09:39:31', '2026-05-18 09:39:31', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 25, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 09:49:12', '2026-05-18 09:49:12', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 26, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 10:04:36', '2026-05-18 10:04:36', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 27, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 10:15:23', '2026-05-18 10:15:23', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 28, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 10:46:03', '2026-05-18 10:46:03', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 29, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 11:48:25', '2026-05-18 11:48:25', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 30, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 11:53:51', '2026-05-18 11:53:51', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 31, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 12:00:28', '2026-05-18 12:00:28', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 32, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 12:08:13', '2026-05-18 12:08:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 33, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 12:45:50', '2026-05-18 12:45:50', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 34, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-18 16:24:07', '2026-05-18 16:24:07', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(17, 35, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2026-05-20 08:36:38', '2026-05-20 08:36:38', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 36, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-05-20 22:14:53', '2026-05-20 22:14:53', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 37, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-11 10:33:20', '2026-06-11 10:33:20', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, 38, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-14 06:51:43', '2026-06-14 06:51:43', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 39, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-14 10:05:52', '2026-06-14 10:05:52', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 40, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 24, '2026-06-14 12:06:40', '2026-06-14 12:06:40', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 41, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 24, '2026-06-14 12:40:15', '2026-06-14 12:40:15', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 42, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-14 17:04:58', '2026-06-14 17:04:58', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 43, '1', NULL, NULL, NULL, NULL, NULL, '0', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-18 08:38:40', '2026-06-18 08:38:40', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, 44, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-18 09:14:09', '2026-06-18 09:14:09', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, 45, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-21 17:41:55', '2026-06-21 17:41:55', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, 46, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-24 07:08:03', '2026-06-24 07:08:03', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, 47, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 04:28:05', '2026-06-25 04:28:05', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, 48, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 05:17:08', '2026-06-25 05:17:08', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, 49, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 05:19:13', '2026-06-25 05:19:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, 50, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 05:21:33', '2026-06-25 05:21:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, 51, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:24:36', '2026-06-25 06:24:36', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 52, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:28:14', '2026-06-25 06:28:14', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 53, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:45:29', '2026-06-25 06:45:29', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 54, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 06:54:41', '2026-06-25 06:54:41', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 55, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:10:33', '2026-06-25 07:10:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 56, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:14:32', '2026-06-25 07:14:32', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 57, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:25:46', '2026-06-25 07:25:46', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 58, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:29:33', '2026-06-25 07:29:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 59, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:35:26', '2026-06-25 07:35:26', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 60, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:46:27', '2026-06-25 07:46:27', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 61, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:47:46', '2026-06-25 07:47:46', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 62, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:52:45', '2026-06-25 07:52:45', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 63, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:55:13', '2026-06-25 07:55:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 64, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:56:52', '2026-06-25 07:56:52', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 65, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 07:59:07', '2026-06-25 07:59:07', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 66, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:42:09', '2026-06-25 08:42:09', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 67, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:44:33', '2026-06-25 08:44:33', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 68, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:46:34', '2026-06-25 08:46:34', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 69, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:49:07', '2026-06-25 08:49:07', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`, `is_government_seek_civil_q43`, `other_government_seek_civil_q43`, `is_government_prohibit_q48`, `other_government_prohibit_q48`, `is_victim_protection_q38`, `other_victim_protection_q38`, `title_victim_protection_q38`) VALUES
+(52, 70, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 08:50:27', '2026-06-25 08:50:27', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 71, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-25 10:58:48', '2026-06-25 10:58:48', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 72, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-27 09:31:10', '2026-06-27 09:31:10', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 73, '2', 'Others information', NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 23, '2026-06-27 13:54:17', '2026-06-27 13:54:17', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 74, '1', NULL, NULL, NULL, NULL, NULL, '0', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-28 11:10:24', '2026-06-28 11:10:24', NULL, NULL, '2', 'No Thanks Just test', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 75, '0', NULL, NULL, NULL, NULL, NULL, '0', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, '0', NULL, 1, '2026-06-28 11:17:46', '2026-06-28 11:17:46', NULL, NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 76, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-06-30 09:19:31', '2026-06-30 09:19:31', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 77, '1', NULL, NULL, NULL, NULL, NULL, '2', 'I am laravel developer', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-01 11:17:49', '2026-07-01 11:17:49', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '2', 'i am react js developer', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, 78, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-01 11:19:30', '2026-07-01 11:19:30', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 79, '1', NULL, NULL, NULL, NULL, NULL, '0', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-01 11:20:30', '2026-07-01 11:20:30', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 80, '2', 'others', NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-06 08:09:21', '2026-07-06 08:09:21', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(63, 81, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-06 08:29:06', '2026-07-06 08:29:06', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 82, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-06 08:32:42', '2026-07-06 08:32:42', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(65, 83, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 01:30:55', '2026-07-09 01:30:55', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(66, 84, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 01:31:47', '2026-07-09 01:31:47', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(67, 85, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-08 23:36:52', '2026-07-08 23:36:52', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(68, 86, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-08 23:38:11', '2026-07-08 23:38:11', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(69, 87, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-08 23:39:18', '2026-07-08 23:39:18', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(70, 88, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 00:53:56', '2026-07-09 00:53:56', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(71, 89, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-09 02:02:34', '2026-07-09 02:02:34', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(72, 90, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:50:08', '2026-07-11 05:50:08', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(73, 91, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:51:21', '2026-07-11 05:51:21', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(74, 92, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:53:42', '2026-07-11 05:53:42', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(75, 93, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 05:56:49', '2026-07-11 05:56:49', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(76, 94, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 12:34:28', '2026-07-11 12:34:28', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(77, 95, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-11 12:45:13', '2026-07-11 12:45:13', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(78, 96, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-12 05:27:59', '2026-07-12 05:27:59', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(79, 97, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-12 05:48:48', '2026-07-12 05:48:48', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(80, 98, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-14 07:34:05', '2026-07-14 07:34:05', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(81, 99, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:18:58', '2026-07-16 12:18:58', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(82, 100, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:39:51', '2026-07-16 12:39:51', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(83, 101, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:46:29', '2026-07-16 12:46:29', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(84, 102, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 12:48:22', '2026-07-16 12:48:22', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(85, 103, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:49:22', '2026-07-16 17:49:22', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(86, 104, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:53:58', '2026-07-16 17:53:58', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(87, 105, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:56:14', '2026-07-16 17:56:14', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(88, 106, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 17:57:46', '2026-07-16 17:57:46', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(89, 107, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 18:01:59', '2026-07-16 18:01:59', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(90, 108, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-16 18:02:16', '2026-07-16 18:02:16', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(91, 109, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:46:28', '2026-07-18 05:46:28', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(92, 110, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:47:43', '2026-07-18 05:47:43', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(93, 111, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:48:48', '2026-07-18 05:48:48', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(94, 112, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:49:24', '2026-07-18 05:49:24', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(95, 113, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:50:41', '2026-07-18 05:50:41', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(96, 114, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:50:42', '2026-07-18 05:50:42', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(97, 115, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-18 05:53:01', '2026-07-18 05:53:01', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(98, 116, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 05:23:35', '2026-07-19 05:23:35', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(99, 117, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 05:40:37', '2026-07-19 05:40:37', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(100, 118, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 06:00:29', '2026-07-19 06:00:29', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(101, 120, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 07:05:06', '2026-07-19 07:05:06', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(102, 121, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 11:33:07', '2026-07-19 11:33:07', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`, `is_government_seek_civil_q43`, `other_government_seek_civil_q43`, `is_government_prohibit_q48`, `other_government_prohibit_q48`, `is_victim_protection_q38`, `other_victim_protection_q38`, `title_victim_protection_q38`) VALUES
+(103, 122, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 11:45:51', '2026-07-19 11:45:51', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(104, 123, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-19 12:33:37', '2026-07-19 12:33:37', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(105, 124, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 07:20:42', '2026-07-20 07:20:42', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(106, 125, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 08:20:52', '2026-07-20 08:20:52', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(107, 126, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 16:45:13', '2026-07-20 16:45:13', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(108, 127, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-20 17:09:59', '2026-07-20 17:09:59', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(109, 128, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-21 05:50:13', '2026-07-21 05:50:13', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(110, 129, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 04:42:35', '2026-07-26 04:42:35', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(111, 130, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:26:48', '2026-07-26 15:26:48', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(112, 131, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:37:25', '2026-07-26 15:37:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(113, 132, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:39:09', '2026-07-26 15:39:09', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(114, 133, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 15:48:25', '2026-07-26 15:48:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(115, 134, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-26 19:43:56', '2026-07-26 19:43:56', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(116, 135, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-07-27 04:05:25', '2026-07-27 04:05:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(117, 138, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 05:40:36', '2026-08-15 05:40:36', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(118, 139, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 12:27:23', '2026-08-15 12:27:23', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(119, 140, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 12:33:04', '2026-08-15 12:33:04', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(120, 141, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-15 18:34:46', '2026-08-15 18:34:46', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(121, 142, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-16 04:28:53', '2026-08-16 04:28:53', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(122, 143, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-16 17:18:43', '2026-08-16 17:18:43', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(123, 144, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 03:23:32', '2026-08-17 03:23:32', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(124, 145, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 06:38:07', '2026-08-17 06:38:07', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(125, 146, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 06:40:57', '2026-08-17 06:40:57', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(126, 147, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 06:42:11', '2026-08-17 06:42:11', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(127, 148, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-17 17:23:06', '2026-08-17 17:23:06', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(128, 149, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-18 06:23:47', '2026-08-18 06:23:47', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(129, 150, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-18 06:36:06', '2026-08-18 06:36:06', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(130, 151, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-18 11:20:49', '2026-08-18 11:20:49', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(131, 153, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-19 04:44:36', '2026-08-19 04:44:36', '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(132, 155, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 02:26:16', '2026-08-22 02:26:16', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(133, 156, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 02:50:25', '2026-08-22 02:50:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(134, 157, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 04:34:08', '2026-08-22 04:34:08', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(135, 158, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 04:34:42', '2026-08-22 04:34:42', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(136, 159, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 04:35:30', '2026-08-22 04:35:30', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(137, 160, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 06:38:09', '2026-08-22 06:38:09', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(138, 161, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 06:39:19', '2026-08-22 06:39:19', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(139, 162, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 11:40:35', '2026-08-22 11:40:35', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(140, 163, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 11:41:59', '2026-08-22 11:41:59', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(141, 164, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 12:17:50', '2026-08-22 12:17:50', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(142, 165, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 12:20:38', '2026-08-22 12:20:38', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(143, 166, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 12:21:16', '2026-08-22 12:21:16', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(144, 167, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 17:51:09', '2026-08-22 17:51:09', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(145, 168, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 17:52:15', '2026-08-22 17:52:15', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(146, 169, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-22 17:52:20', '2026-08-22 17:52:20', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(147, 170, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-23 04:22:44', '2026-08-23 04:22:44', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(148, 171, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-23 04:26:24', '2026-08-23 04:26:24', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(149, 173, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-23 06:17:02', '2026-08-23 06:17:02', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(150, 174, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 18:46:25', '2026-08-24 18:46:25', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(151, 175, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 18:54:22', '2026-08-24 18:54:22', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(152, 176, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 19:21:21', '2026-08-24 19:21:21', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(153, 177, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-24 19:56:22', '2026-08-24 19:56:22', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`, `is_government_seek_civil_q43`, `other_government_seek_civil_q43`, `is_government_prohibit_q48`, `other_government_prohibit_q48`, `is_victim_protection_q38`, `other_victim_protection_q38`, `title_victim_protection_q38`) VALUES
+(154, 178, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 03:40:41', '2026-08-25 03:40:41', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(155, 179, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 03:48:36', '2026-08-25 03:48:36', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(156, 180, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 04:03:45', '2026-08-25 04:03:45', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(157, 181, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 04:05:40', '2026-08-25 04:05:40', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(158, 182, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 04:28:19', '2026-08-25 04:28:19', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(159, 183, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 05:05:20', '2026-08-25 05:05:20', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(160, 184, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 05:12:57', '2026-08-25 05:12:57', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(161, 185, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 05:23:29', '2026-08-25 05:23:29', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(162, 186, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 07:36:48', '2026-08-25 07:36:48', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(163, 187, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 07:49:37', '2026-08-25 07:49:37', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(164, 188, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 11:02:24', '2026-08-25 11:02:24', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(165, 189, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 11:16:46', '2026-08-25 11:16:46', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(166, 190, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-08-25 11:35:49', '2026-08-25 11:35:49', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(167, 191, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-08-25 16:23:56', '2026-08-25 16:23:56', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, 'In instances of trafficking allegations filed against peacekeepers, what steps did the government take to hold perpetrators accountable and prevent future incidents?', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(168, 192, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-08-25 16:27:27', '2026-08-25 16:27:27', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, 'In instances of trafficking allegations filed against peacekeepers, what steps did the government take to hold perpetrators accountable and prevent future incidents?', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(169, 193, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-08-25 16:56:02', '2026-08-25 16:56:02', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, NULL, '1', NULL, 'Considering what was reported in the 2025 TIP Report country narrative, provide any updates about trafficking trends, government anti-trafficking efforts in territories or semi-autonomous regions, and lead agencies.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(170, 194, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:28', '2026-09-02 07:25:28', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(171, 195, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:30', '2026-09-02 07:25:30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(172, 196, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:31', '2026-09-02 07:25:31', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(173, 197, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:32', '2026-09-02 07:25:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(174, 198, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:34', '2026-09-02 07:25:34', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(175, 199, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:36', '2026-09-02 07:25:36', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(176, 200, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:37', '2026-09-02 07:25:37', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(177, 201, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:38', '2026-09-02 07:25:38', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(178, 202, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:50', '2026-09-02 07:25:50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(179, 203, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:52', '2026-09-02 07:25:52', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(180, 204, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:53', '2026-09-02 07:25:53', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(181, 205, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:54', '2026-09-02 07:25:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(182, 206, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:55', '2026-09-02 07:25:55', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(183, 207, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:56', '2026-09-02 07:25:56', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(184, 208, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:25:57', '2026-09-02 07:25:57', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(185, 209, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:27:22', '2026-09-02 07:27:22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(186, 210, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 07:32:23', '2026-09-02 07:32:23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(187, 211, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 10:54:06', '2026-09-02 10:54:06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(188, 212, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 10:56:54', '2026-09-02 10:56:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(189, 213, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:00:45', '2026-09-02 11:00:45', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(190, 214, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:03:33', '2026-09-02 11:03:33', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(191, 215, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:04:46', '2026-09-02 11:04:46', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL),
+(192, 216, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:05:16', '2026-09-02 11:05:16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL),
+(193, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:45:39', '2026-09-02 11:45:39', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL),
+(194, 218, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:45:55', '2026-09-02 11:45:55', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL),
+(195, 219, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 11:58:26', '2026-09-02 11:58:26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(196, 220, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-02 14:52:13', '2026-09-02 14:52:13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(197, 221, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 05:43:34', '2026-09-03 05:43:34', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(198, 222, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 05:43:35', '2026-09-03 05:43:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(199, 223, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 05:43:51', '2026-09-03 05:43:51', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(200, 224, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-09-03 05:49:48', '2026-09-03 05:49:48', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL),
+(201, 225, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-09-03 05:49:52', '2026-09-03 05:49:52', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL),
+(202, 226, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 06:07:04', '2026-09-03 06:07:04', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(203, 227, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 06:07:33', '2026-09-03 06:07:33', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL);
+INSERT INTO `situation_prevention_yes_no_others` (`id`, `case_id`, `is_supreme_court_q1`, `others_supreme_court_q1`, `is_technology_trafficking_applicable_q3`, `other_technology_trafficking_applicable_q3`, `is_crime_justice_q4`, `others_crime_justice_q4`, `is_complicit_official_q5`, `others_complicit_official_q5`, `is_unit_court_q6`, `others_unit_court_q6`, `is_involved_directly_trafficking_2q`, `others_involved_directly_trafficking_2q`, `is_forced_labor_supply_chains_11q`, `others_forced_labor_supply_chains_11q`, `is_formal_written_procedures_15q`, `others_formal_written_procedures_15q`, `is_victim_identification_protocol_16q`, `others_victim_identification_protocol_16q`, `is_trafficking_among_risk_population_18q`, `others_trafficking_among_risk_population_18q`, `is_sex_trafficking_forced_labor_country_19q`, `others_sex_trafficking_forced_labor_country_19q`, `is_trafficking_victims_services_20q`, `others_trafficking_victims_services_20q`, `is_speak_law_enforcement_23q`, `others_speak_law_enforcement_23q`, `is_victim_centered_approach_28q`, `others_victim_centered_approach_28q`, `is_vots_received_assistance_53q`, `others_vots_received_assistance_53q`, `is_ministry_agency_organization_54q`, `others_ministry_agency_organization_54q`, `is_ministry_agency_organization_ctc_55q`, `others_ministry_agency_organization_ctc_55q`, `is_exclusively_dedicated_trafficking_q7`, `other_exclusively_dedicated_trafficking_q7`, `is_official_allocation_review_q8`, `other_official_allocation_review_q8`, `is_adequately_jurisdicticon_q9`, `other_adequately_jurisdition_q9`, `is_involved_directly_trafficking_8q`, `other_involved_directly_trafficking_8q`, `created_by`, `created_at`, `updated_at`, `is_government_devote_implement_q14`, `other_government_devote_implement_q14`, `is_supreme_court_q4`, `others_supreme_court_q4`, `is_exclusively_trafficking_q9`, `other_exclusively_trafficking_q9`, `is_exclusively_trafficking_q10`, `other_exclusively_trafficking_q10`, `is_commercial_sex_demands_q51`, `other_commercial_sex_demands_q51`, `is_government_prosecute_deport_q52`, `other_government_prosecute_deport_q52`, `is_country_diplomats_allegedly_q54`, `other_country_diplomats_allegedly_q54`, `is_government_provide_trafficking_q55`, `other_government_provide_trafficking_q55`, `is_exploitative_treatment_q50`, `other_exploitative_treatment_q50`, `is_awareness_campaigns_research_projects_q44`, `other_awareness_campaigns_research_projects_q44`, `is_national_plan_trafficking_q45`, `other_national_plan_trafficking_q45`, `is_government_change_regulated_q47`, `other_government_change_regulated_q47`, `is_government_agreements_transparent_q49`, `other_government_agreements_transparent_q49`, `is_government_agreements_transparent_q11`, `other_government_agreements_transparent_q11`, `is_report_country_narrative_protection_q17`, `other_report_country_narrative_protection_q17`, `is_specialized_trafficking_victims_q24`, `other_specialized_trafficking_victims_q24`, `is_government_cooperate_foreign_counterparts_q12`, `other_government_cooperate_foreign_counterparts_q12`, `is_describe_government_operated_q20`, `other_describe_government_operated_q20`, `is_government_conduct_awareness_activities_q46`, `other_government_conduct_awareness_activities_q46`, `is_government_cooperate_foreign_counterparts_q13`, `other_government_cooperate_foreign_counterparts_q13`, `is_complicit_official_q23`, `others_complicit_official_q23`, `is_complicit_official_q33`, `no_details_q33`, `others_complicit_official_q33`, `is_citizen_victims_abroad_q31`, `other_citizen_victims_abroad_q31`, `is_foreign_victims_q30`, `other_foreign_victims_q30`, `is_government_transparent_q2`, `other_government_transparent_q2`, `other_crime_justice_q21`, `is_crime_justice_q21`, `is_crime_justice_q22`, `others_crime_justice_q22`, `is_government_train_diplomat_q53`, `other_government_train_diplomat_q53`, `is_victim_identification_protocol_q15`, `other_victim_identification_protocol_q15`, `is_authorities_systematically_q16`, `other_authorities_systematically_q16`, `is_government_officials_q18`, `other_government_officials_q18`, `is_victims_social_service_q19`, `other_victims_social_service_q19`, `is_government_person_formally_q25`, `other_government_person_formally_q25`, `is_consistent_victim_approach_q26`, `other_consistent_victim_approach_q26`, `is_government_direct_victim_q27`, `other_government_direct_victim_q27`, `is_child_victims_juvenile_q28`, `other_child_victims_juvenile_q28`, `is_adult_victims_juvenile_q29`, `other_adult_victims_juvenile_q29`, `is_newly_identified_victims_q34`, `other_newly_identified_victims_q34`, `is_trafficking_investigations_q58`, `other_trafficking_investigations_q58`, `is_assistance_government_q37`, `other_assistance_government_q37`, `is_victims_civil_traffickers_q40`, `other_victims_civil_traffickers_q40`, `is_convicted_traffickers_q41`, `other_convicted_traffickers_q41`, `is_instances_trafficking_q56`, `other_instances_trafficking_q56`, `desctiption_instances_trafficking_q56`, `is_considering_reported_q57`, `other_considering_reported_q57`, `desc_considering_reported_q57`, `is_government_seek_civil_q43`, `other_government_seek_civil_q43`, `is_government_prohibit_q48`, `other_government_prohibit_q48`, `is_victim_protection_q38`, `other_victim_protection_q38`, `title_victim_protection_q38`) VALUES
+(204, 228, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 06:08:22', '2026-09-03 06:08:22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(205, 229, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 06:09:10', '2026-09-03 06:09:10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(206, 230, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 06:10:09', '2026-09-03 06:10:09', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(207, 231, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 09:08:01', '2026-09-03 09:08:01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL),
+(208, 232, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 14:30:03', '2026-09-03 14:30:03', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '38. What forms of victim-witness protection services did the government provide to protect participating victims’ physical security and privacy during proceedings? Could victims provide testimony via video or written statements? How many, if any, participated via these methods? What, if any, accommodations did the government provide for victims with disabilities during trials? Were there any gaps in how protective protocols were implemented?'),
+(209, 233, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2026-09-03 14:38:48', '2026-09-03 14:38:48', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '38. What forms of victim-witness protection services did the government provide to protect participating victims’ physical security and privacy during proceedings? Could victims provide testimony via video or written statements? How many, if any, participated via these methods? What, if any, accommodations did the government provide for victims with disabilities during trials? Were there any gaps in how protective protocols were implemented?'),
+(210, 234, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-09-05 18:28:33', '2026-09-05 18:28:33', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '1', NULL, NULL),
+(211, 235, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, 1, '2026-09-08 06:49:56', '2026-09-08 06:49:56', '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, '1', '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, '1', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -20551,7 +21760,11 @@ INSERT INTO `state_sponsored_forced_labor_q6` (`id`, `case_id`, `labor_title_q6`
 (232, 187, NULL, '0', '0', '0', NULL, NULL, NULL),
 (233, 188, NULL, '0', '0', '0', NULL, NULL, NULL),
 (234, 189, NULL, '0', '0', '0', NULL, NULL, NULL),
-(235, 190, NULL, '0', '0', '0', NULL, NULL, NULL);
+(235, 190, NULL, '0', '0', '0', NULL, NULL, NULL),
+(236, 224, NULL, '0', '0', '0', NULL, NULL, NULL),
+(237, 225, NULL, '0', '0', '0', NULL, NULL, NULL),
+(238, 234, NULL, '0', '0', '0', NULL, NULL, NULL),
+(239, 235, NULL, '0', '0', '0', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -20574,222 +21787,42 @@ CREATE TABLE `supreme_court_precedent_1a` (
 --
 
 INSERT INTO `supreme_court_precedent_1a` (`id`, `case_id`, `supreme_court_title`, `supreme_court_status`, `supreme_court_image`, `created_at`, `updated_at`) VALUES
-(1, 19, NULL, NULL, NULL, NULL, NULL),
 (2, 20, '1', '1', 'uploads/supreme_court_image/supreme_court_image_1778501857_0.pdf', NULL, NULL),
-(3, 20, 'a', '2', 'uploads/supreme_court_image/supreme_court_image_1778501857_1.pdf', NULL, NULL),
-(4, 20, 'b', '2', 'uploads/supreme_court_image/supreme_court_image_1778501857_2.pdf', NULL, NULL),
-(5, 21, NULL, NULL, NULL, NULL, NULL),
-(6, 22, NULL, NULL, NULL, NULL, NULL),
-(7, 23, NULL, NULL, NULL, NULL, NULL),
 (8, 24, '1', '1', 'uploads/supreme_court_image/supreme_court_image_1779097171_0.pdf', NULL, NULL),
-(9, 24, 'a', '2', 'uploads/supreme_court_image/supreme_court_image_1779097171_1.pdf', NULL, NULL),
-(10, 24, 'b', '1', 'uploads/supreme_court_image/supreme_court_image_1779097171_2.pdf', NULL, NULL),
-(11, 24, 'c', '2', 'uploads/supreme_court_image/supreme_court_image_1779097171_3.pdf', NULL, NULL),
-(12, 25, NULL, NULL, NULL, NULL, NULL),
-(13, 26, NULL, NULL, NULL, NULL, NULL),
-(14, 27, NULL, NULL, NULL, NULL, NULL),
-(15, 28, NULL, NULL, NULL, NULL, NULL),
-(16, 29, NULL, NULL, NULL, NULL, NULL),
-(17, 30, NULL, NULL, NULL, NULL, NULL),
-(18, 31, NULL, NULL, NULL, NULL, NULL),
-(19, 32, NULL, NULL, NULL, NULL, NULL),
-(20, 33, NULL, NULL, NULL, NULL, NULL),
-(21, 34, NULL, NULL, NULL, NULL, NULL),
 (22, 36, '1', '1', 'uploads/supreme_court_image/supreme_court_image_1779315293_0.docx', NULL, NULL),
-(23, 36, 'ASDSS', '2', 'uploads/supreme_court_image/supreme_court_image_1779315293_1.docx', NULL, NULL),
-(24, 36, 'YEES S', '1', 'uploads/supreme_court_image/supreme_court_image_1779315293_2.pdf', NULL, NULL),
-(25, 37, NULL, NULL, NULL, NULL, NULL),
 (26, 38, '1', '1', 'uploads/supreme_court_image/supreme_court_image_1781419903_0.pdf', NULL, NULL),
-(27, 38, 'a', '2', 'uploads/supreme_court_image/supreme_court_image_1781419903_1.pdf', NULL, NULL),
-(28, 38, 'b', '2', 'uploads/supreme_court_image/supreme_court_image_1781419903_2.pdf', NULL, NULL),
-(29, 39, NULL, NULL, NULL, NULL, NULL),
 (30, 40, '1', '1', 'uploads/supreme_court_image/supreme_court_image_1781438800_0.pdf', NULL, NULL),
-(31, 40, 'a', '2', 'uploads/supreme_court_image/supreme_court_image_1781438800_1.pdf', NULL, NULL),
-(32, 40, 'b', '2', 'uploads/supreme_court_image/supreme_court_image_1781438800_2.pdf', NULL, NULL),
-(33, 41, NULL, NULL, NULL, NULL, NULL),
-(34, 42, NULL, NULL, NULL, NULL, NULL),
 (35, 43, '1', '1', NULL, NULL, NULL),
-(36, 43, 'a', '2', NULL, NULL, NULL),
-(37, 43, 'c', NULL, NULL, NULL, NULL),
 (38, 44, '1', '1', NULL, NULL, NULL),
-(39, 44, 'a', '2', NULL, NULL, NULL),
-(40, 44, 'c', NULL, NULL, NULL, NULL),
-(41, 45, NULL, NULL, NULL, NULL, NULL),
-(42, 46, NULL, NULL, NULL, NULL, NULL),
 (43, 47, '1', '1', 'uploads/supreme_court_image/supreme_court_image_1782361685_0.pdf', NULL, NULL),
-(44, 47, 'A', '2', 'uploads/supreme_court_image/supreme_court_image_1782361685_1.pdf', NULL, NULL),
-(45, 47, 'b', '1', 'uploads/supreme_court_image/supreme_court_image_1782361685_2.pdf', NULL, NULL),
-(46, 47, 'c', '2', 'uploads/supreme_court_image/supreme_court_image_1782361685_3.pdf', NULL, NULL),
 (47, 48, '1', '1', NULL, NULL, NULL),
-(48, 48, 'A', '2', NULL, NULL, NULL),
-(49, 48, 'b', '1', NULL, NULL, NULL),
-(50, 48, 'c', '2', NULL, NULL, NULL),
 (51, 49, '1', '1', NULL, NULL, NULL),
-(52, 49, 'A', '2', NULL, NULL, NULL),
-(53, 49, 'b', '1', NULL, NULL, NULL),
-(54, 49, 'c', '2', NULL, NULL, NULL),
 (55, 50, '1', '1', NULL, NULL, NULL),
-(56, 50, 'A', '2', NULL, NULL, NULL),
-(57, 50, 'b', '1', NULL, NULL, NULL),
-(58, 50, 'c', '2', NULL, NULL, NULL),
 (59, 51, '1', '1', NULL, NULL, NULL),
-(60, 51, 'A', '2', NULL, NULL, NULL),
-(61, 51, 'b', '1', NULL, NULL, NULL),
-(62, 51, 'c', '2', NULL, NULL, NULL),
 (63, 52, '1', '1', NULL, NULL, NULL),
-(64, 52, 'A', '2', NULL, NULL, NULL),
-(65, 52, 'b', '1', NULL, NULL, NULL),
-(66, 52, 'c', '2', NULL, NULL, NULL),
 (67, 53, '1', '1', NULL, NULL, NULL),
-(68, 53, 'A', '2', NULL, NULL, NULL),
-(69, 53, 'b', '1', NULL, NULL, NULL),
-(70, 53, 'c', '2', NULL, NULL, NULL),
 (71, 54, '1', '1', NULL, NULL, NULL),
-(72, 54, 'A', '2', NULL, NULL, NULL),
-(73, 54, 'b', '1', NULL, NULL, NULL),
-(74, 54, 'c', '2', NULL, NULL, NULL),
 (75, 55, '1', '1', NULL, NULL, NULL),
-(76, 55, 'A', '2', NULL, NULL, NULL),
-(77, 55, 'b', '1', NULL, NULL, NULL),
-(78, 55, 'c', '2', NULL, NULL, NULL),
 (79, 56, '1', '1', NULL, NULL, NULL),
-(80, 56, 'A', '2', NULL, NULL, NULL),
-(81, 56, 'b', '1', NULL, NULL, NULL),
-(82, 56, 'c', '2', NULL, NULL, NULL),
 (83, 57, '1', '1', NULL, NULL, NULL),
-(84, 57, 'A', '2', NULL, NULL, NULL),
-(85, 57, 'b', '1', NULL, NULL, NULL),
-(86, 57, 'c', '2', NULL, NULL, NULL),
 (87, 58, '1', '1', NULL, NULL, NULL),
-(88, 58, 'A', '2', NULL, NULL, NULL),
-(89, 58, 'b', '1', NULL, NULL, NULL),
-(90, 58, 'c', '2', NULL, NULL, NULL),
 (91, 59, '1', '1', NULL, NULL, NULL),
-(92, 59, 'A', '2', NULL, NULL, NULL),
-(93, 59, 'b', '1', NULL, NULL, NULL),
-(94, 59, 'c', '2', NULL, NULL, NULL),
 (95, 60, '1', '1', NULL, NULL, NULL),
-(96, 60, 'A', '2', NULL, NULL, NULL),
-(97, 60, 'b', '1', NULL, NULL, NULL),
-(98, 60, 'c', '2', NULL, NULL, NULL),
 (99, 61, '1', '1', NULL, NULL, NULL),
-(100, 61, 'A', '2', NULL, NULL, NULL),
-(101, 61, 'b', '1', NULL, NULL, NULL),
-(102, 61, 'c', '2', NULL, NULL, NULL),
 (103, 62, '1', '1', NULL, NULL, NULL),
-(104, 62, 'A', '2', NULL, NULL, NULL),
-(105, 62, 'b', '1', NULL, NULL, NULL),
-(106, 62, 'c', '2', NULL, NULL, NULL),
 (107, 63, '1', '1', NULL, NULL, NULL),
-(108, 63, 'A', '2', NULL, NULL, NULL),
-(109, 63, 'b', '1', NULL, NULL, NULL),
-(110, 63, 'c', '2', NULL, NULL, NULL),
 (111, 64, '1', '1', NULL, NULL, NULL),
-(112, 64, 'A', '2', NULL, NULL, NULL),
-(113, 64, 'b', '1', NULL, NULL, NULL),
-(114, 64, 'c', '2', NULL, NULL, NULL),
-(115, 65, '1', '1', NULL, NULL, NULL),
-(116, 65, 'A', '2', NULL, NULL, NULL),
-(117, 65, 'b', '1', NULL, NULL, NULL),
-(118, 65, 'c', '2', NULL, NULL, NULL),
-(119, 66, '1', '1', NULL, NULL, NULL),
-(120, 66, 'A', '2', NULL, NULL, NULL),
-(121, 66, 'b', '1', NULL, NULL, NULL),
-(122, 66, 'c', '2', NULL, NULL, NULL),
-(123, 67, '1', '1', NULL, NULL, NULL),
-(124, 67, 'A', '2', NULL, NULL, NULL),
-(125, 67, 'b', '1', NULL, NULL, NULL),
-(126, 67, 'c', '2', NULL, NULL, NULL),
-(127, 68, '1', '1', NULL, NULL, NULL),
-(128, 68, 'A', '2', NULL, NULL, NULL),
-(129, 68, 'b', '1', NULL, NULL, NULL),
-(130, 68, 'c', '2', NULL, NULL, NULL),
-(131, 69, '1', '1', NULL, NULL, NULL),
-(132, 69, 'A', '2', NULL, NULL, NULL),
-(133, 69, 'b', '1', NULL, NULL, NULL),
-(134, 69, 'c', '2', NULL, NULL, NULL),
-(135, 70, '1', '1', NULL, NULL, NULL),
-(136, 70, 'A', '2', NULL, NULL, NULL),
-(137, 70, 'b', '1', NULL, NULL, NULL),
-(138, 70, 'c', '2', NULL, NULL, NULL),
-(139, 71, NULL, NULL, NULL, NULL, NULL),
-(140, 72, NULL, NULL, NULL, NULL, NULL),
-(141, 73, NULL, NULL, NULL, NULL, NULL),
-(142, 74, '1', '1', NULL, NULL, NULL),
-(143, 74, 'a', '2', NULL, NULL, NULL),
-(144, 74, 'b', '1', NULL, NULL, NULL),
-(145, 74, 'c', '2', NULL, NULL, NULL),
-(146, 74, NULL, NULL, NULL, NULL, NULL),
-(147, 74, NULL, NULL, NULL, NULL, NULL),
-(148, 76, NULL, NULL, NULL, NULL, NULL),
-(149, 77, NULL, NULL, NULL, NULL, NULL),
-(150, 78, NULL, NULL, NULL, NULL, NULL),
-(151, 79, NULL, NULL, NULL, NULL, NULL),
-(152, 80, NULL, NULL, NULL, NULL, NULL),
-(153, 81, '1', '1', NULL, NULL, NULL),
-(154, 81, 'new Changes', '2', NULL, NULL, NULL),
-(155, 81, 'Changes nwq', NULL, NULL, NULL, NULL),
-(156, 81, NULL, NULL, NULL, NULL, NULL),
-(157, 82, NULL, NULL, NULL, NULL, NULL),
-(158, 83, NULL, NULL, NULL, NULL, NULL),
-(159, 84, NULL, NULL, NULL, NULL, NULL),
-(160, 85, NULL, NULL, NULL, NULL, NULL),
-(161, 86, NULL, NULL, NULL, NULL, NULL),
-(162, 87, NULL, NULL, NULL, NULL, NULL),
-(163, 88, NULL, NULL, NULL, NULL, NULL),
-(164, 89, NULL, NULL, NULL, NULL, NULL),
-(165, 90, NULL, NULL, NULL, NULL, NULL),
-(166, 91, NULL, NULL, NULL, NULL, NULL),
-(167, 92, NULL, NULL, NULL, NULL, NULL),
-(168, 93, NULL, NULL, NULL, NULL, NULL),
-(169, 94, NULL, NULL, NULL, NULL, NULL),
-(170, 95, NULL, NULL, NULL, NULL, NULL),
-(171, 96, NULL, NULL, NULL, NULL, NULL),
-(172, 97, NULL, NULL, NULL, NULL, NULL),
-(173, 98, NULL, NULL, NULL, NULL, NULL),
-(174, 99, NULL, NULL, NULL, NULL, NULL),
-(175, 100, NULL, NULL, NULL, NULL, NULL),
-(176, 101, NULL, NULL, NULL, NULL, NULL),
-(177, 102, NULL, NULL, NULL, NULL, NULL),
-(178, 103, NULL, NULL, NULL, NULL, NULL),
-(179, 104, NULL, NULL, NULL, NULL, NULL),
-(180, 105, NULL, NULL, NULL, NULL, NULL),
-(181, 106, NULL, NULL, NULL, NULL, NULL),
-(182, 107, NULL, NULL, NULL, NULL, NULL),
-(183, 108, NULL, NULL, NULL, NULL, NULL),
-(184, 109, NULL, NULL, NULL, NULL, NULL),
-(185, 110, NULL, NULL, NULL, NULL, NULL),
-(186, 111, NULL, NULL, NULL, NULL, NULL),
-(187, 112, NULL, NULL, NULL, NULL, NULL),
-(188, 113, NULL, NULL, NULL, NULL, NULL),
-(189, 114, NULL, NULL, NULL, NULL, NULL),
-(190, 115, NULL, NULL, NULL, NULL, NULL),
-(191, 116, '2', '1', NULL, NULL, NULL),
-(192, 116, 'a', '2', NULL, NULL, NULL),
-(193, 116, 'b', '1', NULL, NULL, NULL),
-(194, 116, 'c', '2', NULL, NULL, NULL),
-(195, 117, NULL, NULL, NULL, NULL, NULL),
-(196, 118, NULL, NULL, NULL, NULL, NULL),
-(197, 120, NULL, NULL, NULL, NULL, NULL),
-(198, 121, NULL, NULL, NULL, NULL, NULL),
-(199, 122, NULL, NULL, NULL, NULL, NULL),
-(200, 123, NULL, NULL, NULL, NULL, NULL),
-(201, 124, NULL, NULL, NULL, NULL, NULL),
-(202, 125, NULL, NULL, NULL, NULL, NULL),
-(203, 126, NULL, NULL, NULL, NULL, NULL),
-(204, 127, NULL, NULL, NULL, NULL, NULL),
-(205, 128, NULL, NULL, NULL, NULL, NULL),
-(206, 129, NULL, NULL, NULL, NULL, NULL),
-(207, 132, '2', '1', NULL, NULL, NULL),
-(208, 132, 'a', '2', NULL, NULL, NULL),
-(209, 132, 'b', '2', NULL, NULL, NULL),
-(210, 132, 'c', '1', NULL, NULL, NULL),
-(211, 132, NULL, NULL, NULL, NULL, NULL),
-(212, 132, NULL, NULL, NULL, NULL, NULL),
-(213, 133, '2', '1', NULL, '2026-07-26 15:48:25', '2026-07-26 15:48:25'),
-(214, 133, 'a', '2', NULL, '2026-07-26 15:48:25', '2026-07-26 15:48:25'),
-(215, 133, 'b', '1', NULL, '2026-07-26 15:48:25', '2026-07-26 15:48:25'),
-(216, 133, 'c', '2', NULL, '2026-07-26 15:48:25', '2026-07-26 15:48:25');
+(115, 65, '1', '2', NULL, NULL, NULL),
+(119, 66, '1', '2', NULL, NULL, NULL),
+(123, 67, '1', '2', NULL, NULL, NULL),
+(127, 68, '1', '2', NULL, NULL, NULL),
+(131, 69, '1', '2', NULL, NULL, NULL),
+(135, 70, '1', '2', NULL, NULL, NULL),
+(142, 74, '1', '2', NULL, NULL, NULL),
+(153, 81, '1', '2', NULL, NULL, NULL),
+(191, 116, '1', '2', NULL, NULL, NULL),
+(207, 132, '1', '2', NULL, NULL, NULL),
+(213, 133, '1', '2', NULL, '2026-07-26 15:48:25', '2026-07-26 15:48:25');
 
 -- --------------------------------------------------------
 
@@ -21041,7 +22074,11 @@ INSERT INTO `supreme_court_precedent_1b` (`id`, `case_id`, `supreme_court_title_
 (227, 187, NULL, NULL, NULL, NULL, NULL),
 (228, 188, NULL, NULL, NULL, NULL, NULL),
 (229, 189, NULL, NULL, NULL, NULL, NULL),
-(230, 190, NULL, NULL, NULL, NULL, NULL);
+(230, 190, NULL, NULL, NULL, NULL, NULL),
+(231, 224, NULL, NULL, NULL, NULL, NULL),
+(232, 225, NULL, NULL, NULL, NULL, NULL),
+(233, 234, NULL, NULL, NULL, NULL, NULL),
+(234, 235, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -21308,7 +22345,11 @@ INSERT INTO `supreme_court_precedent_4a` (`id`, `case_id`, `supreme_court_title_
 (242, 187, NULL, NULL, NULL, NULL, NULL),
 (243, 188, NULL, NULL, NULL, NULL, NULL),
 (244, 189, NULL, NULL, NULL, NULL, NULL),
-(245, 190, NULL, NULL, NULL, NULL, NULL);
+(245, 190, NULL, NULL, NULL, NULL, NULL),
+(246, 224, NULL, NULL, NULL, NULL, NULL),
+(247, 225, NULL, NULL, NULL, NULL, NULL),
+(248, 234, NULL, NULL, NULL, NULL, NULL),
+(249, 235, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -21547,7 +22588,11 @@ INSERT INTO `supreme_court_precedent_4b` (`id`, `case_id`, `supreme_court_title_
 (214, 187, NULL, NULL, NULL, NULL, NULL),
 (215, 188, NULL, NULL, NULL, NULL, NULL),
 (216, 189, NULL, NULL, NULL, NULL, NULL),
-(217, 190, NULL, NULL, NULL, NULL, NULL);
+(217, 190, NULL, NULL, NULL, NULL, NULL),
+(218, 224, NULL, NULL, NULL, NULL, NULL),
+(219, 225, NULL, NULL, NULL, NULL, NULL),
+(220, 234, NULL, NULL, NULL, NULL, NULL),
+(221, 235, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -22166,7 +23211,23 @@ INSERT INTO `tarfficking_victims_q21` (`id`, `case_id`, `name_q21`, `operator_q2
 (589, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
 (590, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
 (591, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
-(592, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL);
+(592, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(593, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(594, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(595, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(596, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(597, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(598, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(599, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(600, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(601, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(602, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(603, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(604, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(605, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(606, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(607, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(608, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -22785,7 +23846,23 @@ INSERT INTO `tarfficking_victims_q22` (`id`, `case_id`, `name_q22`, `operator_q2
 (589, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
 (590, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
 (591, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
-(592, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL);
+(592, 190, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(593, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(594, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(595, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(596, 224, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(597, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(598, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(599, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(600, 225, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(601, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(602, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(603, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(604, 234, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(605, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(606, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(607, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL),
+(608, 235, NULL, NULL, '0', '0', '0', '', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -22809,218 +23886,10 @@ CREATE TABLE `technology_trafficking_applicable_q3` (
 --
 
 INSERT INTO `technology_trafficking_applicable_q3` (`id`, `case_id`, `category_q3`, `purpose_q3`, `technology_q3`, `description_q3`, `created_at`, `updated_at`) VALUES
-(1, 138, '1', 'Online Scam', 'Facebook', 'a', NULL, NULL),
-(2, 138, '2', 'Fight in or support active conflict', 'Tictok', 'b', NULL, NULL),
-(3, 138, NULL, 'Pornography', 'Instagram', 'c', NULL, NULL),
-(4, 138, '4', 'Sexual Exploitation', 'Youtube', 'd', NULL, NULL),
-(5, 139, '1', 'Online Scam', 'Facebook', 'a', NULL, NULL),
-(6, 139, '2', 'Fight in or support active conflict', 'Tictok', 'b', NULL, NULL),
-(7, 139, '3', 'Pornography', 'Instagram', 'c', NULL, NULL),
-(8, 139, '4', 'Economic Exploitation', 'Websites', 'd', NULL, NULL),
-(9, 140, '1', 'Online Scam', 'Facebook', 'a', NULL, NULL),
-(10, 140, '2', 'Fight in or support active conflict', 'Tictok', 'b', NULL, NULL),
-(11, 140, '3', 'Pornography', 'Instagram', 'c', NULL, NULL),
-(12, 140, '4', 'Economic Exploitation', 'Websites', 'd', NULL, NULL),
-(13, 141, '1', NULL, NULL, NULL, NULL, NULL),
-(14, 141, '2', NULL, NULL, NULL, NULL, NULL),
-(15, 141, '3', NULL, NULL, NULL, NULL, NULL),
-(16, 141, '4', NULL, NULL, NULL, NULL, NULL),
-(17, 142, '1', NULL, NULL, NULL, NULL, NULL),
-(18, 142, '2', NULL, NULL, NULL, NULL, NULL),
-(19, 142, '3', NULL, NULL, NULL, NULL, NULL),
-(20, 142, '4', NULL, NULL, NULL, NULL, NULL),
-(21, 143, '1', NULL, NULL, NULL, NULL, NULL),
-(22, 143, '2', NULL, NULL, NULL, NULL, NULL),
-(23, 143, '3', NULL, NULL, NULL, NULL, NULL),
-(24, 143, '4', NULL, NULL, NULL, NULL, NULL),
-(25, 144, '1', NULL, NULL, NULL, NULL, NULL),
-(26, 144, '2', NULL, NULL, NULL, NULL, NULL),
-(27, 144, '3', NULL, NULL, NULL, NULL, NULL),
-(28, 144, '4', NULL, NULL, NULL, NULL, NULL),
-(29, 145, '1', NULL, NULL, NULL, NULL, NULL),
-(30, 145, '2', NULL, NULL, NULL, NULL, NULL),
-(31, 145, '3', NULL, NULL, NULL, NULL, NULL),
-(32, 145, '4', NULL, NULL, NULL, NULL, NULL),
-(33, 146, '1', NULL, NULL, NULL, NULL, NULL),
-(34, 146, '2', NULL, NULL, NULL, NULL, NULL),
-(35, 146, '3', NULL, NULL, NULL, NULL, NULL),
-(36, 146, '4', NULL, NULL, NULL, NULL, NULL),
-(37, 147, '1', NULL, NULL, NULL, NULL, NULL),
-(38, 147, '2', NULL, NULL, NULL, NULL, NULL),
-(39, 147, '3', NULL, NULL, NULL, NULL, NULL),
-(40, 147, '4', NULL, NULL, NULL, NULL, NULL),
-(41, 148, '1', NULL, NULL, NULL, NULL, NULL),
-(42, 148, '2', NULL, NULL, NULL, NULL, NULL),
-(43, 148, '3', NULL, NULL, NULL, NULL, NULL),
-(44, 148, '4', NULL, NULL, NULL, NULL, NULL),
-(45, 149, '1', NULL, NULL, NULL, NULL, NULL),
-(46, 149, '2', NULL, NULL, NULL, NULL, NULL),
-(47, 149, '3', NULL, NULL, NULL, NULL, NULL),
-(48, 149, '4', NULL, NULL, NULL, NULL, NULL),
-(49, 150, '1', NULL, NULL, NULL, NULL, NULL),
-(50, 150, '2', NULL, NULL, NULL, NULL, NULL),
-(51, 150, '3', NULL, NULL, NULL, NULL, NULL),
-(52, 150, '4', NULL, NULL, NULL, NULL, NULL),
-(53, 151, '1', NULL, NULL, NULL, NULL, NULL),
-(54, 151, '2', NULL, NULL, NULL, NULL, NULL),
-(55, 151, '3', NULL, NULL, NULL, NULL, NULL),
-(56, 151, '4', NULL, NULL, NULL, NULL, NULL),
-(57, 153, '1', NULL, NULL, NULL, NULL, NULL),
-(58, 153, '2', NULL, NULL, NULL, NULL, NULL),
-(59, 153, '3', NULL, NULL, NULL, NULL, NULL),
-(60, 153, '4', NULL, NULL, NULL, NULL, NULL),
-(61, 155, '1', NULL, NULL, NULL, NULL, NULL),
-(62, 155, '2', NULL, NULL, NULL, NULL, NULL),
-(63, 155, '3', NULL, NULL, NULL, NULL, NULL),
-(64, 155, '4', NULL, NULL, NULL, NULL, NULL),
-(65, 156, '1', NULL, NULL, NULL, NULL, NULL),
-(66, 156, '2', NULL, NULL, NULL, NULL, NULL),
-(67, 156, '3', NULL, NULL, NULL, NULL, NULL),
-(68, 156, '4', NULL, NULL, NULL, NULL, NULL),
-(69, 157, '1', NULL, NULL, NULL, NULL, NULL),
-(70, 157, '2', NULL, NULL, NULL, NULL, NULL),
-(71, 157, '3', NULL, NULL, NULL, NULL, NULL),
-(72, 157, '4', NULL, NULL, NULL, NULL, NULL),
-(73, 158, '1', NULL, NULL, NULL, NULL, NULL),
-(74, 158, '2', NULL, NULL, NULL, NULL, NULL),
-(75, 158, '3', NULL, NULL, NULL, NULL, NULL),
-(76, 158, '4', NULL, NULL, NULL, NULL, NULL),
-(77, 159, '1', NULL, NULL, NULL, NULL, NULL),
-(78, 159, '2', NULL, NULL, NULL, NULL, NULL),
-(79, 159, '3', NULL, NULL, NULL, NULL, NULL),
-(80, 159, '4', NULL, NULL, NULL, NULL, NULL),
-(81, 160, '1', NULL, NULL, NULL, NULL, NULL),
-(82, 160, '2', NULL, NULL, NULL, NULL, NULL),
-(83, 160, '3', NULL, NULL, NULL, NULL, NULL),
-(84, 160, '4', NULL, NULL, NULL, NULL, NULL),
-(85, 161, '1', NULL, NULL, NULL, NULL, NULL),
-(86, 161, '2', NULL, NULL, NULL, NULL, NULL),
-(87, 161, '3', NULL, NULL, NULL, NULL, NULL),
-(88, 161, '4', NULL, NULL, NULL, NULL, NULL),
-(89, 162, '1', NULL, NULL, NULL, NULL, NULL),
-(90, 162, '2', NULL, NULL, NULL, NULL, NULL),
-(91, 162, '3', NULL, NULL, NULL, NULL, NULL),
-(92, 162, '4', NULL, NULL, NULL, NULL, NULL),
-(93, 163, '1', NULL, NULL, NULL, NULL, NULL),
-(94, 163, '2', NULL, NULL, NULL, NULL, NULL),
-(95, 163, '3', NULL, NULL, NULL, NULL, NULL),
-(96, 163, '4', NULL, NULL, NULL, NULL, NULL),
-(97, 164, '1', NULL, NULL, NULL, NULL, NULL),
-(98, 164, '2', NULL, NULL, NULL, NULL, NULL),
-(99, 164, '3', NULL, NULL, NULL, NULL, NULL),
-(100, 164, '4', NULL, NULL, NULL, NULL, NULL),
-(101, 165, '1', NULL, NULL, NULL, NULL, NULL),
-(102, 165, '2', NULL, NULL, NULL, NULL, NULL),
-(103, 165, '3', NULL, NULL, NULL, NULL, NULL),
-(104, 165, '4', NULL, NULL, NULL, NULL, NULL),
-(105, 166, '1', NULL, NULL, NULL, NULL, NULL),
-(106, 166, '2', NULL, NULL, NULL, NULL, NULL),
-(107, 166, '3', NULL, NULL, NULL, NULL, NULL),
-(108, 166, '4', NULL, NULL, NULL, NULL, NULL),
-(109, 167, '1', NULL, NULL, NULL, NULL, NULL),
-(110, 167, '2', NULL, NULL, NULL, NULL, NULL),
-(111, 167, '3', NULL, NULL, NULL, NULL, NULL),
-(112, 167, '4', NULL, NULL, NULL, NULL, NULL),
-(113, 168, '1', NULL, NULL, NULL, NULL, NULL),
-(114, 168, '2', NULL, NULL, NULL, NULL, NULL),
-(115, 168, '3', NULL, NULL, NULL, NULL, NULL),
-(116, 168, '4', NULL, NULL, NULL, NULL, NULL),
-(117, 169, '1', NULL, NULL, NULL, NULL, NULL),
-(118, 169, '2', NULL, NULL, NULL, NULL, NULL),
-(119, 169, '3', NULL, NULL, NULL, NULL, NULL),
-(120, 169, '4', NULL, NULL, NULL, NULL, NULL),
-(121, 170, '1', NULL, NULL, NULL, NULL, NULL),
-(122, 170, '2', NULL, NULL, NULL, NULL, NULL),
-(123, 170, '3', NULL, NULL, NULL, NULL, NULL),
-(124, 170, '4', NULL, NULL, NULL, NULL, NULL),
-(125, 171, '1', NULL, NULL, NULL, NULL, NULL),
-(126, 171, '2', NULL, NULL, NULL, NULL, NULL),
-(127, 171, '3', NULL, NULL, NULL, NULL, NULL),
-(128, 171, '4', NULL, NULL, NULL, NULL, NULL),
-(129, 173, '1', NULL, NULL, NULL, NULL, NULL),
-(130, 173, '2', NULL, NULL, NULL, NULL, NULL),
-(131, 173, '3', NULL, NULL, NULL, NULL, NULL),
-(132, 173, '4', NULL, NULL, NULL, NULL, NULL),
-(133, 174, '1', 'Online Scam', 'Facebook', 'Description (victims/process and nature of victimization/government actions)', NULL, NULL),
-(134, 174, '2', 'Fight in or support active conflict', 'Tictok', 'Description (victims/process and nature of victimization/government actions)', NULL, NULL),
-(135, 174, '3', 'Pornography', 'WhatsApp', 'Description (victims/process and nature of victimization/government actions)', NULL, NULL),
-(136, 174, '4', 'Economic Exploitation', 'Instagram', 'Description (victims/process and nature of victimization/government actions)', NULL, NULL),
-(137, 175, '1', NULL, NULL, NULL, NULL, NULL),
-(138, 175, '2', NULL, NULL, NULL, NULL, NULL),
-(139, 175, '3', NULL, NULL, NULL, NULL, NULL),
-(140, 175, '4', NULL, NULL, NULL, NULL, NULL),
-(141, 176, '1', NULL, NULL, NULL, NULL, NULL),
-(142, 176, '2', NULL, NULL, NULL, NULL, NULL),
-(143, 176, '3', NULL, NULL, NULL, NULL, NULL),
-(144, 176, '4', NULL, NULL, NULL, NULL, NULL),
-(145, 177, '1', NULL, NULL, NULL, NULL, NULL),
-(146, 177, '2', NULL, NULL, NULL, NULL, NULL),
-(147, 177, '3', NULL, NULL, NULL, NULL, NULL),
-(148, 177, '4', NULL, NULL, NULL, NULL, NULL),
-(149, 178, '1', NULL, NULL, NULL, NULL, NULL),
-(150, 178, '2', NULL, NULL, NULL, NULL, NULL),
-(151, 178, '3', NULL, NULL, NULL, NULL, NULL),
-(152, 178, '4', NULL, NULL, NULL, NULL, NULL),
-(153, 179, '1', NULL, NULL, NULL, NULL, NULL),
-(154, 179, '2', NULL, NULL, NULL, NULL, NULL),
-(155, 179, '3', NULL, NULL, NULL, NULL, NULL),
-(156, 179, '4', NULL, NULL, NULL, NULL, NULL),
-(157, 180, '1', NULL, NULL, NULL, NULL, NULL),
-(158, 180, '2', NULL, NULL, NULL, NULL, NULL),
-(159, 180, '3', NULL, NULL, NULL, NULL, NULL),
-(160, 180, '4', NULL, NULL, NULL, NULL, NULL),
-(161, 181, '1', NULL, NULL, NULL, NULL, NULL),
-(162, 181, '2', NULL, NULL, NULL, NULL, NULL),
-(163, 181, '3', NULL, NULL, NULL, NULL, NULL),
-(164, 181, '4', NULL, NULL, NULL, NULL, NULL),
-(165, 182, '1', NULL, NULL, NULL, NULL, NULL),
-(166, 182, '2', NULL, NULL, NULL, NULL, NULL),
-(167, 182, '3', NULL, NULL, NULL, NULL, NULL),
-(168, 182, '4', NULL, NULL, NULL, NULL, NULL),
-(169, 183, '1', NULL, NULL, NULL, NULL, NULL),
-(170, 183, '2', NULL, NULL, NULL, NULL, NULL),
-(171, 183, '3', NULL, NULL, NULL, NULL, NULL),
-(172, 183, '4', NULL, NULL, NULL, NULL, NULL),
-(173, 184, '1', NULL, NULL, NULL, NULL, NULL),
-(174, 184, '2', NULL, NULL, NULL, NULL, NULL),
-(175, 184, '3', NULL, NULL, NULL, NULL, NULL),
-(176, 184, '4', NULL, NULL, NULL, NULL, NULL),
-(177, 185, '1', NULL, NULL, NULL, NULL, NULL),
-(178, 185, '2', NULL, NULL, NULL, NULL, NULL),
-(179, 185, '3', NULL, NULL, NULL, NULL, NULL),
-(180, 185, '4', NULL, NULL, NULL, NULL, NULL),
-(181, 186, '1', NULL, NULL, NULL, NULL, NULL),
-(182, 186, '2', NULL, NULL, NULL, NULL, NULL),
-(183, 186, '3', NULL, NULL, NULL, NULL, NULL),
-(184, 186, '4', NULL, NULL, NULL, NULL, NULL),
-(185, 187, '1', NULL, NULL, NULL, NULL, NULL),
-(186, 187, '2', NULL, NULL, NULL, NULL, NULL),
-(187, 187, '3', NULL, NULL, NULL, NULL, NULL),
-(188, 187, '4', NULL, NULL, NULL, NULL, NULL),
-(189, 188, '1', NULL, NULL, NULL, NULL, NULL),
-(190, 188, '2', NULL, NULL, NULL, NULL, NULL),
-(191, 188, '3', NULL, NULL, NULL, NULL, NULL),
-(192, 188, '4', NULL, NULL, NULL, NULL, NULL),
-(193, 189, '1', NULL, NULL, NULL, NULL, NULL),
-(194, 189, '2', NULL, NULL, NULL, NULL, NULL),
-(195, 189, '3', NULL, NULL, NULL, NULL, NULL),
-(196, 189, '4', NULL, NULL, NULL, NULL, NULL),
-(197, 190, '1', NULL, NULL, NULL, NULL, NULL),
-(198, 190, '2', NULL, NULL, NULL, NULL, NULL),
-(199, 190, '3', NULL, NULL, NULL, NULL, NULL),
-(200, 190, '4', NULL, NULL, NULL, NULL, NULL),
-(201, 191, '1', NULL, NULL, NULL, NULL, NULL),
-(202, 191, '2', NULL, NULL, NULL, NULL, NULL),
-(203, 191, '3', NULL, NULL, NULL, NULL, NULL),
-(204, 191, '4', NULL, NULL, NULL, NULL, NULL),
-(205, 192, '1', NULL, NULL, NULL, NULL, NULL),
-(206, 192, '2', NULL, NULL, NULL, NULL, NULL),
-(207, 192, '3', NULL, NULL, NULL, NULL, NULL),
-(208, 192, '4', NULL, NULL, NULL, NULL, NULL),
-(209, 193, '1', NULL, NULL, NULL, NULL, NULL),
-(210, 193, '2', NULL, NULL, NULL, NULL, NULL),
-(211, 193, '3', NULL, NULL, NULL, NULL, NULL),
-(212, 193, '4', NULL, NULL, NULL, NULL, NULL);
+(1, 235, '1', '1', '1', 'a', NULL, NULL),
+(2, 235, '2', '2', '2', 'a', NULL, NULL),
+(3, 235, '3', '3', '3', 'a', NULL, NULL),
+(4, 235, '4', '4', '4', 'a', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -23148,7 +24017,49 @@ INSERT INTO `technology_trafficking_applicable_q3b` (`id`, `case_id`, `question_
 (103, 192, '1', NULL, NULL, NULL, NULL),
 (104, 192, '2', NULL, NULL, NULL, NULL),
 (105, 193, '1', NULL, NULL, NULL, NULL),
-(106, 193, '2', NULL, NULL, NULL, NULL);
+(106, 193, '2', NULL, NULL, NULL, NULL),
+(107, 194, '1', NULL, NULL, NULL, NULL),
+(108, 194, '2', NULL, NULL, NULL, NULL),
+(109, 195, '1', NULL, NULL, NULL, NULL),
+(110, 195, '2', NULL, NULL, NULL, NULL),
+(111, 196, '1', NULL, NULL, NULL, NULL),
+(112, 196, '2', NULL, NULL, NULL, NULL),
+(113, 197, '1', NULL, NULL, NULL, NULL),
+(114, 197, '2', NULL, NULL, NULL, NULL),
+(115, 198, '1', NULL, NULL, NULL, NULL),
+(116, 198, '2', NULL, NULL, NULL, NULL),
+(117, 199, '1', NULL, NULL, NULL, NULL),
+(118, 199, '2', NULL, NULL, NULL, NULL),
+(119, 200, '1', NULL, NULL, NULL, NULL),
+(120, 200, '2', NULL, NULL, NULL, NULL),
+(121, 201, '1', NULL, NULL, NULL, NULL),
+(122, 201, '2', NULL, NULL, NULL, NULL),
+(123, 202, '1', NULL, NULL, NULL, NULL),
+(124, 202, '2', NULL, NULL, NULL, NULL),
+(125, 203, '1', NULL, NULL, NULL, NULL),
+(126, 203, '2', NULL, NULL, NULL, NULL),
+(127, 204, '1', NULL, NULL, NULL, NULL),
+(128, 204, '2', NULL, NULL, NULL, NULL),
+(129, 205, '1', NULL, NULL, NULL, NULL),
+(130, 205, '2', NULL, NULL, NULL, NULL),
+(131, 206, '1', NULL, NULL, NULL, NULL),
+(132, 206, '2', NULL, NULL, NULL, NULL),
+(133, 207, '1', NULL, NULL, NULL, NULL),
+(134, 207, '2', NULL, NULL, NULL, NULL),
+(135, 208, '1', NULL, NULL, NULL, NULL),
+(136, 208, '2', NULL, NULL, NULL, NULL),
+(137, 209, '1', NULL, NULL, NULL, NULL),
+(138, 209, '2', NULL, NULL, NULL, NULL),
+(139, 210, '1', NULL, NULL, NULL, NULL),
+(140, 210, '2', NULL, NULL, NULL, NULL),
+(141, 224, '1', NULL, NULL, NULL, NULL),
+(142, 224, '2', NULL, NULL, NULL, NULL),
+(143, 225, '1', NULL, NULL, NULL, NULL),
+(144, 225, '2', NULL, NULL, NULL, NULL),
+(145, 234, '1', NULL, NULL, NULL, NULL),
+(146, 234, '2', NULL, NULL, NULL, NULL),
+(147, 235, '1', NULL, NULL, NULL, NULL),
+(148, 235, '2', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -23190,7 +24101,24 @@ CREATE TABLE `trafficking_investigations_q58` (
 --
 
 INSERT INTO `trafficking_investigations_q58` (`id`, `case_id`, `trafficking_investigations_title_q58`, `created_at`, `updated_at`) VALUES
-(1, 193, 'Describe any trafficking investigations and prosecutions, victims identified and referred to care, and available funding in territories or semi-autonomous regions or in a disputed territory within the geographic bounds of the country.', '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(1, 193, 'Describe any trafficking investigations and prosecutions, victims identified and referred to care, and available funding in territories or semi-autonomous regions or in a disputed territory within the geographic bounds of the country.', '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(2, 194, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(3, 195, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(4, 196, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(5, 197, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(6, 198, NULL, '2026-09-02 07:25:35', '2026-09-02 07:25:35'),
+(7, 199, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(8, 200, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(9, 201, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(10, 202, NULL, '2026-09-02 07:25:51', '2026-09-02 07:25:51'),
+(11, 203, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(12, 204, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(13, 205, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(14, 206, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(15, 207, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(16, 208, NULL, '2026-09-02 07:25:58', '2026-09-02 07:25:58'),
+(17, 209, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(18, 210, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23');
 
 -- --------------------------------------------------------
 
@@ -23735,7 +24663,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_id`, `name`, `email`, `email_verified_at`, `password`, `user_type`, `mobile`, `designation_one`, `organization`, `designation_two`, `designation_three`, `work_area`, `status`, `division_department`, `focal_person_number_one`, `focal_person_number_two`, `focal_person_number_three`, `focal_person_email_three`, `agency`, `focal_person_email_two`, `division_id`, `district_id`, `upazilla_id`, `union_id`, `focal_person_name_one`, `focal_person_name_two`, `userid`, `focal_person_name_three`, `ministry_id`, `two_factor_code`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, '1', 'SUPER ADMIN', 'admin@gmail.com', NULL, '$2y$10$EAxL4x3WE2o2WWccb5YovuepAwQwfcyV7/o3na18lohcjP3hsJ.BO', 'Super Admin', NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 874065, 'aH4a45s8hkolkvwekH7UJnUqSBLDAqzR27umpw2iMgzN6dEIxoirR565ZLvd', '2026-05-10 00:27:42', '2026-06-27 12:48:37'),
+(1, '1', 'SUPER ADMIN', 'admin@gmail.com', NULL, '$2y$10$EAxL4x3WE2o2WWccb5YovuepAwQwfcyV7/o3na18lohcjP3hsJ.BO', 'Super Admin', NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 874065, 'YbN1hapqEfGarDr66IHYoxjDRJKSleuZ9JDP7w6MnNyG4x2Qn48ralVHyAtG', '2026-05-10 00:27:42', '2026-06-27 12:48:37'),
 (2, '1', 'Ministry of Home Affairs', 'moha@gmail.com', NULL, '$2y$10$mDGQ42LdScBviMKkb2gvb.pbEgcOOihj7qYg0FJZNtRNIVOyuQrKq', 'MoHa', '017xxxxxxxx', NULL, NULL, NULL, NULL, 'Dhaka', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ministry of Home Affairs', NULL, 'PjPsGt4p3O', NULL, NULL, NULL, NULL, '2026-05-20 04:59:27', '2026-05-20 04:59:27'),
 (3, '1', 'Ministry of Foreign Affairs', 'mofa@gmail.com', NULL, '$2y$10$fx4OrIqBUlmCXjJXfqvmQec5uesFtirwCx0CUVK.tRXWyqD9EnHIG', 'Ministry', '018000000', 'SP', NULL, NULL, NULL, 'Dhaka', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ministry of Foreign Affairs', NULL, 'MmSTNmVx03', NULL, NULL, NULL, NULL, '2026-05-20 05:05:18', '2026-05-20 05:05:18'),
 (4, '1', 'Ministry of Women and Children Affairs of Bangladesh', 'mowca@gmail.com', NULL, '$2y$10$AT2OeMqC4L49IvG.1KUI3eLX2//SFWdrSZSsqLfnojE26c7/eB6eu', 'Ministry', '017xxxxxx', 'SP', NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ministry of Women and Children Affairs of Bangladesh', NULL, 'IAdxouNveX', NULL, NULL, NULL, NULL, '2026-06-02 08:44:51', '2026-06-02 08:44:51'),
@@ -23818,7 +24746,44 @@ INSERT INTO `victims_restitution_q39` (`id`, `case_id`, `victims_restitution_tit
 (31, 190, NULL, NULL, NULL, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (32, 191, NULL, NULL, NULL, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (33, 192, NULL, NULL, NULL, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(34, 193, NULL, NULL, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(34, 193, NULL, NULL, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(35, 194, NULL, NULL, NULL, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(36, 195, NULL, NULL, NULL, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(37, 196, NULL, NULL, NULL, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(38, 197, NULL, NULL, NULL, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(39, 198, NULL, NULL, NULL, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(40, 199, NULL, NULL, NULL, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(41, 200, NULL, NULL, NULL, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(42, 201, NULL, NULL, NULL, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(43, 202, NULL, NULL, NULL, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(44, 203, NULL, NULL, NULL, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(45, 204, NULL, NULL, NULL, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(46, 205, NULL, NULL, NULL, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(47, 206, NULL, NULL, NULL, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(48, 207, NULL, NULL, NULL, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(49, 208, NULL, NULL, NULL, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(50, 209, NULL, NULL, NULL, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(51, 210, NULL, NULL, NULL, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(52, 211, NULL, NULL, NULL, NULL, '2026-09-02 10:54:06', '2026-09-02 10:54:06'),
+(53, 212, NULL, NULL, NULL, NULL, '2026-09-02 10:56:54', '2026-09-02 10:56:54'),
+(54, 213, NULL, NULL, NULL, NULL, '2026-09-02 11:00:45', '2026-09-02 11:00:45'),
+(55, 214, NULL, NULL, NULL, NULL, '2026-09-02 11:03:33', '2026-09-02 11:03:33'),
+(56, 215, NULL, NULL, NULL, NULL, '2026-09-02 11:04:46', '2026-09-02 11:04:46'),
+(57, 216, NULL, NULL, NULL, NULL, '2026-09-02 11:05:16', '2026-09-02 11:05:16'),
+(58, 217, NULL, NULL, NULL, NULL, '2026-09-02 11:45:39', '2026-09-02 11:45:39'),
+(59, 218, NULL, NULL, NULL, NULL, '2026-09-02 11:45:55', '2026-09-02 11:45:55'),
+(60, 219, NULL, NULL, NULL, NULL, '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(61, 220, NULL, NULL, NULL, NULL, '2026-09-02 14:52:15', '2026-09-02 14:52:15'),
+(62, 221, NULL, NULL, NULL, NULL, '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(63, 222, NULL, NULL, NULL, NULL, '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(64, 223, NULL, NULL, NULL, NULL, '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(65, 224, NULL, NULL, NULL, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(66, 225, NULL, NULL, NULL, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(67, 230, NULL, NULL, NULL, NULL, '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(68, 231, NULL, NULL, NULL, NULL, '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(69, 233, NULL, NULL, NULL, NULL, '2026-09-03 14:38:50', '2026-09-03 14:38:50'),
+(70, 234, NULL, NULL, NULL, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(71, 235, NULL, NULL, NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -23880,7 +24845,28 @@ INSERT INTO `victims_restitution_q39b` (`id`, `case_id`, `victims_restitution_lo
 (35, 190, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (36, 191, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (37, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, 193, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(38, 193, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 194, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 195, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 196, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 198, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 199, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 201, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 202, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 203, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 204, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 205, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 206, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 207, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 208, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 209, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 210, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 224, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 225, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 234, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 235, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -23948,7 +24934,28 @@ INSERT INTO `victims_social_service_q19` (`id`, `case_id`, `victims_social_servi
 (45, 190, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (46, 191, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (47, 192, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(48, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(48, 193, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(49, 194, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(50, 195, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(51, 196, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(52, 197, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(53, 198, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(54, 199, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(55, 200, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(56, 201, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(57, 202, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(58, 203, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(59, 204, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(60, 205, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(61, 206, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(62, 207, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(63, 208, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(64, 209, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(65, 210, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(66, 224, NULL, '2026-09-03 05:49:50', '2026-09-03 05:49:50'),
+(67, 225, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(68, 234, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(69, 235, NULL, '2026-09-08 06:49:58', '2026-09-08 06:49:58');
 
 -- --------------------------------------------------------
 
@@ -24001,7 +25008,44 @@ INSERT INTO `victims_traffickers_q40` (`id`, `case_id`, `victims_traffickers_tit
 (29, 190, NULL, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (30, 191, NULL, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (31, 192, NULL, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(32, 193, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(32, 193, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(33, 194, NULL, NULL, '2026-09-02 07:25:29', '2026-09-02 07:25:29'),
+(34, 195, NULL, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(35, 196, NULL, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(36, 197, NULL, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(37, 198, NULL, NULL, '2026-09-02 07:25:35', '2026-09-02 07:25:35'),
+(38, 199, NULL, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(39, 200, NULL, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(40, 201, NULL, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(41, 202, NULL, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(42, 203, NULL, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(43, 204, NULL, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(44, 205, NULL, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(45, 206, NULL, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(46, 207, NULL, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(47, 208, NULL, NULL, '2026-09-02 07:25:58', '2026-09-02 07:25:58'),
+(48, 209, NULL, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(49, 210, NULL, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(50, 211, NULL, NULL, '2026-09-02 10:54:06', '2026-09-02 10:54:06'),
+(51, 212, NULL, NULL, '2026-09-02 10:56:54', '2026-09-02 10:56:54'),
+(52, 213, NULL, NULL, '2026-09-02 11:00:45', '2026-09-02 11:00:45'),
+(53, 214, NULL, NULL, '2026-09-02 11:03:33', '2026-09-02 11:03:33'),
+(54, 215, NULL, NULL, '2026-09-02 11:04:46', '2026-09-02 11:04:46'),
+(55, 216, NULL, NULL, '2026-09-02 11:05:17', '2026-09-02 11:05:17'),
+(56, 217, NULL, NULL, '2026-09-02 11:45:39', '2026-09-02 11:45:39'),
+(57, 218, NULL, NULL, '2026-09-02 11:45:55', '2026-09-02 11:45:55'),
+(58, 219, NULL, NULL, '2026-09-02 11:58:26', '2026-09-02 11:58:26'),
+(59, 220, NULL, NULL, '2026-09-02 14:52:15', '2026-09-02 14:52:15'),
+(60, 221, NULL, NULL, '2026-09-03 05:43:34', '2026-09-03 05:43:34'),
+(61, 222, NULL, NULL, '2026-09-03 05:43:35', '2026-09-03 05:43:35'),
+(62, 223, NULL, NULL, '2026-09-03 05:43:51', '2026-09-03 05:43:51'),
+(63, 224, NULL, NULL, '2026-09-03 05:49:51', '2026-09-03 05:49:51'),
+(64, 225, NULL, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(65, 230, NULL, NULL, '2026-09-03 06:10:09', '2026-09-03 06:10:09'),
+(66, 231, NULL, NULL, '2026-09-03 09:08:01', '2026-09-03 09:08:01'),
+(67, 233, NULL, NULL, '2026-09-03 14:38:50', '2026-09-03 14:38:50'),
+(68, 234, NULL, NULL, '2026-09-05 18:28:35', '2026-09-05 18:28:35'),
+(69, 235, NULL, NULL, '2026-09-08 06:49:59', '2026-09-08 06:49:59');
 
 -- --------------------------------------------------------
 
@@ -24088,7 +25132,49 @@ INSERT INTO `victims_traffickers_q40b` (`id`, `case_id`, `victims_traffickers_lo
 (61, 192, NULL, NULL, NULL, '0', NULL, NULL),
 (62, 192, NULL, NULL, NULL, '0', NULL, NULL),
 (63, 193, NULL, NULL, NULL, '0', NULL, NULL),
-(64, 193, NULL, NULL, NULL, '0', NULL, NULL);
+(64, 193, NULL, NULL, NULL, '0', NULL, NULL),
+(65, 194, NULL, NULL, NULL, '0', NULL, NULL),
+(66, 194, NULL, NULL, NULL, '0', NULL, NULL),
+(67, 195, NULL, NULL, NULL, '0', NULL, NULL),
+(68, 195, NULL, NULL, NULL, '0', NULL, NULL),
+(69, 196, NULL, NULL, NULL, '0', NULL, NULL),
+(70, 196, NULL, NULL, NULL, '0', NULL, NULL),
+(71, 197, NULL, NULL, NULL, '0', NULL, NULL),
+(72, 197, NULL, NULL, NULL, '0', NULL, NULL),
+(73, 198, NULL, NULL, NULL, '0', NULL, NULL),
+(74, 198, NULL, NULL, NULL, '0', NULL, NULL),
+(75, 199, NULL, NULL, NULL, '0', NULL, NULL),
+(76, 199, NULL, NULL, NULL, '0', NULL, NULL),
+(77, 200, NULL, NULL, NULL, '0', NULL, NULL),
+(78, 200, NULL, NULL, NULL, '0', NULL, NULL),
+(79, 201, NULL, NULL, NULL, '0', NULL, NULL),
+(80, 201, NULL, NULL, NULL, '0', NULL, NULL),
+(81, 202, NULL, NULL, NULL, NULL, NULL, NULL),
+(82, 202, NULL, NULL, NULL, NULL, NULL, NULL),
+(83, 203, NULL, NULL, NULL, NULL, NULL, NULL),
+(84, 203, NULL, NULL, NULL, NULL, NULL, NULL),
+(85, 204, NULL, NULL, NULL, NULL, NULL, NULL),
+(86, 204, NULL, NULL, NULL, NULL, NULL, NULL),
+(87, 205, NULL, NULL, NULL, NULL, NULL, NULL),
+(88, 205, NULL, NULL, NULL, NULL, NULL, NULL),
+(89, 206, NULL, NULL, NULL, NULL, NULL, NULL),
+(90, 206, NULL, NULL, NULL, NULL, NULL, NULL),
+(91, 207, NULL, NULL, NULL, NULL, NULL, NULL),
+(92, 207, NULL, NULL, NULL, NULL, NULL, NULL),
+(93, 208, NULL, NULL, NULL, NULL, NULL, NULL),
+(94, 208, NULL, NULL, NULL, NULL, NULL, NULL),
+(95, 209, NULL, NULL, NULL, '0', NULL, NULL),
+(96, 209, NULL, NULL, NULL, '0', NULL, NULL),
+(97, 210, NULL, NULL, NULL, '0', NULL, NULL),
+(98, 210, NULL, NULL, NULL, '0', NULL, NULL),
+(99, 224, NULL, NULL, NULL, '0', NULL, NULL),
+(100, 224, NULL, NULL, NULL, '0', NULL, NULL),
+(101, 225, NULL, NULL, NULL, '0', NULL, NULL),
+(102, 225, NULL, NULL, NULL, '0', NULL, NULL),
+(103, 234, NULL, NULL, NULL, '0', NULL, NULL),
+(104, 234, NULL, NULL, NULL, '0', NULL, NULL),
+(105, 235, NULL, NULL, NULL, '0', NULL, NULL),
+(106, 235, NULL, NULL, NULL, '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -24743,7 +25829,23 @@ INSERT INTO `victim_centered_approach_q8` (`id`, `case_id`, `official_title_q8`,
 (613, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (614, 190, NULL, '0', '0', '0', '0', NULL, NULL),
 (615, 190, NULL, '0', '0', '0', '0', NULL, NULL),
-(616, 190, NULL, '0', '0', '0', '0', NULL, NULL);
+(616, 190, NULL, '0', '0', '0', '0', NULL, NULL),
+(617, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(618, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(619, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(620, 224, NULL, '0', '0', '0', '0', NULL, NULL),
+(621, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(622, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(623, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(624, 225, NULL, '0', '0', '0', '0', NULL, NULL),
+(625, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(626, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(627, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(628, 234, NULL, '0', '0', '0', '0', NULL, NULL),
+(629, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(630, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(631, 235, NULL, '0', '0', '0', '0', NULL, NULL),
+(632, 235, NULL, '0', '0', '0', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -24843,7 +25945,28 @@ INSERT INTO `victim_identification_protocol_q15` (`id`, `case_id`, `description_
 (49, 190, NULL, NULL, NULL, NULL, '2026-08-25 11:35:49', '2026-08-25 11:35:49'),
 (50, 191, NULL, NULL, NULL, NULL, '2026-08-25 16:23:56', '2026-08-25 16:23:56'),
 (51, 192, NULL, NULL, NULL, NULL, '2026-08-25 16:27:27', '2026-08-25 16:27:27'),
-(52, 193, NULL, NULL, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03');
+(52, 193, NULL, NULL, NULL, NULL, '2026-08-25 16:56:03', '2026-08-25 16:56:03'),
+(53, 194, NULL, NULL, NULL, NULL, '2026-09-02 07:25:28', '2026-09-02 07:25:28'),
+(54, 195, NULL, NULL, NULL, NULL, '2026-09-02 07:25:30', '2026-09-02 07:25:30'),
+(55, 196, NULL, NULL, NULL, NULL, '2026-09-02 07:25:31', '2026-09-02 07:25:31'),
+(56, 197, NULL, NULL, NULL, NULL, '2026-09-02 07:25:32', '2026-09-02 07:25:32'),
+(57, 198, NULL, NULL, NULL, NULL, '2026-09-02 07:25:34', '2026-09-02 07:25:34'),
+(58, 199, NULL, NULL, NULL, NULL, '2026-09-02 07:25:36', '2026-09-02 07:25:36'),
+(59, 200, NULL, NULL, NULL, NULL, '2026-09-02 07:25:37', '2026-09-02 07:25:37'),
+(60, 201, NULL, NULL, NULL, NULL, '2026-09-02 07:25:38', '2026-09-02 07:25:38'),
+(61, 202, NULL, NULL, NULL, NULL, '2026-09-02 07:25:50', '2026-09-02 07:25:50'),
+(62, 203, NULL, NULL, NULL, NULL, '2026-09-02 07:25:52', '2026-09-02 07:25:52'),
+(63, 204, NULL, NULL, NULL, NULL, '2026-09-02 07:25:53', '2026-09-02 07:25:53'),
+(64, 205, NULL, NULL, NULL, NULL, '2026-09-02 07:25:54', '2026-09-02 07:25:54'),
+(65, 206, NULL, NULL, NULL, NULL, '2026-09-02 07:25:55', '2026-09-02 07:25:55'),
+(66, 207, NULL, NULL, NULL, NULL, '2026-09-02 07:25:56', '2026-09-02 07:25:56'),
+(67, 208, NULL, NULL, NULL, NULL, '2026-09-02 07:25:57', '2026-09-02 07:25:57'),
+(68, 209, NULL, NULL, NULL, NULL, '2026-09-02 07:27:22', '2026-09-02 07:27:22'),
+(69, 210, NULL, NULL, NULL, NULL, '2026-09-02 07:32:23', '2026-09-02 07:32:23'),
+(70, 224, NULL, NULL, NULL, NULL, '2026-09-03 05:49:50', '2026-09-03 05:49:50'),
+(71, 225, NULL, NULL, NULL, NULL, '2026-09-03 05:49:53', '2026-09-03 05:49:53'),
+(72, 234, NULL, NULL, NULL, NULL, '2026-09-05 18:28:34', '2026-09-05 18:28:34'),
+(73, 235, NULL, NULL, NULL, NULL, '2026-09-08 06:49:58', '2026-09-08 06:49:58');
 
 -- --------------------------------------------------------
 
@@ -25024,6 +26147,18 @@ ALTER TABLE `districs`
 -- Indexes for table `divisions`
 --
 ALTER TABLE `divisions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `enforcement_consistently_q36`
+--
+ALTER TABLE `enforcement_consistently_q36`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `enforcement_consistently_q36b`
+--
+ALTER TABLE `enforcement_consistently_q36b`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -25214,6 +26349,12 @@ ALTER TABLE `government_person_formally_q25`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `government_prohibit_q48`
+--
+ALTER TABLE `government_prohibit_q48`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `government_prosecute_deport_q52`
 --
 ALTER TABLE `government_prosecute_deport_q52`
@@ -25223,6 +26364,12 @@ ALTER TABLE `government_prosecute_deport_q52`
 -- Indexes for table `government_provide_trafficking_q55`
 --
 ALTER TABLE `government_provide_trafficking_q55`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `government_seek_civil_q43`
+--
+ALTER TABLE `government_seek_civil_q43`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -25244,6 +26391,24 @@ ALTER TABLE `instances_trafficking_q56b`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `internal_trafficking_q38`
+--
+ALTER TABLE `internal_trafficking_q38`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `international_trafficking_q38b`
+--
+ALTER TABLE `international_trafficking_q38b`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `inter_nation_q38c`
+--
+ALTER TABLE `inter_nation_q38c`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `involved_directly_trafficking_2q`
 --
 ALTER TABLE `involved_directly_trafficking_2q`
@@ -25259,6 +26424,12 @@ ALTER TABLE `involved_directly_trafficking_q5`
 -- Indexes for table `labor_inspectorate_unit_courts_q6`
 --
 ALTER TABLE `labor_inspectorate_unit_courts_q6`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `law_enforcement_q35`
+--
+ALTER TABLE `law_enforcement_q35`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -25315,6 +26486,12 @@ ALTER TABLE `newly_identified_victims_q34`
 -- Indexes for table `newly_identified_victims_q34b`
 --
 ALTER TABLE `newly_identified_victims_q34b`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `official_agency_q42`
+--
+ALTER TABLE `official_agency_q42`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -25589,7 +26766,7 @@ ALTER TABLE `adequately_jurisdiction_q9`
 -- AUTO_INCREMENT for table `adult_victims_juvenile_q29`
 --
 ALTER TABLE `adult_victims_juvenile_q29`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `allegedly_complicit_official_q5`
@@ -25601,13 +26778,13 @@ ALTER TABLE `allegedly_complicit_official_q5`
 -- AUTO_INCREMENT for table `assistance_government_q37`
 --
 ALTER TABLE `assistance_government_q37`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `authorities_systematically_q16`
 --
 ALTER TABLE `authorities_systematically_q16`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `authorities_systematically_q16b`
@@ -25619,7 +26796,7 @@ ALTER TABLE `authorities_systematically_q16b`
 -- AUTO_INCREMENT for table `awareness_campaigns_research_projects_q44`
 --
 ALTER TABLE `awareness_campaigns_research_projects_q44`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=795;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=819;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -25631,19 +26808,19 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT for table `case_models`
 --
 ALTER TABLE `case_models`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
 
 --
 -- AUTO_INCREMENT for table `child_victims_juvenile_q28`
 --
 ALTER TABLE `child_victims_juvenile_q28`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `citizen_victims_abroad_q31`
 --
 ALTER TABLE `citizen_victims_abroad_q31`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=304;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
 
 --
 -- AUTO_INCREMENT for table `commercial_sex_demands_q51`
@@ -25661,7 +26838,7 @@ ALTER TABLE `conduct_awareness_activities_q59`
 -- AUTO_INCREMENT for table `considering_reported_q57`
 --
 ALTER TABLE `considering_reported_q57`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `consistent_victim_approach_q26`
@@ -25679,7 +26856,7 @@ ALTER TABLE `consistent_victim_approach_q26b`
 -- AUTO_INCREMENT for table `convicted_traffickers_q41`
 --
 ALTER TABLE `convicted_traffickers_q41`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `convicted_traffickers_q41b`
@@ -25709,19 +26886,19 @@ ALTER TABLE `crime_obstructing_justice_q4`
 -- AUTO_INCREMENT for table `crime_official_details_q7`
 --
 ALTER TABLE `crime_official_details_q7`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=621;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=637;
 
 --
 -- AUTO_INCREMENT for table `describe_government_operated_q20a`
 --
 ALTER TABLE `describe_government_operated_q20a`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=370;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=382;
 
 --
 -- AUTO_INCREMENT for table `describe_government_operated_q20b`
 --
 ALTER TABLE `describe_government_operated_q20b`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=370;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=382;
 
 --
 -- AUTO_INCREMENT for table `districs`
@@ -25736,6 +26913,18 @@ ALTER TABLE `divisions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `enforcement_consistently_q36`
+--
+ALTER TABLE `enforcement_consistently_q36`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `enforcement_consistently_q36b`
+--
+ALTER TABLE `enforcement_consistently_q36b`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `exclusively_dedicated_trafficking_q7`
 --
 ALTER TABLE `exclusively_dedicated_trafficking_q7`
@@ -25745,7 +26934,7 @@ ALTER TABLE `exclusively_dedicated_trafficking_q7`
 -- AUTO_INCREMENT for table `exclusively_trafficking_q9`
 --
 ALTER TABLE `exclusively_trafficking_q9`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=895;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=923;
 
 --
 -- AUTO_INCREMENT for table `exclusively_trafficking_q10`
@@ -25787,7 +26976,7 @@ ALTER TABLE `foreign_governments_trafficking_q60`
 -- AUTO_INCREMENT for table `foreign_victims_q30`
 --
 ALTER TABLE `foreign_victims_q30`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1325;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1397;
 
 --
 -- AUTO_INCREMENT for table `formal_written_procedures_15q`
@@ -25799,7 +26988,7 @@ ALTER TABLE `formal_written_procedures_15q`
 -- AUTO_INCREMENT for table `government_agreements_transparent_q11`
 --
 ALTER TABLE `government_agreements_transparent_q11`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=391;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=399;
 
 --
 -- AUTO_INCREMENT for table `government_agreements_transparent_q49`
@@ -25817,61 +27006,61 @@ ALTER TABLE `government_change_regulated_q47`
 -- AUTO_INCREMENT for table `government_conduct_awareness_activities_q46`
 --
 ALTER TABLE `government_conduct_awareness_activities_q46`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1766;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1817;
 
 --
 -- AUTO_INCREMENT for table `government_cooperate_foreign_counterparts_q12`
 --
 ALTER TABLE `government_cooperate_foreign_counterparts_q12`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=496;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=508;
 
 --
 -- AUTO_INCREMENT for table `government_cooperate_united_states_q13a`
 --
 ALTER TABLE `government_cooperate_united_states_q13a`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=298;
 
 --
 -- AUTO_INCREMENT for table `government_cooperate_united_states_q13b`
 --
 ALTER TABLE `government_cooperate_united_states_q13b`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=298;
 
 --
 -- AUTO_INCREMENT for table `government_cooperate_united_states_q13c`
 --
 ALTER TABLE `government_cooperate_united_states_q13c`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=298;
 
 --
 -- AUTO_INCREMENT for table `government_cooperate_united_states_q13d`
 --
 ALTER TABLE `government_cooperate_united_states_q13d`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=298;
 
 --
 -- AUTO_INCREMENT for table `government_counterparts_q12b`
 --
 ALTER TABLE `government_counterparts_q12b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
 
 --
 -- AUTO_INCREMENT for table `government_counterparts_q12c`
 --
 ALTER TABLE `government_counterparts_q12c`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT for table `government_counterparts_q12d`
 --
 ALTER TABLE `government_counterparts_q12d`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 
 --
 -- AUTO_INCREMENT for table `government_devote_implement_q14`
 --
 ALTER TABLE `government_devote_implement_q14`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=805;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=825;
 
 --
 -- AUTO_INCREMENT for table `government_devote_implement_q61`
@@ -25889,37 +27078,43 @@ ALTER TABLE `government_devote_implement_q63`
 -- AUTO_INCREMENT for table `government_direct_victim_q27`
 --
 ALTER TABLE `government_direct_victim_q27`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=385;
 
 --
 -- AUTO_INCREMENT for table `government_direct_victim_q27b`
 --
 ALTER TABLE `government_direct_victim_q27b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `government_monitor_immigrations_q33`
 --
 ALTER TABLE `government_monitor_immigrations_q33`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `government_nationality_q2`
 --
 ALTER TABLE `government_nationality_q2`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `government_officials_q18`
 --
 ALTER TABLE `government_officials_q18`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `government_person_formally_q25`
 --
 ALTER TABLE `government_person_formally_q25`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
+--
+-- AUTO_INCREMENT for table `government_prohibit_q48`
+--
+ALTER TABLE `government_prohibit_q48`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `government_prosecute_deport_q52`
@@ -25934,6 +27129,12 @@ ALTER TABLE `government_provide_trafficking_q55`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=349;
 
 --
+-- AUTO_INCREMENT for table `government_seek_civil_q43`
+--
+ALTER TABLE `government_seek_civil_q43`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `government_train_diplomat_q53`
 --
 ALTER TABLE `government_train_diplomat_q53`
@@ -25943,13 +27144,31 @@ ALTER TABLE `government_train_diplomat_q53`
 -- AUTO_INCREMENT for table `instances_trafficking_q56`
 --
 ALTER TABLE `instances_trafficking_q56`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `instances_trafficking_q56b`
 --
 ALTER TABLE `instances_trafficking_q56b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT for table `internal_trafficking_q38`
+--
+ALTER TABLE `internal_trafficking_q38`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `international_trafficking_q38b`
+--
+ALTER TABLE `international_trafficking_q38b`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `inter_nation_q38c`
+--
+ALTER TABLE `inter_nation_q38c`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `involved_directly_trafficking_2q`
@@ -25961,13 +27180,19 @@ ALTER TABLE `involved_directly_trafficking_2q`
 -- AUTO_INCREMENT for table `involved_directly_trafficking_q5`
 --
 ALTER TABLE `involved_directly_trafficking_q5`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
 -- AUTO_INCREMENT for table `labor_inspectorate_unit_courts_q6`
 --
 ALTER TABLE `labor_inspectorate_unit_courts_q6`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `law_enforcement_q35`
+--
+ALTER TABLE `law_enforcement_q35`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `medicines`
@@ -25979,7 +27204,7 @@ ALTER TABLE `medicines`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `ministry_agency_organization_54q`
@@ -25997,19 +27222,25 @@ ALTER TABLE `ministry_agency_organization_ctc_55q`
 -- AUTO_INCREMENT for table `national_plan_trafficking_q45`
 --
 ALTER TABLE `national_plan_trafficking_q45`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `newly_identified_victims_q34`
 --
 ALTER TABLE `newly_identified_victims_q34`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `newly_identified_victims_q34b`
 --
 ALTER TABLE `newly_identified_victims_q34b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT for table `official_agency_q42`
+--
+ALTER TABLE `official_agency_q42`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `official_allocation_review_q8`
@@ -26063,7 +27294,7 @@ ALTER TABLE `question_title`
 -- AUTO_INCREMENT for table `report_country_narrative_protection_q17`
 --
 ALTER TABLE `report_country_narrative_protection_q17`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=804;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=824;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -26081,7 +27312,7 @@ ALTER TABLE `sex_trafficking_forced_labor_country_19q`
 -- AUTO_INCREMENT for table `situation_prevention_yes_no_others`
 --
 ALTER TABLE `situation_prevention_yes_no_others`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 
 --
 -- AUTO_INCREMENT for table `speak_law_enforcement_23q`
@@ -26105,7 +27336,7 @@ ALTER TABLE `state_sponsored_forced_labor_q3`
 -- AUTO_INCREMENT for table `state_sponsored_forced_labor_q6`
 --
 ALTER TABLE `state_sponsored_forced_labor_q6`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
 
 --
 -- AUTO_INCREMENT for table `supreme_court_precedent_1a`
@@ -26117,43 +27348,43 @@ ALTER TABLE `supreme_court_precedent_1a`
 -- AUTO_INCREMENT for table `supreme_court_precedent_1b`
 --
 ALTER TABLE `supreme_court_precedent_1b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
 -- AUTO_INCREMENT for table `supreme_court_precedent_4a`
 --
 ALTER TABLE `supreme_court_precedent_4a`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
 
 --
 -- AUTO_INCREMENT for table `supreme_court_precedent_4b`
 --
 ALTER TABLE `supreme_court_precedent_4b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
 
 --
 -- AUTO_INCREMENT for table `tarfficking_victims_q21`
 --
 ALTER TABLE `tarfficking_victims_q21`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=593;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=609;
 
 --
 -- AUTO_INCREMENT for table `tarfficking_victims_q22`
 --
 ALTER TABLE `tarfficking_victims_q22`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=593;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=609;
 
 --
 -- AUTO_INCREMENT for table `technology_trafficking_applicable_q3`
 --
 ALTER TABLE `technology_trafficking_applicable_q3`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `technology_trafficking_applicable_q3b`
 --
 ALTER TABLE `technology_trafficking_applicable_q3b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- AUTO_INCREMENT for table `trafficking_among_risk_population_18q`
@@ -26165,7 +27396,7 @@ ALTER TABLE `trafficking_among_risk_population_18q`
 -- AUTO_INCREMENT for table `trafficking_investigations_q58`
 --
 ALTER TABLE `trafficking_investigations_q58`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `trafficking_victims_services_20q`
@@ -26195,31 +27426,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `victims_restitution_q39`
 --
 ALTER TABLE `victims_restitution_q39`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `victims_restitution_q39b`
 --
 ALTER TABLE `victims_restitution_q39b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `victims_social_service_q19`
 --
 ALTER TABLE `victims_social_service_q19`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `victims_traffickers_q40`
 --
 ALTER TABLE `victims_traffickers_q40`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `victims_traffickers_q40b`
 --
 ALTER TABLE `victims_traffickers_q40b`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `victim_centered_approach_28q`
@@ -26231,7 +27462,7 @@ ALTER TABLE `victim_centered_approach_28q`
 -- AUTO_INCREMENT for table `victim_centered_approach_q8`
 --
 ALTER TABLE `victim_centered_approach_q8`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=617;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=633;
 
 --
 -- AUTO_INCREMENT for table `victim_identification_protocol_16q`
@@ -26243,7 +27474,7 @@ ALTER TABLE `victim_identification_protocol_16q`
 -- AUTO_INCREMENT for table `victim_identification_protocol_q15`
 --
 ALTER TABLE `victim_identification_protocol_q15`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `vots_received_assistance_53q`

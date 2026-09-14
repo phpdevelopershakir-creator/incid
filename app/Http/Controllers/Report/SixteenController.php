@@ -4,45 +4,41 @@ namespace App\Http\Controllers\Report;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\SixteenB;
+use App\Models\One;
 class SixteenController extends Controller
 {
-    public function showQuestionSixteenReport()
-{
-    $data_sixteen = SixteenB::all(); 
+    public function getSupremeCourtChart()
+    {
+        // Category List Mapping (যদি Blade-এ প্রয়োজন হয়)
+        $category_lists = [
+            '1' => 'Category 1',
+            '2' => 'Category 2',
+        ];
 
-    // ক্যাটাগরি লিস্ট অ্যারেই
-    $category_lists = [
-        1 => 'Social Worker',
-        2 => 'Police',
-        3 => 'BGB',
-        4 => 'Coastguard',
-        5 => 'VDP',
-        6 => 'Rail Police',
-        7 => 'Judiciary',
-        8 => 'NGO',
-        9 => 'Others'
-    ];
+        // Table Data (Supreme Court Status logic অনুযায়ী)
+        $data_sixteen = One::where('supreme_court_title', 1)
+            ->whereIn('supreme_court_status', [1, 2])
+            ->get();
 
-    $total_men = $data_sixteen->sum('men_q16');
-    $total_women = $data_sixteen->sum('women_q16');
-    $grand_total = $data_sixteen->sum('total_q16');
+        // Status Counts
+        $status1_count = One::where('supreme_court_title', 1)->where('supreme_court_status', 1)->count();
+        $status2_count = One::where('supreme_court_title', 1)->where('supreme_court_status', 2)->count();
 
-    if ($grand_total == 0) {
-        $grand_total = $total_men + $total_women;
+        // Grand Total Calculation
+        $grand_total = $status1_count + $status2_count;
+
+        // Percentage Calculation (Division by zero হ্যান্ডেল করা হয়েছে)
+        $status1_percentage = $grand_total > 0 ? round(($status1_count / $grand_total) * 100, 2) : 0;
+        $status2_percentage = $grand_total > 0 ? round(($status2_count / $grand_total) * 100, 2) : 0;
+
+        return view('reports.question_sixteen', compact(
+            'data_sixteen',
+            'category_lists',
+            'status1_count',
+            'status2_count',
+            'grand_total',
+            'status1_percentage',
+            'status2_percentage'
+        ));
     }
-
-    $men_percentage = $grand_total > 0 ? round(($total_men / $grand_total) * 100, 2) : 0;
-    $women_percentage = $grand_total > 0 ? round(($total_women / $grand_total) * 100, 2) : 0;
-
-    return view('reports.question_sixteen', compact(
-        'data_sixteen', 
-        'category_lists',
-        'total_men', 
-        'total_women', 
-        'grand_total', 
-        'men_percentage', 
-        'women_percentage'
-    ));
-}
 }

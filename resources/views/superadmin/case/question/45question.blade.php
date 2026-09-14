@@ -1,8 +1,6 @@
 <?php
 if (($questiontitles[44]->status ?? null) == 1) {
-  
   $question_45_data = session()->get('question45');
-
   $q45_checked = $question_45_data['q45_checked_value'] ?? "1";
   $q45_duration = $question_45_data['duration'] ?? '';
   $q45_description = $question_45_data['description'] ?? '';
@@ -49,7 +47,7 @@ if (($questiontitles[44]->status ?? null) == 1) {
                 <label for="radioFourtyFive3">Others</label>
 
                 <span class="col-md-6 mt--4 q45_others_container {{ $q45_checked == '2' ? '' : 'othersText' }}">
-                    <input type="text" id="q45others" placeholder="Others Specific" class="form-control"
+                    <input type="text" id="q45others" placeholder="Please describe" class="form-control"
                         value="{{ $q45_others_val }}" name="other_national_plan_trafficking_q45">
                 </span>
             </div>
@@ -144,7 +142,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question45 .card-title').css('color', 'blue');
-                alert("Question 45  Saved Temporarily");
+                alert("Question 45 Temp Saved ");
             },
             error: function(err) {
                 alert("Error saving question 45 data ");
