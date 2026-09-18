@@ -1,8 +1,6 @@
 @if (($questiontitles[35]->status ?? null) == 1)
 @php
-
 $question_36_data = session()->get('question36', []);
-
 
 $q36_p1_status = isset($question_36_data['q36_p1_status']) ? (string)$question_36_data['q36_p1_status'] : '1';
 $q36_p1_yes_desc = $question_36_data['q36_p1_yes_desc'] ?? '';
@@ -22,6 +20,8 @@ $q36_p3_others_desc = $question_36_data['q36_p3_others_desc'] ?? '';
 $q36_support_types = $question_36_data['q36_support_type'] ?? [];
 $q36_mens = $question_36_data['q36_men'] ?? [];
 $q36_womens = $question_36_data['q36_women'] ?? [];
+$q36_boys = $question_36_data['q36_boy'] ?? [];
+$q36_girls = $question_36_data['q36_girl'] ?? [];
 $q36_tgs = $question_36_data['q36_tg'] ?? [];
 $q36_totals = $question_36_data['q36_total'] ?? [];
 
@@ -45,9 +45,6 @@ $rowCount = max(count($q36_support_types), 1);
 
     <div id="Question-36" class="collapse" role="tabpanel" aria-labelledby="heading-36">
         <div class="card-body">
-
-
-
 
             <!-- ================= Part 1 ================= -->
             <div class="form-group mb-4 p-3 border rounded bg-light">
@@ -89,8 +86,8 @@ $rowCount = max(count($q36_support_types), 1);
             <!-- ================= Part 2 ================= -->
             <div class="form-group mb-4 p-3 border rounded bg-light">
                 <label class="font-weight-bold d-block text-dark">
-                    b) Are specialized facilities available (e.g., Child-friendly room, One-way mirror, Legal
-                    support, etc.)?
+                    b) Are specialized facilities available (e.g., Child-friendly room, One-way mirror, Legal support,
+                    etc.)?
                 </label>
 
                 <div class="form-check form-check-inline">
@@ -137,9 +134,11 @@ $rowCount = max(count($q36_support_types), 1);
                                 <th style="width: 30%;">Type of Support</th>
                                 <th>Men</th>
                                 <th>Women</th>
+                                <th>Boy</th>
+                                <th>Girl</th>
                                 <th>TG</th>
                                 <th>Total</th>
-                                <th style="width: 80px;">Add row</th>
+                                <th style="width: 80px;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="q36_table_body">
@@ -167,6 +166,13 @@ $rowCount = max(count($q36_support_types), 1);
                                 <td><input type="number" name="question36[q36_women][]"
                                         class="form-control q36_women q36_calc" min="0"
                                         value="{{ $q36_womens[$i] ?? 0 }}"></td>
+                                <td><input type="number" name="question36[q36_boy][]"
+                                        class="form-control q36_boy q36_calc" min="0" value="{{ $q36_boys[$i] ?? 0 }}">
+                                </td>
+                                <td><input type="number" name="question36[q36_girl][]"
+                                        class="form-control q36_girl q36_calc" min="0"
+                                        value="{{ $q36_girls[$i] ?? 0 }}">
+                                </td>
                                 <td><input type="number" name="question36[q36_tg][]"
                                         class="form-control q36_tg q36_calc" min="0" value="{{ $q36_tgs[$i] ?? 0 }}">
                                 </td>
@@ -190,6 +196,8 @@ $rowCount = max(count($q36_support_types), 1);
                                 <td>Grand Total</td>
                                 <td id="q36_grand_men">0</td>
                                 <td id="q36_grand_women">0</td>
+                                <td id="q36_grand_boy">0</td>
+                                <td id="q36_grand_girl">0</td>
                                 <td id="q36_grand_tg">0</td>
                                 <td id="q36_grand_total">0</td>
                                 <td></td>
@@ -241,7 +249,6 @@ $rowCount = max(count($q36_support_types), 1);
                 <button type="button" class="btn btn-success px-5" id="save_q36_btn">Save</button>
             </div>
 
-
         </div>
     </div>
 </div>
@@ -250,7 +257,7 @@ $rowCount = max(count($q36_support_types), 1);
 <script>
 $(document).ready(function() {
 
-    // Radio Toggle Handler (Part 1, 2, 3)
+    // Radio Toggle Handlers
     $(document.body).on('change', '.q36_p1_radio', function() {
         let val = $(this).val();
         if (val === '1') {
@@ -294,25 +301,33 @@ $(document).ready(function() {
     function calculateQ36Totals() {
         let grandMen = 0,
             grandWomen = 0,
+            grandBoy = 0,
+            grandGirl = 0,
             grandTg = 0,
             grandTotal = 0;
 
         $('#q36_table_body tr').each(function() {
             let men = parseFloat($(this).find('.q36_men').val()) || 0;
             let women = parseFloat($(this).find('.q36_women').val()) || 0;
+            let boy = parseFloat($(this).find('.q36_boy').val()) || 0;
+            let girl = parseFloat($(this).find('.q36_girl').val()) || 0;
             let tg = parseFloat($(this).find('.q36_tg').val()) || 0;
 
-            let rowTotal = men + women + tg;
+            let rowTotal = men + women + boy + girl + tg;
             $(this).find('.q36_row_total').val(rowTotal);
 
             grandMen += men;
             grandWomen += women;
+            grandBoy += boy;
+            grandGirl += girl;
             grandTg += tg;
             grandTotal += rowTotal;
         });
 
         $('#q36_grand_men').text(grandMen);
         $('#q36_grand_women').text(grandWomen);
+        $('#q36_grand_boy').text(grandBoy);
+        $('#q36_grand_girl').text(grandGirl);
         $('#q36_grand_tg').text(grandTg);
         $('#q36_grand_total').text(grandTotal);
     }
@@ -336,6 +351,8 @@ $(document).ready(function() {
                 </td>
                 <td><input type="number" name="question36[q36_men][]" class="form-control q36_men q36_calc" min="0" value="0"></td>
                 <td><input type="number" name="question36[q36_women][]" class="form-control q36_women q36_calc" min="0" value="0"></td>
+                <td><input type="number" name="question36[q36_boy][]" class="form-control q36_boy q36_calc" min="0" value="0"></td>
+                <td><input type="number" name="question36[q36_girl][]" class="form-control q36_girl q36_calc" min="0" value="0"></td>
                 <td><input type="number" name="question36[q36_tg][]" class="form-control q36_tg q36_calc" min="0" value="0"></td>
                 <td><input type="number" name="question36[q36_total][]" class="form-control q36_row_total" value="0" readonly></td>
                 <td>
@@ -353,19 +370,61 @@ $(document).ready(function() {
         calculateQ36Totals();
     });
 
-    // Calculate Initial Totals
+    // Initial Calculation
     calculateQ36Totals();
 
     // Temp Save AJAX Request
     $(document.body).on('click', '#save_q36_btn', function(e) {
         e.preventDefault();
 
-        let formData = $('#q36_form').serialize();
+        let supportTypes = [],
+            mens = [],
+            womens = [],
+            boys = [],
+            girls = [],
+            tgs = [],
+            totals = [];
+
+        $('#q36_table_body tr').each(function() {
+            supportTypes.push($(this).find('.q36_support_type').val());
+            mens.push($(this).find('.q36_men').val());
+            womens.push($(this).find('.q36_women').val());
+            boys.push($(this).find('.q36_boy').val());
+            girls.push($(this).find('.q36_girl').val());
+            tgs.push($(this).find('.q36_tg').val());
+            totals.push($(this).find('.q36_row_total').val());
+        });
+
+        let q36_data = {
+            q36_p1_status: $('.q36_p1_radio:checked').val(),
+            q36_p1_yes_desc: $('textarea[name="question36[q36_p1_yes_desc]"]').val(),
+            q36_p1_others_desc: $('input[name="question36[q36_p1_others_desc]"]').val(),
+
+            q36_p2_status: $('.q36_p2_radio:checked').val(),
+            q36_p2_yes_desc: $('textarea[name="question36[q36_p2_yes_desc]"]').val(),
+            q36_p2_others_desc: $('input[name="question36[q36_p2_others_desc]"]').val(),
+
+            q36_p3_status: $('.q36_p3_radio:checked').val(),
+            q36_p3_yes_desc: $('textarea[name="question36[q36_p3_yes_desc]"]').val(),
+            q36_p3_others_desc: $('input[name="question36[q36_p3_others_desc]"]').val(),
+
+            q36_support_type: supportTypes,
+            q36_men: mens,
+            q36_women: womens,
+            q36_boy: boys,
+            q36_girl: girls,
+            q36_tg: tgs,
+            q36_total: totals
+        };
 
         $.ajax({
             url: "/superadmin/case/temp-save-question",
             type: "POST",
-            data: formData,
+            data: {
+                _token: "{{ csrf_token() }}",
+                question_no: 36,
+                question36: q36_data
+            },
             success: function(response) {
                 if (response.success || response) {
                     $('.question36 .card-header h6').css('color', 'blue');

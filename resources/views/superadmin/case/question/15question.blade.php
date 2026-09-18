@@ -87,7 +87,7 @@ $q15_file_val = $question_15_data['document_upload_q15']
                                 </label>
                                 <div class="mt-2 q15_r1_yes_box">
                                     <input type="text" id="q15_r1_yes_text" name="description_one_q15"
-                                        class="form-control col-md-8" placeholder="Provide details for Row 1"
+                                        class="form-control col-md-8" placeholder="Please describe"
                                         value="{{ $q15_r1_val }}">
                                 </div>
                             </td>
@@ -103,7 +103,7 @@ $q15_file_val = $question_15_data['document_upload_q15']
                                 </label>
                                 <div class="mt-2 q15_r2_yes_box">
                                     <input type="text" id="q15_r2_yes_text" name="description_two_q15"
-                                        class="form-control col-md-8" placeholder="Provide details for Row 2"
+                                        class="form-control col-md-8" placeholder="Please describe"
                                         value="{{ $q15_r2_val }}">
                                 </div>
                             </td>
@@ -118,7 +118,7 @@ $q15_file_val = $question_15_data['document_upload_q15']
                                 </label>
                                 <div class="mt-2 q15_r3_yes_box">
                                     <input type="text" id="q15_r3_yes_text" name="description_three_q15"
-                                        class="form-control col-md-8 mb-2" placeholder="Provide details for Row 3"
+                                        class="form-control col-md-8 mb-2" placeholder="Please describe"
                                         value="{{ $q15_r3_val }}">
                                 </div>
 

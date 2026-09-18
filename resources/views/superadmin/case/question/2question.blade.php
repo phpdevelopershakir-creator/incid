@@ -25,9 +25,9 @@ $Sector_Lists = [
 @php
 $question_2_data = session()->get('question2');
 
-$q2_checked = $question_2_data['q2_checked_value'] ?? "1";
-$q2_rows_data = $question_2_data['q2_data'] ?? null;
-$q2_others_val = $question_2_data['others'] ?? '';
+$q2_checked =$question_2_data['q2_checked_value'] ?? "1";
+$q2_rows_data =$question_2_data['q2_data'] ?? null;
+$q2_others_val =$question_2_data['others'] ?? '';
 @endphp
 
 <style>
@@ -37,6 +37,10 @@ $q2_others_val = $question_2_data['others'] ?? '';
 
 .othersText_q2 {
     display: none !important;
+}
+
+.q2_risk_other_input {
+    margin-top: 5px;
 }
 </style>
 
@@ -77,27 +81,33 @@ $q2_others_val = $question_2_data['others'] ?? '';
             </div>
 
             <div id="2_question_view" class="{{ ($q2_checked == '1') ? '' : 'visibility_q2' }}">
-                <table id="addRowQ2" class="table table-bordered text-center">
+                <table id="addRowQ2" class="table table-bordered text-center align-middle">
                     <thead>
                         <tr>
                             <th>Nationality</th>
                             <th>Sector</th>
                             <th>Number of Citizen present in Bangladesh</th>
                             <th>Are they at high risk of forced labour</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if(!empty($q2_rows_data) && count($q2_rows_data) > 0)
-                        @foreach($q2_rows_data as $index => $row)
-                        @if(isset($row['nationality']) && (is_numeric($row['nationality']) || $row['nationality'] ==
-                        ""))
-                        <tr class="qe2NoOfRow" id="row_q2_{{ $index }}">
+                        @foreach($q2_rows_data as $index =>$row)
+                        @if(isset($row['nationality']))
+                        @php
+                        $riskVal =$row['risk_status_q2'] ?? 'Yes';
+                        $riskOtherVal =$row['risk_other_details_q2'] ?? '';
+                        $rowNum =$loop->iteration;
+                        $rowKey = "row_q2_" . $index;
+                        @endphp
+                        <tr class="qe2NoOfRow" id="{{ $rowKey }}">
                             <td>
                                 <select name="government_nationality_q2[]" class="form-control q2-select">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($Nationality_Lists as $key => $nationality)
+                                    @foreach ($Nationality_Lists as $key =>$nationality)
                                     <option value="{{ $key }}"
-                                        {{ ($row['nationality'] ?? '') == $key ? 'selected' : '' }}>
+                                        {{ ($row['nationality'] ?? '') ==$key ? 'selected' : '' }}>
                                         {{ $nationality }}
                                     </option>
                                     @endforeach
@@ -106,8 +116,8 @@ $q2_others_val = $question_2_data['others'] ?? '';
                             <td>
                                 <select name="government_sector_q2[]" class="form-control q2-select">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($Sector_Lists as $key => $sector)
-                                    <option value="{{ $key }}" {{ ($row['sector'] ?? '') == $key ? 'selected' : '' }}>
+                                    @foreach ($Sector_Lists as $key =>$sector)
+                                    <option value="{{ $key }}" {{ ($row['sector'] ?? '') ==$key ? 'selected' : '' }}>
                                         {{ $sector }}
                                     </option>
                                     @endforeach
@@ -118,7 +128,25 @@ $q2_others_val = $question_2_data['others'] ?? '';
                                     class="form-control q2-total" min="0">
                             </td>
                             <td>
-                                @if($index >= 3)
+                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                    <label class="mr-2"><input type="radio" name="risk_status_q2_row_{{ $index }}"
+                                            class="q2_risk_option" value="Yes" {{ $riskVal == 'Yes' ? 'checked' : '' }}>
+                                        Yes</label>
+                                    <label class="mr-2"><input type="radio" name="risk_status_q2_row_{{ $index }}"
+                                            class="q2_risk_option" value="No" {{ $riskVal == 'No' ? 'checked' : '' }}>
+                                        No</label>
+                                    <label><input type="radio" name="risk_status_q2_row_{{ $index }}"
+                                            class="q2_risk_option" value="Other"
+                                            {{ $riskVal == 'Other' ? 'checked' : '' }}> Other</label>
+                                </div>
+                                <input type="text" name="risk_other_details_q2[]"
+                                    class="form-control form-control-sm q2_risk_other_input {{ $riskVal == 'Other' ? '' : 'd-none' }}"
+                                    placeholder="Please describe" value="{{ $riskOtherVal }}">
+                            </td>
+                            <td>
+                                @if($rowNum == 3)
+                                <button id="addRowDatasq2" type="button" class="btn btn-primary btn-sm">Add Row</button>
+                                @elseif($rowNum > 3)
                                 <button type="button" class="btn btn-danger btn-sm btn_remove_q2">-</button>
                                 @endif
                             </td>
@@ -126,11 +154,11 @@ $q2_others_val = $question_2_data['others'] ?? '';
                         @endif
                         @endforeach
                         @else
-                        @for ($i = 1; $i <= 3; $i++) <tr class="qe2NoOfRow" id="row_q2_fixed_{{ $i }}">
+                        @for ($i = 0; $i < 3; $i++) <tr class="qe2NoOfRow" id="row_q2_fixed_{{ $i }}">
                             <td>
                                 <select name="government_nationality_q2[]" class="form-control q2-select">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($Nationality_Lists as $key => $nationality)
+                                    @foreach ($Nationality_Lists as $key =>$nationality)
                                     <option value="{{ $key }}">{{ $nationality }}</option>
                                     @endforeach
                                 </select>
@@ -138,7 +166,7 @@ $q2_others_val = $question_2_data['others'] ?? '';
                             <td>
                                 <select name="government_sector_q2[]" class="form-control q2-select">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($Sector_Lists as $key => $sector)
+                                    @foreach ($Sector_Lists as $key =>$sector)
                                     <option value="{{ $key }}">{{ $sector }}</option>
                                     @endforeach
                                 </select>
@@ -147,18 +175,29 @@ $q2_others_val = $question_2_data['others'] ?? '';
                                 <input type="number" name="government_total_q2[]" value="0"
                                     class="form-control q2-total" min="0">
                             </td>
-                            <td></td>
+                            <td>
+                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                    <label class="mr-2"><input type="radio" name="risk_status_q2_row_{{ $i }}"
+                                            class="q2_risk_option" value="Yes" checked> Yes</label>
+                                    <label class="mr-2"><input type="radio" name="risk_status_q2_row_{{ $i }}"
+                                            class="q2_risk_option" value="No"> No</label>
+                                    <label><input type="radio" name="risk_status_q2_row_{{ $i }}" class="q2_risk_option"
+                                            value="Other"> Other</label>
+                                </div>
+                                <input type="text" name="risk_other_details_q2[]"
+                                    class="form-control form-control-sm q2_risk_other_input d-none"
+                                    placeholder="Please describe">
+                            </td>
+                            <td>
+                                @if($i == 2)
+                                <button id="addRowDatasq2" type="button" class="btn btn-primary btn-sm">Add Row</button>
+                                @endif
+                            </td>
                             </tr>
                             @endfor
                             @endif
                     </tbody>
                 </table>
-
-                <div class="text-left mb-3">
-                    <button id="addRowDatasq2" type="button" class="btn btn-primary btn-sm">
-                        <i class="fa fa-plus"></i> Add More Row
-                    </button>
-                </div>
             </div>
 
             <p class="text-right">
@@ -171,7 +210,6 @@ $q2_others_val = $question_2_data['others'] ?? '';
 
 <script type="text/javascript">
 $(document).ready(function() {
-    // রেডিও বাটন চেঞ্জ হ্যান্ডলার
     $(".twostatus").on("change", function() {
         var statusvalue = $("input[name='is_government_transparent_q2']:checked").val();
 
@@ -189,9 +227,27 @@ $(document).ready(function() {
         }
     });
 
-    // Add More Row লজিক
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    // Radio option Change event
+    $(document).on('change', '.q2_risk_option', function() {
+        let parentTd = $(this).closest('td');
+        let otherInput = parentTd.find('.q2_risk_other_input');
+
+        if ($(this).val() === 'Other') {
+            otherInput.removeClass('d-none').show();
+        } else {
+            otherInput.addClass('d-none').hide().val('');
+        }
+    });
+
+    // Add Row Event
     $(document).on('click', '#addRowDatasq2', function() {
-        let uniqueId = new Date().getTime();
+        // এখানে বর্তমানে কতগুলো row আছে তার হিসাব রেখে unique index তৈরি করা হচ্ছে
+        let rowIndex = $('#addRowQ2 tbody tr.qe2NoOfRow').length;
 
         let nationalityOptions = `<option value="" disabled selected>---Choose an item--</option>`;
         @foreach($Nationality_Lists as $key => $nationality)
@@ -204,49 +260,65 @@ $(document).ready(function() {
         @endforeach
 
         let html = `
-        <tr class="qe2NoOfRow" id="row_q2_${uniqueId}">
+        <tr class="qe2NoOfRow" id="row_q2_${rowIndex}">
             <td><select name="government_nationality_q2[]" class="form-control q2-select">${nationalityOptions}</select></td>
             <td><select name="government_sector_q2[]" class="form-control q2-select">${sectorOptions}</select></td>
             <td><input type="number" name="government_total_q2[]" class="form-control q2-total" value="0" min="0"></td>
+            <td>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <label class="mr-2"><input type="radio" name="risk_status_q2_row_${rowIndex}" class="q2_risk_option" value="Yes" checked> Yes</label>
+                    <label class="mr-2"><input type="radio" name="risk_status_q2_row_${rowIndex}" class="q2_risk_option" value="No"> No</label>
+                    <label><input type="radio" name="risk_status_q2_row_${rowIndex}" class="q2_risk_option" value="Other"> Other</label>
+                </div>
+                <input type="text" name="risk_other_details_q2[]" class="form-control form-control-sm q2_risk_other_input d-none" placeholder="Please describe">
+            </td>
             <td><button type="button" class="btn btn-danger btn-sm btn_remove_q2">-</button></td>
         </tr>`;
 
         $("#addRowQ2 tbody").append(html);
+
+        // Dynamic Row ডিলিট বা যোগ করার পর রেডিও বাটনের নামগুলো সিরিয়ালি re-index করা
+        reIndexQ2Rows();
     });
 
-    // ডায়নামিক রো রিমুভ লজিক
     $(document).on('click', '.btn_remove_q2', function() {
         $(this).closest('tr').remove();
+        reIndexQ2Rows(); // Remove করার পর Index রি-অ্যাডজাস্ট করা
     });
 
-    // AJAX Temp Save লজিক
+    // রেডিও বাটনের নেম ইনডেক্স সঠিক রাখার ফাংশন
+    function reIndexQ2Rows() {
+        $('#addRowQ2 tbody tr.qe2NoOfRow').each(function(index) {
+            $(this).find('.q2_risk_option').attr('name', 'risk_status_q2_row_' + index);
+        });
+    }
+
+    // Temp Save JS Code
     $(document).on("click", "#temp-save-question2", function() {
         let q2_rows_data = [];
 
-        $('#addRowQ2 tbody tr.qe2NoOfRow').each(function() {
+        $('#addRowQ2 tbody tr.qe2NoOfRow').each(function(i) {
             let nationality = $(this).find('.q2-select[name="government_nationality_q2[]"]')
                 .val();
             let sector = $(this).find('.q2-select[name="government_sector_q2[]"]').val();
             let total = $(this).find('.q2-total[name="government_total_q2[]"]').val();
 
-            if (nationality && sector && !isNaN(nationality) && !isNaN(sector)) {
+            // নির্দিষ্ট সারির সিলেক্টেড রেডিও বাটন ধরা
+            let risk_status = $(this).find('input[name="risk_status_q2_row_' + i + '"]:checked')
+                .val() || 'Yes';
+            let risk_other_details = $(this).find('.q2_risk_other_input').val();
+
+            if (nationality && sector) {
                 q2_rows_data.push({
                     nationality: nationality,
                     sector: sector,
-                    total: total ? total : 0
+                    total: total ? total : 0,
+                    risk_status_q2: risk_status,
+                    risk_other_details_q2: risk_status === 'Other' ?
+                        risk_other_details : ''
                 });
             }
         });
-
-        if (q2_rows_data.length === 0) {
-            $('#addRowQ2 tbody tr.qe2NoOfRow').slice(0, 3).each(function() {
-                q2_rows_data.push({
-                    nationality: "",
-                    sector: "",
-                    total: 0
-                });
-            });
-        }
 
         let saveData = {
             q2_checked_value: $("input[name='is_government_transparent_q2']:checked").val(),
@@ -264,7 +336,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question2 .card-header h6').css('color', 'blue');
-                alert("Question 2 Saved Successfully!");
+                alert("Question 2 Temp Saved!");
             },
             error: function() {
                 alert("Something went wrong!");

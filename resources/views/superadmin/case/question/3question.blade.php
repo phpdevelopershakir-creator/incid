@@ -71,7 +71,7 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
             <!-- Table View -->
             <div id="3_question_view" class="{{ $q3_checked === '1' ? '' : 'visibility_q3' }}">
 
-                <!-- Table A: Categories -->
+                <!-- Table A: Categories with Row-Specific Dropdowns -->
                 <table class="table table-bordered text-center" id="q3_table_a">
                     <thead>
                         <tr class="bg-light">
@@ -84,36 +84,93 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                     </thead>
                     <tbody>
                         @php
+                        // ৪টি Row-এর জন্য আলাদা Purpose এবং Technology লিস্ট ম্যাপিং
                         $categories = [
-                        '1' => 'Fraudulent Recruitment',
-                        '2' => 'Means',
-                        '3' => 'Forms of Exploitation',
-                        '4' => 'Emerging Trends'
-                        ];
+                        '1' => [
+                        'name' => 'Fraudulent Recruitment',
+                        'purposes' => [
+                        '1' => 'Online scam',
+                        '2' => 'Fight in or support active conflict',
+                        '3' => 'Pornography',
+                        '4' => 'Sexual Exploitation',
+                        '5' => 'Economic Exploitation',
+                        '6' => 'Ransom'
+                        ],
+                        'technologies' => [
+                        '1' => 'Facebook',
+                        '2' => 'Tiktok',
+                        '3' => 'WhatsApp',
+                        '4' => 'Instagram',
+                        '5' => 'YouTube',
+                        '6' => 'Telegram',
+                        '7' => 'Other social media platform',
+                        '8' => 'Phone Apps',
+                        '9' => 'Online job portal',
+                        '10' => 'Websites',
+                        '11' => 'tele-marketting'
+                        ]
+                        ],
+                        '2' => [
+                        'name' => 'Means',
+                        'purposes' => [
+                        '7' => 'Force',
+                        '8' => 'Deceive',
+                        '9' => 'Coerce'
+                        ],
+                        'technologies' => [
+                        '12' => 'Online grooming',
+                        '13' => 'bar code tatatooing',
+                        '14' => 'location tracking apps & device',
+                        '15'=>'sextortion'
+                        ]
+                        ],
+                        '3' => [
+                        'name' => 'Forms of Exploitation',
+                        'purposes' => [
+                        '10' => 'Cyber scamming',
+                        '11' => 'Sexual exploitation',
+                        '12' => 'Online sexulal exploitation',
+                        '13' => 'Ransome extortion'
+                        ],
+                        'technologies' => [
+                        '16' => 'Facebook',
+                        '17' => 'Tiktok',
+                        '18' => 'WhatsApp',
+                        '19' => 'Instagram',
+                        '20' => 'YouTube',
+                        '21' => 'Telegram',
+                        '22' => 'Other social media platform',
+                        '23' => 'Phone Apps',
+                        '24' => 'Online job portal',
+                        '25' => 'Websites',
+                        '26' => 'tele-marketting',
+                        '27' => 'E-Comerce marketplace',
+                        '28' => 'Darkweb'
+                        ]
+                        ],
+                        '4' => [
+                        'name' => 'Emerging Trends',
+                        'purposes' => [
+                        '14' => 'Online scam',
+                        '15' => 'Fight in or support active conflict',
+                        '16' => 'Pornography',
+                        '17' => 'Sexual Exploitation',
+                        '18' => 'Economic Exploitation',
+                        '19' => 'Ransom'
 
-                        // Purpose List Array
-                        $purpose_list = [
-                        '1' => 'Recruitment & Communication',
-                        '2' => 'Advertising & Marketing',
-                        '3' => 'Financial Transactions',
-                        '4' => 'Control & Surveillance',
-                        '5' => 'Document Forgery / Logistics',
-                        '6' => 'Others'
-                        ];
+                        ],
+                        'technologies' => [
+                        '29' => 'Cryptocurremcy for transaction',
+                        '30' => 'Darkweb to conceal activities',
+                        '31' => 'Artificial Intelligence (AI)',
+                        '32' => 'Live streaming to exploit in cyber space'
 
-                        // Technology List Array
-                        $technology_list = [
-                        '1' => 'Social Media Platforms (Facebook, Instagram, etc.)',
-                        '2' => 'Messaging Apps (WhatsApp, Telegram, Signal)',
-                        '3' => 'Dark Web / Online Marketplaces',
-                        '4' => 'Mobile Banking / Cryptocurrency',
-                        '5' => 'GPS / Location Tracking / Surveillance',
-                        '6' => 'Job Portals / Fake Websites',
-                        '7' => 'Others'
+                        ]
+                        ]
                         ];
                         @endphp
 
-                        @foreach($categories as $catKey => $catName)
+                        @foreach($categories as $catKey => $catData)
                         @php
                         $purpose_selected = '';
                         $tech_selected = '';
@@ -138,12 +195,12 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                         <tr class="q3_row_a">
                             <td>
                                 <input type="hidden" name="category_q3[]" value="{{ $catKey }}">
-                                <p class="mb-0 font-weight-bold text-left">{{ $catName }}</p>
+                                <p class="mb-0 font-weight-bold text-left">{{ $catData['name'] }}</p>
                             </td>
                             <td>
                                 <select name="purpose_q3[]" class="form-control q3_purpose_select">
-                                    <option value="">Select Purpose</option>
-                                    @foreach($purpose_list as $pKey => $pName)
+                                    <option value="">Choose Purpose</option>
+                                    @foreach($catData['purposes'] as $pKey => $pName)
                                     <option value="{{ $pKey }}"
                                         {{ (string)$purpose_selected === (string)$pKey ? 'selected' : '' }}>
                                         {{ $pName }}
@@ -154,7 +211,7 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                             <td>
                                 <select name="technology_q3[]" class="form-control q3_tech_select">
                                     <option value="">Select Technology</option>
-                                    @foreach($technology_list as $tKey => $tName)
+                                    @foreach($catData['technologies'] as $tKey => $tName)
                                     <option value="{{ $tKey }}"
                                         {{ (string)$tech_selected === (string)$tKey ? 'selected' : '' }}>
                                         {{ $tName }}
@@ -191,7 +248,6 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                         technology-facilitated human trafficking?'
                         ];
 
-                        // Response List Array
                         $response_list = [
                         '1' => 'Cyber Crime Unit Investigation',
                         '2' => 'Public Awareness Campaigns',
@@ -345,7 +401,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question3 .card-header h6').css('color', 'blue');
-                    alert("Question 3 Temp Saved Successfully!");
+                    alert("Question 3 Temp Saved !");
                 } else {
                     alert("Not Saved");
                 }

@@ -27,7 +27,7 @@
     <div id="Question-15" class="collapse" role="tabpane15" aria-labelledby="heading-4" data-parent="#accordion-2">
         <div class="card-body">
 
-           
+
             <div class="q15-wrapper">
                 @foreach($case->fifteen as $fifteen)
                 <div class="q15-item-card p-3 mb-3">
@@ -53,19 +53,21 @@
                     <div class="mt-2 pt-2 border-top">
                         <strong class="text-secondary d-block mb-1">Document / Image:</strong>
                         @if(!empty($fifteen->document_upload_q15))
-                        <a href="{{ asset($fifteen->document_upload_q15) }}" target="_blank"
+                        <a href="{{ asset('uploads/' . $fifteen->document_upload_q15) }}" target="_blank"
                             class="btn btn-sm btn-outline-primary">
                             <i class="fa fa-eye"></i> View Document
                         </a>
                         @else
                         <span class="badge badge-secondary">Not Found</span>
                         @endif
+
                     </div>
+
                 </div>
                 @endforeach
             </div>
 
-            
+
 
         </div>
     </div>

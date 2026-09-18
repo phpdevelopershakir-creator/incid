@@ -442,42 +442,43 @@ if (!empty($bulkInsertData)) {
 
         //question2
 
-        if ($request->is_government_transparent_q2 != 0) {
+ if ($request->is_government_transparent_q2 != 0) {
     $government_nationality_q2 = $request->input('government_nationality_q2', []);
-    $government_sector_q2 = $request->input('government_sector_q2', []);
-    $government_total_q2 = $request->input('government_total_q2', []);
-    $case_id = $question->id;
+    $government_sector_q2      = $request->input('government_sector_q2', []);
+    $government_total_q2       = $request->input('government_total_q2', []);
+    $risk_other_details_q2     = $request->input('risk_other_details_q2', []);
+    $case_id                   = $question->id;
     
     $bulkInsertData = [];
-    $maxCount = max(
-        count($government_nationality_q2),
-        count($government_sector_q2),
-        count($government_total_q2)
-    );
+    $maxCount = count($government_nationality_q2);
 
     for ($i = 0; $i < $maxCount; $i++) {
         $nationality = $government_nationality_q2[$i] ?? null;
-        $sector = $government_sector_q2[$i] ?? null;
-        $total = $government_total_q2[$i] ?? null;
+        $sector      = $government_sector_q2[$i] ?? null;
+        $total       = $government_total_q2[$i] ?? 0;
+        $otherDetail = $risk_other_details_q2[$i] ?? null;
 
-        // সমাধান: শুধুমাত্র তখনই ডাটাবেজে ইনসার্ট হবে যদি ন্যাশনালিটি এবং সেক্টর দুটোই আইডি (সংখ্যা) হয়।
-        // এর ফলে অন্য যেকোনো কোশ্চেনের টেক্সট ডেটা (যেমন: Online Scam, Facebook ইত্যাদি) নিজে থেকেই ফিল্টার হয়ে বাদ পড়ে যাবে।
+        // সরাসরি ওই সারির রেডিও ইনপুট ক্যাচ করা
+        $riskStatus  = $request->input("risk_status_q2_row_{$i}", 'Yes');
+
         if (is_numeric($nationality) && is_numeric($sector)) {
             $bulkInsertData[] = [
-                'case_id' => $case_id,
+                'case_id'                   => $case_id,
                 'government_nationality_q2' => $nationality,
-                'government_sector_q2' => $sector,
-                'government_total_q2' => is_numeric($total) ? $total : 0, // টোটাল খালি বা নাল থাকলে ডিফল্ট ০ বসবে
+                'government_sector_q2'      => $sector,
+                'government_total_q2'       => is_numeric($total) ? $total : 0,
+                'risk_status_q2'            => $riskStatus,
+                'risk_other_details_q2'     => ($riskStatus === 'Other') ? $otherDetail : null,
+                'created_at'                => now(),
+                'updated_at'                => now(),
             ];
         }
     }
 
     if (!empty($bulkInsertData)) {
-        //return response()->json($bulkInsertData);
         Two::insert($bulkInsertData);
-    }
+    } 
 }
-
 
 //question3
         if ($request->is_technology_trafficking_applicable_q3 != 0) {

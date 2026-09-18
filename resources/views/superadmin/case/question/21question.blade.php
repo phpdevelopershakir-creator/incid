@@ -1,11 +1,26 @@
 @if (($questiontitles[20]->status ?? null) == 1)
 @php
-
 $question_21_data = session()->get('question21');
 
 $q21_checked = $question_21_data['q21_checked_value'] ?? "1"; // ডিফল্ট 'Yes'
 $q21_table_data = $question_21_data['q21_data'] ?? null;
 $q21_others_val = $question_21_data['others'] ?? '';
+
+// Service Names Dropdown List Array
+$service_options = [
+'Shelter',
+'Medical Care',
+'Counselling',
+'Legal Services',
+'Repatriation assistance',
+'Referral',
+'Information',
+'Re-integration support',
+'Financial assistance',
+'Livelihood training',
+'Operator- Service Providers',
+'Specialized for Trafficking'
+];
 @endphp
 
 <style>
@@ -55,10 +70,10 @@ $q21_others_val = $question_21_data['others'] ?? '';
             </div>
 
             <div id="twentyone_question_view" class="{{ ($q21_checked == '1') ? '' : 'visibility' }}">
-                <table class="table table-bordered text-center">
+                <table class="table table-bordered text-center align-middle">
                     <thead>
                         <tr>
-                            <th rowspan="2">Name of the Shelters</th>
+                            <th rowspan="2">Name of the Service</th>
                             <th rowspan="2">Operators</th>
                             <th colspan="3">Capacity</th>
                             <th rowspan="2">Specialized for Trafficking?</th>
@@ -73,12 +88,20 @@ $q21_others_val = $question_21_data['others'] ?? '';
                     </thead>
 
                     <tbody>
-                        @for($i=1; $i<=4; $i++) @php // সেশন অ্যারে থেকে নির্দিষ্ট ইনপুট ভ্যালু অ্যাসাইন করা
+                        @for($i=1; $i<=4; $i++) @php $selected_service=$q21_table_data['q21Name'.$i] ?? '' ;
                             $men_val=$q21_table_data['q21Men'.$i] ?? 0; $women_val=$q21_table_data['q21Women'.$i] ?? 0;
                             $row_total=(int)$men_val + (int)$women_val; @endphp <tr>
                             <td>
-                                <input type="text" name="name_q21[]" id="q21Name{{$i}}" class="form-control q21Input"
-                                    value="{{ $q21_table_data['q21Name'.$i] ?? '' }}">
+                                <!-- Dropdown Option Applied Here -->
+                                <select name="name_q21[]" id="q21Name{{$i}}" class="form-control q21Input">
+                                    <option value="" disabled {{ empty($selected_service) ? 'selected' : '' }}>--Select
+                                        Service--</option>
+                                    @foreach($service_options as $option)
+                                    <option value="{{ $option }}" {{ $selected_service == $option ? 'selected' : '' }}>
+                                        {{ $option }}
+                                    </option>
+                                    @endforeach
+                                </select>
                             </td>
                             <td>
                                 <input type="text" name="operator_q21[]" id="q21Operator{{$i}}"
@@ -117,6 +140,7 @@ $q21_others_val = $question_21_data['others'] ?? '';
                                 <td><input type="text" id="total_men_q21" class="form-control q21Input" readonly></td>
                                 <td><input type="text" id="total_women_q21" class="form-control q21Input" readonly></td>
                                 <td><input type="text" id="grand_total_q21" class="form-control q21Input" readonly></td>
+                                <td colspan="3"></td>
                             </tr>
                     </tbody>
                 </table>
@@ -152,7 +176,6 @@ function calculateQ21Totals() {
     $('#total_women_q21').val(totalWomen);
     $('#grand_total_q21').val(totalMen + totalWomen);
 }
-
 
 $(document).on('input', '.question21rowmen, .question21rowWomen', function() {
     let row = $(this).closest('tr');
@@ -218,7 +241,7 @@ $(document).on("click", "#temp-save-question21", function() {
         },
         success: function(response) {
             $('.question21 .card-header h6').css('color', 'blue');
-            alert("Question 21  Saved Temporarily ");
+            alert("Question 21 Temp Saved ");
         },
         error: function(err) {
             alert("Error saving data");

@@ -48,24 +48,64 @@ if (($questiontitles[2]->status ?? null) == 1) {
 
 
                             $purpose_list = [
-                            '1' => 'Recruitment & Communication',
-                            '2' => 'Advertising & Marketing',
-                            '3' => 'Financial Transactions',
-                            '4' => 'Control & Surveillance',
-                            '5' => 'Document Forgery / Logistics',
-                            '6' => 'Others'
+                            '1' => 'Online scam',
+                            '2' => 'Fight in or support active conflict',
+                            '3' => 'Pornography',
+                            '4' => 'Sexual Exploitation',
+                            '5' => 'Economic Exploitation',
+                            '6' => 'Ransom',
+                            '7' => 'Force',
+                            '8' => 'Deceive',
+                            '9' => 'Coerce',
+                            '10' => 'Cyber scamming',
+                            '11' => 'Sexual exploitation',
+                            '12' => 'Online sexulal exploitation',
+                            '13' => 'Ransome extortion',
+                            '14' => 'Online scam',
+                            '15' => 'Fight in or support active conflict',
+                            '16' => 'Pornography',
+                            '17' => 'Sexual Exploitation',
+                            '18' => 'Economic Exploitation',
+                            '19' => 'Ransom'
                             ];
 
 
 
                             $technology_list = [
-                            '1' => 'Social Media Platforms (Facebook, Instagram, etc.)',
-                            '2' => 'Messaging Apps (WhatsApp, Telegram, Signal)',
-                            '3' => 'Dark Web / Online Marketplaces',
-                            '4' => 'Mobile Banking / Cryptocurrency',
-                            '5' => 'GPS / Location Tracking / Surveillance',
-                            '6' => 'Job Portals / Fake Websites',
-                            '7' => 'Others'
+                            '1' => 'Facebook',
+                            '2' => 'Tiktok',
+                            '3' => 'WhatsApp',
+                            '4' => 'Instagram',
+                            '5' => 'YouTube',
+                            '6' => 'Telegram',
+                            '7' => 'Other social media platform',
+                            '8' => 'Phone Apps',
+                            '9' => 'Online job portal',
+                            '10' => 'Websites',
+                            '11' => 'tele-marketting',
+                            '12' => 'Online grooming',
+                            '13' => 'bar code tatatooing',
+                            '14' => 'location tracking apps & device',
+                            '15' => 'sextortion',
+                            '16' => 'Facebook',
+                            '17' => 'Tiktok',
+                            '18' => 'WhatsApp',
+                            '19' => 'Instagram',
+                            '20' => 'YouTube',
+                            '21' => 'Telegram',
+                            '22' => 'Other social media platform',
+                            '23' => 'Phone Apps',
+                            '24' => 'Online job portal',
+                            '25' => 'Websites',
+                            '26' => 'tele-marketting',
+                            '27' => 'E-Comerce marketplace',
+                            '28' => 'Darkweb',
+                            '29' => 'Cryptocurremcy for transaction',
+                            '30' => 'Darkweb to conceal activities',
+                            '31' => 'Artificial Intelligence (AI)',
+                            '32' => 'Live streaming to exploit in cyber space'
+
+
                             ];
                             @endphp
                             <td>{{ $purpose_list[$three->category_q3] ?? $three->category_q3 ?? 'N/A' }}</td>

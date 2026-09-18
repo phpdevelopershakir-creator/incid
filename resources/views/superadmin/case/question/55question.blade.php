@@ -61,8 +61,8 @@ if (($questiontitles[54]->status ?? null) == 1) {
                     <thead>
                         <tr>
                             <th rowspan="2" style="vertical-align: middle;">Country where posted</th>
-                            <th rowspan="2" style="vertical-align: middle;">Description</th>
-                            <th colspan="4">Number of Cases</th>
+                            <th rowspan="2" style="vertical-align: middle;">Type of Training</th>
+                            <th colspan="4"> Training Coverage</th>
                             <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
@@ -282,7 +282,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question55 .card-title').css('color', 'blue');
-                alert("Question 55  Saved Temporarily");
+                alert("Question 55 Temp Saved");
             },
             error: function(err) {
                 alert("Error saving question 55 data");

@@ -18,10 +18,13 @@ if (($questiontitles[1]->status ?? null) == 1) {
                 <thead class="text-center align-middle">
                     <tr style="background:#E5E5E5;">
                         <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Nationality</th>
-                        <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Target gSector
+                        <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Sector
                         </th>
                         <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Number of Citizen
                             present in Bangladesh
+                        </th>
+                        <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Are they at high
+                            risk of forced labour
                         </th>
 
                     </tr>
@@ -72,6 +75,13 @@ if (($questiontitles[1]->status ?? null) == 1) {
                         <td class="text-center align-middle">
                             {{$two->government_total_q2}}
 
+                        </td>
+                        <td class="text-center align-middle">
+                            @if(strtolower($two->risk_status_q2) === 'Other')
+                            {{ $two->risk_other_details_q2 }}
+                            @else
+                            {{ $two->risk_status_q2 }}
+                            @endif
                         </td>
                     </tr>
                     @endforeach
