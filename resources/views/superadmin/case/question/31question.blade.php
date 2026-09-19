@@ -1,23 +1,19 @@
 <?php
 if (($questiontitles[30]->status ?? null) == 1) {
-   
     $question_31_data = session()->get('question31');
 
-    $q31_checked = $question_31_data['q31_checked_value'] ?? "1";
-    $q31_saved_rows = $question_31_data['q31_table_data'] ?? [];
-    $q31_others_val = $question_31_data['others'] ?? '';
+    $q31_checked =$question_31_data['q31_checked_value'] ?? "1";
+    $q31_saved_rows =$question_31_data['q31_table_data'] ?? [];
+    $q31_others_val =$question_31_data['others'] ?? '';
 
-    $country_Lists = [
-        1 => "India", 2 => "Nepal", 3 => "Sri lanka", 4 => "EU",
-        5 => "USA", 6 => "Saudi Arabia", 7 => "Qatar", 8 => "Lebanon",
-        9 => "Irag", 10 => "UAE", 11 => "Thailand", 12 => "Vietnam",
-        13 => "Cambodia", 14 => "South Africa", 15 => "Brazil", 16 => "UK"
-    ];
+    // Fetch countries directly from DB
+    $countries = DB::table('countries')->pluck('name', 'id')->toArray();
 
     $status_Lists = [
         1 => "Excess", 2 => "Adequate", 3 => "Inadequate", 4 => "None"
     ];
 ?>
+
 <style>
 .visibility {
     display: none !important;
@@ -63,6 +59,7 @@ if (($questiontitles[30]->status ?? null) == 1) {
                 </span>
             </div>
 
+
             <div id="31_question_view" class="{{ ($q31_checked == '0' || $q31_checked == '2') ? 'visibility' : '' }}">
                 <table id="addRowQ31" class="table table-bordered text-center">
                     <thead>
@@ -83,25 +80,20 @@ if (($questiontitles[30]->status ?? null) == 1) {
                     </thead>
                     <tbody>
                         <?php 
-              
-              $max_rows = max(4, count($q31_saved_rows));
-              
-              for ($index = 0; $index < $max_rows; $index++) {
-                  $row = $q31_saved_rows[$index] ?? null;
-                  
-                  $country_val = $row['country'] ?? '';
-                  $status_val = $row['status'] ?? '';
+                        $max_rows = max(4, count($q31_saved_rows));
+                        
+                        for ($index = 0; $index <$max_rows; $index++) {$row = $q31_saved_rows[$index] ?? null;
+                            
+                            $country_val =$row['country'] ?? '';
+                            $status_val =$row['status'] ?? '';
 
-                  
-                  if (is_numeric($country_val) && isset($country_Lists[$country_val])) {
-                      $country_val = $country_Lists[$country_val];
-                  }
-                  if (is_numeric($status_val) && isset($status_Lists[$status_val])) {
-                      $status_val = $status_Lists[$status_val];
-                  }
+                            if (is_numeric($country_val) && isset($countries[$country_val])) {$country_val = $countries[$country_val];
+                            }
+                            if (is_numeric($status_val) && isset($status_Lists[$status_val])) {$status_val = $status_Lists[$status_val];
+                            }
 
-                  $is_custom_input = ($index >= 3);
-                ?>
+                            $is_custom_input = ($index >= 3);
+                        ?>
                         <tr class="qe31NoOfRow" id="row_q31_<?= $index ?>">
                             <td>
                                 <?php if($is_custom_input) { ?>
@@ -109,11 +101,13 @@ if (($questiontitles[30]->status ?? null) == 1) {
                                     class="form-control q31_country_input" placeholder="Others (Specify)___">
                                 <?php } else { ?>
                                 <select name="citizen_victims_abroad_name_q31[]" class="form-control q31_country_input">
-                                    <option value="" disabled <?= empty($country_val) ? 'selected' : '' ?>>---Choose an
+                                    <option value="" disabled <?= empty($country_val) ? 'selected' : '' ?>>---Choose
+                                        an
                                         item--</option>
-                                    <?php foreach ($country_Lists as $key => $country_name) { ?>
+                                    <?php foreach ($countries as $id =>$country_name) { ?>
                                     <option value="<?= $country_name ?>"
-                                        <?= $country_val == $country_name ? 'selected' : '' ?>><?= $country_name ?>
+                                        <?= $country_val ==$country_name ? 'selected' : '' ?>>
+                                        <?= $country_name ?>
                                     </option>
                                     <?php } ?>
                                 </select>
@@ -123,11 +117,13 @@ if (($questiontitles[30]->status ?? null) == 1) {
                             <td>
                                 <select name="citizen_victims_abroad_status_q31[]"
                                     class="form-control q31_status_input">
-                                    <option value="" disabled <?= empty($status_val) ? 'selected' : '' ?>>---Choose an
+                                    <option value="" disabled <?= empty($status_val) ? 'selected' : '' ?>>---Choose
+                                        an
                                         item--</option>
-                                    <?php foreach ($status_Lists as $key => $status_name) { ?>
+                                    <?php foreach ($status_Lists as $key =>$status_name) { ?>
                                     <option value="<?= $status_name ?>"
-                                        <?= $status_val == $status_name ? 'selected' : '' ?>><?= $status_name ?>
+                                        <?= $status_val ==$status_name ? 'selected' : '' ?>>
+                                        <?= $status_name ?>
                                     </option>
                                     <?php } ?>
                                 </select>
@@ -152,18 +148,12 @@ if (($questiontitles[30]->status ?? null) == 1) {
                                     value="<?= $row['total'] ?? 0 ?>" readonly></td>
                             <td>
                                 <?php 
-                      
-                      if ($index < 3) {
-                     
-                          echo '<span class="text-muted">-</span>';
-                      } elseif ($index == 3) {
-                         
-                          echo '<button id="addRowDatasq31" type="button" class="btn btn-sm btn-primary">+</button>';
-                      } else {
-                        
-                          echo '<button type="button" class="btn btn-sm btn-danger btn_remove_q31" data-id="'.$index.'">-</button>';
-                      }
-                      ?>
+                                if ($index < 3) {                                     echo '<span class="text-muted">-</span>';                                 } elseif ($index == 3) {
+                                    echo '<button id="addRowDatasq31" type="button" class="btn btn-sm btn-primary">+</button>';
+                                } else {
+                                    echo '<button type="button" class="btn btn-sm btn-danger btn_remove_q31">-</button>';
+                                }
+                                ?>
                             </td>
                         </tr>
                         <?php } ?>
@@ -182,7 +172,6 @@ if (($questiontitles[30]->status ?? null) == 1) {
 <script type="text/javascript">
 $(document).ready(function() {
 
-
     $(".thirtyonestatus").on("change", function() {
         var statusvalue = $("input[name='is_citizen_victims_abroad_q31']:checked").val();
 
@@ -200,19 +189,14 @@ $(document).ready(function() {
         }
     });
 
-
-    let dynamicRowCount = $('.qe31NoOfRow').length + 600;
     $(document).on("click", "#addRowDatasq31", function() {
-        dynamicRowCount++;
-
         let statusOptions = `<option value="" disabled selected>---Choose an item--</option>`;
-        <?php foreach ($status_Lists as $key => $status_name) { ?>
+        <?php foreach ($status_Lists as $key =>$status_name) { ?>
         statusOptions += `<option value="<?= $status_name ?>"><?= $status_name ?></option>`;
         <?php } ?>
 
-
         $("#addRowQ31 tbody").append(
-            `<tr class="qe31NoOfRow" id="row_q31_${dynamicRowCount}">
+            `<tr class="qe31NoOfRow">
             <td>
               <input type="text" name="citizen_victims_abroad_name_q31[]" class="form-control q31_country_input" placeholder="Others (Specify)___">
             </td>
@@ -228,18 +212,15 @@ $(document).ready(function() {
             <td><input type="number" name="citizen_victims_abroad_girl_q31[]" class="form-control citizen_victims_abroad_girl_q31" value="0" min="0"></td>
             <td><input type="number" name="citizen_victims_abroad_total_q31[]" class="form-control citizen_victims_abroad_total_q31" value="0" readonly></td>
             <td>
-               <button type="button" class="btn btn-sm btn-danger btn_remove_q31" data-id="${dynamicRowCount}">-</button>
+               <button type="button" class="btn btn-sm btn-danger btn_remove_q31">-</button>
             </td>
           </tr>`
         );
     });
 
-
     $(document).on('click', '.btn_remove_q31', function() {
-        let button_id = $(this).data('id');
-        $('#row_q31_' + button_id).remove();
+        $(this).closest('tr').remove();
     });
-
 
     $(document).on('input',
         '.citizen_victims_abroad_men_q31, .citizen_victims_abroad_women_q31, .citizen_victims_abroad_tg_q31, .citizen_victims_abroad_boy_q31, .citizen_victims_abroad_girl_q31',
@@ -253,7 +234,6 @@ $(document).ready(function() {
 
             row.find('.citizen_victims_abroad_total_q31').val(men + women + tg + boy + girl);
         });
-
 
     $(document).on("click", '#temp-save-question31', function() {
         let yes_no_value = $("input[name='is_citizen_victims_abroad_q31']:checked").val();
@@ -273,7 +253,6 @@ $(document).ready(function() {
             let boy = $(this).find('.citizen_victims_abroad_boy_q31').val() || 0;
             let girl = $(this).find('.citizen_victims_abroad_girl_q31').val() || 0;
             let total = $(this).find('.citizen_victims_abroad_total_q31').val() || 0;
-
 
             if (country !== '' || status !== '') {
                 formData.append(`question31[q31_table_data][${index}][country]`, country);
@@ -295,7 +274,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question31 .card-title').css('color', 'blue');
-                alert("Question 31  Saved Temporarily ");
+                alert("Question 31 Temp Saved ");
             },
             error: function(err) {
                 alert("Error saving question 31 data");
@@ -306,4 +285,4 @@ $(document).ready(function() {
 
 });
 </script>
-<?php }  ?>
+<?php } ?>

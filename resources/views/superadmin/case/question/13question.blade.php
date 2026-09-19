@@ -67,7 +67,7 @@ $extraditions_data = $question_13_data['extraditions'] ?? ($question_13_data['th
                     <h4>A. new investigations</h4>
                     <thead>
                         <tr>
-                            <th>Country/Region/International Law Enforcement Organization</th>
+                            <th>New bilateral, multilateral or regional tool/partnership with NGOs</th>
                             <th>Sex Trafficking</th>
                             <th>Labour Trafficking</th>
                             <th>Other/Unspecific Trafficking</th>
@@ -108,7 +108,7 @@ $extraditions_data = $question_13_data['extraditions'] ?? ($question_13_data['th
                     <h4>B. new prosecutions</h4>
                     <thead>
                         <tr>
-                            <th>Country/Region/International Law Enforcement Organization</th>
+                            <th>New bilateral, multilateral or regional tool/partnership with NGOs</th>
                             <th>Sex Trafficking</th>
                             <th>Labour Trafficking</th>
                             <th>Other/Unspecific Trafficking</th>
@@ -149,7 +149,7 @@ $extraditions_data = $question_13_data['extraditions'] ?? ($question_13_data['th
                     <h4>C. New repatriations</h4>
                     <thead>
                         <tr>
-                            <th>Country/Region/International Law Enforcement Organization</th>
+                            <th>New bilateral, multilateral or regional tool/partnership with NGOs</th>
                             <th>Sex Trafficking</th>
                             <th>Labour Trafficking</th>
                             <th>Other/Unspecific Trafficking</th>
@@ -190,7 +190,7 @@ $extraditions_data = $question_13_data['extraditions'] ?? ($question_13_data['th
                     <h4>D. New extraditions</h4>
                     <thead>
                         <tr>
-                            <th>Country/Region/International Law Enforcement Organization</th>
+                            <th>New bilateral, multilateral or regional tool/partnership with NGOs</th>
                             <th>Sex Trafficking</th>
                             <th>Labour Trafficking</th>
                             <th>Other/Unspecific Trafficking</th>

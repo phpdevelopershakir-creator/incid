@@ -343,7 +343,7 @@ class CaseController extends Controller
         $yes_no->title_victim_protection_q38  = $request->title_victim_protection_q38;
         
         $yes_no->created_by = Auth()->user()->id;
-       //return response()->json($yes_no);
+       return response()->json($yes_no);
         $yes_no->save();
 
 
@@ -2659,7 +2659,7 @@ if (!empty($bulkInsertData)) {
             }
 
             if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
+                 response()->json($bulkInsertData);
                 FortyNine::insert($bulkInsertData);
             }
         }
