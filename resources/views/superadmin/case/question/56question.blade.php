@@ -3,6 +3,75 @@
 $question_56_data = session()->get('question56');
 $q56_checked = isset($question_56_data['q56_checked_value']) ? (string)$question_56_data['q56_checked_value'] : null;
 $q56_data = $question_56_data['q56_data'] ?? null;
+$countries = [
+"AF" => "Afghanistan", "AX" => "Åland Islands", "AL" => "Albania", "DZ" => "Algeria",
+"AS" => "American Samoa", "AD" => "Andorra", "AO" => "Angola", "AI" => "Anguilla",
+"AQ" => "Antarctica", "AG" => "Antigua and Barbuda", "AR" => "Argentina", "AM" => "Armenia",
+"AW" => "Aruba", "AU" => "Australia", "AT" => "Austria", "AZ" => "Azerbaijan",
+"BS" => "Bahamas", "BH" => "Bahrain", "BD" => "Bangladesh", "BB" => "Barbados",
+"BY" => "Belarus", "BE" => "Belgium", "BZ" => "Belize", "BJ" => "Benin",
+"BM" => "Bermuda", "BT" => "Bhutan", "BO" => "Bolivia, Plurinational State of",
+"BQ" => "Bonaire, Sint Eustatius and Saba", "BA" => "Bosnia and Herzegovina", "BW" => "Botswana",
+"BV" => "Bouvet Island", "BR" => "Brazil", "IO" => "British Indian Ocean Territory",
+"BN" => "Brunei Darussalam", "BG" => "Bulgaria", "BF" => "Burkina Faso", "BI" => "Burundi",
+"KH" => "Cambodia", "CM" => "Cameroon", "CA" => "Canada", "CV" => "Cape Verde",
+"KY" => "Cayman Islands", "CF" => "Central African Republic", "TD" => "Chad", "CL" => "Chile",
+"CN" => "China", "CX" => "Christmas Island", "CC" => "Cocos (Keeling) Islands", "CO" => "Colombia",
+"KM" => "Comoros", "CG" => "Congo", "CD" => "Congo, the Democratic Republic of the",
+"CK" => "Cook Islands", "CR" => "Costa Rica", "CI" => "Côte d'Ivoire", "HR" => "Croatia",
+"CU" => "Cuba", "CW" => "Curaçao", "CY" => "Cyprus", "CZ" => "Czech Republic",
+"DK" => "Denmark", "DJ" => "Djibouti", "DM" => "Dominica", "DO" => "Dominican Republic",
+"EC" => "Ecuador", "EG" => "Egypt", "SV" => "El Salvador", "GQ" => "Equatorial Guinea",
+"ER" => "Eritrea", "EE" => "Estonia", "ET" => "Ethiopia", "FK" => "Falkland Islands (Malvinas)",
+"FO" => "Faroe Islands", "FJ" => "Fiji", "FI" => "Finland", "FR" => "France",
+"GF" => "French Guiana", "PF" => "French Polynesia", "TF" => "French Southern Territories",
+"GA" => "Gabon", "GM" => "Gambia", "GE" => "Georgia", "DE" => "Germany",
+"GH" => "Ghana", "GI" => "Gibraltar", "GR" => "Greece", "GL" => "Greenland",
+"GD" => "Grenada", "GP" => "Guadeloupe", "GU" => "Guam", "GT" => "Guatemala",
+"GG" => "Guernsey", "GN" => "Guinea", "GW" => "Guinea-Bissau", "GY" => "Guyana",
+"HT" => "Haiti", "HM" => "Heard Island and McDonald Islands", "VA" => "Holy See (Vatican City State)",
+"HN" => "Honduras", "HK" => "Hong Kong", "HU" => "Hungary", "IS" => "Iceland",
+"IN" => "India", "ID" => "Indonesia", "IR" => "Iran, Islamic Republic of", "IQ" => "Iraq",
+"IE" => "Ireland", "IM" => "Isle of Man", "IL" => "Israel", "IT" => "Italy",
+"JM" => "Jamaica", "JP" => "Japan", "JE" => "Jersey", "JO" => "Jordan",
+"KZ" => "Kazakhstan", "KE" => "Kenya", "KI" => "Kiribati", "KP" => "Korea, Democratic People's Republic of",
+"KR" => "Korea, Republic of", "KW" => "Kuwait", "KG" => "Kyrgyzstan", "LA" => "Lao People's Democratic Republic",
+"LV" => "Latvia", "LB" => "Lebanon", "LS" => "Lesotho", "LR" => "Liberia",
+"LY" => "Libya", "LI" => "Liechtenstein", "LT" => "Lithuania", "LU" => "Luxembourg",
+"MO" => "Macao", "MK" => "Macedonia, the former Yugoslav Republic of", "MG" => "Madagascar",
+"MW" => "Malawi", "MY" => "Malaysia", "MV" => "Maldives", "ML" => "Mali",
+"MT" => "Malta", "MH" => "Marshall Islands", "MQ" => "Martinique", "MR" => "Mauritania",
+"MU" => "Mauritius", "YT" => "Mayotte", "MX" => "Mexico", "FM" => "Micronesia, Federated States of",
+"MD" => "Moldova, Republic of", "MC" => "Monaco", "MN" => "Mongolia", "ME" => "Montenegro",
+"MS" => "Montserrat", "MA" => "Morocco", "MZ" => "Mozambique", "MM" => "Myanmar",
+"NA" => "Namibia", "NR" => "Nauru", "NP" => "Nepal", "NL" => "Netherlands",
+"NC" => "New Caledonia", "NZ" => "New Zealand", "NI" => "Nicaragua", "NE" => "Niger",
+"NG" => "Nigeria", "NU" => "Niue", "NF" => "Norfolk Island", "MP" => "Northern Mariana Islands",
+"NO" => "Norway", "OM" => "Oman", "PK" => "Pakistan", "PW" => "Palau",
+"PS" => "Palestinian Territory, Occupied", "PA" => "Panama", "PG" => "Papua New Guinea", "PY" => "Paraguay",
+"PE" => "Peru", "PH" => "Philippines", "PN" => "Pitcairn", "PL" => "Poland",
+"PT" => "Portugal", "PR" => "Puerto Rico", "QA" => "Qatar", "RE" => "Réunion",
+"RO" => "Romania", "RU" => "Russian Federation", "RW" => "Rwanda", "BL" => "Saint Barthélemy",
+"SH" => "Saint Helena, Ascension and Tristan da Cunha", "KN" => "Saint Kitts and Nevis",
+"LC" => "Saint Lucia", "MF" => "Saint Martin (French part)", "PM" => "Saint Pierre and Miquelon",
+"VC" => "Saint Vincent and the Grenadines", "WS" => "Samoa", "SM" => "San Marino",
+"ST" => "Sao Tome and Principe", "SA" => "Saudi Arabia", "SN" => "Senegal", "RS" => "Serbia",
+"SC" => "Seychelles", "SL" => "Sierra Leone", "SG" => "Singapore", "SX" => "Sint Maarten (Dutch part)",
+"SK" => "Slovakia", "SI" => "Slovenia", "SB" => "Solomon Islands", "SO" => "Somalia",
+"ZA" => "South Africa", "GS" => "South Georgia and the South Sandwich Islands", "SS" => "South Sudan",
+"ES" => "Spain", "LK" => "Sri Lanka", "SD" => "Sudan", "SR" => "Suriname",
+"SJ" => "Svalbard and Jan Mayen", "SZ" => "Swaziland", "SE" => "Sweden", "CH" => "Switzerland",
+"SY" => "Syrian Arab Republic", "TW" => "Taiwan, Province of China", "TJ" => "Tajikistan",
+"TZ" => "Tanzania, United Republic of", "TH" => "Thailand", "TL" => "Timor-Leste", "TG" => "Togo",
+"TK" => "Tokelau", "TO" => "Tonga", "TT" => "Trinidad and Tobago", "TN" => "Tunisia",
+"TR" => "Turkey", "TM" => "Turkmenistan", "TC" => "Turks and Caicos Islands", "TV" => "Tuvalu",
+"UG" => "Uganda", "UA" => "Ukraine", "AE" => "United Arab Emirates", "GB" => "United Kingdom",
+"US" => "United States", "UM" => "United States Minor Outlying Islands", "UY" => "Uruguay",
+"UZ" => "Uzbekistan", "VU" => "Vanuatu", "VE" => "Venezuela, Bolivarian Republic of", "VN" => "Viet Nam",
+"VG" => "Virgin Islands, British", "VI" => "Virgin Islands, U.S.", "WF" => "Wallis and Futuna",
+"EH" => "Western Sahara", "YE" => "Yemen", "ZM" => "Zambia", "ZW" => "Zimbabwe"
+];
+
 @endphp
 
 <div class="card question56">
@@ -23,22 +92,22 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                     government take to hold perpetrators accountable and prevent future incidents?
                 </label>
                 <textarea name="desctiption_instances_trafficking_q56" class="form-control q56-desc-input" rows="3"
-                    placeholder="Input Field">{{ $q56_data['peacekeeper_steps'] ?? '' }}</textarea>
+                    placeholder="Please describe">{{ $q56_data['peacekeeper_steps'] ?? '' }}</textarea>
             </div>
 
 
             <div class="form-group mb-2">
                 <input type="radio" id="radioYes56" class="fiftysixstatus" name="is_instances_trafficking_q56" value="1"
                     {{ (is_null($q56_checked) || $q56_checked === '1') ? 'checked' : '' }}>
-                <label for="radioYes56" class="mr-3 text-danger font-weight-bold">Yes</label>
+                <label for="radioYes56" class="mr-3  font-weight-bold">Yes</label>
 
                 <input type="radio" id="radioNo56" class="fiftysixstatus" name="is_instances_trafficking_q56" value="0"
                     {{ ($q56_checked === '0') ? 'checked' : '' }}>
-                <label for="radioNo56" class="mr-3 text-danger font-weight-bold">No</label>
+                <label for="radioNo56" class="mr-3  font-weight-bold">No</label>
 
                 <input type="radio" id="radioOthers56" class="fiftysixstatus" name="is_instances_trafficking_q56"
                     value="2" {{ ($q56_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers56" class="text-danger font-weight-bold">Others </label>
+                <label for="radioOthers56" class="font-weight-bold">Others </label>
             </div>
 
             <div id="others_q56" style="display: {{ ($q56_checked === '2') ? 'block' : 'none' }};">
@@ -48,7 +117,7 @@ $q56_data = $question_56_data['q56_data'] ?? null;
 
             <div id="yes_extra_q56"
                 style="display: {{ (is_null($q56_checked) || $q56_checked === '1') ? 'block' : 'none' }};">
-                <p class="font-weight-bold mt-3">If Yes</p>
+
 
                 <!-- ==================== TABLE 1: Trainees Table ==================== -->
                 <h6 class="font-weight-bold text-primary mb-2">1. Number of Trainees</h6>
@@ -78,62 +147,18 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                                 <tr>
                                 <td>
                                     <select name="instances_trafficking_country_q56[]" class="form-control q56-country">
-                                        <option value="">Country Selecte</option>
-                                        <option value="India"
-                                            {{ ($row['country'] ?? '') == 'India' ? 'selected' : '' }}>India
+                                        <option value="">Country Selected</option>
+                                        @foreach($countries as $code => $name)
+                                        <option value="{{ $name }}"
+                                            {{ ($row['country'] ?? '') == $name ? 'selected' : '' }}>
+                                            {{ $name }}
                                         </option>
-                                        <option value="Nepal"
-                                            {{ ($row['country'] ?? '') == 'Nepal' ? 'selected' : '' }}>
-                                            Nepal
-                                        </option>
-                                        <option value="Sri lanka"
-                                            {{ ($row['country'] ?? '') == 'Sri lanka' ? 'selected' : '' }}>Sri lanka
-                                        </option>
-                                        <option value="EU" {{ ($row['country'] ?? '') == 'EU' ? 'selected' : '' }}>EU
-                                        </option>
-                                        <option value="USA" {{ ($row['country'] ?? '') == 'USA' ? 'selected' : '' }}>USA
-                                        </option>
-                                        <option value="Saudi Arabia"
-                                            {{ ($row['country'] ?? '') == 'Saudi Arabia' ? 'selected' : '' }}>Saudi
-                                            Arabia
-                                        </option>
-                                        <option value="Qatar"
-                                            {{ ($row['country'] ?? '') == 'Qatar' ? 'selected' : '' }}>Qatar
-                                        </option>
-                                        <option value="Lebanon"
-                                            {{ ($row['country'] ?? '') == 'Lebanon' ? 'selected' : '' }}>
-                                            Lebanon
-                                        </option>
-                                        <option value="Irag" {{ ($row['country'] ?? '') == 'Irag' ? 'selected' : '' }}>
-                                            Irag
-                                        </option>
-                                        <option value="UAE" {{ ($row['country'] ?? '') == 'UAE' ? 'selected' : '' }}>UAE
-                                        </option>
-                                        <option value="Thailand"
-                                            {{ ($row['country'] ?? '') == 'Thailand' ? 'selected' : '' }}>Thailand
-                                        </option>
-                                        <option value="Vietnam"
-                                            {{ ($row['country'] ?? '') == 'Vietnam' ? 'selected' : '' }}>
-                                            Vietnam
-                                        </option>
-                                        <option value="Cambodia"
-                                            {{ ($row['country'] ?? '') == 'Cambodia' ? 'selected' : '' }}>Cambodia
-                                        </option>
-                                        <option value="South Africa"
-                                            {{ ($row['country'] ?? '') == 'South Africa' ? 'selected' : '' }}>South
-                                            Africa
-                                        </option>
-                                        <option value="Brazil"
-                                            {{ ($row['country'] ?? '') == 'Brazil' ? 'selected' : '' }}>Brazil
-                                        </option>
-                                        <option value="UK" {{ ($row['country'] ?? '') == 'UK' ? 'selected' : '' }}>
-                                            UK
-                                        </option>
+                                        @endforeach
                                     </select>
                                 </td>
                                 <td><input type="text" name="instances_trafficking_desc_q56[]"
                                         class="form-control q56-trainee-desc" value="{{ $row['description'] ?? '' }}"
-                                        placeholder="[Input Text Field]"></td>
+                                        placeholder="Please describe"></td>
                                 <td><input type="number" name="instances_trafficking_men_q56[]"
                                         class="form-control q56-trainee-men" value="{{ $row['men'] ?? '' }}" min="0">
                                 </td>
@@ -146,7 +171,7 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                                         class="form-control q56-trainee-total" value="{{ $row['total'] ?? '' }}"
                                         readonly></td>
                                 <td>
-                                    @if($i < 2) <span class="badge badge-secondary">Fixed</span>
+                                    @if($i < 2) <span class="badge badge-secondary"></span>
                                         @elseif($i == 2)
                                         <button type="button"
                                             class="btn btn-sm btn-primary add-trainee-row-q56">+</button>
@@ -164,7 +189,7 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                                 <td id="grand-trainee-men-q56">0</td>
                                 <td id="grand-trainee-women-q56">0</td>
                                 <td id="grand-trainee-tg-q56">0</td>
-                                <td id="grand-trainee-total-q56" class="text-danger">0</td>
+                                <td id="grand-trainee-total-q56">0</td>
                                 <td></td>
                             </tr>
                         </tfoot>
@@ -207,7 +232,7 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                             @for($i = 0; $i < $totalAccusedRows; $i++) @php $row=$accused_rows[$i] ?? null; @endphp <tr>
                                 <td><input type="text" name="instances_trafficking_ministry_q56b[]"
                                         class="form-control q56-ministry" value="{{ $row['ministry'] ?? '' }}"
-                                        placeholder="please description"></td>
+                                        placeholder="Please describe"></td>
                                 <td><input type="number" name="instances_trafficking_men_q56b[]"
                                         class="form-control q56-accused-men" value="{{ $row['men'] ?? '' }}" min="0">
                                 </td>
@@ -219,12 +244,10 @@ $q56_data = $question_56_data['q56_data'] ?? null;
                                         readonly></td>
                                 <td><input type="text" name="instances_trafficking_measures_q56b[]"
                                         class="form-control q56-measures" value="{{ $row['measures'] ?? '' }}"
-                                        placeholder="please description"></td>
+                                        placeholder="Please describe"></td>
                                 <td>
-                                    @if($i < 2) <span class="badge badge-secondary">Fixed</span>
-                                        @elseif($i == 2)
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary add-accused-row-q56">+</button>
+                                    @if($i < 2) @elseif($i==2) <button type="button"
+                                        class="btn btn-sm btn-primary add-accused-row-q56">+</button>
                                         @else
                                         <button type="button"
                                             class="btn btn-sm btn-danger remove-accused-row-q56">-</button>
@@ -315,28 +338,16 @@ $(document).ready(function() {
         let newRow = `
             <tr>
                 <td>
-                    <select name="instances_trafficking_country_q56[]" class="form-control q56-country">
-                        <option value="">Country Selecte</option>
-                        <option value="India">India </option>
-                        <option value="Nepal">Nepal </option>
-                        <option value="Sri lanka">Sri lanka </option>
-                        <option value="EU">EU </option>
-                        <option value="USA">USA </option>
-                        <option value="Saudi Arabia">Saudi Arabia </option>
-                        <option value="Qatar">Qatar </option>
-                        <option value="Lebanon">Lebanon </option>
-                        <option value="Irag">Irag </option>
-                        <option value="UAE">UAE </option>
-                        <option value="Thailand">Thailand </option>
-                        <option value="Vietnam">Vietnam </option>
-                        <option value="Cambodia">Cambodia </option>
-                        <option value="South Africa">South Africa </option>
-                        <option value="Brazil">Brazil </option>
-                        <option value="UK">UK </option>
-
-                    </select>
+                    <<select name="instances_trafficking_country_q56[]" class="form-control q56-country">
+                    <option value="">Country Selected</option>
+                    @foreach($countries as $code => $name)
+                        <option value="{{ $name }}" {{ ($row['country'] ?? '') == $name ? 'selected' : '' }}>
+                            {{ $name }}
+                        </option>
+                    @endforeach
+                </select>
                 </td>
-                <td><input type="text" name="instances_trafficking_desc_q56[]" class="form-control q56-trainee-desc" placeholder="please description"></td>
+                <td><input type="text" name="instances_trafficking_desc_q56[]" class="form-control q56-trainee-desc" placeholder="Please describe"></td>
                 <td><input type="number" name="instances_trafficking_men_q56[]" class="form-control q56-trainee-men" min="0"></td>
                 <td><input type="number" name="instances_trafficking_women_q56[]" class="form-control q56-trainee-women" min="0"></td>
                 <td><input type="number" name="instances_trafficking_tg_q56[]" class="form-control q56-trainee-tg" min="0"></td>
@@ -379,11 +390,11 @@ $(document).ready(function() {
     $(document).on('click', '.add-accused-row-q56', function() {
         let newRow = `
             <tr>
-                <td><input type="text" name="instances_trafficking_ministry_q56b[]" class="form-control q56-ministry" placeholder="please description"></td>
+                <td><input type="text" name="instances_trafficking_ministry_q56b[]" class="form-control q56-ministry" placeholder="Please describe"></td>
                 <td><input type="number" name="instances_trafficking_men_q56b[]" class="form-control q56-accused-men" min="0"></td>
                 <td><input type="number" name="instances_trafficking_women_q56b[]" class="form-control q56-accused-women" min="0"></td>
                 <td><input type="number" name="instances_trafficking_total_q56b[]" class="form-control q56-accused-total" readonly></td>
-                <td><input type="text" name="instances_trafficking_measures_q56b[]" class="form-control q56-measures" placeholder="please description"></td>
+                <td><input type="text" name="instances_trafficking_measures_q56b[]" class="form-control q56-measures" placeholder="Please describe"></td>
                 <td><button type="button" class="btn btn-sm btn-danger remove-accused-row-q56">-</button></td>
             </tr>`;
         $('#accused-table-q56 tbody').append(newRow);

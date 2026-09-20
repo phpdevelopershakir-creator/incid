@@ -22,11 +22,11 @@ $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
                 <tbody>
 
                     <tr>
-                        <td style="width: 45%; background-color: #ffff00;" class="font-weight-bold align-middle">
+                        <td style="width: 45%;  class=" font-weight-bold align-middle">
                             Which official, agency, and/or national coordinating body, if any, led government
                             anti-trafficking efforts?
                         </td>
-                        <td style="background-color: #ffff00;">
+                        <td>
                             <input type="text" name="official_title_q42" id="official_title_q42" class="form-control"
                                 placeholder="Enter official, agency or body name" value="{{ $official_title_q42 }}">
                         </td>
@@ -34,10 +34,10 @@ $official_desc_q42 = $question_42_data['official_desc_q42'] ?? '';
 
 
                     <tr>
-                        <td style="background-color: #ffff00;" class="font-weight-bold align-middle">
+                        <td class="font-weight-bold align-middle">
                             How was this body effective or ineffective, and what results did it produce?
                         </td>
-                        <td style="background-color: #ffff00;">
+                        <td>
                             <div class="form-group mb-2">
                                 <select id="official_type_q42" name="official_type_q42" class="form-control">
                                     <option value="">Choose an item...</option>

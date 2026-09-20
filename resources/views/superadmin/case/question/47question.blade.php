@@ -92,7 +92,7 @@ if (($questiontitles[46]->status ?? null) == 1) {
                   $title_text = $is_static ? ($static_titles[$row['title_val']] ?? '') : $row['title_val'];
                 ?>
                         <tr class="qe47NoOfRow" id="row_q47_<?= $rowIndex ?>">
-                            <td>
+                            <td class="text-left" style="text-align: left;">
                                 <?php if($is_static) { ?>
                                 <p class="mb-0"><b><?= $title_text ?></b></p>
                                 <input type="hidden" name="government_change_regulated_title_q47[]"
@@ -129,7 +129,7 @@ if (($questiontitles[46]->status ?? null) == 1) {
                 
                 foreach($static_titles as $key => $title) { ?>
                         <tr class="qe47NoOfRow">
-                            <td>
+                            <td class="text-left" style="text-align: left;">
                                 <p class="mb-0"><b><?= $title ?></b></p>
                                 <input type="hidden" name="government_change_regulated_title_q47[]" value="<?= $key ?>"
                                     class="q47_title_input">
