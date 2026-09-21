@@ -55,7 +55,7 @@ $districts = \DB::table('districs')->pluck('name', 'id')->toArray();
 
             <div id="yes_extra_q41"
                 style="display: {{ (is_null($q41_checked) || $q41_checked === '1') ? 'block' : 'none' }};">
-                <p class="font-weight-bold mt-3">If Yes</p>
+
 
                 <div class="table-responsive">
                     <table class="table table-bordered text-center align-middle" id="restitution-table-q41">
