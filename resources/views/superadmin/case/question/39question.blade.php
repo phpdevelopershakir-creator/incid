@@ -146,7 +146,7 @@ $district_Lists = [
 
 
             <div class="form-group mt-3">
-                <label class="font-weight-bold text-danger">Location not specified</label>
+                <label class="font-weight-bold">Location not specified</label>
                 <p class="mb-1">Please describe-</p>
                 <textarea name="victims_restitution_title_three_q39" class="form-control q39-location-not-specified"
                     rows="3"

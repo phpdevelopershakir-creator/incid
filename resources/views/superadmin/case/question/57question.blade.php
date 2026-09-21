@@ -38,15 +38,15 @@ $defaultValues = [
             <div class="form-group mb-2">
                 <input type="radio" id="radioYes57" class="fiftysevenstatus" name="is_considering_reported_q57"
                     value="1" {{ (is_null($q57_checked) || $q57_checked === '1') ? 'checked' : '' }}>
-                <label for="radioYes57" class="mr-3 text-danger font-weight-bold">Yes</label>
+                <label for="radioYes57" class="mr-3  font-weight-bold">Yes</label>
 
                 <input type="radio" id="radioNo57" class="fiftysevenstatus" name="is_considering_reported_q57" value="0"
                     {{ ($q57_checked === '0') ? 'checked' : '' }}>
-                <label for="radioNo57" class="mr-3 text-danger font-weight-bold">No</label>
+                <label for="radioNo57" class="mr-3  font-weight-bold">No</label>
 
                 <input type="radio" id="radioOthers57" class="fiftysevenstatus" name="is_considering_reported_q57"
                     value="2" {{ ($q57_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers57" class="text-danger font-weight-bold">Others </label>
+                <label for="radioOthers57" class="font-weight-bold">Others </label>
             </div>
 
             <div id="others_q57" style="display: {{ ($q57_checked === '2') ? 'block' : 'none' }};">
@@ -102,7 +102,7 @@ $defaultValues = [
                                     @endif
                                 </td>
                                 <td style="vertical-align: middle;">
-                                    @if($i < 2) <span class="badge badge-secondary">Fixed</span>
+                                    @if($i < 2) <span class="badge badge-secondary"></span>
                                         @elseif($i == 2)
                                         <button type="button" class="btn btn-sm btn-primary add-row-q57">+</button>
                                         @else
