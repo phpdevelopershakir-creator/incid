@@ -76,15 +76,15 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                     <thead>
                         <tr class="bg-light">
                             <th style="width: 20%;">Category</th>
-                            <th style="width: 25%;">Purpose</th>
-                            <th style="width: 25%;">Type of Technology Used by Traffickers</th>
-                            <th style="width: 30%;">Description (victims/process and nature of victimization/government
+                            <th style="width: 20%;">Purpose</th>
+                            <th style="width: 20%;">Type of Technology Used by Traffickers</th>
+                            <th style="width: 25%;">Description (victims/process and nature of victimization/government
                                 actions)</th>
+                            <th style="width: 15%;">Number of Trafficking Cases</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php
-                        // ৪টি Row-এর জন্য আলাদা Purpose এবং Technology লিস্ট ম্যাপিং
                         $categories = [
                         '1' => [
                         'name' => 'Fraudulent Recruitment',
@@ -121,7 +121,7 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                         '12' => 'Online grooming',
                         '13' => 'bar code tatatooing',
                         '14' => 'location tracking apps & device',
-                        '15'=>'sextortion'
+                        '15' => 'sextortion'
                         ]
                         ],
                         '3' => [
@@ -157,14 +157,12 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                         '17' => 'Sexual Exploitation',
                         '18' => 'Economic Exploitation',
                         '19' => 'Ransom'
-
                         ],
                         'technologies' => [
                         '29' => 'Cryptocurremcy for transaction',
                         '30' => 'Darkweb to conceal activities',
                         '31' => 'Artificial Intelligence (AI)',
                         '32' => 'Live streaming to exploit in cyber space'
-
                         ]
                         ]
                         ];
@@ -175,6 +173,7 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                         $purpose_selected = '';
                         $tech_selected = '';
                         $desc_selected = '';
+                        $cases_selected = '';
 
                         if(!empty($q3_rows_data_a)) {
                         foreach($q3_rows_data_a as $r) {
@@ -187,6 +186,8 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                         ($r['technology_q3'] ?? ''));
                         $desc_selected = is_object($r) ? ($r->description_q3 ?? '') : ($r['description'] ??
                         ($r['description_q3'] ?? ''));
+                        $cases_selected = is_object($r) ? ($r->cases_q3 ?? '') : ($r['cases'] ?? ($r['cases_q3'] ??
+                        ''));
                         break;
                         }
                         }
@@ -222,6 +223,10 @@ $q3_others_val = $question_3_data['other_technology_trafficking_applicable_q3']
                             <td>
                                 <input type="text" name="description_q3[]" class="form-control q3_desc_input"
                                     value="{{ $desc_selected }}" placeholder="Description">
+                            </td>
+                            <td>
+                                <input type="number" name="cases_q3[]" class="form-control q3_cases_input"
+                                    value="{{ $cases_selected }}" placeholder="Number of cases" min="0">
                             </td>
                         </tr>
                         @endforeach
