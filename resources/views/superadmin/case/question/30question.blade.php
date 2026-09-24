@@ -6,6 +6,9 @@ if (($questiontitles[29]->status ?? null) == 1) {
     $q30_checked = isset($question_30_data['q30_checked_value']) ? $question_30_data['q30_checked_value'] : ($question_30_data->q30_checked_value ?? "1");
     $q30_others_val = isset($question_30_data['others']) ? $question_30_data['others'] : ($question_30_data->others ?? "");
     $q30_main_rows = isset($question_30_data['q30_data']) ? $question_30_data['q30_data'] : ($question_30_data->q30_data ?? []);
+    
+    // JS Dynamic row-এর জন্য Country options ব্যাকএন্ডে রেন্ডার করা হলো
+    $country_options_html = view('superadmin.case.helper.country')->render();
 ?>
 <style>
 .visibility {
@@ -14,6 +17,10 @@ if (($questiontitles[29]->status ?? null) == 1) {
 
 .othersText {
     display: none;
+}
+
+.custom-other-input {
+    margin-top: 5px;
 }
 </style>
 
@@ -80,11 +87,11 @@ if (($questiontitles[29]->status ?? null) == 1) {
                 <table id="addRowq30" class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th rowspan="2">Protection Services</th>
-                            <th rowspan="2">Status of coverage</th>
+                            <th rowspan="2" style="width: 20%;">Protection Services</th>
+                            <th rowspan="2" style="width: 15%;">Status of coverage</th>
                             <th colspan="6">Current Coverage of Foreign VoTs </th>
-                            <th rowspan="2">Origin of VoT (multiple Response)</th>
-                            <th rowspan="2">Add row</th>
+                            <th rowspan="2" style="width: 18%;">Origin of VoT (multiple Response)</th>
+                            <th rowspan="2" style="width: 8%;">Action</th>
                         </tr>
                         <tr>
                             <th>Men</th>
@@ -97,7 +104,6 @@ if (($questiontitles[29]->status ?? null) == 1) {
                     </thead>
                     <tbody>
                         <?php 
-                        
                         if (!empty($q30_main_rows) && (is_array($q30_main_rows) || is_object($q30_main_rows))) {
                             $i = 0;
                             foreach($q30_main_rows as $q30) {
@@ -106,21 +112,27 @@ if (($questiontitles[29]->status ?? null) == 1) {
                                 if(!is_array($saved_locations)) { $saved_locations = []; }
                                 
                                 $service_val = $q30['citizen_victims_services_q30'] ?? '';
+                                $is_preset = is_numeric($service_val) && isset($protection_Lists[$service_val]);
                         ?>
-                        <tr class="qe24NoOfRow" id="row_old_<?= $i; ?>">
+                        <tr class="qe24NoOfRow" id="row_<?= $i; ?>">
                             <td>
-                                <?php if(is_numeric($service_val) && $service_val >= 1 && $service_val <= 15 && isset($protection_Lists[$service_val])) { ?>
-                                <select name="citizen_victims_services_q30[]" class="form-control q30Input">
-                                    <option value="" disabled>---Choose an item--</option>
+                                <select name="citizen_victims_services_select_q30[]"
+                                    class="form-control q30Input service-dropdown">
+                                    <option value="" disabled <?= empty($service_val) ? 'selected' : ''; ?>>---Choose an
+                                        item--</option>
                                     <?php foreach ($protection_Lists as $key => $training) { ?>
-                                    <option <?= $service_val == $key ? 'selected' : ''; ?> value="<?= $key ?>">
-                                        <?= $training ?></option>
+                                    <option <?= ($is_preset && $service_val == $key) ? 'selected' : ''; ?>
+                                        value="<?= $key ?>"><?= $training ?></option>
                                     <?php } ?>
+                                    <option value="other"
+                                        <?= (!$is_preset && !empty($service_val)) ? 'selected' : ''; ?>>Other (Specify)
+                                    </option>
                                 </select>
-                                <?php } else { ?>
-                                <input type="text" name="citizen_victims_services_q30[]" class="form-control"
-                                    value="<?= htmlspecialchars($service_val) ?>" placeholder="Other (Specify)___">
-                                <?php } ?>
+
+                                <input type="text" name="citizen_victims_services_other_q30[]"
+                                    class="form-control custom-other-input <?= (!$is_preset && !empty($service_val)) ? '' : 'd-none'; ?>"
+                                    value="<?= !$is_preset ? htmlspecialchars($service_val) : ''; ?>"
+                                    placeholder="Please specify">
                             </td>
                             <td>
                                 <select name="citizen_victims_quality_q30[]" class="form-control q30Input">
@@ -151,20 +163,16 @@ if (($questiontitles[29]->status ?? null) == 1) {
                                     class="form-control citizen_victims_total_q30" readonly
                                     value="<?= $q30['citizen_victims_total_q30'] ?? 0 ?>"></td>
                             <td>
-                                <select name="citizen_victims_country_q30[old_<?= $i ?>][]"
-                                    class="form-control multiSelect" multiple="multiple">
+                                <select name="citizen_victims_country_q30[<?= $i ?>][]" class="form-control multiSelect"
+                                    multiple="multiple">
                                     @include('superadmin.case.helper.country', ['selected_locations' =>
                                     $saved_locations])
                                 </select>
                             </td>
                             <td>
-                                <?php if ($i < 17) { ?>
-                                <!-- প্রথম ১৭টি রো-তে কোনো অ্যাকশন বাটন থাকবে না -->
-                                <?php } else if ($i == 17) { ?>
                                 <button type="button" class="btn btn-sm btn-primary addRowDatasq30">+</button>
-                                <?php } else { ?>
-                                <button type="button" id="old_<?= $i; ?>"
-                                    class="btn btn-danger btn-sm btn_remove cicle">-</button>
+                                <?php if($i > 0) { ?>
+                                <button type="button" class="btn btn-danger btn-sm btn_remove">-</button>
                                 <?php } ?>
                             </td>
                         </tr>
@@ -172,16 +180,19 @@ if (($questiontitles[29]->status ?? null) == 1) {
                                 $i++;
                             }
                         } else { 
-                        
-                            
-                            
-                            foreach ($protection_Lists as $key => $training) {
                         ?>
-                        <tr class="qe24NoOfRow" id="row_fixed_<?= $key ?>">
+                        <tr class="qe24NoOfRow" id="row_0">
                             <td>
-                                <select name="citizen_victims_services_q30[]" class="form-control q30Input">
-                                    <option value="<?= $key ?>" selected><?= $training ?></option>
+                                <select name="citizen_victims_services_select_q30[]"
+                                    class="form-control q30Input service-dropdown">
+                                    <option value="" disabled selected>---Choose an item--</option>
+                                    <?php foreach ($protection_Lists as $key => $training) { ?>
+                                    <option value="<?= $key ?>"><?= $training ?></option>
+                                    <?php } ?>
+                                    <option value="other">Other (Specify)</option>
                                 </select>
+                                <input type="text" name="citizen_victims_services_other_q30[]"
+                                    class="form-control custom-other-input d-none" placeholder="Please specify">
                             </td>
                             <td>
                                 <select name="citizen_victims_quality_q30[]" class="form-control q30Input">
@@ -204,85 +215,8 @@ if (($questiontitles[29]->status ?? null) == 1) {
                             <td><input type="text" name="citizen_victims_total_q30[]"
                                     class="form-control citizen_victims_total_q30" value="0" readonly></td>
                             <td>
-                                <select name="citizen_victims_country_q30[fixed_<?= $key ?>][]"
-                                    class="form-control multiSelect" multiple="multiple">
-                                    @include('superadmin.case.helper.country')
-                                </select>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <?php 
-                            } 
-                            
-                           
-                            for ($idx = 1; $idx <= 2; $idx++) {
-                        ?>
-                        <tr class="qe24NoOfRow" id="row_other_fixed_<?= $idx ?>">
-                            <td>
-                                <input type="text" name="citizen_victims_services_q30[]" class="form-control"
-                                    placeholder="Other (Specify)___">
-                            </td>
-                            <td>
-                                <select name="citizen_victims_quality_q30[]" class="form-control q30Input">
-                                    <option value="" disabled selected>---Choose an item--</option>
-                                    <?php foreach ($protection_qualites as $qKey => $quality) { ?>
-                                    <option value="<?= $qKey ?>"><?= $quality ?></option>
-                                    <?php } ?>
-                                </select>
-                            </td>
-                            <td><input type="number" name="citizen_victims_men_q30[]"
-                                    class="form-control citizen_victims_men_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_women_q30[]"
-                                    class="form-control citizen_victims_women_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_tg_q30[]"
-                                    class="form-control citizen_victims_tg_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_boy_q30[]"
-                                    class="form-control citizen_victims_boy_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_girl_q30[]"
-                                    class="form-control citizen_victims_girl_q30" value="0" min="0"></td>
-                            <td><input type="text" name="citizen_victims_total_q30[]"
-                                    class="form-control citizen_victims_total_q30" value="0" readonly></td>
-                            <td>
-                                <select name="citizen_victims_country_q30[other_fixed_<?= $idx ?>][]"
-                                    class="form-control multiSelect" multiple="multiple">
-                                    @include('superadmin.case.helper.country')
-                                </select>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <?php 
-                            } 
-                            
-                            
-                        ?>
-                        <tr class="qe24NoOfRow" id="row_other_fixed_3">
-                            <td>
-                                <input type="text" name="citizen_victims_services_q30[]" class="form-control"
-                                    placeholder="Other (Specify)___">
-                            </td>
-                            <td>
-                                <select name="citizen_victims_quality_q30[]" class="form-control q30Input">
-                                    <option value="" disabled selected>---Choose an item--</option>
-                                    <?php foreach ($protection_qualites as $qKey => $quality) { ?>
-                                    <option value="<?= $qKey ?>"><?= $quality ?></option>
-                                    <?php } ?>
-                                </select>
-                            </td>
-                            <td><input type="number" name="citizen_victims_men_q30[]"
-                                    class="form-control citizen_victims_men_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_women_q30[]"
-                                    class="form-control citizen_victims_women_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_tg_q30[]"
-                                    class="form-control citizen_victims_tg_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_boy_q30[]"
-                                    class="form-control citizen_victims_boy_q30" value="0" min="0"></td>
-                            <td><input type="number" name="citizen_victims_girl_q30[]"
-                                    class="form-control citizen_victims_girl_q30" value="0" min="0"></td>
-                            <td><input type="text" name="citizen_victims_total_q30[]"
-                                    class="form-control citizen_victims_total_q30" value="0" readonly></td>
-                            <td>
-                                <select name="citizen_victims_country_q30[other_fixed_3][]"
-                                    class="form-control multiSelect" multiple="multiple">
+                                <select name="citizen_victims_country_q30[0][]" class="form-control multiSelect"
+                                    multiple="multiple">
                                     @include('superadmin.case.helper.country')
                                 </select>
                             </td>
@@ -303,6 +237,14 @@ if (($questiontitles[29]->status ?? null) == 1) {
 </div>
 
 <script type="text/javascript">
+var protectionListsObj = <?= json_encode($protection_Lists); ?>;
+var jsProtectionQualities = <?= json_encode($protection_qualites); ?>;
+var rawCountryOptions = <?= json_encode($country_options_html); ?>;
+var csrfToken = "<?= csrf_token(); ?>";
+</script>
+
+@verbatim
+<script type="text/javascript">
 $(document).ready(function() {
 
     $(".twentyfourstatus").on("click", function() {
@@ -320,10 +262,17 @@ $(document).ready(function() {
             $('.question30').find('.input-group span').addClass('othersText').hide();
         }
     });
-});
-</script>
 
-<script type="text/javascript">
+    $(document).on('change', '.service-dropdown', function() {
+        let $otherInput = $(this).siblings('.custom-other-input');
+        if ($(this).val() === 'other') {
+            $otherInput.removeClass('d-none').focus();
+        } else {
+            $otherInput.addClass('d-none').val('');
+        }
+    });
+});
+
 $(function() {
     function initializeSelect2() {
         if ($.fn.select2) {
@@ -340,16 +289,14 @@ $(function() {
 
     initializeSelect2();
 
-
     $(document).on('click', '.addRowDatasq30', function() {
         let uniqueId = new Date().getTime();
 
-        let jsProtectionQualities = {
-            1: "Excess",
-            2: "Adequate",
-            3: "Inadequate",
-            4: "None"
-        };
+        let serviceOptions = `<option value="" disabled selected>---Choose an item--</option>`;
+        $.each(protectionListsObj, function(key, value) {
+            serviceOptions += `<option value="${key}">${value}</option>`;
+        });
+        serviceOptions += `<option value="other">Other (Specify)</option>`;
 
         let qualityOptions = `<option value="" disabled selected>---Choose an item--</option>`;
         $.each(jsProtectionQualities, function(key, value) {
@@ -359,7 +306,10 @@ $(function() {
         let html = `
         <tr class="qe24NoOfRow" id="row_${uniqueId}">
             <td>
-                <input type="text" name="citizen_victims_services_q30[]" class="form-control" placeholder="Other (Specify)___">
+                <select name="citizen_victims_services_select_q30[]" class="form-control q30Input service-dropdown">
+                    ${serviceOptions}
+                </select>
+                <input type="text" name="citizen_victims_services_other_q30[]" class="form-control custom-other-input d-none" placeholder="Please specify">
             </td>
             <td>
                <select name="citizen_victims_quality_q30[]" class="form-control q30Input">
@@ -374,11 +324,12 @@ $(function() {
             <td><input type="text" name="citizen_victims_total_q30[]" class="form-control citizen_victims_total_q30" value="0" readonly></td>
             <td>
                 <select name="citizen_victims_country_q30[${uniqueId}][]" class="form-control multiSelect" multiple="multiple">
-                     @include('superadmin.case.helper.country')
+                     ${rawCountryOptions}
                 </select>
             </td>
             <td>
-                <button type="button" class="btn btn-danger btn-sm btn_remove cicle" id="${uniqueId}">-</button>
+                <button type="button" class="btn btn-sm btn-primary addRowDatasq30">+</button>
+                <button type="button" class="btn btn-danger btn-sm btn_remove">-</button>
             </td>
         </tr>`;
 
@@ -386,11 +337,13 @@ $(function() {
         initializeSelect2();
     });
 
-
     $(document).on('click', '.btn_remove', function() {
-        $(this).closest('tr').remove();
+        if ($('#addRowq30 tbody tr').length > 1) {
+            $(this).closest('tr').remove();
+        } else {
+            alert("At least one row is required.");
+        }
     });
-
 
     $(document).on('keyup change', '.qe24NoOfRow input[type="number"]', function() {
         let $row = $(this).closest('.qe24NoOfRow');
@@ -404,7 +357,6 @@ $(function() {
         $row.find('.citizen_victims_total_q30').val(total);
     });
 
-
     $(document).on('click', '#temp-save-question30', function(e) {
         e.preventDefault();
 
@@ -413,8 +365,11 @@ $(function() {
         let courtData = [];
 
         $('.qe24NoOfRow').each(function() {
-            let protection = $(this).find("select[name='citizen_victims_services_q30[]']")
-                .val() || $(this).find("input[name='citizen_victims_services_q30[]']").val();
+            let selectVal = $(this).find(".service-dropdown").val();
+            let otherTextVal = $(this).find(".custom-other-input").val();
+
+            let protection = (selectVal === 'other') ? otherTextVal : selectVal;
+
             let quality = $(this).find("select[name='citizen_victims_quality_q30[]']").val();
             let men = $(this).find(".citizen_victims_men_q30").val();
             let women = $(this).find(".citizen_victims_women_q30").val();
@@ -447,13 +402,13 @@ $(function() {
             url: "/superadmin/case/temp-save-question",
             type: "POST",
             data: {
-                "_token": "{{ csrf_token() }}",
+                "_token": csrfToken,
                 "question_no": "30",
                 "question30": new_data
             },
             success: function(response) {
                 $('.question30 .card-title').css('color', 'blue');
-                alert("Question 30  Saved Temporarily ");
+                alert("Question 30 Saved Temporarily");
             },
             error: function(xhr) {
                 alert("Error: Connection failed.");
@@ -462,6 +417,8 @@ $(function() {
     });
 });
 </script>
+@endverbatim
+
 <?php 
 } 
 ?>

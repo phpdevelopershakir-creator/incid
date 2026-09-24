@@ -88,7 +88,7 @@ $q2_others_val =$question_2_data['others'] ?? '';
                             <th>Sector</th>
                             <th>Number of Citizen present in Bangladesh</th>
                             <th>Are they at high risk of forced labour</th>
-                            <th>Action</th>
+                            <th>Add row</th>
                         </tr>
                     </thead>
                     <tbody>

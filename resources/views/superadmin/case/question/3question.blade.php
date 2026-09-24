@@ -406,7 +406,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question3 .card-header h6').css('color', 'blue');
-                    alert("Question 3 Temp Saved !");
+                    alert("Question 3 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

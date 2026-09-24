@@ -343,7 +343,7 @@ class CaseController extends Controller
         $yes_no->title_victim_protection_q38  = $request->title_victim_protection_q38;
         
         $yes_no->created_by = Auth()->user()->id;
-       return response()->json($yes_no);
+       //return response()->json($yes_no);
         $yes_no->save();
 
 
@@ -487,6 +487,7 @@ if (!empty($bulkInsertData)) {
             $purpose_q3 = $request->input('purpose_q3', []);
             $technology_q3 = $request->input('technology_q3', []);
             $description_q3 = $request->input('description_q3', []);
+            $cases_q3 = $request->input('cases_q3', []);
             $case_id = $question->id;
             $bulkInsertData = [];
             $maxCount = max(
@@ -494,6 +495,7 @@ if (!empty($bulkInsertData)) {
                 count($purpose_q3),
                 count($technology_q3),
                 count($description_q3),
+                count($cases_q3),
         
             );
             for ($i = 0; $i < $maxCount; $i++) {
@@ -503,6 +505,7 @@ if (!empty($bulkInsertData)) {
                     'purpose_q3' => $purpose_q3[$i] ?? null,
                     'technology_q3' => $technology_q3[$i] ?? null,
                     'description_q3' => $description_q3[$i] ?? null,
+                    'cases_q3' => $cases_q3[$i] ?? null,
 
                 ];
             }

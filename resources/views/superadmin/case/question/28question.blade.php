@@ -16,8 +16,14 @@ if (($questiontitles[27]->status ?? null) == 1) {
     $quality_options = ["Excellent", "As per Standard", "Below Standard"];
 ?>
 <style>
-.visibility { display: none !important; }
-.table-bordered th, .table-bordered td { vertical-align: middle !important; }
+.visibility {
+    display: none !important;
+}
+
+.table-bordered th,
+.table-bordered td {
+    vertical-align: middle !important;
+}
 </style>
 
 <div class="card question28">
@@ -34,16 +40,14 @@ if (($questiontitles[27]->status ?? null) == 1) {
 
             <!-- Radio Options -->
             <div class="icheck-primary">
-                <input type="radio" id="radioTwentyEight1" class="twentyeightstatus"
-                    name="is_child_care_facilities_q28" value="1"
-                    {{ (string)$q28_checked === "1" ? "checked" : "" }}>
+                <input type="radio" id="radioTwentyEight1" class="twentyeightstatus" name="is_child_care_facilities_q28"
+                    value="1" {{ (string)$q28_checked === "1" ? "checked" : "" }}>
                 <label for="radioTwentyEight1">Yes</label>
             </div>
 
             <div class="icheck-primary">
-                <input type="radio" id="radioTwentyEight2" class="twentyeightstatus"
-                    name="is_child_care_facilities_q28" value="0"
-                    {{ (string)$q28_checked === "0" ? "checked" : "" }}>
+                <input type="radio" id="radioTwentyEight2" class="twentyeightstatus" name="is_child_care_facilities_q28"
+                    value="0" {{ (string)$q28_checked === "0" ? "checked" : "" }}>
                 <label for="radioTwentyEight2">No</label>
             </div>
 
@@ -59,7 +63,7 @@ if (($questiontitles[27]->status ?? null) == 1) {
                                 <th colspan="3">Number of Children</th>
                                 <th colspan="3">Status of Coverage</th>
                                 <th rowspan="2">Quality of Care</th>
-                                <th rowspan="2" style="width: 50px;">Action</th>
+                                <th rowspan="2" style="width: 50px;">Add row</th>
                             </tr>
                             <tr>
                                 <th>Boy</th>
@@ -82,58 +86,89 @@ if (($questiontitles[27]->status ?? null) == 1) {
                                         foreach($facility_types as $f_key =>$f_name) { 
                                             $row_data =$block['districts'][$d_index]['facilities'][$f_key] ?? [];
                             ?>
-                                <tr class="q28_row_group block_<?= $b_index ?>" data-block="<?= $b_index ?>">
-                                    <?php if($f_key == 1) { ?>
-                                        <td rowspan="4" class="align-middle">
-                                            <select name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][district]" class="form-control q28_district">
-                                                <option value="" disabled selected>Choose an item.</option>
-                                                <?php foreach ($districts as $d_id =>$d_name) { ?>
-                                                    <option value="<?= $d_id ?>" <?= ($district_val == $d_id) ? 'selected' : '' ?>><?=$d_name ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </td>
-                                    <?php } ?>
-
-                                    <td>
-                                        <?php if($f_key > 2) { ?>
-                                            <input type="text" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][facility_type_other]" 
-                                                class="form-control" placeholder="Other (Specify)" value="<?= $row_data['facility_type_other'] ?? '' ?>">
-                                        <?php } else { ?>
-                                            <?= $f_name ?>
-                                            <input type="hidden" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][facility_type]" value="<?= $f_name ?>">
+                            <tr class="q28_row_group block_<?= $b_index ?>" data-block="<?= $b_index ?>">
+                                <?php if($f_key == 1) { ?>
+                                <td rowspan="4" class="align-middle">
+                                    <select name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][district]"
+                                        class="form-control q28_district">
+                                        <option value="" disabled selected>Choose an item.</option>
+                                        <?php foreach ($districts as $d_id =>$d_name) { ?>
+                                        <option value="<?= $d_id ?>" <?= ($district_val == $d_id) ? 'selected' : '' ?>>
+                                            <?=$d_name ?></option>
                                         <?php } ?>
-                                    </td>
-                                    <td><input type="number" min="0" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][num_facility]" class="form-control" value="<?= $row_data['num_facility'] ?? '' ?>"></td>
-                                    
-                                    <!-- Number of Children -->
-                                    <td><input type="number" min="0" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][children_boy]" class="form-control q28_boy" value="<?= $row_data['children_boy'] ?? '' ?>"></td>
-                                    <td><input type="number" min="0" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][children_girl]" class="form-control q28_girl" value="<?= $row_data['children_girl'] ?? '' ?>"></td>
-                                    <td><input type="number" readonly name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][children_total]" class="form-control q28_total" value="<?= $row_data['children_total'] ?? '' ?>"></td>
+                                    </select>
+                                </td>
+                                <?php } ?>
 
-                                    <!-- Status of Coverage -->
-                                    <td><input type="number" min="0" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][coverage_boy]" class="form-control q28_cov_boy" value="<?= $row_data['coverage_boy'] ?? '' ?>"></td>
-                                    <td><input type="number" min="0" name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][coverage_girl]" class="form-control q28_cov_girl" value="<?= $row_data['coverage_girl'] ?? '' ?>"></td>
-                                    <td><input type="number" readonly name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][coverage_total]" class="form-control q28_cov_total" value="<?= $row_data['coverage_total'] ?? '' ?>"></td>
-
-                                    <!-- Quality of Care -->
-                                    <td>
-                                        <select name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][quality]" class="form-control">
-                                            <option value="">Choose an item.</option>
-                                            <?php foreach($quality_options as$opt) { ?>
-                                                <option value="<?= $opt ?>" <?= (($row_data['quality'] ?? '') == $opt) ? 'selected' : '' ?>><?=$opt ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </td>
-
-                                    <?php if($d_index == 1 &&$f_key == 1) { ?>
-                                        <td rowspan="<?= $total_rows_span ?>" class="align-middle">
-                                            <?php if(!$is_fixed) { ?>
-                                                <button type="button" class="btn btn-sm btn-danger removeBlockQ28" data-block="block_<?= $b_index ?>">-</button>
-                                            <?php } ?>
-                                        </td>
+                                <td>
+                                    <?php if($f_key > 2) { ?>
+                                    <input type="text"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][facility_type_other]"
+                                        class="form-control" placeholder="Other (Specify)"
+                                        value="<?= $row_data['facility_type_other'] ?? '' ?>">
+                                    <?php } else { ?>
+                                    <?= $f_name ?>
+                                    <input type="hidden"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][facility_type]"
+                                        value="<?= $f_name ?>">
                                     <?php } ?>
-                                </tr>
-                                <?php 
+                                </td>
+                                <td><input type="number" min="0"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][num_facility]"
+                                        class="form-control" value="<?= $row_data['num_facility'] ?? '' ?>"></td>
+
+                                <!-- Number of Children -->
+                                <td><input type="number" min="0"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][children_boy]"
+                                        class="form-control q28_boy" value="<?= $row_data['children_boy'] ?? '' ?>">
+                                </td>
+                                <td><input type="number" min="0"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][children_girl]"
+                                        class="form-control q28_girl" value="<?= $row_data['children_girl'] ?? '' ?>">
+                                </td>
+                                <td><input type="number" readonly
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][children_total]"
+                                        class="form-control q28_total" value="<?= $row_data['children_total'] ?? '' ?>">
+                                </td>
+
+                                <!-- Status of Coverage -->
+                                <td><input type="number" min="0"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][coverage_boy]"
+                                        class="form-control q28_cov_boy" value="<?= $row_data['coverage_boy'] ?? '' ?>">
+                                </td>
+                                <td><input type="number" min="0"
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][coverage_girl]"
+                                        class="form-control q28_cov_girl"
+                                        value="<?= $row_data['coverage_girl'] ?? '' ?>"></td>
+                                <td><input type="number" readonly
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][coverage_total]"
+                                        class="form-control q28_cov_total"
+                                        value="<?= $row_data['coverage_total'] ?? '' ?>"></td>
+
+                                <!-- Quality of Care -->
+                                <td>
+                                    <select
+                                        name="q28_data[<?= $b_index ?>][districts][<?= $d_index ?>][facilities][<?= $f_key ?>][quality]"
+                                        class="form-control">
+                                        <option value="">Choose an item.</option>
+                                        <?php foreach($quality_options as$opt) { ?>
+                                        <option value="<?= $opt ?>"
+                                            <?= (($row_data['quality'] ?? '') == $opt) ? 'selected' : '' ?>><?=$opt ?>
+                                        </option>
+                                        <?php } ?>
+                                    </select>
+                                </td>
+
+                                <?php if($d_index == 1 &&$f_key == 1) { ?>
+                                <td rowspan="<?= $total_rows_span ?>" class="align-middle">
+                                    <?php if(!$is_fixed) { ?>
+                                    <button type="button" class="btn btn-sm btn-danger removeBlockQ28"
+                                        data-block="block_<?= $b_index ?>">-</button>
+                                    <?php } ?>
+                                </td>
+                                <?php } ?>
+                            </tr>
+                            <?php 
                                         }
                                     }
                                 }
@@ -141,51 +176,71 @@ if (($questiontitles[27]->status ?? null) == 1) {
                                 // Default Initial Fixed District Block (1 District = 4 Rows)
                                 foreach($facility_types as $f_key =>$f_name) {
                             ?>
-                                <tr class="q28_row_group block_0" data-block="0">
-                                    <?php if($f_key == 1) { ?>
-                                        <td rowspan="4" class="align-middle">
-                                            <select name="q28_data[0][districts][1][district]" class="form-control q28_district">
-                                                <option value="" disabled selected>Choose an item.</option>
-                                                <?php foreach ($districts as $d_id =>$d_name) { ?>
-                                                    <option value="<?= $d_id ?>"><?= $d_name ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </td>
-                                    <?php } ?>
-
-                                    <td>
-                                        <?php if($f_key > 2) { ?>
-                                            <input type="text" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][facility_type_other]" class="form-control" placeholder="Other (Specify)">
-                                        <?php } else { ?>
-                                            <?= $f_name ?>
-                                            <input type="hidden" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][facility_type]" value="<?= $f_name ?>">
+                            <tr class="q28_row_group block_0" data-block="0">
+                                <?php if($f_key == 1) { ?>
+                                <td rowspan="4" class="align-middle">
+                                    <select name="q28_data[0][districts][1][district]"
+                                        class="form-control q28_district">
+                                        <option value="" disabled selected>Choose an item.</option>
+                                        <?php foreach ($districts as $d_id =>$d_name) { ?>
+                                        <option value="<?= $d_id ?>"><?= $d_name ?></option>
                                         <?php } ?>
-                                    </td>
-                                    <td><input type="number" min="0" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][num_facility]" class="form-control"></td>
-                                    
-                                    <td><input type="number" min="0" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][children_boy]" class="form-control q28_boy"></td>
-                                    <td><input type="number" min="0" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][children_girl]" class="form-control q28_girl"></td>
-                                    <td><input type="number" readonly name="q28_data[0][districts][1][facilities][<?= $f_key ?>][children_total]" class="form-control q28_total"></td>
+                                    </select>
+                                </td>
+                                <?php } ?>
 
-                                    <td><input type="number" min="0" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][coverage_boy]" class="form-control q28_cov_boy"></td>
-                                    <td><input type="number" min="0" name="q28_data[0][districts][1][facilities][<?= $f_key ?>][coverage_girl]" class="form-control q28_cov_girl"></td>
-                                    <td><input type="number" readonly name="q28_data[0][districts][1][facilities][<?= $f_key ?>][coverage_total]" class="form-control q28_cov_total"></td>
-
-                                    <td>
-                                        <select name="q28_data[0][districts][1][facilities][<?= $f_key ?>][quality]" class="form-control">
-                                            <option value="">Choose an item.</option>
-                                            <?php foreach($quality_options as$opt) { ?>
-                                                <option value="<?= $opt ?>"><?= $opt ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </td>
-
-                                    <?php if($f_key == 1) { ?>
-                                        <td rowspan="4" class="align-middle">
-                                            <!-- Fixed initial block, no remove button -->
-                                        </td>
+                                <td>
+                                    <?php if($f_key > 2) { ?>
+                                    <input type="text"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][facility_type_other]"
+                                        class="form-control" placeholder="Other (Specify)">
+                                    <?php } else { ?>
+                                    <?= $f_name ?>
+                                    <input type="hidden"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][facility_type]"
+                                        value="<?= $f_name ?>">
                                     <?php } ?>
-                                </tr>
+                                </td>
+                                <td><input type="number" min="0"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][num_facility]"
+                                        class="form-control"></td>
+
+                                <td><input type="number" min="0"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][children_boy]"
+                                        class="form-control q28_boy"></td>
+                                <td><input type="number" min="0"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][children_girl]"
+                                        class="form-control q28_girl"></td>
+                                <td><input type="number" readonly
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][children_total]"
+                                        class="form-control q28_total"></td>
+
+                                <td><input type="number" min="0"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][coverage_boy]"
+                                        class="form-control q28_cov_boy"></td>
+                                <td><input type="number" min="0"
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][coverage_girl]"
+                                        class="form-control q28_cov_girl"></td>
+                                <td><input type="number" readonly
+                                        name="q28_data[0][districts][1][facilities][<?= $f_key ?>][coverage_total]"
+                                        class="form-control q28_cov_total"></td>
+
+                                <td>
+                                    <select name="q28_data[0][districts][1][facilities][<?= $f_key ?>][quality]"
+                                        class="form-control">
+                                        <option value="">Choose an item.</option>
+                                        <?php foreach($quality_options as$opt) { ?>
+                                        <option value="<?= $opt ?>"><?= $opt ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </td>
+
+                                <?php if($f_key == 1) { ?>
+                                <td rowspan="4" class="align-middle">
+                                    <!-- Fixed initial block, no remove button -->
+                                </td>
+                                <?php } ?>
+                            </tr>
                             <?php
                                 }
                             }
@@ -252,10 +307,11 @@ $(document).ready(function() {
     $(document).on('click', '#addBlockQ28', function() {
         let districtOptions = `<option value="" disabled selected>Choose an item.</option>`;
         <?php foreach ($districts as $d_id =>$d_name) { ?>
-            districtOptions += `<option value="<?= $d_id ?>"><?= addslashes($d_name) ?></option>`;
+        districtOptions += `<option value="<?= $d_id ?>"><?= addslashes($d_name) ?></option>`;
         <?php } ?>
 
-        let qualityOptions = `<option value="">Choose an item.</option><option value="Excellent">Excellent</option><option value="As per Standard">As per Standard</option><option value="Below Standard">Below Standard</option>`;
+        let qualityOptions =
+            `<option value="">Choose an item.</option><option value="Excellent">Excellent</option><option value="As per Standard">As per Standard</option><option value="Below Standard">Below Standard</option>`;
 
         let blockHtml = '';
 
@@ -320,7 +376,8 @@ $(document).ready(function() {
 
     // Dynamic Block Remove Functionality
     $(document).on('click', '.removeBlockQ28', function() {
-        let blockClass = $(this).attr('data-block');$('.' + blockClass).remove();
+        let blockClass = $(this).attr('data-block');
+        $('.' + blockClass).remove();
     });
 
     // Save AJAX Functionality

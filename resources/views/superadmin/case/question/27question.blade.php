@@ -80,10 +80,11 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                 <table class="table table-bordered text-center mb-4" id="table1_q27">
                     <thead>
                         <tr class="bg-light">
-                            <th style="width: 30%; vertical-align: middle;">Type of Spending on Victim Care</th>
-                            <th style="width: 23%;">Central Government/Ministry</th>
-                            <th style="width: 23%;">Local Government</th>
-                            <th style="width: 23%;">NGO/INGO</th>
+                            <th style="width: 34%; vertical-align: middle;">Type of Spending on Victim Care</th>
+                            <th style="width: 22%;">Amount of BD</th>
+                            <th style="width: 22%;">Central Government/Ministry</th>
+                            <th style="width: 22%;">Local Government</th>
+                            <th style="width: 22%;">NGO/INGO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,6 +93,11 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                             <td class="text-left font-weight-bold" style="vertical-align: middle;">
                                 {{ $title }}
                                 <input type="hidden" name="victim_care_q27[]" value="{{ $title }}">
+                            </td>
+
+                            <td>
+                                <input type="number" min="0" step="any" class="form-control bdt_number_only"
+                                    name="amount_in_bdt_q27[]" value="{{ $t1_data[$key]['amount_bdt'] ?? 0 }}">
                             </td>
 
                             <!-- Central Government -->
@@ -106,8 +112,9 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 </select>
                                 <div class="bdt_input_box"
                                     style="display: {{ $central_status == 'Yes' ? 'block' : 'none' }};">
-                                    <input type="number" class="form-control central_bdt"
-                                        placeholder="If Yes BDT Amount" name="central_government_title_q27[]"
+                                    <input type="number" min="0" step="any"
+                                        class="form-control central_bdt bdt_number_only" placeholder="If Yes BDT Amount"
+                                        name="central_government_title_q27[]"
                                         value="{{ $t1_data[$key]['central_bdt'] ?? '' }}">
                                 </div>
                             </td>
@@ -124,7 +131,8 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 </select>
                                 <div class="bdt_input_box"
                                     style="display: {{ $local_status == 'Yes' ? 'block' : 'none' }};">
-                                    <input type="number" class="form-control local_bdt" placeholder="If Yes BDT Amount"
+                                    <input type="number" min="0" step="any"
+                                        class="form-control local_bdt bdt_number_only" placeholder="If Yes BDT Amount"
                                         name="local_government_title_q27[]"
                                         value="{{ $t1_data[$key]['local_bdt'] ?? '' }}">
                                 </div>
@@ -141,8 +149,9 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 </select>
                                 <div class="bdt_input_box"
                                     style="display: {{ $ngo_status == 'Yes' ? 'block' : 'none' }};">
-                                    <input type="number" class="form-control ngo_bdt" placeholder="If Yes BDT Amount"
-                                        name="ngo_ingo_title_q27[]" value="{{ $t1_data[$key]['ngo_bdt'] ?? '' }}">
+                                    <input type="number" min="0" step="any" class="form-control ngo_bdt bdt_number_only"
+                                        placeholder="If Yes BDT Amount" name="ngo_ingo_title_q27[]"
+                                        value="{{ $t1_data[$key]['ngo_bdt'] ?? '' }}">
                                 </div>
                             </td>
                         </tr>
@@ -155,10 +164,11 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                 <table class="table table-bordered text-center" id="table2_q27">
                     <thead>
                         <tr class="bg-light">
-                            <th style="width: 30%; vertical-align: middle;">Total Protection related expenses</th>
-                            <th style="width: 23%;">Central Government/Ministry</th>
-                            <th style="width: 23%;">Local Government</th>
-                            <th style="width: 23%;">NGO/INGO</th>
+                            <th style="width: 34%; vertical-align: middle;">Total Protection related expenses</th>
+
+                            <th style="width: 22%;">Central Government/Ministry</th>
+                            <th style="width: 22%;">Local Government</th>
+                            <th style="width: 22%;">NGO/INGO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -168,6 +178,8 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 {{ $title }}
                                 <input type="hidden" name="victim_care_q27b[]" value="{{ $title }}">
                             </td>
+
+
 
                             <td>
                                 @php $central_status = $t2_data[$key]['central_status'] ?? ''; @endphp
@@ -180,8 +192,9 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 </select>
                                 <div class="bdt_input_box"
                                     style="display: {{ $central_status == 'Yes' ? 'block' : 'none' }};">
-                                    <input type="number" class="form-control central_bdt"
-                                        placeholder="If Yes BDT Amount" name="central_government_title_q27b[]"
+                                    <input type="number" min="0" step="any"
+                                        class="form-control central_bdt bdt_number_only" placeholder="If Yes BDT Amount"
+                                        name="central_government_title_q27b[]"
                                         value="{{ $t2_data[$key]['central_bdt'] ?? '' }}">
                                 </div>
                             </td>
@@ -197,7 +210,8 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 </select>
                                 <div class="bdt_input_box"
                                     style="display: {{ $local_status == 'Yes' ? 'block' : 'none' }};">
-                                    <input type="number" class="form-control local_bdt" placeholder="If Yes BDT Amount"
+                                    <input type="number" min="0" step="any"
+                                        class="form-control local_bdt bdt_number_only" placeholder="If Yes BDT Amount"
                                         name="local_government_title_q27b[]"
                                         value="{{ $t2_data[$key]['local_bdt'] ?? '' }}">
                                 </div>
@@ -213,8 +227,9 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                                 </select>
                                 <div class="bdt_input_box"
                                     style="display: {{ $ngo_status == 'Yes' ? 'block' : 'none' }};">
-                                    <input type="number" class="form-control ngo_bdt" placeholder="If Yes BDT Amount"
-                                        name="ngo_ingo_title_q27b[]" value="{{ $t2_data[$key]['ngo_bdt'] ?? '' }}">
+                                    <input type="number" min="0" step="any" class="form-control ngo_bdt bdt_number_only"
+                                        placeholder="If Yes BDT Amount" name="ngo_ingo_title_q27b[]"
+                                        value="{{ $t2_data[$key]['ngo_bdt'] ?? '' }}">
                                 </div>
                             </td>
                         </tr>
@@ -236,7 +251,7 @@ $t2_data = $question_27_data['table2_data'] ?? [];
 <script>
 $(document).ready(function() {
 
-    // পেজ লোড হওয়ার সময় সিলেক্টেড মান অনুযায়ী সেকশন অন/অফ নিশ্চিত করা
+    // ১. পেজ লোড হওয়ার পর সিলেক্টেড রেডিও বাটন অনুযায়ী ফিল্ড দেখান
     function checkInitialState() {
         let selectedVal = $("input[name='is_government_direct_victim_q27']:checked").val();
         if (selectedVal === "1") {
@@ -251,10 +266,19 @@ $(document).ready(function() {
         }
     }
 
-    // Initial Load রান করা
     checkInitialState();
 
-    // BDT Input field show/hide logic
+    // ২. BDT ইনপুটে নেগেটিভ সংখ্যা (- / minus key) প্রতিরোধ
+    $(document).on("keydown keyup input", ".bdt_number_only", function(e) {
+        if (e.key === "-" || e.key === "e") {
+            e.preventDefault();
+        }
+        if ($(this).val() < 0) {
+            $(this).val(0);
+        }
+    });
+
+    // ৩. BDT Input field show/hide logic
     $(document).on("change", ".q27_yesno_select", function() {
         let val = $(this).val();
         let bdtBox = $(this).closest("td").find(".bdt_input_box");
@@ -267,7 +291,7 @@ $(document).ready(function() {
         }
     });
 
-    // Main Radio toggle logic
+    // ৪. রেডিও বাটন টগল লজিক
     $(document).on("change", ".twenty7_status", function() {
         let value = $(this).val();
 
@@ -285,7 +309,7 @@ $(document).ready(function() {
         }
     });
 
-    // Temp Save AJAX Logic
+    // ৫. Temp Save AJAX Logic
     $("#temp-save-question27").click(function() {
         let yes_no_value = $("input[name='is_government_direct_victim_q27']:checked").val() || "1";
 

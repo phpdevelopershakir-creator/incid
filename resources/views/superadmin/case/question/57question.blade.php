@@ -1,16 +1,9 @@
 @if (($questiontitles[56]->status ?? null) == 1)
 @php
 $question_57_data = session()->get('question57') ?? [];
-$q57_checked = isset($question_57_data['q57_checked_value']) ? (string)$question_57_data['q57_checked_value'] : null;
+$q57_checked = isset($question_57_data['q57_checked_value']) ? (string)$question_57_data['q57_checked_value'] : '1';
 $desc_val = $question_57_data['tip_report_updates'] ?? '';
 $others_val = $question_57_data['others_tip_report'] ?? '';
-$table_rows = $question_57_data['table_data'] ?? [];
-$totalRows = max(3, count($table_rows));
-$defaultValues = [
-'Trafficking Trends',
-'Territories / Special Areas',
-'Government Anti-Trafficking Efforts'
-];
 @endphp
 
 <div class="card question57">
@@ -24,95 +17,37 @@ $defaultValues = [
 
     <div id="Question-57" class="collapse" role="tabpanel" aria-labelledby="heading-57" data-parent="#accordion-2">
         <div class="card-body">
-            <div class="form-group">
-                <label class="font-weight-bold">
-                    Considering what was reported in the 2025 TIP Report country narrative, provide any updates
-                    about trafficking trends, government anti-trafficking efforts in territories or semi-autonomous
-                    regions, and lead agencies.
-                </label>
-                <textarea name="desc_considering_reported_q57" class="form-control q57-desc-input" rows="3"
-                    placeholder="Input Field">{{ $desc_val }}</textarea>
-            </div>
 
-
+            <!-- Radio Options -->
             <div class="form-group mb-2">
                 <input type="radio" id="radioYes57" class="fiftysevenstatus" name="is_considering_reported_q57"
-                    value="1" {{ (is_null($q57_checked) || $q57_checked === '1') ? 'checked' : '' }}>
-                <label for="radioYes57" class="mr-3  font-weight-bold">Yes</label>
+                    value="1" {{ ($q57_checked === '1') ? 'checked' : '' }}>
+                <label for="radioYes57" class="mr-3 font-weight-bold">Yes</label>
 
                 <input type="radio" id="radioNo57" class="fiftysevenstatus" name="is_considering_reported_q57" value="0"
                     {{ ($q57_checked === '0') ? 'checked' : '' }}>
-                <label for="radioNo57" class="mr-3  font-weight-bold">No</label>
+                <label for="radioNo57" class="mr-3 font-weight-bold">No</label>
 
                 <input type="radio" id="radioOthers57" class="fiftysevenstatus" name="is_considering_reported_q57"
                     value="2" {{ ($q57_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers57" class="font-weight-bold">Others </label>
+                <label for="radioOthers57" class="font-weight-bold">Others</label>
             </div>
 
+            <!-- YES Block (Only Description for YES) -->
+            <div id="yes_extra_q57" style="display: {{ ($q57_checked === '1') ? 'block' : 'none' }};">
+                <div class="form-group mt-3">
+
+                    <textarea name="desc_considering_reported_q57" class="form-control q57-desc-input" rows="3"
+                        placeholder="Please describe">{{ $desc_val }}</textarea>
+                </div>
+            </div>
+
+            <!-- OTHERS Block (Only Description for OTHERS) -->
             <div id="others_q57" style="display: {{ ($q57_checked === '2') ? 'block' : 'none' }};">
-                <textarea name="other_considering_reported_q57" class="form-control mt-2 q57-others-input" rows="2"
-                    placeholder="Please describe">{{ $others_val }}</textarea>
-            </div>
+                <div class="form-group mt-3">
 
-            <div id="yes_extra_q57"
-                style="display: {{ (is_null($q57_checked) || $q57_checked === '1') ? 'block' : 'none' }};">
-                <p class="font-weight-bold mt-3">If Yes</p>
-
-                <div class="table-responsive">
-                    <table class="table table-bordered text-center" id="tip-report-table-q57">
-                        <thead>
-                            <tr class="bg-light">
-                                <th>Major Component</th>
-                                <th>Suggested Inputs/Update</th>
-                                <th>Please Update Attachment (If any)</th>
-                                <th style="width: 80px;">Add row</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for($i = 0; $i < $totalRows; $i++) @php $row=$table_rows[$i] ?? null;
-                                $selectedComponent=$row['component'] ?? ($defaultValues[$i] ?? '' );
-                                $inputValue=$row['inputs'] ?? '' ; $fileValue=$row['attachment'] ?? null; @endphp <tr>
-                                <td>
-                                    <select name="mejor_q57[]" class="form-control q57-component">
-                                        <option value="">Dropdown</option>
-                                        <option value="Trafficking Trends"
-                                            {{ $selectedComponent == 'Trafficking Trends' ? 'selected' : '' }}>
-                                            Trafficking Trends</option>
-                                        <option value="Territories / Special Areas"
-                                            {{ $selectedComponent == 'Territories / Special Areas' ? 'selected' : '' }}>
-                                            Territories / Special Areas</option>
-                                        <option value="Government Anti-Trafficking Efforts"
-                                            {{ $selectedComponent == 'Government Anti-Trafficking Efforts' ? 'selected' : '' }}>
-                                            Government Anti-Trafficking Efforts</option>
-                                        <option value="Key Update for Reporting Period"
-                                            {{ $selectedComponent == 'Key Update for Reporting Period' ? 'selected' : '' }}>
-                                            Key Update for Reporting Period</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <textarea name="suggested_q57[]" class="form-control q57-inputs" rows="2"
-                                        placeholder="[Input Text Field]">{{ $inputValue }}</textarea>
-                                </td>
-                                <td style="vertical-align: middle;">
-                                    <input type="file" name="document_upload_q57[]" class="form-control-file q57-files">
-                                    @if(!empty($fileValue))
-                                    <small class="text-success font-weight-bold d-block mt-1">
-                                        Saved: {{ is_string($fileValue) ? basename($fileValue) : 'File Uploaded' }}
-                                    </small>
-                                    @endif
-                                </td>
-                                <td style="vertical-align: middle;">
-                                    @if($i < 2) <span class="badge badge-secondary"></span>
-                                        @elseif($i == 2)
-                                        <button type="button" class="btn btn-sm btn-primary add-row-q57">+</button>
-                                        @else
-                                        <button type="button" class="btn btn-sm btn-danger remove-row-q57">-</button>
-                                        @endif
-                                </td>
-                                </tr>
-                                @endfor
-                        </tbody>
-                    </table>
+                    <textarea name="other_considering_reported_q57" class="form-control q57-others-input" rows="2"
+                        placeholder="Please describe">{{ $others_val }}</textarea>
                 </div>
             </div>
 
@@ -126,91 +61,66 @@ $defaultValues = [
 @endif
 
 <script>
-$(document).ready(function() {
-    function toggleq57() {
-        let val = $("input[name='is_considering_reported_q57']:checked").val();
+// Inline Pure JavaScript toggle (jQuery-র ওপর নির্ভর না করে সরাসরি কাজ করবে)
+function applyToggleQ57() {
+    var selectedVal = document.querySelector('input[name="is_considering_reported_q57"]:checked');
+    var yesBox = document.getElementById('yes_extra_q57');
+    var othersBox = document.getElementById('others_q57');
 
-        if (!val) {
-            val = '1';
-            $('#radioYes57').prop('checked', true);
-        }
+    if (!yesBox || !othersBox) return;
 
-        if (val === '1') {
-            $('#yes_extra_q57').show();
-            $('#others_q57').hide();
-        } else if (val === '2') {
-            $('#yes_extra_q57').hide();
-            $('#others_q57').show();
-        } else {
-            $('#yes_extra_q57').hide();
-            $('#others_q57').hide();
-        }
+    var val = selectedVal ? selectedVal.value : '1';
+
+    if (val === '1') {
+        yesBox.style.display = 'block';
+        othersBox.style.display = 'none';
+    } else if (val === '2') {
+        yesBox.style.display = 'none';
+        othersBox.style.display = 'block';
+    } else {
+        // NO (val === '0') -> Hide Everything
+        yesBox.style.display = 'none';
+        othersBox.style.display = 'none';
     }
+}
 
-    $(document).on('change', '.fiftysevenstatus', toggleq57);
+// Page Load & Change Event Listeners
+document.addEventListener("DOMContentLoaded", function() {
+    applyToggleQ57();
 
-    $(document).on('click', '.add-row-q57', function() {
-        let newRow = `
-            <tr>
-                <td>
-                    <select name="mejor_q57[]" class="form-control q57-component">
-                        <option value="">Dropdown</option>
-                        <option value="Trafficking Trends">Trafficking Trends</option>
-                        <option value="Territories / Special Areas">Territories / Special Areas</option>
-                        <option value="Government Anti-Trafficking Efforts">Government Anti-Trafficking Efforts</option>
-                        <option value="Key Update for Reporting Period">Key Update for Reporting Period</option>
-                    </select>
-                </td>
-                <td>
-                    <textarea name="suggested_q57[]" class="form-control q57-inputs" rows="2" placeholder="Input Text Field"></textarea>
-                </td>
-                <td style="vertical-align: middle;">
-                    <input type="file" name="document_upload_q57[]" class="form-control-file q57-files">
-                </td>
-                <td style="vertical-align: middle;">
-                    <button type="button" class="btn btn-sm btn-danger remove-row-q57">-</button>
-                </td>
-            </tr>`;
-        $('#tip-report-table-q57 tbody').append(newRow);
+    var radios = document.querySelectorAll('input[name="is_considering_reported_q57"]');
+    radios.forEach(function(radio) {
+        radio.addEventListener('change', applyToggleQ57);
     });
+});
 
-
-    $(document).on('click', '.remove-row-q57', function() {
-        $(this).closest('tr').remove();
-    });
-
-
+// jQuery for Temp Save AJAX
+$(document).ready(function() {
     $(document).on("click", "#temp-save-question57", function() {
-        let formData = new FormData();
         let checkedValue = $("input[name='is_considering_reported_q57']:checked").val();
 
-        formData.append('_token', '{{ csrf_token() }}');
-        formData.append('question_no', 57);
+        let q57_data = {
+            tip_report_updates: $('.q57-desc-input').val(),
+            others_tip_report: $('.q57-others-input').val()
+        };
 
-        formData.append('question57[q57_checked_value]', checkedValue ? checkedValue : '1');
-        formData.append('question57[tip_report_updates]', $('.q57-desc-input').val());
-        formData.append('question57[others_tip_report]', $('.q57-others-input').val());
-
-        // Table Data Loop
-        $('#tip-report-table-q57 tbody tr').each(function(index) {
-            let component = $(this).find('.q57-component').val();
-            let inputs = $(this).find('.q57-inputs').val();
-
-            formData.append(`question57[table_data][${index}][component]`, component ?
-                component : '');
-            formData.append(`question57[table_data][${index}][inputs]`, inputs ? inputs : '');
-        });
+        let new_data = {
+            q57_checked_value: checkedValue ? checkedValue : '1',
+            q57_data: q57_data
+        };
 
         $.ajax({
             type: "POST",
             url: "/superadmin/case/temp-save-question",
-            data: formData,
-            contentType: false,
-            processData: false,
+            data: {
+                _token: "{{ csrf_token() }}",
+                question_no: 57,
+                question57: new_data
+            },
             success: function(response) {
                 if (response.success) {
                     $('.question57 .card-header h6').css('color', 'blue');
-                    alert("Question 57 Temp Saved ");
+                    alert("Question 57 Temp Saved");
                 } else {
                     alert("Not Saved");
                 }
@@ -220,6 +130,5 @@ $(document).ready(function() {
             }
         });
     });
-
 });
 </script>

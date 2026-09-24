@@ -3,15 +3,16 @@ if (($questiontitles[53]->status ?? null) == 1) {
     
     $question_54_data = session()->get('question54');
 
-    $q54_checked = $question_54_data['q54_checked_value'] ?? "1";
-    $q54_saved_rows = $question_54_data['q54_table_data'] ?? [];
-    $q54_others_val = $question_54_data['others'] ?? '';
-    $country_Lists = [
-        1 => "India", 2 => "Nepal", 3 => "Sri lanka", 4 => "EU",
-        5 => "USA", 6 => "Saudi Arabia", 7 => "Qatar", 8 => "Lebanon",
-        9 => "Irag", 10 => "UAE", 11 => "Thailand", 12 => "Vietnam",
-        13 => "Cambodia", 14 => "South Africa", 15 => "Brazil", 16 => "UK"
-    ];
+    $q54_checked =$question_54_data['q54_checked_value'] ?? "1";
+    $q54_saved_rows =$question_54_data['q54_table_data'] ?? [];
+    $q54_others_val =$question_54_data['others'] ?? '';
+    
+    // Bottom Radio & Description
+    $q54_sub_status =$question_54_data['sub_status'] ?? '1'; // 1=Yes, 0=No, 2=Others
+    $q54_sub_desc =$question_54_data['sub_description'] ?? '';
+    
+    // Fetch countries list
+    $countries = DB::table('countries')->pluck('name', 'id')->toArray();
 ?>
 <style>
 .visibility {
@@ -58,8 +59,10 @@ if (($questiontitles[53]->status ?? null) == 1) {
                 </span>
             </div>
 
-            <div id="54_question_view" class="{{ ($q54_checked == '0' || $q54_checked == '2') ? 'visibility' : '' }}">
-                <table id="addRowQ54" class="table table-bordered text-center">
+            <div id="54_question_view" class="{{ ($q54_checked == '0' or$q54_checked == '2') ? 'visibility' : '' }}">
+
+                <!-- Dynamic Main Table -->
+                <table id="addRowQ54" class="table table-bordered text-center mb-4">
                     <thead>
                         <tr>
                             <th rowspan="2" style="vertical-align: middle;">Country where posted</th>
@@ -76,27 +79,21 @@ if (($questiontitles[53]->status ?? null) == 1) {
                     </thead>
                     <tbody>
                         <?php 
-           
-              if (!empty($q54_saved_rows)) {
-                foreach($q54_saved_rows as $index => $row) { 
-                  $country_val = $row['country'] ?? '';
-                
-                  $is_custom_input = !is_numeric($country_val) && !empty($country_val);
-                ?>
-                        <tr class="qe54NoOfRow" id="row_q54_<?= $index ?>">
+                        if (!empty($q54_saved_rows)) {
+                            foreach($q54_saved_rows as $index =>$row) { 
+                                $country_val =$row['country'] ?? '';
+                        ?>
+                        <tr class="qe54NoOfRow">
                             <td>
-                                <?php if($is_custom_input || $index >= 3) { ?>
-                                <input type="text" name="country_diplomat_name_q54[]" value="<?= $country_val ?>"
-                                    class="form-control q54_country_input" placeholder="Others (Specify)___">
-                                <?php } else { ?>
                                 <select name="country_diplomat_name_q54[]" class="form-control q54_country_input">
-                                    <option value="" disabled>---Choose an item--</option>
-                                    <?php foreach ($country_Lists as $key => $country_name) { ?>
-                                    <option value="<?= $key ?>" <?= $country_val == $key ? 'selected' : '' ?>>
-                                        <?= $country_name ?></option>
+                                    <option value="" disabled <?= empty($country_val) ? 'selected' : '' ?>>---Choose an
+                                        item---</option>
+                                    <?php foreach ($countries as $key =>$country_name) { ?>
+                                    <option value="<?= $key ?>" <?= $country_val ==$key ? 'selected' : '' ?>>
+                                        <?= $country_name ?>
+                                    </option>
                                     <?php } ?>
                                 </select>
-                                <?php } ?>
                             </td>
                             <td>
                                 <input type="text" name="country_diplomat_description_q54[]"
@@ -123,25 +120,20 @@ if (($questiontitles[53]->status ?? null) == 1) {
                                     readonly>
                             </td>
                             <td>
-                                <?php if ($index < 3) { ?>
-                                <span class="text-muted">-</span>
-                                <?php } elseif ($index == 3) { ?>
-                                <button id="addRowDatasq54" type="button" class="btn btn-sm btn-primary">+</button>
+                                <?php if ($index == 0) { ?>
+                                <button type="button" class="btn btn-sm btn-primary btn_add_q54">+</button>
                                 <?php } else { ?>
-                                <button type="button" class="btn btn-danger btn_remove_q54"
-                                    data-id="<?= $index ?>">-</button>
+                                <button type="button" class="btn btn-danger btn_remove_q54">-</button>
                                 <?php } ?>
                             </td>
                         </tr>
                         <?php } 
-              } else { 
-             
-                for($k = 0; $k < 3; $k++) { ?>
-                        <tr class="qe54NoOfRow" id="row_q54_<?= $k ?>">
+                        } else { ?>
+                        <tr class="qe54NoOfRow">
                             <td>
                                 <select name="country_diplomat_name_q54[]" class="form-control q54_country_input">
-                                    <option value="" disabled selected>---Choose an item--</option>
-                                    <?php foreach ($country_Lists as $key => $country_name) { ?>
+                                    <option value="" disabled selected>---Choose an item---</option>
+                                    <?php foreach ($countries as $key =>$country_name) { ?>
                                     <option value="<?= $key ?>"><?= $country_name ?></option>
                                     <?php } ?>
                                 </select>
@@ -156,30 +148,40 @@ if (($questiontitles[53]->status ?? null) == 1) {
                                     class="form-control country_diplomat_tg_q54" value="0" min="0"></td>
                             <td><input type="number" name="country_diplomat_total_q54[]"
                                     class="form-control country_diplomat_total_q54" value="0" readonly></td>
-                            <td><span class="text-muted">-</span></td>
-                        </tr>
-                        <?php } ?>
-
-                        <tr class="qe54NoOfRow" id="row_q54_3">
-                            <td>
-                                <input type="text" name="country_diplomat_name_q54[]"
-                                    class="form-control q54_country_input" placeholder="Others (Specify)___">
-                            </td>
-                            <td><input type="text" name="country_diplomat_description_q54[]"
-                                    class="form-control country_diplomat_description_q54"></td>
-                            <td><input type="number" name="country_diplomat_men_q54[]"
-                                    class="form-control country_diplomat_men_q54" value="0" min="0"></td>
-                            <td><input type="number" name="country_diplomat_women_q54[]"
-                                    class="form-control country_diplomat_women_q54" value="0" min="0"></td>
-                            <td><input type="number" name="country_diplomat_tg_q54[]"
-                                    class="form-control country_diplomat_tg_q54" value="0" min="0"></td>
-                            <td><input type="number" name="country_diplomat_total_q54[]"
-                                    class="form-control country_diplomat_total_q54" value="0" readonly></td>
-                            <td><button id="addRowDatasq54" type="button" class="btn btn-sm btn-primary">+</button></td>
+                            <td><button type="button" class="btn btn-sm btn-primary btn_add_q54">+</button></td>
                         </tr>
                         <?php } ?>
                     </tbody>
                 </table>
+
+                <!-- Bottom Section: Yes/No/Others Question -->
+                <div class="mt-4 p-3 border rounded">
+                    <p class="font-weight-bold mb-2">Did the government seek criminal accountability?</p>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input q54_sub_status" type="radio" name="q54_sub_status"
+                            id="q54_sub_yes" value="1" <?= $q54_sub_status == '1' ? 'checked' : '' ?>>
+                        <label class="form-check-label" for="q54_sub_yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input q54_sub_status" type="radio" name="q54_sub_status"
+                            id="q54_sub_no" value="0" <?= $q54_sub_status == '0' ? 'checked' : '' ?>>
+                        <label class="form-check-label" for="q54_sub_no">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input q54_sub_status" type="radio" name="q54_sub_status"
+                            id="q54_sub_other" value="2" <?= $q54_sub_status == '2' ? 'checked' : '' ?>>
+                        <label class="form-check-label" for="q54_sub_other">Others</label>
+                    </div>
+
+                    <!-- Description Textarea Container -->
+                    <div class="mt-3 q54_sub_desc_container"
+                        style="<?= $q54_sub_status == '0' ? 'display: none;' : '' ?>">
+                        <textarea name="q54_sub_description" id="q54_sub_description" class="form-control" rows="2"
+                            placeholder="Please describe..."><?= $q54_sub_desc ?></textarea>
+                    </div>
+                </div>
+
             </div>
 
             <br />
@@ -192,6 +194,14 @@ if (($questiontitles[53]->status ?? null) == 1) {
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+    // Dynamic Country Options HTML
+    let countryOptions = '<option value="" disabled selected>---Choose an item---</option>';
+    <?php foreach ($countries as $key =>$country_name) { ?>
+    countryOptions += `<option value="<?= $key ?>"><?= addslashes($country_name) ?></option>`;
+    <?php } ?>
+
+    // Radio Button Visibility Toggle (Main Question)
     $(".fittyfourstatus").on("change", function() {
         var statusvalue = $("input[name='is_country_diplomats_allegedly_q54']:checked").val();
 
@@ -209,32 +219,43 @@ $(document).ready(function() {
         }
     });
 
-
-    let dynamicRowCount = $('.qe54NoOfRow').length + 600;
-    $(document).on("click", "#addRowDatasq54", function() {
-        dynamicRowCount++;
-        $("#addRowQ54 tbody").append(
-            `<tr class="qe54NoOfRow" id="row_q54_${dynamicRowCount}">
-            <td>
-              <input type="text" name="country_diplomat_name_q54[]" class="form-control q54_country_input" placeholder="Others (Specify)___">
-            </td>
-            <td><input type="text" name="country_diplomat_description_q54[]" class="form-control country_diplomat_description_q54"></td>
-            <td><input type="number" name="country_diplomat_men_q54[]" class="form-control country_diplomat_men_q54" value="0" min="0"></td>
-            <td><input type="number" name="country_diplomat_women_q54[]" class="form-control country_diplomat_women_q54" value="0" min="0"></td>
-            <td><input type="number" name="country_diplomat_tg_q54[]" class="form-control country_diplomat_tg_q54" value="0" min="0"></td>
-            <td><input type="number" name="country_diplomat_total_q54[]" class="form-control country_diplomat_total_q54" value="0" readonly></td>
-            <td><button type="button" class="btn btn-danger btn_remove_q54" data-id="${dynamicRowCount}">-</button></td>
-          </tr>`
-        );
+    // Sub Question Radio Change Toggle (Yes/No/Others)
+    $(document).on("change", ".q54_sub_status", function() {
+        let subVal = $(this).val();
+        if (subVal == "1" || subVal == "2") { // Yes or Others
+            $(".q54_sub_desc_container").slideDown();
+        } else { // No
+            $(".q54_sub_desc_container").slideUp();
+            $("#q54_sub_description").val(""); // Clear description on NO
+        }
     });
 
+    // 1. ADD ROW FUNCTIONALITY
+    $(document).on("click", ".btn_add_q54", function() {
+        let newRow = `
+            <tr class="qe54NoOfRow">
+                <td>
+                    <select name="country_diplomat_name_q54[]" class="form-control q54_country_input">
+                        ${countryOptions}
+                    </select>
+                </td>
+                <td><input type="text" name="country_diplomat_description_q54[]" class="form-control country_diplomat_description_q54"></td>
+                <td><input type="number" name="country_diplomat_men_q54[]" class="form-control country_diplomat_men_q54" value="0" min="0"></td>
+                <td><input type="number" name="country_diplomat_women_q54[]" class="form-control country_diplomat_women_q54" value="0" min="0"></td>
+                <td><input type="number" name="country_diplomat_tg_q54[]" class="form-control country_diplomat_tg_q54" value="0" min="0"></td>
+                <td><input type="number" name="country_diplomat_total_q54[]" class="form-control country_diplomat_total_q54" value="0" readonly></td>
+                <td><button type="button" class="btn btn-danger btn_remove_q54">-</button></td>
+            </tr>`;
 
+        $("#addRowQ54 tbody").append(newRow);
+    });
+
+    // 2. REMOVE ROW FUNCTIONALITY
     $(document).on('click', '.btn_remove_q54', function() {
-        let button_id = $(this).data('id');
-        $('#row_q54_' + button_id).remove();
+        $(this).closest('tr').remove();
     });
 
-
+    // 3. AUTO CALCULATION TOTAL
     $(document).on('input', '.country_diplomat_men_q54, .country_diplomat_women_q54, .country_diplomat_tg_q54',
         function() {
             let row = $(this).closest('tr');
@@ -245,9 +266,10 @@ $(document).ready(function() {
             row.find('.country_diplomat_total_q54').val(men + women + tg);
         });
 
-
+    // 4. AJAX TEMP SAVE
     $(document).on("click", '#temp-save-question54', function() {
         let yes_no_value = $("input[name='is_country_diplomats_allegedly_q54']:checked").val();
+        let sub_status = $("input[name='q54_sub_status']:checked").val() || '1';
 
         let formData = new FormData();
         formData.append("_token", "{{ csrf_token() }}");
@@ -255,6 +277,9 @@ $(document).ready(function() {
         formData.append("question54[q54_checked_value]", yes_no_value);
         formData.append("question54[others]", $("#q54others").val() || '');
 
+        // Append Sub Question Data
+        formData.append("question54[sub_status]", sub_status);
+        formData.append("question54[sub_description]", $("#q54_sub_description").val() || '');
 
         $('.qe54NoOfRow').each(function(index) {
             let country = $(this).find('.q54_country_input').val() || '';
@@ -283,7 +308,7 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 $('.question54 .card-title').css('color', 'blue');
-                alert("Question 54  Saved Temporarily ");
+                alert("Question 54 Saved Temporarily ");
             },
             error: function(err) {
                 alert("Error saving question 54 data ");
