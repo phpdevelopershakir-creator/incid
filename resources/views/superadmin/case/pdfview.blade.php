@@ -62,10 +62,11 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title"
-    style="text-align:center; background-color:#80C090; padding:10px; color:#fff; border-radius:5px;">
-    Annual TIP Report, Bangladesh
-</h4>
+                        <h4 class="card-title"
+                            style="text-align:center; background-color:#80C090; padding:10px; color:#fff; border-radius:5px;">
+                            Annual TIP Report, Bangladesh <br>
+                            Create By:( {{ $case->user->name ?? '' }})
+                        </h4>
                         <div class="mt-4">
                             <div class="pdf-container">
                                 @php

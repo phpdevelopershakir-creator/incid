@@ -5,7 +5,7 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Case View
+            Case View By :( {{ $value->user->name ?? '' }})
         </h3>
         <nav aria-label="breadcrumb" class="my-3">
             <div class="d-flex align-items-center flex-wrap">

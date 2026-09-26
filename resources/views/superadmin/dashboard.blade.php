@@ -681,18 +681,19 @@ tr:hover td {
     <div class="content">
         <!-- ================= DASHBOARD VIEW ================= -->
         <div class="quicklinks">
-            <a class="qbtn primary" href="#">Home</a>
-            <a class="qbtn faq" href="#">FAQ Page</a>
+            <a class="qbtn primary" href="{{ route('dashboard') }}">Home</a>
+            <a class="qbtn faq" href="{{ route('superadmin.all.faq') }}">FAQ </a>
             <a class="qbtn manual" href="#">User Manual PDF</a>
-            <a class="qbtn status" href="#">Submitted Status</a>
-            <a class="qbtn map" href="#"
-                onclick="document.getElementById('bdMapCard').scrollIntoView({behavior:'smooth'});">Division Wise Data
-                (Map)</a>
+            <a class="qbtn status" href="{{ route('superadmin.case.list') }}">View Data</a>
+            <a class="qbtn map" href="{{ route('superadmin.report.summary') }}">Consolidated Report</a>
         </div>
+
+        @if(auth()->user()->user_type == " Super Admin" || auth()->user()->user_type == "MoHa")
 
         <div class="card">
             <div class="card-body">
-                <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;">Search By Case Number
+                <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;">Search By Case
+                    Number
                     (Status)</div>
                 <div class="search-row">
                     <input type="text" placeholder="Enter Case Number">
@@ -872,26 +873,34 @@ tr:hover td {
             <div class="card-body">
                 <div class="grid-2">
                     <div>
-                        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Daily Case
+                        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Daily
+                            Case
                             Update History (15 Days)</div>
                         <div class="legend-row">
-                            <span><span class="legend-dot" style="background:#2b8fe8;"></span>Submitted Number</span>
-                            <span><span class="legend-dot" style="background:#f0c419;"></span>Pending Number</span>
+                            <span><span class="legend-dot" style="background:#2b8fe8;"></span>Submitted
+                                Number</span>
+                            <span><span class="legend-dot" style="background:#f0c419;"></span>Pending
+                                Number</span>
                         </div>
                         <div class="chart-wrap"><canvas id="chartDailyCasesBar"></canvas></div>
                     </div>
                     <div>
-                        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Monthly Case
+                        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Monthly
+                            Case
                             Update History</div>
                         <div class="legend-row">
-                            <span><span class="legend-dot" style="background:#2b8fe8;"></span>Submitted Number</span>
-                            <span><span class="legend-dot" style="background:#f0c419;"></span>Pending Number</span>
+                            <span><span class="legend-dot" style="background:#2b8fe8;"></span>Submitted
+                                Number</span>
+                            <span><span class="legend-dot" style="background:#f0c419;"></span>Pending
+                                Number</span>
                         </div>
                         <div class="chart-wrap"><canvas id="chartMonthlyCasesBar"></canvas></div>
                     </div>
                 </div>
             </div>
         </div>
+
+        @endif
     </div>
 </div>
 
@@ -933,7 +942,8 @@ Chart.defaults.font.family = "'Segoe UI',Roboto,Arial,sans-serif";
 Chart.defaults.font.size = 11.5;
 Chart.defaults.color = '#48566b';
 
-const caseMonths = ['Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26',
+const caseMonths = ['Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26',
+    'May 26',
     'Jun 26', 'Jul 26'
 ];
 const caseCounts = [210, 264, 301, 342, 288, 255, 309, 378, 402, 365, 410, 65];
@@ -1005,7 +1015,8 @@ if (chartDailyCasesEl) {
 }
 
 // Line Chart: Monthly
-const monthLabels = ['Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26',
+const monthLabels = ['Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26',
+    'Apr 26',
     'May 26', 'Jun 26'
 ];
 const monthlySubmitted = [1573.28, 1597.19, 1534.42, 1595.67, 1006, 615.18, 83.53, 197.79, 414.52, 615.39, 545.13,

@@ -245,7 +245,7 @@
         <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('superadmin.report.summary') ? 'active' : 'text-dark' }}"
                 href="{{ route('superadmin.report.summary') }}">
-                <i class="fas fa-image me-2"></i> <span class="menu-text">Report Summary</span>
+                <i class="fas fa-image me-2"></i> <span class="menu-text">Consolidated Report</span>
             </a>
         </li>
 
