@@ -25,7 +25,9 @@ if (($questiontitles[43]->status ?? null) == 1) {
 
 <div class="card question44">
     <div class="card-header" role="tab" id="heading-44">
-        <h6 class="card-title" style="color: {{ !empty($question_44_data) ? 'blue' : 'black' }};">
+        <h6 class="card-title" style="color: {{ !empty($question_44_data) ? 'blue' : 'green' }};">
+
+
             <a data-toggle="collapse" href="#Question-44" aria-expanded="false" aria-controls="collapse-44">
                 44. {{ $questiontitles[43]->title }}
             </a>

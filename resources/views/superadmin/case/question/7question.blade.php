@@ -5,6 +5,50 @@ $question_7_data = session()->get('question7');
 $q7_checked = $question_7_data['q7_checked_value'] ?? "1"; // ডিফল্ট 'Yes' (1)
 $q7_table_data = $question_7_data['q7_data'] ?? null;
 $q7_others_val = $question_7_data['others'] ?? '';
+
+// Ministry Dropdown List
+$ministries = [
+"Ministry of Primary and Mass Education (MoPME)",
+"Ministry of Agriculture (MoA)",
+"Ministry of Civil Aviation and Tourism (MoCAT)",
+"Ministry of Commerce (MoC)",
+"Ministry of Road Transport and Bridges (MoRTB)",
+"Ministry of Cultural Affairs (MoCA)",
+"Ministry of Defence (MoD)",
+"Ministry of Food (MoFood)",
+"Ministry of Education (MoE)",
+"Ministry of Environment, Forest and Climate Change (MoEFCC)",
+"Ministry of Public Administration (MoPA)",
+"Ministry of Fisheries and Livestock (MoFL)",
+"Ministry of Finance (MoF)",
+"Ministry of Foreign Affairs (MoFA)",
+"Ministry of Health and Family Welfare (MoHFW)",
+"Ministry of Home Affairs (MoHA)",
+"Ministry of Housing and Public Works (MoHPW)",
+"Ministry of Industries (MoInd)",
+"Ministry of Information and Broadcasting (MoIB)",
+"Ministry of Textiles and Jute (MoTJ)",
+"Ministry of Labour and Employment (MoLE)",
+"Ministry of Law, Justice and Parliamentary Affairs (MoLJPA)",
+"Ministry of Land (MoL)",
+"Ministry of Local Government, Rural Development and Co-operatives (MoLGRD&C)",
+"Ministry of Expatriates' Welfare and Overseas Employment (MoEWOE)",
+"Ministry of Shipping (MoS)",
+"Ministry of Social Welfare (MoSW)",
+"Ministry of Women and Children Affairs (MoWCA)",
+"Ministry of Water Resources (MoWR)",
+"Ministry of Youth and Sports (MoYS)",
+"Ministry of Liberation War Affairs (MoLWA)",
+"Ministry of Religious Affairs (MoRA)",
+"Ministry of Railways (MoR)",
+"Ministry of Science and Technology (MoST)",
+"Ministry of Disaster Management and Relief (MoDMR)",
+"Ministry of Chittagong Hill Tracts Affairs (MoCHTA)",
+"Ministry of Power, Energy and Mineral Resources (MPEMR)",
+"Ministry of Posts, Telecommunications and Information Technology (MoPTIT)",
+"Ministry of Planning (MoP)",
+"Bangladesh Embassy/Mission /Consulate"
+];
 @endphp
 
 <style>
@@ -57,7 +101,7 @@ $q7_others_val = $question_7_data['others'] ?? '';
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Ministry</th>
+                            <th style="width: 40%;">Ministry</th>
                             <th>Men</th>
                             <th>Women</th>
                             <th>Total</th>
@@ -65,10 +109,18 @@ $q7_others_val = $question_7_data['others'] ?? '';
                     </thead>
 
                     <tbody>
-                        @for($i = 1; $i <= 4; $i++) <tr>
+                        @for($i = 1; $i <= 4; $i++) @php $selected_ministry=$q7_table_data['q7Title'.$i] ?? '' ; @endphp
+                            <tr>
                             <td>
-                                <input type="text" name="justice_title_q7[]" id="q7Title{{$i}}"
-                                    class="form-control q7Input" value="{{ $q7_table_data['q7Title'.$i] ?? '' }}">
+                                <select name="justice_title_q7[]" id="q7Title{{$i}}" class="form-control q7Input">
+                                    <option value="">Select Ministry</option>
+                                    @foreach($ministries as $ministry)
+                                    <option value="{{ $ministry }}"
+                                        {{ $selected_ministry == $ministry ? 'selected' : '' }}>
+                                        {{ $ministry }}
+                                    </option>
+                                    @endforeach
+                                </select>
                             </td>
 
                             <td>
@@ -140,14 +192,11 @@ function calculateQ7Totals() {
 $(document).on('input change keyup build', '.question7rowmen, .question7rowWomen', calculateQ7Totals);
 
 $(document).ready(function() {
-    // ⚠️ ফিক্স: ৫০০ মিলিমেকেন্ড ডিলে দিয়ে রান করা হচ্ছে যেন ব্লেডের ওল্ড ডাটা ইনপুটে বসার পর্যাপ্ত সময় পায়
     setTimeout(function() {
         calculateQ7Totals();
     }, 500);
 });
-</script>
 
-<script>
 // ⬅️ AJAX সেভ রিকোয়েস্ট
 $(document).on("click", "#temp-save-question7", function() {
     calculateQ7Totals();
@@ -160,7 +209,6 @@ $(document).on("click", "#temp-save-question7", function() {
         }
     });
 
-    // ম্যানুয়ালি টোটাল ডাটা অবজেক্টে পুশ করা হলো নিশ্চিত করার জন্য
     q7_data['total_men_q7'] = $('#total_men_q7').val();
     q7_data['total_women_q7'] = $('#total_women_q7').val();
     q7_data['grand_total_q7'] = $('#grand_total_q7').val();
@@ -180,7 +228,7 @@ $(document).on("click", "#temp-save-question7", function() {
             question7: saveData
         },
         success: function(response) {
-            if (response.success) {
+            if (response.success || response) {
                 $('.question7 .card-header h6').css('color', 'blue');
                 alert("Question 7 saved temporarily");
             } else {
@@ -192,9 +240,8 @@ $(document).on("click", "#temp-save-question7", function() {
         }
     });
 });
-</script>
 
-<script>
+// Radio change logic
 $(document).ready(function() {
     $(".seven_status").on("change", function() {
         var statusvalue = $("input[name='is_exclusively_dedicated_trafficking_q7']:checked").val();
@@ -203,7 +250,7 @@ $(document).ready(function() {
             $('#seven_question_view').removeClass('visibility').show();
             $('.q7_others_container').addClass('othersText').hide();
             $('#q7others').val("");
-            calculateQ7Totals(); // ভিউ শো করার সাথে সাথে আবার ক্যালকুলেট করবে
+            calculateQ7Totals();
         } else if (statusvalue == "2") {
             $('#seven_question_view').hide();
             $('.q7_others_container').removeClass('othersText').show();

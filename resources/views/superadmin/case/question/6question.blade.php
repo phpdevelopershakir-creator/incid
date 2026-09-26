@@ -116,8 +116,7 @@ $ministry_q6 = [
                             <th>Men</th>
                             <th>Women</th>
                             <th>Total</th>
-                            <th>Response</th>
-                            <th>Add row</th>
+
                         </tr>
                     </thead>
 

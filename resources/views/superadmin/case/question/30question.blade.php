@@ -91,7 +91,7 @@ if (($questiontitles[29]->status ?? null) == 1) {
                             <th rowspan="2" style="width: 15%;">Status of coverage</th>
                             <th colspan="6">Current Coverage of Foreign VoTs </th>
                             <th rowspan="2" style="width: 18%;">Origin of VoT (multiple Response)</th>
-                            <th rowspan="2" style="width: 8%;">Action</th>
+                            <th rowspan="2" style="width: 8%;">Add row</th>
                         </tr>
                         <tr>
                             <th>Men</th>

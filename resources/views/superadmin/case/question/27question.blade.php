@@ -81,7 +81,7 @@ $t2_data = $question_27_data['table2_data'] ?? [];
                     <thead>
                         <tr class="bg-light">
                             <th style="width: 34%; vertical-align: middle;">Type of Spending on Victim Care</th>
-                            <th style="width: 22%;">Amount of BD</th>
+                            <th style="width: 22%;">Amount of Bdt</th>
                             <th style="width: 22%;">Central Government/Ministry</th>
                             <th style="width: 22%;">Local Government</th>
                             <th style="width: 22%;">NGO/INGO</th>

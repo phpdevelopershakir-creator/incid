@@ -203,7 +203,7 @@ Grenadines", "WS" => "Samoa", "SM" => "San Marino",
 
                 <!-- Table 2: Single Row Table -->
                 <br>
-                <h6 class="font-weight-bold text-primary mb-2">2. Official Accused Details</h6>
+
                 <div class="table-responsive">
                     <table class="table table-bordered align-items-center" id="accused-table-q56">
                         <thead>
@@ -223,7 +223,7 @@ Grenadines", "WS" => "Samoa", "SM" => "San Marino",
                                 <td>
                                     <textarea name="instances_trafficking_measures_q56b"
                                         class="form-control q56-measures" rows="3"
-                                        placeholder="Please describe details here...">{{ $q56_data['accused_measures'] ?? '' }}</textarea>
+                                        placeholder="Please describe ">{{ $q56_data['accused_measures'] ?? '' }}</textarea>
                                 </td>
                             </tr>
                         </tbody>

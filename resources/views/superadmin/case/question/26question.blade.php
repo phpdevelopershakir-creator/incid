@@ -232,7 +232,7 @@ $q26_others_val = $question_26_data['others'] ?? '';
                         <tr>
                             <th rowspan="2" style="vertical-align: middle;">Location</th>
                             <th colspan="4">Number of personnel Trained</th>
-                            <th rowspan="2" style="vertical-align: middle;">Action</th>
+                            <th rowspan="2" style="vertical-align: middle;">Add row</th>
                         </tr>
                         <tr>
                             <th>Category</th>

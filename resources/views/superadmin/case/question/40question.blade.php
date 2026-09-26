@@ -48,15 +48,15 @@ $district_Lists = [
 
                 <input type="radio" id="radioYes40" class="fortystatus" name="is_victims_civil_traffickers_q40"
                     value="1" {{ (is_null($q40_checked) || $q40_checked === '1') ? 'checked' : '' }}>
-                <label for="radioYes40" class="mr-3 text-danger font-weight-bold">Yes</label>
+                <label for="radioYes40" class="mr-3  font-weight-bold">Yes</label>
 
                 <input type="radio" id="radioNo40" class="fortystatus" name="is_victims_civil_traffickers_q40" value="0"
                     {{ ($q40_checked === '0') ? 'checked' : '' }}>
-                <label for="radioNo40" class="mr-3 text-danger font-weight-bold">No</label>
+                <label for="radioNo40" class="mr-3  font-weight-bold">No</label>
 
                 <input type="radio" id="radioOthers40" class="fortystatus" name="is_victims_civil_traffickers_q40"
                     value="2" {{ ($q40_checked === '2') ? 'checked' : '' }}>
-                <label for="radioOthers40" class="text-danger font-weight-bold">Others</label>
+                <label for="radioOthers40" class=" font-weight-bold">Others</label>
             </div>
 
             <div id="others_q40" style="display: {{ ($q40_checked === '2') ? 'block' : 'none' }};">
@@ -66,7 +66,7 @@ $district_Lists = [
 
             <div id="yes_extra_q40"
                 style="display: {{ (is_null($q40_checked) || $q40_checked === '1') ? 'block' : 'none' }};">
-                <p class="font-weight-bold mt-3">If Yes</p>
+
 
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" id="civil-suit-table-q40">
@@ -74,7 +74,7 @@ $district_Lists = [
                             <tr class="bg-light">
                                 <th rowspan="2" style="vertical-align: middle;">District</th>
                                 <th colspan="6">Number of Victims pursuing civil suit</th>
-                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Action</th>
+                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Add row</th>
                             </tr>
                             <tr class="bg-light">
                                 <th>Men</th>

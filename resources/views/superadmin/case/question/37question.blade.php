@@ -42,7 +42,7 @@ $q37_data =$question_37_data['q37_data'] ?? null;
                             <tr class="bg-light">
                                 <th rowspan="2" style="vertical-align: middle; min-width: 200px;">Form of legal aid</th>
                                 <th colspan="6">Number of support recipients</th>
-                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Action</th>
+                                <th rowspan="2" style="vertical-align: middle; width: 80px;">Add row</th>
                             </tr>
                             <tr class="bg-light">
                                 <th>Men</th>

@@ -52,11 +52,6 @@ $district_Lists = [
 .sub_field_box_q38 {
     display: none;
 }
-
-.q38_table_header {
-    background-color: #fce4d6;
-    font-weight: bold;
-}
 </style>
 
 <div class="card question38">
@@ -106,16 +101,16 @@ $district_Lists = [
 
 
             <div class="q38_content_wrapper" style="display: {{ $q38_status === '1' ? 'block' : 'none' }};">
-                <label class="font-weight-bold text-primary">If Yes</label>
+
 
                 <!-- TABLE 1: Witness Protection Table -->
                 <div class="table-responsive mb-4">
                     <table class="table table-bordered text-center mb-0" id="q38_table_1">
                         <thead>
-                            <tr class="bg-light">
+                            <tr>
                                 <th colspan="6">VoT participating in investigation Provided with Witness Protection</th>
                             </tr>
-                            <tr class="bg-light">
+                            <tr>
                                 <th>Men</th>
                                 <th>Women</th>
                                 <th>TG</th>
@@ -126,7 +121,7 @@ $district_Lists = [
                         </thead>
                         <tbody>
                             <!-- Internal Trafficking Row Header -->
-                            <tr class="q38_table_header">
+                            <tr>
                                 <td colspan="6">Internal Trafficking</td>
                             </tr>
                             <tr>
@@ -151,7 +146,7 @@ $district_Lists = [
                             </tr>
 
                             <!-- International Trafficking Row Header -->
-                            <tr class="q38_table_header">
+                            <tr>
                                 <td colspan="6">International Trafficking</td>
                             </tr>
                             <tr>
@@ -176,7 +171,7 @@ $district_Lists = [
                             </tr>
 
                             <!-- Total Row Header & Result -->
-                            <tr class="q38_table_header">
+                            <tr>
                                 <td colspan="6">Total</td>
                             </tr>
                             <tr class="font-weight-bold bg-light">
@@ -194,7 +189,7 @@ $district_Lists = [
                 <!-- TABLE 2: Coverage / Assistance Table -->
                 <div class="table-responsive">
                     <table class="table table-bordered text-center mb-1" id="q38_table_2">
-                        <thead class="bg-light">
+                        <thead>
                             <tr>
                                 <th rowspan="2" class="align-middle" style="width: 20%;">District
                                 </th>
@@ -247,8 +242,8 @@ $district_Lists = [
                                 <td>
                                     @if($index == 0)
                                     <!-- Row 1 Fixed Add Button -->
-                                    <button type="button" class="btn btn-primary btn-sm" id="add_q38_t2_row"><i
-                                            class="fa fa-plus"></i></button>
+                                    <button type="button" class="btn btn-primary btn-sm" id="add_q38_t2_row">Add
+                                        row</button>
                                     @else
                                     <!-- Row 2+ Delete Button -->
                                     <button type="button" class="btn btn-danger btn-sm remove_q38_t2_row"><i
@@ -295,8 +290,8 @@ $district_Lists = [
                                 <td><input type="number" name="total_q38c[]" class="form-control q38_t2_row_total"
                                         value="0" readonly></td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm" id="add_q38_t2_row"><i
-                                            class="fa fa-plus"></i></button>
+                                    <button type="button" class="btn btn-primary btn-sm" id="add_q38_t2_row">Add
+                                        row</button>
                                 </td>
                             </tr>
                             @endif

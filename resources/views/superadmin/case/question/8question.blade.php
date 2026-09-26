@@ -6,6 +6,50 @@ $question_8_data = session()->get('question8');
 $q8_checked = $question_8_data['q8_checked_value'] ?? "1"; // ডিফল্ট 'Yes'
 $q8_table_data = $question_8_data['q8_data'] ?? null;
 $q8_others_val = $question_8_data['others'] ?? '';
+
+// Ministry Dropdown List
+$ministries = [
+"Ministry of Primary and Mass Education (MoPME)",
+"Ministry of Agriculture (MoA)",
+"Ministry of Civil Aviation and Tourism (MoCAT)",
+"Ministry of Commerce (MoC)",
+"Ministry of Road Transport and Bridges (MoRTB)",
+"Ministry of Cultural Affairs (MoCA)",
+"Ministry of Defence (MoD)",
+"Ministry of Food (MoFood)",
+"Ministry of Education (MoE)",
+"Ministry of Environment, Forest and Climate Change (MoEFCC)",
+"Ministry of Public Administration (MoPA)",
+"Ministry of Fisheries and Livestock (MoFL)",
+"Ministry of Finance (MoF)",
+"Ministry of Foreign Affairs (MoFA)",
+"Ministry of Health and Family Welfare (MoHFW)",
+"Ministry of Home Affairs (MoHA)",
+"Ministry of Housing and Public Works (MoHPW)",
+"Ministry of Industries (MoInd)",
+"Ministry of Information and Broadcasting (MoIB)",
+"Ministry of Textiles and Jute (MoTJ)",
+"Ministry of Labour and Employment (MoLE)",
+"Ministry of Law, Justice and Parliamentary Affairs (MoLJPA)",
+"Ministry of Land (MoL)",
+"Ministry of Local Government, Rural Development and Co-operatives (MoLGRD&C)",
+"Ministry of Expatriates' Welfare and Overseas Employment (MoEWOE)",
+"Ministry of Shipping (MoS)",
+"Ministry of Social Welfare (MoSW)",
+"Ministry of Women and Children Affairs (MoWCA)",
+"Ministry of Water Resources (MoWR)",
+"Ministry of Youth and Sports (MoYS)",
+"Ministry of Liberation War Affairs (MoLWA)",
+"Ministry of Religious Affairs (MoRA)",
+"Ministry of Railways (MoR)",
+"Ministry of Science and Technology (MoST)",
+"Ministry of Disaster Management and Relief (MoDMR)",
+"Ministry of Chittagong Hill Tracts Affairs (MoCHTA)",
+"Ministry of Power, Energy and Mineral Resources (MPEMR)",
+"Ministry of Posts, Telecommunications and Information Technology (MoPTIT)",
+"Ministry of Planning (MoP)",
+"Bangladesh Embassy/Mission /Consulate"
+];
 @endphp
 
 <style>
@@ -63,7 +107,8 @@ $q8_others_val = $question_8_data['others'] ?? '';
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th rowspan="2" style="text-align: center; vertical-align: middle;">Ministry/Department
+                            <th rowspan="2" style="text-align: center; vertical-align: middle; width: 35%;">
+                                Ministry/Department
                                 Municipality body</th>
                             <th colspan="4">Measures Taken</th>
                         </tr>
@@ -75,10 +120,18 @@ $q8_others_val = $question_8_data['others'] ?? '';
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i <= 4; $i++) <tr>
+                        @for ($i = 1; $i <= 4; $i++) @php $selected_ministry=$q8_table_data['q8Title' . $i] ?? '' ;
+                            @endphp <tr>
                             <td>
-                                <input type="text" name="official_title_q8[]" id="q8Title{{ $i }}"
-                                    class="form-control q8Input" value="{{ $q8_table_data['q8Title' . $i] ?? '' }}">
+                                <select name="official_title_q8[]" id="q8Title{{ $i }}" class="form-control q8Input">
+                                    <option value="">Select Ministry</option>
+                                    @foreach($ministries as $ministry)
+                                    <option value="{{ $ministry }}"
+                                        {{ $selected_ministry == $ministry ? 'selected' : '' }}>
+                                        {{ $ministry }}
+                                    </option>
+                                    @endforeach
+                                </select>
                             </td>
                             <td>
                                 <input type="number" name="official_investigation_q8[]" id="q8Men{{ $i }}" min="0"
@@ -154,15 +207,13 @@ function calculateQ8Totals() {
     $("#q8GirlsTotal").val(girls);
 }
 
-$(document).on("input", ".question8RowMen, .question8RowWomen, .question8RowBoys, .question8RowGirls",
+$(document).on("input change", ".question8RowMen, .question8RowWomen, .question8RowBoys, .question8RowGirls",
     calculateQ8Totals);
 
 $(document).ready(function() {
     calculateQ8Totals(); // পেজ রিলোড হলে জেনারেট করা ডাটার টোটাল দেখানোর জন্য
 });
-</script>
 
-<script>
 // ⬅️ রেডিও বাটন হাইড/শো লজিক
 $(document).ready(function() {
     $(".eight_status").on("change", function() {
@@ -172,6 +223,7 @@ $(document).ready(function() {
             $('#8_question_view').removeClass('visibility').show();
             $('.q8_others_container').addClass('othersText').hide();
             $('#q8others').val("");
+            calculateQ8Totals();
         } else if (statusvalue == "2") {
             $('#8_question_view').hide();
             $('.q8_others_container').removeClass('othersText').show();
@@ -182,9 +234,7 @@ $(document).ready(function() {
         }
     });
 });
-</script>
 
-<script>
 // ⬅️ AJAX এর মাধ্যমে টেম্পোরারি ডাটা সেভ
 $(document).on("click", '#temp-save-question8', function() {
     calculateQ8Totals();
@@ -213,9 +263,9 @@ $(document).on("click", '#temp-save-question8', function() {
             question8: saveData // ডাইনামিক সেশন কি 'question8'
         },
         success: function(response) {
-            if (response.success) {
+            if (response.success || response) {
                 $('.question8 .card-header h6').css('color', 'blue');
-                alert("Question 8 Temp Saved ✅");
+                alert("Question 8 Temp Saved ");
             } else {
                 alert("Not Saved");
             }

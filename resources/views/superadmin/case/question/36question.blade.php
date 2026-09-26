@@ -138,7 +138,7 @@ $rowCount = max(count($q36_support_types), 1);
                                 <th>Girl</th>
                                 <th>TG</th>
                                 <th>Total</th>
-                                <th style="width: 80px;">Action</th>
+                                <th style="width: 80px;">Add row</th>
                             </tr>
                         </thead>
                         <tbody id="q36_table_body">
