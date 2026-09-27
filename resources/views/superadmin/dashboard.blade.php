@@ -688,7 +688,7 @@ tr:hover td {
             <a class="qbtn map" href="{{ route('superadmin.report.summary') }}">Consolidated Report</a>
         </div>
 
-        @if(auth()->user()->user_type == " Super Admin" || auth()->user()->user_type == "MoHa")
+        @if(auth()->user()->user_type == "Super Admin" || auth()->user()->user_type == "MoHa")
 
         <div class="card">
             <div class="card-body">
@@ -703,40 +703,51 @@ tr:hover td {
         </div>
 
         <div class="stat-grid">
-            <div class="stat blue">
-                <div class="label">Last Reporting Status</div>
-                <div class="value">Submitted</div>
-                <div class="sub">14 Jul 2026, 6:40 PM</div>
-            </div>
-            <div class="stat navy">
-                <div class="label">Number of Agencies</div>
-                <div class="value">58 Active</div>
-                <div class="sub">6 Inactive</div>
-            </div>
-            <div class="stat amber">
-                <div class="label">Total Num of Cases</div>
-                <div class="value">1,284 Pending</div>
-                <div class="sub">3,946 Ongoing</div>
-            </div>
+            
+            <a href="{{ route('superadmin.all.question') }}" class="stat-card no-underline inline-block w-full">
+                <div class="stat blue">
+                    <div class="label no-underline">Current Questions</div>
+                    <div class="sub no-underline">{{ $total_questions }}</div>
+                </div>
+            </a>
+           
+
+        <a href="{{ route('superadmin.user.list') }}" class="stat-card no-underline inline-block w-full">
+                    <div class="stat navy">
+                        <div class="label">No of Actor's to Report</div>
+                        <div class="sub">{{$total_users}}</div>
+                    </div>
+        </a>
+
+
+            <a href="{{ route('superadmin.case.list') }}" class="stat-card no-underline inline-block w-full">
             <div class="stat green">
-                <div class="label">Case Submitted</div>
-                <div class="value">4,512 Approved</div>
-                <div class="sub">718 Not Approved</div>
+                <div class="label">Submitted Report</div>
+                <div class="value">{{$total_cases}}</div>
             </div>
+              </a>
             <div class="stat purple">
-                <div class="label">Total User Num</div>
-                <div class="value">312 Active</div>
-                <div class="sub">47 Inactive</div>
+                <div class="label">Reporting Dead Line</div>
+                <div class="value"> </div>
+                
             </div>
             <div class="stat teal">
-                <div class="label">Live User</div>
-                <div class="value">96 Online</div>
-                <div class="sub">216 Offline</div>
+                <div class="label">Previous Report</div>
+                <div class="value"></div>
             </div>
+
+
             <div class="stat red">
-                <div class="label">Data Covered Division</div>
-                <div class="value">7 Active</div>
-                <div class="sub">1 Inactive</div>
+                <div class="label">Agencies Queries</div>
+                <div class="value"></div>
+            </div>
+             <div class="stat blue">
+                <div class="label"> Report Status</div>
+                <div class="value"></div>
+            </div>
+             <div class="stat navy">
+                <div class="label">Due Report</div>
+                <div class="value"></div>
             </div>
         </div>
 
