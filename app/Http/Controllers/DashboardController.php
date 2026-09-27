@@ -71,6 +71,8 @@ use App\Helpers\helper;
 use App\Models\QuestionTitle;
 use Spatie\Permission\Models\Role;
 use App\Models\CaseModel;
+use App\Models\UserManual;
+
 use PDF;
 class DashboardController extends Controller
 {
@@ -91,10 +93,53 @@ public function ListMinistryAgency()
         return view('superadmin.dashboard', compact('total_questions', 'total_roles', 'total_cases', 'total_users')); 
     }
 
+
+    public function User_Manual()
+    {
+        $manual = UserManual::first();
+        return view ('superadmin.user-manual.index', compact('manual'));
+    }
+
+    public function User_Manual_Update(Request $request)
+    {
+        // ১. ভ্যালিডেশন (ফাইলটি অবশ্যই PDF হতে হবে)
+        $request->validate([
+            'attach_user_manual' => 'required|mimes:pdf|max:10240', // সর্বোচ্চ 10MB PDF
+        ]);
+
+        // ২. ডাটাবেজের ১ নম্বর রেকর্ড বা নতুন রেকর্ড নেওয়া
+        $manual = UserManual::firstOrNew(['id' => 1]);
+
+        // ৩. PDF ফাইল আপলোড প্রসেসিং
+        if ($request->hasFile('attach_user_manual')) {
+            // আগের কোনো PDF থাকলে তা ডিলিট করা
+            if ($manual->attach_user_manual && file_exists(public_path('uploads/pdf/' . $manual->attach_user_manual))) {
+                unlink(public_path('uploads/pdf/' . $manual->attach_user_manual));
+            }
+
+            // নতুন ফাইল সেভ করা
+            $file = $request->file('attach_user_manual');
+            $filename = 'user_manual_' . time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/pdf/'), $filename);
+
+            // ফাইল এর নাম অবজেক্টে সেট করা
+            $manual->attach_user_manual = $filename;
+        }
+
+        // ৪. লগইন থাকা ইউজারের ID ও ডাটা সেভ
+        $manual->user_id = auth()->id();
+        $manual->save();
+
+        return redirect()->back()->with('success', 'User Manual uploaded successfully!');
+    }
+
+    
+
     public function dashboardquestion()
     {
         return view('superadmin.dashboardquestion');
     }
+    
 
     public function chart()
     {

@@ -121,7 +121,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('superadmin/user/edit/{id}', [UserController::class, 'update'])->name('superadmin.user.edit');
     Route::get('superadmin/user/delete/{id}', [UserController::class, 'Delete'])->name('superadmin.user.delete');
 
-
+    Route::get('superadmin/user-manual', [DashboardController::class, 'User_Manual'])->name('superadmin.user-manual');
+    Route::post('superadmin/user-manual/update', [DashboardController::class, 'User_Manual_Update'])->name('superadmin.user-manual.update');
 
     //profile update
 

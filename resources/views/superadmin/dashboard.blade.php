@@ -683,7 +683,7 @@ tr:hover td {
         <div class="quicklinks">
             <a class="qbtn primary" href="{{ route('dashboard') }}">Home</a>
             <a class="qbtn faq" href="{{ route('superadmin.all.faq') }}">FAQ </a>
-            <a class="qbtn manual" href="#">User Manual PDF</a>
+            <a class="qbtn manual" href="{{ route('superadmin.user-manual') }}">User Manual PDF</a>
             <a class="qbtn status" href="{{ route('superadmin.case.list') }}">View Data</a>
             <a class="qbtn map" href="{{ route('superadmin.report.summary') }}">Consolidated Report</a>
         </div>
