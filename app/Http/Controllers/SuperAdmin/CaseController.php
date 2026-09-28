@@ -108,6 +108,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\IOFactory;
+use Carbon\Carbon;
 class CaseController extends Controller
 {
 
@@ -547,82 +548,96 @@ if (!empty($bulkInsertData)) {
         
 
         // question4
-        if ($request->is_supreme_court_q4 != 0) {
+       
+if ($request->input('is_supreme_court_q4') == '1') {
 
-            $supreme_court_title_q4 = $request->input('supreme_court_title_q4', []);
-            $supreme_court_status_q4 = $request->input('supreme_court_status_q4', []);
+    $case_id = $question->id; 
+    $now = Carbon::now();
 
-            $images = [];
-            if ($request->hasFile('supreme_court_image_q4')) {
-                foreach ($request->file('supreme_court_image_q4') as $index => $image) {
-                    $ext = $image->extension();
-                    $final_name = 'supreme_court_image_q4_' . time() . '_' . $index . '.' . $ext;
-                    $image->move(public_path('uploads/supreme_court_image_q4'), $final_name);
-                    $images[] = 'uploads/supreme_court_image_q4/' . $final_name;
+    // ---------------- Table 1 (FourA) ----------------
+    $supreme_court_title_q4  = array_values($request->input('supreme_court_title_q4', []));
+    $supreme_court_status_q4 = array_values($request->input('supreme_court_status_q4', []));
+    $images_q4               = $request->file('supreme_court_image_q4', []);
+
+    $bulkInsertDataA = [];
+
+    foreach ($supreme_court_title_q4 as $index => $title) {
+        $status = $supreme_court_status_q4[$index] ?? null;
+
+        // Strict Check: Title o Status key both Null/Empty hole strictly skip hobe
+        if (is_null($title) || trim($title) === '') {
+            if (is_null($status) || trim($status) === '') {
+                if (!isset($images_q4[$index])) {
+                    continue; // eitar karone null row DB te jabei na
                 }
             }
+        }
 
-            $case_id = $question->id;
+        $imagePath = null;
+        if (isset($images_q4[$index]) && $images_q4[$index]->isValid()) {
+            $image = $images_q4[$index];
+            $ext = $image->extension();
+            $final_name = 'supreme_court_image_q4_' . time() . '_' . $index . '.' . $ext;
+            $image->move(public_path('uploads/supreme_court_image_q4'), $final_name);
+            $imagePath = 'uploads/supreme_court_image_q4/' . $final_name;
+        }
 
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($supreme_court_title_q4),
-                count($supreme_court_status_q4),
-                count($images)
-            );
+        $bulkInsertDataA[] = [
+            'case_id'                => $case_id,
+            'supreme_court_title_q4'  => $title,
+            'supreme_court_status_q4' => $status,
+            'supreme_court_image_q4'  => $imagePath,
+            'created_at'             => $now,
+            'updated_at'             => $now,
+        ];
+    }
 
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'supreme_court_title_q4' => $supreme_court_title_q4[$i] ?? null,
-                    'supreme_court_status_q4' => $supreme_court_status_q4[$i] ?? null,
-                    'supreme_court_image_q4' => $images[$i] ?? null,
-                ];
+    if (!empty($bulkInsertDataA)) {
+        FourA::insert($bulkInsertDataA);
+    }
+
+    // ---------------- Table 2 (FourB) ----------------
+    $supreme_court_title_two_q4  = array_values($request->input('supreme_court_title_two_q4', []));
+    $supreme_court_status_two_q4 = array_values($request->input('supreme_court_status_two_q4', []));
+    $images_two_q4               = $request->file('supreme_court_image_two_q4', []);
+
+    $bulkInsertDataB = [];
+
+    foreach ($supreme_court_title_two_q4 as $index => $title_two) {
+        $status_two = $supreme_court_status_two_q4[$index] ?? null;
+
+        // Strict Check
+        if (is_null($title_two) || trim($title_two) === '') {
+            if (is_null($status_two) || trim($status_two) === '') {
+                if (!isset($images_two_q4[$index])) {
+                    continue; // null row skip
+                }
             }
-
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                FourA::insert($bulkInsertData);   // first insert
-
-            }
-        }
-        $supreme_court_title_two_q4 = $request->input('supreme_court_title_two_q4', []);
-        $supreme_court_status_two_q4 = $request->input('supreme_court_status_two_q4', []);
-
-        $images = [];
-        if ($request->hasFile('supreme_court_image_two_q4')) {
-            foreach ($request->file('supreme_court_image_two_q4') as $index => $image) {
-                $ext = $image->extension();
-                $final_name = 'supreme_court_image_two_q4_' . time() . '_' . $index . '.' . $ext;
-                $image->move(public_path('uploads/supreme_court_image_two_q4'), $final_name);
-                $images[] = 'uploads/supreme_court_image_two_q4/' . $final_name;
-            }
         }
 
-        $case_id = $question->id;
-
-        $bulkInsertData = [];
-        $maxCount = max(
-            count($supreme_court_title_two_q4),
-            count($supreme_court_status_two_q4),
-            count($images)
-        );
-
-        for ($i = 0; $i < $maxCount; $i++) {
-            $bulkInsertData[] = [
-                'case_id' => $case_id,
-                'supreme_court_title_two_q4' => $supreme_court_title_two_q4[$i] ?? null,
-                'supreme_court_status_two_q4' => $supreme_court_status_two_q4[$i] ?? null,
-                'supreme_court_image_two_q4' => $images[$i] ?? null,
-            ];
+        $imagePathTwo = null;
+        if (isset($images_two_q4[$index]) && $images_two_q4[$index]->isValid()) {
+            $image = $images_two_q4[$index];
+            $ext = $image->extension();
+            $final_name = 'supreme_court_image_two_q4_' . time() . '_' . $index . '.' . $ext;
+            $image->move(public_path('uploads/supreme_court_image_two_q4'), $final_name);
+            $imagePathTwo = 'uploads/supreme_court_image_two_q4/' . $final_name;
         }
 
-        if (!empty($bulkInsertData)) {
-            //return response()->json($bulkInsertData);
-            FourB::insert($bulkInsertData);   // first insert
+        $bulkInsertDataB[] = [
+            'case_id'                    => $case_id,
+            'supreme_court_title_two_q4'  => $title_two,
+            'supreme_court_status_two_q4' => $status_two,
+            'supreme_court_image_two_q4'  => $imagePathTwo,
+            'created_at'                 => $now,
+            'updated_at'                 => $now,
+        ];
+    }
 
-        }
-
+    if (!empty($bulkInsertDataB)) {
+        FourB::insert($bulkInsertDataB);
+    }
+}
 
 
 
@@ -3011,6 +3026,7 @@ $question42->save();
     }
 
 
+    
     // case view
     public function View($id)
     {
@@ -3027,7 +3043,6 @@ $question42->save();
             'two',
             'three',
             'threeb',
-            'four',
             'five',
             'six',
             'seven',
@@ -3123,7 +3138,7 @@ $question42->save();
         
 
 
-          //return response()->json($case);
+          return response()->json($case);
         return view('superadmin.case.view', compact('case', 'questiontitles'));
     }
 
@@ -3139,7 +3154,7 @@ $question42->save();
             'oneb',
             'two',
             'three',
-            'four',
+           
             'five',
             'six',
             'seven',

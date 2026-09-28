@@ -357,6 +357,8 @@ $(document).ready(function() {
             let purpose = $(this).find('.q3_purpose_select').val();
             let technology = $(this).find('.q3_tech_select').val();
             let description = $(this).find('.q3_desc_input').val();
+            let cases = $(this).find('.q3_cases_input')
+        .val(); // <--- Added missing cases retrieval
 
             q3_data_a.push({
                 category: category,
@@ -366,7 +368,9 @@ $(document).ready(function() {
                 technology: technology,
                 technology_q3: technology,
                 description: description,
-                description_q3: description
+                description_q3: description,
+                cases: cases, // <--- Added cases key
+                cases_q3: cases // <--- Added cases_q3 key
             });
         });
 

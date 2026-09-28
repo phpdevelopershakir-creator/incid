@@ -296,7 +296,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     $('.question6 .card-header h6').css('color', 'blue');
-                    alert("Question 6 has been saved temporarily");
+                    alert("Question 6 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

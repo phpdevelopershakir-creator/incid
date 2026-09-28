@@ -77,11 +77,9 @@ if (($questiontitles[1]->status ?? null) == 1) {
 
                         </td>
                         <td class="text-center align-middle">
-                            @if(strtolower($two->risk_status_q2) === 'Other')
+
+                            {{ $two->risk_status_q2 }} <br>
                             {{ $two->risk_other_details_q2 }}
-                            @else
-                            {{ $two->risk_status_q2 }}
-                            @endif
                         </td>
                     </tr>
                     @endforeach

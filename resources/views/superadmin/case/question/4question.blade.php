@@ -3,10 +3,10 @@
 
 $question_4_data = session()->get('question4');
 
-$q4_checked = $question_4_data['q4_checked_value'] ?? "1";
-$q4_table_one = $question_4_data['q4_table_one'] ?? null;
-$q4_table_two = $question_4_data['q4_table_two'] ?? null;
-$q4_others_val = $question_4_data['others'] ?? '';
+$q4_checked =$question_4_data['q4_checked_value'] ?? "1";
+$q4_table_one =$question_4_data['q4_table_one'] ?? null;
+$q4_table_two =$question_4_data['q4_table_two'] ?? null;
+$q4_others_val =$question_4_data['others'] ?? '';
 
 $training_responses = [
 1 => "PSHT 2012",
@@ -89,27 +89,29 @@ $training_responses_two = [
                     </thead>
                     <tbody>
                         @if(!empty($q4_table_one) && count($q4_table_one) > 0)
-                        @foreach($q4_table_one as $index => $row)
-                        <tr class="qe4NoOfRow" id="t1_q4_row_{{ $index }}">
+                        @foreach($q4_table_one as $index =>$row)
+                        <tr class="qe4NoOfRow">
                             <td>
                                 @if($index == 0)
-                                <select name="supreme_court_title_q4[]" class="form-control">
-                                    <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_responses as $key => $training)
-                                    <option value="{{ $key }}" {{ ($row['title'] ?? '') == $key ? 'selected' : '' }}>
+                                <select name="supreme_court_title_q4[]" class="form-control q4_t1_title">
+                                    <option value="" disabled {{ empty($row['title']) ? 'selected' : '' }}>---Choose an
+                                        item--</option>
+                                    @foreach ($training_responses as $key =>$training)
+                                    <option value="{{ $key }}" {{ ($row['title'] ?? '') ==$key ? 'selected' : '' }}>
                                         {{ $training }}</option>
                                     @endforeach
                                 </select>
                                 @else
-                                <input type="text" name="supreme_court_title_q4[]" class="form-control"
+                                <input type="text" name="supreme_court_title_q4[]" class="form-control q4_t1_title"
                                     placeholder="Others Specific" value="{{ $row['title'] ?? '' }}">
                                 @endif
                             </td>
                             <td>
-                                <select name="supreme_court_status_q4[]" class="form-control">
-                                    <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_status as $key => $status)
-                                    <option value="{{ $key }}" {{ ($row['status'] ?? '') == $key ? 'selected' : '' }}>
+                                <select name="supreme_court_status_q4[]" class="form-control q4_t1_status">
+                                    <option value="" disabled {{ empty($row['status']) ? 'selected' : '' }}>---Choose an
+                                        item--</option>
+                                    @foreach ($training_status as $key =>$status)
+                                    <option value="{{ $key }}" {{ ($row['status'] ?? '') ==$key ? 'selected' : '' }}>
                                         {{ $status }}</option>
                                     @endforeach
                                 </select>
@@ -117,10 +119,9 @@ $training_responses_two = [
                             <td><input type="file" name="supreme_court_image_q4[]" class="form-control"></td>
                             <td>
                                 @if($index == 0)
-                                @elseif($index == 1)
                                 <button id="addRowDatasQ4" type="button" class="btn btn-sm btn-primary">+</button>
                                 @else
-                                <button type="button" class="btn btn-danger btn_remove_t1_q4">-</button>
+                                <button type="button" class="btn btn-danger btn-sm btn_remove_t1_q4">-</button>
                                 @endif
                             </td>
                         </tr>
@@ -128,39 +129,41 @@ $training_responses_two = [
                         @else
                         <tr class="qe4NoOfRow">
                             <td>
-                                <select name="supreme_court_title_q4[]" class="form-control">
+                                <select name="supreme_court_title_q4[]" class="form-control q4_t1_title">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_responses as $key => $training)
+                                    @foreach ($training_responses as $key =>$training)
                                     <option value="{{ $key }}">{{ $training }}</option>
                                     @endforeach
                                 </select>
                             </td>
                             <td>
-                                <select name="supreme_court_status_q4[]" class="form-control">
+                                <select name="supreme_court_status_q4[]" class="form-control q4_t1_status">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_status as $key => $status)
+                                    @foreach ($training_status as $key =>$status)
                                     <option value="{{ $key }}">{{ $status }}</option>
                                     @endforeach
                                 </select>
                             </td>
                             <td><input type="file" name="supreme_court_image_q4[]" class="form-control"></td>
-                            <td></td>
+                            <td>
+                                <button id="addRowDatasQ4" type="button" class="btn btn-sm btn-primary">+</button>
+                            </td>
                         </tr>
                         <tr class="qe4NoOfRow">
                             <td>
-                                <input type="text" name="supreme_court_title_q4[]" class="form-control"
+                                <input type="text" name="supreme_court_title_q4[]" class="form-control q4_t1_title"
                                     placeholder="Others (Specify)___">
                             </td>
                             <td>
-                                <select name="supreme_court_status_q4[]" class="form-control">
+                                <select name="supreme_court_status_q4[]" class="form-control q4_t1_status">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_status as $key => $status)
+                                    @foreach ($training_status as $key =>$status)
                                     <option value="{{ $key }}">{{ $status }}</option>
                                     @endforeach
                                 </select>
                             </td>
                             <td><input type="file" name="supreme_court_image_q4[]" class="form-control"></td>
-                            <td><button id="addRowDatasQ4" type="button" class="btn btn-sm btn-primary">+</button></td>
+                            <td><button type="button" class="btn btn-danger btn-sm btn_remove_t1_q4">-</button></td>
                         </tr>
                         @endif
                     </tbody>
@@ -180,14 +183,15 @@ $training_responses_two = [
                     </thead>
                     <tbody>
                         @if(!empty($q4_table_two) && count($q4_table_two) > 0)
-                        @foreach($q4_table_two as $index => $row)
-                        <tr class="qe4NoOfRow2" id="t2_q4_row_{{ $index }}">
-                            <td><input type="text" name="supreme_court_title_two_q4[]" class="form-control"
-                                    value="{{ $row['title_two'] ?? '' }}"></td>
+                        @foreach($q4_table_two as $index =>$row)
+                        <tr class="qe4NoOfRow2">
+                            <td><input type="text" name="supreme_court_title_two_q4[]" class="form-control q4_t2_title"
+                                    value="{{ $row['title_two'] ?? '' }}" placeholder="Enter Title"></td>
                             <td>
-                                <select name="supreme_court_status_two_q4[]" class="form-control">
-                                    <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_responses_two as $key => $training)
+                                <select name="supreme_court_status_two_q4[]" class="form-control q4_t2_status">
+                                    <option value="" disabled {{ empty($row['status_two']) ? 'selected' : '' }}>
+                                        ---Choose an item--</option>
+                                    @foreach ($training_responses_two as $key =>$training)
                                     <option value="{{ $key }}"
                                         {{ ($row['status_two'] ?? '') == $key ? 'selected' : '' }}>{{ $training }}
                                     </option>
@@ -199,19 +203,19 @@ $training_responses_two = [
                                 @if($index == 0)
                                 <button id="addRowDatas2Q4" type="button" class="btn btn-sm btn-primary">+</button>
                                 @else
-                                <button type="button" class="btn btn-danger btn_remove_t2_q4">-</button>
+                                <button type="button" class="btn btn-danger btn-sm btn_remove_t2_q4">-</button>
                                 @endif
                             </td>
                         </tr>
                         @endforeach
                         @else
                         <tr class="qe4NoOfRow2">
-                            <td><input type="text" name="supreme_court_title_two_q4[]" class="form-control"
+                            <td><input type="text" name="supreme_court_title_two_q4[]" class="form-control q4_t2_title"
                                     placeholder="Enter Title"></td>
                             <td>
-                                <select name="supreme_court_status_two_q4[]" class="form-control">
+                                <select name="supreme_court_status_two_q4[]" class="form-control q4_t2_status">
                                     <option value="" disabled selected>---Choose an item--</option>
-                                    @foreach ($training_responses_two as $key => $training)
+                                    @foreach ($training_responses_two as $key =>$training)
                                     <option value="{{ $key }}">{{ $training }}</option>
                                     @endforeach
                                 </select>
@@ -236,8 +240,9 @@ $training_responses_two = [
 
 <script>
 $(document).ready(function() {
-    // Yes/No/Others কন্ডিশনাল শো হাইড লজিক
-    $(".fourstatus").on("change", function() {
+
+    // ১. Radio Button Toggle
+    $(document).on("change", ".fourstatus", function() {
         var statusvalue = $("input[name='is_supreme_court_q4']:checked").val();
         if (statusvalue == '1') {
             $('#4_question_view').removeClass('visibility').show();
@@ -253,39 +258,34 @@ $(document).ready(function() {
         }
     });
 
-    // ➕ Table 1: ডাইনামিক রো অ্যাড করা
-    let t1_counter = $('.qe4NoOfRow').length;
-    $("#addRowDatasQ4").click(function() {
-        t1_counter++;
-        let htmlRow = `<tr class="qe4NoOfRow" id="t1_q4_row_${t1_counter}">
-                <td><input type="text" name="supreme_court_title_q4[]" class="form-control" placeholder="Others (Specify)___"></td>
+    // ২. Table 1: Add Row
+    $(document).on("click", "#addRowDatasQ4", function() {
+        let htmlRow = `<tr class="qe4NoOfRow">
+                <td><input type="text" name="supreme_court_title_q4[]" class="form-control q4_t1_title" placeholder="Others (Specify)___"></td>
                 <td>
-                    <select name="supreme_court_status_q4[]" class="form-control">
+                    <select name="supreme_court_status_q4[]" class="form-control q4_t1_status">
                         <option value="" disabled selected>---Choose an item--</option>
                         <option value="1">Revised</option>
                         <option value="2">Abolished</option>
                     </select>
                 </td>
                 <td><input type="file" name="supreme_court_image_q4[]" class="form-control"></td>
-                <td><button type="button" class="btn btn-danger btn_remove_t1_q4">-</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm btn_remove_t1_q4">-</button></td>
             </tr>`;
         $("#addRowQ4 tbody").append(htmlRow);
     });
 
-    // ➖ Table 1: রো ডিলিট করা
+    // ৩. Table 1: Remove Row
     $(document).on('click', '.btn_remove_t1_q4', function() {
         $(this).closest('tr').remove();
     });
 
-
-    // ➕ Table 2: ডাইনামিক রো অ্যাড করা
-    let t2_counter = $('.qe4NoOfRow2').length;
+    // ৪. Table 2: Add Row
     $(document).on('click', '#addRowDatas2Q4', function() {
-        t2_counter++;
-        let htmlRow2 = `<tr class="qe4NoOfRow2" id="t2_q4_row_${t2_counter}">
-                <td><input type="text" name="supreme_court_title_two_q4[]" class="form-control" placeholder="Enter Title"></td>
+        let htmlRow2 = `<tr class="qe4NoOfRow2">
+                <td><input type="text" name="supreme_court_title_two_q4[]" class="form-control q4_t2_title" placeholder="Enter Title"></td>
                 <td>
-                    <select name="supreme_court_status_two_q4[]" class="form-control">
+                    <select name="supreme_court_status_two_q4[]" class="form-control q4_t2_status">
                         <option value="" disabled selected>---Choose an item--</option>
                         <option value="1">Planned</option>
                         <option value="2">On Process of Need Assessment</option>
@@ -296,43 +296,44 @@ $(document).ready(function() {
                     </select>
                 </td>
                 <td><input type="file" name="supreme_court_image_two_q4[]" class="form-control"></td>
-                <td><button type="button" class="btn btn-danger btn_remove_t2_q4">-</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm btn_remove_t2_q4">-</button></td>
             </tr>`;
         $("#addRow2Q4 tbody").append(htmlRow2);
     });
 
-    // ➖ Table 2: রো ডিলিট করা
+    // ৫. Table 2: Remove Row
     $(document).on('click', '.btn_remove_t2_q4', function() {
         $(this).closest('tr').remove();
     });
 
-    // 💾 AJAX ড্রাফট সেভ সাবমিশন লজিক
+    // ৬. AJAX Temp Save
     $(document).on("click", '#temp-save-question4', function() {
         let table_one_data = [];
         let table_two_data = [];
         let yes_no_value = $("input[name='is_supreme_court_q4']:checked").val();
 
-        // টেবিল ১ এর ডাটা কালেকশন লুপ
-        $('.qe4NoOfRow').each(function() {
-            let title = $(this).find('input[name="supreme_court_title_q4[]"]').val() || $(this)
-                .find('select[name="supreme_court_title_q4[]"]').val();
-            let status = $(this).find('select[name="supreme_court_status_q4[]"]').val();
+        // Collect Table 1 Data
+        $('#addRowQ4 tbody tr.qe4NoOfRow').each(function() {
+            let title = $(this).find('.q4_t1_title').val();
+            let status = $(this).find('.q4_t1_status').val();
+
             if (title || status) {
                 table_one_data.push({
-                    title: title,
-                    status: status
+                    title: title || '',
+                    status: status || ''
                 });
             }
         });
 
-        // টেবিল ২ এর ডাটা কালেকশন লুপ
-        $('.qe4NoOfRow2').each(function() {
-            let title_two = $(this).find('input[name="supreme_court_title_two_q4[]"]').val();
-            let status_two = $(this).find('select[name="supreme_court_status_two_q4[]"]').val();
+        // Collect Table 2 Data
+        $('#addRow2Q4 tbody tr.qe4NoOfRow2').each(function() {
+            let title_two = $(this).find('.q4_t2_title').val();
+            let status_two = $(this).find('.q4_t2_status').val();
+
             if (title_two || status_two) {
                 table_two_data.push({
-                    title_two: title_two,
-                    status_two: status_two
+                    title_two: title_two || '',
+                    status_two: status_two || ''
                 });
             }
         });
@@ -349,18 +350,19 @@ $(document).ready(function() {
             url: "/superadmin/case/temp-save-question",
             data: {
                 "_token": "{{ csrf_token() }}",
-                "question_no": 4, // সেশন কি ডাইনামিকলি 'question4' বানাবে
-                "question4": final_payload // পেলোড ডাটা
+                "question_no": 4,
+                "question4": final_payload
             },
             success: function(response) {
                 $('.question4 .card-title').css('color', 'blue');
-                alert("Question 4 Draft Saved Temporary ✅");
+                alert("Question 4 Temp Saved Successfully!");
             },
             error: function(err) {
-                alert("Error saving data ❌");
+                alert("Error saving data");
                 console.log(err);
             }
         });
     });
+
 });
 </script>

@@ -27,6 +27,8 @@ if (($questiontitles[2]->status ?? null) == 1) {
                             <th class="text-center" style="vertical-align: middle; padding-bottom: 20px;">Description
                                 (victims/process and nature
                                 of victimization/government actions)</th>
+                            <td lass="text-center" style="vertical-align: middle; padding-bottom: 20px;">Number of
+                                Trafficking Cases</td>
 
 
                         </tr>
@@ -113,6 +115,7 @@ if (($questiontitles[2]->status ?? null) == 1) {
                             <td>{{ $technology_list[$three->technology_q3] ?? $three->technology_q3 ?? 'N/A' }}</td>
 
                             <td>{{$three->description_q3}}</td>
+                            <td>{{$three->cases_q3}}</td>
 
                         </tr>
 

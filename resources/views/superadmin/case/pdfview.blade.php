@@ -62,16 +62,17 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <table style="width:100%; background-color:#80C090; padding:10px 15px; color:#000; border-radius:5px; margin-bottom:10px;">
-    <tr>
-        <td style="text-align:left; font-weight:bold; font-size:16px;">
-            Date :{{$case->created_at->format('F d, Y h:i A') }}
-        </td>
-        <td style="text-align:right; font-size:14px;">
-            Case ID : {{ $case->caseid}}
-        </td>
-    </tr>
-</table>
+                        <table
+                            style="width:100%; background-color:#80C090; padding:10px 15px; color:#000; border-radius:5px; margin-bottom:10px;">
+                            <tr>
+                                <td style="text-align:left; font-weight:bold; font-size:16px;">
+                                    Date :{{ $case->created_at->format('F d, Y') }}
+                                </td>
+                                <td style="text-align:right; font-size:14px;">
+                                    Case ID : {{ $case->caseid}}
+                                </td>
+                            </tr>
+                        </table>
                         <h4 class="card-title"
                             style="text-align:center; background-color:#80C090; padding:10px; color:#fff; border-radius:5px;">
                             Annual TIP Report, Bangladesh <br>
