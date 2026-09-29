@@ -371,7 +371,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question13 .card-header h6').css('color', 'blue');
-                    alert("Question 13 Saved Temporarily");
+                    alert("Question 13 Temp Saved");
                 }
             },
             error: function(err) {

@@ -322,7 +322,7 @@ $(document).ready(function() {
                 if (response
                     .success) { // কন্ট্রোলারের ['success' => true] রেসপন্স চেক করা হচ্ছে
                     $('.question10 .card-title').css('color', 'blue');
-                    alert("Question 10 has been saved temporarily");
+                    alert("Question 10 Temp saved");
                 } else {
                     alert("Not Saved");
                 }

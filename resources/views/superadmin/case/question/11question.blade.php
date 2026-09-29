@@ -103,7 +103,7 @@ $district_Lists = [
                             <td>
                                 @if($index == 0)
 
-                                <select name="government_agreements_transparent_district_q11[]" class="form-control">
+                                <select name="government_agreements_transparent_country_q11[]" class="form-control">
                                     <option value="" disabled>---Choose an item--</option>
                                     @foreach ($district_Lists as $key => $district)
                                     <option value="{{ $key }}" {{ ($row['district'] ?? '') == $key ? 'selected' : '' }}>
@@ -112,7 +112,7 @@ $district_Lists = [
                                 </select>
                                 @else
 
-                                <input type="text" name="government_agreements_transparent_district_q11[]"
+                                <input type="text" name="government_agreements_transparent_country_q11[]"
                                     class="form-control" placeholder="Others (Specify)___"
                                     value="{{ $row['district'] ?? '' }}">
                                 @endif
@@ -148,7 +148,7 @@ $district_Lists = [
 
                         <tr class="qe11NoOfRow" id="row0">
                             <td>
-                                <select name="government_agreements_transparent_district_q11[]" class="form-control">
+                                <select name="government_agreements_transparent_country_q11[]" class="form-control">
                                     <option value="" disabled selected>---Choose an item--</option>
                                     @foreach ($district_Lists as $key => $district)
                                     <option value="{{ $key }}">{{ $district }}</option>
@@ -172,7 +172,7 @@ $district_Lists = [
 
                         <tr class="qe11NoOfRow" id="row1">
                             <td>
-                                <input type="text" name="government_agreements_transparent_district_q11[]"
+                                <input type="text" name="government_agreements_transparent_country_q11[]"
                                     class="form-control" placeholder="Others (Specify)___">
                             </td>
                             <td>
@@ -233,7 +233,7 @@ $(document).ready(function() {
 
         $("#addRowQ11 tbody").append(
             '<tr class="qe11NoOfRow" id="row' + rowCount + '">' +
-            '<td><input type="text" name="government_agreements_transparent_district_q11[]" class="form-control" placeholder="Others (Specify)___"></td>' +
+            '<td><input type="text" name="government_agreements_transparent_country_q11[]" class="form-control" placeholder="Others (Specify)___"></td>' +
             '<td><select name="government_agreements_transparent_status_q11[]" class="form-control"><option value="" disabled selected>---Choose an item--</option>' +
             targetOptions + '</select></td>' +
             '<td><input type="number" name="government_agreements_transparent_total_q11[]" class="form-control" value="0" min="0"></td>' +
@@ -256,7 +256,7 @@ $(document).ready(function() {
         $('.qe11NoOfRow').each(function() {
 
             let district = $(this).find(
-                '[name="government_agreements_transparent_district_q11[]"]').val();
+                '[name="government_agreements_transparent_country_q11[]"]').val();
             let target = $(this).find(
                 'select[name="government_agreements_transparent_status_q11[]"]').val();
             let total = $(this).find(

@@ -322,7 +322,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question14 .card-title').css('color', 'blue');
-                alert("Question 14 Draft Saved Temporarily ");
+                alert("Question 14 Temp Saved ");
             },
             error: function(err) {
                 alert("Error saving data ");

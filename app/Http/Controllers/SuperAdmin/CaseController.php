@@ -3138,7 +3138,7 @@ $question42->save();
         
 
 
-          return response()->json($case);
+          //return response()->json($case);
         return view('superadmin.case.view', compact('case', 'questiontitles'));
     }
 

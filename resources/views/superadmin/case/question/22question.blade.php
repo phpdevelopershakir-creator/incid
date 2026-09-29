@@ -221,7 +221,7 @@ $(document).on("click", "#temp-save-question22", function() {
         },
         success: function(response) {
             $('.question22 .card-header h6').css('color', 'blue');
-            alert("Question 22 Temp Saved ✅");
+            alert("Question 22 Temp Saved ");
         },
         error: function(err) {
             alert("Error saving data");

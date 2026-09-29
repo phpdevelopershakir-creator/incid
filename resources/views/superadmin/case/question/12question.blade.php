@@ -356,7 +356,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question12 .card-header h6').css('color', 'blue');
-                    alert("Question 12 Saved Temporarily ");
+                    alert("Question 12 Temp Saved ");
                 }
             },
             error: function(err) {

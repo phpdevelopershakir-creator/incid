@@ -106,7 +106,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question25 .card-header h6').css('color', 'blue');
-                    alert("Question 25 Temp Saved Successfully!");
+                    alert("Question 25 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

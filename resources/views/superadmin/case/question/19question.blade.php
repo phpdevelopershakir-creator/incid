@@ -107,7 +107,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question19 .card-header h6').css('color', 'blue');
-                    alert("Question 19 Temp Saved Successfully!");
+                    alert("Question 19 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }

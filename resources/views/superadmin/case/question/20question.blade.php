@@ -475,7 +475,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     $('.question20 .card-title').css('color', 'blue');
-                    alert('Question 20  Saved Temporarily ');
+                    alert('Question 20  Temp Saved ');
                 } else {
                     alert('Failed to save data.');
                 }

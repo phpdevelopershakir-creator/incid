@@ -555,7 +555,7 @@ $(function() {
             success: function(response) {
                 if (response.success) {
                     $('.question24 .card-title').css('color', 'blue');
-                    alert("Question 24 data saved successfully!");
+                    alert("Question 24 Temp Saved ");
                 } else {
                     alert("Failed to save data.");
                 }

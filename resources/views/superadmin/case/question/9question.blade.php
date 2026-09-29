@@ -329,7 +329,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question9 .card-header h6').css('color', 'blue');
-                    alert("Question 9  Saved Temporarily ");
+                    alert("Question 9  Temp saved ");
                 }
             },
             error: function(xhr) {

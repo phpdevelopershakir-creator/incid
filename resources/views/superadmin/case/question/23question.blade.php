@@ -105,7 +105,7 @@ $(document).on("click", "#temp-save-question23", function() {
         success: function(response) {
             if (response.success) {
                 $('.question23 .card-header h6').css('color', 'blue');
-                alert("Question 23  Saved Temporarily ");
+                alert("Question 23  Temp Saved ");
             } else {
                 alert("Not Saved");
             }

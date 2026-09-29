@@ -75,7 +75,7 @@ $q15_file_val = $question_15_data['document_upload_q15']
 
             <!-- Yes সিলেক্ট করলে টেবিল শো করবে -->
             <div class="q15_tables_wrapper" style="display: {{ $q15_checked === '1' ? 'block' : 'none' }};">
-                <p><strong>If yes;</strong></p>
+
                 <table class="table table-bordered mb-0">
                     <tbody>
                         <!-- Row 1 -->
@@ -213,7 +213,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question15 .card-header h6').css('color', 'blue');
-                    alert("Question 15 Temp Saved Successfully!");
+                    alert("Question 15 Temp Saved ");
                 } else {
                     alert("Save failed!");
                 }

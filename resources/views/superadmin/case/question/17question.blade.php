@@ -415,7 +415,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('.question17 .card-title').css('color', 'blue');
-                alert("Question 17 Draft Saved Temporarily ");
+                alert("Question 17 Temp Saved ");
             },
             error: function(err) {
                 alert("Error saving data ");
