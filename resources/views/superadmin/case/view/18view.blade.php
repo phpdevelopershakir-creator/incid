@@ -1,3 +1,23 @@
+@php
+$district_Lists = [
+1 => "Bagerhat", 2 => "Bandarban", 3 => "Barguna", 4 => "Barishal",
+5 => "Bhola", 6 => "Bogura", 7 => "Brahmanbaria", 8 => "Chandpur",
+9 => "Chapainawabganj", 10 => "Chattogram", 11 => "Chuadanga", 12 => "Cumilla",
+13 => "Cox's Bazar", 14 => "Dhaka", 15 => "Dinajpur", 16 => "Faridpur",
+17 => "Feni", 18 => "Gaibandha", 19 => "Gazipur", 20 => "Gopalganj",
+21 => "Habiganj", 22 => "Jamalpur", 23 => "Jashore", 24 => "Jhalakathi",
+25 => "Jhenaidah", 26 => "Joypurhat", 27 => "Khagrachari", 28 => "Khulna",
+29 => "Kishoreganj", 30 => "Kurigram", 31 => "Kushtia", 32 => "Lakshmipur",
+33 => "Lalmonirhat", 34 => "Madaripur", 35 => "Magura", 36 => "Manikganj",
+37 => "Meherpur", 38 => "Moulvibazar", 39 => "Munshiganj", 40 => "Mymensingh",
+41 => "Naogaon", 42 => "Narail", 43 => "Narayanganj", 44 => "Narsingdi",
+45 => "Natore", 46 => "Netrokona", 47 => "Nilphamari", 48 => "Noakhali",
+49 => "Pabna", 50 => "Panchagarh", 51 => "Patuakhali", 52 => "Pirojpur",
+53 => "Rajbari", 54 => "Rajshahi", 55 => "Rangamati", 56 => "Rangpur",
+57 => "Satkhira", 58 => "Shariatpur", 59 => "Sherpur", 60 => "Sirajganj",
+61 => "Sunamganj", 62 => "Sylhet", 63 => "Tangail", 64 => "Thakurgaon"
+];
+@endphp
 <div class="card">
     <div class="card-header" role="tab" id="heading-4">
         <h6 class="mb-0">
@@ -17,13 +37,12 @@
                     <thead class="text-center align-middle">
 
                         <tr style="background:#E5E5E5;">
-                            <th rowspan="2" style="vertical-align: middle;">Location</th>
-                            <th colspan="5">Number of personnel Trained</th>
+                            <th rowspan="2" style="vertical-align: middle;">District</th>
+                            <th colspan="4">Number of personnel Trained</th>
 
                         </tr>
                         <tr style="background:#E5E5E5;">
                             <th>Category</th>
-                            <th>NGO/INGO </th>
                             <th>Men</th>
                             <th>Women</th>
                             <th>Total</th>
@@ -39,39 +58,30 @@
                         @endphp
                         @foreach($case->eighteen as $eighteen)
                         <tr>
-                            <th>{{$eighteen->location_q18}}</th>
-
                             <th>
                                 @php
-                                $categories = [
-                                1 => 'Social Worker',
-                                2 => 'Police',
-                                3 => 'BGB',
-                                4 => 'Coastguard',
-                                5 => 'VDP',
-                                6 => 'Rail Police',
-                                7 => 'Judiciary',
-                                8 => 'NGO',
-                                9 => 'Others'
-                                ];
-                                @endphp
+                                $loc = $eighteen->location_q18 ?? null;
 
-                                {{ $categories[$eighteen->category_q18] ?? 'N/A' }}
+                                // Jodi location-ti Array ba Object hoy, tobe tar prothom value-ti nebe
+                                if (is_array($loc)) {
+                                $loc = reset($loc);
+                                } elseif (is_object($loc)) {
+                                $loc = (string) $loc;
+                                }
+                                @endphp
+                                @if (!empty($loc) && isset($district_Lists[$loc]))
+                                {{ $district_Lists[$loc] }}
+                                @else
+                                {{ $loc }}
+                                @endif
+
                             </th>
+
                             <th>
-                                @php
-                                $ratings = [
-                                1 => 'Excellent',
-                                2 => 'Good',
-                                3 => 'Fair',
-                                4 => 'Poor',
-                                5 => 'Extremely Poor',
-                                6 => 'Non-Functional'
-                                ];
-                                @endphp
+                                {{$eighteen->category_q18}}
 
-                                {{ $ratings[$eighteen->ngo_rating_q18] ?? 'N/A' }}
                             </th>
+
                             <th>
                                 {{$eighteen->men_q18}}
                             </th>

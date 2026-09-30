@@ -136,11 +136,21 @@ $district_Lists = [
                         <td class="text-center align-middle">{{$twentyfour->specialized_trafficking_victims_total_q24}}
                         </td>
                         <td>
-                            {{ $district_Lists[$twentyfour->specialized_trafficking_victims_location_q24] ?? $twentyfour->specialized_trafficking_victims_location_q24 }}
-
-
-
-
+                            @php
+    $loc = $twentyfour->specialized_trafficking_victims_location_q24 ?? null;
+    
+    // Jodi location-ti Array ba Object hoy, tobe tar prothom value-ti nebe
+    if (is_array($loc)) {
+        $loc = reset($loc);
+    } elseif (is_object($loc)) {
+        $loc = (string) $loc;
+    }
+@endphp
+@if (!empty($loc) && isset($district_Lists[$loc]))
+        {{ $district_Lists[$loc] }}
+    @else
+        {{ $loc }}
+    @endif
                         </td>
 
 

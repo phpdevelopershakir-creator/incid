@@ -12,13 +12,13 @@
             <div id="six_question_view">
                 @if(isset($case->yes_no_other) && $case->yes_no_other->is_government_direct_victim_q27 == 1)
 
-                <p>Type of Spending on Victim Care
-                </p>
+
                 <table class="table table-bordered text-center">
                     <thead class="text-center align-middle">
 
                         <tr style="background:#E5E5E5;">
                             <th>Type of Spending on Victim Care</th>
+                            <th>Amount of Bdt </th>
                             <th>Central Government/Ministry</th>
                             <th>Local Government</th>
                             <th>NGO/INGO</th>
@@ -30,7 +30,7 @@
                         @foreach($case->twentyseven as $twentyseven)
                         <tr>
                             <th>{{$twentyseven->victim_care_q27}}</th>
-
+                            <th>{{ $twentyseven->amount_in_bdt_q27  }}</th>
                             <th>
                                 {{ $twentyseven->central_government_q27 ?? 'N/A' }}
 
@@ -41,6 +41,7 @@
                                 </span>
                                 @endif
                             </th>
+
 
                             <th>
                                 {{ $twentyseven->local_government_q27 ?? 'N/A' }}

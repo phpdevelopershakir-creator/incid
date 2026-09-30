@@ -287,8 +287,16 @@ class CaseController extends Controller
         $yes_no->is_authorities_systematically_q16 = $request->is_authorities_systematically_q16;
         $yes_no->other_authorities_systematically_q16 = $request->other_authorities_systematically_q16;
 
-        $yes_no->is_government_officials_q18 = $request->is_government_officials_q18;
-        $yes_no->other_government_officials_q18 = $request->other_government_officials_q18;
+
+        $yes_no->is_government_officials_q18 = $request->input('is_government_officials_q18');
+
+            if ($request->input('is_government_officials_q18') == '0') {
+                $yes_no->other_government_officials_q18 = $request->input('no_complicit_official_q18');
+            } elseif ($request->input('is_government_officials_q18') == '2') {
+                $yes_no->other_government_officials_q18 = $request->input('others_complicit_official_q18');
+            } else {
+                $yes_no->other_government_officials_q18 = null;
+            }
 
         $yes_no->is_victims_social_service_q19 = $request->is_victims_social_service_q19;
         $yes_no->other_victims_social_service_q19 = $request->other_victims_social_service_q19;
@@ -344,7 +352,7 @@ class CaseController extends Controller
         $yes_no->title_victim_protection_q38  = $request->title_victim_protection_q38;
         
         $yes_no->created_by = Auth()->user()->id;
-       //return response()->json($yes_no);
+       //return  response()->json($yes_no);
         $yes_no->save();
 
 
@@ -1331,45 +1339,52 @@ if ($request->input('is_supreme_court_q4') == '1') {
 
 
         //question18
+        if ($request->input('is_government_officials_q18') == '1') {
 
-        if ($request->is_government_officials_q18 != 0) {
-            $location_q18 = $request->input('location_q18', []);
-            $category_q18 = $request->input('category_q18', []);
-            $ngo_rating_q18 = $request->input('ngo_rating_q18', []);
-            $men_q18 = $request->input('men_q18', []);
-            $women_q18 = $request->input('women_q18', []);
-            $total_q18 = $request->input('total_q18', []);
-            
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($location_q18),
-                count($category_q18),
-                count($ngo_rating_q18),
-                count($men_q18),
-                count($women_q18),
-                count($total_q18),
-  
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'location_q18' => $location_q18[$i] ?? null,
-                    'category_q18' => $category_q18[$i] ?? null,
-                    'ngo_rating_q18' => $ngo_rating_q18[$i] ?? null,
-                    'men_q18' => $men_q18[$i] ?? null,
-                    'women_q18' => $women_q18[$i] ?? null,
-                    'total_q18' => $total_q18[$i] ?? null,
-                    
-                    
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                Eighteen::insert($bulkInsertData);
-            }
+    $case_id = $question->id;
+
+    $location_q18 = array_values($request->input('location_q18', []));
+    $category_q18 = array_values($request->input('category_q18', []));
+    $men_q18      = array_values($request->input('men_q18', []));
+    $women_q18    = array_values($request->input('women_q18', []));
+    $total_q18    = array_values($request->input('total_q18', []));
+    
+    $bulkInsertData = [];
+    $now = now();
+    
+    $maxCount = max(
+        count($location_q18),
+        count($category_q18),
+        count($men_q18),
+        count($women_q18),
+        count($total_q18)
+    );
+
+    for ($i = 0; $i < $maxCount; $i++) {
+        $loc = $location_q18[$i] ?? null;
+        $cat = $category_q18[$i] ?? null;
+        $men = $men_q18[$i] ?? null;
+        $wom = $women_q18[$i] ?? null;
+
+        // ফাঁকা রো স্কিপ করার ভ্যালিডেশন
+        if (!empty($loc) || !empty($cat) || !empty($men) || !empty($wom)) {
+            $bulkInsertData[] = [
+                'case_id'      => $case_id,
+                'location_q18' => $loc,
+                'category_q18' => $cat,
+                'men_q18'      => $men,
+                'women_q18'    => $wom,
+                'total_q18'    => $total_q18[$i] ?? null,
+                'created_at'   => $now,
+                'updated_at'   => $now,
+            ];
         }
+    }
 
+    if (!empty($bulkInsertData)) {
+        Eighteen::insert($bulkInsertData);
+    }
+}
 
         //  question 19 
 
@@ -1761,88 +1776,113 @@ if ($request->input('is_supreme_court_q4') == '1') {
 
 
     //question27
-        if ($request->is_government_direct_victim_q27 != 0) {
+        // Question 27 Logic: কেবল Yes (1) হলেই টেবিল ডাটা ইনসার্ট হবে
+if ($request->input('is_government_direct_victim_q27') == '1') {
 
-           //a
-            $victim_care_q27 = $request->input('victim_care_q27', []);
-            $central_government_q27 = $request->input('central_government_q27', []);
-            $central_government_title_q27 = $request->input('central_government_title_q27', []);
-            $local_government_q27 = $request->input('local_government_q27', []);
-            $local_government_title_q27 = $request->input('local_government_title_q27', []);
-            $ngo_ingo_q27 = $request->input('ngo_ingo_q27', []);
-            $ngo_ingo_title_q27 = $request->input('ngo_ingo_title_q27', []);
-            
-           
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($victim_care_q27),
-                count($central_government_q27),
-                count($central_government_title_q27),
-                count($local_government_q27),
-                count($local_government_title_q27),
-                count($ngo_ingo_q27),
-                count($ngo_ingo_title_q27),
-              
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'victim_care_q27' => $victim_care_q27[$i] ?? null,
-                    'central_government_q27' => $central_government_q27[$i] ?? null,
-                    'central_government_title_q27' => $central_government_title_q27[$i] ?? null,
-                    'local_government_q27' => $local_government_q27[$i] ?? null,
-                    'local_government_title_q27' => $local_government_title_q27[$i] ?? null,
-                    'ngo_ingo_q27' => $ngo_ingo_q27[$i] ?? null,
-                    'ngo_ingo_title_q27' => $ngo_ingo_title_q27[$i] ?? null,
-              
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                TwentySeven::insert($bulkInsertData);
-            }
-            //b
-            $victim_care_q27b = $request->input('victim_care_q27b', []);
-            $central_government_q27b = $request->input('central_government_q27b', []);
-            $central_government_title_q27b = $request->input('central_government_title_q27b', []);
-            $local_government_q27b = $request->input('local_government_q27b', []);
-            $local_government_title_q27b = $request->input('local_government_title_q27b', []);
-            $ngo_ingo_q27b = $request->input('ngo_ingo_q27b', []);
-            $ngo_ingo_title_q27b = $request->input('ngo_ingo_title_q27b', []);
-            
-           
-            $case_id = $question->id;
-            $bulkInsertData = [];
-            $maxCount = max(
-                count($victim_care_q27b),
-                count($central_government_q27b),
-                count($central_government_title_q27b),
-                count($local_government_q27b),
-                count($local_government_title_q27b),
-                count($ngo_ingo_q27b),
-                count($ngo_ingo_title_q27b),
-              
-            );
-            for ($i = 0; $i < $maxCount; $i++) {
-                $bulkInsertData[] = [
-                    'case_id' => $case_id,
-                    'victim_care_q27b' => $victim_care_q27b[$i] ?? null,
-                    'central_government_q27b' => $central_government_q27b[$i] ?? null,
-                    'central_government_title_q27b' => $central_government_title_q27b[$i] ?? null,
-                    'local_government_q27b' => $local_government_q27b[$i] ?? null,
-                    'local_government_title_q27b' => $local_government_title_q27b[$i] ?? null,
-                    'ngo_ingo_q27b' => $ngo_ingo_q27b[$i] ?? null,
-                    'ngo_ingo_title_q27b' => $ngo_ingo_title_q27b[$i] ?? null,
-              
-                ];
-            }
-            if (!empty($bulkInsertData)) {
-                //return response()->json($bulkInsertData);
-                TwentySevenB::insert($bulkInsertData);
-            }
+    $case_id = $question->id;
+    $now = now();
 
+    // ----------------------------------------------------
+    // PART A: Table 1 (TwentySeven)
+    // ----------------------------------------------------
+    $victim_care_q27             = array_values($request->input('victim_care_q27', []));
+    $central_government_q27      = array_values($request->input('central_government_q27', []));
+    $central_government_title_q27 = array_values($request->input('central_government_title_q27', []));
+    $local_government_q27        = array_values($request->input('local_government_q27', []));
+    $local_government_title_q27  = array_values($request->input('local_government_title_q27', []));
+    $ngo_ingo_q27                = array_values($request->input('ngo_ingo_q27', []));
+    $ngo_ingo_title_q27          = array_values($request->input('ngo_ingo_title_q27', []));
+    $amount_in_bdt_q27           = array_values($request->input('amount_in_bdt_q27', []));
+
+    $bulkInsertDataA = [];
+    $maxCountA = max(
+        count($victim_care_q27),
+        count($central_government_q27),
+        count($central_government_title_q27),
+        count($local_government_q27),
+        count($local_government_title_q27),
+        count($ngo_ingo_q27),
+        count($ngo_ingo_title_q27),
+        count($amount_in_bdt_q27)
+    );
+
+    for ($i = 0; $i < $maxCountA; $i++) {
+        $care    = $victim_care_q27[$i] ?? null;
+        $amount  = $amount_in_bdt_q27[$i] ?? null;
+        $central = $central_government_q27[$i] ?? null;
+        $local   = $local_government_q27[$i] ?? null;
+        $ngo     = $ngo_ingo_q27[$i] ?? null;
+
+        // যেকোনো একটি ফিল্ড থাকলে সেই রো ডাটাবেজে যাবে
+        if (!empty($care) || !empty($amount) || !empty($central) || !empty($local) || !empty($ngo)) {
+            $bulkInsertDataA[] = [
+                'case_id'                      => $case_id,
+                'victim_care_q27'              => $care,
+                'central_government_q27'       => $central,
+                'central_government_title_q27' => $central_government_title_q27[$i] ?? null,
+                'local_government_q27'         => $local,
+                'local_government_title_q27'   => $local_government_title_q27[$i] ?? null,
+                'ngo_ingo_q27'                 => $ngo,
+                'ngo_ingo_title_q27'           => $ngo_ingo_title_q27[$i] ?? null,
+                'amount_in_bdt_q27'            => $amount,
+                'created_at'                   => $now,
+                'updated_at'                   => $now,
+            ];
         }
+    }
+
+    if (!empty($bulkInsertDataA)) {
+        TwentySeven::insert($bulkInsertDataA);
+    }
+
+    // ----------------------------------------------------
+    // PART B: Table 2 (TwentySevenB)
+    // ----------------------------------------------------
+    $victim_care_q27b             = array_values($request->input('victim_care_q27b', []));
+    $central_government_q27b      = array_values($request->input('central_government_q27b', []));
+    $central_government_title_q27b = array_values($request->input('central_government_title_q27b', []));
+    $local_government_q27b        = array_values($request->input('local_government_q27b', []));
+    $local_government_title_q27b  = array_values($request->input('local_government_title_q27b', []));
+    $ngo_ingo_q27b                = array_values($request->input('ngo_ingo_q27b', []));
+    $ngo_ingo_title_q27b          = array_values($request->input('ngo_ingo_title_q27b', []));
+
+    $bulkInsertDataB = [];
+    $maxCountB = max(
+        count($victim_care_q27b),
+        count($central_government_q27b),
+        count($central_government_title_q27b),
+        count($local_government_q27b),
+        count($local_government_title_q27b),
+        count($ngo_ingo_q27b),
+        count($ngo_ingo_title_q27b)
+    );
+
+    for ($i = 0; $i < $maxCountB; $i++) {
+        $careB    = $victim_care_q27b[$i] ?? null;
+        $centralB = $central_government_q27b[$i] ?? null;
+        $localB   = $local_government_q27b[$i] ?? null;
+        $ngoB     = $ngo_ingo_q27b[$i] ?? null;
+
+        if (!empty($careB) || !empty($centralB) || !empty($localB) || !empty($ngoB)) {
+            $bulkInsertDataB[] = [
+                'case_id'                       => $case_id,
+                'victim_care_q27b'              => $careB,
+                'central_government_q27b'       => $centralB,
+                'central_government_title_q27b' => $central_government_title_q27b[$i] ?? null,
+                'local_government_q27b'         => $localB,
+                'local_government_title_q27b'   => $local_government_title_q27b[$i] ?? null,
+                'ngo_ingo_q27b'                 => $ngoB,
+                'ngo_ingo_title_q27b'           => $ngo_ingo_title_q27b[$i] ?? null,
+                'created_at'                    => $now,
+                'updated_at'                    => $now,
+            ];
+        }
+    }
+
+    if (!empty($bulkInsertDataB)) {
+        TwentySevenB::insert($bulkInsertDataB);
+    }
+}
 
        //question28
         if ($request->is_child_victims_juvenile_q28 != 0) {
@@ -2910,7 +2950,7 @@ $question42->save();
             $instances_trafficking_men_q56b = $request->input('instances_trafficking_men_q56b', []);
             $instances_trafficking_women_q56b = $request->input('instances_trafficking_women_q56b', []);
             $instances_trafficking_total_q56b= $request->input('instances_trafficking_total_q56b', []);
-            $instances_trafficking_measures_q56b = $request->input('instances_trafficking_measures_q56b', []);
+            //$instances_trafficking_measures_q56b = $request->input('instances_trafficking_measures_q56b', []);
             
             
 
@@ -2920,7 +2960,7 @@ $question42->save();
              count($instances_trafficking_men_q56b),
              count($instances_trafficking_women_q56b),
              count($instances_trafficking_total_q56b),
-             count($instances_trafficking_measures_q56b)
+             //count($instances_trafficking_measures_q56b)
           
              );
 
@@ -2931,7 +2971,7 @@ $question42->save();
                     'instances_trafficking_men_q56b' => $instances_trafficking_men_q56b[$i] ?? null,
                     'instances_trafficking_women_q56b' => $instances_trafficking_women_q56b[$i] ?? null,
                     'instances_trafficking_total_q56b' => $instances_trafficking_total_q56b[$i] ?? null,
-                    'instances_trafficking_measures_q56b' => $instances_trafficking_measures_q56b[$i] ?? null,
+                    //'instances_trafficking_measures_q56b' => $instances_trafficking_measures_q56b[$i] ?? null,
                     
 
                 ];

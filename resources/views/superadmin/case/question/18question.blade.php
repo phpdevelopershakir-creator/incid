@@ -35,16 +35,16 @@ $categories = [
 
             <!-- Radio Options -->
             <div class="form-group mb-3">
-                <input type="radio" id="radioYes18" class="eighteenstatus" name="is_complicit_official_q18" value="1"
+                <input type="radio" id="radioYes18" class="eighteenstatus" name="is_government_officials_q18" value="1"
                     {{ (is_null($q18_checked) || $q18_checked === '1') ? 'checked' : '' }}>
                 <label for="radioYes18" class="mr-3 font-weight-bold">Yes</label>
 
-                <input type="radio" id="radioNo18" class="eighteenstatus" name="is_complicit_official_q18" value="0"
+                <input type="radio" id="radioNo18" class="eighteenstatus" name="is_government_officials_q18" value="0"
                     {{ ($q18_checked === '0') ? 'checked' : '' }}>
                 <label for="radioNo18" class="mr-3 font-weight-bold">No</label>
 
-                <input type="radio" id="radioOthers18" class="eighteenstatus" name="is_complicit_official_q18" value="2"
-                    {{ ($q18_checked === '2') ? 'checked' : '' }}>
+                <input type="radio" id="radioOthers18" class="eighteenstatus" name="is_government_officials_q18"
+                    value="2" {{ ($q18_checked === '2') ? 'checked' : '' }}>
                 <label for="radioOthers18" class="font-weight-bold">Others</label>
             </div>
 
@@ -55,7 +55,7 @@ $categories = [
                     <table class="table table-bordered text-center align-middle" id="table-q18">
                         <thead>
                             <tr class="bg-light">
-                                <th rowspan="2" class="align-middle">Location</th>
+                                <th rowspan="2" class="align-middle">District</th>
                                 <th rowspan="2" class="align-middle">Category</th>
                                 <th colspan="3">Number of personnel Trained</th>
                                 <th rowspan="2" class="align-middle" style="width: 80px;">Add row</th>
@@ -75,11 +75,11 @@ $categories = [
                             @foreach($rows as $rIndex => $row)
                             <tr class="q18-row">
                                 <td>
-                                    <select name="q18_district_id[]" class="form-control q18-district">
+                                    <select name="location_q18[]" class="form-control q18-district">
                                         <option value="">Select District</option>
                                         @foreach($districts as $id => $name)
                                         <option value="{{ $id }}"
-                                            {{ ($row['district_id'] ?? '') == $id ? 'selected' : '' }}>
+                                            {{ ($row['location_q18'] ?? $row['district_id'] ?? '') == $id ? 'selected' : '' }}>
                                             {{ $name }}
                                         </option>
                                         @endforeach
@@ -87,27 +87,28 @@ $categories = [
                                 </td>
                                 <td>
                                     <!-- Category Dropdown -->
-                                    <select name="q18_category[]" class="form-control q18-category">
+                                    <select name="category_q18[]" class="form-control q18-category">
                                         <option value="">Select Category</option>
                                         @foreach($categories as $catKey => $catVal)
                                         <option value="{{ $catKey }}"
-                                            {{ ($row['category'] ?? '') == $catKey ? 'selected' : '' }}>
+                                            {{ ($row['category_q18'] ?? $row['category'] ?? '') == $catKey ? 'selected' : '' }}>
                                             {{ $catVal }}
                                         </option>
                                         @endforeach
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="number" name="q18_men[]" class="form-control q18-men" placeholder="0"
-                                        value="{{ $row['men'] ?? '' }}" min="0">
+                                    <input type="number" name="men_q18[]" class="form-control q18-men" placeholder="0"
+                                        value="{{ $row['men_q18'] ?? $row['men'] ?? '' }}" min="0">
                                 </td>
                                 <td>
-                                    <input type="number" name="q18_women[]" class="form-control q18-women"
-                                        placeholder="0" value="{{ $row['women'] ?? '' }}" min="0">
+                                    <input type="number" name="women_q18[]" class="form-control q18-women"
+                                        placeholder="0" value="{{ $row['women_q18'] ?? $row['women'] ?? '' }}" min="0">
                                 </td>
                                 <td>
-                                    <input type="number" name="q18_total[]" class="form-control q18-total bg-light"
-                                        placeholder="0" value="{{ $row['total'] ?? '0' }}" readonly>
+                                    <input type="number" name="total_q18[]" class="form-control q18-total bg-light"
+                                        placeholder="0" value="{{ $row['total_q18'] ?? $row['total'] ?? '0' }}"
+                                        readonly>
                                 </td>
                                 <td>
                                     @if($loop->first)
@@ -141,9 +142,9 @@ $categories = [
                     If victims were referred to NGO facilities, describe the NGOs' assessment of the government referral
                     process.
                 </label>
-                <select name="q18_ngo_assessment" class="form-control q18-ngo-assessment">
+                <select name="ngo_rating_q18[]" class="form-control q18-ngo-assessment">
                     <option value="">Choose an Item</option>
-                    @php $ngoVal = $q18_data['ngo_assessment'] ?? ''; @endphp
+                    @php $ngoVal = $q18_data['ngo_rating_q18'] ?? $q18_data['ngo_assessment'] ?? ''; @endphp
                     <option value="Excellent" {{ $ngoVal == 'Excellent' ? 'selected' : '' }}>Excellent</option>
                     <option value="Good" {{ $ngoVal == 'Good' ? 'selected' : '' }}>Good</option>
                     <option value="Fair" {{ $ngoVal == 'Fair' ? 'selected' : '' }}>Fair</option>
@@ -181,7 +182,7 @@ $(document).ready(function() {
 
     // Radio Toggle Logic
     function toggleq18() {
-        let val = $("input[name='is_complicit_official_q18']:checked").val();
+        let val = $("input[name='is_government_officials_q18']:checked").val();
 
         if (!val) {
             val = '1';
@@ -216,13 +217,13 @@ $(document).ready(function() {
         e.preventDefault();
         var rowHtml =
             '<tr class="q18-row">' +
-            '<td><select name="q18_district_id[]" class="form-control q18-district">' +
+            '<td><select name="location_q18[]" class="form-control q18-district">' +
             districtOptions + '</select></td>' +
-            '<td><select name="q18_category[]" class="form-control q18-category">' + categoryOptions +
+            '<td><select name="category_q18[]" class="form-control q18-category">' + categoryOptions +
             '</select></td>' +
-            '<td><input type="number" name="q18_men[]" class="form-control q18-men" placeholder="0" min="0"></td>' +
-            '<td><input type="number" name="q18_women[]" class="form-control q18-women" placeholder="0" min="0"></td>' +
-            '<td><input type="number" name="q18_total[]" class="form-control q18-total bg-light" placeholder="0" readonly></td>' +
+            '<td><input type="number" name="men_q18[]" class="form-control q18-men" placeholder="0" min="0"></td>' +
+            '<td><input type="number" name="women_q18[]" class="form-control q18-women" placeholder="0" min="0"></td>' +
+            '<td><input type="number" name="total_q18[]" class="form-control q18-total bg-light" placeholder="0" readonly></td>' +
             '<td><button type="button" class="btn btn-sm btn-danger remove-row-q18">-</button></td>' +
             '</tr>';
         $('#q18-tbody').append(rowHtml);
@@ -236,7 +237,7 @@ $(document).ready(function() {
 
     // Temp Save AJAX Logic
     $(document).on("click", "#temp-save-question18", function() {
-        let checkedValue = $("input[name='is_complicit_official_q18']:checked").val();
+        let checkedValue = $("input[name='is_government_officials_q18']:checked").val();
         let q18_data = {};
 
         if (checkedValue == '1') {
@@ -250,11 +251,11 @@ $(document).ready(function() {
 
                 if (districtId || category || men || women) {
                     tableRows.push({
-                        district_id: districtId,
-                        category: category,
-                        men: men,
-                        women: women,
-                        total: total
+                        location_q18: districtId,
+                        category_q18: category,
+                        men_q18: men,
+                        women_q18: women,
+                        total_q18: total
                     });
                 }
             });
@@ -266,7 +267,7 @@ $(document).ready(function() {
         }
 
         // Bottom NGO Assessment Dropdown Save
-        q18_data.ngo_assessment = $('.q18-ngo-assessment').val();
+        q18_data.ngo_rating_q18 = $('.q18-ngo-assessment').val();
 
         let new_data = {
             q18_checked_value: checkedValue,
@@ -284,7 +285,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success || response) {
                     $('.question18 .card-header h6').css('color', 'blue');
-                    alert("Question 18 Saved Temp");
+                    alert("Question 18 Temp Saved ");
                 } else {
                     alert("Not Saved");
                 }
